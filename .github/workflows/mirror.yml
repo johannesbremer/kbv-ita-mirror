@@ -1,0 +1,126 @@
+name: Mirror https://update.kbv.de/ita-update/
+
+on:
+  push:
+    paths:
+      - .github/workflows/mirror.yml
+  schedule:
+    - cron: "0 0 * * 0"
+  workflow_dispatch: {}
+
+jobs:
+  mirror:
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      # 1. MAXIMIZE DISK SPACE
+      - name: Maximize Build Space
+        uses: AdityaGarg8/remove-unwanted-software@v5
+        with:
+          remove-dotnet: 'true'
+          remove-android: 'true'
+          remove-haskell: 'true'
+          remove-codeql: 'true'
+          remove-docker-images: 'true'
+          remove-large-packages: 'true'
+          remove-swapfile: 'true'
+
+      # 2. CHECKOUT
+      - uses: actions/checkout@v6
+        with:
+          token: ${{ secrets.PUSH2REP }}
+          fetch-depth: 1
+          sparse-checkout: |
+            .github
+            .gitignore
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y lftp parallel p7zip-full git-lfs convmv
+
+      # 3. WIPE WORKSPACE
+      - name: Wipe Workspace
+        run: |
+          # 1. Reset the index to be empty
+          git rm -r --cached . > /dev/null 2>&1 || true
+
+          # 2. Add back the config files we want to keep
+          git add .github .gitignore
+
+      # 4. DOWNLOAD
+      - name: Download from KBV
+        run: |
+          lftp -c "set cmd:show-status no; \
+          open https://update.kbv.de/ita-update/; \
+          mirror --parallel=10 \
+                 --use-pget-n=5 \
+                 --continue \
+                 --no-empty-dirs \
+                 --exclude 'index.html*' \
+                 --verbose=1 \
+                 . ."
+
+      # 5. RECURSIVE EXTRACTION
+      - name: Recursive Extraction
+        run: |
+          iteration=1
+          while true; do
+            echo "Extraction pass $iteration..."
+
+            # Find and sort archives by depth (deepest first)
+            archives=$(find . -type f \( -name "*.iso" -o -name "*.zip" -o -name "*.jar" \) \
+              -not -path "./.git/*" -printf '%d\t%p\n' | sort -rn | cut -f2-)
+
+            if [ -z "$archives" ]; then
+              echo "No more archives found."
+              break
+            fi
+
+            echo "$archives" | parallel -j 200% '
+              dir={.}
+              mkdir -p "$dir"
+              7z x {} -o"$dir" -y > /dev/null && rm {}
+            '
+
+            iteration=$((iteration+1))
+          done
+
+      # 6. ENCODING FIX
+      - name: Sanitize Filenames
+        run: |
+          find . -maxdepth 1 -mindepth 1 -not -name '.git' -print0 | \
+          parallel -0 --line-buffer convmv -r -f cp437 -t utf-8 --notest {}
+
+      # 7. LFS HANDLING
+      - name: Handle Large Files (LFS)
+        run: |
+          git lfs install
+          large_files=$(find . -type f -size +90M -not -path "./.git/*")
+
+          if [ -n "$large_files" ]; then
+            echo "Found files larger than 90MB. Tracking with Git LFS..."
+            echo "$large_files" | while read file; do
+              git lfs track "$file"
+            done
+            git add .gitattributes
+          fi
+
+      # 8. COMMIT
+      - name: Atomic Commit and Push
+        run: |
+          git config user.name "Mirror Bot"
+          git config user.email "bot@example.com"
+          git config --global http.postBuffer 524288000
+
+          git add -A
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+
+          git commit -q -m "Update $(date -I) [skip ci]"
+          git push -q
+
