@@ -24,7 +24,6 @@ jobs:
           remove-codeql: 'true'
           remove-docker-images: 'true'
           remove-large-packages: 'true'
-          remove-swapfile: 'true'
 
       # 2. CHECKOUT
       - uses: actions/checkout@v6
@@ -114,11 +113,18 @@ jobs:
           git config user.email "bot@example.com"
           git config --global http.postBuffer 524288000
           
-          git config --global core.safecrlf false
           git config --global core.protectHFS false
           git config --global core.protectNTFS false
 
-          git add -A
+          git status -u --porcelain | cut -c4- | xargs -n 2000 sh -c '
+            if git add -- "$@" > /dev/null 2>&1; then
+              echo "  + Batch of files staged successfully."
+            else
+              echo "  ! Batch failed. Retrying to show errors:"
+              git add -- "$@"
+              exit 1
+            fi
+          ' --
 
           if git diff --staged --quiet; then
             echo "No changes to commit."
