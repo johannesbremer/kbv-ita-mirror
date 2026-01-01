@@ -113,6 +113,10 @@ jobs:
           git config user.name "Mirror Bot"
           git config user.email "bot@example.com"
           git config --global http.postBuffer 524288000
+          
+          git config --global core.safecrlf false
+          git config --global core.protectHFS false
+          git config --global core.protectNTFS false
 
           git add -A
 
@@ -123,4 +127,3 @@ jobs:
 
           git commit -q -m "Update $(date -I) [skip ci]"
           git push -q
-
