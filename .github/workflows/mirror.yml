@@ -117,13 +117,11 @@ jobs:
           git config --global core.protectNTFS false
           git config --global core.quotePath false
 
-          git add --sparse -A > git_stage.log 2>&1; then
-            echo "All files staged successfully."
-          else
+          git add --sparse -A > git_stage.log 2>&1 || {
             echo "Git add failed. Filtering log for fatal errors:"
-            grep -iE "fatal|error" git_stage.log || tail -n 20 git_stage.log
+            grep -iE "fatal|error" git_stage.log || tail -n 60 git_stage.log
             exit 1
-          fi
+          }
 
           if git diff --staged --quiet; then
             echo "No changes to commit."
