@@ -115,16 +115,15 @@ jobs:
           
           git config --global core.protectHFS false
           git config --global core.protectNTFS false
+          git config --global core.quotePath false
 
-          git status -u --porcelain | cut -c4- | xargs -n 2000 sh -c '
-            if git add -- "$@" > /dev/null 2>&1; then
-              echo "  + Batch of files staged successfully."
-            else
-              echo "  ! Batch failed. Retrying to show errors:"
-              git add --sparse -- "$@"
-              exit 1
-            fi
-          ' --
+          git add --sparse -A > git_stage.log 2>&1; then
+            echo "All files staged successfully."
+          else
+            echo "Git add failed. Filtering log for fatal errors:"
+            grep -iE "fatal|error" git_stage.log || tail -n 20 git_stage.log
+            exit 1
+          fi
 
           if git diff --staged --quiet; then
             echo "No changes to commit."
