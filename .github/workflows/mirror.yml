@@ -121,7 +121,7 @@ jobs:
               echo "  + Batch of files staged successfully."
             else
               echo "  ! Batch failed. Retrying to show errors:"
-              git add -- "$@"
+              git add --sparse -- "$@"
               exit 1
             fi
           ' --
