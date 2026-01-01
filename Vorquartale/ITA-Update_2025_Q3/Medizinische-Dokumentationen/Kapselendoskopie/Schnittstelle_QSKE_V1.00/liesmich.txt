@@ -1,0 +1,23 @@
+Beschreibung "Schema QS Kapselendoskopie" 
+Version 1.00, 31.07.2014
+**************************************************************************
+
+Alle Komponenten des Pakets sind separat versioniert. Es können keine 
+Schlussfolgerungen aus den Versionsnummern des Pakets und der Komponenten 
+untereinander gezogen werden. Die Versionsnummer der Schnittstelle muss 
+auch nicht identisch mit der Versionsnummer der Schnittstellenbeschreibung 
+sein.
+
+
+2. Dokumente und Software
+*************************
+
+- Schnittstellenbeschreibung QS Kapselendoskopie (Version 1.00, Stand: 31.07.2014)
+- Schema (Version 1.00 vom 07.05.2014)
+- Beispiel-Datei
+
+Änderungen zur Vorversion
+*************************
+
+- erste veröffentlichte Version
+

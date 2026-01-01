@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Template für ehd_root:
+Projekt: tmp
+Namespace: "urn:ehd/tmp/001", Präfix: tmp
+
+Namespace und Präfix sind mit tatsächlichen Projektspezifischen zu ersetzen.
+Verzeichnispfade überprüfen und gegebenfalls anpassen.
+-->
+<xs:schema targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution" xmlns:tmp="urn:ehd/tmp/001" xmlns="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ehd="urn:ehd/001">
+	<!-- ======================================================================= 
+	Einbinden der ehd-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="../typelib/schema_V1.40/ehd_root_V1.40.xsd"/>
+	<xs:include schemaLocation="../typelib/schema_V1.40/keytabs_V1.40.xsd"/>
+	<!-- ======================================================================= 
+	Einbinden der tmp-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="tmp_header.xsd"/>
+	<xs:import namespace="urn:ehd/tmp/001" schemaLocation="tmp_body.xsd"/>
+	<!-- ======================================================================= 
+	EHD-root
+	hier ist des EHD-root-Element definiert, welches das "header" und "body" sowie "keytabs"
+	Elemnte enthält.
+	======================================================================= -->
+	<xs:element name="ehd" type="tmp_root_typ">
+		<xs:annotation>
+			<xs:documentation>root element ehd "eHealthData"</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- ======================================================================= 
+	das abgeleitete tmp_root_typ des Basistyps: ehd_root_typ
+	======================================================================= -->
+	<xs:complexType name="tmp_root_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_root_typ">
+				<xs:sequence>
+					<xs:element name="header" type="tmp_header_typ">
+						<xs:annotation>
+							<xs:documentation>alle Metainformationen zu den Daten</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="body" type="tmp_body_typ">
+						<xs:annotation>
+							<xs:documentation>die eigentlichen Daten</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="keytabs" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	tmp_body_typ
+	das abgeleitete tmp_body_typ des Basistyps: ehd_body_typ
+	======================================================================= -->
+	<xs:complexType name="tmp_body_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_body_typ">
+				<xs:sequence>
+					<xs:element name="tmp" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

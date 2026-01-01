@@ -1,0 +1,171 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+
+	<artifactId>xpm-kvdt-common</artifactId>
+	<version>2025.4.2</version>
+	<parent>
+		<groupId>de.kbv.xpm</groupId>
+		<artifactId>xpm-parent</artifactId>
+		<version>0.0.13</version>
+	</parent>
+
+	<properties>
+		<xpmCoreVersion>4.2.38</xpmCoreVersion>
+		<project.build.sourceEncoding>iso-8859-1</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<maven.compiler.release>17</maven.compiler.release>
+		<maven.build.timestamp.format>yyyyMMdd'T'HHmmss</maven.build.timestamp.format>
+	</properties>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+			<resource>
+				<directory>${project.basedir}/src/main/buildResources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
+				<executions>
+					<!-- muss nur aktiviert werden wenn sich Jasper Reports oder XDT-Schema
+						geändert haben -->
+					<execution>
+						<id>build-stamm-haupt</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>java</executable>
+							<arguments> <!-- <argument>-Dencoding=ISO-8859-1</argument> --> <!-- -->
+								<argument>-Dfile.encoding=ISO-8859-1</argument>
+								--&gt; <!-- <argument>-Dfile.encoding=UTF-8</argument> -->
+								<argument>-classpath</argument>
+								<!-- automatically creates the classpath using all project dependencies,
+									also adding the project build directory -->
+								<classpath />
+								<argument>de.kbv.xpm.modul.kvdt.common.generate.Generate</argument>
+								<argument>${project.basedir}/src/main/buildResources/Profile.xml</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.13.0</version>
+				<executions>
+					<!-- nach dem die XDT-Reader Klasse aus dem XML-Schema generiert wurde
+						muss diese noch kompiliert werden -->
+					<execution>
+						<id>recompile</id>
+						<phase>generate-test-resources</phase>
+						<goals>
+							<goal>compile</goal>
+						</goals>
+						<configuration>
+							<!-- includes> <include>**/XDTReader.java</include> </includes> -->
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<!-- NOTE: We don't need a groupId specification because the group is
+					org.apache.maven.plugins ...which is assumed by default. -->
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.7.1</version>
+				<executions>
+					<execution>
+						<configuration>
+							<descriptors><descriptor>src/main/buildResources/assembly_common_files.xml</descriptor></descriptors>
+							<appendAssemblyId>false</appendAssemblyId>
+							<attach>false</attach>
+							<finalName>additional_common_files_kvdt-${project.version}</finalName>
+						</configuration>
+						<id>make-assembly_common_files</id> <!-- this is used for inheritance merges -->
+						<phase>package</phase> <!-- bind to the packaging phase -->
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<encoding>ISO-8859-1</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>3.6.0</version>
+				<executions>
+					<execution>
+						<id>attach-artifacts</id>
+						<phase>package</phase>
+						<goals>
+							<goal>attach-artifact</goal>
+						</goals>
+						<configuration>
+							<artifacts>
+								<artifact>
+									<file>${project.basedir}/target/additional_common_files_kvdt-${project.version}.zip</file>
+									<type>zip</type>
+									<classifier>additional_common_files</classifier>
+								</artifact>
+							</artifacts>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.3.1</version>
+				<configuration>
+					<excludes>
+						<exclude>**/TestKVDTCommonAufrufe.java</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<dependencies>
+		<dependency>
+			<groupId>de.kbv.xpm</groupId>
+			<artifactId>xpm-core</artifactId>
+			<version>${xpmCoreVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.11</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<repositories>
+		<repository>
+			<id>jfrog</id>
+			<url>https://jfrog.kbv.de/artifactory/maven-local-repos</url>
+		</repository>
+	</repositories>
+	<scm>
+		<url>https://bitbucket.kbv.de/scm/itasw/xpm-kvdt-common.git</url>
+		<connection>scm:git:https://bitbucket.kbv.de/scm/itasw/xpm-kvdt-common.git</connection>
+		<developerConnection>scm:git:https://bitbucket.kbv.de/scm/itasw/xpm-kvdt-common.git</developerConnection>
+	  <tag>xpm-kvdt-common-2025.4.2</tag>
+  </scm>
+</project>

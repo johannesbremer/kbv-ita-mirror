@@ -1,0 +1,19 @@
+<NamingSystem xmlns="http://hl7.org/fhir">
+	<name value="GOAE"/> 
+	<status value="active"/> 
+	<kind value="codesystem"/> 
+	<date value="2018-10-06"/>
+	<publisher value="Kassenaerztliche Bundesvereinigung"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://www.kbv.de"/>
+		</telecom>
+	</contact>
+	<description value="Namensraum für Gebührenordnung für Ärzte. Es dürfen nur valide GOPs der Gebührenordnung GOÄ verwendet werden."/> 
+	<uniqueId> 
+		<type value="uri"/> 
+		<value value="https://fhir.kbv.de/NamingSystem/KBV_NS_AW_GOAE"/> 
+		<preferred value="true"/> 
+	</uniqueId> 
+</NamingSystem>

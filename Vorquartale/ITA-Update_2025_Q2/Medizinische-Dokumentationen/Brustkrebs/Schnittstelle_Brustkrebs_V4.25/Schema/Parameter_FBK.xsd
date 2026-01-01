@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns="urn::sciphox-org/sciphox" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!--***********************************************************************************************************************************************-->
+	<!--Parameter Folgedokumentation -->
+	<!--***********************************************************************************************************************************************-->
+	<!--************************************************************************************-->
+	<!--Einschreibungerfolgtwegen -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="Einschreibungerfolgtwegen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Einschreibung erfolgte wegen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!--BehandlungsstatusnachoperativerTherapie -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="BehandlungsstatusnachoperativerTherapie">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Aktuelle adjuvante endokrine Therapie"/>
+			<xs:enumeration value="Nebenwirkungen der aktuellen adjuvanten endokrinen Therapie"/>
+			<xs:enumeration value="Fortführung der adjuvanten endokrinen Therapie seit der letzten Dokumentation"/>
+			<xs:enumeration value="Bei Patientinnen unter adjuvanter Therapie mit Aromataseinhibitoren, sofern die Absicht für eine spezifische medikamentöse Therapie einer Osteoporose besteht: DXA-Befund"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!--NeuaufgetreteneEreignisse -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="NeuaufgetreteneEreignisse">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Lokoregionäres Rezidiv (Datum der histologischen Sicherung)"/>
+			<xs:enumeration value="Kontralateraler Brustkrebs (Datum der histologischen Sicherung)"/>
+			<xs:enumeration value="Lokalisation von Fernmetastasen (Datum der diagnostischen Sicherung)"/>
+			<xs:enumeration value="Symptomatisches Lymphödem"/>
+			<xs:enumeration value="Bioptische Sicherung der viszeralen Metastasen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!-- Sonstiges -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="SonstigeBefunde">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Empfehlung zu regelmäßigem körperlichen Training abgegeben"/>
+			<xs:enumeration value="Z. n. besonders kardiotoxischer Tumortherapie"/>
+			<xs:enumeration value="Körpergröße"/>
+			<xs:enumeration value="Körpergewicht"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!-- Behandlung bei fortgeschrittener Erkrankung (lokoregionäres Rezidiv / Fernmetastasen -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="BehandlungbeifortgeschrittenerErkrankung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Therapie bei Knochenmetastasen (Bisphosphonate)"/>
+			<xs:enumeration value="Therapie bei Knochenmetastasen (Denosumab)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!-- Behandlungsplanung -->
+	<!--************************************************************************************ -->
+	<xs:simpleType name="Behandlungsplanung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Dokumentationsintervall"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 ..\Schema\afhi_root_V1.00.xsd">
+	<header>
+		<id EX="798117ee-3f84-4512-8b26-765c1dcb972f" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2025-01-01.."/>
+		<origination_dttm V="2025-02-04"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat 4"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="http://update.kbv.de/ita-update"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2020, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="http://update.kbv.de/ita-update"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="PTV8" DN="Unterlagen für das Gutachtenverfahren">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Chiffre Patient*in"/>
+					<hinweistext V="Geben Sie hier bitte die Chiffre der Patientin oder des Patienten an, die die pseudonymisierte Weitergabe der Unterlagen an die Gutachterin oder den Gutachter gewährleistet. Die Chiffre besteht aus dem 1. Anfangsbuchstaben des Familien- bzw. Nachnamens der Patientin oder des Patienten sowie dem Geburtsdatum im Format TTMMJJ."/>
+				</feld>
+				<feld>
+					<nummer V="2"/>
+					<name V="Begutachtung einer"/>
+					<hinweistext V="Geben Sie hier an, welche Psychotherapie von der Patientin oder vom Patienten beantragt wurde, damit die Krankenkasse die Unterlagen an eine passende Gutachterin bzw. einen passenden Gutachter übermitteln kann. Für eine Analytische Psychotherapie geben Sie 'AP', für eine Systemische Therapie 'ST', für eine Tiefenpsychologisch fundierte Psychotherapie 'TP' oder für eine Verhaltenstherapie 'VT' an. Geben Sie auch an, ob es sich um eine Kinder- und Jugendlichenpsychotherapie (KiJu) oder um eine Psychotherapie für Erwachsene (Erw) handelt und in welchem Setting die Psychotherapie stattfinden soll (Einzelbehandlung oder Gruppenbehandlung/Kombinationsbehandlung). Ein Anspruch durch Psychotherapeutinnen oder Psychotherapeuten auf Ausschluss von bestimmten Gutachterinnen oder Gutachtern besteht nicht. Die zuständige Krankenkasse der Patientin oder des Patienten weist in Abhängigkeit von der beantragten Psychotherapie eine hierfür bestellte Gutachterin bzw. einen hierfür bestellten Gutachter zu. Gutachterinnen und Gutachter dürfen in mehreren Bereichen bestellt sein (z. B. AP Erw und TP Erw oder VT Erw und VT KiJu)."/>
+				</feld>
+				<feld>
+					<nummer V="3"/>
+					<name V="Antragsart"/>
+					<hinweistext V="Geben Sie hier an, um welche Antragsart es sich handelt. Die Abkürzung 'LZT' steht für Langzeittherapie, die Abkürzung 'KZT' für Kurzzeittherapie. Sie können hier nur ein Feld auswählen."/>
+				</feld>
+				<feld>
+					<nummer V="4"/>
+					<name V="Inhalt"/>
+					<hinweistext V="Bestätigen Sie hier, dass alle erforderlichen Unterlagen entsprechend des Leitfadens PTV 3 vollständig im Briefumschlag enthalten sind. Die Vollständigkeit der Unterlagen hilft, Rückfragen und Verzögerungen im Antrags- und Gutachtenverfahren zu vermeiden."/>
+				</feld>
+				<feld>
+					<nummer V="5"/>
+					<name V="Erklärung Therapeut*in"/>
+					<hinweistext V="Bestätigen Sie hier, dass Sie den Bericht an die Gutachterin oder den Gutachter vollständig persönlich verfasst haben. Der im Briefumschlag enthaltene Bericht muss mit Datum und Unterschrift versehen sein."/>
+				</feld>
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

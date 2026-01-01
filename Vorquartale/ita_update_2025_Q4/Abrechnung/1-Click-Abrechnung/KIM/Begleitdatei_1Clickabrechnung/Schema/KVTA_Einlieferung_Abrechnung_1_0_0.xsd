@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) von IT- Betrieb (adesso AG) bearbeitet -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns="http://www.kv-telematik.de/1-Click/Meldung_Einlieferung/1.0.0" targetNamespace="http://www.kv-telematik.de/1-Click/Meldung_Einlieferung/1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../Schema/KVTA_Datentypen_1_0_0.xsd"/>
+	<xs:element name="einlieferung">
+		<xs:annotation>
+			<xs:documentation>Einlieferungsdokument für die Arzt Abrechnung in die KV.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="Einlieferung_typ">
+					<xs:sequence>
+						<xs:element name="bsnr">
+							<xs:complexType>
+								<xs:attribute name="V" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="9"/>
+											<xs:whiteSpace value="collapse"/>
+											<xs:pattern value="[0-9]+"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="testdaten">
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:boolean" use="required"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="lieferungs_zeitpunkt">
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:dateTime" use="required"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="dokumenten_typ">
+							<xs:annotation>
+								<xs:documentation>Fix: ABRECHNUNG (Wird als Schlüssel benutzt um das Dokument einer Gruppe von Dokumenten zuzuordnen).</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" type="Abstrakt_dokumententyp_typ" use="required" fixed="ABRECHNUNG"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="quartal">
+							<xs:annotation>
+								<xs:documentation>Abrechnungszeitraum mit Jahresangabe, z.B.: für 1 Quartal 2011 ist 2011-1 zu übermitteln</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" use="required">
+									<xs:annotation>
+										<xs:appinfo>
+											<altova:exampleValues>
+												<altova:example value="2011-1"/>
+												<altova:example value="2011-2"/>
+												<altova:example value="2011-3"/>
+												<altova:example value="2011-4"/>
+											</altova:exampleValues>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:length value="6"/>
+											<xs:pattern value="[\d]{4}[\-]+[1-4]+"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="vollstaendig">
+							<xs:annotation>
+								<xs:documentation>True: Abrechnung ist vollständig, Sonst: False ( Z.B. Bei meheren Teillieferung aus Nebenbetriebsstätten.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:boolean" use="required"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="anhang" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>CON Dokument, XKM und ggf. Sammelerklärung, erkennbar an den Dokumentenendungen.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

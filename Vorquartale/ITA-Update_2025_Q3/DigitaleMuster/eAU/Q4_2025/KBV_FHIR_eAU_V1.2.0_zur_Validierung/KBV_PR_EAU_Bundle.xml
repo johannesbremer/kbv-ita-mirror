@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-PR-EAU-Bundle" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Bundle" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_EAU_Bundle" />
+  <status value="active" />
+  <date value="2025-03-25" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="cda" />
+    <uri value="http://hl7.org/v3/cda" />
+    <name value="CDA (R2)" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Bundle" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Bundle">
+      <path value="Bundle" />
+      <constraint>
+        <key value="-eau-angabePruefnummerPflicht" />
+        <severity value="error" />
+      	<human value="In der Ressource vom Typ Composition ist keine Prüfnummer vorhanden, diese ist aber eine Pflichtangabe bei den Kostentraegern der Typen &quot;GKV&quot;, &quot;BG&quot;, &quot;SKT&quot; oder &quot;UK&quot;." />
+        <expression value="(entry.where(resource is Composition).exists() and entry.where(resource is Coverage).exists() and (entry.where(resource is Coverage).resource.type.coding.code='GKV' or entry.where(resource is Coverage).resource.type.coding.code='BG' or entry.where(resource is Coverage).resource.type.coding.code='SKT' or entry.where(resource is Coverage).resource.type.coding.code='UK')) implies entry.where(resource is Composition).resource.author.identifier.where(system='https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer').exists()" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabePatientPLZPflicht" />
+        <severity value="error" />
+        <human value="In der Ressource vom Typ Patient ist keine Postleitzahl vorhanden, diese ist aber eine Pflichtangabe bei den Kostentraegern der Typen &quot;GKV&quot;, &quot;BG&quot;, &quot;SKT&quot; oder &quot;UK&quot; falls der Wohnsitzländercode der Versichertenanschrift den Wert &quot;D&quot; hat." />
+        <expression value="(entry.where(resource is Patient).resource.address.country.exists() and entry.where(resource is Patient).resource.address.country = 'D' and (entry.where(resource is Coverage).resource.type.coding.code='GKV' or entry.where(resource is Coverage).resource.type.coding.code='BG' or entry.where(resource is Coverage).resource.type.coding.code='SKT' or entry.where(resource is Coverage).resource.type.coding.code='UK' or entry.where(resource is Coverage).resource.type.coding.code='PKV')) implies entry.where(resource is Patient).resource.address.postalCode.exists()" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeRechtsgrundlagePflicht" />
+        <severity value="error" />
+        <human value="In einer Ressource vom Typ Composition ist kein Rechtsgrundlage vorhanden, diese ist aber eine Pflichtangabe bei den Kostenträgern der Typen &quot;GKV&quot;, &quot;BG&quot;, &quot;SKT&quot; oder &quot;UK&quot;." />
+        <expression value="(entry.where(resource is Composition).exists() and entry.where(resource is Coverage).exists() and (entry.where(resource is Coverage).resource.type.coding.code='GKV' or entry.where(resource is Coverage).resource.type.coding.code='BG' or entry.where(resource is Coverage).resource.type.coding.code='SKT' or entry.where(resource is Coverage).resource.type.coding.code='UK' or entry.where(resource is Coverage).resource.type.coding.code='PKV')) implies entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').exists()" />
+      </constraint>
+	  <constraint>
+        <key value="-eau-uniqueServiceRequest" />
+        <severity value="error" />
+        <human value="Jede Maßnahme (weitere Schritte in der Behandlung des Patienten) darf nur einmal angegeben werden." />
+        <expression value="entry.select(resource as ServiceRequest).code.coding.code.isDistinct()" />
+      </constraint>
+      <constraint>
+        <key value="-eau-versionComposition" /> 
+        <severity value="error" />
+        <human value="Die Instanz der Ressource Composition muss vom Profil KBV_PR_EAU_Composition|1.2.0 sein." />
+        <expression value="entry.where(resource is Composition).exists() implies entry.where(resource is Composition).resource.meta.profile = 'https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Composition|1.2'" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeIdentifikatorAusstellendePersonPflicht" />
+        <severity value="error" />
+		<human value="In der Ressource vom Typ Practitioner ist der Identifikator der ausstellenden oder verschreibenden Person nicht vorhanden, dieser ist aber eine Pflichtangabe bei den Kostentraegern der Typen &quot;GKV&quot;, &quot;BG&quot;, &quot;SKT&quot;, &quot;UK&quot; oder &quot;PKV&quot;, wenn es sich um einen Arzt, Zahnarzt oder Arzt als Vertreter handelt und keine ASV-Fachgruppennummer angegeben ist."/>
+		<expression value="entry.where(resource is Practitioner).exists() and entry.where(resource is Coverage).exists()  and (entry.where(resource is Coverage).resource.type.coding.code='GKV' or entry.where(resource is Coverage).resource.type.coding.code='BG' or entry.where(resource is Coverage).resource.type.coding.code='SKT' or entry.where(resource is Coverage).resource.type.coding.code='UK' or entry.where(resource is Coverage).resource.type.coding.code='PKV')and entry.where(resource is Composition).resource.author.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').all($this.code='00' or $this.code='01' or $this.code='04') implies entry.where(resource is Composition).resource.author.reference.resolve().identifier.exists() or entry.where(resource is Composition).resource.author.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Fachgruppennummer_ASV').code.exists()" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeVerantwortlichePersonVerbot-1" />
+        <severity value="error" />
+		<human value="Eine Ressource vom Typ Practitioner wird als verantwortliche Person angegeben, diese darf aber nur angegeben werden, wenn es sich bei der ausstellenden Person um einen Arzt in Weiterbildung oder Arzt als Vertreter handelt."/>
+		<expression value="entry.where(resource is Composition).resource.attester.party.reference.exists() implies entry.where(resource is Composition).resource.author.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').all($this.code='03' or $this.code='04')"  />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeVerantwortlichePersonVerbot-2" />
+        <severity value="error" />
+		<human value="Eine Ressource vom Typ Practitioner wird als verantwortliche Person angegeben, diese darf aber nur angegeben werden, wenn es sich nicht um eine Hebamme oder einen Arzt in Weiterbildung handelt."/>
+		<expression value="entry.where(resource is Composition).resource.attester.party.reference.exists() implies entry.where(resource is Composition).resource.attester.party.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').all($this.code!='02' and $this.code!='03')" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeIdentifikatorVerantwortlichePersonPflicht" />
+        <severity value="error" />
+		<human value="In der Ressource vom Typ Practitioner ist der Identifikator der verantwortlichen Person nicht vorhanden, dieser ist aber eine Pflichtangabe bei den Kostentraegern der Typen &quot;GKV&quot;, &quot;BG&quot;, &quot;SKT&quot; oder &quot;UK&quot;, wenn es sich um einen Arzt, Zahnarzt oder Arzt als Vertreter handelt und keine ASV-Fachgruppennummer angegeben ist."/>
+		<expression value="entry.where(resource is Practitioner).exists() and entry.where(resource is Coverage).exists() and (entry.where(resource is Coverage).resource.type.coding.code='GKV' or entry.where(resource is Coverage).resource.type.coding.code='BG' or entry.where(resource is Coverage).resource.type.coding.code='SKT' or entry.where(resource is Coverage).resource.type.coding.code='UK') and entry.where(resource is Composition).resource.attester.party.reference.exists() and entry.where(resource is Composition).resource.attester.party.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').all($this.code='00' or $this.code='01' or $this.code='04') implies entry.where(resource is Composition).resource.attester.party.reference.resolve().identifier.exists() or entry.where(resource is Composition).resource.attester.party.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Fachgruppennummer_ASV').code.exists()" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeFachgruppennummerAsvAusstellendePersonVerbot" />
+        <severity value="error" />
+		<human value="In einer Ressource vom Typ Practitioner ist eine ASV-Fachgruppennummer der ausstellenden Person vorhanden, diese darf aber nur angegeben werden, wenn die Rechtsgrundlage den Wert &quot;01&quot; oder &quot;11&quot; besitzt und wenn es sich um einen Arzt oder Arzt als Vertreter handelt, für den kein Identifikator angegeben ist."/>
+		<expression value="entry.where(resource is Composition).resource.author.reference.resolve().qualification.where(code.coding.system='https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Fachgruppennummer_ASV').exists() and entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').exists() implies entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').all(($this.value as Coding).code='01' or ($this.value as Coding).code='11') and entry.where(resource is Composition).resource.author.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').all($this.code='00' or $this.code='04') and entry.where(resource is Composition).resource.author.reference.resolve().identifier.exists().not()" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeFachgruppennummerAsvVerantwortlichePersonVerbot" />
+        <severity value="error" />
+		<human value="In einer Ressource vom Typ Practitioner ist eine ASV-Fachgruppennummer der verantwortlichen Person vorhanden, diese darf aber nur angegeben werden, wenn die Rechtsgrundlage den Wert &quot;01&quot; oder &quot;11&quot; besitzt und wenn es sich um einen Arzt oder Arzt als Vertreter handelt, für den kein Identifikator angegeben ist."/>
+		<expression value="entry.where(resource is Composition).resource.attester.exists() and entry.where(resource is Composition).resource.attester.party.reference.resolve().qualification.where(code.coding.system='https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Fachgruppennummer_ASV').exists() and entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').exists() implies entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').all(($this.value as Coding).code='01' or ($this.value as Coding).code='11') and entry.where(resource is Composition).resource.attester.party.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').all($this.code='00' or $this.code='04') and entry.where(resource is Composition).resource.attester.party.reference.resolve().identifier.exists().not()" />
+      </constraint>
+      <constraint>
+        <key value="-eau-referenzAufAusstellendePerson-1" />
+        <severity value="error" />
+        <human value="In der Ressource vom Typ Condition zeigt die Referenz nicht auf die Ressource vom Typ Practitioner fuer die ausstellende/verschreibende Person." />
+        <expression value="entry.select((resource as Condition).asserter.reference = %context.entry.where(resource is Composition).resource.author.reference).allTrue()" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeIdentifikatorEinrichtungPflicht" />
+        <severity value="error" />
+		<human value="In einer Ressource vom Typ Organization ist kein Identifikator der Einrichtung (z.B. Betriebsstaettennummer) vorhanden, diese ist aber eine Pflichtangabe bei den Kostentraegern der Typen &quot;GKV&quot;, &quot;PKV&quot;, &quot;BG&quot;, &quot;SKT&quot; oder &quot;UK&quot;, wenn es sich bei der austellenden/verschreibenden Person um einen Arzt, Zahnarzt, Arzt in Weiterbildung oder Arzt als Vertreter handelt."/>
+		<expression value="entry.where(resource is Organization).exists() and entry.where(resource is Coverage).exists() and (entry.where(resource is Coverage).resource.type.coding.code='GKV' or entry.where(resource is Coverage).resource.type.coding.code='BG' or entry.where(resource is Coverage).resource.type.coding.code='SKT' or entry.where(resource is Coverage).resource.type.coding.code='UK' or entry.where(resource is Coverage).resource.type.coding.code='PKV') and entry.where(resource is Composition).resource.author.reference.exists() and entry.where(resource is Composition).resource.author.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').all($this.code='00' or $this.code='01' or $this.code='03' or $this.code='04') implies entry.where(resource is Organization).resource.identifier.exists()" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeAUseitErstbescheinigung" />
+        <severity value="error" />
+        <human value="Die Angabe arbeitsunfaehig seit ist nicht gesetzt, muss aber bei einer Erstbescheinigung gesetzt werden." />
+        <expression value="(entry.where(resource is Composition).resource.type.coding.where(system = 'https://fhir.kbv.de/CodeSystem/KBV_CS_EAU_AU_Type').code = 'ERST' or entry.where(resource is Composition).resource.type.coding.where(system = 'https://fhir.kbv.de/CodeSystem/KBV_CS_EAU_AU_Type').code = 'ERST_END') implies ((entry.select(resource as Condition).where(meta.profile = 'https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Condition_AU|1.2').onset as Period).start.exists())" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeAUseitFolgebescheinigung" />
+        <severity value="error" />
+        <human value="Die Angabe arbeitsunfaehig seit darf  bei einer Folgebescheinigung nicht gesetzt werden." />
+        <expression value="(entry.where(resource is Composition).resource.type.coding.where(system = 'https://fhir.kbv.de/CodeSystem/KBV_CS_EAU_AU_Type').code = 'FOLGE' or entry.where(resource is Composition).resource.type.coding.where(system = 'https://fhir.kbv.de/CodeSystem/KBV_CS_EAU_AU_Type').code = 'FOLGE_END') implies ((entry.select(resource as Condition).where(meta.profile = 'https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Condition_AU|1.2').onset as Period).start.empty())" />
+      </constraint>
+	  <constraint>
+        <key value="-eau-angabeVersichertenIDbeiGKV" />
+        <severity value="error" />
+        <human value="In der Ressource vom Typ Patient ist keine VersichertenID vorhanden, diese ist aber eine Pflichtangabe beim Kostenträger des Typs &quot;GKV&quot;, falls ein Identifikator des Patienten angegeben ist." />
+        <expression value="entry.where(resource is Coverage).exists() and entry.where(resource is Coverage).resource.type.coding.code='GKV' and entry.where(resource is Patient).resource.identifier.exists() implies entry.where(resource is Patient).resource.identifier.type.coding.exists(code='KVZ10')" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeVersichertenIDbeiPKV" />
+        <severity value="error" />
+        <human value="In der Ressource vom Typ Patient ist keine VersichertenID vorhanden, diese ist aber eine Pflichtangabe beim Kostenträger des Typs &quot;PKV&quot;, falls ein Identifikator des Patienten angegeben ist." />
+        <expression value="entry.where(resource is Coverage).exists() and entry.where(resource is Coverage).resource.type.coding.code='PKV' and entry.where(resource is Patient).resource.identifier.exists() implies entry.where(resource is Patient).resource.identifier.type.coding.exists(code='KVZ10')" />
+      </constraint>
+	  <constraint>
+        <key value="-eau-angabeVersichertennummerBeiSKT" />
+        <severity value="error" />
+        <human value="In der Ressource vom Typ Patient ist keine Versichertennummer oder VersichertenID vorhanden, diese ist aber eine Pflichtangabe beim Kostenträger des Typs &quot;SKT&quot;, falls ein Identifikator des Patienten angegeben ist." />
+        <expression value="entry.where(resource is Coverage).exists() and entry.where(resource is Coverage).resource.type.coding.code='SKT' and entry.where(resource is Patient).resource.identifier.exists() implies entry.where(resource is Patient).resource.identifier.type.coding.code='kvk' or entry.where(resource is Patient).resource.identifier.type.coding.exists(code='KVZ10')" />
+      </constraint>
+	  <constraint>
+        <key value="-eau-angabeTeilweiseArbeitsfaehigPKV" />
+        <severity value="error" />
+        <human value="Die Angabe von Teilweise arbeitsfaehig ab, darf nur bei einer/einem PKV-Versicherten erfolgen." />
+        <expression value="entry.where(resource is Condition and resource.meta.profile = 'https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Condition_AU|1.2').resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_partially_employable').exists() implies entry.where(resource is Coverage).resource.type.coding.code='PKV'" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeBerufsunfaehigPKV" />
+        <severity value="error" />
+        <human value="Die Angabe der Berufsunfaehigkeit, darf nur bei einer/einem PKV-Versicherten erfolgen." />
+        <expression value="entry.where(resource is Condition and resource.meta.profile = 'https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Condition_AU|1.2').resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_unemployability').exists() implies entry.where(resource is Coverage).resource.type.coding.code='PKV'" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeAufnahmedatumNurPKV" />
+        <severity value="error" />
+        <human value="Die Angabe des Aufnahmedatums, darf ausschließlich bei einer/einem PKV-Versicherten für die Angabe von Leistungen zur Reha oder stationaeren Heilbehandlung erfolgen." />
+        <expression value="(entry.where(resource is ServiceRequest).exists() and entry.where(resource is ServiceRequest and resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_admission_date').exists()).exists()) implies (entry.where(resource is Coverage).resource.type.coding.code='PKV')" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeEntlassdatumNurPKV" />
+        <severity value="error" />
+        <human value="Die Angabe des Entlassungsdatums, darf ausschließlich bei einer/einem PKV-Versicherten für die Angabe von Leistungen zur Reha oder stationaeren Heilbehandlung erfolgen." />
+        <expression value="(entry.where(resource is ServiceRequest).exists() and entry.where(resource is ServiceRequest and resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_discharge_date').exists()).exists()) implies (entry.where(resource is Coverage).resource.type.coding.code='PKV')" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeStationaereHeilbehandlungPKV" />
+        <severity value="error" />
+        <human value="Die Angabe zur stationaeren Heilbehandlung, darf nur bei einer/einem PKV-Versicherten erfolgen." />
+        <expression value="(entry.where(resource is ServiceRequest and resource.code.coding.code = 'stationaere_heilbehandlung').exists()) implies ( entry.where(resource is Coverage).resource.type.coding.code='PKV')" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeWiedereingliederungabPKV" />
+        <severity value="error" />
+        <human value="Die Angabe des Beginns der Wiedereingliederung, darf nur bei einer/einem PKV-Versicherten erfolgen." />
+        <expression value="(entry.where(resource is ServiceRequest).exists() and entry.where(resource is ServiceRequest and resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_reintegration_date').exists()).exists()) implies (entry.where(resource is Coverage).resource.type.coding.code='PKV')" />
+      </constraint>
+      <constraint>
+        <key value="-eau-geburtsdatumPatient" />
+        <severity value="error" />
+        <human value="Das Geburtsdatum des Patienten darf nicht nach dem Ausstellungsdatum liegen." />
+        <expression value="entry.where(resource is Patient).exists() and entry.where(resource is Patient).resource.birthDate.exists() and entry.where(resource is Composition).resource.date.exists() implies entry.where(resource is Patient).resource.birthDate.toString() = entry.where(resource is Composition).resource.date.toString().substring(0,4) or entry.where(resource is Patient).resource.birthDate = entry.where(resource is Composition).resource.date.toString().substring(0,7) or entry.where(resource is Patient).resource.birthDate &lt;= entry.where(resource is Composition).resource.date" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeAsvTeamnummerPflicht" />
+        <severity value="error" />
+        <human value="Es ist keine Ressource vom Typ PractitionerRole mit einer ASV-Teamnummer der ausstellenden Person zugeordnet, obwohl in der Ressource vom Typ Composition die Rechtsgrundlage den Wert &quot;01&quot; oder &quot;11&quot; besitzt." />
+        <expression value="entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').exists() and entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').all(($this.value as Coding).code='01' or ($this.value as Coding).code='11') implies entry.where(resource is Composition).resource.section.code.coding.where(code='FOR_PractitionerRole').exists()" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeAsvTeamnummerVerbot" />
+        <severity value="error" />
+        <human value="Es ist eine Ressource vom Typ PractitionerRole mit einer ASV-Teamnummer der ausstellenden Person zugeordnet, obwohl in der Ressource vom Typ Composition die Rechtsgrundlage nicht den Wert &quot;01&quot; oder &quot;11&quot; besitzt." />
+        <expression value="entry.where(resource is Composition).resource.section.code.coding.where(code='FOR_PractitionerRole').exists() implies entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').exists() and entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').all(($this.value as Coding).code='01' or ($this.value as Coding).code='11')" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeKZV-AbrechnungsnummerPflicht" />
+        <severity value="error" />
+        <human value="Bei der Ressource vom Typ Practitioner für die austellende/verschreibende Person handelt es sich um einen Zahnarzt, obwohl die Ressource vom Typ Organization als Identifikator keine KZV-Abrechnungsnummer besitzt." />
+        <expression value="entry.where(resource is Practitioner).exists() and entry.where(resource is Composition).resource.author.reference.exists() and entry.where(resource is Composition).resource.author.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').code='01' and entry.where(resource is Organization).resource.identifier.exists() implies entry.where(resource is Organization).resource.identifier.where(system='http://fhir.de/sid/kzbv/kzvabrechnungsnummer').exists()" />
+      </constraint>
+      <constraint>
+        <key value="-eau-angabeKZV-AbrechnungsnummerVerbot" />
+        <severity value="error" />
+        <human value="Bei der Ressource vom Typ Practitioner für die austellende/verschreibende Person handelt es sich nicht um einen Zahnarzt, obwohl die Ressource vom Typ Organization als Identifikator eine KZV-Abrechnungsnummer besitzt." />
+        <expression value="entry.where(resource is Practitioner).exists() and entry.where(resource is Composition).resource.author.reference.exists() and entry.where(resource is Composition).resource.author.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').code!='01' and entry.where(resource is Organization).resource.identifier.exists() implies entry.where(resource is Organization).resource.identifier.where(system='http://fhir.de/sid/kzbv/kzvabrechnungsnummer').exists().not()" />
+      </constraint>
+	  <constraint>
+        <key value="-eau-angabePatientenAdressePflicht" />
+        <severity value="error" />
+        <human value="In der Ressource vom Typ Patient ist keine Adresse vorhanden, diese ist aber eine Pflichtangabe." />
+        <expression value="entry.where(resource is Patient).exists() implies entry.where(resource is Patient).resource.address.exists()" />
+      </constraint>
+      <constraint>
+        <key value="-eau-referenzAufAusstellendePerson-2" />
+        <severity value="error" />
+        <human value="In der Ressource vom Typ PractitionerRole mit einer ASV-Teamnummer zeigt die Referenz nicht auf die Ressource vom Typ Practitioner für die ausstellende/verschreibende Person." />
+        <expression value="entry.where(resource is Composition).exists() and entry.where(resource is PractitionerRole).exists() implies entry.where(resource is PractitionerRole).resource.practitioner.reference.distinct()=entry.where(resource is Composition).resource.author.reference" />
+      </constraint>
+	  <constraint>
+		<key value="-eau-angabeVerantwortlichePersonPflicht" />
+		<severity value="error" />
+		<human value="Es wird keine Ressource vom Typ Practitioner als verantwortliche Person angegeben, dies ist aber eine Pflichtangabe, wenn es sich bei der ausstellenden oder verschreibenden Person um einen Arzt in Weiterbildung ohne Identifikator handelt." />
+		<expression value="entry.where(resource is Composition).resource.author.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').all($this.code='03') and entry.where(resource is Composition).resource.author.reference.resolve().identifier.exists().not() implies entry.where(resource is Composition).resource.attester.party.exists()" />
+	  </constraint>
+	</element>
+    <element id="Bundle.id">
+      <path value="Bundle.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.meta">
+      <path value="Bundle.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.meta.versionId">
+      <path value="Bundle.meta.versionId" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.meta.lastUpdated">
+      <path value="Bundle.meta.lastUpdated" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.meta.source">
+      <path value="Bundle.meta.source" />
+      <max value="0" />
+    </element>
+	<element id="Bundle.meta.profile">
+      <path value="Bundle.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Bundle|1.2" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.meta.security">
+      <path value="Bundle.meta.security" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.meta.tag">
+      <path value="Bundle.meta.tag" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.implicitRules">
+      <path value="Bundle.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.language">
+      <path value="Bundle.language" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.identifier">
+      <path value="Bundle.identifier" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.identifier.use">
+      <path value="Bundle.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.identifier.type">
+      <path value="Bundle.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.identifier.system">
+      <path value="Bundle.identifier.system" />
+      <definition value="Festlegung damit eine UUID kommt" />
+      <min value="1" />
+      <fixedUri value="urn:ietf:rfc:3986" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.identifier.value">
+      <path value="Bundle.identifier.value" />
+      <definition value="Eindeutige UUID" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.identifier.period">
+      <path value="Bundle.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.identifier.assigner">
+      <path value="Bundle.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.type">
+      <path value="Bundle.type" />
+      <fixedCode value="document" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.timestamp">
+      <path value="Bundle.timestamp" />
+      <definition value="DateTime wann das Dokument technisch erstellt wurde. &#xD;&#xA;Fachlich bildet das Ausstellungsdatum das entscheidende Datum ab" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.total">
+      <path value="Bundle.total" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.link">
+      <path value="Bundle.link" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry">
+      <path value="Bundle.entry" />
+      <slicing>
+        <discriminator>
+          <type value="profile" />
+          <path value="resource" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="7" />
+      <max value="20" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Dokumenteninformation">
+      <path value="Bundle.entry" />
+      <sliceName value="Dokumenteninformation" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Dokumenteninformation.link">
+      <path value="Bundle.entry.link" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Dokumenteninformation.fullUrl">
+      <path value="Bundle.entry.fullUrl" />
+      <min value="1" />
+    </element>
+    <element id="Bundle.entry:Dokumenteninformation.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Composition" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Composition|1.2" />
+      </type>
+    </element>
+    <element id="Bundle.entry:Dokumenteninformation.search">
+      <path value="Bundle.entry.search" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Dokumenteninformation.request">
+      <path value="Bundle.entry.request" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Dokumenteninformation.response">
+      <path value="Bundle.entry.response" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Krankenversicherungsverhaeltnis">
+      <path value="Bundle.entry" />
+      <sliceName value="Krankenversicherungsverhaeltnis" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Krankenversicherungsverhaeltnis.link">
+      <path value="Bundle.entry.link" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Krankenversicherungsverhaeltnis.fullUrl">
+      <path value="Bundle.entry.fullUrl" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Krankenversicherungsverhaeltnis.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Coverage" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage|1.2" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Krankenversicherungsverhaeltnis.search">
+      <path value="Bundle.entry.search" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Krankenversicherungsverhaeltnis.request">
+      <path value="Bundle.entry.request" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Krankenversicherungsverhaeltnis.response">
+      <path value="Bundle.entry.response" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Patient">
+      <path value="Bundle.entry" />
+      <sliceName value="Patient" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Patient.link">
+      <path value="Bundle.entry.link" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Patient.fullUrl">
+      <path value="Bundle.entry.fullUrl" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Patient.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Patient" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2" />
+      </type>
+      <mustSupport value="true" />
+
+    </element>
+    <element id="Bundle.entry:Patient.search">
+      <path value="Bundle.entry.search" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Patient.request">
+      <path value="Bundle.entry.request" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Patient.response">
+      <path value="Bundle.entry.response" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Einrichtung">
+      <path value="Bundle.entry" />
+      <sliceName value="Einrichtung" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Einrichtung.link">
+      <path value="Bundle.entry.link" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Einrichtung.fullUrl">
+      <path value="Bundle.entry.fullUrl" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Einrichtung.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Organization" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.2" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Einrichtung.search">
+      <path value="Bundle.entry.search" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Einrichtung.request">
+      <path value="Bundle.entry.request" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Einrichtung.response">
+      <path value="Bundle.entry.response" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:AusstellendeVerschreibendeVerantwortlichePerson">
+      <path value="Bundle.entry" />
+      <sliceName value="AusstellendeVerschreibendeVerantwortlichePerson" />
+      <min value="1" />
+      <max value="2" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:AusstellendeVerschreibendeVerantwortlichePerson.link">
+      <path value="Bundle.entry.link" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:AusstellendeVerschreibendeVerantwortlichePerson.fullUrl">
+      <path value="Bundle.entry.fullUrl" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:AusstellendeVerschreibendeVerantwortlichePerson.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Practitioner" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner|1.2" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:AusstellendeVerschreibendeVerantwortlichePerson.search">
+      <path value="Bundle.entry.search" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:AusstellendeVerschreibendeVerantwortlichePerson.request">
+      <path value="Bundle.entry.request" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:AusstellendeVerschreibendeVerantwortlichePerson.response">
+      <path value="Bundle.entry.response" />
+      <min value="0" />
+    </element>
+    <element id="Bundle.entry:ASV-Ausuebung">
+      <path value="Bundle.entry" />
+      <sliceName value="ASV-Ausuebung" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:ASV-Ausuebung.link">
+      <path value="Bundle.entry.link" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:ASV-Ausuebung.fullUrl">
+      <path value="Bundle.entry.fullUrl" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:ASV-Ausuebung.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="PractitionerRole" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_PractitionerRole|1.2" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:ASV-Ausuebung.search">
+      <path value="Bundle.entry.search" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:ASV-Ausuebung.request">
+      <path value="Bundle.entry.request" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:ASV-Ausuebung.response">
+      <path value="Bundle.entry.response" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Angaben_zur_eAU">
+      <path value="Bundle.entry" />
+      <sliceName value="Angaben_zur_eAU" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Angaben_zur_eAU.link">
+      <path value="Bundle.entry.link" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Angaben_zur_eAU.fullUrl">
+      <path value="Bundle.entry.fullUrl" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Angaben_zur_eAU.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Condition" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Condition_AU|1.2" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Angaben_zur_eAU.search">
+      <path value="Bundle.entry.search" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Angaben_zur_eAU.request">
+      <path value="Bundle.entry.request" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Angaben_zur_eAU.response">
+      <path value="Bundle.entry.response" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:ICD">
+      <path value="Bundle.entry" />
+      <sliceName value="ICD" />
+      <min value="1" />
+      <max value="6" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:ICD.link">
+      <path value="Bundle.entry.link" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:ICD.fullUrl">
+      <path value="Bundle.entry.fullUrl" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:ICD.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Condition" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Condition_ICD|1.2" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:ICD.search">
+      <path value="Bundle.entry.search" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:ICD.request">
+      <path value="Bundle.entry.request" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:ICD.response">
+      <path value="Bundle.entry.response" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:WeitereSchritte">
+      <path value="Bundle.entry" />
+      <sliceName value="WeitereSchritte" />
+      <max value="5" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:WeitereSchritte.link">
+      <path value="Bundle.entry.link" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:WeitereSchritte.fullUrl">
+      <path value="Bundle.entry.fullUrl" />
+      <min value="1" />
+    </element>
+    <element id="Bundle.entry:WeitereSchritte.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="ServiceRequest" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_ServiceRequest_steps|1.2" />
+      </type>
+    </element>
+    <element id="Bundle.entry:WeitereSchritte.search">
+      <path value="Bundle.entry.search" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:WeitereSchritte.request">
+      <path value="Bundle.entry.request" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:WeitereSchritte.response">
+      <path value="Bundle.entry.response" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Diagnoseklartext">
+      <path value="Bundle.entry" />
+      <sliceName value="Diagnoseklartext" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Diagnoseklartext.link">
+      <path value="Bundle.entry.link" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Diagnoseklartext.fullUrl">
+      <path value="Bundle.entry.fullUrl" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Diagnoseklartext.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Condition" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Condition_Text|1.2" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Diagnoseklartext.search">
+      <path value="Bundle.entry.search" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Diagnoseklartext.request">
+      <path value="Bundle.entry.request" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry:Diagnoseklartext.response">
+      <path value="Bundle.entry.response" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.signature">
+      <path value="Bundle.signature" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.signature.who.reference">
+      <path value="Bundle.signature.who.reference" />
+      <min value="1" />
+    </element>
+    <element id="Bundle.signature.who.type">
+      <path value="Bundle.signature.who.type" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.signature.who.identifier">
+      <path value="Bundle.signature.who.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.signature.who.display">
+      <path value="Bundle.signature.who.display" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

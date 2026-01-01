@@ -1,0 +1,1254 @@
+<Bundle xmlns="http://hl7.org/fhir">	
+<id value="10000"/>
+<meta>
+	<versionId value="1" />
+	<lastUpdated value="2020-09-24T12:52:00+00:00" />
+	<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Bundle_Patientenakte|1.2.0"/>
+</meta>
+<type value="history"/>
+<entry>
+<fullUrl value="http://test.local/fhir/Claim/3197"/>
+<resource>
+<Claim>
+	<id value="3197"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-18T09:49:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Abrechnung_Vorlaeufig|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Abrechnung Ã¼ber Blutdruckmessung
+		</div>
+	</text>
+	<status value="active"/>
+	<type>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/claim-type"/>
+			<code value="professional"/>
+		</coding>
+	</type>
+	<subType>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Art"/>
+			<code value="Abrechnung_Vorlaeufig"/>
+		</coding>
+	</subType>
+	<use value="predetermination"/>
+	<patient>
+		<reference value="Patient/1040"/>
+	</patient>
+	<created value="2020-08-18"/>
+	<provider>
+		<reference value="PractitionerRole/1010"/>
+	</provider>
+	<priority>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/processpriority"/>
+			<code value="normal"/> 
+		</coding>
+	</priority>
+	<insurance>
+		<sequence value="1"/>
+		<focal value="true"/>
+		<coverage>
+			<display value="N.N."/>
+		</coverage>
+	</insurance>
+	<item>
+		<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Abrechnung_spezielle_Abrechnungsbegruendung">
+			<extension url="art_der_Untersuchung">
+				<valueString value="Blutdruckmessung"/>
+			</extension>
+			<extension url="name_des_Arztes">
+				<valueString value="Dr. Müller"/>
+			</extension>
+			<extension url="poststationaer_erbrachte_Leistung">
+				<valueBoolean value="false"/>
+			</extension>
+			<extension url="freie_Begruendung">
+				<valueString value="Die Patientin leidet an extremer externer Pigmentation."/>
+			</extension>
+			<extension url="prozent_der_Leistung">
+				<valueQuantity>
+					<value value="20"/>
+					<unit value="Prozent"/>
+					<system value="http://unitsofmeasure.org"/>
+					<code value="%"/>
+				</valueQuantity>
+			</extension>
+			<extension url="gop_fuer_bezugsperson">
+				<valueBoolean value="false"/>
+			</extension>
+			<extension url="wiederholungsuntersuchung">
+				<valueBoolean value="true"/>
+			</extension>
+			<extension url="gop_Zusatz">
+				<valueString value="ein GOP-Zusatz"/>
+			</extension>
+			<extension url="patientennummer_EDV_des_FEK-Bogens">
+				<valueString value="66548/665"/>
+			</extension>
+			<extension url="tsvg_Vermittlungsart">
+				<valueCodeableConcept>
+					<coding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_TSVG_Vermittlungsart"/>
+						<code value="5"/>
+					</coding>
+				</valueCodeableConcept>
+			</extension>
+			<extension url="tsvg_Kontaktaufnahme">
+				<valueDate value="2020-08-15"/>
+			</extension>
+			<extension url="tsvg_Vermittler_FA">
+				<valueReference>
+					<identifier>
+						<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"/>
+						<value value="882244665"/>
+					</identifier>
+				</valueReference>
+			</extension>
+		</extension>
+		<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_istAbrechnungsrelevant">
+			<valueBoolean value="true"/>
+		</extension>
+		<sequence value="1"/>
+		<category>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Item_Kategorie"/>
+				<code value="GOP"/>
+			</coding>
+		</category>
+		<productOrService>
+			<coding>
+				<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_EBM"/>
+				<code value="11111111"/>
+			</coding>
+		</productOrService>
+		<quantity>
+			<value value="1"/>
+			<unit value="1"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="1"/>
+		</quantity>
+		<unitPrice>
+			<value value="7.89"/>
+			<currency value="EUR"/>
+		</unitPrice>
+		<factor value="1.22"/>
+		<encounter>
+			<reference value="Encounter/3188"/>
+		</encounter>
+	</item>
+</Claim>
+</resource>
+	<request>
+	<method value="PUT"/>
+	<url value="Claim/3197"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Procedure/3200"/>
+<resource>
+<Procedure>
+	<id value="3200"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-11T14:49:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Ambulante_Operation|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<partOf>
+		<reference value="Procedure/3199"/>
+	</partOf>
+	<status value="completed"/>
+	<category>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp"/>
+			<code value="Ambulante_Operation"/>
+		</coding>
+	</category>
+	<code>
+		<coding>
+			<system value="http://fhir.de/CodeSystem/dimdi/ops"/>
+			<version value="2020"/>
+			<code value="5-380.34"/>
+		</coding>
+	</code>
+	<subject>
+		<reference value="Patient/1040"/>
+	</subject>
+	<performedDateTime value="2020-02-22"/>
+	<reasonCode>
+		<coding>
+			<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_EBM"/>
+			<code value="31157"/>
+		</coding>
+	</reasonCode>
+	<complication>
+		<text value="Wundinfektion"/>
+	</complication>
+</Procedure>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Procedure/3200"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Procedure/3199"/>
+<resource>
+<Procedure>
+	<id value="3199"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-11T16:49:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Ambulante_Operation_General|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Ambulante_Operation_Zusatzinfo">
+		<valueQuantity>
+			<value value="25"/>
+			<unit value="Minuten"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="min"/>
+		</valueQuantity>
+	</extension>
+	<status value="completed"/>
+	<category>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp"/>
+			<code value="Ambulante_Operation_General"/>
+		</coding>
+	</category>
+	<code>
+		<coding>
+			<system value="http://fhir.de/CodeSystem/dimdi/ops"/>
+			<version value="2020"/>
+			<code value="5-380.34"/>
+		</coding>
+	</code>
+	<subject>
+		<reference value="Patient/1040"/>
+	</subject>
+	<encounter>
+		<reference value="Encounter/3188"/>
+	</encounter>
+	<performedDateTime value="2020-02-22"/>
+	<reasonCode>
+		<coding>
+			<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_EBM"/>
+			<code value="31157"/>
+		</coding>
+	</reasonCode>
+	<complication>
+		<text value="Wundinfektion"/>
+	</complication>
+	<complication>
+		<text value="Schnittwunde"/>
+	</complication>
+	<note>
+		<text value="UnauffÃ¤lliger Verlauf; In der Folge leichte Infektion der Wunde."/>
+	</note>
+</Procedure>
+</resource>
+	<request>
+	<method value="PUT"/>
+	<url value="Procedure/3199"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/DocumentReference/3221"/>
+<resource>
+<DocumentReference>
+	<id value="3221"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-13T15:33:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Anlage|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			PatientenverfÃ¼gung vom 21.07.2013 
+		</div>
+	</text>
+	<masterIdentifier>
+		<type>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Anlage_Identifiertyp"/>
+				<code value="Spezifikationsversion"/>
+			</coding>
+		</type>
+		<value value="1.23"/>
+	</masterIdentifier>
+	<identifier>
+		<type>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Anlage_Identifiertyp"/>
+				<code value="Bezeichnung"/>
+			</coding>
+		</type>
+		<value value="Patientenverfügung"/>
+	</identifier>
+	<status value="current"/>
+	<type>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Anlagetyp"/>
+			<code value="KBV_PR_AW_Patientenverfuegung"/>
+		</coding>
+	</type>
+	<category>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp"/>
+			<code value="Anlage"/>
+		</coding>
+	</category>
+	<subject>
+		<reference value="Patient/1040"/>
+	</subject>
+	<date value="2013-08-30T15:31:42+01:00"/>
+	<description value="PatientenverfÃ¼gung der Patientin."/>
+	<content>
+		<attachment>
+		<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Anlage_Version">
+				<valueCodeableConcept>
+					<coding>
+						<system value="http://TEST"/>
+						<code value="1.66"/>
+						<display value="V1.66"/>
+					</coding>
+				</valueCodeableConcept>	
+			</extension>
+			<contentType value="application/pdf"/>
+			<url value="file:///20180801_120059_V_AW/Anlagen/Patient/Patient_3181_Patientenverfuegung_20130721.pdf"/>
+			<title value="PatientenverfÃ¼gung vom 21.07.2013"/>
+		</attachment>
+	</content>
+</DocumentReference>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="DocumentReference/3221"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Encounter/3188"/>
+<resource>
+<Encounter>
+	<id value="3188"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-12T16:50:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Begegnung|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Begegnung_Spezielle_Begegnungsinformationen">
+		<extension url="typ">
+			<valueCodeableConcept>
+				<text value="broschuere"/>
+			</valueCodeableConcept>
+		</extension>
+		<extension url="inhalt">
+			<valueString value="ErnÃ¤hrungsberatung für Senioren"/>
+		</extension>
+	</extension>
+	<status value="finished"/>
+	<class>
+		<system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+		<code value="AMB"/>
+	</class>
+	<subject>
+		<reference value="Patient/1040"/>
+	</subject>
+	<participant>
+		<individual>
+			<reference value="PractitionerRole/1010"/>
+		</individual>
+	</participant>
+	<period>
+		<start value="2021-02-01"/>
+		<end value="2021-02-01"/>
+	</period>
+	<serviceProvider>
+		<reference value="Organization/3155"/>
+	</serviceProvider>
+</Encounter>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Encounter/3188"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/PractitionerRole/1010"/>
+<resource>
+<PractitionerRole>
+	<id value="1010"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-10T14:37:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Arzt in Betriebsstaette 987654321
+		</div>
+	</text>
+	<practitioner>
+		<reference value="Practitioner/1000"/>
+	</practitioner>
+	<organization>
+		<reference value="Organization/3155"/>
+	</organization>
+</PractitionerRole>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="PractitionerRole/1010"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Practitioner/1000"/>
+<resource>
+<Practitioner>
+	<id value="1000"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-26T08:58:11+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandelnder|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Dr. med. Max Freiherr von und zu Mustermann, Musterweg 42, 10787 Berlin
+		</div>
+	</text>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+				<code value="LANR" />
+			</coding>
+		</type>
+		<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"/>
+		<value value="123456701"/>
+	</identifier>
+	<name>
+		<use value="official" />
+		<text value="Dr. med Max Freiherr von und zu Mustermann" />
+		<family value="Freiherr von und zu Mustermann" >
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+				<valueString value="Mustermann"/>
+			</extension>
+			<extension url="http://fhir.de/StructureDefinition/humanname-namenszusatz">
+				<valueString value="Freiherr"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+				<valueString value="von und zu"/>
+			</extension>
+		</family>
+		<given value="Max"/>
+		<prefix value="Dr. med.">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
+				<valueCode value="AC"/>
+			</extension>
+		</prefix>
+	</name>
+	<address>
+		<type value="both" />
+		<line value="Musterweg 42">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Musterweg"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="42"/>
+			</extension>
+		</line>
+		<city value="Berlin"/>
+		<postalCode value="10787"/>
+		<country value="D"/>
+	</address>
+	<gender value="other">
+		<extension url="http://fhir.de/StructureDefinition/gender-amtlich-de">
+			<valueCoding>
+				<system value="http://fhir.de/CodeSystem/gender-amtlich-de"/>
+				<code value="D"/>
+				<display value="divers"/>
+			</valueCoding>
+		</extension>
+	</gender>
+<qualification>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BAR2_ARZTNRFACHGRUPPE"/>
+				<code value="01"/>
+			</coding>
+		</code>
+	</qualification>
+	<qualification>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BAR2_ARZTNRFACHGRUPPE"/>
+				<code value="33"/>
+			</coding>
+		</code>
+	</qualification>
+</Practitioner>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Practioner/1000"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Organization/3155"/>
+<resource>
+<Organization>
+	<id value="3155"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-24T16:50:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Praxis Dres. MÃ¼ller, Meier, Schulze
+			BSNR 987654321
+			Musterweg 33, 77777 Musterstadt
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Betriebsstaette_Hierarchie">
+		<valueCode value="BSNR"/>
+	</extension>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+				<code value="BSNR"/>
+			</coding>		
+		</type>
+		<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"/>
+		<value value="987654321"/>
+	</identifier>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+				<code value="XX"/>
+			</coding>		
+		</type>
+		<system value="http://fhir.de/NamingSystem/arge-ik/iknr"/>
+		<value value="271234567"/>
+	</identifier>
+	<name value="Praxis Dres. MÃ¼ller, Meier, Schulze"/>
+	<telecom>
+		<system value="phone"/>
+		<value value="09876/54321-0"/>
+	</telecom>
+	<telecom>
+		<system value="fax"/>
+		<value value="09876/54321-33"/>
+	</telecom>
+	<telecom>
+		<system value="email"/>
+		<value value="info@praxis-mms.de"/>
+	</telecom>
+	<address>
+		<type value="both"/>
+		<line value="Musterweg 33">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="33"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Musterweg"/>
+			</extension>
+		</line>
+		<city value="Musterstadt"/>
+		<postalCode value="77777"/>
+		<country value="D"/>
+	</address>
+</Organization>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Organization/3155"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Practitioner/3180"/>
+<resource>
+<Practitioner>
+	<id value="3180"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-24T10:50:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Mitarbeiter|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Mitarbeiterin Hannes Helfer
+			Telefon: 09876/55555
+		</div>
+	</text>
+	<identifier>
+		<system value="http://praxis-mueller-meier-schulze.de/identifiers/mitarbeiternummer"/>
+		<value value="17"/>
+	</identifier>
+	<name>
+		<family value="Helfer"/>
+		<given value="Hannes"/>
+	</name>
+	<telecom>
+		<system value="phone"/>
+		<value value="09876/55555"/>
+	</telecom>
+	<address>
+		<line value="Gartenweg 23"/>
+		<city value="Musterstadt"/>
+		<postalCode value="77777"/>
+	</address>
+	<qualification>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp"/>
+				<code value="Mitarbeiter"/>
+			</coding>
+		</code>
+	</qualification>
+</Practitioner>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Practitioner/3180"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Observation/3246"/>
+<resource>
+<Observation>
+	<id value="3246"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-21T14:09:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Anamnese|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<status value="final"/>
+	<code>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp"/>
+			<code value="Anamnese"/>
+		</coding>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="35090-0"/>
+		</coding>
+	</code>
+	<subject>
+		<reference value="Patient/1040"/>
+	</subject>
+	<encounter>
+		<reference value="Encounter/3188"/>
+	</encounter>
+	<valueString value="Neigung z. KrampfanfÃ¤llen unter Alkoholeinfluss."/>
+</Observation>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Observation/3246"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Observation/8013"/>
+<resource>
+<Observation>
+	<id value="8013"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-21T14:09:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Bauchumfang|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<status value="final"/>
+	<code>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="8280-0"/>
+		</coding>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Koerperkenngroessen"/>
+			<code value="Bauchumfang"/>
+		</coding>
+	</code>
+	<subject>
+		<reference value="Patient/1040"/>
+	</subject>
+	<encounter>
+		<reference value="Encounter/3188"/>
+	</encounter>
+		<valueQuantity>
+			<value value="90"/>
+			<unit value="cm"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="cm"/>
+		</valueQuantity>
+</Observation>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Observation/8013"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Observation/3248"/>
+<resource>
+<Observation>
+	<id value="3248"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-21T14:11:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Befund|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<status value="final"/>
+	<category>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Befundart"/>
+			<code value="Eigenbefund"/>
+		</coding>
+	</category>
+	<code>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp"/>
+			<code value="Befund"/>
+		</coding>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="29545-1"/>
+		</coding>
+	</code>
+	<subject>
+		<reference value="Patient/1040"/>
+	</subject>
+	<encounter>
+		<reference value="Encounter/3188"/>
+	</encounter>
+	<valueString value="leichtes Fieber"/>
+</Observation>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Observation/3266"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Observation/8033"/>
+<resource>
+<Observation>
+	<id value="8033"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-21T14:09:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Blutdruck|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<status value="final"/>
+	<code>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="85354-9"/>
+		</coding>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Koerperkenngroessen"/>
+			<code value="Blutdruck"/>
+		</coding>
+	</code>
+	<subject>
+		<reference value="Patient/1040"/>
+	</subject>
+	<encounter>
+		<reference value="Encounter/3188"/>
+	</encounter>
+	<component>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Blutdruck_Typen"/>
+				<code value="diastolisch"/>
+			</coding>
+		</code>
+		<valueQuantity>
+			<value value="90"/>
+			<unit value="mm Hg"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="mm[Hg]"/>
+		</valueQuantity>
+	</component>
+	<component>
+	<code>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Blutdruck_Typen"/>
+			<code value="systolisch"/>
+		</coding>
+	</code>
+		<valueQuantity>
+			<value value="90"/>
+			<unit value="mm Hg"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="mm[Hg]"/>
+		</valueQuantity>
+	</component>
+</Observation>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Observation/8033"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Observation/8034"/>
+<resource>
+<Observation>
+	<id value="8034"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-21T14:09:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Hueftumfang|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<status value="final"/>
+	<code>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="56063-1"/>
+		</coding>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Koerperkenngroessen"/>
+			<code value="Hueftumfang"/>
+		</coding>
+	</code>
+	<subject>
+		<reference value="Patient/1040"/>
+	</subject>
+	<encounter>
+		<reference value="Encounter/3188"/>
+	</encounter>
+		<valueQuantity>
+			<value value="90"/>
+			<unit value="cm"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="cm"/>
+		</valueQuantity>
+</Observation>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Observation/8034"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Observation/8035"/>
+<resource>
+<Observation>
+	<id value="8035"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-21T14:09:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Koerpertemperatur|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<status value="final"/>
+	<code>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="8310-5"/>
+		</coding>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Koerperkenngroessen"/>
+			<code value="Koerpertemperatur"/>
+		</coding>
+	</code>
+	<subject>
+		<reference value="Patient/1040"/>
+	</subject>
+	<encounter>
+		<reference value="Encounter/3188"/>
+	</encounter>
+		<valueQuantity>
+			<value value="37"/>
+			<unit value="°C"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="Cel"/>
+		</valueQuantity>
+</Observation>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Observation/8035"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Observation/8036"/>
+<resource>
+<Observation>
+	<id value="8036"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-21T14:09:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Puls|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<status value="final"/>
+	<code>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="8867-4"/>
+		</coding>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Koerperkenngroessen"/>
+			<code value="Puls"/>
+		</coding>
+	</code>
+	<subject>
+		<reference value="Patient/1040"/>
+	</subject>
+	<encounter>
+		<reference value="Encounter/3188"/>
+	</encounter>
+		<valueQuantity>
+			<value value="70"/>
+			<unit value="pro Min"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="/min"/>
+		</valueQuantity>
+</Observation>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Observation/8036"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Patient/1040"/>
+<resource>
+<Patient>
+	<id value="1040"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-11T13:23:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Patientin Martina Freifrau von Mustermann
+			geb. am 04.03.1972
+			weiblich
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_KostenuebernahmeIgeL">
+		<valueBoolean value="false"/>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_Zusatzinformationen">
+		<extension url="religionszugehoerigkeit">
+			<valueString value="ev."/>
+		</extension>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_Vsdm_Zusatzinformationen">
+		<extension url="geschlecht">
+			<valueCoding>
+				<system value="http://hl7.org/fhir/administrative-gender"/>
+				<code value="female"/>
+			</valueCoding>
+		</extension>
+		<extension url="geburtsdatum">
+			<valueDate value="1972-03-04"/>
+		</extension>
+		<extension url="adresse">
+				<valueAddress>
+					<type value="physical"/>
+					<line value="Musterweg 42">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+							<valueString value="Musterweg"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+							<valueString value="42"/>
+						</extension>
+					</line>
+					<line value="Steglitz">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+							<valueString value="Steglitz"/>
+						</extension>
+					</line>
+					<city value="Berlin"/>
+					<postalCode value="10787"/>
+					<country value="D"/>
+				</valueAddress>
+		</extension>		
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Additional_Comment">
+		<valueString value="Sehr gute Patientin"/>
+	</extension>	
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+				<code value="GKV"/>
+			</coding>
+		</type>
+		<system value="http://fhir.de/NamingSystem/gkv/kvid-10"/>
+		<value value="M040319722"/>
+	</identifier>
+	<name>
+		<use value="official"/>
+		<text value="Martina Freifrau von Mustermann"/>
+		<family value="Freifrau von Mustermann">
+			<extension url="http://fhir.de/StructureDefinition/humanname-namenszusatz">
+				<valueString value="Freifrau"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+				<valueString value="von"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+				<valueString value="Mustermann"/>
+			</extension>
+		</family>
+		<given value="Martina"/>
+	</name>
+	<name>
+		<use value="maiden" />
+		<family value="Schmitt">
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+				<valueString value="Schmitt"/>
+			</extension>
+		</family>
+	</name>
+	<telecom>
+		<system value="phone"/>
+		<value value="077553/32211"/>
+	</telecom>
+	<telecom>
+		<system value="email"/>
+		<value value="m.mustermann@mustermann.de"/>
+	</telecom>
+	<gender value="female"/>
+	<birthDate value="1972-03-04"/>
+	<address>
+		<type value="both"/>
+		<line value="Musterweg 42">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Musterweg"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="42"/>
+			</extension>
+		</line>
+		<line value="Hinterhof 3. Etage">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+				<valueString value="Hinterhof 3. Etage"/>
+			</extension>
+		</line>
+		<city value="Berlin"/>
+		<postalCode value="10787"/>
+		<country value="D"/>
+	</address>
+	<maritalStatus>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"/>
+			<code value="M"/>
+		</coding>
+	</maritalStatus>
+	<contact>
+		<relationship>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0131"/>
+				<code value="CP"/>
+			</coding>
+		</relationship>
+		<name>
+			<family value="Mustermann"/>
+			<given value="Fritz"/>
+		</name>
+		<telecom>
+			<system value="phone"/>
+			<value value="077553/32212"/>
+		</telecom>
+	</contact>
+	<communication>
+		<language>
+			<coding>
+				<system value="urn:ietf:bcp:47"/>
+				<code value="de-DE"/>
+			</coding>
+		</language>
+		<preferred value="true"/>
+	</communication>
+	<generalPractitioner>
+		<identifier>
+			<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"/>
+			<value value="123456701"/>
+		</identifier>
+	</generalPractitioner>
+</Patient>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Patient/1040"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Provenance/300"/>
+<resource>
+<Provenance>
+	<id value="300"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-28T09:23:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Provenienz|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<target>
+		<reference value="Encounter/3188"/>
+	</target>
+	<recorded value="2020-08-12T16:50:00+00:00"/>
+	<activity>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-DataOperation"/>
+			<code value="CREATE"/>
+		</coding>
+	</activity>
+	<agent>
+		<role>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/contractsignertypecodes"/>
+				<code value="PRIMAUTH"/>
+			</coding>
+		</role>
+		<who>
+			<reference value="PractitionerRole/1010"/>
+		</who>
+		<onBehalfOf>
+			<reference value="Organization/3155"/>
+		</onBehalfOf>
+	</agent>
+</Provenance>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Provenienz/300"/>
+</request>
+<response>
+<status value="201"/>
+</response>
+</entry>
+</Bundle>

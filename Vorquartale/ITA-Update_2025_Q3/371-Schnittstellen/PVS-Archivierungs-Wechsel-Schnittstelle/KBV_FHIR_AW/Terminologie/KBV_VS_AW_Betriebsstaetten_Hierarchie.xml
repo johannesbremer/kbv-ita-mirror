@@ -1,0 +1,29 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+    <url value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Betriebsstaetten_Hierarchie" />
+    <version value="1.2.0" />
+    <name value="KBV_VS_AW_Betriebsstaetten_Hierarchie" />
+    <status value="active" />
+    <experimental value="true" />
+    <date value="2020-08-06" />
+	<publisher value="Kassenaerztliche Bundesvereinigung"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://www.kbv.de"/>
+		</telecom>
+	</contact>
+    <description value="ValueSet zur Codierung der Betriebsst&#228;ttenhierarchie (Haupt-/Nebenbetriebsst&#228;tte)" />
+    <compose>
+        <include>
+            <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+            <concept>
+                <code value="BSNR" />
+                <display value="Hauptbetriebsstätte" />
+            </concept>
+            <concept>
+                <code value="NBSNR" />
+                <display value="Nebenbetriebsstätte" />
+            </concept>
+        </include>
+    </compose>
+</ValueSet>

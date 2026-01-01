@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.10.15
+Created-By: 23+37 (Eclipse Adoptium)
+Premain-Class: lombok.launch.MavenEcjBootstrapAgent
+Can-Redefine-Classes: true
+

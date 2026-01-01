@@ -1,0 +1,63 @@
+Dieses Paket enthält das neue KBV-Prüfmodul für die DMP Diabetes mellitus Typ 2 A
+Prüfung in der Datenannahmestelle.
+
+Im obersten Verzeichnis dieses Paketes existiert der Ordner 'XPM_Diabetes2.A'.
+
+Vor dem Starten des Prüfmoduls muss der komplette Ordner 'XPM_Diabetes2.A'
+auf eine Festplatte kopiert werden.
+
+Das KBV-Prüfmodul kann nur gestartet werden, wenn eine Java Laufzeitumgebung
+in der Version 17 oder höher bereits installiert wurde.
+
+Unter Linux ist noch folgendes zu beachten: Bei Verwendung einer auf OpenJDK 
+basierenden Laufzeitumgebung und einer Servervariante eines Linux-Betriebssystems 
+muss zusätzlich die Bibliothek fontconfig installiert werden bzw. bereits 
+installiert sein. Das ist notwendig, da die fontconfig.properties Datei für Linux 
+im OpenJDK im Gegensatz zur Oracle-Variante nicht enthalten ist.
+Wenn eine Desktop-Variante von Linux oder eine Oracle-Laufzeitumgebung verwendet 
+wird, muss die Bibliothek nicht installiert werden.
+
+
+Die Konfiguration der Testumgebung braucht nicht angepasst werden.
+
+In diesem Verzeichnis befinden sich Batchdateien, die das KBV-Prüfmodul
+mit unterschiedlichen Optionen ausführen.
+
+Die Batchdatei 'ArchivPruefung.bat' bzw. das Shellskript 'ArchivPruefung.sh'
+startet eine Prüfung einer Archiv-Datei im zip-Format.
+Das KBV-Prüfmodul verarbeitet alle Dateien, die im Zip-Archiv zusammengepackt
+wurden. Andere Archive können geprüft werden, indem die Batchdatei entsprechend
+angepasst wird (Übergabeparameter -z).
+
+Die Batchdateien 'EinzelPruefungED.bat' und 'EinzelPruefungVD.bat' bzw. die
+Shellskripte 'EinzelPruefungED.sh' und 'EinzelPruefungVD.sh' starten eine
+Prüfung einer einzigen Datei. Andere Dateien können geprüft werden,
+indem die Batchdatei entsprechend angepasst wird (Übergabeparameter -f).
+
+Die Batchdateien 'StartePruefmodulED.bat' und 'StartePruefmodulVD.bat' bzw. die
+Shellskripte 'StartePruefmodulED.sh' und 'StartePruefmodulVD.sh' starten eine
+grafische Benutzeroberfläche.
+
+Die Batchdatei 'VerzeichnisPruefung.bat' bzw. das Shellskript 'VerzeichnisPruefung.sh'
+startet das KBV-Prüfmodul im Servermodus (Übergabeparameter -s).
+Das KBV-Prüfmodul verarbeitet alle Dateien, die im Ordner 'Daten' sind.
+Je nach Prüfstatus werden die Abrechnungsdateien anschliessend in die Ordner
+'Abgelehnt' bzw. 'NichtAbgelehnt' verschoben (Übergabeparameter -m).
+Die Prüfung wird beendet, wenn alle Dateien verarbeitet wurden (Übergabeparameter -e)
+
+
+Bitte lesen Sie auch das Dokument 'KBV_ITA_AHEX_Handbuch_Pruefmodul.pdf'.
+
+
+Sollten Sie Anregungen, Testberichte und/oder Korrekturvorschläge haben,
+so wenden Sie sich an folgende Adresse:
+
+
+Kassenärztliche Bundesvereinigung
+Körperschaft des öffentlichen Rechts
+Dezernat Digitalisierung und IT
+Herbert-Lewin-Platz 2
+10623 Berlin
+
+mailto:ITA@kbv.de
+http://www.kbv.de/ita/index.html

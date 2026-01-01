@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<!--head>
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Installationsprogramm f&uuml;r KBV Pr&uuml;fassistenten</title>
+<STYLE TYPE="text/css" media=screen,print>
+h1{
+	font-size: 100%;
+	margin: 1em 0 0 0;
+	padding: 0;
+}
+div.body {
+	font-size: 100%;
+	margin: 0mm 1mm 0  4mm;
+	padding: 0;
+}
+</STYLE>
+</head-->
+
+<body>
+
+<div class=Section1>
+
+<p class=MsoPlainText align=center style='text-align:center'><b
+style='mso-bidi-font-weight:normal'><span style='font-family:Arial'>Willkommen
+bei dem Installationsprogramm f&uuml;r<br>KBV Pr&uuml;fassistenten</span></b></p>
+
+<p class=MsoPlainText>Dieses Installationsprogramm installiert den KBV Pr&uuml;fassistenten auf Ihrem Computer.</p>
+
+<br>
+
+<span class="Info">Unterst&uuml;tzte Betriebssysteme:<br></span>
+<span class="Info">Alle Windows Systeme ab Windows 7<br></span>
+<span class="Info">Alle Linux und Unix Derivate mit Java Laufzeitumgebung ab Version 17<br></span>
+<span class="Info">Alle Apple Computer mit Betriebsystem Mac OS X und Java Laufzeitumgebung ab Version 17<br></span>
+
+<br>
+
+<p class=MsoPlainText>Mit dieser Version des KBV-Pr&uuml;fassistenten werden die Quartale 2/2025 bis 1/2026 gepr&uuml;ft!</p>
+
+<br>
+
+<p class=MsoPlainText>Klicken Sie auf '<i style='mso-bidi-font-style:normal'>Weiter</i>'
+um <span class=SpellE>fortzufahren</span>.</p>
+
+</div>
+
+</body>
+
+</html>

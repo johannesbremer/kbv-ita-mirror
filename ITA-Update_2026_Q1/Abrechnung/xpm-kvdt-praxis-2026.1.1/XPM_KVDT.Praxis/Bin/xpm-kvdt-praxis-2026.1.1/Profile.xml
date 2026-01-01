@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--Profile Datei hier notwendig für die Generierung der gemeinsamen Ausgabeklassen -->
+<xpmprofile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../Common/Schema/profile.xsd">
+	<version>kvdt/common</version>
+	<!-- Paketversion kann eigentlich raus hier im Common Teil -->
+	<paket_version>2.16A</paket_version>
+	<projektpfad>./</projektpfad>
+	<generator>
+		<xdt_reader>Standard</xdt_reader>
+		<xdt_version>KVDT05.01/1.00</xdt_version>
+		<xml_parser>Standard</xml_parser>
+		<inhalt_initialisieren>Nein</inhalt_initialisieren>
+		<import_anweisungen>Manuell</import_anweisungen>
+		<stammdateinSerialierungPfad>target/</stammdateinSerialierungPfad>
+	</generator>
+	<schnittstellen>
+		<pruefdatei>
+			<schema>src/main/buildResources/Schema/xdtdata.xsd</schema>
+			<schema_redefines>src/main/buildResources/Schema/redefines.xsd</schema_redefines>
+			<format>XDT</format>
+		</pruefdatei>
+		<!-- Für die evtl. Generierung der Ausgabeklassen müssen diese hier noch aufgeführt werden -->
+		<ausgabeliste>
+			<!-- Fehler und Warnungen im XDT-Format -->
+			<datei>
+				<instanz>PDTListe</instanz>
+				<typ>Info</typ>
+				<anhaengen>Nein</anhaengen>
+			</datei>
+			<!-- Kommunikationssatz für Kryptomodul -->
+			<datei>
+				<instanz>KommunikationsSatz</instanz>
+				<typ>Info</typ>
+				<anhaengen>Nein</anhaengen>
+			</datei>
+			<!-- Globale Statistikliste -->
+			<report>
+				<instanz>StatistikListe</instanz>
+				<typ>Statistik</typ>
+				<datendatei>src/main/buildResources/Reports/FehlerStatistik.jrxml</datendatei>
+				<serialisiert>Nein</serialisiert>
+			</report>
+			<!-- ADT Scheinabgabe-Liste -->
+			<report>
+				<instanz>ScheinAbgabeListe</instanz>
+				<typ>Info</typ>
+				<datendatei>src/main/buildResources/Reports/SortierListe.jrxml</datendatei>
+				<serialisiert>Ja</serialisiert>
+			</report>
+			<!-- ADT Überweisung-Scheinabgabe-Liste -->
+			<report>
+				<instanz>UeScheinAbgabeListe</instanz>
+				<typ>Info</typ>
+				<datendatei>src/main/buildResources/Reports/SortierListe.jrxml</datendatei>
+				<serialisiert>Ja</serialisiert>
+			</report>
+			<!-- ADT Überweisung-Scheinabgabe- plus Scheinabgabe-Liste -->
+			<report>
+				<instanz>UeScheinPlusAbgabeListe</instanz>
+				<typ>Info</typ>
+				<datendatei>src/main/buildResources/Reports/SortierListe.jrxml</datendatei>
+				<serialisiert>Ja</serialisiert>
+			</report>
+			<!-- ADT Abgabe Dokumentationsliste -->
+			<report>
+				<instanz>DokuAbgabeListe</instanz>
+				<typ>Info</typ>
+				<datendatei>src/main/buildResources/Reports/SortierListe.jrxml</datendatei>
+				<serialisiert>Ja</serialisiert>
+			</report>
+			<!-- Sortierliste -->
+			<report>
+				<instanz>SortierListe</instanz>
+				<typ>Info</typ>
+				<datendatei>src/main/buildResources/Reports/SortierListe.jrxml</datendatei>
+				<serialisiert>Ja</serialisiert>
+			</report>
+
+			<!-- Sortierliste für den Schwangerschaftsabbruch -->
+			<report>
+				<instanz>SADT_SortierListe</instanz>
+				<typ>Info</typ>
+				<datendatei>src/main/buildResources/Reports/SortierListe.jrxml</datendatei>
+				<serialisiert>Ja</serialisiert>
+			</report>
+			<!-- FallzahlenStatistik -->
+			<report>
+				<instanz>FallListe</instanz>
+				<typ>Info</typ>
+				<datendatei>src/main/buildResources/Reports/FallListe.jrxml</datendatei>
+				<serialisiert>Nein</serialisiert>
+			</report>
+			<!-- FallzahlenStatistik für die kurärztliche Behandlung -->
+			<report>
+				<instanz>KDT_FallListe</instanz>
+				<typ>Info</typ>
+				<datendatei>src/main/buildResources/Reports/FallListe.jrxml</datendatei>
+				<serialisiert>Nein</serialisiert>
+			</report>
+			<!-- FallzahlenStatistik für den Schwangerschaftsabbruch -->
+			<report>
+				<instanz>SADT_FallListe</instanz>
+				<typ>Info</typ>
+				<datendatei>src/main/buildResources/Reports/SAFallListe.jrxml</datendatei>
+				<serialisiert>Nein</serialisiert>
+			</report>
+			<!-- GNRStatistik -->
+			<report>
+				<instanz>GNRListe</instanz>
+				<typ>Info</typ>
+				<datendatei>src/main/buildResources/Reports/GNRListe.jrxml</datendatei>
+				<serialisiert>Nein</serialisiert>
+			</report>
+			<!-- GNRStatistik für die kurärztliche Behandlung -->
+			<report>
+				<instanz>KDT_GNRListe</instanz>
+				<typ>Info</typ>
+				<datendatei>src/main/buildResources/Reports/GNRListe.jrxml</datendatei>
+				<serialisiert>Nein</serialisiert>
+			</report>
+			<!-- GNRStatistik für den Schwangerschaftsabbruch -->
+			<report>
+				<instanz>SADT_GNRListe</instanz>
+				<typ>Info</typ>
+				<datendatei>src/main/buildResources/Reports/GNRListe.jrxml</datendatei>
+				<serialisiert>Nein</serialisiert>
+			</report>
+			<!-- Ausgabe für KlammerListe -->
+			<report>
+				<instanz>KlammerListe</instanz>
+				<typ>Info</typ>
+				<datendatei>src/main/buildResources/Reports/KlammerListe.jrxml</datendatei>
+				<serialisiert>Nein</serialisiert>
+			</report>
+		</ausgabeliste>
+		
+	</schnittstellen>
+
+</xpmprofile>

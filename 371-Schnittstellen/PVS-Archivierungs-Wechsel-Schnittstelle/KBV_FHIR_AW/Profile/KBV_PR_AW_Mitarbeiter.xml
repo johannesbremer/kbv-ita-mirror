@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Mitarbeiter" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Mitarbeiter" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="servd" />
+    <uri value="http://www.omg.org/spec/ServD/1.0/" />
+    <name value="ServD" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Practitioner" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Practitioner.id">
+      <path value="Practitioner.id" />
+      <min value="1" />
+    </element>
+    <element id="Practitioner.meta">
+      <path value="Practitioner.meta" />
+      <min value="1" />
+    </element>
+    <element id="Practitioner.meta.versionId">
+      <path value="Practitioner.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Practitioner.meta.lastUpdated">
+      <path value="Practitioner.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Practitioner.meta.profile">
+      <path value="Practitioner.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Mitarbeiter|1.2.0" />
+    </element>
+    <element id="Practitioner.text">
+      <path value="Practitioner.text" />
+      <min value="1" />
+    </element>
+    <element id="Practitioner.identifier">
+      <path value="Practitioner.identifier" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.identifier.use">
+      <path value="Practitioner.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.identifier.type">
+      <path value="Practitioner.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.identifier.value">
+      <path value="Practitioner.identifier.value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.identifier.period">
+      <path value="Practitioner.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.identifier.assigner">
+      <path value="Practitioner.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.active">
+      <path value="Practitioner.active" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.name">
+      <path value="Practitioner.name" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://fhir.de/StructureDefinition/humanname-de-basis" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name.family">
+      <path value="Practitioner.name.family" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name.family.extension">
+      <path value="Practitioner.name.family.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Practitioner.name.family.extension:namenszusatz">
+      <path value="Practitioner.name.family.extension" />
+      <sliceName value="namenszusatz" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name.family.extension:nachname">
+      <path value="Practitioner.name.family.extension" />
+      <sliceName value="nachname" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name.family.extension:vorsatzwort">
+      <path value="Practitioner.name.family.extension" />
+      <sliceName value="vorsatzwort" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name.given">
+      <path value="Practitioner.name.given" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.telecom.system">
+      <path value="Practitioner.telecom.system" />
+      <min value="1" />
+    </element>
+    <element id="Practitioner.telecom.value">
+      <path value="Practitioner.telecom.value" />
+      <min value="1" />
+    </element>
+    <element id="Practitioner.telecom.use">
+      <path value="Practitioner.telecom.use" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.telecom.rank">
+      <path value="Practitioner.telecom.rank" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.telecom.period">
+      <path value="Practitioner.telecom.period" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.address">
+      <path value="Practitioner.address" />
+      <max value="1" />
+      <type>
+        <code value="Address" />
+        <profile value="http://fhir.de/StructureDefinition/address-de-basis" />
+      </type>
+    </element>
+    <element id="Practitioner.address.country">
+      <path value="Practitioner.address.country" />
+      <definition value="Nach DEÜV Anlage8" />
+      <binding>
+        <strength value="extensible" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_BASE_GemRS_Anlage_8" />
+      </binding>
+    </element>
+    <element id="Practitioner.gender.extension">
+      <path value="Practitioner.gender.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Practitioner.gender.extension:gender-amtlich">
+      <path value="Practitioner.gender.extension" />
+      <sliceName value="gender-amtlich" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gender-amtlich-de" />
+      </type>
+    </element>
+    <element id="Practitioner.gender.extension:gender-amtlich.value[x]">
+      <path value="Practitioner.gender.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.gender.extension:gender-amtlich.value[x].system">
+      <path value="Practitioner.gender.extension.value[x].system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.gender.extension:gender-amtlich.value[x].code">
+      <path value="Practitioner.gender.extension.value[x].code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.gender.extension:gender-amtlich.value[x].userSelected">
+      <path value="Practitioner.gender.extension.value[x].userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.birthDate">
+      <path value="Practitioner.birthDate" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.photo">
+      <path value="Practitioner.photo" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.qualification">
+      <path value="Practitioner.qualification" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.qualification.identifier">
+      <path value="Practitioner.qualification.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.qualification.code">
+      <path value="Practitioner.qualification.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.qualification.code.coding">
+      <path value="Practitioner.qualification.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.qualification.code.coding.system">
+      <path value="Practitioner.qualification.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.qualification.code.coding.version">
+      <path value="Practitioner.qualification.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.qualification.code.coding.code">
+      <path value="Practitioner.qualification.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Mitarbeiter" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.qualification.code.coding.display">
+      <path value="Practitioner.qualification.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.qualification.code.coding.userSelected">
+      <path value="Practitioner.qualification.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.qualification.code.text">
+      <path value="Practitioner.qualification.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.qualification.period">
+      <path value="Practitioner.qualification.period" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.qualification.issuer">
+      <path value="Practitioner.qualification.issuer" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.communication">
+      <path value="Practitioner.communication" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

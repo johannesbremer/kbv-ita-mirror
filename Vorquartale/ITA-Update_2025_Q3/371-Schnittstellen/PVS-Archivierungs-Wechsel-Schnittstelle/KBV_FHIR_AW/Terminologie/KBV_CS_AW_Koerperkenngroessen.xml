@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Koerperkenngroessen"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Koerperkenngroessen"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Bekannte Koerperkenngroessen"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="Koerpergroesse"/>
+<display value="Koerpergroesse"/>
+</concept>
+<concept>
+<code value="Gewicht"/>
+<display value="Gewicht"/>
+</concept>
+<concept>
+<code value="Blutdruck"/>
+<display value="Blutdruck"/>
+</concept>
+<concept>
+<code value="Koerpertemperatur"/>
+<display value="Koerpertemperatur"/>
+</concept>
+<concept>
+<code value="Koerpergewicht"/>
+<display value="Koerpergewicht"/>
+</concept>
+<concept>
+<code value="Hueftumfang"/>
+<display value="Hueftumfang"/>
+</concept>
+<concept>
+<code value="Puls"/>
+<display value="Puls"/>
+</concept>
+<concept>
+<code value="Geburtstermin"/>
+<display value="Geburtstermin"/>
+</concept>
+<concept>
+<code value="Bauchumfang"/>
+<display value="Bauchumfang"/>
+</concept>
+<concept>
+<code value="Raucherstatus"/>
+<display value="Raucherstatus"/>
+</concept>
+<concept>
+<code value="Kreatinin"/>
+<display value="Kreatinin"/>
+</concept>
+<concept>
+<code value="Schwangerschaft"/>
+<display value="Schwangerschaft"/>
+</concept>
+<concept>
+<code value="Stillend"/>
+<display value="Stillend"/>
+</concept>
+</CodeSystem>

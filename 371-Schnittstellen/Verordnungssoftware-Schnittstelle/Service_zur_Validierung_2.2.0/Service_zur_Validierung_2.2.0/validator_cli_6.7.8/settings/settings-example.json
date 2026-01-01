@@ -1,0 +1,29 @@
+{
+  "apiKeys": {
+    "dummy-api-key": "dummy-api-key-value"
+  },
+  "npmPath": "dummy-npm-path",
+  "rubyPath": "dummy-ruby-path",
+  "fhirTestCasesPath": "dummy-fhir-test-cases-path",
+  "diffToolPath": "dummy-diff-tool-path",
+  "tempPath": "dummy-temp-path",
+  "testIgsPath": "dummy-test-igs-path",
+  "unusedField": "unused",
+  "ignoreDefaultPackageServers": true,
+  "servers": [
+    {
+      "url": "http://dummy.org",
+      "type": "npm-package",
+      "authenticationType": "BASIC",
+      "username": "joe",
+      "password": "swordfish"
+    },
+    {
+      "url": "http://dummy2.com",
+      "goobledy-goo": 5
+    }
+  ],
+  "unusedData": {
+    "unusedDateField": "unused-data"
+  }
+}

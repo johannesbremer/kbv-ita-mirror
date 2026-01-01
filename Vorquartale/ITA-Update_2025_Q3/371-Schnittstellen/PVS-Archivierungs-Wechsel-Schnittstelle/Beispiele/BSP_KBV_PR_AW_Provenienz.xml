@@ -1,0 +1,38 @@
+<Provenance xmlns="http://hl7.org/fhir">
+	<id value="300"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-28T09:23:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Provenienz|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<target>
+		<reference value="Encounter/3188"/>
+	</target>
+	<recorded value="2020-08-12T16:50:00+00:00"/>
+	<activity>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-DataOperation"/>
+			<code value="CREATE"/>
+		</coding>
+	</activity>
+	<agent>
+		<role>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/contractsignertypecodes"/>
+				<code value="PRIMAUTH"/>
+			</coding>
+		</role>
+		<who>
+			<reference value="Practitioner/3180"/>
+		</who>
+		<onBehalfOf>
+			<reference value="Organization/3155"/>
+		</onBehalfOf>
+	</agent>
+</Provenance>

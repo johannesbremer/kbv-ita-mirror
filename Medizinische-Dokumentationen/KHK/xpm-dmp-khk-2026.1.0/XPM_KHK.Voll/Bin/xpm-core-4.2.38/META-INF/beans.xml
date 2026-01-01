@@ -1,0 +1,25 @@
+<beans xmlns="http://xmlns.jcp.org/xml/ns/javaee"  
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
+        http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
+       bean-discovery-mode="annotated">
+       <scan>
+		<!-- Ausgeschlossen sonst Probleme beim Maven Build -->
+		<exclude name="org.jboss.weld.**" />
+		<exclude name="org.eclipse.jdt.internal.**" />
+		<exclude name="org.eclipse.jdt.core.**" />
+		<exclude name="org.apache.log4j.**" />
+		<exclude name="org.apache.commons.**" />
+		<exclude name="org.jpedal.**" />
+		<exclude name="net.sf.jasperreports.**" />
+		<exclude name="org.jfree.chart.**" />
+		<exclude name="org.bouncycastle.**" />
+		<exclude name="org.dom4j.**" />
+		<exclude name="org.exolab.**" />
+		<exclude name="javax.xml.**" />
+		<exclude name="org.apache.xerces.**" />
+		<exclude name="org.jboss.logging.**" />
+		<exclude name="com.sun.javafx.**" />
+		<exclude name="com.sun.deploy.uitoolkit.impl.fx.**" />
+	</scan>
+</beans>  

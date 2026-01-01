@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- edited with XMLSpy v2008 rel. 2 sp1 (http://www.altova.com) by User (Kassenärztliche Bundesvereinigung) -->
+<!-- Mit XMLSpy v2017 rel. 3 (http://www.altova.com) von Alexander Börner (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<!--
+
+Projekt: arv (Arzneimittelvereinbarungen)
+Namespace: "urn:ehd/arv", Präfix: arv
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/arv/001" xmlns:ehd="urn:ehd/001" targetNamespace="urn:ehd/arv/001" elementFormDefault="qualified">
+	<xs:import namespace="urn:ehd/001" schemaLocation="datentypen_V1.40.xsd"/>
+	<!-- ======================================================================= 
+	Definitionen (arv_data)
+	======================================================================= -->
+	<!-- element ............................................................. -->
+	<xs:element name="pzn" type="pzn_typ"/>
+	<xs:element name="handelsname" type="medicine_form_type"/>
+	<xs:element name="standardaggregat" type="medicine_form_type"/>
+	<xs:element name="wirkstoff" type="medicine_form_type"/>
+	<xs:element name="atc4" type="medicine_form_type"/>
+	<xs:element name="atc5" type="medicine_form_type"/>
+	<xs:element name="wirkstoffgruppe" type="medicine_form_type"/>
+	<xs:element name="warnhinweis_pvs">
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ddd_je_packung">
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:decimal" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="darreichungsform">
+		<xs:complexType>
+			<xs:attribute name="V" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="[A-Z]{3}"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="S" type="xs:string" use="required" fixed="1.2.276.0.76.3.1.1.5.2.15"/>
+			<xs:attribute name="einschluss" type="xs:boolean" default="true"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="warnhinweis_ersetzung">
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="hinweis_verordnung_identisch">
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="verweis_dokument">
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="iww_anmerkung">
+		<xs:annotation>
+			<xs:documentation>Eine Anmerkung des IWW zu dem Wirkstoff.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="link" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Einer Liste von Alternativen beschrieben anhand eines ATC-Codes auf die im beschreibeneden Text (s.a. Attribut "V" des Elternelements) verwiesen werden.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="darreichungsform" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+						<xs:attribute name="atc" type="xs:string" use="required">
+							<xs:annotation>
+								<xs:documentation>Eine Verordnungsalternative angegeben durch den zugeordneten ATC-Code.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="beschreibung" use="required">
+							<xs:annotation>
+								<xs:documentation>Der Text des ATC-Codes.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="iww_kategorie" type="iww_kategorie_typ" use="optional">
+							<xs:annotation>
+								<xs:documentation>Die IWW-Kategorie der verlinkten Alternative im Kontext der übegrordneten Indikation.</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="V">
+				<xs:annotation>
+					<xs:documentation>Der Text der Anmerkung.</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<!-- simpleType..................................-->
+	<xs:simpleType name="europreis">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="10"/>
+			<xs:fractionDigits value="2"/>
+			<xs:minInclusive value="0.00"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="prozentwert">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="5"/>
+			<xs:fractionDigits value="2"/>
+			<xs:minInclusive value="0.00"/>
+			<xs:maxInclusive value="100.00"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="zielkosten_euro">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="10"/>
+			<xs:fractionDigits value="4"/>
+			<xs:minInclusive value="0.0000"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="geschlecht_value">
+		<xs:restriction base="xs:nonNegativeInteger">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="zeit_einheit_value">
+		<xs:annotation>
+			<xs:documentation> Ein Wert für die Zeiteinheit, T:Tag, W:Woche,M:Monat,J:Jahr</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="T">
+				<xs:annotation>
+					<xs:documentation>Tag</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="W">
+				<xs:annotation>
+					<xs:documentation>Woche</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="M">
+				<xs:annotation>
+					<xs:documentation>Monat</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="J">
+				<xs:annotation>
+					<xs:documentation>Jahr</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="pzn_string_typ">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{8}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="iww_indikations_schluessel_typ">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="iww_kategorie_typ">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="4a"/>
+			<xs:enumeration value="4b"/>
+			<xs:enumeration value="4c"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="5a"/>
+			<xs:enumeration value="5b"/>
+			<xs:enumeration value="5c"/>
+			<xs:enumeration value="6"/>
+			<xs:enumeration value="6a"/>
+			<xs:enumeration value="6b"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="kommentar_typ">
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="color_rgb_enum_typ">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="#[0-9A-F]{6,6}|Aqua|Black|Blue|Fuchsia|Gray|Green|Lime|Maroon|Navy|Olive|Purple|Red|Silver|Teal|White|Yellow|MistyRose|Orange"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- complexType ........................................................... -->
+	<xs:complexType name="geschlecht_typ">
+		<xs:attribute name="V" type="geschlecht_value" use="required"/>
+		<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.232"/>
+	</xs:complexType>
+	<xs:complexType name="nonNegativeInteger_typ">
+		<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="zeit_einheit_typ">
+		<xs:attribute name="V" type="zeit_einheit_value" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="zeitraum_complex_typ">
+		<xs:annotation>
+			<xs:documentation>Beschreibt einen  Zeitraum.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="von" type="nonNegativeInteger_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anzahl der Zeiteinheiten</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="bis" type="nonNegativeInteger_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anzahl der Zeiteinheiten</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="unit" type="zeit_einheit_typ" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Zeiteinheit</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="pzn_basis_typ">
+		<xs:sequence>
+			<xs:element ref="ddd_je_packung"/>
+		</xs:sequence>
+		<xs:attribute name="V" type="pzn_string_typ" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="pzn_typ">
+		<xs:sequence>
+			<xs:element ref="ddd_je_packung" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="V" type="pzn_string_typ" use="required"/>
+		<xs:attribute name="einschluss" type="xs:boolean" default="true"/>
+	</xs:complexType>
+	<xs:complexType name="medicine_base_type">
+		<xs:attribute name="V" type="xs:string" use="required"/>
+		<xs:attribute name="einschluss" type="xs:boolean" default="true"/>
+	</xs:complexType>
+	<xs:complexType name="medicine_form_type">
+		<xs:complexContent>
+			<xs:extension base="medicine_base_type">
+				<xs:sequence>
+					<xs:element ref="darreichungsform" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="medicine_form_iww_type">
+		<xs:complexContent>
+			<xs:extension base="medicine_form_type">
+				<xs:sequence>
+					<xs:element ref="iww_anmerkung" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="bezeichnung">
+					<xs:annotation>
+						<xs:documentation>Die Bezeichnung des über das V-Attribut angegebenen Eintrags.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="iww_kategorie" type="iww_kategorie_typ" use="optional">
+					<xs:annotation>
+						<xs:documentation>Die IWW-Kategorie des Arzneimittels/Wirkstoffs.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="fachgruppen_base_type">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="fachgruppenintervall">
+				<xs:complexType>
+					<xs:attribute name="intervall_start" type="xs:positiveInteger" use="optional"/>
+					<xs:attribute name="intervall_stop" type="xs:positiveInteger" use="optional"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="fachgruppennummer">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:positiveInteger" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="fachgruppen_liste_base_type">
+		<xs:choice minOccurs="1" maxOccurs="unbounded">
+			<xs:element name="fachgruppenintervall">
+				<xs:complexType>
+					<xs:attribute name="intervall_start" type="xs:positiveInteger" use="optional"/>
+					<xs:attribute name="intervall_stop" type="xs:positiveInteger" use="optional"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="fachgruppennummer">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:positiveInteger" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="bedingung_typ">
+		<xs:annotation>
+			<xs:documentation>Eine Bedingung die erfüllt sein muss, damit die Regelung angewendet werden kann.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="bedingung" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="altersgrenze" type="zeitraum_complex_typ" minOccurs="0"/>
+						<xs:element name="geschlecht" type="geschlecht_typ" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="einschluss" type="xs:boolean" default="true"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="infomassnahmen_bedingung_typ">
+		<xs:annotation>
+			<xs:documentation>Eine Bedingung die erfüllt sein muss, damit die Regelung angewendet werden kann.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="bedingung" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="altersgrenze" type="zeitraum_complex_typ" minOccurs="0"/>
+						<xs:element name="geschlecht" type="geschlecht_typ" minOccurs="0"/>
+						<xs:element name="fachgruppen_liste" type="fachgruppen_liste_base_type" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="einschluss" type="xs:boolean" default="true"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="iww_bedingung_typ">
+		<xs:sequence>
+			<xs:element name="bedingung" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="altersgrenze" type="zeitraum_complex_typ" minOccurs="0"/>
+						<xs:element name="geschlecht" type="geschlecht_typ" minOccurs="0"/>
+						<xs:element name="iww_indikationen" minOccurs="0">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="indikation" type="iww_indikations_schluessel_typ" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="fachgruppen_liste" type="fachgruppen_liste_base_type" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="einschluss" type="xs:boolean" default="true"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ======================================================================= 
+   hinweis_intervall_typ zur Definition der Grenzen, für die ein Hinweis angezeigt werden soll.
+   Wenn "inklusion_intervallgrenze" = true bei "intervall_start" gesetzt, so handelt es sich um ein größer gleich.
+   Wenn "inklusion_intervallgrenze" = false bei "intervall_start" gesetzt, so handelt es sich um ein größer.
+   Wenn "inklusion_intervallgrenze" = true bei "intervall_stop" gesetzt, so handelt es sich um ein kleiner gleich.
+   Wenn "inklusion_intervallgrenze" = false bei "intervall_start" gesetzt, so handelt es sich um ein kleiner.
+	======================================================================= -->
+	<xs:complexType name="hinweis_intervall_typ">
+		<xs:sequence>
+			<xs:element name="intervall_start" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:decimal" use="required"/>
+					<xs:attribute name="inklusion_intervallgrenze" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="intervall_stop" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:decimal" use="required"/>
+					<xs:attribute name="inklusion_intervallgrenze" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="hinweis" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<!-- ======================================================================= 
+   Definition der Typs Leitsubstanzquotenregelung
+	======================================================================= -->
+	<xs:complexType name="leitsubstanzquotenregelung_typ">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="pzn"/>
+				<xs:element ref="handelsname"/>
+				<xs:element ref="standardaggregat"/>
+				<xs:element ref="wirkstoff"/>
+				<xs:element ref="atc5"/>
+				<xs:element ref="wirkstoffgruppe"/>
+				<xs:element ref="atc4"/>
+			</xs:choice>
+			<xs:element name="leitsubstanz" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:choice maxOccurs="unbounded">
+							<xs:element ref="pzn"/>
+							<xs:element ref="handelsname"/>
+							<xs:element ref="standardaggregat"/>
+							<xs:element ref="wirkstoff"/>
+							<xs:element ref="atc5"/>
+							<xs:element ref="wirkstoffgruppe"/>
+							<xs:element ref="atc4"/>
+						</xs:choice>
+						<xs:element name="fachgruppenquote" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="fachgruppen_base_type">
+										<xs:sequence>
+											<xs:choice minOccurs="0">
+												<xs:element name="quote_leitsubstanz_ddd">
+													<xs:complexType>
+														<xs:attribute name="V" type="xs:decimal" use="required"/>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="quote_leitsubstanz_verordnungen">
+													<xs:complexType>
+														<xs:attribute name="V" type="xs:decimal" use="required"/>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="quote_leitsubstanz_bruttoumsatz">
+													<xs:complexType>
+														<xs:attribute name="V" type="xs:decimal" use="required"/>
+													</xs:complexType>
+												</xs:element>
+											</xs:choice>
+											<xs:element ref="warnhinweis_ersetzung" minOccurs="0"/>
+											<xs:element ref="hinweis_verordnung_identisch" minOccurs="0"/>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ======================================================================= 
+   Definition des Typs Zielpreisregelung
+	======================================================================= -->
+	<xs:complexType name="zielpreisregelung_typ">
+		<xs:sequence>
+			<xs:element ref="pzn" maxOccurs="unbounded"/>
+			<xs:element name="zielpreis">
+				<xs:complexType>
+					<xs:attribute name="V" type="europreis" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="kategorie_zielpreisregelung" type="hinweis_intervall_typ" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ======================================================================= 
+   Definition des kostenvergleich_ddd_typ
+	======================================================================= -->
+	<xs:complexType name="kostenvergleich_ddd_typ">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="pzn"/>
+				<xs:element ref="handelsname"/>
+				<xs:element ref="standardaggregat"/>
+				<xs:element ref="wirkstoff"/>
+				<xs:element ref="atc5"/>
+				<xs:element ref="wirkstoffgruppe"/>
+				<xs:element ref="atc4"/>
+			</xs:choice>
+			<xs:element name="zielkosten_je_ddd">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:decimal" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="fachgruppenquote" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="fachgruppen_base_type">
+							<xs:sequence>
+								<xs:element name="quote_kostenvergleich_ddd" minOccurs="0">
+									<xs:complexType>
+										<xs:attribute name="V" type="xs:decimal" use="required"/>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="kategorie_ddd_kosten_vergleich" type="hinweis_intervall_typ" minOccurs="0" maxOccurs="unbounded"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ======================================================================= 
+   Definition des generikaquotenregelung_typ
+	======================================================================= -->
+	<xs:complexType name="generikaquotenregelung_typ">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="pzn_original" type="pzn_typ"/>
+				<xs:element name="handelsname_original" type="medicine_form_type"/>
+				<xs:element name="standardaggregat_original" type="medicine_form_type"/>
+			</xs:choice>
+			<xs:element name="generischer_wirkstoff_alternative" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="pzn"/>
+						<xs:element ref="handelsname"/>
+						<xs:element ref="standardaggregat"/>
+						<xs:element ref="atc5"/>
+						<xs:element ref="wirkstoff"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="fachgruppenquote" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="fachgruppen_base_type">
+							<xs:sequence>
+								<xs:choice minOccurs="0">
+									<xs:element name="quote_generika_ddd" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="pzn_generika" type="pzn_basis_typ" maxOccurs="unbounded"/>
+											</xs:sequence>
+											<xs:attribute name="V" type="xs:decimal" use="required"/>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="quote_generika_verordnungen" minOccurs="0">
+										<xs:complexType>
+											<xs:choice minOccurs="0" maxOccurs="unbounded">
+												<xs:element ref="pzn"/>
+												<xs:element ref="handelsname"/>
+												<xs:element ref="standardaggregat"/>
+												<xs:element ref="wirkstoff"/>
+												<xs:element ref="atc5"/>
+												<xs:element ref="wirkstoffgruppe"/>
+												<xs:element ref="atc4"/>
+											</xs:choice>
+											<xs:attribute name="V" type="xs:decimal" use="required"/>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="quote_generika_bruttoumsatz" minOccurs="0">
+										<xs:complexType>
+											<xs:choice minOccurs="0" maxOccurs="unbounded">
+												<xs:element ref="pzn"/>
+												<xs:element ref="handelsname"/>
+												<xs:element ref="standardaggregat"/>
+												<xs:element ref="wirkstoff"/>
+												<xs:element ref="atc5"/>
+												<xs:element ref="wirkstoffgruppe"/>
+												<xs:element ref="atc4"/>
+											</xs:choice>
+											<xs:attribute name="V" type="xs:decimal" use="required"/>
+										</xs:complexType>
+									</xs:element>
+								</xs:choice>
+								<xs:element ref="warnhinweis_ersetzung" minOccurs="0"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ======================================================================= 
+   Definition des höchstquotenregelung_typ
+	======================================================================= -->
+	<xs:complexType name="hoechstquotenregelung_typ">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="pzn"/>
+				<xs:element ref="handelsname"/>
+				<xs:element ref="standardaggregat"/>
+				<xs:element ref="wirkstoff"/>
+				<xs:element ref="atc5"/>
+				<xs:element ref="wirkstoffgruppe"/>
+				<xs:element ref="atc4"/>
+			</xs:choice>
+			<xs:element name="verordnungsalternative" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:choice maxOccurs="unbounded">
+						<xs:element ref="pzn"/>
+						<xs:element ref="handelsname"/>
+						<xs:element ref="standardaggregat"/>
+						<xs:element ref="wirkstoff"/>
+						<xs:element ref="wirkstoffgruppe"/>
+						<xs:element ref="atc4"/>
+						<xs:element ref="atc5"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="fachgruppenquote" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="fachgruppen_base_type">
+							<xs:sequence>
+								<xs:choice minOccurs="0">
+									<xs:element name="hoechstquote_ddd" minOccurs="0">
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="pzn" type="pzn_basis_typ" maxOccurs="unbounded"/>
+											</xs:sequence>
+											<xs:attribute name="V" type="xs:decimal" use="required"/>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="hoechstquote_verordnungen" minOccurs="0">
+										<xs:complexType>
+											<xs:choice minOccurs="0" maxOccurs="unbounded">
+												<xs:element ref="pzn"/>
+												<xs:element ref="handelsname"/>
+												<xs:element ref="standardaggregat"/>
+												<xs:element ref="wirkstoff"/>
+												<xs:element ref="atc5"/>
+												<xs:element ref="wirkstoffgruppe"/>
+												<xs:element ref="atc4"/>
+											</xs:choice>
+											<xs:attribute name="V" type="xs:decimal" use="required"/>
+										</xs:complexType>
+									</xs:element>
+									<xs:element name="hoechstquote_bruttoumsatz" minOccurs="0">
+										<xs:complexType>
+											<xs:choice minOccurs="0" maxOccurs="unbounded">
+												<xs:element ref="pzn"/>
+												<xs:element ref="handelsname"/>
+												<xs:element ref="standardaggregat"/>
+												<xs:element ref="wirkstoff"/>
+												<xs:element ref="atc5"/>
+												<xs:element ref="wirkstoffgruppe"/>
+												<xs:element ref="atc4"/>
+											</xs:choice>
+											<xs:attribute name="V" type="xs:decimal" use="required"/>
+										</xs:complexType>
+									</xs:element>
+								</xs:choice>
+								<xs:element ref="warnhinweis_ersetzung" minOccurs="0"/>
+							</xs:sequence>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ======================================================================= 
+   Definition des biosimilarquotenregelung_typ
+	======================================================================= -->
+	<xs:complexType name="biosimilarquotenregelung_typ">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="pzn"/>
+				<xs:element ref="handelsname"/>
+				<xs:element ref="standardaggregat"/>
+				<xs:element ref="wirkstoff"/>
+				<xs:element ref="atc5"/>
+				<xs:element ref="wirkstoffgruppe"/>
+				<xs:element ref="atc4"/>
+			</xs:choice>
+			<xs:element name="biosimilar" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:choice maxOccurs="unbounded">
+							<xs:element ref="pzn"/>
+							<xs:element ref="handelsname"/>
+							<xs:element ref="standardaggregat"/>
+						</xs:choice>
+						<xs:element name="fachgruppenquote" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:complexContent>
+									<xs:extension base="fachgruppen_base_type">
+										<xs:sequence>
+											<xs:choice minOccurs="0">
+												<xs:element name="quote_biosimilar_ddd">
+													<xs:complexType>
+														<xs:attribute name="V" type="xs:decimal" use="required"/>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="quote_biosimilar_verordnungen">
+													<xs:complexType>
+														<xs:attribute name="V" type="xs:decimal" use="required"/>
+													</xs:complexType>
+												</xs:element>
+												<xs:element name="quote_biosimilar_bruttoumsatz">
+													<xs:complexType>
+														<xs:attribute name="V" type="xs:decimal" use="required"/>
+													</xs:complexType>
+												</xs:element>
+											</xs:choice>
+											<xs:element ref="warnhinweis_ersetzung" minOccurs="0"/>
+										</xs:sequence>
+									</xs:extension>
+								</xs:complexContent>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ======================================================================= 
+   Definition des verweis_dokument_typ
+	======================================================================= -->
+	<xs:complexType name="verweis_dokument_typ">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="pzn"/>
+				<xs:element ref="handelsname"/>
+				<xs:element ref="standardaggregat"/>
+				<xs:element ref="wirkstoff"/>
+				<xs:element ref="atc5"/>
+				<xs:element ref="wirkstoffgruppe"/>
+				<xs:element ref="atc4"/>
+			</xs:choice>
+			<xs:element ref="warnhinweis_pvs" minOccurs="0"/>
+			<xs:element ref="verweis_dokument" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="bedingungs_liste" type="bedingung_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Bedingungen in Bezug auf Alter und Geschlecht des Patienten/der Patientin, die erfüllt sein müssen, damit die Regelung angewendet wird.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ======================================================================= 
+   Definition des infomassnahmenregelung_typ
+	======================================================================= -->
+	<xs:complexType name="infomassnahmenregelung_typ">
+		<xs:sequence>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element ref="pzn"/>
+				<xs:element ref="handelsname"/>
+				<xs:element ref="standardaggregat"/>
+				<xs:element ref="wirkstoff"/>
+				<xs:element ref="atc5"/>
+				<xs:element ref="wirkstoffgruppe"/>
+				<xs:element ref="atc4"/>
+			</xs:choice>
+			<xs:element ref="warnhinweis_pvs" minOccurs="0"/>
+			<xs:element ref="verweis_dokument" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="bedingungs_liste" type="infomassnahmen_bedingung_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Bedingungen in Bezug auf Alter und Geschlecht des Patienten/der Patientin und Fachgruppe des Arztes, die erfüllt sein müssen, damit die Regelung angewendet wird.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="iww_kapitel_typ">
+		<xs:sequence>
+			<xs:element name="text" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Ein die Indikation beschreibender Text.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="anmerkung" type="xs:string" minOccurs="0"/>
+			<xs:element name="wirkstoff" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Wirkstoffe die bei der Indikation angewendet werden sollten.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="iww_anmerkung" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Eine Anmerkung des IWW zu der Indikation.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="darreichungsform" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Die Darreichungsformen auf die sich die Wirkstoff-Empfehlung bezieht. </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="atc" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Ein dem Wirkstoff zugeordneter ATC-Code der bei der Indikation bevorzugt verwendet werden sollte.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType mixed="false">
+								<xs:attribute name="V">
+									<xs:annotation>
+										<xs:documentation>Der ATC-Code.</xs:documentation>
+									</xs:annotation>
+								</xs:attribute>
+								<xs:attribute name="verschreibungspflicht" type="xs:boolean"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="verweis_dokument" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name="bezeichnung" use="required">
+						<xs:annotation>
+							<xs:documentation>Die Bezeichnung des Wirkstoffs.</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="iww_kategorie" use="required">
+						<xs:annotation>
+							<xs:documentation>Die IWW-Kategorie des Wirkstoffs (s.a. Attribut atc5).</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="kapitel" type="iww_kapitel_typ" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Ein Liste von möglichen Unterindikationen der Indikation.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="verweis_dokument" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ======================================================================= 
+   Definition der Typs iww_regelung
+	======================================================================= -->
+	<xs:complexType name="iww_regelung_typ">
+		<xs:sequence>
+			<xs:element name="service_tmr" type="ehd:service_tmr_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Der Gültigkeitszeitraum der Regelung.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="verordnungen" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:choice maxOccurs="unbounded">
+							<xs:element ref="pzn"/>
+							<xs:element ref="handelsname"/>
+							<xs:element ref="standardaggregat"/>
+							<xs:element ref="wirkstoff"/>
+							<xs:element name="atc5" type="medicine_form_iww_type"/>
+							<xs:element ref="wirkstoffgruppe"/>
+							<xs:element ref="atc4"/>
+						</xs:choice>
+						<xs:element name="verordnungsalternative" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:choice maxOccurs="unbounded">
+									<xs:element ref="pzn"/>
+									<xs:element ref="handelsname"/>
+									<xs:element ref="standardaggregat"/>
+									<xs:element ref="wirkstoff"/>
+									<xs:element ref="atc5"/>
+								</xs:choice>
+								<xs:attribute name="verschreibungspflicht" type="xs:boolean"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="verweis_dokument" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Ein Dokumentenverweis mit weiterführenden Informationen.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="verschreibungspflicht" type="xs:boolean"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="bedingungs_liste" type="iww_bedingung_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Bedingungen die erfüllt sein muss, damit die Regelung angewendet werden kann.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="verweis_dokument" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Ein Dokumentenverweis mit weiterführenden Informationen.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="iww_klassifikation" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Gibt die Klassifikation/Bezeichnung der vom IWW vorgenommenen Gruppierung der in dieser Regelung enthaltenen Wirkstoffe an.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="text_typ">
+		<xs:sequence>
+			<xs:element name="textart" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="H">
+									<xs:annotation>
+										<xs:documentation>Hinweis, ein Text der in einem modalen Dialog dem Anwender anzuzeigen ist.</xs:documentation>
+									</xs:annotation>
+								</xs:enumeration>
+								<xs:enumeration value="F">
+									<xs:annotation>
+										<xs:documentation>Frage, ein Text der in einem modalen Dialog dem Anwender anzuzeigen ist. Der Dialog enthält einen OK und einen Abbruch Button (Button Texte logisch zu verwenden, die Texte können je nach Software variieren). Wird die Frage bestätigt, so ist der aktuelle Arbeitsablauf fortzusetzen bei Abbruch entsprechend abzubrechen. Z.B.: Bei der übernahme der Daten auf das Rezept wird bei OK die Verordnung übernommen, ansonsten nicht auf das Rezept übernommen.</xs:documentation>
+									</xs:annotation>
+								</xs:enumeration>
+								<xs:enumeration value="I">
+									<xs:annotation>
+										<xs:documentation>
+									Information. Ist indentisch mit H-Hinweis, nur das der Modale Dialog nicht direkt dem Anwender präsentiert wird, sondern über ein Icon oder ähnliches dem Anwender signalisiert wird, das Informationen vorliegen, die durch aktive Auswahl durch den Anwender angezeigt wird.</xs:documentation>
+									</xs:annotation>
+								</xs:enumeration>
+								<xs:enumeration value="S">
+									<xs:annotation>
+										<xs:documentation>Stille Frage. Ist indentisch mit dem Wert F - Frage, nur das der Modale Dialog nicht direkt dem Anwender präsentiert wird, sondern über ein Icon oder ähnliches dem Anwender signalisiert wird, das Informationen vorliegen, die durch aktive Auswahl durch den Anwender angezeigt wird.</xs:documentation>
+									</xs:annotation>
+								</xs:enumeration>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="schlagwort" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Werden verwendet, um Texte bevor sie vollständig angezeigt werden mit einen Tooltip (oder logissch vergleichbarem) zu versehen. Z.B.: Für Informationen oder Stillen Fragen zu Priscus sollte Priscus in der Schlagwortliste  stehen andere Beispiele: Regressrisko, Wechselwirkungs Risiko ...</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="V" use="required"/>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	Schnittstelle (arv_data)
+	======================================================================= -->
+	<xs:element name="geltungsbereich_kv">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="arzneimittelvereinbarungen">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="leitsubstanzquotenr_liste" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="leitsubstanzquotenregelung" type="leitsubstanzquotenregelung_typ" maxOccurs="unbounded"/>
+									</xs:sequence>
+									<xs:attribute name="prioritaet" type="xs:positiveInteger" default="1"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="zielpreisr_liste" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="zielpreisregelung" type="zielpreisregelung_typ" maxOccurs="unbounded"/>
+									</xs:sequence>
+									<xs:attribute name="prioritaet" type="xs:positiveInteger" default="1"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="kostenvergleich_ddd_liste" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="kostenvergleich_ddd" type="kostenvergleich_ddd_typ" maxOccurs="unbounded"/>
+									</xs:sequence>
+									<xs:attribute name="prioritaet" type="xs:positiveInteger" default="1"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="generikaquotenr_liste" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="generikaquotenregelung" type="generikaquotenregelung_typ" maxOccurs="unbounded"/>
+									</xs:sequence>
+									<xs:attribute name="prioritaet" type="xs:positiveInteger" default="1"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="hoechstquotenr_liste" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="hoechstquotenregelung" type="hoechstquotenregelung_typ" maxOccurs="unbounded"/>
+									</xs:sequence>
+									<xs:attribute name="prioritaet" type="xs:positiveInteger" default="1"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="biosimilarquotenr_liste" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="biosimilarquotenregelung" type="biosimilarquotenregelung_typ" maxOccurs="unbounded"/>
+									</xs:sequence>
+									<xs:attribute name="prioritaet" type="xs:positiveInteger" default="1"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="infomassnahmen_liste" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="infomassnahmenregelung" type="infomassnahmenregelung_typ" maxOccurs="unbounded"/>
+									</xs:sequence>
+									<xs:attribute name="prioritaet" type="xs:positiveInteger" default="1"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="behandlungsalternativen_liste" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="behandlungsalternativenregelung" type="verweis_dokument_typ" maxOccurs="unbounded"/>
+									</xs:sequence>
+									<xs:attribute name="prioritaet" type="xs:positiveInteger" default="1"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="iww_liste" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="iwwliste" type="iww_regelung_typ" maxOccurs="unbounded"/>
+									</xs:sequence>
+									<xs:attribute name="prioritaet" type="xs:positiveInteger" default="1"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="kombi_verordnungsziel_liste" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="kombi_verordnungsziel" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="ziel_art">
+														<xs:complexType>
+															<xs:attribute name="V" use="required"/>
+															<xs:attribute name="DN"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="pzn_liste">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="pzn" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="erwuenscht">
+																				<xs:complexType>
+																					<xs:attribute name="V" type="xs:boolean" use="required"/>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="rabatt_gueltig">
+																				<xs:complexType>
+																					<xs:attribute name="V" type="xs:boolean" use="required"/>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																		<xs:attribute name="V" use="required"/>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="bedingung" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="fachgruppen_liste" type="fachgruppen_liste_base_type"/>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element ref="warnhinweis_pvs"/>
+													<xs:element ref="verweis_dokument" minOccurs="0"/>
+												</xs:sequence>
+												<xs:attribute name="V" use="required"/>
+												<xs:attribute name="DN"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="prioritaet"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="iww_indikationsbaum" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Der gesamte IWW-Indikationskatalog in hierarchischer Struktur.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="kapitel" type="iww_kapitel_typ" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="iww_kategorien" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Eine Liste aller IWW-Kategorien mit Bechreibung.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="kategorie">
+								<xs:annotation>
+									<xs:documentation>Eine IWW-Kategorie mit Bezeichung und Beschreibung.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="V" type="iww_kategorie_typ" use="required">
+										<xs:annotation>
+											<xs:documentation>Die Bezeichung einer IWW-Kategorie, z.B. 1, 2 oder 4a.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="beschreibung" use="required">
+										<xs:annotation>
+											<xs:documentation>Eine Beschreibung der IWW-Kategorie.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="color" type="color_rgb_enum_typ" use="required">
+										<xs:annotation>
+											<xs:documentation>Die farbliche Kodierung der IWW-Kategorie.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="iww_metadaten" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="titel" use="required">
+							<xs:annotation>
+								<xs:documentation>Eine kurze Beschreibung der IWW-Daten.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="beschreibung" use="required">
+							<xs:annotation>
+								<xs:documentation>Eine umfangreiche Beschreibung der IWW-Daten.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="quelle" use="required">
+							<xs:annotation>
+								<xs:documentation>Eine Angabe zur Quelle der IWW-Daten.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="quelle_artikel" use="required">
+							<xs:annotation>
+								<xs:documentation>Der für die Anzeige der Quelle der IWW-Daten verwendbare Artikel..</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="copyright" use="required">
+							<xs:annotation>
+								<xs:documentation>Eine Angabe zum Copyright der IWW-Daten.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="indikationsbaum_bezeichnung" use="required">
+							<xs:annotation>
+								<xs:documentation>Die von der  herausgebenen Stelle verwendete Bezeichnung des Indikationsbaums der IWW-Daten.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="anmerkungen_bezeichnung" use="required">
+							<xs:annotation>
+								<xs:documentation>Die von der  herausgebenen Stelle verwendete Bezeichnung der in den IWW-Daten enthaltenen Anmerkungen..</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="kategorie_bezeichnung" use="required">
+							<xs:annotation>
+								<xs:documentation>Die von der  herausgebenen Stelle verwendete Bezeichnung für die in den IWW-Daten enthaltenen Kategorie-Angaben.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="kategorie_bezeichnung_kurz" use="required">
+							<xs:annotation>
+								<xs:documentation>Die von der  herausgebenen Stelle verwendete Bezeichnung für die in den IWW-Daten enthaltenen Kategorie-Angaben in einer verkürzten Form.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="logo_32x32">
+							<xs:annotation>
+								<xs:documentation>Enthält den Dateinamen für ein zusammen mit IWW-Daten darzustellendes Logo in der Größe 32x32 Pixel.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="logo_48x48">
+							<xs:annotation>
+								<xs:documentation>Enthält den Dateinamen für ein zusammen mit IWW-Daten darzustellendes Logo in der Größe 48x48 Pixel.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="logo_114x114">
+							<xs:annotation>
+								<xs:documentation>Enthält den Dateinamen für ein zusammen mit IWW-Daten darzustellendes Logo in der Größe 114x114 Pixel.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:minLength value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+			<xs:attribute name="S" type="xs:string" use="required" fixed="1.2.276.0.76.5.233"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

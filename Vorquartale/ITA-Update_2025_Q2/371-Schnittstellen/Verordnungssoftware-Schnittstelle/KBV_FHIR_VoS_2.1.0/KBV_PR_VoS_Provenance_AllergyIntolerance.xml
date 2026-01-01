@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-PR-VoS-Provenance-AllergyIntolerance" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Provenance_AllergyIntolerance" />
+  <version value="2.1.0" />
+  <name value="KBV_PR_VoS_Provenance_AllergyIntolerance" />
+  <title value="KBV_PR_VoS_Provenance_AllergyIntolerance" />
+  <status value="active" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <description value="Eine Provenance-Ressource, die vom PVS an die VoS gesendet wird, um zu übertragen, ob Allergien ärztlich diagnostiziert oder Eigenangaben der behandelten Person sind." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Provenance" />
+  <baseDefinition value="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Provenance|1.3.0" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Provenance">
+      <path value="Provenance" />
+      <definition value="Hier wird für Allergien übertragen, ob diese ärztlich diagnostiziert oder Eigenangaben der behandelten Person sind." />
+    </element>
+    <element id="Provenance.id">
+      <path value="Provenance.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.meta">
+      <path value="Provenance.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.meta.source">
+      <path value="Provenance.meta.source" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.meta.profile">
+      <path value="Provenance.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Provenance_AllergyIntolerance|2.1.0" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.meta.security">
+      <path value="Provenance.meta.security" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.meta.tag">
+      <path value="Provenance.meta.tag" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.implicitRules">
+      <path value="Provenance.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.language">
+      <path value="Provenance.language" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.contained">
+      <path value="Provenance.contained" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.target">
+      <path value="Provenance.target" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_AllergyIntolerance|2.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.target.reference">
+      <path value="Provenance.target.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.target.type">
+      <path value="Provenance.target.type" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.target.identifier">
+      <path value="Provenance.target.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.target.display">
+      <path value="Provenance.target.display" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.occurred[x]">
+      <path value="Provenance.occurred[x]" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.recorded">
+      <path value="Provenance.recorded" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.policy">
+      <path value="Provenance.policy" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.location">
+      <path value="Provenance.location" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.reason">
+      <path value="Provenance.reason" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.activity">
+      <path value="Provenance.activity" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.activity.coding">
+      <path value="Provenance.activity.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.activity.coding.system">
+      <path value="Provenance.activity.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-DataOperation" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.activity.coding.code">
+      <path value="Provenance.activity.coding.code" />
+      <min value="1" />
+      <fixedCode value="CREATE" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.activity.coding.userSelected">
+      <path value="Provenance.activity.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.activity.text">
+      <path value="Provenance.activity.text" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent">
+      <path value="Provenance.agent" />
+      <definition value="Hier wird eine Person angegeben, die die Allergie festgestellt hat." />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.type">
+      <path value="Provenance.agent.type" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.type.coding">
+      <path value="Provenance.agent.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.type.coding.system">
+      <path value="Provenance.agent.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/provenance-participant-type" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.type.coding.version">
+      <path value="Provenance.agent.type.coding.version" />
+      <min value="1" />
+      <fixedString value="4.0.1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.type.coding.code">
+      <path value="Provenance.agent.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="author" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.type.coding.display">
+      <path value="Provenance.agent.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent.type.coding.userSelected">
+      <path value="Provenance.agent.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent.type.text">
+      <path value="Provenance.agent.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent.role">
+      <path value="Provenance.agent.role" />
+      <definition value="Angabe, der Rolle der feststellenden Person mit coding.code = PAT (patient) oder PROV (healthcare provider, ärztliche Person)" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ProvenanceAgentRole" />
+        </extension>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_VoS_AgentRoles" />
+      </binding>
+    </element>
+    <element id="Provenance.agent.role.coding">
+      <path value="Provenance.agent.role.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.role.coding.system">
+      <path value="Provenance.agent.role.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.role.coding.code">
+      <path value="Provenance.agent.role.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.role.coding.userSelected">
+      <path value="Provenance.agent.role.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent.role.text">
+      <path value="Provenance.agent.role.text" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent.who">
+      <path value="Provenance.agent.who" />
+      <definition value="Hier kann die konkrete Person referenziert werden, welche die Allergie/Unverträglichkeit festgestellt hat. Es muss dabei auf jeden Fall der Typ (Patient, Practitioner oder PractitionerRole) angegeben werden. Falls die genaue Person nicht referenziert werden kann, kann durch den Typ für den eMP angegeben werden, welcher Personentyp für die Information verantwortlich ist." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Patient|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Practitioner|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_PractitionerRole|2.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.who.reference">
+      <path value="Provenance.agent.who.reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.who.type">
+      <path value="Provenance.agent.who.type" />
+      <definition value="Hier wird der Typ (Patient, Practitioner oder PractitionerRole) angegeben. Falls die genaue Person nicht referenziert werden kann, kann durch den Typ für den eMP angegeben werden, welcher Personentyp für die Information verantwortlich ist." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.who.identifier">
+      <path value="Provenance.agent.who.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent.who.display">
+      <path value="Provenance.agent.who.display" />
+      <definition value="Falls nur &quot;type&quot; ausgefüllt werden kann, kann hier eine Beschreibung des Typs eingefügt werden." />
+    </element>
+    <element id="Provenance.agent.onBehalfOf">
+      <path value="Provenance.agent.onBehalfOf" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.entity">
+      <path value="Provenance.entity" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.signature">
+      <path value="Provenance.signature" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

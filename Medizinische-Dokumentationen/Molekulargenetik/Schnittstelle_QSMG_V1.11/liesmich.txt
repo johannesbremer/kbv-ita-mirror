@@ -1,0 +1,22 @@
+Beschreibung "Schnittstelle-QS Molekulargenetik" 
+Version 1.11, 10.08.2012
+**************************************************************************
+
+Alle Komponenten des Pakets sind separat versioniert. Es können keine 
+Schlussfolgerungen aus den Versionsnummern des Pakets und der Komponenten 
+untereinander gezogen werden. Die Versionsnummer der Schnittstelle muss 
+auch nicht identisch mit der Versionsnummer der Schnittstellenbeschreibung 
+sein.
+
+
+2. Dokumente und Software
+*************************
+
+- Schnittstellenbeschreibung QS Molekulargenetik (Version 1.12, Stand: 11.04.2014)
+- Schemata (Version 1.00, Stand 20.05.2012)
+- BSP-Dateien
+
+
+3. Änderungen zur Vorversion
+****************************
+- redaktionelle Änderung in der Schnittstellenbeschreibung (Linkaktualisierung)

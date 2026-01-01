@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Befund_Rektum_Kolon"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Krebsfrueherkennung_Befund_Rektum_Kolon"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Krebsfrueherkennung Beobachtungen Befund Rektum Kolon"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="Abgang_von_Blut_oder_Schleim_mit_dem_Stuhl"/>
+<display value="Abgang von Blut oder Schleim mit dem Stuhl"/>
+</concept>
+<concept>
+<code value="Neue_Unregelmaessigkeiten_im_Stuhl"/>
+<display value="Neue Unregelmaessigkeiten im Stuhl"/>
+</concept>
+<concept>
+<code value="Tastbefund_auffaellig"/>
+<display value="Tastbefund auffaellig"/>
+</concept>
+<concept>
+<code value="Stuhltest_zurueck"/>
+<display value="Stuhltest zurueck"/>
+</concept>
+<concept>
+<code value="Stuhltest_positiv"/>
+<display value="Stuhltest positiv"/>
+</concept>
+</CodeSystem>
+

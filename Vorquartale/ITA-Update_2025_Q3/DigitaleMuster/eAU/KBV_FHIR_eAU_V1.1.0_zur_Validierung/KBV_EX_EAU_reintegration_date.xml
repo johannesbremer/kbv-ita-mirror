@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-EX-EAU-reintegration-date" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_reintegration_date" />
+  <version value="1.1.0" />
+  <name value="KBV_EX_EAU_reintegration_date" />
+  <status value="active" />
+  <date value="2022-09-30" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <description value="Dieses Datum gibt an, ab wann die Wiedereingliederung starten soll/kann." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="ServiceRequest" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Wiedereingliederung ab" />
+      <definition value="Dieses Datum gibt an, ab wann die Wiedereingliederung starten soll/kann." />
+      <max value="1" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_reintegration_date" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <short value="Wiedereingliederung ab" />
+      <definition value="Dieses Datum gibt an, ab wann die Wiedereingliederung starten soll/kann." />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="Extension.value[x]:valueDateTime">
+      <path value="Extension.valueDateTime" />
+      <sliceName value="valueDateTime" />
+      <short value="Wiedereingliederung ab" />
+      <definition value="Dieses Datum gibt an, ab wann die Wiedereingliederung starten soll/kann." />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

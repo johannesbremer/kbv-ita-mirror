@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<einlieferung xsi:schemaLocation="http://www.kv-telematik.de/1-Click/Meldung_Einlieferung/2.0.0 ../Schema/KVTA_Einliefung_Abrechnung_2_0_0.xsd" xmlns="http://www.kv-telematik.de/1-Click/Meldung_Einlieferung/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <version V="1"/>
+        <guid V=" 936DA01F-9ABD-4D9D-80C7-02AF85C822A8"/>
+        <bsnr V="123456699"/>
+        <testdaten V="true"/>
+        <lieferungs_zeitpunkt V="2025-01-27T12:49:59Z"/>
+        <dokumenten_typ V="ABRECHNUNG"/>
+        <quartal V="0000-1"/>
+        <vollstaendig V="true"/>
+		 <anhang V="Z30123456699_27.01.2025_12.00.con.XKM"/>
+       </einlieferung>

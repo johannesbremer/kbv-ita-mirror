@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!-- 
+	   - Basistypen
+	   -->
+	<xsd:include schemaLocation="xdttypen.xsd"/>
+	<!-- 
+	   - Elemente die aufgrund fehlender FK in der LDT-Datei generiert werden,
+	   - ohne dass es eine Definition für diese gäbe. XPM verwendet dieses XML-Schema
+	   - nur für die passenden Fehlermeldungen.
+	   -->
+	<xsd:element name="s8218f4241" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Erstveranlassers (Feld 4241)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="s8218f4242" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Überweisers (Feld 4242)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

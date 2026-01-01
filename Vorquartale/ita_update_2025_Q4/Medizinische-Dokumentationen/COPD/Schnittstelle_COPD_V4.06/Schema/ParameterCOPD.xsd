@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns="urn::sciphox-org/sciphox" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="AdministrativeDaten">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Einschreibung wegen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Anamnese">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Körpergröße"/>
+			<xs:enumeration value="Körpergewicht"/>
+			<xs:enumeration value="Blutdruck systolisch"/>
+			<xs:enumeration value="Blutdruck diastolisch"/>
+			<xs:enumeration value="Raucher"/>
+			<xs:enumeration value="Begleiterkrankungen"/>
+			<xs:enumeration value="Aktueller FEV1-Wert (alle sechs bis zwölf Monate)"/>
+			<xs:enumeration value="Klinische Einschätzung des Osteoporoserisikos durchgeführt"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RelevanteEreignisse">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Häufigkeit von Exazerbationen seit der letzten Dokumentation"/>
+			<xs:enumeration value="Ungeplante, auch notfallmäßige (ambulant und stationär) ärztliche Behandlung wegen COPD seit der letzten Dokumentation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Medikamente">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Kurz wirksame Beta-2-Sympathomimetika und/oder Anticholinergika"/>
+			<xs:enumeration value="Lang wirksame Beta-2-Sympathomimetika"/>
+			<xs:enumeration value="Lang wirksame Anticholinergika"/>
+			<xs:enumeration value="Inhalationstechnik überprüft"/>
+			<xs:enumeration value="Sonstige diagnosespezifische Medikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Schulung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="COPD-Schulung empfohlen (bei aktueller Dokumentation)"/>
+			<xs:enumeration value="Schulung schon vor der Einschreibung in DMP bereits wahrgenommen"/>
+			<xs:enumeration value="Empfohlene Schulung wahrgenommen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Behandlungsplanung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Vom Patienten gewünschte Informationsangebote der Krankenkasse"/>
+			<xs:enumeration value="Dokumentationsintervall"/>
+			<xs:enumeration value="Empfehlung zum Tabakverzicht ausgesprochen"/>
+			<xs:enumeration value="Empfehlung zur Teilnahme an Tabakentwöhnungsprogramm ausgesprochen"/>
+			<xs:enumeration value="An einem Tabakentwöhnungsprogramm seit der letzten Empfehlung teilgenommen"/>
+			<xs:enumeration value="Empfehlung zum körperlichen Training ausgesprochen"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

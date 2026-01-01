@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+ Namespace: "urn:ehd/sdhm/001", Präfix: sdhm
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/sdhm/001" xmlns:ehd="urn:ehd/001" targetNamespace="urn:ehd/sdhm/001" elementFormDefault="qualified">
+	<xs:element name="sdhm_stammdaten">
+		<xs:annotation>
+			<xs:documentation>Strukturierung in mehrere Kapitel mit den enthaltenen Diagnosegruppen und Heilmitteln</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="kapitel" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="kapitel">
+		<xs:annotation>
+			<xs:documentation>Beschreibung der Heilmittelkapitel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="diagnosegruppe" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Dieses Element bildet die Diagnosegruppen der Heilmittelstammdatei ab</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="V" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="diagnosegruppe">
+		<xs:annotation>
+			<xs:documentation>Dieses Element bildet die Diagnosegruppen der Heilmittelstammdatei ab</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="erlaeuterung" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Dieses Element enthält näherer Erlaeuterungen zu einer Diagnosegruppe oder Leitsymptomatik</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="hinweis_liste" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="hinweis" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="V" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="erkrankung_liste" minOccurs="0"/>
+				<xs:element ref="leitsymptomatik_liste"/>
+				<xs:element ref="heilmittelverordnung"/>
+				<xs:element name="erforderliche_diagnosen" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Definiert eine Liste von Diagnosen in Form von ICD-10-GM Codes, von denen mindestens eine bestehen muss, damit die Heilmittel dieser Diagnosegruppe verordnet werden dürfen. </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="icd_code" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="icd_code_typ"/>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="V" use="required"/>
+			<xs:attribute name="DN" use="required"/>
+			<xs:attribute name="S" use="required" fixed="1.2.276.0.76.3.1.1.5.2.38"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="erlaeuterung_liste">
+		<xs:annotation>
+			<xs:documentation>Das Element erlaeuterung_liste klammert verschiedene zusammenhängende Erläuterungen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="erlaeuterung" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="erlaeuterung">
+		<xs:annotation>
+			<xs:documentation>Diese Element enthält näherer Erlaeuterungen zu einer Diagnosegruppe oder Leitsymptomatik</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="erkrankung_liste">
+		<xs:annotation>
+			<xs:documentation>Das Element erkrankung_liste umschließt verschiedene Erkankungsbilder einer Diagnosegruppe</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="erkrankung" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="V"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="erkrankung">
+		<xs:annotation>
+			<xs:documentation>Das Element erkrankung enthaelt die Erkrankungen, welche mit der entsprechenden Diagnosegruppe behandelt werden sollen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="leitsymptomatik_liste">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="leitsymptomatik" maxOccurs="unbounded"/>
+				<xs:element name="patientenindividuelle_leitsymptomatik">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:boolean" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="leitsymptomatik">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="erlaeuterung_liste" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="V" use="required"/>
+			<xs:attribute name="DN" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="heilmittelverordnung">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="vorrangiges_heilmittel_liste" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="vorrangiges_heilmittel" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="name">
+											<xs:complexType>
+												<xs:attribute name="V" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element ref="positionsnr_liste" minOccurs="0"/>
+										<xs:element name="massagetechnik" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:boolean" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="reihenfolge" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:int" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="erforderliche_leitsymptomatik" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Kennzeichnet die notwendige, optional zugewiesene Buchstabenkodierung der  Leitsymptomatik des vorrangigen Heilmittels.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="V" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="mindestalter_jahre" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Definiert ein Mindestalter für die Verordnungsfähigkeit des Heilmittels</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="hoechstalter_jahre" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Definiert ein Höchstalter für die Verordnungsfähigkeit des Heilmittels</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:positiveInteger" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="erforderliche_diagnosen" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Definiert eine Liste von Diagnosen in Form von ICD-10-GM Codes, von denen mindestens eine bestehen muss, damit das vorrangige Heilmittel verordnet werden darf. </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="icd_code" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:complexContent>
+																<xs:extension base="icd_code_typ"/>
+															</xs:complexContent>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ergaenzendes_heilmittel_liste" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="ergaenzendes_heilmittel" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="standardisierte_heilmittel_kombination" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name">
+								<xs:complexType>
+									<xs:attribute name="V" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element ref="positionsnr_liste" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="frequenzempfehlung_liste" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="frequenzempfehlung" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="minimale_anzahl">
+											<xs:annotation>
+												<xs:documentation>Kennzeichnet die empfohlene Anzahl oder empfohlene minimale Anzahl</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:positiveInteger" use="optional" default="1"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="maximale_anzahl" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Kennzeichnet die empfohlene maximale Anzahl </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:positiveInteger" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="richtlinie" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Kennzeichnet die Frequenzempfehlung aus der Heilmittel-Richtlinie</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:boolean" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="frequenzempfehlungstyp">
+								<xs:complexType>
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="einheiten_pro_tag"/>
+												<xs:enumeration value="einheiten_pro_woche"/>
+												<xs:enumeration value="wochen_zwischen_einheiten"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="verordnungsmenge" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ergaenzendes_heilmittel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name">
+					<xs:complexType>
+						<xs:attribute name="V" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="reihenfolge" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:int" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="positionsnr_liste" minOccurs="0"/>
+				<xs:element name="massagetechnik" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:boolean" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="hinweise_ziel"/>
+	<xs:element name="frequenzempfehlung">
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="verordnungsmenge">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="hoechstmenge_verordnung" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:int" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="orientierende_behandlungsmenge" minOccurs="0">
+					<xs:complexType>
+						<xs:choice minOccurs="0">
+							<xs:sequence>
+								<xs:element name="orientierende_behandlungsmenge_hoechstalter">
+									<xs:complexType>
+										<xs:attribute name="V" type="xs:int" use="required"/>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="hoechstalter_jahre">
+									<xs:annotation>
+										<xs:documentation>Definiert ein Höchstalter für die Verordnungsfähigkeit der orientierenden Verordnungsmenge innerhalb des Verordnungsfalls in Jahren.</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:attribute name="V" type="xs:positiveInteger" use="required"/>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+							<xs:sequence>
+								<xs:element name="orientierende_behandlungsmenge_icd_code">
+									<xs:complexType>
+										<xs:attribute name="V" type="xs:int" use="required"/>
+									</xs:complexType>
+								</xs:element>
+								<xs:element name="icd_code_liste">
+									<xs:annotation>
+										<xs:documentation>Definiert die Liste der ICD-10-GM Codes der behandlingsfähigen Diagnosen. Die Existenz mindestens einer dieser Diagnosen ist Voraussetzung für die Verordnungsfähigkeit der orientierenden Verordnungsmenge innerhalb des Verordnungsfalls.</xs:documentation>
+									</xs:annotation>
+									<xs:complexType>
+										<xs:sequence>
+											<xs:element name="icd_code" maxOccurs="unbounded">
+												<xs:complexType>
+													<xs:complexContent>
+														<xs:extension base="icd_code_typ"/>
+													</xs:complexContent>
+												</xs:complexType>
+											</xs:element>
+										</xs:sequence>
+									</xs:complexType>
+								</xs:element>
+							</xs:sequence>
+						</xs:choice>
+						<xs:attribute name="V" type="xs:int" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="orientierende_behandlungsmenge_standardisiert" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:int" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="orientierende_behandlungsmenge_massage" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:int" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="positionsnr">
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="positionsnr_liste">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="positionsnr" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="icd_code_typ">
+		<xs:annotation>
+			<xs:documentation>ICD-10-GM-Code (Muster: 1 Zeichen A-Z + zweistellige Nummer + '.' + einstellige Nummer oder * oder + oder -)</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[A-Z]\d{2}(\.(\d|\d\-|\d{2}|\-))?"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

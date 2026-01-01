@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Verordnung_Arzneimittel" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Verordnung_Arzneimittel" />
+  <status value="active" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="script10.6" />
+    <uri value="http://ncpdp.org/SCRIPT10_6" />
+    <name value="Mapping to NCPDP SCRIPT 10.6" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="MedicationRequest" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/MedicationRequest" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="MedicationRequest">
+      <path value="MedicationRequest" />
+      <short value="Verordnung Arzneimittel" />
+      <definition value="Diese Ressource bietet die grundlegende Möglichkeit eine Arzneimittelverordnung zu transportieren. Diese Möglichkeit soll es ermöglichen neben dem eRezept alte Verordnungen auf einem sehr geringen Level zu transportieren.&#xD;&#xA;&#xD;&#xA;Diese Ressource soll eine Art Ergänzung zu einer Anlage sein, in der die grundlegenden Informationen strukturiert übertragen werden können." />
+    </element>
+    <element id="MedicationRequest.id">
+      <path value="MedicationRequest.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.meta">
+      <path value="MedicationRequest.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.meta.versionId">
+      <path value="MedicationRequest.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="MedicationRequest.meta.lastUpdated">
+      <path value="MedicationRequest.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="MedicationRequest.meta.source">
+      <path value="MedicationRequest.meta.source" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.meta.profile">
+      <path value="MedicationRequest.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Verordnung_Arzneimittel|1.2.0" />
+    </element>
+    <element id="MedicationRequest.text">
+      <path value="MedicationRequest.text" />
+      <min value="1" />
+    </element>
+    <element id="MedicationRequest.identifier">
+      <path value="MedicationRequest.identifier" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.status">
+      <path value="MedicationRequest.status" />
+      <fixedCode value="active" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.statusReason">
+      <path value="MedicationRequest.statusReason" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.intent">
+      <path value="MedicationRequest.intent" />
+      <fixedCode value="order" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.category">
+      <path value="MedicationRequest.category" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.priority">
+      <path value="MedicationRequest.priority" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.doNotPerform">
+      <path value="MedicationRequest.doNotPerform" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.reported[x]">
+      <path value="MedicationRequest.reported[x]" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.medication[x]">
+      <path value="MedicationRequest.medication[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Medikament|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.medication[x]:medicationReference">
+      <path value="MedicationRequest.medication[x]" />
+      <sliceName value="medicationReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Medikament|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.medication[x]:medicationReference.reference">
+      <path value="MedicationRequest.medication[x].reference" />
+      <min value="1" />
+    </element>
+    <element id="MedicationRequest.medication[x]:medicationReference.type">
+      <path value="MedicationRequest.medication[x].type" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.medication[x]:medicationReference.identifier">
+      <path value="MedicationRequest.medication[x].identifier" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.medication[x]:medicationReference.display">
+      <path value="MedicationRequest.medication[x].display" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.subject">
+      <path value="MedicationRequest.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.subject.reference">
+      <path value="MedicationRequest.subject.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.subject.type">
+      <path value="MedicationRequest.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.subject.identifier">
+      <path value="MedicationRequest.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.subject.display">
+      <path value="MedicationRequest.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.encounter">
+      <path value="MedicationRequest.encounter" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.supportingInformation">
+      <path value="MedicationRequest.supportingInformation" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.authoredOn">
+      <path value="MedicationRequest.authoredOn" />
+      <short value="Ausstellungsdarum" />
+      <definition value="Ausstellungsdarum der Verordnung" />
+      <min value="1" />
+      <condition value="begrenzungDate" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.requester">
+      <path value="MedicationRequest.requester" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandelnder|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.requester.reference">
+      <path value="MedicationRequest.requester.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.requester.type">
+      <path value="MedicationRequest.requester.type" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.requester.identifier">
+      <path value="MedicationRequest.requester.identifier" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.requester.display">
+      <path value="MedicationRequest.requester.display" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.performer">
+      <path value="MedicationRequest.performer" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.performerType">
+      <path value="MedicationRequest.performerType" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.recorder">
+      <path value="MedicationRequest.recorder" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.reasonCode">
+      <path value="MedicationRequest.reasonCode" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.reasonReference">
+      <path value="MedicationRequest.reasonReference" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.instantiatesCanonical">
+      <path value="MedicationRequest.instantiatesCanonical" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.instantiatesUri">
+      <path value="MedicationRequest.instantiatesUri" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.basedOn">
+      <path value="MedicationRequest.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.groupIdentifier">
+      <path value="MedicationRequest.groupIdentifier" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.courseOfTherapyType">
+      <path value="MedicationRequest.courseOfTherapyType" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.insurance">
+      <path value="MedicationRequest.insurance" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.note">
+      <path value="MedicationRequest.note" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.note.author[x]">
+      <path value="MedicationRequest.note.author[x]" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.note.time">
+      <path value="MedicationRequest.note.time" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.note.text">
+      <path value="MedicationRequest.note.text" />
+      <short value="Abgabehinweis" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction">
+      <path value="MedicationRequest.dosageInstruction" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction.sequence">
+      <path value="MedicationRequest.dosageInstruction.sequence" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction.text">
+      <path value="MedicationRequest.dosageInstruction.text" />
+      <short value="Dosieranweisung" />
+      <definition value="Dosieranweisung einer Verordnung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction.additionalInstruction">
+      <path value="MedicationRequest.dosageInstruction.additionalInstruction" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction.patientInstruction">
+      <path value="MedicationRequest.dosageInstruction.patientInstruction" />
+      <short value="Gebrauchsanweisung einer Rezeptur" />
+      <definition value="Gebrauchsanweisung einer Rezeptur" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction.timing">
+      <path value="MedicationRequest.dosageInstruction.timing" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction.asNeeded[x]">
+      <path value="MedicationRequest.dosageInstruction.asNeeded[x]" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction.site">
+      <path value="MedicationRequest.dosageInstruction.site" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction.route">
+      <path value="MedicationRequest.dosageInstruction.route" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction.method">
+      <path value="MedicationRequest.dosageInstruction.method" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction.doseAndRate">
+      <path value="MedicationRequest.dosageInstruction.doseAndRate" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction.maxDosePerPeriod">
+      <path value="MedicationRequest.dosageInstruction.maxDosePerPeriod" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction.maxDosePerAdministration">
+      <path value="MedicationRequest.dosageInstruction.maxDosePerAdministration" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dosageInstruction.maxDosePerLifetime">
+      <path value="MedicationRequest.dosageInstruction.maxDosePerLifetime" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dispenseRequest">
+      <path value="MedicationRequest.dispenseRequest" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.dispenseRequest.initialFill">
+      <path value="MedicationRequest.dispenseRequest.initialFill" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dispenseRequest.dispenseInterval">
+      <path value="MedicationRequest.dispenseRequest.dispenseInterval" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dispenseRequest.validityPeriod">
+      <path value="MedicationRequest.dispenseRequest.validityPeriod" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dispenseRequest.numberOfRepeatsAllowed">
+      <path value="MedicationRequest.dispenseRequest.numberOfRepeatsAllowed" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dispenseRequest.quantity">
+      <path value="MedicationRequest.dispenseRequest.quantity" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.dispenseRequest.quantity.value">
+      <path value="MedicationRequest.dispenseRequest.quantity.value" />
+      <short value="Anzahl der verordneten Packungen" />
+      <definition value="Anzahl der verordneten Packungen" />
+      <min value="1" />
+      <maxValueDecimal value="999" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.dispenseRequest.quantity.unit">
+      <path value="MedicationRequest.dispenseRequest.quantity.unit" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dispenseRequest.quantity.system">
+      <path value="MedicationRequest.dispenseRequest.quantity.system" />
+      <min value="1" />
+      <fixedUri value="http://unitsofmeasure.org" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.dispenseRequest.quantity.code">
+      <path value="MedicationRequest.dispenseRequest.quantity.code" />
+      <min value="1" />
+      <fixedCode value="{Package}" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.dispenseRequest.expectedSupplyDuration">
+      <path value="MedicationRequest.dispenseRequest.expectedSupplyDuration" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.dispenseRequest.performer">
+      <path value="MedicationRequest.dispenseRequest.performer" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.substitution">
+      <path value="MedicationRequest.substitution" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.substitution.allowed[x]">
+      <path value="MedicationRequest.substitution.allowed[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <type>
+        <code value="boolean" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.substitution.allowed[x]:allowedBoolean">
+      <path value="MedicationRequest.substitution.allowedBoolean" />
+      <sliceName value="allowedBoolean" />
+      <short value="aut idem" />
+      <definition value="In diesem Feld wird angegeben ob das Arzneimittel austauschbar ist oder nicht&#xD;&#xA;&#xD;&#xA;true: aut idem möglich (austauschbar) false: aut idem ausgeschlossen (nicht austauschbar)" />
+      <type>
+        <code value="boolean" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationRequest.substitution.reason">
+      <path value="MedicationRequest.substitution.reason" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.priorPrescription">
+      <path value="MedicationRequest.priorPrescription" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.detectedIssue">
+      <path value="MedicationRequest.detectedIssue" />
+      <max value="0" />
+    </element>
+    <element id="MedicationRequest.eventHistory">
+      <path value="MedicationRequest.eventHistory" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

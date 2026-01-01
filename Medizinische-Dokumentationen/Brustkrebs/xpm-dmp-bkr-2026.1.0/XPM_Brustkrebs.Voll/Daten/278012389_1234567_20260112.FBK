@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!--*************************************************************************************************************************************************************-->
+<!-- Beispieldatei fürdie Folgedokumentation Brustkrebs A-->
+<!--*************************************************************************************************************************************************************-->
+<levelone xmlns="urn::hl7-org/cda" xmlns:kbv="urn::hl7-org/kbv" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kbvlib="urn:kbv/kbv/typelib/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn::hl7-org/cda ../Schema//DMP_Brustkrebs_FD.xsd">
+	<clinical_document_header>
+		<id EX="1234567" RT="278012389"/>
+		<set_id EX="1234567" RT="278012389"/>
+		<version_nbr V="1"/>
+		<document_type_cd V="DMP_BRK_EF" S="1.2.276.0.76.5.100" SN="KBV" DN="Folge-Dokumentation Brustkrebs"/>
+		<service_tmr V="2026-01-12"/>
+		<!-- Datum der Unterschrift = Dokumentationsdatum  -->
+		<origination_dttm V="2026-01-12"/>
+		<!-- Datum (Kopfdaten) !!! -->
+		<provider>
+			<provider.type_cd V="PRF"/>
+			<function_cd V="ARZTW" S="1.2.276.0.76.5.105"/>
+			<person>
+				<id EX="278012389" RT="BSNR"/>
+				<id EX="400002005" RT="LANR"/>
+				<person_name>
+					<nm>
+						<GIV V="Anette"/>
+						<FAM V="Müller"/>
+						<PFX V="Dr. med." QUAL="AC"/>
+					</nm>
+				</person_name>
+				<addr>
+					<STR V="Ottostr."/>
+					<HNR V="1"/>
+					<ZIP V="50859"/>
+					<CTY V="Köln"/>
+				</addr>
+				<telecom V="tel:(0221)4449-0" USE="WP"/>
+			</person>
+		</provider>
+		<patient>
+			<patient.type_cd V="PATSBJ"/>
+			<person>
+				<id EX="1234567" RT="278012389"/>
+				<person_name>
+					<nm>
+						<GIV V="Ursula"/>
+						<FAM V="Meier"/>
+					</nm>
+				</person_name>
+				<addr>
+					<STR V="Ottostr."/>
+					<HNR V="4"/>
+					<ZIP V="50859"/>
+					<CTY V="Köln"/>
+				</addr>
+			</person>
+			<birth_dttm V="1966-12-12"/>
+			<local_header ignore="all" descriptor="sciphox">
+				<sciphox:sciphox-ssu type="insurance" country="de" version="v3">
+					<sciphox:GesetzlicheKrankenversicherung>
+						<sciphox:Kostentraegerbezeichnung V="AOK Rheinland"/>
+						<sciphox:Kostentraegerkennung V="104212505"/>
+						<sciphox:KostentraegerAbrechnungsbereich V="00" S="2.16.840.1.113883.3.7.1.16"/>
+						<sciphox:WOP V="01" S="2.16.840.1.113883.3.7.1.17"/>
+						<sciphox:Versichertennummer V="123456789"/>
+						<sciphox:Versichertenart V="1" S="2.16.840.1.113883.3.7.1.1"/>
+						<sciphox:BesonderePersonengruppe V="04" S="1.2.276.0.76.5.222"/>
+						<sciphox:DMP_Kennzeichnung V="02" S="1.2.276.0.76.5.223"/>
+						<sciphox:VersicherungsschutzBeginn V="2003-12-01"/>
+						<sciphox:VersicherungsschutzEnde V="2055-12-01"/>
+						<sciphox:Einlesedatum V="2026-01-12"/>
+					</sciphox:GesetzlicheKrankenversicherung>
+				</sciphox:sciphox-ssu>
+			</local_header>
+		</patient>
+		<local_header ignore="all" descriptor="sciphox">
+			<sciphox:sciphox-ssu type="software" country="de" version="v1">
+				<sciphox:Software>
+					<sciphox:id EX="X/101/0812/36/100" RT="KBV-Prüfnummer"/>
+					<sciphox:SoftwareName V="ABC Software"/>
+					<sciphox:SoftwareVersion V="2.4"/>
+					<sciphox:SoftwareTyp V="PVS"/>
+					<sciphox:Kontakt>
+						<sciphox:Kontakttyp V="SOFTV" S="1.2.276.0.76.3.1.1.5.2.3" DN="Softwareverantwortlicher"/>
+						<organization.nm V="ABC Softwarehaus"/>
+						<addr>
+							<STR V="Ottostr."/>
+							<HNR V="1"/>
+							<ZIP V="50859"/>
+							<CTY V="Köln"/>
+						</addr>
+						<telecom V="tel:(0221)4449-0" USE="WP"/>
+						<telecom V="tel:(0221)4449-1" USE="WP"/>
+					</sciphox:Kontakt>
+					<sciphox:Kontakt>
+						<sciphox:Kontakttyp V="REGS" S="1.2.276.0.76.3.1.1.5.2.3" DN="RegionalerSystembetreuer"/>
+						<organization.nm V="ABC Consulting"/>
+						<addr>
+							<STR V="Ottostr."/>
+							<HNR V="1"/>
+							<ZIP V="50859"/>
+							<CTY V="Köln"/>
+						</addr>
+						<telecom V="tel:(0221)4449-0" USE="WP"/>
+					</sciphox:Kontakt>
+					<sciphox:Software>
+						<sciphox:SoftwareName V="XSD_BK"/>
+						<sciphox:SoftwareVersion V="4.25"/>
+						<sciphox:SoftwareTyp V="XSD"/>
+						<sciphox:Software>
+							<sciphox:SoftwareName V="XPM_BK"/>
+							<sciphox:SoftwareVersion V="2024.4.0"/>
+							<sciphox:SoftwareTyp V="XPM"/>
+						</sciphox:Software>
+					</sciphox:Software>
+				</sciphox:Software>
+			</sciphox:sciphox-ssu>
+		</local_header>
+	</clinical_document_header>
+	<body>
+		<section>
+			<!--*************************************************************************************************************************************************************-->
+			<!-- Einschreibung  erfolgt wegen -->
+			<!--*************************************************************************************************************************************************************-->
+			<paragraph>
+				<caption>
+					<caption_cd DN="Einschreibung erfolgte wegen"/>
+				</caption>
+				<content>
+					<local_markup descriptor="sciphox" ignore="all">
+						<sciphox:sciphox-ssu country="de" version="v1" type="observation">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Einschreibung erfolgte wegen"/>
+									<sciphox:Ergebnistext V="Primärtumors"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+			<!--*************************************************************************************************************************************************************-->
+			<!-- Behandlungsstatus -->
+			<!--*************************************************************************************************************************************************************-->
+			<paragraph>
+				<caption>
+					<caption_cd DN="Behandlungsstatus nach operativer Therapie des Primärtumors/kontralateralen Brustkrebses (adjuvante Therapie)"/>
+				</caption>
+				<content>
+					<local_markup descriptor="sciphox" ignore="all">
+						<sciphox:sciphox-ssu country="de" version="v1" type="observation">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Aktuelle adjuvante endokrine Therapie"/>
+									<sciphox:Ergebnistext V="Aromataseinhibitoren"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Nebenwirkungen der aktuellen adjuvanten endokrinen Therapie"/>
+									<sciphox:Ergebnistext V="nicht erfragt"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Fortführung der adjuvanten endokrinen Therapie seit der letzten Dokumentation"/>
+									<sciphox:Ergebnistext V="Aktuell andauernd, Fortführung über 5 Jahre hinaus"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Bei Patientinnen unter adjuvanter Therapie mit Aromataseinhibitoren, sofern die Absicht für eine spezifische medikamentöse Therapie einer Osteoporose besteht: DXA-Befund"/>
+									<sciphox:Ergebnistext V="Unauffällig"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+			<!--*************************************************************************************************************************************************************-->
+			<!-- Neu aufgetretene Ereignisse -->
+			<!--*************************************************************************************************************************************************************-->
+			<paragraph>
+				<caption>
+					<caption_cd DN="Seit der letzten Dokumentation neu aufgetretene Ereignisse"/>
+				</caption>
+				<content>
+					<local_markup descriptor="sciphox" ignore="all">
+						<sciphox:sciphox-ssu country="de" version="v1" type="observation">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Lokoregionäres Rezidiv (Datum der histologischen Sicherung)"/>
+									<sciphox:Zeitpunkt_dttm V="2023-02-02"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Kontralateraler Brustkrebs (Datum der histologischen Sicherung)"/>
+									<sciphox:Ergebnistext V="Nein"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Lokalisation von Fernmetastasen (Datum der diagnostischen Sicherung)"/>
+									<sciphox:Ergebnistext V="viszeral"/>
+									<sciphox:Ergebnistext V="Knochen"/>
+									<sciphox:Zeitpunkt_dttm V="2023-10-02"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Bioptische Sicherung der viszeralen Metastasen"/>
+									<sciphox:Ergebnistext V="Ja"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Symptomatisches Lymphödem"/>
+									<sciphox:Ergebnistext V="Ja, keine Kompressionsarmstrumpftherapie erforderlich"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+			<!--*************************************************************************************************************************************************************-->
+			<!-- Behandlung bei fortgeschrittener Erkrankung -->
+			<!--*************************************************************************************************************************************************************-->
+			<paragraph>
+				<caption>
+					<caption_cd DN="Behandlung bei fortgeschrittener Erkrankung (lokoregionäres Rezidiv/Fernmetastasen)"/>
+				</caption>
+				<content>
+					<local_markup descriptor="sciphox" ignore="all">
+						<sciphox:sciphox-ssu country="de" version="v1" type="observation">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Therapie bei Knochenmetastasen (Bisphosphonate)"/>
+									<sciphox:Ergebnistext V="Nein"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Therapie bei Knochenmetastasen (Denosumab)"/>
+									<sciphox:Ergebnistext V="Nein"/>
+									<sciphox:Ergebnistext V="Kontraindikation"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+			<!--*************************************************************************************************************************************************************-->
+			<!-- Sonstiges -->
+			<!--*************************************************************************************************************************************************************-->
+			<paragraph>
+				<caption>
+					<caption_cd DN="Sonstige Befunde"/>
+				</caption>
+				<content>
+					<local_markup descriptor="sciphox" ignore="all">
+						<sciphox:sciphox-ssu country="de" version="v1" type="observation">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Empfehlung zu regelmäßigem körperlichen Training abgegeben"/>
+									<sciphox:Ergebnistext V="Nein"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Z. n. besonders kardiotoxischer Tumortherapie"/>
+									<sciphox:Ergebnistext V="Nein"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Körpergröße"/>
+									<sciphox:Ergebniswert V="1.70" U="m"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Körpergewicht"/>
+									<sciphox:Ergebniswert V="085" U="kg"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+			<paragraph>
+				<caption>
+					<caption_cd DN="Behandlungsplanung"/>
+				</caption>
+				<content>
+					<local_markup descriptor="sciphox" ignore="all">
+						<sciphox:sciphox-ssu country="de" version="v1" type="observation">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Dokumentationsintervall"/>
+									<sciphox:Ergebnistext V="Jährlich"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+		</section>
+	</body>
+</levelone>

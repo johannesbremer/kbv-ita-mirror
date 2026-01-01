@@ -1,0 +1,39 @@
+<Patient xmlns="http://hl7.org/fhir">
+	<id value="for-patient-skt"/>
+	<meta>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2"/>
+	</meta>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+				<code value="KVZ10"/>
+			</coding>
+		</type>
+		<system value="http://fhir.de/sid/gkv/kvid-10"/>
+		<value value="T576543456"/>
+	</identifier>
+	<name>
+		<use value="official"/>
+		<family value="Haselnuss">
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+				<valueString value="Haselnuss"/>
+			</extension>
+		</family>
+		<given value="Eileen"/>
+	</name>
+	<birthDate value="1993-08-13"/>
+	<address>
+		<type value="both"/>
+		<line value="Musterstr. 3">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="3"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Musterstr."/>
+			</extension>
+		</line>
+		<city value="Berlin"/>
+		<postalCode value="10623"/>
+	</address>
+</Patient>

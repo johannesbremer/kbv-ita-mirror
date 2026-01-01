@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 file:///J:/ITA/Update/Softwarehaeuser/Blankoformulare/in_Arbeit/Ausfuellhilfe_Schema/Schema/afhi_root_V1.00.xsd">
+	<header>
+		<id EX="7a6fd04e-ff45-4c42-aff0-ed5e62f3a5c3" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2017-07-01.."/>
+		<origination_dttm V="2017-11-03"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat 4"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="ftp://ftp.kbv.de/ita-update"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen für der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2017, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat 6 der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="ftp://ftp.kbv.de/ita-update/"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="12" DN="Verordnung häuslicher Krankenpflege">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Verordnungsrelevante Diagnose(n) "/>
+					<hinweistext V="Hier sind die Diagnose(n) anzugeben, die die Notwendigkeit der häuslichen Krankenpflege medizinisch begründen. Die Diagnosen sind nach ICD-10-GM zu verschlüsseln. "/>
+				</feld>
+				<feld>
+					<nummer V="2"/>
+					<name V="Einschränkungen, die häusliche Krankenpflege erforderlich machen"/>
+					<hinweistext V="Die Angabe von Einschränkungen soll verdeutlichen, warum häusliche Krankenpflege erforderlich ist. Hierbei ist auch das Leistungsverzeichnis der Häusliche KrankenpflegeRichtlinie (Einschränkungen siehe Spalte Bemerkung) zu beachten."/>
+				</feld>
+				<feld>
+					<nummer V="3"/>
+					<name V="Erstverordnung/Folgeverordnung"/>
+					<hinweistext V="Insbesondere bei der Erstverordnung soll ein Zeitraum von 14 Tagen nicht überschritten werden (vgl. § 5 Abs. 1 und 2 HKP-Richtlinie). Ist eine längere Verordnungsdauer erforderlich, soll sich der Grund hierfür aus den verordnungsrelevanten Diagnosen und den Einschränkungen ergeben. Folgeverordnungen sind innerhalb der letzten drei Arbeitstage vor Ablauf des verordneten Zeitraums auszustellen. "/>
+				</feld>
+				<feld>
+					<nummer V="4"/>
+					<name V="Unfall"/>
+					<hinweistext V="Ergibt sich die Notwendigkeit der häuslichen Krankenpflege infolge eines Unfalls, ist dies hier anzugeben."/>
+				</feld>
+				<feld>
+					<nummer V="5"/>
+					<name V="vom - bis"/>
+					<hinweistext V="Hier erfolgt die Angabe des Zeitraums, in dem die Maßnahmen erbracht werden sollen. Rückwirkende Verordnungen sind grundsätzlich nicht zulässig. Ausnahmefälle sind besonders zu begründen."/>
+				</feld>
+				<feld>
+					<nummer V="6"/>
+					<name V="Häufigkeit/Dauer"/>
+					<hinweistext V="In diesen Feldern sind Häufigkeit (täglich, wöchentlich, monatlich) und Dauer (vom - bis) der zu erbringenden Maßnahmen anzugeben. Angaben zur Dauer und Häufigkeit orientieren sich am Leistungsverzeichnis der Häusliche Krankenpflege-Richtlinie. Die Angabe 'Dauer' bei einzelnen Maßnahmen ist nur bei einer Abweichung von der Dauer der gesamten Verordnung (siehe 'vom - bis') notwendig."/>
+				</feld>
+				<feld>
+					<nummer V="7"/>
+					<name V="Behandlungspflege"/>
+					<hinweistext V="Die Behandlungspflege umfasst Maßnahmen der ärztlichen Behandlung, die dazu dienen, Krankheiten zu heilen, ihre Verschlimmerung zu verhüten oder Krankheitsbeschwerden zu lindern und die üblicherweise an Pflegefachkräfte/Pflegekräfte delegiert werden können. Behandlungspflege als Sicherungspflege hat das Ziel, die ambulante ärztliche Behandlung zu ermöglichen und deren Ergebnis zu sichern. Die verordnungsfähigen Maßnahmen sind dem Leistungsverzeichnis der Häusliche Krankenpflege-Richtlinie zu entnehmen."/>
+				</feld>
+				<feld>
+					<nummer V="8"/>
+					<name V="Medikamentengabe"/>
+					<hinweistext V="Bei der Verordnung der Medikamentengabe ist Nr. 26 des Leistungsverzeichnisses der Häusliche Krankenpflege-Richtlinie zu beachten. Aus dieser ärztlichen Verordnung (Verordnungsvordruck Muster 12) müssen die einzelnen zu verabreichenden Präparate hervorgehen. Ebenso sind die dazugehörige Dauer und Häufigkeit der Medikamentengabe anzugeben. Die Angaben zu den Präparaten können alternativ auf einem gesonderten Dokument als Anlage zur Verordnung erfolgen."/>
+				</feld>
+				<feld>
+					<nummer V="9"/>
+					<name V="Blutzuckermessung"/>
+					<hinweistext V="Bei der Verordnung von Leistungen zur Blutzuckermessung ist Nr. 11 des Leistungsverzeichnisses der Häusliche Krankenpflege-Richtlinie zu beachten. Dabei ist zu unterscheiden, ob es sich um Blutzuckermessungen aufgrund einer Erst- oder Neueinstellung oder einer intensivierten Insulintherapie handelt."/>
+				</feld>
+				<feld>
+					<nummer V="10"/>
+					<name V="Kompressionsbehandlung"/>
+					<hinweistext V="Bei der Verordnung von Leistungen der Kompressionsbehandlung ist Nr. 31 des Leistungsverzeichnisses der Häusliche Krankenpflege-Richtlinie zu beachten. Die Kompressionsbehandlung ist im Rahmen der häuslichen Krankenpflege ab Kompressionsklasse II verordnungsfähig."/>
+				</feld>
+				<feld>
+					<nummer V="11"/>
+					<name V="Wundversorgung"/>
+					<hinweistext V="Bei der Verordnung von Leistungen der Wundversorgung ist Nr. 31 des Leistungsverzeichnisses der Häusliche Krankenpflege-Richtlinie zu beachten. Aus dieser ärztlichen Verordnung (Verordnungsvordruck Muster 12) müssen die einzelnen anzuwendenden Präparate hervorgehen. Ebenso sind die dazugehörige Dauer und Häufigkeit der anzuwendenden Präparate anzugeben. Die Angaben zu den Präparaten sowie zur Wunddokumentation können alternativ auf einem gesonderten Dokument als Anlage zur Verordnung erfolgen."/>
+				</feld>
+				<feld>
+					<nummer V="12"/>
+					<name V="Sonstige Maßnahmen der Behandlungspflege"/>
+					<hinweistext V="Hier können weitere oder andere als die unter 8. bis 11. genannten Maßnahmen des Leistungsverzeichnisses der Häusliche Krankenpflege-Richtlinie verordnet werden."/>
+				</feld>
+				<feld>
+					<nummer V="13"/>
+					<name V="Anleitung zur Behandlungspflege"/>
+					<hinweistext V="Sofern die Versicherten und/oder Angehörigen zur Behandlungspflege durch den Pflegedienst angeleitet werden sollen, ist dies unter Nennung der einzelnen Leistungen der Behandlungspflege hier anzugeben. Hierbei ist Nr. 7 des Leistungsverzeichnisses der Häusliche Krankenpflege-Richtlinie zu beachten."/>
+				</feld>
+				<feld>
+					<nummer V="14"/>
+					<name V="Grundpflege und hauswirtschaftliche Versorgung"/>
+					<hinweistext V="Grundpflege und hauswirtschaftliche Versorgung können nur im Rahmen der Unterstützungspflege oder der Krankenhausvermeidungspflege verordnet werden. Im Rahmen der Sicherungspflege setzt eine Verordnung von Grundpflege und hauswirtschaftlicher Versorgung voraus, dass die Satzung der Krankenkasse diese Leistungen vorsieht und die Versicherten keine Leistungen der Pflegeversicherung beziehen."/>
+				</feld>
+				<feld>
+					<nummer V="15"/>
+					<name V="Unterstützungspflege nach § 37 Abs. 1a SGB V"/>
+					<hinweistext V="Die Verordnung von Unterstützungspflege ist bei schwerer Krankheit oder wegen akuter Verschlimmerung einer Krankheit, insbesondere nach einem Krankenhausaufenthalt, nach einer ambulanten Operation oder nach einer ambulanten Krankenhausbehandlung möglich, soweit keine Pflegebedürftigkeit mit Pflegegrad 2, 3, 4 oder 5 nach dem SGB XI vorliegt. Unterstützungspflege umfasst Grundpflege und ggf. hauswirtschaftliche Versorgung. Ein gleichzeitiger Bedarf an medizinischer Behandlungspflege ist in diesem Fall nicht erforderlich. Der Anspruch auf Unterstützungspflege besteht bis zu vier Wochen je Krankheitsfall und kann von der Krankenkasse in begründeten Ausnahmefällen nach Einschaltung des MDK verlängert werden. Wenn die Voraussetzungen der Unterstützungspflege erfüllt sind, muss zusätzlich angegeben werden, ob Grundpflege und ggf. hauswirtschaftliche Versorgung erbracht werden sollen. Leistungen der hauswirtschaftlichen Versorgung können im Rahmen der Unterstützungspflege nicht eigenständig, sondern nur im Zusammenhang mit der erforderlichen Grundpflege verordnet werden. Grundpflege kann im Rahmen der Unterstützungspflege eigenständig verordnet werden."/>
+				</feld>
+				<feld>
+					<nummer V="16"/>
+					<name V="Krankenhausvermeidungspflege nach § 37 Abs. 1 SGB V"/>
+					<hinweistext V="Häusliche Krankenpflege als Krankenhausvermeidungspflege kann verordnet werden, wenn Krankenhausbehandlung geboten, aber nicht ausführbar ist. Dies ist z.B. der Fall, wenn Versicherte die Zustimmung zur Krankenhauseinweisung aus nachvollziehbaren Gründen verweigern. Eine Verordnung ist darüber hinaus möglich, wenn dadurch eine Krankenhausbehandlung vermieden wird. Dies ist gegeben, wenn durch die Ergänzung der ambulanten ärztlichen Behandlung mit Maßnahmen der häuslichen Krankenpflege die ansonsten erforderliche Krankenhausbehandlung ersetzt werden kann oder dadurch eine Krankenhausbehandlung verkürzt wird. Die Krankenhausvermeidungspflege umfasst Behandlungs- und Grundpflege sowie hauswirtschaftliche Versorgung. Der Anspruch der Versicherten auf Krankenhausvermeidungspflege ist auf vier Wochen begrenzt und kann von der Krankenkasse in begründeten Ausnahmefällen nach Einschaltung des MDK verlängert werden. Wenn die Voraussetzungen der Krankenhausvermeidungspflege erfüllt sind, kann zusätzlich angegeben werden, ob neben der Behandlungspflege auch Grundpflege und/oder hauswirtschaftliche Versorgung notwendig sind."/>
+				</feld>
+				<feld>
+					<nummer V="17"/>
+					<name V="Grundpflege"/>
+					<hinweistext V="Die Grundpflege umfasst pflegerische Hilfen aus den Bereichen Körperpflege, Ernährung und Mobilität. Die im Rahmen der Grundpflege erforderlichen Maßnahmen sind ggf. im Feld 'weitere Hinweise' näher zu beschreiben. Die verordnungsfähigen Leistungen sind im Leistungsverzeichnis der Häusliche Krankenpflege-Richtlinie (Nr. 1 - 4) aufgeführt"/>
+				</feld>
+				<feld>
+					<nummer V="18"/>
+					<name V="Hauswirtschaftliche Versorgung"/>
+					<hinweistext V="Die hauswirtschaftliche Versorgung beinhaltet hauswirtschaftliche Leistungen in der Häuslichkeit des Versicherten. Die Leistungen sind im Leistungsverzeichnis der Häusliche Krankenpflege-Richtlinie (Nr. 5) aufgeführt."/>
+				</feld>
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

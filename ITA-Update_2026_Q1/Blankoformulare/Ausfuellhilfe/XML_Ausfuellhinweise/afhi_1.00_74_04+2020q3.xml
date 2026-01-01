@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 file:///J:/DIG/ITA/UPD/Softwarehaeuser/Blankoformulare/in_Arbeit/Schnittstelle_Ausfuellhilfe_V1.00/Schema/afhi_root_V1.00.xsd">
+	<header>
+		<id EX="7e008132-608b-4d0b-80e0-7153561e6efb" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2020-07-01.."/>
+		<origination_dttm V="2020-03-06"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat 4"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="ftp://ftp.kbv.de/ita-update"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen für der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2020, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="ftp://ftp.kbv.de/ita-update/"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="4" DN="Verordnung einer Krankenbeförderung">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Zuzahlungspflicht, Zuzahlungsfrei"/>
+					<hinweistext V="Bitte geben Sie hier an, ob der Versicherte Zuzahlungen zu leisten hat. Grundsätzlich ist von einer Zuzahlungspflicht auszugehen, es sei denn, die versicherte Person weist eine Zuzahlungsbefreiung z.B. durch einen entsprechenden Anspruchsnachweis der Kasse bzw. des Landesversorgungsamtes oder durch ein Kennzeichen auf der elektronischen Gesundheitskarte oder Krankenversicherungskarte nach."/>
+				</feld>
+				<feld>
+					<nummer V="2"/>
+					<name V="Unfall, Unfallfolge, Arbeitsunfall, Berufskrankheit, Versorgungsleiden (z.B. BVG)"/>
+					<hinweistext V="Ist eines der vorgenannten Ereignisse ursächlich für die Verordnung, geben Sie dies hier bitte an, damit der richtige Kostenträger identifiziert werden kann. Umfasst werden von Versorgungsleiden u.a. folgende Anspruchsgrundlagen: Bundesversorgungsgesetz (BVG) (Kriegsschäden), Opferentschädigungsgesetz (z.B. Opfer von Gewalttaten), Infektionsschutzgesetz (z.B. Impfschäden, anderweitige Gesundheitsschäden durch Prophylaxe), Soldatenversorgungsgesetz."/>
+				</feld>
+				<feld>
+					<nummer V="3"/>
+					<name V="Hinfahrt, Rückfahrt"/>
+					<hinweistext V="Bitte bewerten Sie die medizinische Notwendigkeit der Beförderung für die Hin- und Rückfahrt jeweils gesondert. In einigen Fällen ist z. B. nur nach einer bestimmten Behandlung eine Krankenbeförderung erforderlich, die Hinfahrt kann aber noch eigenständig erfolgen."/>
+				</feld>
+				<feld>
+					<nummer V="4"/>
+					<name V="Grund der Beförderung: Genehmigungsfreie Fahrten: a) voll-/teilstationäre Krankenhausbehandlung, vor-/nachstationäre Behandlung"/>
+					<hinweistext V="Die Verordnung dieser Fahrten ist ohne vorherige Genehmigung der Krankenkasse zulässig. Vor- und nachstationäre Behandlungen sind an Fristen gebunden (s. Vordruckerläuterungen), die auch bei der Verordnung der Beförderung zu beachten sind. Bei vorstationären Behandlungen tragen Sie den voraussichtlichen Beginn der stationären Behandlung bitte im Freitextfeld unter 4. Begründung/Sonstiges, Punkt 17 ein."/>
+				</feld>
+				<feld>
+					<nummer V="5"/>
+					<name V="Grund der Beförderung: Genehmigungsfreie Fahrten: b) ambulante Behandlung"/>
+					<hinweistext V="Seit 2019 ist für Patienten mit Merkzeichen &quot;aG&quot;, &quot;Bl&quot;, &quot;H&quot; oder einem Pflegegrad 3 mit dauerhafter Mobilitätsbeeinträchtigung, Pflegegrad 4 oder 5 für Fahrten mit Taxi, oder Mietwagen keine Genehmigung der Krankenkasse mehr erforderlich. Bei Patienten mit Pflegegrad 3 muss zusätzlich wegen dauerhafter (mindestens über 6 Monate) körperlicher, kognitiver oder psychischer Beeinträchtigung ihrer Mobilität ein Unterstützungsbedarf bei der Beförderung bestehen, sodass sie nicht eigenständig (z. B. mit öffentlichen Verkehrsmitteln) zur ambulanten Behandlung fahren können. Fahrten im KTW verordnen Sie bitte unter f), Punkt 9."/>
+				</feld>
+				<feld>
+					<nummer V="6"/>
+					<name V="Grund der Beförderung: Genehmigungsfreie Fahrten: c) anderer Grund"/>
+					<hinweistext V="Die Verordnung dieser Fahrten ist ohne vorherige Genehmigung der Krankenkasse zulässig, wenn es sich um eine Fahrt ins Hospiz, in eine Kurzzeitpflegeeinrichtung als Leistung der Krankenkasse oder um eine Fahrt zu einer stationsersetzenden ambulanten Operation, einschließlich Vor- oder Nachbehandlung, handelt. Bei ambulanten Operationen ist Voraussetzung, dass dadurch eine aus medizinischen Gründen notwendige stationäre Krankenhausbehandlung vermieden wird oder diese nicht ausführbar ist, weil der Patient sich bewusst gegen die stationäre Krankenhausbehandlung entscheidet. Der Anlass der Fahrt ist in der Freitextzeile, Punkt 6 zu erfassen. Die Begründung für eine stationsersetzende Durchführung sowie den Operationstag tragen Sie bitte im Freitextfeld unter 4. Begründung/Sonstiges, Punkt 17 ein."/>
+				</feld>
+				<feld>
+					<nummer V="7"/>
+					<name V="Grund der Beförderung: Genehmigungspflichtige Fahrten: d) hochfrequente Behandlung, vergleichbarer Ausnahmefall"/>
+					<hinweistext V="Bedürfen Patienten einer Dialyse, onkologischer Chemo- oder Strahlentherapie in hoher Behandlungsfrequenz ist die Verordnung der Fahrt möglich. Vor Fahrtantritt muss der Patient eine Genehmigung der Krankenkasse einholen. Ein vergleichbarer Ausnahmefall liegt vor, wenn Patienten mit einem durch die Grunderkrankung vorgegebenen Therapieschema behandelt werden, das eine hohe Behandlungsfrequenz über einen längeren Zeitraum aufweist. Die Vergleichbarkeit begründen Sie bitte in dem Freitextfeld unter 4. Begründung/Sonstiges, Punkt 17, ggf. unter Angabe des ICD-10-Codes."/>
+				</feld>
+				<feld>
+					<nummer V="8"/>
+					<name V="Grund der Beförderung: Genehmigungspflichtige Fahrten: e) dauerhafte Mobilitätsbeeinträchtigung vergleichbar mit b) und Behandlungsdauer mindestens 6 Monate"/>
+					<hinweistext V="Bei einer Mobilitätsbeeinträchtigung, die mit den unter b) genannten Beeinträchtigungen vergleichbar ist, kann eine Verordnung erfolgen, wenn die Dauer der Behandlung mindestens 6 Monate beträgt. Bitte begründen Sie die Vergleichbarkeit unter Angabe des relevanten ICD-10-Codes im Freitextfeld unter 4. Begründung/Sonstiges, Punkt 17."/>
+				</feld>
+				<feld>
+					<nummer V="9"/>
+					<name V="Grund der Beförderung: Genehmigungspflichtige Fahrten: f) anderer Grund für Fahrt mit KTW"/>
+					<hinweistext V="Die Beförderung im KTW kann verordnet werden, wenn Patienten während der Fahrt einer medizinisch-fachlichen Betreuung oder der besonderen Einrichtung eines KTW bedürfen oder dadurch die Übertragung schwerer, ansteckender Krankheiten der Patienten vermieden wird. Bitte erläutern Sie dies unter 3. Art und Ausstattung der Beförderung in der Freitextzeile zu Punkt 12."/>
+				</feld>
+				<feld>
+					<nummer V="10"/>
+					<name V="Behandlungstag/Behandlungsfrequenz und nächsterreichbare, geeignete Behandlungsstätte"/>
+					<hinweistext V="Bitte geben Sie hier den voraussichtlichen Behandlungstag / die Behandlungsfrequenz sowie die Behandlungsstätte an. Ist der Behandlungstag bei genehmigungsfreien Fahrten nicht bekannt, kann im Einzelfall auf die Angabe des Behandlungstages verzichtet werden, z. B. wenn beim Hausbesuch die Notwendigkeit eines Facharztbesuches festgestellt wird oder eine Terminvergabe über die Terminservicestelle erfolgt. Bitte begründen Sie dies im Freitextfeld unter 4. Begründung/Sonstiges, Punkt 17."/>
+				</feld>
+				<feld>
+					<nummer V="11"/>
+					<name V="Art und Ausstattung der Beförderung: Taxi/Mietwagen"/>
+					<hinweistext V="Ein Taxi/Mietwagen ist verordnungsfähig, wenn der Patient aus zwingenden medizinischen Gründen kein öffentliches Verkehrsmittel oder privates Fahrzeug benutzen kann. Zu den Mietwagen gehören auch Wagen mit behindertengerechter Einrichtung. Soll ein Patient mit Rollstuhl, im Tragestuhl oder liegend befördert werden, geben Sie dies bitte an. Eine medizinisch-fachliche Betreuung der Patienten ist bei dieser Art der Beförderung nicht vorgesehen."/>
+				</feld>
+				<feld>
+					<nummer V="12"/>
+					<name V="Art und Ausstattung der Beförderung: KTW"/>
+					<hinweistext V="Die Beförderung im KTW ist nur verordnungsfähig, wenn während der Fahrt eine medizinisch-fachliche Betreuung und/oder die besondere Einrichtung eines KTW erforderlich sind. Bitte erläutern Sie, welche Funktionsstörung welche Maßnahmen erforderlich macht im Freitextfeld, Punkt 12."/>
+				</feld>
+				<feld>
+					<nummer V="13"/>
+					<name V="Art und Ausstattung der Beförderung: Rollstuhl, Tragestuhl, liegend"/>
+					<hinweistext V="'Rollstuhl' ist anzukreuzen, wenn ein nicht gehfähiger Patient im eigenen Rollstuhl oder im Krankenfahrsessel befördert werden muss (Fahrzeug mit rollstuhlgerechter Ausstattung). 'Tragestuhl' ist anzukreuzen, wenn es sich um einen nicht gehfähigen Patienten handelt, der sitzend befördert werden kann. Das Feld 'liegend' ist anzukreuzen, wenn ein Patient ausschließlich liegend transportiert werden kann."/>
+				</feld>
+				<feld>
+					<nummer V="14"/>
+					<name V="Art und Ausstattung der Beförderung: RTW"/>
+					<hinweistext V="RTW sind für Notfallpatienten zu verordnen, die vor und während der Beförderung neben den Erste-Hilfe-Maßnahmen auch zusätzlicher Maßnahmen bedürfen, die geeignet sind, die vitalen Funktionen aufrecht zu erhalten oder wiederherzustellen. In Notfällen kann die Beförderung nachträglich verordnet werden."/>
+				</feld>
+				<feld>
+					<nummer V="15"/>
+					<name V="Art und Ausstattung der Beförderung: NAW/NEF"/>
+					<hinweistext V="Notarztwagen (NAW) bzw. Notarzteinsatzfahrzeuge (NEF) sind für Notfallpatienten zu verordnen, bei denen vor oder während der Beförderung lebensrettende Sofortmaßnahmen durchzuführen oder zu erwarten sind, für die eine notärztliche Versorgung erforderlich ist. In Notfällen kann die Beförderung nachträglich verordnet werden."/>
+				</feld>
+				<feld>
+					<nummer V="16"/>
+					<name V="Art und Ausstattung der Beförderung: andere"/>
+					<hinweistext V="Ist die Verordnung anderer Beförderungsmittel wie z. B. eines Rettungshubschraubers (RTH) notwendig, geben Sie dies hier bitte an. Die Verordnung eines RTH ist möglich, wenn eine schnellere Beförderung mit einem bodengebundenen Rettungsmittel nicht ausreicht."/>
+				</feld>
+				<feld>
+					<nummer V="17"/>
+					<name V="Begründung / Sonstiges"/>
+					<hinweistext V="In diesem Freitextfeld können Sie weitere relevante Informationen zur Verordnung eintragen, z. B. zu relevanten Behandlungsterminen, zur Wartezeit des Transporteurs bei Hin- und Rückfahrten oder zu erforderlichen Begleitpersonen."/>
+				</feld>
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!--
+Projekt: ICDStamm 
+  Stammdatei für Internationale statistische Klassifikation der Krankheiten und verwandter Gesundheitsprobleme der Weltgesundheitsorganisation
+  ICD:=International Statistical Classification of Diseases and Related Health Problems (ICD-10))
+Namespace: "urn:ehd/icd/001", Präfix: icd
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/icd/001" xmlns:ehd="urn:ehd/001" targetNamespace="urn:ehd/icd/001" elementFormDefault="qualified">
+	<xs:element name="abrechenbar">
+		<xs:annotation>
+			<xs:documentation>Kennzeichnung, ob (abrechenbarer) ICD-10-GM-Code</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="j"/>
+						<xs:enumeration value="n"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="DN" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="ja"/>
+						<xs:enumeration value="nein"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="arztgruppe">
+		<xs:annotation>
+			<xs:documentation>Arztgruppe des Thesaurus-Eintrags nach Schlüsseltabelle (S_EBM_ARZTNRGRUPPE)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+			<xs:attribute name="DN" type="xs:string" use="optional"/>
+			<xs:attribute name="S" type="xs:string" use="optional" fixed="1.2.276.0.76.5.115"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="arztgruppen_liste">
+		<xs:annotation>
+			<xs:documentation>Liste der Arztgruppen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="arztgruppe">
+					<xs:annotation>
+						<xs:documentation>Arztgruppe des Thesaurus-Eintrags nach Schlüsseltabelle (S_EBM_ARZTGRUPPE)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="bezeichnung">
+		<xs:annotation>
+			<xs:documentation>Bezeichnung, Diagnosenklartext ICD-10-GM, Systematisches Verzeichnis zur Diagnose oder zum Kapitel oder zur Gruppe</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="bis_icd_code" type="icd_code_typ"/>
+	<xs:element name="diagnose">
+		<xs:annotation>
+			<xs:documentation>Diagnose (mit ICD Kodierung und weiteren Eigenschaften)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="icd_code"/>
+				<xs:element ref="bezeichnung"/>
+				<xs:element ref="abrechenbar"/>
+				<xs:group ref="diagnose_optionale_elemente_liste"/>
+				<xs:element ref="diagnosen_liste" minOccurs="0"/>
+				<xs:element ref="diagnosethesaurus_liste" minOccurs="0"/>
+				<xs:element name="verschluesselungsanleitung_liste" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="verschluesselungsanleitung_ref">
+								<xs:complexType>
+									<xs:attribute name="V" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="diagnose_optionale_elemente_liste">
+		<xs:annotation>
+			<xs:documentation>optionale Eigenschaften der ICD Diagnose</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="notationskennzeichen" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>* (Stern) oder + (Kreuz) oder ! (Ausrufezeichen)</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="+"/>
+								<xs:enumeration value="*"/>
+								<xs:enumeration value="!"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="DN" use="optional">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="Kreuzzeichen - Primärschlüssel"/>
+								<xs:enumeration value="Sternzeichen - Sekundärschlüssel"/>
+								<xs:enumeration value="Ausrufezeichen - Zusatzschlüssel"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="geschlechtsbezug" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Enthält Geschlechtsbezug einer Diagnose m - männlich; w - weiblich </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="w"/>
+								<xs:enumeration value="m"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="DN" use="optional">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="weiblich"/>
+								<xs:enumeration value="männlich"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="geschlechtsbezug_fehlerart" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Fehlerart bei Verstoß gegen Geschlechtsbezug einer Diagnose
+k = Kann-Fehler
+m = Muss-Fehler
+          </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="k"/>
+								<xs:enumeration value="m"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="DN" use="optional">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="Kann-Fehler"/>
+								<xs:enumeration value="Muss-Fehler"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="untere_altersgrenze" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>untere Altersgrenze, bei altersspezifischer Diagnose;
+Wert @V="..." Anzahl Tage oder Jahre;
+Zeiteinheit @U="...";
+@U="Tag" bei Angaben unter 1 Jahr;
+@U="Jahr" bei Angaben über 1 Jahr
+          </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="(\d{1,3})"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="U" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="Tag"/>
+								<xs:enumeration value="Jahr"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="obere_altersgrenze" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>obere Altersgrenze, bei altersspezifischer Diagnose;
+Wert @V="..." Zeiteinheit @U="..." analog untere_altersgrenze
+          </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="(\d{1,3})"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="U" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="Tag"/>
+								<xs:enumeration value="Jahr"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="altersbezug_fehlerart" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Fehlerart bei Verstoß gegen die Altersangaben
+k = Kann-Fehler
+m = Muss-Fehler</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="k"/>
+								<xs:enumeration value="m"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="DN" use="optional">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="k = Kann-Fehler"/>
+								<xs:enumeration value="m = Muss-Fehler"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="krankheit_in_mitteleuropa_sehr_selten" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Kennzeichnung "exotischer" Diagnosen; Krankheit in Mitteleuropa sehr selten</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="j"/>
+								<xs:enumeration value="n"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="DN" use="optional">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="ja"/>
+								<xs:enumeration value="nein"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="schlüsselnummer_mit_inhalt_belegt" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>kennzeichnet, ob Code belegt ist</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="j"/>
+								<xs:enumeration value="n"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="DN" use="optional">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="ja"/>
+								<xs:enumeration value="nein"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="infektionsschutzgesetz_meldepflicht" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Kennzeichen für Meldepflicht nach dem Infektionsschutzgesetz</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="j"/>
+								<xs:enumeration value="n"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="DN" use="optional">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="ja"/>
+								<xs:enumeration value="nein"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="infektionsschutzgesetz_abrechnungsbesonderheit" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Kennzeichnet, ob EBM-Kennnummer 32006 bei Meldepflicht nach dem Infektionsschutzgesetz angegeben werden kann.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="j"/>
+								<xs:enumeration value="n"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="DN" use="optional">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="ja"/>
+								<xs:enumeration value="nein"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="keine_dauerdiagnose" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>kennzeichnet, dass ein ICD-10-GM-Kode nicht als Dauerdiagnose geeignet ist</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1"/>
+								<xs:enumeration value="0"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="DN" use="optional">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="ist als Dauerdiagnose nicht geeignet"/>
+								<xs:enumeration value="nicht definiert"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:element name="diagnosen_liste">
+		<xs:annotation>
+			<xs:documentation>Strukturierung in mehrere Diagnosen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="diagnose"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="diagnosethesaurus">
+		<xs:annotation>
+			<xs:documentation>jeder "Diagnosenklartext ICD-10-GM, Alphabetisches Verzeichnis (Diagnosenthesaurus)" in separatem Element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="arztgruppen_liste" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="diagnosethesaurus_liste">
+		<xs:annotation>
+			<xs:documentation>Liste mit Diagnosenklartexten ICD-10-GM, Alphabetisches Verzeichnis (Diagnosenthesaurus)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="diagnosethesaurus"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gruppe">
+		<xs:annotation>
+			<xs:documentation>Strukturelement Gruppe</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="von_icd_code"/>
+				<xs:element ref="bis_icd_code"/>
+				<xs:element ref="bezeichnung"/>
+				<xs:element ref="diagnosen_liste"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="gruppen_liste">
+		<xs:annotation>
+			<xs:documentation>Strukturierung in mehrere Gruppen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="gruppe"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="icd_code" type="icd_code_typ"/>
+	<xs:complexType name="icd_code_typ">
+		<xs:annotation>
+			<xs:documentation>ICD-10-GM-Code (Muster: 1 Zeichen A-Z + zweistellige Nummer + '.' + einstellige Nummer oder * oder + oder -)</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="([A-Z](\d{1,2})?(\.)?(\d)?(\d|[\*\+\-])?)"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="icd_stammdaten">
+		<xs:annotation>
+			<xs:documentation>
+Strukturierung in mehrere Kapitel mit jeweils mehreren Gruppen von ICD Kodierungen
+  und eine Liste der Verweise ohne Schlüsselnummer (ICD Kodierungen) aus dem Diagnosenthesaurus
+      </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="kapitel_liste"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="kapitel">
+		<xs:annotation>
+			<xs:documentation>Strukturelement Kapitel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="nummer"/>
+				<xs:element ref="von_icd_code"/>
+				<xs:element ref="bis_icd_code"/>
+				<xs:element ref="bezeichnung"/>
+				<xs:element ref="gruppen_liste"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="kapitel_liste">
+		<xs:annotation>
+			<xs:documentation>Strukturierung in mehrere Kapitel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="kapitel"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="nummer" type="nummer_type"/>
+	<xs:complexType name="nummer_type">
+		<xs:annotation>
+			<xs:documentation>Kapitelnummer (z.z. 1 bis 22) </xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="V" type="xs:integer" use="required"/>
+	</xs:complexType>
+	<xs:element name="von_icd_code" type="icd_code_typ"/>
+</xs:schema>

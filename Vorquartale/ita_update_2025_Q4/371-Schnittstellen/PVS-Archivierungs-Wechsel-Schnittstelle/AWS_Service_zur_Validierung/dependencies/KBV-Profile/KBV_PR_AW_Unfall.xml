@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Unfall" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Unfall" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="sct-concept" />
+    <uri value="http://snomed.info/conceptdomain" />
+    <name value="SNOMED CT Concept Domain Binding" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="sct-attr" />
+    <uri value="http://snomed.org/attributebinding" />
+    <name value="SNOMED CT Attribute Binding" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Condition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Condition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Condition">
+      <path value="Condition" />
+      <short value="Unfall" />
+      <definition value="In dieser Ressource kann ein Unfall dokumentiert werden." />
+    </element>
+    <element id="Condition.id">
+      <path value="Condition.id" />
+      <min value="1" />
+    </element>
+    <element id="Condition.meta">
+      <path value="Condition.meta" />
+      <min value="1" />
+    </element>
+    <element id="Condition.meta.versionId">
+      <path value="Condition.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Condition.meta.lastUpdated">
+      <path value="Condition.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Condition.meta.profile">
+      <path value="Condition.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+        <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Unfall|1.2.0" />
+    </element>
+    <element id="Condition.text">
+      <path value="Condition.text" />
+      <min value="1" />
+    </element>	
+    <element id="Condition.extension">
+      <path value="Condition.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen">
+      <path value="Condition.extension" />
+      <sliceName value="notwendige_Zusatzinformationen" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Unfall_Zusatzinfo" />
+      </type>
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen.extension">
+      <path value="Condition.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen.extension:unfallbetrieb">
+      <path value="Condition.extension.extension" />
+      <sliceName value="unfallbetrieb" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen.extension:unfallort">
+      <path value="Condition.extension.extension" />
+      <sliceName value="unfallort" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen.extension:beginn_der_Arbeitszeit">
+      <path value="Condition.extension.extension" />
+      <sliceName value="beginn_der_Arbeitszeit" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen.extension:ende_der_Arbeitszeit">
+      <path value="Condition.extension.extension" />
+      <sliceName value="ende_der_Arbeitszeit" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen.extension:angaben_zum_Unfallhergang_und_zur_Taetigkeit">
+      <path value="Condition.extension.extension" />
+      <sliceName value="angaben_zum_Unfallhergang_und_zur_Taetigkeit" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen.extension:verhalten_der_versicherten_Person_nach_dem_Unfall">
+      <path value="Condition.extension.extension" />
+      <sliceName value="verhalten_der_versicherten_Person_nach_dem_Unfall" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen.extension:art_der_ersten_nicht_zu_der_Fachgruppe_des_behandelnden_Arztes_spezifizierte_Versorgung">
+      <path value="Condition.extension.extension" />
+      <sliceName value="art_der_ersten_nicht_zu_der_Fachgruppe_des_behandelnden_Arztes_spezifizierte_Versorgung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen.extension:allgemeine_besondere_Behandlung">
+      <path value="Condition.extension.extension" />
+      <sliceName value="allgemeine_besondere_Behandlung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen.extension:ambulant_stationaer">
+      <path value="Condition.extension.extension" />
+      <sliceName value="ambulant_stationaer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen.extension:weiterbehandlung_erfolgt_durch">
+      <path value="Condition.extension.extension" />
+      <sliceName value="weiterbehandlung_erfolgt_durch" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen.extension:beurteilung_der_arbeitsfaehigkeit">
+      <path value="Condition.extension.extension" />
+      <sliceName value="beurteilung_der_arbeitsfaehigkeit" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen.extension:ergeben_sich_Zweifel_an_einem_Arbeitsunfall_aus_Hergang_und_Befund">
+      <path value="Condition.extension.extension" />
+      <sliceName value="ergeben_sich_Zweifel_an_einem_Arbeitsunfall_aus_Hergang_und_Befund" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:notwendige_Zusatzinformationen.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig">
+      <path value="Condition.extension.extension" />
+      <sliceName value="folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.identifier">
+      <path value="Condition.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category">
+      <path value="Condition.category" />
+      <max value="0" />
+    </element>
+    <element id="Condition.severity">
+      <path value="Condition.severity" />
+      <max value="0" />
+    </element>
+    <element id="Condition.code">
+      <path value="Condition.code" />
+      <short value="Klassifizierung der Ressource" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieser Ressource verwendet." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding">
+      <path value="Condition.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding.system">
+      <path value="Condition.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding.version">
+      <path value="Condition.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Condition.code.coding.code">
+      <path value="Condition.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Unfall" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding.display">
+      <path value="Condition.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Condition.code.coding.userSelected">
+      <path value="Condition.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Condition.code.text">
+      <path value="Condition.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Condition.bodySite">
+      <path value="Condition.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="Condition.subject">
+      <path value="Condition.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.subject.reference">
+      <path value="Condition.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="Condition.subject.type">
+      <path value="Condition.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="Condition.subject.identifier">
+      <path value="Condition.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Condition.subject.display">
+      <path value="Condition.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Condition.encounter">
+      <path value="Condition.encounter" />
+      <short value="Begegnung" />
+      <definition value="Referenz zur Begegnung" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Begegnung|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.encounter.reference">
+      <path value="Condition.encounter.reference" />
+      <min value="1" />
+    </element>
+    <element id="Condition.encounter.type">
+      <path value="Condition.encounter.type" />
+      <max value="0" />
+    </element>
+    <element id="Condition.encounter.identifier">
+      <path value="Condition.encounter.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Condition.encounter.display">
+      <path value="Condition.encounter.display" />
+      <max value="0" />
+    </element>
+    <element id="Condition.onset[x]">
+      <path value="Condition.onset[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.onset[x]:onsetDateTime">
+      <path value="Condition.onset[x]" />
+      <sliceName value="onsetDateTime" />
+      <short value="Unfallzeitstempel" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="Condition.abatement[x]">
+      <path value="Condition.abatement[x]" />
+      <max value="0" />
+    </element>
+    <element id="Condition.recordedDate">
+      <path value="Condition.recordedDate" />
+      <definition value="Erstmalig behandelt am" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.recorder">
+      <path value="Condition.recorder" />
+      <short value="Erstmalig behandelt durch" />
+      <definition value="Diese Element beschreibt den ersten Behandelnden im Unfallkontext." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.recorder.reference">
+      <path value="Condition.recorder.reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.recorder.type">
+      <path value="Condition.recorder.type" />
+      <max value="0" />
+    </element>
+    <element id="Condition.recorder.identifier">
+      <path value="Condition.recorder.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Condition.recorder.display">
+      <path value="Condition.recorder.display" />
+      <short value="Erstmalig behandelt durch" />
+      <definition value="In diesem Element kann die erstmalige Behandlung als Freitext übertragen werden, sofern keine Ressource https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion vorhanden ist." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.asserter">
+      <path value="Condition.asserter" />
+      <max value="0" />
+    </element>
+    <element id="Condition.stage">
+      <path value="Condition.stage" />
+      <max value="0" />
+    </element>
+    <element id="Condition.evidence">
+      <path value="Condition.evidence" />
+      <max value="0" />
+    </element>
+    <element id="Condition.note">
+      <path value="Condition.note" />
+      <short value="weitere Informationen" />
+      <definition value="In diesem Feld können weitere Informationen zum Unfall angegeben werden." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.note.author[x]">
+      <path value="Condition.note.author[x]" />
+      <max value="0" />
+    </element>
+    <element id="Condition.note.time">
+      <path value="Condition.note.time" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

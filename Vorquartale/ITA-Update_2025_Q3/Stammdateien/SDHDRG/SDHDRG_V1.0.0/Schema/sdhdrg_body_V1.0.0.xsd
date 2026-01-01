@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- bearbeitet mit XMLSpy v2023 rel. 2 (x64) (http://www.altova.com) von Alexander Börner (Kassenärztliche Bundesvereinigung) -->
+<!-- Mit XMLSpy v2021 rel. 3 (x64) (http://www.altova.com) von Kassenärztliche Bundesvereinigung (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<!--
+ Namespace: "urn:ehd/sdhdrg/001", Präfix: sdhdrg
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/sdhdrg/001" xmlns:ehd="urn:ehd/001" targetNamespace="urn:ehd/sdhdrg/001" elementFormDefault="qualified">
+	<xs:element name="sdhdrg_stammdaten">
+		<xs:annotation>
+			<xs:documentation>Strukturierung in mehrere Leistungsbereiche mit den enthaltenen Hybrid-DRGs und OPS-Codes</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="leistungsbereich_liste" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="leistungsbereich_liste">
+		<xs:annotation>
+			<xs:documentation>Dieses Element enthält alle Leistungsbereiche</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="leistungsbereich" minOccurs="1" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Beschreibung des Leistungsbereiches für Hybrid-DRGs</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="leistungsbereich">
+		<xs:annotation>
+			<xs:documentation>Beschreibung des Leistungsbereiches für Hybrid-DRGs</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="hybrid_drg_liste" minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Dieses Element enthält alle Hybrid-DRGs des Leistungsbereiches</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ops_liste" minOccurs="1" maxOccurs="1">
+					<xs:annotation>
+						<xs:documentation>Das Element enthält die OPS-Kodes des Leistungsbereiches</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="ops" minOccurs="1" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Dieses Element bildet einen OPS-Kode ab</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="V" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="hybrid_drg_liste">
+		<xs:annotation>
+			<xs:documentation>Dieses Element enthält alle Hybrid-DRGs</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="hybrid_drg" minOccurs="1" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Dieses Element bildet eine Hybid-DRG ab</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="hybrid_drg">
+		<xs:annotation>
+			<xs:documentation>Dieses Element bildet eine Hybid-DRG ab</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="name">
+					<xs:annotation>
+						<xs:documentation>Dieses Element enthält den Namen bzw. die Kurzdefinition der Hybrid-DRG</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="V" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="bewertung">
+					<xs:annotation>
+						<xs:documentation>Dieses Element beinhaltet die möglichen Fallpauschalen der Hybrid-DRG.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="mit_postoperativ" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Dieses Element enthält die Fallpauschale der Hybrid-DRG zuzüglich postoperativer Nachbehandlung </xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="V" type="xs:decimal" use="required"/>
+									<xs:attribute name="U" use="required"/>
+									<xs:attribute name="S" use="required"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ohne_postoperativ">
+								<xs:annotation>
+									<xs:documentation>Dieses Element enthält die Fallpauschale der Hybrid-DRG ohne postoperativer Nachbehandlung</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="V" type="xs:decimal" use="required"/>
+									<xs:attribute name="U" use="required"/>
+									<xs:attribute name="S" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="V" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ops">
+		<xs:annotation>
+			<xs:documentation>Dieses Element bildet einen OPS ab</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="hinweis" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Dieses Element enthält spezifische Hinweise zum OPS-Kode</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="V" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="V" use="required"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

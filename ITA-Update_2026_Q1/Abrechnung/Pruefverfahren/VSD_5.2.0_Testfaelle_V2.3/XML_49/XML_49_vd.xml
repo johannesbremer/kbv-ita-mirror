@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<vsd:UC_AllgemeineVersicherungsdatenXML xmlns:vsd="http://ws.gematik.de/fa/vsdm/vsd/v5.2" CDM_VERSION="5.2.0">
+	<vsd:Versicherter>
+		<vsd:Versicherungsschutz>
+			<vsd:Beginn>20160101</vsd:Beginn>
+			<vsd:Ende>20401231</vsd:Ende>
+			<vsd:Kostentraeger>
+				<vsd:Kostentraegerkennung>108939385</vsd:Kostentraegerkennung>
+				<vsd:Kostentraegerlaendercode>D</vsd:Kostentraegerlaendercode>
+				<vsd:Name>BKK Allianz Netz ÄVOM</vsd:Name>
+			</vsd:Kostentraeger>
+		</vsd:Versicherungsschutz>
+		<vsd:Zusatzinfos>
+			<vsd:ZusatzinfosGKV>
+				<vsd:Versichertenart>1</vsd:Versichertenart>
+				<vsd:Zusatzinfos_Abrechnung_GKV>
+					<vsd:WOP>71</vsd:WOP>
+				</vsd:Zusatzinfos_Abrechnung_GKV>
+			</vsd:ZusatzinfosGKV>
+		</vsd:Zusatzinfos>
+	</vsd:Versicherter>
+</vsd:UC_AllgemeineVersicherungsdatenXML>

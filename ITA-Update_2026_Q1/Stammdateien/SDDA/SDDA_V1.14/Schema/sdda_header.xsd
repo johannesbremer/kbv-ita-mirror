@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Template für ehd_header:
+Projekt: sdda
+
+Namespace, Präfix und Typebezeichnungen sind mit tatsächlichen Projektspezifischen zu ersetzen.
+Verzeichnispfade überprüfen und gegebenfalls anpassen.
+-->
+<xs:schema xmlns="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<!-- ======================================================================= 
+	Einbinden der ehd-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="ehd_header.xsd"/>
+	<!-- ======================================================================= 
+	angepasster ehd_header: sdda_header (mini-header, besteht aus nur wenigen Elementen)
+	======================================================================= -->
+	<xs:complexType name="sdda_header_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_header_typ">
+				<xs:sequence>
+					<xs:element ref="id"/>
+					<xs:element name="document_type_cd" type="sdda_document_type_cd_typ"/>
+					<xs:element ref="service_tmr"/>
+					<xs:element ref="origination_dttm"/>
+					<xs:element ref="provider"/>
+					<xs:element name="interface" type="sdda_interface_typ"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster sdda_document_type_cd_typ  für das Projekt: sdda
+	======================================================================= -->
+	<xs:complexType name="sdda_document_type_cd_typ">
+		<xs:complexContent>
+			<xs:restriction base="document_type_cd_typ">
+				<xs:attribute name="V" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="SDDA"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster sdda_interface_typ für das Projekt: sdda
+	======================================================================= -->
+	<xs:complexType name="sdda_interface_typ">
+		<xs:complexContent>
+			<xs:restriction base="interface_typ">
+				<xs:sequence>
+					<xs:element name="id">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_id_typ">
+									<xs:attribute name="EX" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="19441"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="interface.nm">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_nm_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="SDDA"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="version" type="interface_version_typ"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns="urn::sciphox-org/sciphox" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="ohneName">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Alter"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ÜberweisungimRahmendesHautkrebsScreenings">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Patient kommt auf Überweisung im Rahmen des Hautkrebs-Screenings"/>
+			<xs:enumeration value="Überweisender Arzt hat HKS durchgeführt"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AngabederVerdachtsdiagnosedesüberweisendenArztes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Angabe über die Verdachtsdiagnose liegt vor"/>
+			<xs:enumeration value="Malignes Melanom"/>
+			<xs:enumeration value="Basalzellkarzinom"/>
+			<xs:enumeration value="Spinozelluläres Karzinom"/>
+			<xs:enumeration value="anderer Hautkrebs"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VerdachtsdiagnosedesDermatologen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Verdachtsdiagnose"/>
+			<xs:enumeration value="Malignes Melanom"/>
+			<xs:enumeration value="Basalzellkarzinom"/>
+			<xs:enumeration value="Spinozelluläres Karzinom"/>
+			<xs:enumeration value="anderer Hautkrebs"/>
+			<xs:enumeration value="sonstiger mit Biopsie abklärungsbedürftiger Befund"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BiopsieExzision">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Biopsie zu Verdachtsdiagnose entnommen oder Exzision durchgeführt"/>
+			<xs:enumeration value="Anzahl der entnommenen Biopsien/Exzisionen"/>
+			<xs:enumeration value="anderweitige Therapie oder Diagnostik vorgenommen bzw. eingeleitet"/>
+			<xs:enumeration value="derzeit keine weitere Therapie/Diagnostik"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Histopathologie">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Malignes Melanom"/>
+			<xs:enumeration value="Klassifikation"/>
+			<xs:enumeration value="Tumordicke (Breslow)"/>
+			<xs:enumeration value="Basalzellkarzinom"/>
+			<xs:enumeration value="horizontaler Tumordurchmesser (klinisch)"/>
+			<xs:enumeration value="vertikaler Tumordurchmesser (histologisch)"/>
+			<xs:enumeration value="Spinozelluläres Karzinom"/>
+			<xs:enumeration value="Klassifikation"/>
+			<xs:enumeration value="Grading"/>
+			<xs:enumeration value="anderer Hautkrebs"/>
+			<xs:enumeration value="atypischer Nävuszellnävus"/>
+			<xs:enumeration value="junktionaler, compound, dermaler atypischer Nävuszellnävus"/>
+			<xs:enumeration value="Aktinische Keratose"/>
+			<xs:enumeration value="Andere hier nicht relevante Hautveränderung"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

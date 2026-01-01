@@ -1,0 +1,75 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "KBV_VS_VoS_ContentTypes",
+  "id": "KBV-VS-VoS-ContentTypes",
+  "title": "ContentTypes für die base64-Codierung",
+  "description": "Dieses Valueset enthält die Codes, die für die base64-Codierung in DocumentReference-Instanzen verwendet werden dürfen",
+  "version": "2.2.0",
+  "url": "https://fhir.kbv.de/ValueSet/KBV_VS_VoS_ContentTypes",
+  "experimental": false,
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung (KBV)",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://www.kbv.de"
+        }
+      ]
+    }
+  ],
+  "immutable": false,
+  "expansion": {
+    "timestamp": "2025-04-07",
+    "total": 5,
+    "offset": 0,
+    "contains": [
+      {
+        "system": "urn:ietf:bcp:13",
+        "code": "application/pdf"
+      },
+      {
+        "system": "urn:ietf:bcp:13",
+        "code": "application/xml"
+      },
+      {
+        "system": "urn:ietf:bcp:13",
+        "code": "application/pkcs7-mime"
+      },
+      {
+        "system": "urn:ietf:bcp:13",
+        "code": "text/html"
+      },
+      {
+        "system": "urn:ietf:bcp:13",
+        "code": "application/fhir+xml"
+      }
+    ]
+  },
+  "compose": {
+    "include": [
+      {
+        "system": "urn:ietf:bcp:13",
+        "concept": [
+          {
+            "code": "application/pdf"
+          },
+          {
+            "code": "application/xml"
+          },
+          {
+            "code": "application/pkcs7-mime"
+          },
+          {
+            "code": "text/html"
+          },
+          {
+            "code": "application/fhir+xml"
+          }
+        ]
+      }
+    ]
+  }
+}

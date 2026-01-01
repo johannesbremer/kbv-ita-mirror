@@ -1,0 +1,1187 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "KBV-PR-VoS-Composition",
+  "url": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Composition",
+  "version": "2.2.0",
+  "name": "KBV_PR_VoS_Composition",
+  "title": "KBV_PR_VoS_Composition",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "description": "Über diese Composition werden beim Aufruf der Verordnungssoftware der Aufrufkontext sowie die für die entsprechende Verordnungsfunktion notwendigen Ressourcen als Referenzen übergeben",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Composition",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Composition",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Composition",
+        "path": "Composition",
+        "short": "Aufrufkontext und Ressourcen",
+        "definition": "Aufrufkontext und Zusammenstellung der Referenzen auf die zum Aufruf der Verordnungsfunktion notwendigen Ressourcen"
+      },
+      {
+        "id": "Composition.id",
+        "path": "Composition.id",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.meta",
+        "path": "Composition.meta",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.meta.source",
+        "path": "Composition.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "Composition.meta.profile",
+        "path": "Composition.meta.profile",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.meta.profile:vosProfile",
+        "path": "Composition.meta.profile",
+        "sliceName": "vosProfile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Composition|2.2.0",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.meta.security",
+        "path": "Composition.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "Composition.meta.tag",
+        "path": "Composition.meta.tag",
+        "max": "0"
+      },
+      {
+        "id": "Composition.implicitRules",
+        "path": "Composition.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "Composition.language",
+        "path": "Composition.language",
+        "max": "0"
+      },
+      {
+        "id": "Composition.contained",
+        "path": "Composition.contained",
+        "max": "0"
+      },
+      {
+        "id": "Composition.extension",
+        "path": "Composition.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "max": "5"
+      },
+      {
+        "id": "Composition.extension:PKV-Tarif",
+        "path": "Composition.extension",
+        "sliceName": "PKV-Tarif",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_PKV_Tariff"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:PKV-Tarif.extension",
+        "path": "Composition.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Composition.extension:PKV-Tarif.value[x]",
+        "path": "Composition.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:PKV-Tarif.value[x]:valueCoding",
+        "path": "Composition.extension.value[x]",
+        "sliceName": "valueCoding",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:PKV-Tarif.value[x]:valueCoding.system",
+        "path": "Composition.extension.value[x].system",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:PKV-Tarif.value[x]:valueCoding.code",
+        "path": "Composition.extension.value[x].code",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:rechtsgrundlage",
+        "path": "Composition.extension",
+        "sliceName": "rechtsgrundlage",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:rechtsgrundlage.extension",
+        "path": "Composition.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Composition.extension:rechtsgrundlage.value[x]",
+        "path": "Composition.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:rechtsgrundlage.value[x]:valueCoding",
+        "path": "Composition.extension.value[x]",
+        "sliceName": "valueCoding",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Aufrufkontext",
+        "path": "Composition.extension",
+        "sliceName": "Aufrufkontext",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_StartUp_Context"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Aufrufkontext.value[x]",
+        "path": "Composition.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Aufrufkontext.value[x]:valueCodeableConcept",
+        "path": "Composition.extension.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Aufrufkontext.value[x]:valueCodeableConcept.coding",
+        "path": "Composition.extension.value[x].coding",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Aufrufkontext.value[x]:valueCodeableConcept.coding.system",
+        "path": "Composition.extension.value[x].coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Aufrufkontext.value[x]:valueCodeableConcept.coding.code",
+        "path": "Composition.extension.value[x].coding.code",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Aufrufkontext.value[x]:valueCodeableConcept.coding.userSelected",
+        "path": "Composition.extension.value[x].coding.userSelected",
+        "max": "0"
+      },
+      {
+        "id": "Composition.extension:SER",
+        "path": "Composition.extension",
+        "sliceName": "SER",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_SER"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:SER.extension",
+        "path": "Composition.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Composition.extension:SER.value[x]",
+        "path": "Composition.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:SER.value[x]:valueBoolean",
+        "path": "Composition.extension.value[x]",
+        "sliceName": "valueBoolean",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen",
+        "path": "Composition.extension",
+        "sliceName": "Unfallinformationen",
+        "definition": "Übergabe von Informationen zu einem (Arbeits-)Unfall vom PVS an die VoS.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Accident"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen.extension:Unfallkennzeichen",
+        "path": "Composition.extension.extension",
+        "sliceName": "Unfallkennzeichen",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen.extension:Unfallkennzeichen.extension",
+        "path": "Composition.extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen.extension:Unfallkennzeichen.value[x]",
+        "path": "Composition.extension.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen.extension:Unfallkennzeichen.value[x]:valueCoding",
+        "path": "Composition.extension.extension.value[x]",
+        "sliceName": "valueCoding",
+        "type": [
+          {
+            "code": "Coding"
+          }
+        ],
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.kbv.de/ValueSet/KBV_VS_ERP_Accident_Type"
+        }
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen.extension:Unfallkennzeichen.value[x]:valueCoding.system",
+        "path": "Composition.extension.extension.value[x].system",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen.extension:Unfallkennzeichen.value[x]:valueCoding.code",
+        "path": "Composition.extension.extension.value[x].code",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen.extension:Unfallbetrieb",
+        "path": "Composition.extension.extension",
+        "sliceName": "Unfallbetrieb",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen.extension:Unfallbetrieb.extension",
+        "path": "Composition.extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen.extension:Unfallbetrieb.value[x]",
+        "path": "Composition.extension.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen.extension:Unfallbetrieb.value[x]:valueString",
+        "path": "Composition.extension.extension.value[x]",
+        "sliceName": "valueString",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen.extension:Unfalltag",
+        "path": "Composition.extension.extension",
+        "sliceName": "Unfalltag",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen.extension:Unfalltag.extension",
+        "path": "Composition.extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen.extension:Unfalltag.value[x]",
+        "path": "Composition.extension.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.extension:Unfallinformationen.extension:Unfalltag.value[x]:valueDate",
+        "path": "Composition.extension.extension.value[x]",
+        "sliceName": "valueDate",
+        "type": [
+          {
+            "code": "date"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.identifier",
+        "path": "Composition.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Composition.status",
+        "path": "Composition.status",
+        "fixedCode": "final",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type",
+        "path": "Composition.type",
+        "patternCodeableConcept": {
+          "coding": [
+            {
+              "code": "11503-0",
+              "system": "http://loinc.org"
+            }
+          ]
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type.coding",
+        "path": "Composition.type.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type.coding.system",
+        "path": "Composition.type.coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.type.coding.code",
+        "path": "Composition.type.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.category",
+        "path": "Composition.category",
+        "max": "0"
+      },
+      {
+        "id": "Composition.subject",
+        "path": "Composition.subject",
+        "short": "Behandelte Person",
+        "definition": "Referenz auf die behandelte Person, wenn diese im Aufruf übertragen wird.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Patient|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.subject.reference",
+        "path": "Composition.subject.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.subject.type",
+        "path": "Composition.subject.type",
+        "max": "0"
+      },
+      {
+        "id": "Composition.subject.identifier",
+        "path": "Composition.subject.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Composition.subject.display",
+        "path": "Composition.subject.display",
+        "max": "0"
+      },
+      {
+        "id": "Composition.encounter",
+        "path": "Composition.encounter",
+        "max": "0"
+      },
+      {
+        "id": "Composition.date",
+        "path": "Composition.date",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author",
+        "path": "Composition.author",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type"
+            }
+          ],
+          "rules": "closed"
+        },
+        "short": "Anwender und Pruefnummer des PVS",
+        "definition": "Welcher Anwender ruft die VoS mit welchem PVS auf",
+        "min": 3,
+        "max": "4",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author:Anwender",
+        "path": "Composition.author",
+        "sliceName": "Anwender",
+        "short": "PVS-Anwender",
+        "definition": "Anwendende Person (BenutzerID), welche aus dem PVS die VoS aufruft.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_User|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Practitioner|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author:Anwender.reference",
+        "path": "Composition.author.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author:Anwender.type",
+        "path": "Composition.author.type",
+        "min": 1,
+        "fixedUri": "Practitioner",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author:Anwender.identifier",
+        "path": "Composition.author.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Composition.author:Anwender.display",
+        "path": "Composition.author.display",
+        "max": "0"
+      },
+      {
+        "id": "Composition.author:PractitionerRolle",
+        "path": "Composition.author",
+        "sliceName": "PractitionerRolle",
+        "short": "Behandelnde Person in Betriebsstätte; optional zusätzliche Angabe einer ASV-Teamnummer",
+        "definition": "Verknüpfung der behandelnden Person mit der zugehörigen Betriebsstätte. Die Angabe einer Betriebsstättenreferenz (PractitionerRole.organization.reference) ist verpflichtend. Im ASV-Fall (Statuskennzeichen 01 oder 11) kann zusätzlich eine ASV-Teamnummer über eine separate PractitionerRole-Instanz angegeben werden.",
+        "min": 1,
+        "max": "2",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_PractitionerRole|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author:PractitionerRolle.reference",
+        "path": "Composition.author.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author:PractitionerRolle.type",
+        "path": "Composition.author.type",
+        "min": 1,
+        "fixedUri": "PractitionerRole",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author:PractitionerRolle.identifier",
+        "path": "Composition.author.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Composition.author:PractitionerRolle.display",
+        "path": "Composition.author.display",
+        "max": "0"
+      },
+      {
+        "id": "Composition.author:PVS",
+        "path": "Composition.author",
+        "sliceName": "PVS",
+        "short": "System",
+        "definition": "Identifikation des PVS mit KBV-Prüfnummer und optionalen Kontaktdaten des Herstellers, welches die VoS aufruft.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Device_PVS|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author:PVS.reference",
+        "path": "Composition.author.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author:PVS.type",
+        "path": "Composition.author.type",
+        "min": 1,
+        "fixedUri": "Device",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.author:PVS.identifier",
+        "path": "Composition.author.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Composition.author:PVS.display",
+        "path": "Composition.author.display",
+        "max": "0"
+      },
+      {
+        "id": "Composition.title",
+        "path": "Composition.title",
+        "fixedString": "Aufruf der VoS",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.confidentiality",
+        "path": "Composition.confidentiality",
+        "max": "0"
+      },
+      {
+        "id": "Composition.attester",
+        "path": "Composition.attester",
+        "short": "Daten der verantwortliche Person",
+        "definition": "Referenz auf den zur Weiterbildung ermächtigten Arztes (im vertrags(zahn)ärztlichen Bereich) bzw. des beauftragender Facharztes (im Krankenhaus), sofern nötig.",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.attester.mode",
+        "path": "Composition.attester.mode",
+        "fixedCode": "legal",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.attester.time",
+        "path": "Composition.attester.time",
+        "max": "0"
+      },
+      {
+        "id": "Composition.attester.party",
+        "path": "Composition.attester.party",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Practitioner|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.attester.party.reference",
+        "path": "Composition.attester.party.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.attester.party.type",
+        "path": "Composition.attester.party.type",
+        "max": "0"
+      },
+      {
+        "id": "Composition.attester.party.identifier",
+        "path": "Composition.attester.party.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Composition.attester.party.display",
+        "path": "Composition.attester.party.display",
+        "max": "0"
+      },
+      {
+        "id": "Composition.custodian",
+        "path": "Composition.custodian",
+        "short": "Betriebsstätte",
+        "definition": "Betriebsstätte",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Organization|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.custodian.reference",
+        "path": "Composition.custodian.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.custodian.type",
+        "path": "Composition.custodian.type",
+        "max": "0"
+      },
+      {
+        "id": "Composition.custodian.identifier",
+        "path": "Composition.custodian.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Composition.custodian.display",
+        "path": "Composition.custodian.display",
+        "max": "0"
+      },
+      {
+        "id": "Composition.relatesTo",
+        "path": "Composition.relatesTo",
+        "max": "0"
+      },
+      {
+        "id": "Composition.event",
+        "path": "Composition.event",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section",
+        "path": "Composition.section",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "code.coding"
+            }
+          ],
+          "rules": "closed"
+        },
+        "max": "3",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen",
+        "path": "Composition.section",
+        "sliceName": "Patientenzusatzinformationen",
+        "definition": "Zusatzinformationen zur behandelten Person, wie Allergien, Diagnosen und Messwerte",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.title",
+        "path": "Composition.section.title",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.kbv.de/ValueSet/KBV_VS_VoS_SectionType",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "CompositionSectionType"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.code.coding",
+        "path": "Composition.section.code.coding",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "Additional patient information",
+          "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.code.coding.userSelected",
+        "path": "Composition.section.code.coding.userSelected",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.code.text",
+        "path": "Composition.section.code.text",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.author",
+        "path": "Composition.section.author",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.focus",
+        "path": "Composition.section.focus",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.text",
+        "path": "Composition.section.text",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.mode",
+        "path": "Composition.section.mode",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.orderedBy",
+        "path": "Composition.section.orderedBy",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.entry",
+        "path": "Composition.section.entry",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_AllergyIntolerance|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Coverage|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Condition|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Body_Weight|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Body_Height|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Creatinine_Level|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Pregnancy_Status|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Breastfeeding_Status|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.entry.reference",
+        "path": "Composition.section.entry.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.entry.type",
+        "path": "Composition.section.entry.type",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.entry.identifier",
+        "path": "Composition.section.entry.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.entry.display",
+        "path": "Composition.section.entry.display",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.emptyReason",
+        "path": "Composition.section.emptyReason",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Patientenzusatzinformationen.section",
+        "path": "Composition.section.section",
+        "max": "0",
+        "contentReference": "http://hl7.org/fhir/StructureDefinition/Composition#Composition.section"
+      },
+      {
+        "id": "Composition.section:Medikamente",
+        "path": "Composition.section",
+        "sliceName": "Medikamente",
+        "definition": "Medikamente bspw. aus der Verordnungshistorie",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Medikamente.title",
+        "path": "Composition.section.title",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Medikamente.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.kbv.de/ValueSet/KBV_VS_VoS_SectionType",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "CompositionSectionType"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:Medikamente.code.coding",
+        "path": "Composition.section.code.coding",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "Medications",
+          "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Medikamente.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Medikamente.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Medikamente.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Medikamente.code.coding.userSelected",
+        "path": "Composition.section.code.coding.userSelected",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Medikamente.code.text",
+        "path": "Composition.section.code.text",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Medikamente.author",
+        "path": "Composition.section.author",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Medikamente.focus",
+        "path": "Composition.section.focus",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Medikamente.text",
+        "path": "Composition.section.text",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Medikamente.mode",
+        "path": "Composition.section.mode",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Medikamente.orderedBy",
+        "path": "Composition.section.orderedBy",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Medikamente.entry",
+        "path": "Composition.section.entry",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_Compounding|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_FreeText|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_Ingredient|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_PZN|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Prescription|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_MedicationStatement_MP|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Medikamente.entry.reference",
+        "path": "Composition.section.entry.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Medikamente.entry.type",
+        "path": "Composition.section.entry.type",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Medikamente.entry.identifier",
+        "path": "Composition.section.entry.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Medikamente.entry.display",
+        "path": "Composition.section.entry.display",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Medikamente.emptyReason",
+        "path": "Composition.section.emptyReason",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Medikamente.section",
+        "path": "Composition.section.section",
+        "max": "0",
+        "contentReference": "http://hl7.org/fhir/StructureDefinition/Composition#Composition.section"
+      },
+      {
+        "id": "Composition.section:Dokumente",
+        "path": "Composition.section",
+        "sliceName": "Dokumente",
+        "definition": "Dokumente, wie BMP und (E-)Rezepte",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Dokumente.title",
+        "path": "Composition.section.title",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Dokumente.code",
+        "path": "Composition.section.code",
+        "min": 1,
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.kbv.de/ValueSet/KBV_VS_VoS_SectionType",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "CompositionSectionType"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Composition.section:Dokumente.code.coding",
+        "path": "Composition.section.code.coding",
+        "min": 1,
+        "max": "1",
+        "patternCoding": {
+          "code": "Documents",
+          "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Dokumente.code.coding.system",
+        "path": "Composition.section.code.coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Dokumente.code.coding.version",
+        "path": "Composition.section.code.coding.version",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Dokumente.code.coding.code",
+        "path": "Composition.section.code.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Dokumente.code.coding.userSelected",
+        "path": "Composition.section.code.coding.userSelected",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Dokumente.code.text",
+        "path": "Composition.section.code.text",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Dokumente.author",
+        "path": "Composition.section.author",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Dokumente.focus",
+        "path": "Composition.section.focus",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Dokumente.text",
+        "path": "Composition.section.text",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Dokumente.mode",
+        "path": "Composition.section.mode",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Dokumente.orderedBy",
+        "path": "Composition.section.orderedBy",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Dokumente.entry",
+        "path": "Composition.section.entry",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_DocumentReference|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Dokumente.entry.reference",
+        "path": "Composition.section.entry.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Composition.section:Dokumente.entry.type",
+        "path": "Composition.section.entry.type",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Dokumente.entry.identifier",
+        "path": "Composition.section.entry.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Dokumente.entry.display",
+        "path": "Composition.section.entry.display",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Dokumente.emptyReason",
+        "path": "Composition.section.emptyReason",
+        "max": "0"
+      },
+      {
+        "id": "Composition.section:Dokumente.section",
+        "path": "Composition.section.section",
+        "max": "0",
+        "contentReference": "http://hl7.org/fhir/StructureDefinition/Composition#Composition.section"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<VSD:UC_PersoenlicheVersichertendatenXML CDM_VERSION="5.2.0" xmlns:VSD="http://ws.gematik.de/fa/vsdm/vsd/v5.2"> 
+	<VSD:Versicherter>
+		<VSD:Versicherten_ID>M000119009</VSD:Versicherten_ID>
+		<VSD:Person>
+			<VSD:Geburtsdatum>19000100</VSD:Geburtsdatum>
+			<VSD:Vorname>Lija</VSD:Vorname>
+			<VSD:Nachname>Malta</VSD:Nachname>
+			<VSD:Geschlecht>W</VSD:Geschlecht>
+			<VSD:StrassenAdresse>
+				<VSD:Postleitzahl>LJA1234590</VSD:Postleitzahl>
+				<VSD:Ort>Malta-Lija</VSD:Ort>
+				<VSD:Land>
+					<VSD:Wohnsitzlaendercode>M</VSD:Wohnsitzlaendercode>
+				</VSD:Land>
+				<VSD:Strasse>Malta-Lija-Straße 123</VSD:Strasse>
+				<VSD:Anschriftenzusatz>LJA</VSD:Anschriftenzusatz>
+			</VSD:StrassenAdresse>
+		</VSD:Person>
+	</VSD:Versicherter>
+</VSD:UC_PersoenlicheVersichertendatenXML>

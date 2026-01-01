@@ -1,0 +1,28 @@
+1. Beschreibung "Schnittstelle Qualitätssicherung ZervixZyto" 
+   (Version 2.00, 05.11.2014)
+*****************************************************************************
+
+Dieses Paket beschreibt die Datenstruktur zu QS Zytologie.
+
+Alle Komponenten des Pakets sind separat versioniert. Es können keine 
+Schlussfolgerungen aus den Versionsnummern des Pakets und der Komponenten 
+untereinander gezogen werden. Die Versionsnummer der Schnittstelle muss 
+auch nicht identisch mit der Versionsnummer der Schnittstellenbeschreibung 
+sein.
+
+
+
+2. Dokumente und Software
+*************************
+
+- Schnittstellenbeschreibung QSZervixZyto (Version 2.00, Stand: 05.11.2014)
+- Schemata
+- BSP-Dateien
+
+
+3. Änderungen zur Vorversion
+****************************
+- die Schnittstelle wird entsprechend der Münchner Nomenklatur III umfassend überarbeitet
+
+
+

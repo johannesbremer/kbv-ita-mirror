@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoerderung_Befoerderungsmitteltyp"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Krankenbefoerderung_Befoerderungsmitteltyp"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Art des Befoerderungsmittels"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="Taxi_Mietwagen"/>
+<display value="Taxi/Mietwagen"/>
+</concept>
+<concept>
+<code value="Krankentransport"/>
+<display value="Krankentransport"/>
+</concept>
+<concept>
+<code value="Rettungswagen"/>
+<display value="Rettungswagen"/>
+</concept>
+<concept>
+<code value="Notarztwagen"/>
+<display value="Notarztwagen, Notfalleinsatzfahrzeug"/>
+</concept>
+<concept>
+<code value="Sonstige"/>
+<display value="Sonstige"/>
+</concept>
+</CodeSystem>

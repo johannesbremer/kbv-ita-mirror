@@ -1,0 +1,38 @@
+<Provenance xmlns="http://hl7.org/fhir">
+  <id value="10001" />
+  <meta>
+    <versionId value="1"/>
+	<lastUpdated value="2022-09-06T14:22:00Z"/>
+    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Provenance_AllergyIntolerance|2.1.0" />
+  </meta>
+  <target>
+	<reference value="AllergyIntolerance/4"/>
+  </target>
+  <recorded value="2022-09-06T09:06:00Z"/>
+  <activity>
+	<coding>
+		<system value="http://terminology.hl7.org/CodeSystem/v3-DataOperation"/>
+		<version value="4.1.0"/>
+		<code value="CREATE"/>
+	</coding>
+  </activity>
+  <agent>
+	<type>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+			<version value="4.0.1"/>
+			<code value="author"/>
+		</coding>
+	</type>
+	<role>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-RoleClass"/>
+			<code value="PROV"/>
+		</coding>
+	</role>
+	<who>
+		<reference value="Practitioner/200"/>
+		<type value="Practitioner"/>
+	</who>
+  </agent>
+</Provenance>

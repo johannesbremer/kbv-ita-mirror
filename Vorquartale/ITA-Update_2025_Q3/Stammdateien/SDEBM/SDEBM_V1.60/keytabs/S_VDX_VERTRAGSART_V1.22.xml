@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<keytabs xmlns="urn:ehd/001">
+<keytab SV="1.22" SN="S_VDX_VERTRAGSART" S="1.2.276.0.76.5.257">
+    <key V="01" DN="Onkologie" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="02" DN="Diabetologie" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="03" DN="Schutzimpfungen" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="05" DN="Sozialpsychiatrie" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="11" DN="Kosten gemäß 7.3 der Allgemeinen Bestimmungen des EBM 2000plus" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="12" DN="Wegegelder und Wegepauschalen" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="13" DN="Sachkosten bei Blutreinigungs- und Aphereseverfahren" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="20" DN="Pauschalen und Kosten von Krankenhäusern etc. (gem. 1.3.3 FKZ-Richtlinie)" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="24" DN="DMP Adipositas" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="25" DN="DMP Rheumatoide Arthritis" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="26" DN="DMP Osteoporose" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="27" DN="DMP Depression" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="28" DN="DMP Chronischer Rückenschmerz" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="29" DN="DMP Chronische Herzinsuffizienz" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="30" DN="DMP Diabetes mellitus Typ 2" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="31" DN="DMP Brustkrebs" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="32" DN="DMP KHK" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="33" DN="DMP Diabetes mellitus Typ 1" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="34" DN="DMP Asthma bronchiale" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="35" DN="DMP COPD" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="70" DN="Versorgungs- und Dienstleistungsverträge, Zuzahlungen" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="80" DN="Anerkennungsvereinbarung nach Anlage 17 BMV-Ä" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="81" DN="Zuschläge nach § 87a Abs. 2 Satz 3, 1. Halbsatz SGB V - Leistungen" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="82" DN="Zuschläge nach § 87a Abs. 2 Satz 3, 1. Halbsatz SGB V - Ärzte/Therapeuten" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="83" DN="Zuschläge nach § 87a Abs. 2 Satz 2" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="90" DN="Sonstige Anerkennungsvereinbarungen" S="1.2.276.0.76.5.257" SV="1.22"/>
+    <key V="99" DN="Kennziffern (GOP ohne Wert) im FKZ" S="1.2.276.0.76.5.257" SV="1.22"/>
+</keytab>
+</keytabs>

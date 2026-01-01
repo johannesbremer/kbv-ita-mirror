@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<VSD:UC_PersoenlicheVersichertendatenXML CDM_VERSION="5.2.0" xmlns:VSD="http://ws.gematik.de/fa/vsdm/vsd/v5.2">
+	<VSD:Versicherter>
+		<VSD:Versicherten_ID>R010439556</VSD:Versicherten_ID>
+		<VSD:Person>
+			<VSD:Geburtsdatum>19390000</VSD:Geburtsdatum>
+			<VSD:Vorname>Jonathan</VSD:Vorname>
+			<VSD:Nachname>Ramirez-Sanchéz-Leon</VSD:Nachname>
+			<VSD:Geschlecht>M</VSD:Geschlecht>
+			<VSD:Vorsatzwort>dos santos</VSD:Vorsatzwort>
+			<VSD:Titel>Dr.</VSD:Titel>
+			<VSD:StrassenAdresse>
+				<VSD:Ort>Mexicali</VSD:Ort>
+				<VSD:Land>
+					<VSD:Wohnsitzlaendercode>MEX</VSD:Wohnsitzlaendercode>
+				</VSD:Land>
+			</VSD:StrassenAdresse>
+		</VSD:Person>
+	</VSD:Versicherter>
+</VSD:UC_PersoenlicheVersichertendatenXML>

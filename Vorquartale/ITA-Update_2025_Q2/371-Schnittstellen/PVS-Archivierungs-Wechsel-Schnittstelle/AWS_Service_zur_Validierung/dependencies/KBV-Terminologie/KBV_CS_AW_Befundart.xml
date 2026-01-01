@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Befundart"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Befundart"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Befundarten"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="Eigenbefund"/>
+<display value="Eigenbefund"/>
+</concept>
+<concept>
+<code value="Fremdbefund"/>
+<display value="Fremdbefund"/>
+</concept>
+<concept>
+<code value="Laborbefund"/>
+<display value="Laborbefund"/>
+</concept>
+<concept>
+<code value="Roentgenbefund"/>
+<display value="Roentgenbefund"/>
+</concept>
+<concept>
+<code value="Patientenangabe"/>
+<display value="Patientenangabe"/>
+</concept>
+<concept>
+<code value="EKG-Befund"/>
+<display value="EKG-Befund"/>
+</concept>
+</CodeSystem>

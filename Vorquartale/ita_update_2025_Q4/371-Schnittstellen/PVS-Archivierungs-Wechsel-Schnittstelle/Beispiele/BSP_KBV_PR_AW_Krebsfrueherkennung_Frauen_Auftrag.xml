@@ -1,0 +1,46 @@
+<ServiceRequest xmlns="http://hl7.org/fhir">
+	<id value="3205"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-16T14:49:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_Auftrag|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krebsfrueherkennung_Auftrag_Zusatzinformation">
+		<extension url="untersuchungsnummer">
+			<valueString value="56/2018"/>
+		</extension>
+		<extension url="wiederholungsuntersuchung">
+			<valueBoolean value="true"/>
+		</extension>
+		<extension url="jahr_der_letzten_Untersuchung">
+			<valueDate value="2014"/>
+		</extension>
+		<extension url="nummer_letzter_zytologischer_Befund">
+			<valueString value="H5867/14"/>
+		</extension>
+		<extension url="gruppe_des_letzten_Befundes">
+			<valueString value="55G2"/>
+		</extension>
+	</extension>
+	<status value="completed"/>
+	<intent value="order"/>
+	<code>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp"/>
+			<code value="Krebsfrueherkennung_Frauen_Auftrag"/>
+		</coding>
+	</code>
+	<subject>
+		<reference value="Patient/3181"/>
+	</subject>
+	<occurrencePeriod>
+		<start value="2018-07-01"/>
+		<end value="2018-09-30"/>
+	</occurrencePeriod>
+</ServiceRequest>

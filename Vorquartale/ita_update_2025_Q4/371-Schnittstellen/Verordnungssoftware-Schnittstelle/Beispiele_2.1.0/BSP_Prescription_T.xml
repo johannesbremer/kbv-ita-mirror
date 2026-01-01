@@ -1,0 +1,82 @@
+<MedicationRequest xmlns="http://hl7.org/fhir">
+	<id value="100111"/>
+	<meta>
+		<versionId value="1"/>
+		<lastUpdated value="2022-10-07T13:40:00Z"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Prescription|2.1.0"/>
+	</meta>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis">
+		<valueCoding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN"/>
+			<code value="00"/>
+		</valueCoding>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee">
+		<valueBoolean value="false"/>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment">
+		<valueCoding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_StatusCoPayment"/>
+			<code value="0"/>
+		</valueCoding>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_BVG">
+		<valueBoolean value="false"/>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_PrescriptionType">
+		<valueCodeableConcept>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType"/>
+				<code value="T-RP"/>
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_T_Prescription_Marks">
+		<extension url="Sicherheitsbestimmungen">
+			<valueBoolean value="true"/>
+		</extension>
+		<extension url="Informationsmaterial">
+			<valueBoolean value="true"/>
+		</extension>
+		<extension url="In-Label">
+			<valueBoolean value="true"/>
+		</extension>
+		<extension url="Off-Label">
+			<valueBoolean value="false"/>
+		</extension>
+	</extension>
+	<status value="active"/>
+	<intent value="order"/>
+	<medicationReference>
+		<reference value="Medication/100110"/>
+	</medicationReference>
+	<subject>
+		<reference value="Patient/91000"/>
+	</subject>
+	<authoredOn value="2022-10-07"/>
+	<requester>
+		<reference value="PractitionerRole/90002"/>
+	</requester>
+	<groupIdentifier>
+		<value value="GI-T-1"/>
+	</groupIdentifier>
+	<insurance>
+		<reference value="Coverage/91001"/>
+	</insurance>
+	<dosageInstruction>
+		<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag">
+			<valueBoolean value="true"/>
+		</extension>
+		<text value="0-0-1-0"/>
+	</dosageInstruction>
+	<dispenseRequest>
+		<quantity>
+			<value value="1"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="{Package}"/>
+		</quantity>
+	</dispenseRequest>
+	<substitution>
+		<allowedBoolean value="false"/>
+	</substitution>
+</MedicationRequest> 

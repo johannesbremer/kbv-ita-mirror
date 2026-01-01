@@ -1,0 +1,431 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "KBV-PR-VoS-Device-PVS",
+  "url": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Device_PVS",
+  "version": "2.2.0",
+  "name": "KBV_PR_VoS_Device_PVS",
+  "title": "KBV_PR_VoS_Device_PVS",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "description": "Übergabe der KBV-Prüfnummer des PVS an die VoS, optionale Angabe des PVS-Namens und Kontaktdaten des Herstellers",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Device",
+  "baseDefinition": "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Device|1.7.0",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Device.id",
+        "path": "Device.id",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Device.meta",
+        "path": "Device.meta",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Device.meta.source",
+        "path": "Device.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "Device.meta.profile",
+        "path": "Device.meta.profile",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Device.meta.profile:vosProfile",
+        "path": "Device.meta.profile",
+        "sliceName": "vosProfile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Device_PVS|2.2.0",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.meta.security",
+        "path": "Device.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "Device.meta.tag",
+        "path": "Device.meta.tag",
+        "max": "0"
+      },
+      {
+        "id": "Device.implicitRules",
+        "path": "Device.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "Device.language",
+        "path": "Device.language",
+        "max": "0"
+      },
+      {
+        "id": "Device.contained",
+        "path": "Device.contained",
+        "max": "0"
+      },
+      {
+        "id": "Device.extension",
+        "path": "Device.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "closed"
+        },
+        "max": "0"
+      },
+      {
+        "id": "Device.extension:verantwortlichePersonEinrichtung",
+        "path": "Device.extension",
+        "sliceName": "verantwortlichePersonEinrichtung",
+        "max": "0"
+      },
+      {
+        "id": "Device.identifier",
+        "path": "Device.identifier",
+        "short": "KBV-Prüfnummer",
+        "definition": "KBV-Prüfnummer der VoS-SST-Zertifizierung des PVS",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.identifier.use",
+        "path": "Device.identifier.use",
+        "max": "0"
+      },
+      {
+        "id": "Device.identifier.type",
+        "path": "Device.identifier.type",
+        "max": "0"
+      },
+      {
+        "id": "Device.identifier.system",
+        "path": "Device.identifier.system",
+        "min": 1,
+        "fixedUri": "https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.identifier.value",
+        "path": "Device.identifier.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Device.identifier.period",
+        "path": "Device.identifier.period",
+        "max": "0"
+      },
+      {
+        "id": "Device.identifier.assigner",
+        "path": "Device.identifier.assigner",
+        "max": "0"
+      },
+      {
+        "id": "Device.definition",
+        "path": "Device.definition",
+        "max": "0"
+      },
+      {
+        "id": "Device.udiCarrier",
+        "path": "Device.udiCarrier",
+        "max": "0"
+      },
+      {
+        "id": "Device.status",
+        "path": "Device.status",
+        "max": "0"
+      },
+      {
+        "id": "Device.statusReason",
+        "path": "Device.statusReason",
+        "max": "0"
+      },
+      {
+        "id": "Device.distinctIdentifier",
+        "path": "Device.distinctIdentifier",
+        "max": "0"
+      },
+      {
+        "id": "Device.manufacturer",
+        "path": "Device.manufacturer",
+        "max": "0"
+      },
+      {
+        "id": "Device.manufactureDate",
+        "path": "Device.manufactureDate",
+        "max": "0"
+      },
+      {
+        "id": "Device.expirationDate",
+        "path": "Device.expirationDate",
+        "max": "0"
+      },
+      {
+        "id": "Device.lotNumber",
+        "path": "Device.lotNumber",
+        "max": "0"
+      },
+      {
+        "id": "Device.serialNumber",
+        "path": "Device.serialNumber",
+        "max": "0"
+      },
+      {
+        "id": "Device.deviceName",
+        "path": "Device.deviceName",
+        "definition": "Name des PVS",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.deviceName.name",
+        "path": "Device.deviceName.name",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.deviceName.type",
+        "path": "Device.deviceName.type",
+        "fixedCode": "manufacturer-name",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.modelNumber",
+        "path": "Device.modelNumber",
+        "max": "0"
+      },
+      {
+        "id": "Device.partNumber",
+        "path": "Device.partNumber",
+        "max": "0"
+      },
+      {
+        "id": "Device.type",
+        "path": "Device.type",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.type.coding",
+        "path": "Device.type.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.type.coding:snomed",
+        "path": "Device.type.coding",
+        "sliceName": "snomed",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.type.coding:snomed.system",
+        "path": "Device.type.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.type.coding:snomed.version",
+        "path": "Device.type.coding.version",
+        "fixedString": "http://snomed.info/sct/11000274103/version/20240515",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.type.coding:snomed.code",
+        "path": "Device.type.coding.code",
+        "fixedCode": "463916008",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.type.coding:snomed.display",
+        "path": "Device.type.coding.display",
+        "fixedString": "Physician-practice-management information system application software (physical object)",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.type.coding:snomed.userSelected",
+        "path": "Device.type.coding.userSelected",
+        "max": "0"
+      },
+      {
+        "id": "Device.type.text",
+        "path": "Device.type.text",
+        "max": "0"
+      },
+      {
+        "id": "Device.specialization",
+        "path": "Device.specialization",
+        "max": "0"
+      },
+      {
+        "id": "Device.version",
+        "path": "Device.version",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.version.value",
+        "path": "Device.version.value",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.property",
+        "path": "Device.property",
+        "max": "0"
+      },
+      {
+        "id": "Device.patient",
+        "path": "Device.patient",
+        "max": "0"
+      },
+      {
+        "id": "Device.owner",
+        "path": "Device.owner",
+        "max": "0"
+      },
+      {
+        "id": "Device.contact",
+        "path": "Device.contact",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "system"
+            }
+          ],
+          "rules": "closed"
+        },
+        "short": "Kontaktangaben PVS",
+        "definition": "Enthält die Kontaktmöglichkeiten des Supports des PVS-Herstellers",
+        "max": "2",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.contact:Telefonnummer",
+        "path": "Device.contact",
+        "sliceName": "Telefonnummer",
+        "short": "Telefonnummer Support",
+        "definition": "Enthält die Telefonnummer des Supports des PVS-Herstellers",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.contact:Telefonnummer.system",
+        "path": "Device.contact.system",
+        "min": 1,
+        "fixedCode": "phone",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.contact:Telefonnummer.value",
+        "path": "Device.contact.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Device.contact:Telefonnummer.use",
+        "path": "Device.contact.use",
+        "max": "0"
+      },
+      {
+        "id": "Device.contact:Telefonnummer.rank",
+        "path": "Device.contact.rank",
+        "max": "0"
+      },
+      {
+        "id": "Device.contact:Telefonnummer.period",
+        "path": "Device.contact.period",
+        "max": "0"
+      },
+      {
+        "id": "Device.contact:E-Mail",
+        "path": "Device.contact",
+        "sliceName": "E-Mail",
+        "short": "E-Mail-Adresse Support",
+        "definition": "Enthält die E-Mail-Adresse des Supports des PVS-Herstellers",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.contact:E-Mail.system",
+        "path": "Device.contact.system",
+        "min": 1,
+        "fixedCode": "email",
+        "mustSupport": true
+      },
+      {
+        "id": "Device.contact:E-Mail.value",
+        "path": "Device.contact.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Device.contact:E-Mail.use",
+        "path": "Device.contact.use",
+        "max": "0"
+      },
+      {
+        "id": "Device.contact:E-Mail.rank",
+        "path": "Device.contact.rank",
+        "max": "0"
+      },
+      {
+        "id": "Device.contact:E-Mail.period",
+        "path": "Device.contact.period",
+        "max": "0"
+      },
+      {
+        "id": "Device.location",
+        "path": "Device.location",
+        "max": "0"
+      },
+      {
+        "id": "Device.url",
+        "path": "Device.url",
+        "max": "0"
+      },
+      {
+        "id": "Device.note",
+        "path": "Device.note",
+        "max": "0"
+      },
+      {
+        "id": "Device.safety",
+        "path": "Device.safety",
+        "max": "0"
+      },
+      {
+        "id": "Device.parent",
+        "path": "Device.parent",
+        "max": "0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,532 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "KBV-PR-VoS-Condition",
+  "url": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Condition",
+  "version": "2.2.0",
+  "name": "KBV_PR_VoS_Condition",
+  "title": "KBV_PR_VoS_Condition",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "description": "Übergabe von Diagnosen einer behandelten Person vom PVS an die VoS.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Condition",
+  "baseDefinition": "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Condition_Diagnosis|1.7.0",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Condition",
+        "path": "Condition",
+        "short": "Diagnosen der behandelten Person",
+        "definition": "Eine der behandelten Person zugeordnete Diagnose."
+      },
+      {
+        "id": "Condition.id",
+        "path": "Condition.id",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.meta",
+        "path": "Condition.meta",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.meta.source",
+        "path": "Condition.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "Condition.meta.profile",
+        "path": "Condition.meta.profile",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.meta.profile:vosProfile",
+        "path": "Condition.meta.profile",
+        "sliceName": "vosProfile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Condition|2.2.0",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.implicitRules",
+        "path": "Condition.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "Condition.language",
+        "path": "Condition.language",
+        "max": "0"
+      },
+      {
+        "id": "Condition.contained",
+        "path": "Condition.contained",
+        "max": "0"
+      },
+      {
+        "id": "Condition.extension",
+        "path": "Condition.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "closed"
+        },
+        "min": 1
+      },
+      {
+        "id": "Condition.extension:Feststellungsdatum",
+        "path": "Condition.extension",
+        "sliceName": "Feststellungsdatum",
+        "max": "0"
+      },
+      {
+        "id": "Condition.extension:Dauerdiagnose",
+        "path": "Condition.extension",
+        "sliceName": "Dauerdiagnose",
+        "short": "Dauerdiagnosenkennzeichnung",
+        "definition": "Kennzeichnung, ob es sich um eine Dauerdiagnose handelt",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_isPermanent"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "isModifier": false
+      },
+      {
+        "id": "Condition.extension:Dauerdiagnose.value[x]",
+        "path": "Condition.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.extension:Dauerdiagnose.value[x]:valueBoolean",
+        "path": "Condition.extension.value[x]",
+        "sliceName": "valueBoolean",
+        "short": "Dauerdiagnose",
+        "definition": "Angabe, ob die Diagnose eine Dauerdiagnose ist. true = Dauerdiagnose, false = keine Dauerdiagnose",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.extension:Kombination",
+        "path": "Condition.extension",
+        "sliceName": "Kombination",
+        "short": "Kombination",
+        "definition": "ICD-10(-GM) Codes können in mehrfachkodierter Form auftreten. \r\nAufgrund der gängigen Praxis, die es Erlaubt, dass zusammengesetzte Codes unabhängig voneinander Zusatzkennzeichen \r\nwie Diagnosesicherheit und -lokalisation zugeordnet werden können, müssen beide Codebestandteile als separate \r\nConditions aufgefasst werden, die miteinander in Beziehung stehen (Verlinkung). \r\nDie Verlinkung von Sekundär- auf die assoziierte Primärdiagnose erfolgt mit Hilfe der international \r\nabgestimmten Extension condition-related. Eine Verlinkung der Sekundärdiagnose in Richtung Primärdiagnose \r\nsollte vermieden werden, sodass keine zirkuläre Referenzierung entsteht.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/condition-related"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "isModifier": false
+      },
+      {
+        "id": "Condition.extension:Kombination.value[x]",
+        "path": "Condition.extension.value[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Condition|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.identifier",
+        "path": "Condition.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Condition.clinicalStatus",
+        "path": "Condition.clinicalStatus",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.clinicalStatus.coding",
+        "path": "Condition.clinicalStatus.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.clinicalStatus.coding.system",
+        "path": "Condition.clinicalStatus.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.clinicalStatus.coding.version",
+        "path": "Condition.clinicalStatus.coding.version",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.clinicalStatus.coding.code",
+        "path": "Condition.clinicalStatus.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.clinicalStatus.coding.display",
+        "path": "Condition.clinicalStatus.coding.display",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.clinicalStatus.coding.userSelected",
+        "path": "Condition.clinicalStatus.coding.userSelected",
+        "max": "0"
+      },
+      {
+        "id": "Condition.clinicalStatus.text",
+        "path": "Condition.clinicalStatus.text",
+        "max": "0"
+      },
+      {
+        "id": "Condition.verificationStatus",
+        "path": "Condition.verificationStatus",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.verificationStatus.coding",
+        "path": "Condition.verificationStatus.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.verificationStatus.coding.system",
+        "path": "Condition.verificationStatus.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.verificationStatus.coding.version",
+        "path": "Condition.verificationStatus.coding.version",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.verificationStatus.coding.code",
+        "path": "Condition.verificationStatus.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.verificationStatus.coding.display",
+        "path": "Condition.verificationStatus.coding.display",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.verificationStatus.coding.userSelected",
+        "path": "Condition.verificationStatus.coding.userSelected",
+        "max": "0"
+      },
+      {
+        "id": "Condition.verificationStatus.text",
+        "path": "Condition.verificationStatus.text",
+        "max": "0"
+      },
+      {
+        "id": "Condition.category",
+        "path": "Condition.category",
+        "max": "0"
+      },
+      {
+        "id": "Condition.severity",
+        "path": "Condition.severity",
+        "max": "0"
+      },
+      {
+        "id": "Condition.code",
+        "path": "Condition.code",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM",
+        "path": "Condition.code.coding",
+        "sliceName": "ICD-10-GM",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM.extension:Mehrfachcodierungs-Kennzeichen",
+        "path": "Condition.code.coding.extension",
+        "sliceName": "Mehrfachcodierungs-Kennzeichen",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM.extension:Seitenlokalisation",
+        "path": "Condition.code.coding.extension",
+        "sliceName": "Seitenlokalisation",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM.extension:Seitenlokalisation.value[x]",
+        "path": "Condition.code.coding.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM.extension:Seitenlokalisation.value[x].system",
+        "path": "Condition.code.coding.extension.value[x].system",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM.extension:Seitenlokalisation.value[x].code",
+        "path": "Condition.code.coding.extension.value[x].code",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM.extension:Diagnosesicherheit",
+        "path": "Condition.code.coding.extension",
+        "sliceName": "Diagnosesicherheit",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM.extension:Diagnosesicherheit.value[x]",
+        "path": "Condition.code.coding.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM.extension:Diagnosesicherheit.value[x].system",
+        "path": "Condition.code.coding.extension.value[x].system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM.extension:Diagnosesicherheit.value[x].code",
+        "path": "Condition.code.coding.extension.value[x].code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM.system",
+        "path": "Condition.code.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM.version",
+        "path": "Condition.code.coding.version",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.code.coding:ICD-10-GM.code",
+        "path": "Condition.code.coding.code",
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.bodySite",
+        "path": "Condition.bodySite",
+        "max": "0"
+      },
+      {
+        "id": "Condition.subject",
+        "path": "Condition.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Patient|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.subject.reference",
+        "path": "Condition.subject.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Condition.subject.type",
+        "path": "Condition.subject.type",
+        "max": "0"
+      },
+      {
+        "id": "Condition.subject.identifier",
+        "path": "Condition.subject.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Condition.subject.display",
+        "path": "Condition.subject.display",
+        "max": "0"
+      },
+      {
+        "id": "Condition.encounter",
+        "path": "Condition.encounter",
+        "max": "0"
+      },
+      {
+        "id": "Condition.onset[x]",
+        "path": "Condition.onset[x]",
+        "max": "0"
+      },
+      {
+        "id": "Condition.onset[x]:onsetPeriod",
+        "path": "Condition.onset[x]",
+        "sliceName": "onsetPeriod",
+        "max": "0",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "Condition.onset[x]:onsetRange",
+        "path": "Condition.onset[x]",
+        "sliceName": "onsetRange",
+        "max": "0",
+        "type": [
+          {
+            "code": "Range"
+          }
+        ]
+      },
+      {
+        "id": "Condition.onset[x]:onsetDateTime",
+        "path": "Condition.onset[x]",
+        "sliceName": "onsetDateTime",
+        "max": "0",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Condition.onset[x]:onsetAge",
+        "path": "Condition.onset[x]",
+        "sliceName": "onsetAge",
+        "max": "0",
+        "type": [
+          {
+            "code": "Age"
+          }
+        ]
+      },
+      {
+        "id": "Condition.abatement[x]",
+        "path": "Condition.abatement[x]",
+        "max": "0"
+      },
+      {
+        "id": "Condition.abatement[x]:abatementPeriod",
+        "path": "Condition.abatement[x]",
+        "sliceName": "abatementPeriod",
+        "max": "0",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "Condition.abatement[x]:abatementRange",
+        "path": "Condition.abatement[x]",
+        "sliceName": "abatementRange",
+        "max": "0",
+        "type": [
+          {
+            "code": "Range"
+          }
+        ]
+      },
+      {
+        "id": "Condition.abatement[x]:abatementDateTime",
+        "path": "Condition.abatement[x]",
+        "sliceName": "abatementDateTime",
+        "max": "0",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "Condition.abatement[x]:abatementAge",
+        "path": "Condition.abatement[x]",
+        "sliceName": "abatementAge",
+        "max": "0",
+        "type": [
+          {
+            "code": "Age"
+          }
+        ]
+      },
+      {
+        "id": "Condition.recordedDate",
+        "path": "Condition.recordedDate",
+        "max": "0"
+      },
+      {
+        "id": "Condition.recorder",
+        "path": "Condition.recorder",
+        "max": "0"
+      },
+      {
+        "id": "Condition.asserter",
+        "path": "Condition.asserter",
+        "max": "0"
+      },
+      {
+        "id": "Condition.stage",
+        "path": "Condition.stage",
+        "max": "0"
+      },
+      {
+        "id": "Condition.evidence",
+        "path": "Condition.evidence",
+        "max": "0"
+      },
+      {
+        "id": "Condition.note",
+        "path": "Condition.note",
+        "max": "0"
+      }
+    ]
+  }
+}

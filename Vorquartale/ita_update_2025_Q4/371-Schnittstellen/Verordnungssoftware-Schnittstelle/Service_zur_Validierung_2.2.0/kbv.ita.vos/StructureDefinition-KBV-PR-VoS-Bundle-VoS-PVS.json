@@ -1,0 +1,448 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "KBV-PR-VoS-Bundle-VoS-PVS",
+  "url": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+  "version": "2.2.0",
+  "name": "KBV_PR_VoS_Bundle_VoS_PVS",
+  "title": "KBV_PR_VoS_Bundle_VoS_PVS",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "description": "Bundle zum Schreiben von erstellten (e)Rezepten und aktualisierten/erstellten Medikationsplänen und Provenance-Instanzen im Falle einer Stornierung eines eRezepts von der VoS ins PVS.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle",
+        "path": "Bundle",
+        "short": "Speicher-Bundle",
+        "definition": "Bundle mit erstellten (e)Rezepten, aktualisierten/erstellten Medikationsplänen, Medikationsplan-Dosierungen und Provenance-Instanzen im Falle einer Stornierung eines eRezepts von der VoS ins PVS.\r\n\r\nDabei sind nur die KBV-Profile KBV_PR_VoS_DocumentReference, KBV_PR_VoS_Medication_Compounding, KBV_PR_VoS_Medication_FreeText, KBV_PR_VoS_Medication_Ingredient, KBV_PR_VoS_Medication_PZN, KBV_PR_VoS_MedicationStatement_MP, KBV_PR_VoS_Prescription und KBV_PR_VoS_Provenance_ePrescription in der Version 2.1.0 und das eRezept-Bundle nach KBV_PR_ERP_Bundle erlaubt.",
+        "constraint": [
+          {
+            "key": "-vos-erlaubteRessourcen-1",
+            "human": "Es sind nur Ressourcen vom Typ DocumentReference, MedicationRequest, Medication, MedicationStatement, Provenance und Bundle erlaubt",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "error",
+            "expression": "entry.where((resource is DocumentReference).not() and (resource is MedicationRequest).not() and (resource is Medication).not() and (resource is MedicationStatement).not() and (resource is Provenance).not() and (resource is Bundle).not()).empty()"
+          },
+          {
+            "key": "-erp-angabeUnfallkennzeichenZuzahlungsbefreiung",
+            "human": "Wenn das Ausstellen eines E-Rezeptes im Rahmen eines Arbeitsunfalls (Unfallkennzeichen = 2) oder einer Berufskrankheit (Unfallkennzeichen = 4) geschieht, dann muss der Versicherte von der Zuzahlungspflicht befreit sein (Zuzahlungsstatus = 1).",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists() and entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Accident').exists() and ((entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Accident').extension('Unfallkennzeichen').value as Coding).code = '2' or (entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Accident').extension('Unfallkennzeichen').value as Coding).code = '4') implies (entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment').exists() and (entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment').value as Coding).code = '1')"
+          },
+          {
+            "key": "-erp-angabeSubstitutionPflicht",
+            "human": "In der Ressource vom Typ MedicationRequest ist das Kennzeichen Autidem (substitution.allowedBoolean) nicht vorhanden, dies ist aber eine Pflichtangabe bei einer PZN-, Rezeptur- oder Freitext-Verordnung.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists() and (entry.where(resource is Medication).resource.code.coding.system ='http://fhir.de/CodeSystem/ifa/pzn' or entry.where(resource is Medication).resource.code.coding.code ='rezeptur' or entry.where(resource is Medication).resource.code.coding.code ='freitext') implies entry.where(resource is MedicationRequest).resource.substitution.exists()"
+          },
+          {
+            "key": "-erp-angabeSubstitutionVerbot",
+            "human": "In der Ressource vom Typ MedicationRequest ist das Kennzeichen Autidem (substitution.allowedBoolean) vorhanden, dies ist aber bei einer Wirkstoff-Verordnung nicht erlaubt.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists() and entry.where(resource is Medication).resource.code.coding.code ='wirkstoff' implies entry.where(resource is MedicationRequest).resource.substitution.exists().not()"
+          },
+          {
+            "key": "-erp-angabeDosierungRezepturVerbot",
+            "human": "Bei einer Rezepturverordnung dürfen Dosierkennzeichen und Dosieranweisung nicht angegeben werden.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists().not() or (entry.where(resource is Medication).resource.code.coding.code='rezeptur' implies (entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag').exists().not() and entry.where(resource is MedicationRequest).resource.dosageInstruction.text.exists().not()))"
+          },
+          {
+            "key": "-vos-erp-angabeT-RezeptAngabenPflicht",
+            "human": "Wenn es sich um eine Verordnung von T-Arzneimitteln handelt, müssen die T-Rezept-Angaben vorhanden sein.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists() and (entry.where(resource is Medication).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category').value as Coding).code='02' implies entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Teratogenic').exists()"
+          },
+          {
+            "key": "-vos-erp-angabeImpfstoffBtMT-RezeptFalse",
+            "human": "Da es sich bei der Verordnung eines Betäubungsmittels bzw. T-Arzneimittels nicht um einen Impfstoff handeln darf, muss der Wert für Impfstoff in der Ressource vom Typ Medication auf false gesetzt sein.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists() and entry.where(resource is Medication).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category').all(($this.value as Coding).code='01' or ($this.value as Coding).code='02') implies (entry.where(resource is Medication).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine').value as boolean)=false"
+          },
+          {
+            "key": "-vos-erp-angabeKennzeichenDosierungBtMTrue",
+            "human": "Bei der Verordnung eines Betäubungsmittels muss eine Dosierung angegeben werden. Daher muss der Wert für Kennzeichen Dosierung in der Ressource vom Typ MedicationRequest auf true gesetzt sein.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists() and (entry.where(resource is Medication).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category').value as Coding).code='01' implies (entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag').value as boolean)=true"
+          },
+          {
+            "key": "-vos-erp-angabeMengeBtMPflicht",
+            "human": "Bei der Verordnung eines Betäubungsmittels müssen die Packungsgröße nach abgeteilter Menge und die Einheit in der Ressource vom Typ Medication angegeben werden, sofern es sich nicht um eine Freitextverordnung handelt.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists() and (entry.where(resource is Medication).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category').value as Coding).code='01' and entry.where(resource is Medication).resource.code.coding.code!='freitext' implies entry.where(resource is Medication).resource.amount.exists()"
+          },
+          {
+            "key": "-vos-erp-angabeReichdauerBtMSubstitutionsmittelPflicht",
+            "human": "Bei der Verordnung eines Betäubungsmittels mit dem Sonderkennzeichen 'ST' muss die Reichdauer des Substitutionsmittels in der Ressource vom Typ MedicationRequest angegeben werden.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists() and (entry.where(resource is Medication).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category').value as Coding).code='01' and entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Narcotic').extension('BtM-Sonderkennzeichen').exists() and (entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Narcotic').extension('BtM-Sonderkennzeichen').value as Coding).code='ST' implies entry.where(resource is MedicationRequest).resource.dispenseRequest.expectedSupplyDuration.exists()"
+          },
+          {
+            "key": "-vos-erp-angabeUnfallinformationenT-RezeptVerbot",
+            "human": "Wenn es sich um ein T-Rezept handelt, dürfen keine Unfallinformationen angegeben werden.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists() and (entry.where(resource is Medication).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category').value as Coding).code='02' implies entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Accident').exists().not()"
+          },
+          {
+            "key": "-vos-erp-angabeReichdauerVerbot",
+            "human": "Die Reichdauer darf nur angegeben werden, wenn es sich um ein T-Rezept oder ein BtM-Rezept für ein Substitutionsmittel (Sonderkennzeichen 'S' oder 'ST') handelt.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists() and entry.where(resource is MedicationRequest).resource.dispenseRequest.expectedSupplyDuration.exists() implies (entry.where(resource is Medication).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category').value as Coding).code='02' or ((entry.where(resource is Medication).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category').value as Coding).code='01' and (entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Narcotic').extension('BtM-Sonderkennzeichen').all(($this.value as Coding).code='S' or ($this.value as Coding).code='ST')))"
+          },
+          {
+            "key": "-vos-erp-angabeReichdauerT-RezeptPflicht",
+            "human": "Die Reichdauer muss angegeben werden, wenn es sich um ein BtM-Rezept für ein Take-Home-Substitutionsmittel handelt.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists() and (entry.where(resource is Medication).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category').value as Coding).code='02' implies entry.where(resource is MedicationRequest).resource.dispenseRequest.expectedSupplyDuration.exists()"
+          },
+          {
+            "key": "-vos-erp-angabeReichdauerT-RezeptEinheit",
+            "human": "Die Reicherdauer bei einem T-Rezept muss in Wochen angegeben werden.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).resource.dispenseRequest.expectedSupplyDuration.exists() and (entry.where(resource is Medication).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category').value as Coding).code='02' implies entry.where(resource is MedicationRequest).resource.dispenseRequest.expectedSupplyDuration.unit='Woche(n)'"
+          },
+          {
+            "key": "-vos-erp-angabeReichdauerT-RezeptMaximalwert",
+            "human": "Die Reichdauer bei einem T-Rezept für eine gebärfähige Frau darf den Wert von 4 Wochen nicht übersteigen. Grundsätzlich darf die Reichdauer bei einem T-Rezept den Wert von 12 Wochen nicht übersteigen.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).resource.dispenseRequest.expectedSupplyDuration.exists() and (entry.where(resource is Medication).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Category').value as Coding).code='02' and entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Teratogenic').exists() implies (((entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Teratogenic').extension('GebaerfaehigeFrau').value as boolean)=false and entry.where(resource is MedicationRequest).resource.dispenseRequest.expectedSupplyDuration.value <= 12) xor ((entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Teratogenic').extension('GebaerfaehigeFrau').value as boolean)=true and entry.where(resource is MedicationRequest).resource.dispenseRequest.expectedSupplyDuration.value <= 4))"
+          },
+          {
+            "key": "-vos-erp-angabeReichdauerBtM-RezeptEinheit",
+            "human": "Sofern die Reicherdauer bei einem BtM-Rezept angegeben wird, muss diese in Tagen angegeben werden.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists() and entry.where(resource is MedicationRequest).resource.dispenseRequest.expectedSupplyDuration.exists() and (entry.where(resource is Medication).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category').value as Coding).code='01' implies entry.where(resource is MedicationRequest).resource.dispenseRequest.expectedSupplyDuration.unit='Tag(e)'"
+          },
+          {
+            "key": "-vos-erp-angabeReichdauerBtM-RezeptMaximalwert",
+            "human": "Die Reichdauer bei einem BtM-Rezept darf den Wert von 30 Tagen nicht übersteigen.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists() and entry.where(resource is MedicationRequest).resource.dispenseRequest.expectedSupplyDuration.exists() and (entry.where(resource is Medication).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category').value as Coding).code='01' implies entry.where(resource is MedicationRequest).resource.dispenseRequest.expectedSupplyDuration.value <= 30"
+          },
+          {
+            "key": "-erp-angabeZuzahlungsbefreiungSER",
+            "human": "Wenn die SER Kennzeichnung auf true gesetzt ist, dann muss der Versicherte von der Zuzahlungspflicht befreit sein (Zuzahlungsstatus = 1)",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "warning",
+            "expression": "entry.where(resource is MedicationRequest).exists() and (entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_SER').value as boolean)=true implies (entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment').exists() and (entry.where(resource is MedicationRequest).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment').value as Coding).code = '1')"
+          }
+        ]
+      },
+      {
+        "id": "Bundle.id",
+        "path": "Bundle.id",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.meta",
+        "path": "Bundle.meta",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.meta.source",
+        "path": "Bundle.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.meta.profile",
+        "path": "Bundle.meta.profile",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.meta.profile:vosProfile",
+        "path": "Bundle.meta.profile",
+        "sliceName": "vosProfile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS|2.2.0",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.meta.security",
+        "path": "Bundle.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.meta.tag",
+        "path": "Bundle.meta.tag",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.implicitRules",
+        "path": "Bundle.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.language",
+        "path": "Bundle.language",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier",
+        "path": "Bundle.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.identifier.use",
+        "path": "Bundle.identifier.use",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier.type",
+        "path": "Bundle.identifier.type",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier.system",
+        "path": "Bundle.identifier.system",
+        "min": 1,
+        "fixedUri": "https://fhir.kbv.de/NamingSystem/KBV_NS_VoS_BundleID",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.identifier.value",
+        "path": "Bundle.identifier.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.identifier.period",
+        "path": "Bundle.identifier.period",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier.assigner",
+        "path": "Bundle.identifier.assigner",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "fixedCode": "transaction",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.total",
+        "path": "Bundle.total",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.link",
+        "path": "Bundle.link",
+        "definition": "Angabe der fullURL des Aufruf-Bundles vom PVS zum VoS (KBV_PR_Bundle_PVS_VoS) sowie des Systemkontexts der VoS (Anwender sowie KBV-Prüfnummer)",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.link.extension",
+        "path": "Bundle.link.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Bundle.link.extension:systemkontext",
+        "path": "Bundle.link.extension",
+        "sliceName": "systemkontext",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_User_Device"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.link.extension:systemkontext.extension",
+        "path": "Bundle.link.extension.extension",
+        "min": 1
+      },
+      {
+        "id": "Bundle.link.extension:systemkontext.extension:KBV-Pruefnummer",
+        "path": "Bundle.link.extension.extension",
+        "sliceName": "KBV-Pruefnummer",
+        "min": 1
+      },
+      {
+        "id": "Bundle.link.extension:systemkontext.extension:KBV-Pruefnummer.value[x]",
+        "path": "Bundle.link.extension.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.link.extension:systemkontext.extension:KBV-Pruefnummer.value[x]:valueIdentifier",
+        "path": "Bundle.link.extension.extension.value[x]",
+        "sliceName": "valueIdentifier",
+        "min": 1,
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.link.extension:systemkontext.extension:systemID",
+        "path": "Bundle.link.extension.extension",
+        "sliceName": "systemID"
+      },
+      {
+        "id": "Bundle.link.extension:systemkontext.extension:systemID.value[x]:valueIdentifier",
+        "path": "Bundle.link.extension.extension.value[x]",
+        "sliceName": "valueIdentifier",
+        "min": 1,
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "Bundle.link.relation",
+        "path": "Bundle.link.relation",
+        "fixedString": "related",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.link.url",
+        "path": "Bundle.link.url",
+        "short": "fullURL des Aufruf-Bundles",
+        "definition": "Die fullURL des Aufruf-Bundles (KBV_PR_VoS_Bundle_PVS_VoS), in welchem der Aufrufkontext (inkl. ggf. notwendiger Ressourcen) vom PVS an die VoS übergeben wurde",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "short": "Ressourcen",
+        "definition": "Ressourcen, die von der VoS an das PVS gesendet und dort gespeichert werden sollen.\r\nErlaubte Ressourcentypen sind DocumentReference, MedicationRequest, Medication, MedicationStatement, Provenance und Bundle",
+        "min": 1,
+        "constraint": [
+          {
+            "key": "-vos-erlaubteRessourcen-2",
+            "human": "Es dürfen nur Ressourcen aus der VoS-SST, E-Rezept-Bundles, epa-medication und die epa-activity-provenance übertragen werden.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS",
+            "severity": "error",
+            "expression": "resource.meta.profile.startsWith('https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS') or \r\nresource.meta.profile.startsWith('https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle') or \r\nresource.meta.profile.startsWith('https://gematik.de/fhir/epa-medication/StructureDefinition/') or \r\nresource.meta.profile.startsWith('https://gematik.de/fhir/epa/StructureDefinition/epa-activity-provenance')"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.link",
+        "path": "Bundle.entry.link",
+        "max": "0",
+        "contentReference": "http://hl7.org/fhir/StructureDefinition/Bundle#Bundle.link"
+      },
+      {
+        "id": "Bundle.entry.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry.request",
+        "path": "Bundle.entry.request",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.request.method",
+        "path": "Bundle.entry.request.method",
+        "fixedCode": "POST",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.request.url",
+        "path": "Bundle.entry.request.url",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.request.ifNoneMatch",
+        "path": "Bundle.entry.request.ifNoneMatch",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry.request.ifModifiedSince",
+        "path": "Bundle.entry.request.ifModifiedSince",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry.request.ifMatch",
+        "path": "Bundle.entry.request.ifMatch",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry.request.ifNoneExist",
+        "path": "Bundle.entry.request.ifNoneExist",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.signature",
+        "path": "Bundle.signature",
+        "max": "0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2009 (http://www.altova.com) von Overbeck, T. (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<!-- Mit XMLSpy v2006 sp2 U bearbeitet (http://www.altova.com) von XMLSPY 2006 Professional Ed. Release 3, Installed for 13 users (Kassenärztliche Bundesvereinigung) -->
+<!-- Mit XMLSpy v2006 sp2 U bearbeitet (http://www.altova.com) von XMLSPY 2006 Professional Ed. Release 3, Installed for 13 users (Kassenärztliche Bundesvereinigung) -->
+<!--
+Template für ehd_header:
+Projekt: sdkh
+Namespace: "urn:ehd/sdkh", Präfix: sdkh
+
+Namespace, Präfix und Typebezeichnungen sind mit tatsächlichen Projektspezifischen zu ersetzen.
+Verzeichnispfade überprüfen und gegebenfalls anpassen.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/sdkh/001" xmlns:kbv="urn::hl7-org/kbv" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:sdkh="urn:ehd/sdkh/001" targetNamespace="urn:ehd/sdkh/001" elementFormDefault="qualified">
+	<!-- ======================================================================= 
+	Schnittstelle (sdkh_data)
+	======================================================================= -->
+	<xs:import namespace="urn:ehd/001" schemaLocation="datentypen_V1.40.xsd"/>
+	<xs:element name="diagnosen_liste">
+		<xs:annotation>
+			<xs:documentation>Strukturierung in mehrere Diagnosen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="diagnose" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Diagnose (mit ICD-Verweis und Kriterien)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="diagnose">
+		<xs:annotation>
+			<xs:documentation>Diagnose (mit ICD Kodierung und weiteren Eigenschaften)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="icd_code"/>
+				<xs:element name="hinweis_liste" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="hinweis" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="text">
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="kriterien_liste" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="kriterium" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="id">
+											<xs:complexType>
+												<xs:complexContent>
+													<xs:restriction base="ehd:id_typ">
+														<xs:attribute name="RT" use="required">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="1.2.276.0.76.3.1.1.5.4.4"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+														<xs:attribute name="EX" use="required">
+															<xs:simpleType>
+																<xs:restriction base="xs:string"/>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:restriction>
+												</xs:complexContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="notwendig">
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:boolean" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="text">
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="kriteriumid">
+			<xs:selector xpath="sdkh:kriterien_liste/sdkh:kriterium"/>
+			<xs:field xpath="sdkh:id/@EX"/>
+		</xs:unique>
+	</xs:element>
+	<xs:element name="icd_code" type="icd_code_typ"/>
+	<xs:complexType name="icd_code_typ">
+		<xs:annotation>
+			<xs:documentation>ICD-10-GM-Code (Muster: 1 Zeichen A-Z + zweistellige Nummer + '.' + einstellige Nummer oder * oder + oder -)</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="([A-Z](\d{1,2})?(\.)?(\d)?(\d|[\*\+\-])?)|UUU"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="S" type="xs:string" use="optional"/>
+	</xs:complexType>
+</xs:schema>

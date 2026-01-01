@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<schema xmlns:bgl="http://www.kbv.de/ns/meta/2003-05-15" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.kbv.de/ns/meta/2003-05-15" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<element name="begleitdatei">
+		<complexType>
+			<sequence>
+				<element name="erstellungsdatum-datei">
+					<complexType>
+						<attribute name="V" type="date" use="required"/>
+					</complexType>
+				</element>
+				<element name="empfaenger">
+					<complexType>
+						<choice>
+							<element name="ukv">
+								<complexType>
+									<attribute name="EX" type="bgl:ukvnummer-typ" use="required"/>
+									<attribute name="RT" fixed="UKV-Nummer"/>
+								</complexType>
+							</element>
+							<element name="datenstelle">
+								<complexType>
+									<attribute name="EX" type="bgl:institutskennzeichen-typ" use="required"/>
+									<attribute name="RT" fixed="Institutskennzeichen"/>
+								</complexType>
+							</element>
+						</choice>
+					</complexType>
+				</element>
+				<element name="absender">
+					<complexType>
+						<choice>
+							<element name="arzt">
+								<complexType>
+									<attribute name="EX" type="bgl:betriebsstaettennummer-typ" use="required"/>
+									<attribute name="RT" fixed="BSNR"/>
+								</complexType>
+							</element>
+							<element name="krankenhaus">
+								<complexType>
+									<attribute name="EX" type="bgl:institutskennzeichen-typ" use="required"/>
+									<attribute name="RT" fixed="Krankenhaus-IK"/>
+								</complexType>
+							</element>
+							<element name="kv">
+								<complexType>
+									<attribute name="EX" type="bgl:kvnummer-typ" use="required"/>
+									<attribute name="RT" fixed="KV-Nummer"/>
+								</complexType>
+							</element>
+						</choice>
+					</complexType>
+				</element>
+				<element name="komprimierungssoftware" type="bgl:software-typ"/>
+				<element name="verschluesselungssoftware" minOccurs="0" maxOccurs="1">
+					<complexType>
+						<sequence>
+							<element name="software-name">
+								<complexType>
+									<attribute name="V">
+										<simpleType>
+											<restriction base="string">
+												<enumeration value="XML-Kryptomodul"/>
+												<enumeration value="XKM"/>
+											</restriction>
+										</simpleType>
+									</attribute>
+								</complexType>
+							</element>
+							<element name="software-version">
+								<complexType>
+									<attribute name="V">
+										<simpleType>
+											<restriction base="string">
+												<pattern value="[1-9].[0-9][0-9](.[0-9])?"/>
+											</restriction>
+										</simpleType>
+									</attribute>
+								</complexType>
+							</element>
+							<element name="software-hersteller">
+								<complexType>
+									<attribute name="V" type="string" fixed="KBV"/>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<element name="archive">
+					<complexType>
+						<sequence>
+							<element name="archiv" maxOccurs="unbounded">
+								<complexType>
+									<sequence>
+										<element name="name">
+											<complexType>
+												<attribute name="V" type="string" use="required"/>
+											</complexType>
+										</element>
+										<element name="verzeichnis">
+											<complexType>
+												<sequence>
+													<element name="pfad">
+														<complexType>
+															<attribute name="V" type="bgl:pfadstring-typ" use="required"/>
+														</complexType>
+													</element>
+													<element name="zeitraum">
+														<complexType>
+															<sequence>
+																<element name="von">
+																	<complexType>
+																		<attribute name="V" type="date" use="required"/>
+																	</complexType>
+																</element>
+																<element name="bis">
+																	<complexType>
+																		<attribute name="V" type="date" use="required"/>
+																	</complexType>
+																</element>
+															</sequence>
+														</complexType>
+													</element>
+												</sequence>
+											</complexType>
+										</element>
+									</sequence>
+								</complexType>
+							</element>
+						</sequence>
+					</complexType>
+				</element>
+				<!--element name="verschluesselungssoftware" type="bgl:software-typ"/-->
+			</sequence>
+			<attribute name="Version">
+				<simpleType>
+					<restriction base="string">
+						<enumeration value="1.03"/>
+						<enumeration value="1.04"/>
+						<enumeration value="1.05"/>
+						<enumeration value="1.06"/>
+						<enumeration value="1.07"/>
+						<enumeration value="1.08"/>
+						<enumeration value="1.09"/>
+						<enumeration value="1.10"/>
+						<enumeration value="1.11"/>
+						<enumeration value="1.12"/>
+						<enumeration value="1.13"/>
+						<enumeration value="1.14"/>
+						<enumeration value="1.15"/>
+						<enumeration value="1.16"/>
+						<enumeration value="1.17"/>
+						<enumeration value="1.18"/>
+						<enumeration value="1.19"/>
+						<enumeration value="1.20"/>
+					</restriction>
+				</simpleType>
+			</attribute>
+		</complexType>
+	</element>
+	<!-- software-typ -->
+	<complexType name="software-typ">
+		<sequence>
+			<element name="software-name">
+				<complexType>
+					<attribute name="V" type="string" use="required"/>
+				</complexType>
+			</element>
+			<element name="software-version">
+				<complexType>
+					<attribute name="V" type="string" use="required"/>
+				</complexType>
+			</element>
+			<element name="software-hersteller">
+				<complexType>
+					<attribute name="V" type="string" use="required"/>
+				</complexType>
+			</element>
+			<element name="software-link" minOccurs="0">
+				<complexType>
+					<attribute name="V" type="string" use="required"/>
+				</complexType>
+			</element>
+		</sequence>
+	</complexType>
+	<!-- betriebsstaettennummer-typ -->
+	<simpleType name="betriebsstaettennummer-typ">
+		<annotation>
+			<documentation>Betriebsstättennummer muss aus genau 9 Ziffern bestehen</documentation>
+		</annotation>
+		<restriction base="integer">
+			<pattern value="\d{9}"/>
+		</restriction>
+	</simpleType>
+	<!-- kvnummer-typ -->
+	<simpleType name="kvnummer-typ">
+		<annotation>
+			<documentation>KV-Nummer muss aus genau 2 Ziffern bestehen</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="01"/>
+			<enumeration value="02"/>
+			<enumeration value="03"/>
+			<enumeration value="17"/>
+			<enumeration value="20"/>
+			<enumeration value="38"/>
+			<enumeration value="46"/>
+			<enumeration value="51"/>
+			<enumeration value="52"/>
+			<enumeration value="55"/>
+			<enumeration value="60"/>
+			<enumeration value="61"/>
+			<enumeration value="62"/>
+			<enumeration value="71"/>
+			<enumeration value="72"/>
+			<enumeration value="73"/>
+			<enumeration value="74"/>
+			<enumeration value="78"/>
+			<enumeration value="83"/>
+			<enumeration value="88"/>
+			<enumeration value="93"/>
+			<enumeration value="98"/>
+		</restriction>
+	</simpleType>
+	<!-- ukvnummer-typ -->
+	<simpleType name="ukvnummer-typ">
+		<annotation>
+			<documentation>UKV-Nummer muss aus genau 2 Ziffern bestehen</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="01"/>
+			<enumeration value="02"/>
+			<enumeration value="03"/>
+			<enumeration value="06"/>
+			<enumeration value="07"/>
+			<enumeration value="08"/>
+			<enumeration value="09"/>
+			<enumeration value="10"/>
+			<enumeration value="11"/>
+			<enumeration value="12"/>
+			<enumeration value="13"/>
+			<enumeration value="14"/>
+			<enumeration value="15"/>
+			<enumeration value="16"/>
+			<enumeration value="17"/>
+			<enumeration value="18"/>
+			<enumeration value="19"/>
+			<enumeration value="21"/>
+			<enumeration value="24"/>
+			<enumeration value="25"/>
+			<enumeration value="27"/>
+			<enumeration value="28"/>
+			<enumeration value="31"/>
+			<enumeration value="37"/>
+			<enumeration value="39"/>
+			<enumeration value="40"/>
+			<enumeration value="41"/>
+			<enumeration value="42"/>
+			<enumeration value="43"/>
+			<enumeration value="44"/>
+			<enumeration value="45"/>
+			<enumeration value="46"/>
+			<enumeration value="47"/>
+			<enumeration value="48"/>
+			<enumeration value="49"/>
+			<enumeration value="50"/>
+			<enumeration value="51"/>
+			<enumeration value="52"/>
+			<enumeration value="55"/>
+			<enumeration value="57"/>
+			<enumeration value="58"/>
+			<enumeration value="59"/>
+			<enumeration value="60"/>
+			<enumeration value="61"/>
+			<enumeration value="62"/>
+			<enumeration value="63"/>
+			<enumeration value="64"/>
+			<enumeration value="65"/>
+			<enumeration value="66"/>
+			<enumeration value="67"/>
+			<enumeration value="68"/>
+			<enumeration value="69"/>
+			<enumeration value="70"/>
+			<enumeration value="71"/>
+			<enumeration value="72"/>
+			<enumeration value="73"/>
+			<enumeration value="74"/>
+			<enumeration value="78"/>
+			<enumeration value="79"/>
+			<enumeration value="80"/>
+			<enumeration value="81"/>
+			<enumeration value="85"/>
+			<enumeration value="86"/>
+			<enumeration value="87"/>
+			<enumeration value="89"/>
+			<enumeration value="90"/>
+			<enumeration value="91"/>
+			<enumeration value="94"/>
+			<enumeration value="95"/>
+			<enumeration value="96"/>
+		</restriction>
+	</simpleType>
+	<!-- institutskennzeichen-typ -->
+	<simpleType name="institutskennzeichen-typ">
+		<annotation>
+			<documentation>Institutskennzeichen muss aus genau 9 Ziffern bestehen</documentation>
+		</annotation>
+		<restriction base="integer">
+			<pattern value="\d{9}"/>
+		</restriction>
+	</simpleType>
+	<!-- pfadstring-typ -->
+	<simpleType name="pfadstring-typ">
+		<annotation>
+			<documentation>Vorgabe der Verzeichnis-Pfade</documentation>
+		</annotation>
+		<restriction base="string">
+			<enumeration value="Brustkrebs/Dokumentation"/>
+			<enumeration value="Diabetes_Mellitus_Typ_2/Dokumentation"/>
+			<enumeration value="Diabetes_Mellitus_Typ_1/Dokumentation"/>
+			<enumeration value="Koronare_Herzkrankheit/Dokumentation"/>
+			<enumeration value="COPD/Dokumentation"/>
+			<enumeration value="Asthma_bronchiale/Dokumentation"/>
+			<enumeration value="Herzinsuffizienz/Dokumentation"/>
+			<enumeration value="Depression/Dokumentation"/>
+			<enumeration value="Chronischer_Rueckenschmerz/Dokumentation"/>
+			<enumeration value="Osteoporose/Dokumentation"/>
+			<enumeration value="Rheumatoide_Arthritis/Dokumentation"/>
+			<enumeration value="Zervix_Zyto/Dokumentation"/>
+			<enumeration value="eHKS/Dokumentation"/>
+		</restriction>
+	</simpleType>
+</schema>

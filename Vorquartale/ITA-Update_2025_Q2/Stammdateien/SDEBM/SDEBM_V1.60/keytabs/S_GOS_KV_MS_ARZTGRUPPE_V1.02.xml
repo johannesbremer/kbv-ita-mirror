@@ -1,0 +1,983 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  
+<keytabs xmlns="urn:ehd/001">
+  <keytab SV="1.02" SN="S_GOS_KV_MS_ARZTGRUPPE" S="1.2.276.0.76.3.1.1.5.2.32">
+    <key V="01F09" DN="Fachärzte für Augenheilkunde mit GOP 06225 EBM (konservativ)" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F10" DN="Fachärzte für Anästhesiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F11" DN="Fachärzte für Augenheilkunde ohne GOP 06225 EBM" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F12" DN="Fachärzte für Chirurgie, für Kinderchirurgie, für Plastische Chirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F13" DN="Fachärzte für Neurochirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F14" DN="Fachärzte für Frauenheilkunde und Geburtshilfe" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F16" DN="Fachärzte für Hals-, Nasen- und Ohren- Heilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F17" DN="Fachärzte für Phoniatrie und Pädaudiologie lt. WBO Fachärzte für Sprach-, Stimm- und kindliche Hörstörungen (Phoniater und Pädaudiologen)" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F18" DN="Fachärzte für Haut- und Geschlechtskrankheiten" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F19" DN="Fachärzte für Mund-, Kiefer- und Gesichtschirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F20" DN="Fachärzte für Nervenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F21" DN="Fachärzte für Orthopädie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F22" DN="Fachärzte für Physikalisch- Rehabilitative Medizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F23" DN="Fachärzte für Urologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F24" DN="Fachärzte für Neurologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F30" DN="Fachärzte für Innere Medizin ohne Schwerpunkt, die dem fachärztlichen Versorgungsbereich angehören" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F33" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Endokrinologie/Diabetologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F34" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F35" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Hämato-/ Onkologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F36" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Nephrologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F37" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Pneumologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F38" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Rheumatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F41" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Kardiologie oder Angiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F43" DN="Ausschließlich bzw. weit überwiegend schmerztherapeutisch tätige Vertragsärzte gemäß Präambel 30.7 Nr. 6 EBM" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F53" DN="Fachärzte für Nuklearmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F54" DN="Fachärzte für Strahlentherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F57" DN="Fachärzte für Diagnostische Radiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F59" DN="Fachärzte für Psychiatrie und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F63" DN="Psychologische Psychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F64" DN="Fachärzte für Psychosomatische Medizin und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F65" DN="Kinder- und Jugendlichenpsychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F66" DN="Fachärzte für Kinder- und Jugendpsychiatrie und -psychotherapie mit Teilnahme an der Vereinbarung zur sozialpsychiatrischen Versorgung" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F67" DN="Fachärzte für Kinder- und Jugendpsychiatrie und -psychotherapie ohne Teilnahme an der Vereinbarung zur sozialpsychiatrischen Versorgung" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F68" DN="Andere ausschließlich psychotherapeutisch tätige Vertragsärzte gemäß den Kriterien der Bedarfsplanungsrichtlinien" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F70" DN="Institute und Krankenhäuser" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F80" DN="Fachärzte für Pathologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F81" DN="Fachärzte für Labormedizin lt. WBO Fachärzte für Laboratoriumsmedizin, Mikrobiologie, Virologie und Infektionsepidemiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F82" DN="Fachärzte für Transfusionsmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F83" DN="Fachärzte für Humangenetik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F84" DN="Laborgemeinschaften" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F92" DN="Notfall Nichtvertragsärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01F93" DN="Notfall Vertragsärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01H01" DN="Fachärzte für Innere und Allgemeinmedizin, Allgemeinmedizin, Praktische Ärzte, Fachärzte für Innere Medizin, die dem hausärztlichen Versorgungsbereich angehören" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01H02" DN="Fachärzte für Kinder- und Jugendmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01H04" DN="Fachärzte für Kinder- und Jugendmedizin mit Schwerpunkt Kinderkardiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01H06" DN="Fachärzte für Kinder- und Jugendmedizin mit Schwerpunkt Kinder- Lungen- u. Bronchialheilkunde oder Zusatzbereich Kinder- Pneumologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01N96" DN="Organisierter Bereitschaftsdienst" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="01N97" DN="Kinderärztlicher organisierter Bereitschaftsdienst" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02001" DN="Praktischer Arzt" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02002" DN="Arzt" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02010" DN="Allgemeinmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02020" DN="Anästhesiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02022" DN="Anästhesiologie und Intensivtherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02030" DN="Augenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02040" DN="Chirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02041" DN="Teilgebiet Kinderchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02042" DN="Schwerpunkt Unfallchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02043" DN="Schwerpunkt Gefäßchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02044" DN="Teilgebiet Plastische Chirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02045" DN="Teilgebiet Thorax- und Kardiovascularchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02046" DN="Schwerpunkt Thoraxchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02047" DN="Teilgebiet Herz- und Gefäßchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02048" DN="Schwerpunkt Viszeralchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02050" DN="Frauenheilkunde und Geburtshilfe" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02060" DN="Hals-Nasen-Ohrenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02061" DN="Teilgebiet Phoniatrie und Pädaudiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02062" DN="Teilgebiet Audiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02063" DN="Teilgebiet Phoniatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02070" DN="Haut- und Geschlechtskrankheiten" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02080" DN="Innere Medizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02081" DN="Schwerpunkt Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02082" DN="Schwerpunkt Kardiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02083" DN="Schwerpunkt Pneumologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02084" DN="Schwerpunkt Endokrinologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02085" DN="Teilgebiet Hämatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02086" DN="Schwerpunkt Nephrologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02087" DN="Schwerpunkt Rheumatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02088" DN="Teilgebiet Diabetologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02089" DN="Teilgebiet Infektions- und Tropenmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02090" DN="Kinderheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02091" DN="Schwerpunkt Kinder-Kardiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02092" DN="Teilgebiet Kinderneuropsychiatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02093" DN="Schwerpunkt Neonatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02094" DN="Teilgebiet Kindergastroenterologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02095" DN="Teilgebiet Kinderhämatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02096" DN="Teilgebiet Kindernephrologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02097" DN="Teilgebiet Kinderlungen- und Bronchialheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02098" DN="Teilgebiet Kinderrheumatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02099" DN="Teilgebiet Kinderdiabetologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02100" DN="Kinder- und Jugendpsychiatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02102" DN="Kinder- und Jugendpsychiatrie und -psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02110" DN="Laboratoriumsmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02111" DN="Mikrobiologie und Infektionsepidemiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02112" DN="Teilgebiet Mikrobiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02120" DN="Lungenarzt" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02125" DN="Magenarzt" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02130" DN="Mund-Kiefer-Gesichtschirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02131" DN="Kieferchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02140" DN="Nervenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02141" DN="Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02142" DN="Neurologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02144" DN="Psychotherapeutisch tätiger Arzt" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02145" DN="Neurologie und Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02146" DN="Teilgebiet Kinderneuropsychiatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02147" DN="Psychiatrie und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02148" DN="Psychotherapeutische Medizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02149" DN="Neurologie und Psychiatrie und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02150" DN="Neurochirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02160" DN="Orthopädie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02161" DN="Schwerpunkt Rheumatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02170" DN="Pathologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02171" DN="Teilgebiet Neuropathologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02180" DN="Pharmakologie und Toxikologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02181" DN="Teilgebiet Klinische Pharmakologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02190" DN="Radiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02191" DN="Teilgebiet Strahlentherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02192" DN="Teilgebiet Neuroradiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02194" DN="Radiologische Diagnostik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02195" DN="Diagnostische Radiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02196" DN="Schwerpunkt Kinderradiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02197" DN="Schwerpunkt Neuroradiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02199" DN="Strahlentherapie und Radiologische Diagnostik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02200" DN="Urologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02210" DN="Arbeitsmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02220" DN="Nuklearmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02230" DN="Öffentliches Gesundheitswesen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02240" DN="Rechtsmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02250" DN="Hygiene und Umweltmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02271" DN="Neuropathologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02281" DN="Klinische Pharmakologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02291" DN="Strahlentherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02301" DN="Anatomie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02302" DN="Biochemie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02303" DN="Transfusionsmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02304" DN="Kinderchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02305" DN="Medizinische Genetik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02306" DN="Medizinische Informatik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02307" DN="Pathologische Physiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02308" DN="Physiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02309" DN="Physiotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02310" DN="Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02311" DN="Sozialhygiene" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02312" DN="Sportmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02313" DN="Herzchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02314" DN="Humangenetik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02315" DN="Immunologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02317" DN="Physiologische Chemie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02320" DN="Schwerpunkt Thoraxchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02321" DN="Schwerpunkt Echokardiologie herznaher Gefäße" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02322" DN="Plastische Chirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02324" DN="Phoniatrie und Pädaudiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02326" DN="Schwerpunkt Angiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02327" DN="Schwerpunkt Hämatologie und internistische Onkologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02328" DN="Schwerpunkt Geriatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02330" DN="Physikalische und Rehabilitative Medizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02340" DN="Arzt für Kinder- und Jugendmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02341" DN="Kinder- und Jugendmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02342" DN="Kinder- und Jugendmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02343" DN="Kinder- und Jugendarzt" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02344" DN="Kinderheilkunde und Jugendmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02350" DN="Biomathematik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02351" DN="Biophysik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02352" DN="Geschichte der Medizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02353" DN="Industrietoxikologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02354" DN="Klinische Strahlenphysik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02355" DN="Medizinische Wissenschaftsinformation" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02356" DN="Medizinische Physik und Biophysik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02357" DN="Experimentelle und diagnostische Mikrobiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02358" DN="Fachbiologie der Medizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02359" DN="Fachzahnarzt für Mikrobiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02360" DN="Fachzahnarzt für Kieferchirurgie (§ 6 Abs. 1 BMV)" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02361" DN="Fachzahnarzt für theoretisch-experimentelle Medizin (§ 6 Abs. 2 BMV)" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02371" DN="Fachwissenschaftler Chemie und Labordiagnostik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02372" DN="Fachwissenschaftler Genetik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02373" DN="Fachwissenschaftler Immunologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02374" DN="Fachwissenschaftler ZytologieHistologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02470" DN="Psychologische Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02471" DN="Kinder- und Jugendlichenpsychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02472" DN="Code gesperrt" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02473" DN="Code gesperrt" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02500" DN="Arbeitshygiene" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02501" DN="Blutspende und Transfusionsmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02502" DN="Hygiene" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02503" DN="Schwerpunkt Infektiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02504" DN="Teilgebiet Lungen- und Bronchialheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02505" DN="Schwerpunkt Infektiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02506" DN="Pathologische Anatomie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02510" DN="Allgemeine Chirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02511" DN="Gefäßchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02512" DN="Orthopädie und Unfallchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02513" DN="Thoraxchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02514" DN="Visceralchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02515" DN="Schwerpunkt Gynäkologische Onkologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02516" DN="Schwerpunkt Gynäkologische Endokrinologie und Reproduktionsmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02517" DN="Schwerpunkt Spezielle Geburtshilfe und Perinatalmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02518" DN="Sprach-, Stimm- und kindliche Hörstörungen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02520" DN="Innere und Allgemeinmedizin (Hausarzt)" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02521" DN="Innere Medizin und SP Angiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02522" DN="Innere Medizin und SP Endokrinologie und Diabetologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02523" DN="Innere Medizin und SP Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02524" DN="Innere Medizin und SP Hämatologie und Onkologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02525" DN="Innere Medizin und SP Kardiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02526" DN="Innere Medizin und SP Nephrologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02527" DN="Innere Medizin und SP Pneumologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02528" DN="Innere Medizin und SP Rheumatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02529" DN="Teilgebiet Kardiologie und Angiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02530" DN="Schwerpunkt Kinder-Hämatologie und -Onkologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02531" DN="Schwerpunkt Neuropädiatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02532" DN="Mikrobiologie, Virologie und Infektionsepidemiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02533" DN="Schwerpunkt Forensische Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02534" DN="Psychosomatische Medizin und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02535" DN="Radiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02536" DN="Schwerpunkt Kinder-Endokrinologie und -Diabetologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02537" DN="Schwerpunkt Kinder-Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02538" DN="Schwerpunkt Kinder-Nephrologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02539" DN="Schwerpunkt Kinder-Pneumologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02540" DN="Innere Medizin und SP gesamte Innere Medizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02541" DN="Innere Medizin und SP Geriatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02542" DN="Plastische und Ästhetische Chirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02543" DN="Schwerpunkt Endokrinologie und Diabetologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02544" DN="Allgemeinchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="02545" DN="Teilgebiet Nephrologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200001" DN="FA Allgemeinmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200003" DN="FA Innere Medizin (hausärztlich)" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200004" DN="FA Anästhesiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200005" DN="FA Augenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200006" DN="FA Chirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200010" DN="FA Orthopädie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200015" DN="FA Frauenheilkunde und Geburtshilfe" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200019" DN="FA Hals-Nasen-Ohrenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200020" DN="FA Phoniatrie und Pädaudiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200021" DN="FA Haut- und Geschlechtskrankheiten" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200022" DN="FA Humangenetik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200023" DN="FA Innere Medizin (fachärztlich ohne Schwerpunkt)" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200024" DN="FA Innere Medizin SP Angiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200025" DN="FA Innere Medizin SP Endokrinologie und Diabetologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200026" DN="FA Innere Medizin SP Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200027" DN="FA Innere Medizin SP Hämatologie und Onkologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200028" DN="FA Innere Medizin SP Kardiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200029" DN="FA Innere Medizin SP Nephrologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200030" DN="FA Innere Medizin SP Pneumologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200031" DN="FA Innere Medizin SP Rheumatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200034" DN="FA Kinder- und Jugendmedizin (hausärztlich)" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200040" DN="FA Kinder- und Jugendmedizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200047" DN="FA Kinder- und Jugendpsychiatrie und - psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200048" DN="FA Laboratoriumsmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200049" DN="FA Mikrobiologie, Virologie und Infektionsepidemiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200050" DN="FA Mund-, Kiefer- und Gesichtschirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200051" DN="FA Nervenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200052" DN="FA Neurochirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200053" DN="FA Neurologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200054" DN="FA Nuklearmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200055" DN="FA Pathologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200057" DN="FA Physikalische und Rehabilitative Medizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200058" DN="FA Psychiatrie und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200060" DN="Fachärzte für Psychosomatische Medizin und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200061" DN="Psychotherapeutisch tätige Vertragsärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200062" DN="FA Radiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200065" DN="FA Strahlentherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200066" DN="FA Transfusionsmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200067" DN="FA Urologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200068" DN="Psychologische Psychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="200069" DN="Kinder- und Jugendlichenpsychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3810" DN="Anästhesiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38110" DN="MKG-Chirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38120" DN="Kinder und Jugendpsych. u. -PT" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38130" DN="Nervenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38131" DN="Psychiatrie u. Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38132" DN="Neurologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38140" DN="Neurochirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38150" DN="Orthopädie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38180" DN="Diagn. Radiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38181" DN="Strahlentherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38190" DN="Urologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3820" DN="Augenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38200" DN="Nuklearmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38210" DN="Physik.-Reha. Medizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38230" DN="Humangenetik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3830" DN="Chirurgie/ Kinderchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3831" DN="Gefäßchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3835" DN="Unfallchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3836" DN="Fachärzte für Angiologie, die in gefäßchirurgischen Praxen tätig sind" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3840" DN="Gynäkologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3841" DN="Gyn. mit WB Endokrin. u. Reprod.-Med." S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3850" DN="HNO-Heilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3851" DN="Phoniatrie und Pädaud." S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3860" DN="Dermatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3870" DN="Innere-/Allgemein-/Prakt. Ärzte - Hausärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38710" DN="Psych. Psychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38720" DN="Kinder und Jugendlichen PT" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38730" DN="Psychosom. Medizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38740" DN="ausschließlich psych. tätige Ärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3880" DN="FA Innere Medizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3881" DN="Innere Med.-Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3882" DN="Innere Med.-Kardiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38820" DN="Innere Med.-invasive Kardiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3883" DN="Innere Med.-Pneumologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3884" DN="Innere Med.-Endokrinologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3885" DN="Innere Med.-Nephrologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3886" DN="Innere Med.-Rheumatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3887" DN="Innere Med.-Angiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="3888" DN="Innere Med.-Hämato-/Onkologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38900" DN="Kinder- und Jugendärzte - Hausärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38904" DN="FÄ für Kinder- und Jugendmed. 100% kardiol. Tätig" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38926" DN="Laboratoriumsmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38947" DN="Pathologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38998" DN="Dummy LANR (rlv relevant), nur für zentrale Abrechnung" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="38999" DN="nicht-RLV-relevante AG" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5101" DN="Fachärzte für Allgemeinmedizin, hausärztlich tätige Internisten (hä)" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5102" DN="Fachärzte für Kinderheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5103" DN="Fachärzte für Anästhesiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5104" DN="Fachärzte für Augenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5105" DN="Fachärzte für Chirurgie , Neurochirurgie , Unfallchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5106" DN="Fachärzte für Frauenheilkunde und Geburtshilfe" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5107" DN="Fachärzte für Reproduktionsmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5108" DN="Fachärzte für Hals-Nasen-Ohrenheilkunde , Phoniatrie, Pädaudiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5109" DN="Fachärzte für Haut- und Geschlechtskrankheiten" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5110" DN="Fachärzte für Humangenetik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5111" DN="Fachärzte für Innere Medizin ohne Schwerpunkt sowie Endokrinologen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5112" DN="Fachärzte für Angiologie nicht invasiv" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5113" DN="Fachärzte für Endokrinologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5114" DN="Fachärzte für Innere Medizin mit SP Nephrologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5115" DN="Fachärzte für Innere Medizin mit SP Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5116" DN="Fachärzte für Innere Medizin mit SP Hämatologie und Internistische Onkologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5117" DN="Fachärzte für Innere Medizin mit SP Kardiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5118" DN="Fachärzte für Innere Medizin mit SP Kardiologie mit invasiver Tätigkeit" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5119" DN="Fachärzte für Innere Medizin mit SP Pneumologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5120" DN="Fachärzte für Innere Medizin mit SP Rheumatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5121" DN="Fachärzte für Kinder- und Jugendpsychiatrie und -psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5122" DN="Fachärzte für Mund-Kiefer-Gesichtschirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5123" DN="Fachärzte für Nervenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5124" DN="Fachärzte für Neurologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5125" DN="Fachärzte für Nuklearmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5126" DN="Fachärzte für Orthopädie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5127" DN="Fachärzte für Pathologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5128" DN="Fachärzte für Psychiatrie und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5129" DN="zytologische Schwerpunktpraxen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5130" DN="Fachärzte für Psychosomatische Medizin und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5131" DN="psychologische Psychotherapeuten, psychotherapeutisch tätiger Arzt" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5132" DN="Kinder- und Jugendlichenpsychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5133" DN="Fachärzte für Diagnostische Radiologie, überwiegend Röntgen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5134" DN="Fachärzte für Diagnostische Radiologie, überwiegend CT" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5135" DN="Fachärzte für Diagnostische Radiologie, überwiegend MRT" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5136" DN="Fachärzte für Diagnostische Radiologie, überwiegend CT und MRT" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5137" DN="Fachärzte für Urologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5138" DN="Fachärzte für Physikalische und Rehab. Medizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5139" DN="Fachärzte für Laboratoriumsmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5140" DN="nur schmerztherapeutisch tätige Praxen - FA" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5141" DN="diabetologische Schwerpunktpraxen - HA" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5142" DN="Fachärzte für Nervenheilkunde mit psychiatrischem Schwerpunkt" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5143" DN="Fachärzte für Psychiatrie und Psychotherapie mit Anteil PT &gt; 30 %" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5144" DN="übrige Vertragsärzte nur PT tätig" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5147" DN="Fachärzte für invasive Angiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5150" DN="Laborgemeinschaften" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5155" DN="Strahlentherapeut" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5160" DN="Mammographie - Screening" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5172" DN="BDZ" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5173" DN="Notfallambulanz Krankenhaus" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5174" DN="Krankenhäuser / Institute" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5198" DN="Default Arztgruppe" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="5199" DN="Ermächtigte Ärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710010" DN="Fachärzte für Allgemeinmedizin, Praktische Ärzte, Fachärzte für Innere Medizin, die an der hausärztlichen Versorgung teilnehmen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710011" DN="Fachärzte für Kinder- und Jugendmedizin ohne Schwerpunkt und fachärztlich tätige Fachärzte für Kinder- und Jugendmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710020" DN="Fachärzte für Anästhesiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710030" DN="Fachärzte für Augenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710040" DN="Fachärzte für Chirurgie, Fachärzte für Herzchirurgie, Fachärzte für Kinderchirurgie, Fachärzte für Plastische Chirurgie, Fachärzte für Plastische Chirurgie und Ästhetische Chirurgie, Fachärzte für Thoraxchirurgie sowie Fachärzte für Visceralchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710041" DN="Fachärzte für Chirurgie mit Schwerpunkt Gefäßchirurgie, Fachärzte für Gefäßchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710050" DN="Fachärzte für Neurochirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710060" DN="Fachärzte für Frauenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710070" DN="Fachärzte für Hals-Nasen-Ohrenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710071" DN="Fachärzte für Phoniatrie und Pädaudiologie, Fachärzte für Sprach-, Stimm- und kindliche Hörstörung, Mehrfachzulassungen aus der Kombination als Facharzt für Hals-Nasen-Ohrenheilkunde und als Facharzt für Phoniatrie und Pädaudiologie bzw. Facharzt für Sprach-, Stimm- und kindliche Hörstörung" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710080" DN="Fachärzte für Haut- und Geschlechtskrankheiten" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710100" DN="Fachärzte für Innere Medizin ohne Schwerpunkt, die an der fachärztlichen Versorgung teilnehmen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710101" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Angiologie, Fachärzte für Innere Medizin und Angiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710102" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Endokrinologie, Fachärzte für Innere Medizin und Endokrinologie und Diabetologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710103" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Gastroenterologie, Fachärzte für Innere Medizin und Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710104" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Hämatologie/Onkologie, Fachärzte für Innere Medizin und Hämatologie und Onkologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710105" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Kardiologie, Fachärzte für Innere Medizin und Kardiologie, Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Kardiologie und invasiver Tätigkeit" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710107" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Pneumologie, Fachärzte für Lungenheilkunde, Fachärzte für Innere Medizin und Pneumologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710108" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Rheumatologie, Fachärzte für Innere Medizin und Rheumatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710109" DN="Fachärzte für Innere Medizin mit (Versorgungs-) Schwerpunkt Nephrologie, Fachärzte für Innere Medizin und Nephrologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710110" DN="Fachärzte für Kinder- und Jugendpsychiatrie und -psychotherapie, Fachärzte für Kinder- und Jugendpsychiatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710120" DN="Fachärzte für Mund-, Kiefer- und Gesichtschirurgie, Fachärzte für Kieferchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710130" DN="Fachärzte für Nervenheilkunde, Mehrfachzulassungen aus der Kombination als Facharzt für Neurologie und als Facharzt für Psychiatrie und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710140" DN="Fachärzte für Neurologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710150" DN="Fachärzte für Nuklearmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710160" DN="Fachärzte für Orthopädie, Fachärzte für Orthopädie und Unfallchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710170" DN="Fachärzte für Psychiatrie, Fachärzte für Psychiatrie und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710180" DN="Fachärzte für Radiologie, Fachärzte für Diagnostische Radiologie, Fachärzte für Strahlentherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710190" DN="Fachärzte für Urologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710200" DN="Fachärzte für Physikalische und Rehabilitative Medizin, Fachärzte für Physiologie, Fachärzte für Physiotherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="710300" DN="Kuratorium für Dialyse und Nierentransplantation" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88010" DN="FÄ für Innere Medizin und Allgemeinmedizin, FÄ für Innere Medizin (hausärztlich tätig), FÄ f. Allgemeinmedizin, Praktische Ärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88020" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag der hausärztlich Inneren und Allgemeinmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88030" DN="FÄ für Kinderheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88040" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Kinderheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88050" DN="FÄ für Anästhesie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88080" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Anästhesie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88090" DN="FÄ für Augenheilkunde (operativ tätig)" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88100" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Augenheilkunde" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88102" DN="FÄ für Augenheilkunde, ausschließlich konservativ tätig" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88110" DN="FÄ für Chirurgie, FÄ für plastische Chirurgie, FÄ für Kinderchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88130" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Chirurgie, Plastische Chirurgie, Kinderchirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88140" DN="FÄ für MKG - Chirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88150" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag MKG - Chirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88160" DN="FÄ für Neurochirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88170" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Neurochirurgie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88180" DN="FÄ für Gynäkologie und Geburtshilfe" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88190" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Gynäkologie und/oder Geburtshilfe" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88200" DN="FÄ für HNO / FÄ für Phoniatrie und Pädaudiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88220" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag HNO-Heilkunde und/oder Phoniatrie und Pädaudiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88250" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Dermatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88260" DN="FÄ für Innere Med. (fachärztl. tätig) ohne SP* bzw. hier nicht gesondert aufgeführt. SP*" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88270" DN="FÄ für Innere Medizin mit SP* Angiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88271" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag fachärztliche Innere Medizin mit SP Angiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88280" DN="FÄ für Innere Medizin mit SP* Endokrinologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88281" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag fachärztliche Innere Medizin mit SP Endokrinologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88290" DN="FÄ für Innere Medizin mit SP* Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88291" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag fachärztliche Innere Medizin mit SP Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88300" DN="FÄ für Innere Medizin mit SP* Kardiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88301" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag fachärztliche Innere Medizin mit SP Kardiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88320" DN="FÄ für Innere Medizin mit SP* Nephrologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88321" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag fachärztliche Innere Medizin mit SP Nephrologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88330" DN="FÄ für Innere Medizin mit SP* Pneumologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88331" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag fachärztliche Innere Medizin mit SP Pneumologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88350" DN="FÄ für Innere Medizin mit SP* Rheumatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88351" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag fachärztliche Innere Medizin mit SP Rheumatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88360" DN="FÄ für Innere Medizin mit SP* Hämatologie u. / o. SP* Onkologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88361" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag fachärztliche Innere Medizin mit SP Hämatologie u./o. SP Onkologie)" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88370" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag fachärztliche Innere Medizin ohne SP* bzw. nicht gesondert aufgeführt. SP*" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88380" DN="FÄ für Nervenheilkunde, Fachärzte für Neurologie und Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88390" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Nervenheilkunde und/oder Neurologie und Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88400" DN="FÄ für Neurologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88410" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Neurologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88420" DN="FÄ für Kinder- und Jugendpsychiatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88430" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Kinder- und Jugendpsychiatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88440" DN="Fachärzte für Psychiatrie und Psychotherapie mit einem Leistungsanteil der Richtlinien-Psychotherapie von höchstens 30%" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88450" DN="Fachärzte für Psychiatrie und Psychotherapie mit einem Leistungsanteil der Richtlinien-Psychotherapie von mehr als 30% bis 90%" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88460" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88470" DN="FÄ für Orthopädie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88480" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Orthopädie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88530" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Radiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88540" DN="FÄ für Nuklearmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88550" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Nuklearmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88560" DN="FÄ für Urologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88570" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Urologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88580" DN="FÄ für Physikalische Rehabilitative Medizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88590" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Physikalische Rehabilitative Medizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88600" DN="FÄ für Humangenetik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88610" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Humangenetik" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88690" DN="FÄ für Dermatologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88750" DN="FÄ für Radiologie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88760" DN="FÄ für Strahlentherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88770" DN="Ermächtigte FÄ/Krankenhäuser/Institutionen/Einrichtungen mit dem Versorgungsauftrag Strahlentherapie" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88780" DN="Überwiegend bzw. ausschließlich histologisch tätige Ärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88782" DN="Überwiegend bzw. ausschließlich zytologisch tätige Ärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9303" DN="Hausärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9304" DN="Kinder und Jugendmedizin" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9305" DN="Anästhesisten" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9306" DN="Augenärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9307" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9308" DN="Frauenärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9309" DN="HNO-Ärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9310" DN="Hautärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9311" DN="Humangenetiker" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9312" DN="Laborärzte" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9313.0" DN="Internisten ohne SP" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9313.1" DN="Angiologen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9313.2" DN="Endokrinologen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9313.3" DN="Gastroenderologen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9313.4" DN="Hämatologen/ Onkologen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9313.5" DN="Kardiologen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9313.6" DN="Nephrologen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9313.7" DN="Pneumologen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9313.8" DN="Rheumatologen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9314" DN="KJ-Psychiater" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9315" DN="MKG-Chirurgen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9316" DN="Neurologen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9317" DN="Nuklearmediziner" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9318" DN="Orthopäden" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9319" DN="Pathologen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9320" DN="Phoniater Pädaudiologen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9321" DN="Psychiater" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9322" DN="Psychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9324" DN="Radiologen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9325" DN="Strahlentherapeuten" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9326" DN="Urologen" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9327" DN="PRM" S="1.2.276.0.76.3.1.1.5.2.32" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+  </keytab>
+</keytabs>
+

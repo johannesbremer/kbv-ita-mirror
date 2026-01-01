@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2015 rel. 4 sp1 (x64) (http://www.altova.com) von Johanna Schäffer (KV Telematik GmbH) bearbeitet -->
+<!-- ======================================================================= 
+Historie:
+	16.07.2018	Erweiterung des Schemas
+	28.07.2015	Erweiterung und Änderung des Schemas
+=======================================================================-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ehd="urn:ehd/001" xmlns:kvca="urn:ehd/kvca/001" targetNamespace="urn:ehd/kvca/001" elementFormDefault="qualified">
+	<xs:import namespace="urn:ehd/001" schemaLocation="datentypen_V1.40.xsd"/>
+	<xs:element name="institution_liste">
+		<xs:annotation>
+			<xs:documentation>Liste der Institutionen, die KV Connect Anwendungen anbieten. z.B.: alle KVen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="kv" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Eine Kassenärztliche Vereinigung identifiziert durch ihre ID</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id">
+								<xs:complexType>
+									<xs:attribute name="EX" type="xs:string" use="required"/>
+									<xs:attribute name="RT" type="xs:string" use="required" fixed="1.2.276.0.76.5.233"/>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="anwendungsliste">
+								<xs:annotation>
+									<xs:documentation>Liste der Anwendungen, die diese Institution anbietet bzw. zustaendig ist</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="anwendung" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Die Konfigurationen der Anwendungen</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="id">
+														<xs:complexType>
+															<xs:attribute name="EX" type="xs:string" use="required"/>
+															<xs:attribute name="RT" type="xs:string" use="required" fixed="1.2.276.0.76.3.1.64.5.1"/>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="version" type="kvca:versionType" minOccurs="1" maxOccurs="2">
+														<xs:annotation>
+															<xs:documentation>Version der Anwendungsspezifikation, ggf. mit Angabe der Gültigkeit</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="email" type="kvca:emailType" minOccurs="0" maxOccurs="1">
+														<xs:annotation>
+															<xs:documentation>KV-Connect Emailadresse der Anwendungen (Produktivsystem)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="test_email" type="kvca:emailType" minOccurs="0" maxOccurs="1">
+														<xs:annotation>
+															<xs:documentation>optionale KV-Connect Emailadresse für Testnachrichten der Anwendungen (Produktivsystem)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="kim_email" type="kvca:emailType" minOccurs="0" maxOccurs="1">
+														<xs:annotation>
+															<xs:documentation>optionale KIM Emailadresse der Anwendungen (Telematikinfrastruktur)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="kim_test_email" type="kvca:emailType" minOccurs="0" maxOccurs="1">
+														<xs:annotation>
+															<xs:documentation>optionale KIM Emailadresse für Testnachrichten der Anwendungen (Telematikinfrastruktur)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="anwendungsspezifika" minOccurs="0" maxOccurs="1">
+														<xs:annotation>
+															<xs:documentation>eventuell notwendige anwendungsspezifische Werte</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence maxOccurs="1">
+																<xs:element name="anwendungsfunktion" maxOccurs="10">
+																	<xs:unique name="uniqueanwendungsfkt">
+																		<xs:selector xpath="anwendungsfunktion"/>
+																		<xs:field xpath="@V"/>
+																	</xs:unique>
+																</xs:element>
+																<!-- <xs:any processContents="strict" /> -->
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="institution_id">
+			<xs:selector xpath="kvca:kv/kvca:id"/>
+			<xs:field xpath="@EX"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="versionType">
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="\d"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attributeGroup ref="kvca:gueltigkeit"/>
+	</xs:complexType>
+	<xs:complexType name="emailType">
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[^@]+@[^\.]+\..+"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attributeGroup ref="kvca:gueltigkeit"/>
+	</xs:complexType>
+	<xs:attributeGroup name="gueltigkeit">
+		<xs:attribute name="gueltig_ab" type="xs:dateTime" use="optional"/>
+		<xs:attribute name="gueltig_bis" type="xs:dateTime" use="optional"/>
+	</xs:attributeGroup>
+	<xs:complexType name="anwendungsfunktion">
+		<xs:attribute name="V" type="kvca:oneclickfunktion" use="required"/>
+		<xs:attribute name="RT" type="xs:string" use="optional" fixed="1.2.276.0.76.3.1.1.5.2.34"/>
+	</xs:complexType>
+	<xs:simpleType name="oneclickfunktion">
+		<xs:annotation>
+			<xs:documentation>Ausprägungen der 1Click Funktionen</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Fkt 1"/>
+			<xs:enumeration value="Fkt 2"/>
+			<xs:enumeration value="Fkt 3"/>
+			<xs:enumeration value="Fkt 4"/>
+			<xs:enumeration value="Fkt 5"/>
+			<xs:enumeration value="Fkt 6"/>
+			<xs:enumeration value="Fkt 7"/>
+			<xs:enumeration value="Fkt 8"/>
+			<xs:enumeration value="Fkt 9"/>
+			<xs:enumeration value="Fkt 10"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

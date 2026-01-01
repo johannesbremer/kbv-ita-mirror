@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns="urn::sciphox-org/sciphox" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!--***********************************************************************************************************************************************-->
+	<!--Ergebnistexte Erstdokumentation -->
+	<!--***********************************************************************************************************************************************-->
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - Anamnese und Behandlungsstatus-->
+	<!--************************************************************************************-->
+	<xs:simpleType name="OperativeTherapie">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="BET"/>
+			<xs:enumeration value="Mastektomie"/>
+			<xs:enumeration value="Sentinel-Lymphknoten-Biopsie"/>
+			<xs:enumeration value="Axilläre Lymphonodektomie"/>
+			<xs:enumeration value="Anderes Vorgehen"/>
+			<xs:enumeration value="OP geplant"/>
+			<xs:enumeration value="OP nicht geplant"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - Aktueller Befundstatus des Primärtumors-->
+	<!--************************************************************************************-->
+	<xs:simpleType name="TNM-Klassifizierung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="(p) Pathologisch (postoperativ)"/>
+			<xs:enumeration value="(c) Klinisch"/>
+			<xs:enumeration value="(yp) Pathologisch (postoperativ) nach neoadjuvanter Therapie"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Tis"/>
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="X"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="N">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="X"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="M">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HormonrezeptorstatusÖstrogenundoderProgesterongemäßImmunreaktiverScoreIRS">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Positiv"/>
+			<xs:enumeration value="Negativ"/>
+			<xs:enumeration value="Unbekannt"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - Behandlung des Primärtumors / Kontralateralen Brustkrebses bzw. Behandlungsstatus nach operativer Therapie des Primärtumors / kontralateralen Brustkrebses (adjuvante Therapie)-->
+	<!--************************************************************************************-->
+	<!-- ACHTUNG Wird auch als Ergebnistext der Folgedokumentation verwendet-->
+	<xs:simpleType name="AktuelleadjuvanteendokrineTherapie">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Aromataseinhibitoren"/>
+			<xs:enumeration value="Tamoxifen"/>
+			<xs:enumeration value="Andere"/>
+			<xs:enumeration value="Endokrine Therapie geplant"/>
+			<xs:enumeration value="Keine"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NebenwirkungenderaktuellenadjuvantenendokrinenTherapie">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="nicht belastend"/>
+			<xs:enumeration value="mäßig belastend"/>
+			<xs:enumeration value="stark belastend"/>
+			<xs:enumeration value="nicht erfragt"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FortführungderadjuvantenendokrinenTherapie">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Vor dem abgeschlossenen 5. Jahr abgebrochen"/>
+			<xs:enumeration value="Regulär nach 5 Jahren abgeschlossen"/>
+			<xs:enumeration value="Aktuell andauernd, seit weniger als 5 Jahren"/>
+			<xs:enumeration value="Aktuell andauernd, Fortführung über 5 Jahre hinaus"/>
+			<xs:enumeration value="Keine endokrine Therapie durchgeführt"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BeiPatientinnenunteradjuvanterTherapiemitAromataseinhibitorensoferndieAbsichtfüreinespezifischemedikamentöseTherapieeinerOsteoporosebestehtDXA-Befund">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Auffällig"/>
+			<xs:enumeration value="Unauffällig"/>
+			<xs:enumeration value="Unbekannt"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - Befunde Fernmetastasen-->
+	<!--************************************************************************************-->
+	<xs:simpleType name="LokalisationvonFernmetastasen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Knochen"/>
+			<xs:enumeration value="viszeral"/>
+			<xs:enumeration value="ZNS"/>
+			<xs:enumeration value="Andere"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TherapiebeiKnochenmetastasenBisphosphonate">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Kontraindikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TherapiebeiKnochenmetastasenDenosumab">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Kontraindikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - Sonstige Beratung -->
+	<!--************************************************************************************-->
+	<!-- ACHTUNG Lymphödem wird auch als Ergebnistext der Folgedokumentation verwendet-->
+	<xs:simpleType name="SymptomatischesLymphödem">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja, Kompressionsarmstrumpftherapie erforderlich"/>
+			<xs:enumeration value="Ja, keine Kompressionsarmstrumpftherapie erforderlich"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EmpfehlungzuregelmäßigemkörperlichenTrainingabgegeben">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Z.n.besonderskardiotoxischerTumortherapie">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Anthrazykline (Doxorubicin, Epirubicin)"/>
+			<xs:enumeration value="Anti-HER2-Substanzen"/>
+			<xs:enumeration value="linksthorakale Bestrahlung"/>
+			<xs:enumeration value="Unbekannt"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Körpergröße">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Körpergewicht">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--***********************************************************************************************************************************************-->
+	<!-- Ergebnistexte - Folgedokumentation -->
+	<!--***********************************************************************************************************************************************-->
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - BehandlungstatusnachoperativerTherapie_txt-->
+	<!--************************************************************************************-->
+	<xs:simpleType name="Einschreibungerfolgtwegen_Ergebnistexte">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Primärtumors"/>
+			<xs:enumeration value="Kontralateralen Brustkrebses"/>
+			<xs:enumeration value="Lokoregionären Rezidivs"/>
+			<xs:enumeration value="Fernmetastasen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Ergebnistexte für Behandlungsstatus ist in Abschnitt Behandlung der Erstdokumentation definiert.-->
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - NeuaufgetreteneEreignisse_txt -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="LokoregionäresRezidivDatumderhistologischenSicherung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="KontralateralerBrustkrebsDatumderhistologischenSicherung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LokalisationvonFernmetastasenDatumderdiagnostischenSicherung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="viszeral"/>
+			<xs:enumeration value="ZNS"/>
+			<xs:enumeration value="Knochen"/>
+			<xs:enumeration value="Andere"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BioptischeSicherungderviszeralenMetastasen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="geplant"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Ergebnistexte - Behandlungsplanung_txt -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="Dokumentationsintervall">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Halbjährlich oder häufiger"/>
+			<xs:enumeration value="Jährlich"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--	<xs:simpleType name="SymptomatischesLymphödem">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Ja, Kompressionsstrumpftherapie erforderlich"/>
+			<xs:enumeration value="Ja, Keine Kompressionsstrumpftherapie erforderlich"/>
+		</xs:restriction>
+	</xs:simpleType>-->
+	<!-- Ergebnistexte für Lymphödem ist in Abschnitt SonstigeBeratung der Erstdokumentation definiert.-->
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - BehandlungfortgeschrittenerErkrankung_txt bereits unter "Befunde Fernmetastasen" und "Sonstige Beratung" deklariert-->
+	<!--************************************************************************************-->
+	<!--	<xs:simpleType name="TherapiebeiKnochenmetastasenBisphosphonate">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Kontraindikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TherapiebeiKnochenmetastasenDenosumab">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Kontraindikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DatumderErstellung">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{2}.\d{2}.\d{4}"/>
+		</xs:restriction>
+	</xs:simpleType>-->
+	<!-- Ergebnistexte für BisphosphonatTherapie ist in Abschnitt Befunde Fernmetastasen der Erstdokumentation definiert.-->
+</xs:schema>

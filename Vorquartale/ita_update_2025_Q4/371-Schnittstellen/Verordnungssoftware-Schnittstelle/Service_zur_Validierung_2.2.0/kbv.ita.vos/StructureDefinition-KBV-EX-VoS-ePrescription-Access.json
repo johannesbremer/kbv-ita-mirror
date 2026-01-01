@@ -1,0 +1,160 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "KBV-EX-VoS-ePrescription-Access",
+  "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_ePrescription_Access",
+  "version": "2.2.0",
+  "name": "KBV_EX_VoS_ePrescription_Access",
+  "title": "KBV_EX_VoS_ePrescription_Access",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "description": "Enthält den AccessCode und die Task-ID für den erneuten Zugriff auf das eRezept.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "DocumentReference",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Zugriffsdaten eRezept",
+        "definition": "Wird genau dann verwendet, wenn die DocumentReference-Instanz ein signiertes eRezept enthält.\r\nEnthält den AccessCode und die Task-ID des eRezepts auf dem Fachdienst"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "closed"
+        },
+        "min": 2,
+        "max": "2"
+      },
+      {
+        "id": "Extension.extension:AccessCode",
+        "path": "Extension.extension",
+        "sliceName": "AccessCode",
+        "short": "AccessCode",
+        "definition": "AccessCode des eRezepts.",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:AccessCode.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:AccessCode.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "AccessCode"
+      },
+      {
+        "id": "Extension.extension:AccessCode.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:AccessCode.value[x]:valueString",
+        "path": "Extension.extension.value[x]",
+        "sliceName": "valueString",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:Task-ID",
+        "path": "Extension.extension",
+        "sliceName": "Task-ID",
+        "short": "Task-ID",
+        "definition": "Task-ID des eRezepts",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:Task-ID.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:Task-ID.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "Task-ID"
+      },
+      {
+        "id": "Extension.extension:Task-ID.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:Task-ID.value[x]:valueString",
+        "path": "Extension.extension.value[x]",
+        "sliceName": "valueString",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_ePrescription_Access"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

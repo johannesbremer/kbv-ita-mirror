@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<VSD:UC_PersoenlicheVersichertendatenXML CDM_VERSION="5.2.0" xmlns:VSD="http://ws.gematik.de/fa/vsdm/vsd/v5.2">
+	<VSD:Versicherter>
+		<VSD:Versicherten_ID>S080990221</VSD:Versicherten_ID>
+		<VSD:Person>
+			<VSD:Geburtsdatum>19900908</VSD:Geburtsdatum>
+			<VSD:Vorname>Veronika</VSD:Vorname>
+			<VSD:Nachname>Storm</VSD:Nachname>
+			<VSD:Geschlecht>W</VSD:Geschlecht>
+			<VSD:PostfachAdresse>
+				<VSD:Postleitzahl>60437</VSD:Postleitzahl>
+				<VSD:Ort>Bad Homburg</VSD:Ort>
+				<VSD:Postfach>61350</VSD:Postfach>
+				<VSD:Land>
+					<VSD:Wohnsitzlaendercode>D</VSD:Wohnsitzlaendercode>
+				</VSD:Land>
+			</VSD:PostfachAdresse>
+		</VSD:Person>
+	</VSD:Versicherter>
+</VSD:UC_PersoenlicheVersichertendatenXML>

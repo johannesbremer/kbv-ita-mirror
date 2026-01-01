@@ -1,0 +1,320 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "KBV-PR-VoS-Bundle-PVS-VoS",
+  "url": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+  "version": "2.2.0",
+  "name": "KBV_PR_VoS_Bundle_PVS_VoS",
+  "title": "KBV_PR_VoS_Bundle_PVS_VoS",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "description": "Bundle zum Aufruf der Verordnungssoftware, enthält die Composition mit dem Profil KBV_PR_VoS_Composition und alle darin referenzierten Ressourcen.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Bundle",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Bundle",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Bundle",
+        "path": "Bundle",
+        "short": "Aufruf-Bundle",
+        "definition": "Bundle mit kID und den Ressourcen, die für den Aufruf der VoS nötig sind",
+        "constraint": [
+          {
+            "key": "-vos-compositionPflicht",
+            "human": "Die Ressource vom Typ Composition muss genau einmal vorhanden sein",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "error",
+            "expression": "entry.where(resource is Composition).count()=1"
+          },
+          {
+            "key": "-vos-versionComposition",
+            "human": "Die Instanz der Composition muss vom Profil KBV_PR_VoS_Composition|2.2.0 sein",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "error",
+            "expression": "entry.where(resource is Composition).resource.meta.profile.contains('https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Composition|2.2.0')"
+          },
+          {
+            "key": "-vos-practitionerPflicht",
+            "human": "Die Übergabe einer Instanz zur behandelnden Person (KBV_PR_VoS_Practitioner|2.2.0) ist Pflicht.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "error",
+            "expression": "entry.where(resource.meta.profile = 'https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Practitioner|2.2.0' or resource.meta.profile = 'https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_User|2.2.0').exists()"
+          },
+          {
+            "key": "-vos-ASV-Teamnummer",
+            "human": "Die ASV-Teamnummer muss in der PractitionerRole genau dann vorliegen, wenn die VoS im Rahmen eines ASV-Falls (Statuskennzeichen 01 oder 11) aufgerufen wird.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "error",
+            "expression": "entry.where(resource is Composition).resource.author.where(type='PractitionerRole').reference.resolve().organization.identifier.exists() xor (entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').exists() and (entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').value as Coding).code.toString().endsWith('1').not())"
+          },
+          {
+            "key": "-vos-angabeOrganizationReferencePflicht",
+            "human": "Wenn in der Composition mindestens ein PractitionerRole als Author angegeben ist, muss in mindestens einer der referenzierten PractitionerRoles eine Verknüpfung zur Betriebsstätte (organization.reference) vorhanden sein.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "error",
+            "expression": "entry.where(resource is Composition).resource.author.where(type='PractitionerRole').reference.resolve().organization.reference.exists()"
+          },
+          {
+            "key": "-vos-angabeRechtsgrundlagePflicht",
+            "human": "In der Ressource vom Typ Composition ist keine Rechtsgrundlage vorhanden, diese ist aber eine Pflichtangabe bei den Kostentraegern der Typen \"GKV\", \"PKV\", \"BG\", \"SKT\" oder \"UK\" ein Pflichtelement.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "error",
+            "expression": "(entry.where(resource is Composition).exists() and \r\n                entry.where(resource is Coverage).exists() and \r\n                (entry.where(resource is Coverage).resource.type.coding.code='GKV' or \r\n                    entry.where(resource is Coverage).resource.type.coding.code='PKV'or \r\n                    entry.where(resource is Coverage).resource.type.coding.code='BG' or \r\n                    entry.where(resource is Coverage).resource.type.coding.code='SKT' or \r\n                    entry.where(resource is Coverage).resource.type.coding.code='UK')) \r\n                implies entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').exists()"
+          },
+          {
+            "key": "-vos-angabeArztnummerPflicht",
+            "human": "In einer Ressource vom Typ Practitioner ist kein LANR-Identifier angegeben; dies ist jedoch Pflicht, wenn die ausstellende Person (im Composition.author) die Qualifikation „Arzt“ (Code 00) oder „Arzt als Vertreter“ (Code 04) trägt.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "error",
+            "expression": "entry.where(resource is Composition).resource.author.where(type='PractitionerRole').reference.resolve().practitioner.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').all($this.code='00' or $this.code='04') implies entry.where(resource is Composition).resource.author.where(type='PractitionerRole').reference.resolve().practitioner.reference.resolve().identifier.where(type.coding.code='LANR').exists()"
+          },
+          {
+            "key": "-erp-angabePatientenPLZPflicht",
+            "human": "In der Ressource vom Typ Patient ist keine Postleitzahl vorhanden, diese ist aber eine Pflichtangabe bei den Kostentraegern der Typen Typ \"GKV\", \"PKV\", \"BG\", \"SKT\" oder \"UK\" falls der Wohnsitzländercode der Versichertenanschrift den Wert \"D\" hat.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "warning",
+            "expression": "(entry.where(resource is Patient).resource.address.country.exists() and entry.where(resource is Patient).resource.address.country = 'D' and (entry.where(resource is Coverage).resource.type.coding.code='GKV' or entry.where(resource is Coverage).resource.type.coding.code='BG' or entry.where(resource is Coverage).resource.type.coding.code='UK' or entry.where(resource is Coverage).resource.type.coding.code='PKV' or entry.where(resource is Coverage).resource.type.coding.code='SKT')) implies entry.where(resource is Patient).resource.address.postalCode.exists()"
+          },
+          {
+            "key": "-erp-angabeVerantwortlichePersonVerbot-1",
+            "human": "Eine Ressource vom Typ Practitioner wird als verantwortliche Person angegeben, diese darf aber nur angegeben werden, wenn es sich bei der ausstellenden Person um einen Arzt in Weiterbildung oder Arzt als Vertreter handelt.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "warning",
+            "expression": "entry.where(resource is Composition).resource.attester.party.reference.exists() implies entry.where(resource is Composition).resource.author.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').all($this.code='03' or $this.code='04')"
+          },
+          {
+            "key": "-erp-angabeVerantwortlichePersonVerbot-2",
+            "human": "Eine Ressource vom Typ Practitioner wird als verantwortliche Person angegeben, diese darf aber nur angegeben werden, wenn es sich nicht um eine Hebamme oder einen Arzt in Weiterbildung handelt.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "warning",
+            "expression": "entry.where(resource is Composition).resource.attester.party.reference.exists() implies entry.where(resource is Composition).resource.attester.party.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').all($this.code!='02' and $this.code!='03')"
+          },
+          {
+            "key": "-vos-angabeIdentifikatorVerantwortlichePersonPflicht",
+            "human": "In der Ressource vom Typ Practitioner ist der Identifikator der verantwortlichen Person nicht vorhanden, dies ist jedoch Pflicht, wenn die behandelnde Person (PractitionerRole) ein Arzt in Weiterbildung ist (die Qualifikation Code „03“ trägt) und selbst keine Identifier besitzt.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "error",
+            "expression": "entry.where(resource is Composition).resource.author.where(type='PractitionerRole').reference.resolve().practitioner.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').all($this.code='03') and entry.where(resource is Composition).resource.author.where(type='PractitionerRole').reference.resolve().practitioner.reference.resolve().identifier.exists().not() implies entry.where(resource is Composition).resource.attester.party.reference.resolve().identifier.where(type.coding.code='LANR').exists()"
+          },
+          {
+            "key": "-erp-angabeFachgruppennummerAsvAusstellendePersonVerbot",
+            "human": "In einer Ressource vom Typ Practitioner ist eine ASV-Fachgruppennummer der ausstellenden Person vorhanden, diese darf aber nur angegeben werden, wenn die Rechtsgrundlage den Wert \"01\" oder \"11\" besitzt und wenn es sich um einen Arzt oder Arzt als Vertreter handelt, für den kein Identifikator angegeben ist.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "warning",
+            "expression": "entry.where(resource is Composition).resource.author.reference.resolve().qualification.where(code.coding.system='https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Fachgruppennummer_ASV').exists() and entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').exists() implies entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').all(($this.value as Coding).code='01' or ($this.value as Coding).code='11') and entry.where(resource is Composition).resource.author.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').all($this.code='00' or $this.code='04') and entry.where(resource is Composition).resource.author.reference.resolve().identifier.exists().not()"
+          },
+          {
+            "key": "-erp-angabeFachgruppennummerAsvVerantwortlichePersonVerbot",
+            "human": "In einer Ressource vom Typ Practitioner ist eine ASV-Fachgruppennummer der verantwortlichen Person vorhanden, diese darf aber nur angegeben werden, wenn die Rechtsgrundlage den Wert \"01\" oder \"11\" besitzt und wenn es sich um einen Arzt oder Arzt als Vertreter handelt, für den kein Identifikator angegeben ist.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "warning",
+            "expression": "entry.where(resource is Composition).resource.attester.exists() and entry.where(resource is Composition).resource.attester.party.reference.resolve().qualification.where(code.coding.system='https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Fachgruppennummer_ASV').exists() and entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').exists() implies entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').all(($this.value as Coding).code='01' or ($this.value as Coding).code='11') and entry.where(resource is Composition).resource.attester.party.reference.resolve().qualification.code.coding.where(system='https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type').all($this.code='00' or $this.code='04') and entry.where(resource is Composition).resource.attester.party.reference.resolve().identifier.exists().not()"
+          },
+          {
+            "key": "-erp-angabeIKKostentraegerPflicht",
+            "human": "In der Ressource vom Typ Coverage ist kein IK des Kostenträgers vorhanden, dies ist aber eine Pflichtangabe bei Kostenträgern vom Typ \"BG\" oder \"UK\",",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "warning",
+            "expression": "(entry.where(resource is Coverage).exists() and (entry.where(resource is Coverage).resource.type.coding.code='BG' or entry.where(resource is Coverage).resource.type.coding.code='UK')) implies  entry.select(resource as Coverage).payor.identifier.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Alternative_IK').exists()"
+          },
+          {
+            "key": "-erp-angabePKVTarifVerbot",
+            "human": "In der Ressource vom Typ Composition ist ein PKV-Tarif angegeben, dies darf aber nur bei einem Kostenträger vom Typ \"PKV\" erfolgen.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "warning",
+            "expression": "entry.where(resource is Coverage).exists() and entry.where(resource is Coverage).resource.type.coding.code!='PKV' implies entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_PKV_Tariff').exists().not()"
+          },
+          {
+            "key": "-erp-geburtsdatumPatient",
+            "human": "Das Geburtsdatum des Patienten darf nicht nach dem Ausstellungsdatum liegen.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "warning",
+            "expression": "entry.where(resource is Patient).exists() and entry.where(resource is Patient).resource.birthDate.extension.exists().not() and entry.where(resource is MedicationRequest).resource.authoredOn.exists() implies entry.where(resource is Patient).resource.birthDate.toString() = entry.where(resource is MedicationRequest).resource.authoredOn.toString().substring(0,4) or entry.where(resource is Patient).resource.birthDate.toString() = entry.where(resource is MedicationRequest).resource.authoredOn.toString().substring(0,7) or entry.where(resource is Patient).resource.birthDate <= entry.where(resource is MedicationRequest).resource.authoredOn"
+          }
+        ]
+      },
+      {
+        "id": "Bundle.id",
+        "path": "Bundle.id",
+        "short": "BundleID",
+        "definition": "Die ID des Bundles wird als kID beim Aufruf der VoS übertragen",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.meta",
+        "path": "Bundle.meta",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.meta.source",
+        "path": "Bundle.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.meta.profile",
+        "path": "Bundle.meta.profile",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.meta.profile:vosProfile",
+        "path": "Bundle.meta.profile",
+        "sliceName": "vosProfile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS|2.2.0",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.meta.security",
+        "path": "Bundle.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.meta.tag",
+        "path": "Bundle.meta.tag",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.implicitRules",
+        "path": "Bundle.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.language",
+        "path": "Bundle.language",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier",
+        "path": "Bundle.identifier",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.identifier.use",
+        "path": "Bundle.identifier.use",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier.type",
+        "path": "Bundle.identifier.type",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier.system",
+        "path": "Bundle.identifier.system",
+        "min": 1,
+        "fixedUri": "https://fhir.kbv.de/NamingSystem/KBV_NS_VoS_BundleID",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.identifier.value",
+        "path": "Bundle.identifier.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.identifier.period",
+        "path": "Bundle.identifier.period",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.identifier.assigner",
+        "path": "Bundle.identifier.assigner",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.type",
+        "path": "Bundle.type",
+        "fixedCode": "document",
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.timestamp",
+        "path": "Bundle.timestamp",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.total",
+        "path": "Bundle.total",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.link",
+        "path": "Bundle.link",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry",
+        "path": "Bundle.entry",
+        "short": "Ressourcen",
+        "definition": "Ressourcen, die für den Aufruf der VoS benötigt werden, inklusive der mandatorischen Composition-Ressource",
+        "min": 1,
+        "constraint": [
+          {
+            "key": "-vos-erlaubteRessourcen",
+            "human": "Es dürfen nur Ressourcen aus der VoS-SST und E-Rezept-Bundles übertragen werden.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS",
+            "severity": "error",
+            "expression": "resource.meta.profile.startsWith('https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS') or resource.meta.profile.startsWith('https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle')"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.link",
+        "path": "Bundle.entry.link",
+        "max": "0",
+        "contentReference": "http://hl7.org/fhir/StructureDefinition/Bundle#Bundle.link"
+      },
+      {
+        "id": "Bundle.entry.fullUrl",
+        "path": "Bundle.entry.fullUrl",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.resource",
+        "path": "Bundle.entry.resource",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Bundle.entry.search",
+        "path": "Bundle.entry.search",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry.request",
+        "path": "Bundle.entry.request",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.entry.response",
+        "path": "Bundle.entry.response",
+        "max": "0"
+      },
+      {
+        "id": "Bundle.signature",
+        "path": "Bundle.signature",
+        "max": "0"
+      }
+    ]
+  }
+}

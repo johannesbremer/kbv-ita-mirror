@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-EX-VoS-Medication-Amount-FreeText" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Amount_FreeText" />
+  <version value="2.1.0" />
+  <name value="KBV_EX_VoS_Medication_Amount_FreeText" />
+  <title value="KBV_EX_VoS_Medication_Amount_FreeText" />
+  <status value="active" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <description value="Darstellung der Gesamtmenge bzw. Packungsinhalts einer Verordnung als Freitext" />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Medication.amount" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Menge bzw. Packungsinhalt" />
+      <definition value="Gesamtmenge bzw. Packungsinhalt einer Verordnung als Freitext" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Amount_FreeText" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.value[x]:valueString">
+      <path value="Extension.value[x]" />
+      <sliceName value="valueString" />
+      <short value="Menge und Einheit des Inhalts Freitext" />
+      <definition value="Menge und Einheit des Gesamtinhalts als Freitext (bspw. notwendig für Angaben wie &quot;2x25 Tabletten&quot;)" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

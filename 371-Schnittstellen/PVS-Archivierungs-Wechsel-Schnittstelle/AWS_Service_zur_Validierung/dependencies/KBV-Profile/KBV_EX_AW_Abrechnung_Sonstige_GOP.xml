@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Abrechnung_Sonstige_GOP" />
+  <name value="KBV_EX_AW_Abrechnung_Sonstige_GOP" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Claim.item.productOrService" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="CoverageEligibilityResponse.insurance.item.authorizationSupporting" />
+  </context>  
+    <context>
+    <type value="element" />
+    <expression value="Procedure.reasonCode" />
+  </context>  
+    <context>
+    <type value="element" />
+    <expression value="ActivityDefinition.code" />
+  </context>  
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Sonstige Gebührenordnung" />
+      <definition value="In diesem Element können sonstige Gebührenordnungen eingetragen werden. Es ist jedoch zwingen erforderlich ein Codesystem mit dem Code und einer aussagekräftigen Beschreibung zu erstellen und dieses beim Export im entsprechenden Verzeichnis mitzugeben." />
+      <comment value="@default Ersatz-Extension, da die @default slices von den Valdidatoren noch nicht umgesetzt werden muss die Extension erarbeitet werden." />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Abrechnung_Sonstige_GOP" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Coding" />
+      </type>
+    </element>
+    <element id="Extension.value[x]:valueCoding">
+      <path value="Extension.valueCoding" />
+      <sliceName value="valueCoding" />
+      <min value="1" />
+      <type>
+        <code value="Coding" />
+      </type>
+    </element>
+    <element id="Extension.value[x]:valueCoding.system">
+      <path value="Extension.valueCoding.system" />
+      <min value="1" />
+    </element>
+    <element id="Extension.value[x]:valueCoding.version">
+      <path value="Extension.valueCoding.version" />
+      <min value="1" />
+    </element>
+    <element id="Extension.value[x]:valueCoding.code">
+      <path value="Extension.valueCoding.code" />
+      <min value="1" />
+    </element>
+    <element id="Extension.value[x]:valueCoding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.valueCoding.display" />
+      <min value="1" />
+    </element>
+    <element id="Extension.value[x]:valueCoding.userSelected">
+      <path value="Extension.valueCoding.userSelected" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

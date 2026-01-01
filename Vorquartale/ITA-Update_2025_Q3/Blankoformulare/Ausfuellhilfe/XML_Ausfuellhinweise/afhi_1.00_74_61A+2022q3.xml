@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 ../Schema/afhi_root_V1.00.xsd">
+	<header>
+		<id EX="3362b305-f77f-4e63-ab18-79df24d60a12" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2022-07-01.."/>
+		<origination_dttm V="2022-03-31"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat 4"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="https://update.kbv.de/ita-update/"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2022, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="https://update.kbv.de/ita-update/"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="61A" DN="Beratung zu medizinischer Rehabilitation / Prüfung des zuständigen Rehabilitationsträgers">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Rehabilitationsbegründende und weitere Diagnosen"/>
+					<hinweistext V="Geben Sie hier bitte die relevanten Diagnosen - sofern erforderlich mit Seitenlokalisation - als Funktionsdiagnosen an, z.B. 'Coxarthrose re. mit eingeschränkter Gehfähigkeit'. Die den Beeinträchtigungen zugrundeliegenden Diagnosen und weitere Diagnosen sind gemäß ICD-10-GM zu verschlüsseln."/>
+				</feld>
+				<feld>
+					<nummer V="2"/>
+					<name V="Ursache"/>
+					<hinweistext V="Wenn für die Diagnosen eine der rechts auf dem Vordruck aufgeführten Ursachen zutrifft, geben Sie dies, sofern bekannt, hier bitte an."/>
+				</feld>
+				<feld>
+					<nummer V="3"/>
+					<name V="Beratung der/des Versicherten"/>
+					<hinweistext V="Wenn zunächst eine Beratung zum Thema Rehabilitation sowie zu weiteren Leistungen durch die Krankenkasse sinnvoll erscheint, kann dies hier angegeben werden."/>
+				</feld>
+				<feld>
+					<nummer V="4"/>
+					<name V="Prüfung des zuständigen Rehabilitationsträgers"/>
+					<hinweistext V="Wenn unklar ist, ob die Krankenversicherung oder die Rentenversicherung zuständig ist, geben Sie dies bitte hier an und senden Sie nur Teil A des Vordrucks an die Krankenkasse. Dort wird dann die Zuständigkeit geprüft."/>
+				</feld>
+				<feld>
+					<nummer V="5"/>
+					<name V="ggf. weitere Anmerkungen"/>
+					<hinweistext V="Hier ist Platz für weitere Anmerkungen (z.B. Rückruf durch die Krankenkasse). Sofern Anhaltspunkte für weitere Bedarfe an Leistungen zur Teilhabe bestehen (z. B. Leistungen zur sozialen Teilhabe oder Teilhabe am Arbeitsleben), können diese hier benannt werden."/>
+				</feld>
+				<feld>
+					<nummer V="6"/>
+					<name V="Folgender Rehabilitationsträger ist zuständig"/>
+					<hinweistext V="Nach erfolgter Prüfung teilt die Krankenkasse Ihnen mit, ob die Krankenkasse, die Rentenversicherung oder ein anderer Träger zuständig ist. Wenn die Krankenkasse zuständig ist, füllen Sie bitte die Teile B bis E des Vordrucks aus. Wenn die Rentenversicherung zuständig ist, sendet die Krankenkasse Ihnen den Vordruck der Rentenversicherung zu."/>
+				</feld>
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

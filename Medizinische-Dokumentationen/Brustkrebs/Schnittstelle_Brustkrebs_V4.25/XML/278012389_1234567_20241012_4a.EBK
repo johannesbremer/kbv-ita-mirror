@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<levelone xmlns="urn::hl7-org/cda" xmlns:kbv="urn::hl7-org/kbv" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kbvlib="urn:kbv/kbv/typelib/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn::hl7-org/cda ../Schema/DMP_Brustkrebs_4a_ED.xsd">
+	<clinical_document_header>
+		<id EX="1234567" RT="278012389"/>
+		<set_id EX="1234567" RT="278012389"/>
+		<version_nbr V="1"/>
+		<document_type_cd V="DMP_BRK_EE_4A" S="1.2.276.0.76.5.100" SN="KBV" DN="Erst-Dokumentation Brustkrebs 4a-Datensatz"/>
+		<service_tmr V="2024-10-12"/>
+		<!-- Datum der Unterschrift = Dokumentationsdatum  -->
+		<origination_dttm V="2024-10-12"/>
+		<!-- Datum (Kopfdaten) !!! -->
+		<provider>
+			<provider.type_cd V="PRF"/>
+			<person>
+				<id EX="278012389" RT="BSNR"/>
+				<id EX="400002005" RT="LANR"/>
+			</person>
+		</provider>
+		<patient>
+			<patient.type_cd V="PATSBJ"/>
+			<person>
+				<id EX="1234567" RT="278012389"/>
+			</person>
+			<birth_dttm V="1966-12-12"/>
+			<local_header ignore="all" descriptor="sciphox">
+				<sciphox:sciphox-ssu type="insurance" country="de" version="v3">
+					<sciphox:GesetzlicheKrankenversicherung>
+						<sciphox:Kostentraegerbezeichnung V="AOK Rheinland"/>
+						<sciphox:Kostentraegerkennung V="421250501"/>
+						<sciphox:Versichertennummer V="123456789999"/>
+					</sciphox:GesetzlicheKrankenversicherung>
+				</sciphox:sciphox-ssu>
+			</local_header>
+		</patient>
+		<local_header ignore="all" descriptor="sciphox">
+			<sciphox:sciphox-ssu type="software" country="de" version="v1">
+				<sciphox:Software>
+					<sciphox:id EX="X/101/0812/36/100" RT="KBV-Prüfnummer"/>
+					<sciphox:SoftwareName V="ABC Software"/>
+					<sciphox:SoftwareVersion V="2.4"/>
+					<sciphox:SoftwareTyp V="PVS" DN="Arztpraxissoftware"/>
+					<sciphox:Kontakt>
+						<sciphox:Kontakttyp V="SOFTV" S="1.2.276.0.76.3.1.1.5.2.3" DN="Softwareverantwortlicher"/>
+						<organization.nm V="ABC Softwarehaus"/>
+						<addr>
+							<STR V="Ottostr."/>
+							<HNR V="1"/>
+							<ZIP V="50859"/>
+							<CTY V="K÷ln"/>
+						</addr>
+						<telecom V="tel:(0221)4449-0" USE="WP"/>
+						<telecom V="tel:(0221)4449-1" USE="WP"/>
+					</sciphox:Kontakt>
+					<sciphox:Kontakt>
+						<sciphox:Kontakttyp V="REGS" S="1.2.276.0.76.3.1.1.5.2.3" DN="RegionalerSystembetreuer"/>
+						<organization.nm V="ABC Consulting"/>
+						<addr>
+							<STR V="Ottostr."/>
+							<HNR V="1"/>
+							<ZIP V="50859"/>
+							<CTY V="Köln"/>
+						</addr>
+						<telecom V="tel:(0221)4449-0" USE="WP"/>
+					</sciphox:Kontakt>
+					<sciphox:Software>
+						<sciphox:SoftwareName V="XSD_BK_4a"/>
+						<sciphox:SoftwareVersion V="4.25"/>
+						<sciphox:SoftwareTyp V="XSD" DN="XML-Schema"/>
+						<sciphox:Software>
+							<sciphox:SoftwareName V="XPM_BK_4a"/>
+							<sciphox:SoftwareVersion V="2024.4.0"/>
+							<sciphox:SoftwareTyp V="XPM" DN="XML-Pruefmodul"/>
+						</sciphox:Software>
+					</sciphox:Software>
+				</sciphox:Software>
+			</sciphox:sciphox-ssu>
+		</local_header>
+	</clinical_document_header>
+	<body>
+		<section>
+			<paragraph>
+				<caption>
+					<caption_cd DN="Einschreibung"/>
+				</caption>
+				<content>
+					<local_markup descriptor="sciphox" ignore="all">
+						<sciphox:sciphox-ssu country="de" version="v1" type="observation">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Kontralateraler Brustkrebs Datum der histologischen Sicherung"/>
+									<sciphox:Zeitpunkt_dttm V="2023-02-02"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+			<paragraph>
+				<caption>
+					<caption_cd DN="Anamnese und Behandlungsstatus des Primärtumors/kontralateralen Brustkrebses"/>
+				</caption>
+				<content>
+					<local_markup descriptor="sciphox" ignore="all">
+						<sciphox:sciphox-ssu country="de" version="v1" type="observation">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Operative Therapie"/>
+									<sciphox:Ergebnistext V="Mastektomie"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+			<paragraph>
+				<caption>
+					<caption_cd DN="Aktueller Befundstatus des Primärtumors/kontralateralen Brustkrebses"/>
+				</caption>
+				<content>
+					<local_markup descriptor="sciphox" ignore="all">
+						<sciphox:sciphox-ssu country="de" version="v1" type="observation">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="TNM-Klassifizierung"/>
+									<sciphox:Ergebnistext V="(p) Pathologisch (postoperativ)"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="T"/>
+									<sciphox:Ergebnistext V="X"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="N"/>
+									<sciphox:Ergebnistext V="3"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="M"/>
+									<sciphox:Ergebnistext V="0"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Hormonrezeptorstatus Östrogen und/oder Progesteron (gemäß Immunreaktiver Score [IRS])"/>
+									<sciphox:Ergebnistext V="Positiv"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+			<paragraph>
+				<caption>
+					<caption_cd DN="Behandlung des Primärtumors/kontralateralen Brustkrebses"/>
+				</caption>
+				<content>
+					<local_markup descriptor="sciphox" ignore="all">
+						<sciphox:sciphox-ssu country="de" version="v1" type="observation">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Aktuelle adjuvante endokrine Therapie"/>
+									<sciphox:Ergebnistext V="Aromataseinhibitoren"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Nebenwirkungen der aktuellen adjuvanten endokrinen Therapie"/>
+									<sciphox:Ergebnistext V="stark belastend"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Fortführung der adjuvanten endokrinen Therapie"/>
+									<sciphox:Ergebnistext V="Regulär nach 5 Jahren abgeschlossen"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Bei Patientinnen unter adjuvanter Therapie mit Aromataseinhibitoren, sofern die Absicht für eine spezifische medikamentöse Therapie einer Osteoporose besteht: DXA-Befund"/>
+									<sciphox:Ergebnistext V="Auffällig"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+			<paragraph>
+				<caption>
+					<caption_cd DN="Sonstige Befunde"/>
+				</caption>
+				<content>
+					<local_markup descriptor="sciphox" ignore="all">
+						<sciphox:sciphox-ssu country="de" version="v1" type="observation">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Symptomatisches Lymphödem"/>
+									<sciphox:Ergebnistext V="Nein"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Empfehlung zu regelmäßigem körperlichen Training abgegeben"/>
+									<sciphox:Ergebnistext V="Nein"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Z. n. besonders kardiotoxischer Tumortherapie"/>
+									<sciphox:Ergebnistext V="Nein"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Körpergröße"/>
+									<sciphox:Ergebniswert V="1.70" U="m"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Körpergewicht"/>
+									<sciphox:Ergebniswert V="085" U="kg"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+			<paragraph>
+				<caption>
+					<caption_cd DN="Behandlungsplanung"/>
+				</caption>
+				<content>
+					<local_markup descriptor="sciphox" ignore="all">
+						<sciphox:sciphox-ssu country="de" version="v1" type="observation">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Dokumentationsintervall"/>
+									<sciphox:Ergebnistext V="Halbjährlich oder häufiger"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+		</section>
+	</body>
+</levelone>

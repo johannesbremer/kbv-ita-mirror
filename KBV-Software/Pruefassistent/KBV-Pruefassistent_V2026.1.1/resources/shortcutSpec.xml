@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes" ?>
+<izpack:shortcuts version="5.0"
+                  xmlns:izpack="http://izpack.org/schema/shortcuts"
+                  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                  xsi:schemaLocation="http://izpack.org/schema/shortcuts http://izpack.org/schema/5.0/izpack-shortcuts-5.0.xsd">
+                  
+                  	<skipIfNotSupported/>
+
+	<programGroup defaultName="KBV\KBV Pruefassistent" location="applications"/>
+	<shortcut
+			name="KBV Pruefassistent"
+			programGroup="yes"
+			desktop="yes"
+			applications="no"
+			startMenu="no"
+			startup="no"
+			target="$INSTALL_PATH\Assistent.exe"
+			commandLine=""
+			workingDirectory="$INSTALL_PATH"
+			iconFile="$INSTALL_PATH\Assistent.exe"
+			iconIndex="0"
+			initialState="normal"
+			type="Application"
+			createForAll="false"
+			categories="Application"
+			description="Startet den KBV Pruefassistenten"
+			encoding="ISO-8859-1">
+		<createForPack name="Pruefassistent"/>
+	</shortcut>
+	<shortcut
+			name="KBV Anwenderhandbuch"
+			programGroup="yes"
+			desktop="no"
+			applications="no"
+			startMenu="no"
+			startup="no"
+			target="$INSTALL_PATH/Dokumentation/KBV_ITA_AHEX_Handbuch_Pruefassistent.pdf"
+			initialState="noShow"
+			iconFile="acroread"
+			iconIndex="0"
+			workingDirectory=""
+			type="Application"
+			createForAll="false"
+			categories="Application"
+			description="Zeigt die Informationen zum KBV Pruefassistenten"
+			encoding="ISO-8859-1">
+		 <createForPack name="Dokumentation"/>
+	</shortcut>
+	<shortcut
+			name="Lies mich"
+			programGroup="yes"
+			desktop="no"
+			applications="no"
+			startMenu="no"
+			startup="no"
+			target="$INSTALL_PATH/Dokumentation/Lies_mich.txt"
+			url="$INSTALL_PATH/Dokumentation/Lies_mich.txt"
+			initialState="noShow"
+			iconFile="help"
+			iconIndex="0"
+			workingDirectory=""
+			type="Application"
+			createForAll="false"
+			categories="Application"
+			description="Zeigt die Informationen zum KBV Pruefassistenten"
+			encoding="ISO-8859-1">
+		 <createForPack name="Dokumentation"/>
+	</shortcut>
+	<shortcut
+			name="Release Notes"
+			programGroup="yes"
+			desktop="no"
+			applications="no"
+			startMenu="no"
+			startup="no"
+			target="$INSTALL_PATH/Dokumentation/ReleaseNotes.html"
+			url="$INSTALL_PATH/Dokumentation/ReleaseNotes.html"
+			initialState="noShow"
+			iconFile="help"
+			iconIndex="0"
+			workingDirectory=""
+			type="Application"
+			createForAll="false"
+			categories="Application"
+			description="Zeigt die Release Notes"
+			encoding="ISO-8859-1">
+		 <createForPack name="Dokumentation"/>
+	</shortcut>
+	<shortcut
+			name="Pruefassitent Uninstaller"
+			programGroup="yes"
+			desktop="no"
+			applications="no"
+			startMenu="no"
+			startup="no"
+			target="java"
+			commandLine="-jar &quot;$INSTALL_PATH/Uninstaller/uninstall.jar&quot;"
+			initialState="normal"
+			iconFile="%SystemRoot%\system32\imageres.dll"
+			iconIndex="50"
+			workingDirectory=""
+			type="Application"
+			createForAll="false"
+			categories="Application"
+			description="Deinstalliert den KBV Pruefassistenten"
+			encoding="ISO-8859-1">
+		<createForPack name="Pruefassistent"/>
+	</shortcut>
+</izpack:shortcuts>

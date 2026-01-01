@@ -1,0 +1,23 @@
+<NamingSystem xmlns="http://hl7.org/fhir">
+	<name value="OMIM P"/> 
+	<status value="active"/> 
+	<kind value="codesystem"/> 
+	<date value="2018-10-06"/>
+	<publisher value="Kassenaerztliche Bundesvereinigung"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://www.kbv.de"/>
+		</telecom>
+	</contact>
+	<description value="OMIM P Codes des OMIM-Namensraum"/> 
+	<uniqueId> 
+		<type value="uri"/> 
+		<value value="http://www.omim.org/"/> 
+		<preferred value="true"/> 
+	</uniqueId> 
+	<uniqueId> 
+		<type value="uri"/> 
+		<value value="https://fhir.kbv.de/NamingSystem/KBV_NS_AW_OMIM_P"/> 
+	</uniqueId> 
+</NamingSystem>

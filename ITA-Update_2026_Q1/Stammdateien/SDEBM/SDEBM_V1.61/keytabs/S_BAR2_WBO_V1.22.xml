@@ -1,0 +1,964 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<keytabs xmlns="urn:ehd/001">
+<keytab SV="1.22" SN="S_BAR2_WBO" S="1.2.276.0.76.5.114">
+							<key V="001" DN="Praktische Ärztin/Praktischer Arzt (altes Recht vor 1987 bzw. EWG-Recht ab 86/457/EWG)" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="02" 								obsolet="true">
+					<fkey V="02" DN="Praktiker" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="01" DN="Hausarzt / Allgemeinmedizin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="002" DN="Ärztin/Arzt (ohne Facharzt-Weiterbildung ab 1986 bis 1991)" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="02" 								obsolet="true">
+					<fkey V="02" DN="Praktiker" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="01" DN="Hausarzt / Allgemeinmedizin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="010" DN="FÄ/FA Allgemeinmedizin" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="01" 								obsolet="false">
+					<fkey V="01" DN="Allgemeinmediziner" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="01" DN="Hausarzt / Allgemeinmedizin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="020" DN="FÄ/FA Anästhesiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="04" 								obsolet="false">
+					<fkey V="04" DN="Anästhesisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="02" DN="Anästhesiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="022" DN="FÄ/FA Anästhesiologie und Intensivtherapie; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="04" 								obsolet="true">
+					<fkey V="04" DN="Anästhesisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="02" DN="Anästhesiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="030" DN="FÄ/FA Augenheilkunde" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="05" 								obsolet="false">
+					<fkey V="05" DN="Augenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="03" DN="Augenheilkunde" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="040" DN="FÄ/FA Chirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="06" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="040" DN="Allgemeinchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="041" DN="TG Kinderchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="09" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="304" DN="Kinder- und Jugendchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="042" DN="SP Unfallchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="11" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="512" DN="Unfallchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="043" DN="SP Gefäßchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="07" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="511" DN="Gefäßchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="044" DN="TG Plastische Chirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="13" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="322" DN="Plastische Chirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="045" DN="TG Thorax- und Kardiovaskularchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="14" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="513" DN="Thoraxchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="046" DN="SP Thoraxchirurgie (Chirurgie)" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="14" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="513" DN="Thoraxchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="047" DN="TG Herz- und Gefäßchirurgie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="07" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="513" DN="Thoraxchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="048" DN="SP Visceralchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="08" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="514" DN="Viszeralchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="050" DN="FÄ/FA Frauenheilkunde und Geburtshilfe" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="15" 								obsolet="false">
+					<fkey V="07" DN="Frauenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="05" DN="Frauenheilkunde" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="060" DN="FÄ/FA Hals-Nasen-Ohrenheilkunde" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="19" 								obsolet="false">
+					<fkey V="08" DN="HNO-Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="06" DN="Hals-Nasen-Ohrenheilkunde" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="061" DN="TG Phoniatrie und Pädaudiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="20" 								obsolet="true">
+					<fkey V="08" DN="HNO-Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="06" DN="Hals-Nasen-Ohrenheilkunde" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="518" DN="Sprach-, Stimm- und kindliche Hörstörungen" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="062" DN="TG Audiologie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="20" 								obsolet="true">
+					<fkey V="08" DN="HNO-Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="06" DN="Hals-Nasen-Ohrenheilkunde" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="518" DN="Sprach-, Stimm- und kindliche Hörstörungen" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="063" DN="TG Phoniatrie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="20" 								obsolet="true">
+					<fkey V="08" DN="HNO-Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="06" DN="Hals-Nasen-Ohrenheilkunde" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="518" DN="Sprach-, Stimm- und kindliche Hörstörungen" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="070" DN="FÄ/FA Haut- und Geschlechtskrankheiten" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="21" 								obsolet="false">
+					<fkey V="09" DN="Hautärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="07" DN="Haut- und Geschlechtskrankheiten" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="080" DN="FÄ/FA Innere Medizin" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="03" 									facharztFachgruppe="23" 								obsolet="false">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="080" DN="Innere Medizin (ohne Schwerpunkt)" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="081" DN="SP Gastroenterologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="26" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="523" DN="Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="082" DN="SP Kardiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="28" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="525" DN="Kardiologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="083" DN="SP Pneumologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="30" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="527" DN="Pneumologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="084" DN="SP Endokrinologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="25" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="522" DN="Endokrinologie / Diabetologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="085" DN="TG Hämatologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="27" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="524" DN="Hämatologie / Onkologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="086" DN="SP Nephrologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="29" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="526" DN="Nephrologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="087" DN="SP Rheumatologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="31" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="528" DN="Rheumatologie (Innere Medizin)" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="088" DN="TG Diabetologie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="25" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="522" DN="Endokrinologie / Diabetologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="089" DN="TG Infektions- und Tropenmedizin; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="33" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="080" DN="Innere Medizin (ohne Schwerpunkt)" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="090" DN="FÄ/FA Kinderheilkunde" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="34" 									facharztFachgruppe="40" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="091" DN="SP Kinder-Kardiologie" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="36" 									facharztFachgruppe="42" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="091" DN="Kinder- und Jugend-Kardiologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="092" DN="TG Kinderneuropsychiatrie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="38" 									facharztFachgruppe="44" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="093" DN="SP Neonatologie" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="37" 									facharztFachgruppe="43" 								obsolet="false">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="093" DN="Neonatologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="094" DN="TG Kindergastroenterologie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="34" 									facharztFachgruppe="40" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="537" DN="Kinder- und Jugend-Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="095" DN="TG Kinderhämatologie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="35" 									facharztFachgruppe="41" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="530" DN="Kinder- und Jugend-Hämatologie/-Onkologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="096" DN="TG Kindernephrologie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="34" 									facharztFachgruppe="40" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="538" DN="Kinder- und Jugend-Nephrologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="097" DN="TG Kinder-Lungen- und Bronchialheilkunde; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="39" 									facharztFachgruppe="45" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="539" DN="Kinder- und Jugend-Pneumologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="098" DN="TG Kinderrheumatologie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="34" 									facharztFachgruppe="40" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="562" DN="Kinder- und Jugend-Rheumatologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="099" DN="TG Kinderdiabetologie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="34" 									facharztFachgruppe="40" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="536" DN="Kinder- und Jugend-Endokrinologie und -Diabetologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="100" DN="FÄ/FA Kinder- und Jugendpsychiatrie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="47" 								obsolet="true">
+					<fkey V="12" DN="Kind.Jug.Psychiater" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="15" DN="Kinder- und Jugendpsychiatrie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="102" DN="FÄ/FA Kinder- und Jugendpsychiatrie und -psychotherapie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="47" 								obsolet="false">
+					<fkey V="12" DN="Kind.Jug.Psychiater" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="15" DN="Kinder- und Jugendpsychiatrie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="110" DN="FÄ/FA Laboratoriumsmedizin" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="48" 								obsolet="false">
+					<fkey V="13" DN="Laborärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="21" DN="Labormedizin / Mikrobiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="111" DN="FÄ/FA Mikrobiologie und Infektionsepidemiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="49" 								obsolet="true">
+					<fkey V="13" DN="Laborärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="21" DN="Labormedizin / Mikrobiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="112" DN="TG Medizinische Mikrobiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="48" 								obsolet="true">
+					<fkey V="13" DN="Laborärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="21" DN="Labormedizin / Mikrobiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="120" DN="FÄ/FA Lungen- und Bronchialheilkunde" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="30" 								obsolet="true">
+					<fkey V="14" DN="Lungenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="527" DN="Pneumologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="125" DN="FÄ/FA Magenärztin/Magenarzt" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="26" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="523" DN="Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="130" DN="FÄ/FA Mund-Kiefer-Gesichtschirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="50" 								obsolet="false">
+					<fkey V="15" DN="Mund-Kiefer-Chirurgie" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="24" DN="Mund-Kiefer-Gesichtschirurgie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="131" DN="FÄ/FA Kieferchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="50" 								obsolet="true">
+					<fkey V="15" DN="Mund-Kiefer-Chirurgie" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="24" DN="Mund-Kiefer-Gesichtschirurgie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="140" DN="FÄ/FA Nervenheilkunde" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="51" 								obsolet="true">
+					<fkey V="16" DN="Nervenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="10" DN="Neurologie / Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="140" DN="Nervenheilkunde" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="141" DN="FÄ/FA Psychiatrie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="58" 								obsolet="true">
+					<fkey V="16" DN="Nervenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="10" DN="Neurologie / Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="147" DN="Psychiatrie und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="142" DN="FÄ/FA Neurologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="53" 								obsolet="false">
+					<fkey V="16" DN="Nervenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="10" DN="Neurologie / Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="142" DN="Neurologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="144" DN="Psychotherapeutisch tätige Ärztin/Psychotherapeutisch tätiger Arzt (Zusatzbezeichnung)" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="61" 								obsolet="false">
+					<fkey V="26" DN="Psychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="12" DN="Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="144" DN="Ärztliche Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="145" DN="FÄ/FA Neurologie und Psychiatrie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="51" 								obsolet="true">
+					<fkey V="16" DN="Nervenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="10" DN="Neurologie / Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="140" DN="Nervenheilkunde" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="146" DN="TG Kinderneuropsychiatrie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="44" 								obsolet="true">
+					<fkey V="16" DN="Nervenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="10" DN="Neurologie / Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="140" DN="Nervenheilkunde" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="147" DN="FÄ/FA Psychiatrie und Psychotherapie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="58" 								obsolet="false">
+					<fkey V="16" DN="Nervenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="10" DN="Neurologie / Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="147" DN="Psychiatrie und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="148" DN="FÄ/FA Psychotherapeutische Medizin" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="60" 								obsolet="true">
+					<fkey V="26" DN="Psychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="12" DN="Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="534" DN="Psychosomatische Medizin und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="149" DN="FÄ/FA Neurologie, Psychiatrie und Psychotherapie; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="51" 								obsolet="true">
+					<fkey V="16" DN="Nervenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="10" DN="Neurologie / Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="147" DN="Psychiatrie und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="150" DN="FÄ/FA Neurochirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="52" 								obsolet="false">
+					<fkey V="17" DN="Neurochirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="19" DN="Neurochirurgie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="160" DN="FÄ/FA Orthopädie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="10" 								obsolet="true">
+					<fkey V="18" DN="Orthopäden" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="160" DN="Orthopädie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="161" DN="SP Rheumatologie (der ehemaligen Orthopädie)" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="12" 								obsolet="true">
+					<fkey V="18" DN="Orthopäden" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="161" DN="Rheumatologie (Orthopädie)" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="170" DN="FÄ/FA Pathologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="56" 								obsolet="false">
+					<fkey V="19" DN="Pathologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="22" DN="Pathologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="171" DN="TG Neuropathologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="55" 								obsolet="true">
+					<fkey V="19" DN="Pathologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="22" DN="Pathologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="180" DN="FÄ/FA Pharmakologie und Toxikologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="181" DN="TG Klinische Pharmakologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="true">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="190" DN="FÄ/FA Radiologie (alte (M-)WBO)" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="62" 								obsolet="true">
+					<fkey V="20" DN="Radiologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="13" DN="Radiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="191" DN="TG Strahlentherapie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="65" 								obsolet="true">
+					<fkey V="20" DN="Radiologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="13" DN="Radiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="192" DN="TG Neuroradiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="64" 								obsolet="true">
+					<fkey V="20" DN="Radiologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="13" DN="Radiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="192" DN="Neuroradiologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="194" DN="FÄ/FA Radiologische Diagnostik" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="62" 								obsolet="true">
+					<fkey V="20" DN="Radiologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="13" DN="Radiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="195" DN="FÄ/FA Diagnostische Radiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="62" 								obsolet="true">
+					<fkey V="20" DN="Radiologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="13" DN="Radiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="196" DN="SP Kinderradiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="63" 								obsolet="true">
+					<fkey V="20" DN="Radiologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="13" DN="Radiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="196" DN="Kinder- und Jugendradiologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="197" DN="SP Neuroradiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="64" 								obsolet="false">
+					<fkey V="20" DN="Radiologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="13" DN="Radiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="192" DN="Neuroradiologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="199" DN="FÄ/FA Strahlentherapie und Radiologische Diagnostik" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="62" 								obsolet="true">
+					<fkey V="20" DN="Radiologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="13" DN="Radiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="200" DN="FÄ/FA Urologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="67" 								obsolet="false">
+					<fkey V="22" DN="Urologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="14" DN="Urologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="210" DN="FÄ/FA Arbeitsmedizin" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="220" DN="FÄ/FA Nuklearmedizin" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="54" 								obsolet="false">
+					<fkey V="21" DN="Nuklearmediziner" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="17" DN="Nuklearmedizin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="230" DN="FÄ/FA Öffentliches Gesundheitswesen" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="240" DN="FÄ/FA Rechtsmedizin" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="250" DN="FÄ/FA Hygiene und Umweltmedizin" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="271" DN="FÄ/FA Neuropathologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="55" 								obsolet="false">
+					<fkey V="19" DN="Pathologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="22" DN="Pathologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="281" DN="FÄ/FA Klinische Pharmakologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="291" DN="FÄ/FA Strahlentherapie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="65" 								obsolet="false">
+					<fkey V="20" DN="Radiologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="18" DN="Strahlentherapie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="301" DN="FÄ/FA Anatomie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="302" DN="FÄ/FA Biochemie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="21" DN="Labormedizin / Mikrobiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="303" DN="FÄ/FA Transfusionsmedizin" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="66" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="23" DN="Transfusionsmedizin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="304" DN="FÄ/FA Kinderchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="09" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="304" DN="Kinder- und Jugendchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="305" DN="Medizinische Genetik" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="306" DN="Medizinische Informatik" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="307" DN="Pathologische Physiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="308" DN="FÄ/FA Physiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="309" DN="FÄ/FA Physiotherapie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="57" 								obsolet="true">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="16" DN="Physikalische und Rehabilitative Medizin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="310" DN="FÄ/FA Psychotherapie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="60" 								obsolet="true">
+					<fkey V="26" DN="Psychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="12" DN="Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="534" DN="Psychosomatische Medizin und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="311" DN="FÄ/FA Sozialhygiene; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="true">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="312" DN="FÄ/FA Sportmedizin; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="true">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="313" DN="FÄ/FA Herzchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="314" DN="FÄ/FA Humangenetik" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="22" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="20" DN="Humangenetik" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="315" DN="FÄ/FA Immunologie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="true">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="21" DN="Labormedizin / Mikrobiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="317" DN="Physiologische Chemie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="320" DN="SP Thoraxchirurgie (Herzchirurgie)" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="321" DN="SP Echokardiologie herznaher Gefäße" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="322" DN="FÄ/FA Plastische Chirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="13" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="322" DN="Plastische Chirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="324" DN="FÄ/FA Phoniatrie und Pädaudiologie ((M-)WBO 1992)" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="20" 								obsolet="true">
+					<fkey V="08" DN="HNO-Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="06" DN="Hals-Nasen-Ohrenheilkunde" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="518" DN="Sprach-, Stimm- und kindliche Hörstörungen" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="326" DN="SP Angiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="24" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="521" DN="Angiologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="327" DN="SP Hämatologie und Internistische Onkologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="27" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="524" DN="Hämatologie / Onkologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="328" DN="SP Geriatrie (Innere Medizin); (vor 2003 in Muster-WBO der Bundesärztekammer)" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="32" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="080" DN="Innere Medizin (ohne Schwerpunkt)" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="330" DN="FÄ/FA Physikalische und Rehabilitative Medizin" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="57" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="16" DN="Physikalische und Rehabilitative Medizin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="340" DN="FÄ/FA Ärztin/Arzt für Kinder- und Jugendmedizin; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="34" 									facharztFachgruppe="40" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="341" DN="FÄ/FA Kinder- und Jugendmedizin" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="34" 									facharztFachgruppe="40" 								obsolet="false">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="342" DN="FÄ/FA Kinder- und Jugendmedizin; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="34" 									facharztFachgruppe="40" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="343" DN="FÄ/FA Kinder- und Jugendärztin/Kinder- und Jugendarzt; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="34" 									facharztFachgruppe="40" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="344" DN="FÄ/FA Fachärztin/Facharzt für Kinderheilkunde und Jugendmedizin; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="34" 									facharztFachgruppe="40" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="350" DN="Biomathematik" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="351" DN="Biophysik" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="352" DN="Geschichte der Medizin" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="353" DN="Industrietoxikologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="354" DN="Klinische Strahlenphysik" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="355" DN="Medizinische Wissenschaftsinformation" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="356" DN="Medizinische Physik und Biophysik" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="357" DN="FÄ/FA Experimentelle und diagnostische Mikrobiologie; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="49" 								obsolet="true">
+					<fkey V="13" DN="Laborärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="21" DN="Labormedizin / Mikrobiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="358" DN="Fachbiologie der Medizin" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="359" DN="Fachzahnärztin/Fachzahnarzt für Mikrobiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="49" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="21" DN="Labormedizin / Mikrobiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="360" DN="Fachzahnärztin/Fachzahnarzt für Kieferchirurgie (§ 6 Abs. 1 BMV-Ä)" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="50" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="24" DN="Mund-Kiefer-Gesichtschirurgie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="361" DN="Fachzahnärztin/Fachzahnarzt für theoretisch-experimentelle Medizin (§ 6 Abs. 2 BMV-Ä)" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="371" DN="Fachwissenschaftlerin/Fachwissenschaftler Chemie und Labordiagnostik" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="48" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="372" DN="Fachwissenschaftlerin/Fachwissenschaftler Genetik" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="22" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="373" DN="Fachwissenschaftlerin/Fachwissenschaftler Immunologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="374" DN="Fachwissenschaftlerin/Fachwissenschaftler Zytologie/Histologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="56" 								obsolet="false">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="470" DN="Psychologische Psychotherapeutin/Psychologischer Psychotherapeut" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="68" 								obsolet="false">
+					<fkey V="26" DN="Psychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="12" DN="Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="470" DN="Psychologische Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="471" DN="Kinder- und Jugendlichenpsychotherapeutin/Kinder- und Jugendlichenpsychotherapeut" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="69" 								obsolet="false">
+					<fkey V="26" DN="Psychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="12" DN="Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="471" DN="Kinder- und Jugendlichenpsychotherapie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="474" DN="Fachpsychotherapeutin/Fachpsychotherapeut für Erwachsene" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="68" 								obsolet="false">
+					<fkey V="26" DN="Psychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="12" DN="Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="470" DN="Psychologische Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="475" DN="Fachpsychotherapeutin/Fachpsychotherapeut für Kinder und Jugendliche" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="69" 								obsolet="false">
+					<fkey V="26" DN="Psychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="12" DN="Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="471" DN="Kinder- und Jugendlichenpsychotherapie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="476" DN="Fachpsychotherapeutin/Fachpsychotherapeut für Neuropsychologische Psychotherapie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="68" 								obsolet="false">
+					<fkey V="26" DN="Psychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="12" DN="Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="470" DN="Psychologische Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="500" DN="FÄ/FA Arbeitshygiene; neue Bundesländer" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="true">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="501" DN="FÄ/FA Blutspende- und Transfusionsmedizin; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="66" 								obsolet="true">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="23" DN="Transfusionsmedizin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="502" DN="FÄ/FA Hygiene; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="true">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="503" DN="SP Infektiologie (Innere Medizin); kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="33" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="080" DN="Innere Medizin (ohne Schwerpunkt)" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="504" DN="TG Lungen- und Bronchialheilkunde" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="30" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="527" DN="Pneumologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="505" DN="SP Infektiologie (Kinder- und Jugendmedizin); kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="34" 									facharztFachgruppe="40" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="506" DN="FÄ/FA Pathologische Anatomie; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="56" 								obsolet="true">
+					<fkey V="19" DN="Pathologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="22" DN="Pathologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="510" DN="FÄ/FA Allgemeine Chirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="06" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="040" DN="Allgemeinchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="511" DN="FÄ/FA Gefäßchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="07" 								obsolet="false">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="511" DN="Gefäßchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="512" DN="FÄ/FA Orthopädie und Unfallchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="10" 								obsolet="false">
+					<fkey V="18" DN="Orthopäden" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="160" DN="Orthopädie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+						<fkey V="512" DN="Unfallchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_2"/>
+			</key>
+					<key V="513" DN="FÄ/FA Thoraxchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="false">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="514" DN="FÄ/FA Visceralchirurgie/FÄ/FA Viszeralchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="08" 								obsolet="false">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="514" DN="Viszeralchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="515" DN="SP Gynäkologische Onkologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="17" 								obsolet="false">
+					<fkey V="07" DN="Frauenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="05" DN="Frauenheilkunde" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="515" DN="Gynäkologische Onkologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="516" DN="SP Gynäkologische Endokrinologie und Reproduktionsmedizin" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="16" 								obsolet="false">
+					<fkey V="07" DN="Frauenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="05" DN="Frauenheilkunde" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="516" DN="Gynäkologische Endokrinologie und Reproduktionsmedizin" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="517" DN="SP Spezielle Geburtshilfe und Perinatalmedizin" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="18" 								obsolet="false">
+					<fkey V="07" DN="Frauenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="05" DN="Frauenheilkunde" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="517" DN="Spezielle Geburtshilfe und Perinatalmedizin" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="518" DN="FÄ/FA Sprach-, Stimm- und kindliche Hörstörungen" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="20" 								obsolet="true">
+					<fkey V="08" DN="HNO-Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="06" DN="Hals-Nasen-Ohrenheilkunde" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="518" DN="Sprach-, Stimm- und kindliche Hörstörungen" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="520" DN="FÄ/FA Innere und Allgemeinmedizin (Hausärztin/Hausarzt)" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="01" 								obsolet="true">
+					<fkey V="01" DN="Allgemeinmediziner" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="01" DN="Hausarzt / Allgemeinmedizin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="521" DN="FÄ/FA Innere Medizin und (SP) Angiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="24" 								obsolet="false">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="521" DN="Angiologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="522" DN="FÄ/FA Innere Medizin und (SP) Endokrinologie und Diabetologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="25" 								obsolet="false">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="522" DN="Endokrinologie / Diabetologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="523" DN="FÄ/FA Innere Medizin und (SP) Gastroenterologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="26" 								obsolet="false">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="523" DN="Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="524" DN="FÄ/FA Innere Medizin und (SP) Hämatologie und Onkologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="27" 								obsolet="false">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="524" DN="Hämatologie / Onkologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="525" DN="FÄ/FA Innere Medizin und (SP) Kardiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="28" 								obsolet="false">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="525" DN="Kardiologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="526" DN="FÄ/FA Innere Medizin und (SP) Nephrologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="29" 								obsolet="false">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="526" DN="Nephrologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="527" DN="FÄ/FA Innere Medizin und (SP) Pneumologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="30" 								obsolet="false">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="527" DN="Pneumologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="528" DN="FÄ/FA Innere Medizin und (SP) Rheumatologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="31" 								obsolet="false">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="528" DN="Rheumatologie (Innere Medizin)" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="529" DN="TG Kardiologie und Angiologie; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="28" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="525" DN="Kardiologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="530" DN="SP Kinder-Hämatologie und -Onkologie" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="35" 									facharztFachgruppe="41" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="530" DN="Kinder- und Jugend-Hämatologie/-Onkologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="531" DN="SP Neuropädiatrie" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="38" 									facharztFachgruppe="44" 								obsolet="false">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="531" DN="Neuropädiatrie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="532" DN="FÄ/FA Mikrobiologie, Virologie und Infektionsepidemiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="49" 								obsolet="false">
+					<fkey V="13" DN="Laborärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="21" DN="Labormedizin / Mikrobiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="533" DN="SP Forensische Psychiatrie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="59" 								obsolet="false">
+					<fkey V="16" DN="Nervenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="10" DN="Neurologie / Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="147" DN="Psychiatrie und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="534" DN="FÄ/FA Psychosomatische Medizin und Psychotherapie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="60" 								obsolet="false">
+					<fkey V="26" DN="Psychotherapeuten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="12" DN="Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="534" DN="Psychosomatische Medizin und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="535" DN="FÄ/FA Radiologie (neue (M-)WBO)" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="62" 								obsolet="false">
+					<fkey V="20" DN="Radiologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="13" DN="Radiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="536" DN="SP Kinder-Endokrinologie und -Diabetologie; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="34" 									facharztFachgruppe="40" 								obsolet="false">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="536" DN="Kinder- und Jugend-Endokrinologie und -Diabetologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="537" DN="SP Kinder-Gastroenterologie; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="34" 									facharztFachgruppe="40" 								obsolet="false">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="537" DN="Kinder- und Jugend-Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="538" DN="SP Kindernephrologie; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="34" 									facharztFachgruppe="40" 								obsolet="false">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="538" DN="Kinder- und Jugend-Nephrologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="539" DN="SP Kinder-Pneumologie; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="39" 									facharztFachgruppe="45" 								obsolet="false">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="539" DN="Kinder- und Jugend-Pneumologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="540" DN="FÄ/FA Innere Medizin und SP gesamte Innere Medizin; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="03" 									facharztFachgruppe="23" 								obsolet="false">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="080" DN="Innere Medizin (ohne Schwerpunkt)" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="541" DN="FÄ/FA Innere Medizin und SP Geriatrie; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="32" 								obsolet="false">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="080" DN="Innere Medizin (ohne Schwerpunkt)" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="542" DN="FÄ/FA Plastische und Ästhetische Chirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="13" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="322" DN="Plastische Chirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="543" DN="SP Endokrinologie und Diabetologie; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="25" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="522" DN="Endokrinologie / Diabetologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="544" DN="FÄ/FA Allgemeinchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="06" 								obsolet="false">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="040" DN="Allgemeinchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="545" DN="TG Nephrologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="29" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="526" DN="Nephrologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="546" DN="SP Plastische Chirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="13" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="322" DN="Plastische Chirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="547" DN="SP Geriatrie (Allgemeinmedizin); kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="01" 									facharztFachgruppe="01" 								obsolet="false">
+					<fkey V="01" DN="Allgemeinmediziner" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="01" DN="Hausarzt / Allgemeinmedizin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="548" DN="SP Geriatrie (Innere Medizin); kammerindividuell (seit 2013 in WBO der Landesärztekammer Rheinl.-Pfalz)" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="23" 									facharztFachgruppe="23" 								obsolet="false">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="080" DN="Innere Medizin (ohne Schwerpunkt)" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="549" DN="SP Geriatrie (Neurologie); kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="53" 								obsolet="false">
+					<fkey V="16" DN="Nervenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="10" DN="Neurologie / Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="142" DN="Neurologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="550" DN="SP Geriatrie (Psychiatrie); kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="58" 								obsolet="false">
+					<fkey V="16" DN="Nervenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="10" DN="Neurologie / Psychiatrie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="147" DN="Psychiatrie und Psychotherapie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="551" DN="TG Endokrinologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="25" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="522" DN="Endokrinologie / Diabetologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="552" DN="TG Gastroenterologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="26" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="523" DN="Gastroenterologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="553" DN="TG Kardiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="28" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="525" DN="Kardiologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="554" DN="TG Rheumatologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="31" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="528" DN="Rheumatologie (Innere Medizin)" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="555" DN="FÄ/FA Dermatologie und Venerologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="21" 								obsolet="true">
+					<fkey V="09" DN="Hautärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="07" DN="Haut- und Geschlechtskrankheiten" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="556" DN="TG Unfallchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="06" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="512" DN="Unfallchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="557" DN="TG Echokardiologie herznaher Gefäße" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="99" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="558" DN="TG Gefäßchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="07" 									facharztFachgruppe="07" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="511" DN="Gefäßchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="559" DN="TG Rheumatologie (der ehemaligen Orthopädie)" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="12" 									facharztFachgruppe="12" 								obsolet="true">
+					<fkey V="18" DN="Orthopäden" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="161" DN="Rheumatologie (Orthopädie)" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="560" DN="TG Thoraxchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="14" 									facharztFachgruppe="14" 								obsolet="true">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="513" DN="Thoraxchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="561" DN="FÄ/FA Innere Medizin und Infektiologie; kammerindividuell (WBO 2005 der Ärztekammer Mecklenburg-Vorpommern)" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="33" 									facharztFachgruppe="33" 								obsolet="true">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="080" DN="Innere Medizin (ohne Schwerpunkt)" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="562" DN="SP Pädiatrische Rheumatologie; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="40" 									facharztFachgruppe="40" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="562" DN="Kinder- und Jugend-Rheumatologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="563" DN="SP Pulmologie in der Kinder- und Jugendmedizin; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="45" 									facharztFachgruppe="45" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="539" DN="Kinder- und Jugend-Pneumologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="564" DN="TG Kinderkardiologie" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="42" 									facharztFachgruppe="42" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="091" DN="Kinder- und Jugend-Kardiologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="565" DN="TG Kinderneonatologie" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="43" 									facharztFachgruppe="43" 								obsolet="true">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="093" DN="Neonatologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="566" DN="FÄ/FA Mikrobiologie" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="49" 									facharztFachgruppe="49" 								obsolet="true">
+					<fkey V="13" DN="Laborärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="21" DN="Labormedizin / Mikrobiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="567" DN="FÄ/FA Oralchirurgie; kammerindividuell" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="50" 									facharztFachgruppe="50" 								obsolet="false">
+					<fkey V="15" DN="Mund-Kiefer-Chirurgie" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="24" DN="Mund-Kiefer-Gesichtschirurgie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="568" DN="FÄ/FA Pathobiochemie und Labordiagnostik" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="56" 									facharztFachgruppe="56" 								obsolet="true">
+					<fkey V="19" DN="Pathologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="22" DN="Pathologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="569" DN="FÄ/FA Pharmakologie" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="99" 									facharztFachgruppe="99" 								obsolet="true">
+					<fkey V="23" DN="Sonstige Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="25" DN="Übrige Fachgruppen" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="570" DN="TG Kinderradiologie" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="63" 									facharztFachgruppe="63" 								obsolet="true">
+					<fkey V="20" DN="Radiologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="13" DN="Radiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="196" DN="Kinder- und Jugendradiologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="571" DN="FÄ/FA Frauenheilkunde" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="15" 								obsolet="true">
+					<fkey V="07" DN="Frauenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="05" DN="Frauenheilkunde" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="572" DN="FÄ/FA Gynäkologie und Geburtshilfe" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="15" 								obsolet="true">
+					<fkey V="07" DN="Frauenärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="05" DN="Frauenheilkunde" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+			</key>
+					<key V="573" DN="FÄ/FA Kinder -und Jugendchirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="09" 								obsolet="false">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="304" DN="Kinder- und Jugendchirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="574" DN="FÄ/FA Plastische, Rekonstruktive und Ästhetische Chirurgie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="13" 								obsolet="false">
+					<fkey V="06" DN="Chirurgen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="26" DN="Chirurgie und Orthopädie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="322" DN="Plastische Chirurgie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="575" DN="FÄ/FA Phoniatrie und Pädaudiologie ((M-)WBO 2018)" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="20" 								obsolet="false">
+					<fkey V="08" DN="HNO-Ärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="06" DN="Hals-Nasen-Ohrenheilkunde" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="518" DN="Sprach-, Stimm- und kindliche Hörstörungen" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="576" DN="SP Kinder- und Jugend-Hämatologie und -Onkologie" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="35" 									facharztFachgruppe="41" 								obsolet="false">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="530" DN="Kinder- und Jugend-Hämatologie/-Onkologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="577" DN="SP Kinder- und Jugend-Kardiologie" S="1.2.276.0.76.5.114" SV="1.22" 									hausarztFachgruppe="36" 									facharztFachgruppe="42" 								obsolet="false">
+					<fkey V="11" DN="Kinderärzte" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="09" DN="Kinderarzt / Kinderärztin" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="091" DN="Kinder- und Jugend-Kardiologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="578" DN="SP Kinder- und Jugendradiologie" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="63" 								obsolet="false">
+					<fkey V="20" DN="Radiologen" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="13" DN="Radiologie" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="196" DN="Kinder- und Jugendradiologie" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="579" DN="FÄ/FA Innere Medizin und Infektiologie ((M-)WBO 2018)" S="1.2.276.0.76.5.114" SV="1.22" 									facharztFachgruppe="33" 								obsolet="false">
+					<fkey V="10" DN="Internisten" S="1.2.276.0.76.3.1.1.5.2.44" SV="1.00" R="Statistikgebiet"/>
+						<fkey V="08" DN="Innere Medizin (fachärztlich)" S="1.2.276.0.76.3.1.1.5.2.107" SV="1.01" R="FACHGEBIET_GROB"/>
+						<fkey V="080" DN="Innere Medizin (ohne Schwerpunkt)" S="1.2.276.0.76.3.1.1.5.2.106" SV="1.01" R="FACHGEBIET_FEIN_1"/>
+			</key>
+					<key V="990" DN="Code zur internen Verwendung in den Landesarztregistern. Keine Meldung an das Bundesarztregister" S="1.2.276.0.76.5.114" SV="1.22" 								obsolet="false">
+			</key>
+					<key V="991" DN="Code zur internen Verwendung in den Landesarztregistern. Keine Meldung an das Bundesarztregister" S="1.2.276.0.76.5.114" SV="1.22" 								obsolet="false">
+			</key>
+					<key V="992" DN="Code zur internen Verwendung in den Landesarztregistern. Keine Meldung an das Bundesarztregister" S="1.2.276.0.76.5.114" SV="1.22" 								obsolet="false">
+			</key>
+</keytab>
+</keytabs>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<keytabs xmlns="urn:ehd/001">
+  <keytab S="1.2.276.0.76.5.236" SN="S_KBV_VALUTAEINHEIT" SV="1.00">
+    <key V="0" DN="unbekannt" S="1.2.276.0.76.5.236" SV="1.00"/>
+    <key V="1" DN="Punkte" S="1.2.276.0.76.5.236" SV="1.00"/>
+    <key V="2" DN="Euro" S="1.2.276.0.76.5.236" SV="1.00"/>
+    <key V="5" DN="unbewertet" S="1.2.276.0.76.5.236" SV="1.00"/>
+  </keytab>
+</keytabs>

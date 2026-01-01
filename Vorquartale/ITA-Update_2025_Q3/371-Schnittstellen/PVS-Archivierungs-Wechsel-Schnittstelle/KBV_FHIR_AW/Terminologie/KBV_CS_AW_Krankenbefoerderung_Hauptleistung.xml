@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+	<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoerderung_Hauptleistung"/>
+	<version value="1.2.0" />
+	<name value="KBV_CS_AW_Krankenbefoerderung_Hauptleistung"/>
+	<status value="active"/>
+	<experimental value="false"/>
+	<date value="2018-10-06"/>
+	<publisher value="Kassenaerztliche Bundesvereinigung"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://www.kbv.de"/>
+		</telecom>
+	</contact>
+	<description value="Hauptleistung nach der Krankenbefoerderung"/>
+	<copyright value="Kassenaerztliche Bundesvereinigung"/>
+	<caseSensitive value="true"/>
+	<content value="complete"/>
+	<concept>
+		<code value="Krankenhaus_voll_oder_teilstationaer"/>
+		<display value="Krankenhaus voll oder teilstationaer"/>
+	</concept>
+	<concept>
+		<code value="Krankenhaus_vor_oder_nachstationaer"/>
+		<display value="Krankenhaus vor oder nachstationaer"/>
+	</concept>
+	<concept>
+		<code value="Ambulante_Operation_ambulante_Operation_gem_115_b_SGB_V"/>
+		<display value="Ambulante Operation ambulante Operation gem 115 b SGB V"/>
+	</concept>
+	<concept>
+		<code value="Ambulante_Operation_Vor_oder_Nachbehandlung"/>
+		<display value="Ambulante Operation Vor oder Nachbehandlung"/>
+	</concept>
+	<concept>
+		<code value="Ambulante_Behandlung_beim_Vertragsarzt"/>
+		<display value="Ambulante Behandlung beim Vertragsarzt"/>
+	</concept>
+	<concept>
+		<code value="Ambulante_Behandlung_im_Krankenhaus"/>
+		<display value="Ambulante Behandlung im Krankenhaus"/>
+	</concept>
+	<concept>
+		<code value="Ambulante_Behandlung_sonstige"/>
+		<display value="Ambulante Behandlung sonstige"/>
+	</concept>
+	<concept>
+		<code value="Ambulante_Behandlung_hochfrequente_Behandlung_gemaess_Anlage_2"/>
+		<display value="Ambulante Behandlung hochfrequente Behandlung gemaess Anlage 2"/>
+	</concept>
+	<concept>
+		<code value="Ambulante_Behandlung_hochfrequente_Behandlung_vergleichbarer_Ausnahmefall"/>
+		<display value="Ambulante Behandlung hochfrequente Behandlung vergleichbarer Ausnahmefall"/>
+	</concept>
+	<concept>
+		<code value="Ambulante_Behandlung_Dauerhafte_Mobilitaetseinschraenkung_Schwerbehindertenausweis_mit_Merkzeichen"/>
+		<display value="Ambulante Behandlung Dauerhafte Mobilitaetseinschraenkung Schwerbehindertenausweis mit Merkzeichen"/>
+	</concept>
+	<concept>
+		<code value="Ambulante_Behandlung_Dauerhafte_Mobilitaetseinschraenkung_sonstige"/>
+		<display value="Ambulante Behandlung Dauerhafte Mobilitaetseinschraenkung sonstige"/>
+	</concept>
+	<concept>
+		<code value="Anderer_Grund"/>
+		<display value="Anderer Grund zur genehmigungsfreien Krankenbefoerderung"/>
+	</concept>
+	<concept>
+		<code value="Dialyse_Chemo_Strahlentherapie"/>
+		<display value="Dialyse, onkologischer Chemo- oder Strahlentherapie"/>
+	</concept>
+</CodeSystem>

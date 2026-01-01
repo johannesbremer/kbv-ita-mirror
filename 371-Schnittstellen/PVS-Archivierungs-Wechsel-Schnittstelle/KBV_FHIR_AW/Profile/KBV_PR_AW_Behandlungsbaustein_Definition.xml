@@ -1,0 +1,1338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_Definition" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Behandlungsbaustein_Definition" />
+  <status value="active" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="objimpl" />
+    <uri value="http://hl7.org/fhir/object-implementation" />
+    <name value="Object Implementation Information" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="PlanDefinition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/PlanDefinition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="PlanDefinition.id">
+      <path value="PlanDefinition.id" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.meta">
+      <path value="PlanDefinition.meta" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.meta.versionId">
+      <path value="PlanDefinition.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.meta.lastUpdated">
+      <path value="PlanDefinition.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="PlanDefinition.meta.profile">
+      <path value="PlanDefinition.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_Definition|1.2.0" />
+    </element>
+    <element id="PlanDefinition.text">
+      <path value="PlanDefinition.text" />
+      <min value="1" />
+    </element>  
+    <element id="PlanDefinition.extension">
+      <path value="PlanDefinition.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="PlanDefinition.extension:contributor">
+      <path value="PlanDefinition.extension" />
+      <sliceName value="contributor" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Behandlungsbaustein_Contributor" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.url">
+      <path value="PlanDefinition.url" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.identifier">
+      <path value="PlanDefinition.identifier" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.version">
+      <path value="PlanDefinition.version" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.name">
+      <path value="PlanDefinition.name" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.title">
+      <path value="PlanDefinition.title" />
+      <short value="Bezeichnung des Behandlungsbausteins" />
+      <definition value="Bezeichnung des Behandlungsbausteins" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.subtitle">
+      <path value="PlanDefinition.subtitle" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.type">
+      <path value="PlanDefinition.type" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.status">
+      <path value="PlanDefinition.status" />
+      <short value="active" />
+      <definition value="Der Status dieser Ressource ist immer active." />
+      <fixedCode value="active" />
+    </element>
+    <element id="PlanDefinition.experimental">
+      <path value="PlanDefinition.experimental" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.subject[x]">
+      <path value="PlanDefinition.subject[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.date">
+      <path value="PlanDefinition.date" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.publisher">
+      <path value="PlanDefinition.publisher" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.contact">
+      <path value="PlanDefinition.contact" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.description">
+      <path value="PlanDefinition.description" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.useContext">
+      <path value="PlanDefinition.useContext" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.jurisdiction">
+      <path value="PlanDefinition.jurisdiction" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.purpose">
+      <path value="PlanDefinition.purpose" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.usage">
+      <path value="PlanDefinition.usage" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.copyright">
+      <path value="PlanDefinition.copyright" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.approvalDate">
+      <path value="PlanDefinition.approvalDate" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.lastReviewDate">
+      <path value="PlanDefinition.lastReviewDate" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.effectivePeriod">
+      <path value="PlanDefinition.effectivePeriod" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.topic">
+      <path value="PlanDefinition.topic" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.author">
+      <path value="PlanDefinition.author" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.editor">
+      <path value="PlanDefinition.editor" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.reviewer">
+      <path value="PlanDefinition.reviewer" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.endorser">
+      <path value="PlanDefinition.endorser" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.relatedArtifact">
+      <path value="PlanDefinition.relatedArtifact" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.library">
+      <path value="PlanDefinition.library" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.goal">
+      <path value="PlanDefinition.goal" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action">
+      <path value="PlanDefinition.action" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <description value="Baustein_Diagnose&#xD;&#xA;Baustein_Verordnung&#xD;&#xA;Baustein_Textvorlage&#xD;&#xA;Baustein_Leistungsziffern&#xD;&#xA;Baustein_OMIM_G-Code&#xD;&#xA;Baustein_Sonstige" />
+        <rules value="closed" />
+      </slicing>
+      <comment value="Jeder Slice im Element Action steht für einen Behandlungsbaustein. Behandlungsbausteine können in einer bestimmten Reihenfolge abgespeichert werden. Dazu ist das Element relatedAction zu verwenden. Dort können unter Angabe der ElementID(actionID) und der Beziehung(relationship, z.B. Vorgänger oder Nachfolger) des Bezugselementes eine Reihenfolge unter den Behandlungsbausteinen abgebildet werden." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose">
+      <path value="PlanDefinition.action" />
+      <sliceName value="baustein_Diagnose" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.id">
+      <path value="PlanDefinition.action.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.prefix">
+      <path value="PlanDefinition.action.prefix" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.title">
+      <path value="PlanDefinition.action.title" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.description">
+      <path value="PlanDefinition.action.description" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.textEquivalent">
+      <path value="PlanDefinition.action.textEquivalent" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.priority">
+      <path value="PlanDefinition.action.priority" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.code">
+      <path value="PlanDefinition.action.code" />
+      <short value="Klassifizierung des Slices" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Slices verwendet." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.code.coding">
+      <path value="PlanDefinition.action.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.code.coding.system">
+      <path value="PlanDefinition.action.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Behandlungsbaustein_Bausteine" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.code.coding.version">
+      <path value="PlanDefinition.action.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.code.coding.code">
+      <path value="PlanDefinition.action.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Baustein_Diagnose" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.code.coding.display">
+      <path value="PlanDefinition.action.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.code.coding.userSelected">
+      <path value="PlanDefinition.action.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.code.text">
+      <path value="PlanDefinition.action.code.text" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.reason">
+      <path value="PlanDefinition.action.reason" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.documentation">
+      <path value="PlanDefinition.action.documentation" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.goalId">
+      <path value="PlanDefinition.action.goalId" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.subject[x]">
+      <path value="PlanDefinition.action.subject[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.trigger">
+      <path value="PlanDefinition.action.trigger" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.condition">
+      <path value="PlanDefinition.action.condition" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.input">
+      <path value="PlanDefinition.action.input" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.output">
+      <path value="PlanDefinition.action.output" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.relatedAction">
+      <path value="PlanDefinition.action.relatedAction" />
+      <definition value="Mit diesem Element kann die Reihenfolge der Actions erzeugt werden. Soll  z.B. die Reihenfolge (Erst eine Diagnose, daraus folgt eine Verordnung  undaraus folgt eine Leistungsziffer). Siehe auch Überelement Action (comment)" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.relatedAction.actionId">
+      <path value="PlanDefinition.action.relatedAction.actionId" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.relatedAction.relationship">
+      <path value="PlanDefinition.action.relatedAction.relationship" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.relatedAction.offset[x]">
+      <path value="PlanDefinition.action.relatedAction.offset[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.timing[x]">
+      <path value="PlanDefinition.action.timing[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.participant">
+      <path value="PlanDefinition.action.participant" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.type">
+      <path value="PlanDefinition.action.type" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.groupingBehavior">
+      <path value="PlanDefinition.action.groupingBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.selectionBehavior">
+      <path value="PlanDefinition.action.selectionBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.requiredBehavior">
+      <path value="PlanDefinition.action.requiredBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.precheckBehavior">
+      <path value="PlanDefinition.action.precheckBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.cardinalityBehavior">
+      <path value="PlanDefinition.action.cardinalityBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.definition[x]">
+      <path value="PlanDefinition.action.definition[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.definition[x]:definitionCanonical">
+      <path value="PlanDefinition.action.definition[x]" />
+      <sliceName value="definitionCanonical" />
+      <min value="1" />
+      <type>
+        <code value="canonical" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_Diagnose|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.transform">
+      <path value="PlanDefinition.action.transform" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.dynamicValue">
+      <path value="PlanDefinition.action.dynamicValue" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Diagnose.action">
+      <path value="PlanDefinition.action.action" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung">
+      <path value="PlanDefinition.action" />
+      <sliceName value="baustein_Verordnung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.id">
+      <path value="PlanDefinition.action.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.prefix">
+      <path value="PlanDefinition.action.prefix" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.title">
+      <path value="PlanDefinition.action.title" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.description">
+      <path value="PlanDefinition.action.description" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.textEquivalent">
+      <path value="PlanDefinition.action.textEquivalent" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.priority">
+      <path value="PlanDefinition.action.priority" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.code">
+      <path value="PlanDefinition.action.code" />
+      <short value="Klassifizierung des Slices" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Slices verwendet." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.code.coding">
+      <path value="PlanDefinition.action.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.code.coding.system">
+      <path value="PlanDefinition.action.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Behandlungsbaustein_Bausteine" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.code.coding.version">
+      <path value="PlanDefinition.action.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.code.coding.code">
+      <path value="PlanDefinition.action.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Baustein_Verordnung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.code.coding.display">
+      <path value="PlanDefinition.action.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.code.coding.userSelected">
+      <path value="PlanDefinition.action.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.code.text">
+      <path value="PlanDefinition.action.code.text" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.reason">
+      <path value="PlanDefinition.action.reason" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.documentation">
+      <path value="PlanDefinition.action.documentation" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.goalId">
+      <path value="PlanDefinition.action.goalId" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.subject[x]">
+      <path value="PlanDefinition.action.subject[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.trigger">
+      <path value="PlanDefinition.action.trigger" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.condition">
+      <path value="PlanDefinition.action.condition" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.input">
+      <path value="PlanDefinition.action.input" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.output">
+      <path value="PlanDefinition.action.output" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.relatedAction">
+      <path value="PlanDefinition.action.relatedAction" />
+      <definition value="Mit diesem Element kann die Reihenfolge der Actions erzeugt werden. Soll  z.B. die Reihenfolge (Erst eine Diagnose, daraus folgt eine Verordnung  undaraus folgt eine Leistungsziffer). Siehe auch Überelement Action (comment)" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.relatedAction.actionId">
+      <path value="PlanDefinition.action.relatedAction.actionId" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.relatedAction.relationship">
+      <path value="PlanDefinition.action.relatedAction.relationship" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.relatedAction.offset[x]">
+      <path value="PlanDefinition.action.relatedAction.offset[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.timing[x]">
+      <path value="PlanDefinition.action.timing[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.participant">
+      <path value="PlanDefinition.action.participant" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.type">
+      <path value="PlanDefinition.action.type" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.groupingBehavior">
+      <path value="PlanDefinition.action.groupingBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.selectionBehavior">
+      <path value="PlanDefinition.action.selectionBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.requiredBehavior">
+      <path value="PlanDefinition.action.requiredBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.precheckBehavior">
+      <path value="PlanDefinition.action.precheckBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.cardinalityBehavior">
+      <path value="PlanDefinition.action.cardinalityBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.definition[x]">
+      <path value="PlanDefinition.action.definition[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.definition[x]:definitionCanonical">
+      <path value="PlanDefinition.action.definition[x]" />
+      <sliceName value="definitionCanonical" />
+      <min value="1" />
+      <type>
+        <code value="canonical" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_Verordnung|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.transform">
+      <path value="PlanDefinition.action.transform" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.dynamicValue">
+      <path value="PlanDefinition.action.dynamicValue" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Verordnung.action">
+      <path value="PlanDefinition.action.action" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage">
+      <path value="PlanDefinition.action" />
+      <sliceName value="baustein_Textvorlage" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.id">
+      <path value="PlanDefinition.action.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.prefix">
+      <path value="PlanDefinition.action.prefix" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.title">
+      <path value="PlanDefinition.action.title" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.description">
+      <path value="PlanDefinition.action.description" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.textEquivalent">
+      <path value="PlanDefinition.action.textEquivalent" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.priority">
+      <path value="PlanDefinition.action.priority" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.code">
+      <path value="PlanDefinition.action.code" />
+      <short value="Klassifizierung des Slices" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Slices verwendet." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.code.coding">
+      <path value="PlanDefinition.action.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.code.coding.system">
+      <path value="PlanDefinition.action.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Behandlungsbaustein_Bausteine" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.code.coding.version">
+      <path value="PlanDefinition.action.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.code.coding.code">
+      <path value="PlanDefinition.action.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Baustein_Textvorlage" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.code.coding.display">
+      <path value="PlanDefinition.action.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.code.coding.userSelected">
+      <path value="PlanDefinition.action.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.code.text">
+      <path value="PlanDefinition.action.code.text" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.reason">
+      <path value="PlanDefinition.action.reason" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.documentation">
+      <path value="PlanDefinition.action.documentation" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.goalId">
+      <path value="PlanDefinition.action.goalId" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.subject[x]">
+      <path value="PlanDefinition.action.subject[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.trigger">
+      <path value="PlanDefinition.action.trigger" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.condition">
+      <path value="PlanDefinition.action.condition" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.input">
+      <path value="PlanDefinition.action.input" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.output">
+      <path value="PlanDefinition.action.output" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.relatedAction">
+      <path value="PlanDefinition.action.relatedAction" />
+      <definition value="Mit diesem Element kann die Reihenfolge der Actions erzeugt werden. Soll  z.B. die Reihenfolge (Erst eine Diagnose, daraus folgt eine Verordnung  undaraus folgt eine Leistungsziffer). Siehe auch Überelement Action (comment)" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.relatedAction.actionId">
+      <path value="PlanDefinition.action.relatedAction.actionId" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.relatedAction.relationship">
+      <path value="PlanDefinition.action.relatedAction.relationship" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.relatedAction.offset[x]">
+      <path value="PlanDefinition.action.relatedAction.offset[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.timing[x]">
+      <path value="PlanDefinition.action.timing[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.participant">
+      <path value="PlanDefinition.action.participant" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.type">
+      <path value="PlanDefinition.action.type" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.groupingBehavior">
+      <path value="PlanDefinition.action.groupingBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.selectionBehavior">
+      <path value="PlanDefinition.action.selectionBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.requiredBehavior">
+      <path value="PlanDefinition.action.requiredBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.precheckBehavior">
+      <path value="PlanDefinition.action.precheckBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.cardinalityBehavior">
+      <path value="PlanDefinition.action.cardinalityBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.definition[x]">
+      <path value="PlanDefinition.action.definition[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.definition[x]:definitionCanonical">
+      <path value="PlanDefinition.action.definition[x]" />
+      <sliceName value="definitionCanonical" />
+      <min value="1" />
+      <type>
+        <code value="canonical" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_Textvorlage|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.transform">
+      <path value="PlanDefinition.action.transform" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.dynamicValue">
+      <path value="PlanDefinition.action.dynamicValue" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Textvorlage.action">
+      <path value="PlanDefinition.action.action" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern">
+      <path value="PlanDefinition.action" />
+      <sliceName value="baustein_Leistungsziffern" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.id">
+      <path value="PlanDefinition.action.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.prefix">
+      <path value="PlanDefinition.action.prefix" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.title">
+      <path value="PlanDefinition.action.title" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.description">
+      <path value="PlanDefinition.action.description" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.textEquivalent">
+      <path value="PlanDefinition.action.textEquivalent" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.priority">
+      <path value="PlanDefinition.action.priority" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.code">
+      <path value="PlanDefinition.action.code" />
+      <short value="Klassifizierung des Slices" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Slices verwendet." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.code.coding">
+      <path value="PlanDefinition.action.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.code.coding.system">
+      <path value="PlanDefinition.action.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Behandlungsbaustein_Bausteine" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.code.coding.version">
+      <path value="PlanDefinition.action.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.code.coding.code">
+      <path value="PlanDefinition.action.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Baustein_Leistungsziffern" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.code.coding.display">
+      <path value="PlanDefinition.action.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.code.coding.userSelected">
+      <path value="PlanDefinition.action.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.reason">
+      <path value="PlanDefinition.action.reason" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.documentation">
+      <path value="PlanDefinition.action.documentation" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.goalId">
+      <path value="PlanDefinition.action.goalId" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.subject[x]">
+      <path value="PlanDefinition.action.subject[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.trigger">
+      <path value="PlanDefinition.action.trigger" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.condition">
+      <path value="PlanDefinition.action.condition" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.input">
+      <path value="PlanDefinition.action.input" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.output">
+      <path value="PlanDefinition.action.output" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.relatedAction">
+      <path value="PlanDefinition.action.relatedAction" />
+      <definition value="Mit diesem Element kann die Reihenfolge der Actions erzeugt werden. Soll  z.B. die Reihenfolge (Erst eine Diagnose, daraus folgt eine Verordnung  undaraus folgt eine Leistungsziffer). Siehe auch Überelement Action (comment)" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.relatedAction.actionId">
+      <path value="PlanDefinition.action.relatedAction.actionId" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.relatedAction.relationship">
+      <path value="PlanDefinition.action.relatedAction.relationship" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.relatedAction.offset[x]">
+      <path value="PlanDefinition.action.relatedAction.offset[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.timing[x]">
+      <path value="PlanDefinition.action.timing[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.participant">
+      <path value="PlanDefinition.action.participant" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.type">
+      <path value="PlanDefinition.action.type" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.groupingBehavior">
+      <path value="PlanDefinition.action.groupingBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.selectionBehavior">
+      <path value="PlanDefinition.action.selectionBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.requiredBehavior">
+      <path value="PlanDefinition.action.requiredBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.precheckBehavior">
+      <path value="PlanDefinition.action.precheckBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.cardinalityBehavior">
+      <path value="PlanDefinition.action.cardinalityBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.definition[x]">
+      <path value="PlanDefinition.action.definition[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.definition[x]:definitionCanonical">
+      <path value="PlanDefinition.action.definition[x]" />
+      <sliceName value="definitionCanonical" />
+      <min value="1" />
+      <type>
+        <code value="canonical" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_Leistungsziffern|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.transform">
+      <path value="PlanDefinition.action.transform" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.dynamicValue">
+      <path value="PlanDefinition.action.dynamicValue" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Leistungsziffern.action">
+      <path value="PlanDefinition.action.action" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code">
+      <path value="PlanDefinition.action" />
+      <sliceName value="baustein_OMIM-Code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.id">
+      <path value="PlanDefinition.action.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.prefix">
+      <path value="PlanDefinition.action.prefix" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.title">
+      <path value="PlanDefinition.action.title" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.description">
+      <path value="PlanDefinition.action.description" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.textEquivalent">
+      <path value="PlanDefinition.action.textEquivalent" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.priority">
+      <path value="PlanDefinition.action.priority" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.code">
+      <path value="PlanDefinition.action.code" />
+      <short value="Klassifizierung des Slices" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Slices verwendet." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.code.coding">
+      <path value="PlanDefinition.action.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.code.coding.system">
+      <path value="PlanDefinition.action.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Behandlungsbaustein_Bausteine" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.code.coding.version">
+      <path value="PlanDefinition.action.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.code.coding.code">
+      <path value="PlanDefinition.action.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Baustein_OMIM_G-Code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.code.coding.display">
+      <path value="PlanDefinition.action.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.code.coding.userSelected">
+      <path value="PlanDefinition.action.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.code.text">
+      <path value="PlanDefinition.action.code.text" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.reason">
+      <path value="PlanDefinition.action.reason" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.documentation">
+      <path value="PlanDefinition.action.documentation" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.goalId">
+      <path value="PlanDefinition.action.goalId" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.subject[x]">
+      <path value="PlanDefinition.action.subject[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.trigger">
+      <path value="PlanDefinition.action.trigger" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.condition">
+      <path value="PlanDefinition.action.condition" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.input">
+      <path value="PlanDefinition.action.input" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.output">
+      <path value="PlanDefinition.action.output" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.relatedAction">
+      <path value="PlanDefinition.action.relatedAction" />
+      <definition value="Mit diesem Element kann die Reihenfolge der Actions erzeugt werden. Soll  z.B. die Reihenfolge (Erst eine Diagnose, daraus folgt eine Verordnung  undaraus folgt eine Leistungsziffer). Siehe auch Überelement Action (comment)" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.relatedAction.actionId">
+      <path value="PlanDefinition.action.relatedAction.actionId" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.relatedAction.relationship">
+      <path value="PlanDefinition.action.relatedAction.relationship" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.relatedAction.offset[x]">
+      <path value="PlanDefinition.action.relatedAction.offset[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.timing[x]">
+      <path value="PlanDefinition.action.timing[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.participant">
+      <path value="PlanDefinition.action.participant" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.type">
+      <path value="PlanDefinition.action.type" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.groupingBehavior">
+      <path value="PlanDefinition.action.groupingBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.selectionBehavior">
+      <path value="PlanDefinition.action.selectionBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.requiredBehavior">
+      <path value="PlanDefinition.action.requiredBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.precheckBehavior">
+      <path value="PlanDefinition.action.precheckBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.cardinalityBehavior">
+      <path value="PlanDefinition.action.cardinalityBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.definition[x]">
+      <path value="PlanDefinition.action.definition[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.definition[x]:definitionCanonical">
+      <path value="PlanDefinition.action.definition[x]" />
+      <sliceName value="definitionCanonical" />
+      <min value="1" />
+      <type>
+        <code value="canonical" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_OMIM-Code|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.transform">
+      <path value="PlanDefinition.action.transform" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.dynamicValue">
+      <path value="PlanDefinition.action.dynamicValue" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_OMIM-Code.action">
+      <path value="PlanDefinition.action.action" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige">
+      <path value="PlanDefinition.action" />
+      <sliceName value="baustein_Sonstige" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.id">
+      <path value="PlanDefinition.action.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.prefix">
+      <path value="PlanDefinition.action.prefix" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.title">
+      <path value="PlanDefinition.action.title" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.description">
+      <path value="PlanDefinition.action.description" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.textEquivalent">
+      <path value="PlanDefinition.action.textEquivalent" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.priority">
+      <path value="PlanDefinition.action.priority" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.code">
+      <path value="PlanDefinition.action.code" />
+      <short value="Klassifizierung des Slices" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Slices verwendet." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.code.coding">
+      <path value="PlanDefinition.action.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.code.coding.system">
+      <path value="PlanDefinition.action.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Behandlungsbaustein_Bausteine" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.code.coding.version">
+      <path value="PlanDefinition.action.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.code.coding.code">
+      <path value="PlanDefinition.action.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Baustein_Sonstige" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.code.coding.display">
+      <path value="PlanDefinition.action.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.code.coding.userSelected">
+      <path value="PlanDefinition.action.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.code.text">
+      <path value="PlanDefinition.action.code.text" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.reason">
+      <path value="PlanDefinition.action.reason" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.documentation">
+      <path value="PlanDefinition.action.documentation" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.goalId">
+      <path value="PlanDefinition.action.goalId" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.subject[x]">
+      <path value="PlanDefinition.action.subject[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.trigger">
+      <path value="PlanDefinition.action.trigger" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.condition">
+      <path value="PlanDefinition.action.condition" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.input">
+      <path value="PlanDefinition.action.input" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.output">
+      <path value="PlanDefinition.action.output" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.relatedAction">
+      <path value="PlanDefinition.action.relatedAction" />
+      <definition value="Mit diesem Element kann die Reihenfolge der Actions erzeugt werden. Soll  z.B. die Reihenfolge (Erst eine Diagnose, daraus folgt eine Verordnung  undaraus folgt eine Leistungsziffer). Siehe auch Überelement Action (comment)" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.relatedAction.actionId">
+      <path value="PlanDefinition.action.relatedAction.actionId" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.relatedAction.relationship">
+      <path value="PlanDefinition.action.relatedAction.relationship" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.relatedAction.offset[x]">
+      <path value="PlanDefinition.action.relatedAction.offset[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.timing[x]">
+      <path value="PlanDefinition.action.timing[x]" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.participant">
+      <path value="PlanDefinition.action.participant" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.type">
+      <path value="PlanDefinition.action.type" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.groupingBehavior">
+      <path value="PlanDefinition.action.groupingBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.selectionBehavior">
+      <path value="PlanDefinition.action.selectionBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.requiredBehavior">
+      <path value="PlanDefinition.action.requiredBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.precheckBehavior">
+      <path value="PlanDefinition.action.precheckBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.cardinalityBehavior">
+      <path value="PlanDefinition.action.cardinalityBehavior" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.definition[x]">
+      <path value="PlanDefinition.action.definition[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.definition[x]:definitionCanonical">
+      <path value="PlanDefinition.action.definition[x]" />
+      <sliceName value="definitionCanonical" />
+      <min value="1" />
+      <type>
+        <code value="canonical" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_Sonstige|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.transform">
+      <path value="PlanDefinition.action.transform" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.dynamicValue">
+      <path value="PlanDefinition.action.dynamicValue" />
+      <max value="0" />
+    </element>
+    <element id="PlanDefinition.action:baustein_Sonstige.action">
+      <path value="PlanDefinition.action.action" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

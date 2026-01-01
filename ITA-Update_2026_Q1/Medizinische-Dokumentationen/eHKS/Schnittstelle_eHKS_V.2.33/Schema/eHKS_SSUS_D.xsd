@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:cda="urn::hl7-org/cda" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns="urn::sciphox-org/sciphox" xmlns:kbv="urn::hl7-org/kbv" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<xs:import namespace="urn::hl7-org/kbv" schemaLocation="all_kbv_typelib.xsd"/>
+	<xs:include schemaLocation="insurance_ssu_typelib.xsd"/>
+	<xs:include schemaLocation="Ergebnistexte_D.xsd"/>
+	<xs:include schemaLocation="Parameter_D.xsd"/>
+	<xs:include schemaLocation="eHKS_software_ssu.xsd"/>
+	<!-- ****************************** body ****************************** -->
+	<xs:element name="sciphox-ssu">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="observation"/>
+			</xs:sequence>
+			<xs:attribute name="type" type="xs:string" fixed="observation"/>
+			<xs:attribute name="country" type="xs:string" use="required" fixed="de"/>
+			<xs:attribute name="version" type="xs:string" use="required" fixed="v1"/>
+		</xs:complexType>
+	</xs:element>
+	<!--	********************* SSU Observation ********************* -->
+	<xs:group name="observation">
+		<xs:sequence>
+			<xs:element ref="Beobachtungen"/>
+		</xs:sequence>
+	</xs:group>
+	<xs:element name="Beobachtungen">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Beobachtung" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="u_Parameter">
+			<xs:selector xpath="./sciphox:Beobachtung/sciphox:Parameter"/>
+			<xs:field xpath="@DN"/>
+		</xs:unique>
+	</xs:element>
+	<xs:element name="Beobachtung">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Parameter"/>
+				<xs:element ref="Ergebnistext" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Ergebniswert" minOccurs="0" maxOccurs="unbounded"/>
+				<!--				<xs:element ref="Zeitpunkt_dttm" minOccurs="0"/>-->
+				<xs:element ref="Beobachtungen" minOccurs="0"/>
+				<!--				<xs:element ref="Lokalisation" minOccurs="0"/>
+				<xs:element ref="Normbereich" minOccurs="0"/>-->
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="u_Ergebnistext">
+			<xs:selector xpath="./sciphox:Ergebnistext"/>
+			<xs:field xpath="@V"/>
+		</xs:unique>
+		<xs:unique name="u_Ergebniswert">
+			<xs:selector xpath="./sciphox:Ergebniswert"/>
+			<xs:field xpath="@U"/>
+		</xs:unique>
+	</xs:element>
+	<!-- ***************************** Parameter ******************************** -->
+	<xs:element name="Parameter">
+		<xs:complexType>
+			<xs:attribute name="DN" use="required">
+				<xs:simpleType>
+					<xs:union memberTypes="ohneName ÜberweisungimRahmendesHautkrebsScreenings AngabederVerdachtsdiagnosedesüberweisendenArztes VerdachtsdiagnosedesDermatologen BiopsieExzision Histopathologie"/>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<!-- *************************** Ergebnistext ************************** -->
+	<xs:element name="Ergebnistext">
+		<xs:complexType>
+			<xs:attribute name="V" use="required">
+				<xs:simpleType>
+					<xs:union memberTypes="ÜberweisungimRahmendesHautkrebsScreenings_txt AngabederVerdachtsdiagnosedesüberweisendenArztes_txt VerdachtsdiagnosedesDermatologen_txt BiopsieExzision_txt Histopathologie_txt"/>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="ÜberweisungimRahmendesHautkrebsScreenings_txt">
+		<xs:union memberTypes="PatientkommtaufÜberweisungimRahmendesHautkrebsScreenings ÜberweisenderArzthatHKSdurchgeführt"/>
+	</xs:simpleType>
+	<xs:simpleType name="AngabederVerdachtsdiagnosedesüberweisendenArztes_txt">
+		<xs:union memberTypes="AngabeüberdieVerdachtsdiagnoseliegtvor MalignesMelanom Basalzellkarzinom SpinozelluläresKarzinom andererHautkrebs"/>
+	</xs:simpleType>
+	<xs:simpleType name="VerdachtsdiagnosedesDermatologen_txt">
+		<xs:union memberTypes="Verdachtsdiagnose MalignesMelanom Basalzellkarzinom SpinozelluläresKarzinom andererHautkrebs sonstigermitBiopsieabklärungsbedürftigerBefund"/>
+	</xs:simpleType>
+	<xs:simpleType name="BiopsieExzision_txt">
+		<xs:union memberTypes="BiopsiezuVerdachtsdiagnoseentnommenoderExzisiondurchgeführt anderweitigeTherapieoderDiagnostikvorgenommeneingeleitet keineweitereTherapieDiagnostik"/>
+	</xs:simpleType>
+	<xs:simpleType name="Histopathologie_txt">
+		<xs:union memberTypes="MalignesMelanom MalignesMelanomKlassifikation MalignesMelanomTumordickeBreslow Basalzellkarzinom SpinozelluläresKarzinom SpinozelluläresKarzinomKlassifikation SpinozelluläresKarzinomGrading andererHautkrebs atypischerNävuszellnävus junktionalercompounddermaleratypischerNävuszellnävus AktinischeKeratose AnderehiernichtrelevanteHautveränderung"/>
+	</xs:simpleType>
+	<!-- *********************** Ergebniswert ********************** -->
+	<xs:element name="Ergebniswert">
+		<xs:complexType>
+			<xs:attribute name="V" type="kbv:string_max_60_typ" use="required"/>
+			<xs:attribute name="U" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="mm"/>
+						<xs:enumeration value="Jahre"/>
+						<xs:enumeration value="Anzahl"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="DN" type="kbv:string_max_60_typ"/>
+		</xs:complexType>
+	</xs:element>
+	<!-- ***************************** Normbereich ********************************** -->
+	<!--<xs:element name="Normbereich">
+		<xs:annotation>
+			<xs:documentation xml:lang="de">Normbereich</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Obergrenze">
+					<xs:annotation>
+						<xs:documentation xml:lang="de"/>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="V" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:float">
+									<xs:maxInclusive value="21.0"/>
+									<xs:minInclusive value="0.0"/>
+									<xs:pattern value="\d?\d.\d"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="DN" type="xs:string" use="required" fixed="oberer Normwert des Labors"/>
+						<xs:attribute name="U" type="xs:string" use="required" fixed="%"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>-->
+	<!-- ************************ Zeitpunkt_dttm ************************** -->
+	<!--	<xs:element name="Zeitpunkt_dttm" type="kbv:year_date_dttm_typ"/>-->
+	<!-- ************************ Lokalisation ************************** -->
+	<!--	<xs:element name="Lokalisation">
+		<xs:annotation>
+			<xs:documentation xml:lang="de">Lokalisation</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="re."/>
+						<xs:enumeration value="li."/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>-->
+	<!-- ****************************** ENDE: body ****************************** -->
+</xs:schema>

@@ -1,0 +1,32 @@
+<Practitioner xmlns="http://hl7.org/fhir">
+  <id value="2" />
+  <meta>
+	<versionId value="1"/>
+	<lastUpdated value="2022-09-05T14:14:00Z"/>
+    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_User|2.1.0" />
+  </meta>
+  <identifier>
+    <value value="testanwender" />
+  </identifier>
+  <name>
+	<use value="official"/>
+	<text value="Prof. Dr. med. Paul Graf von Testanwender"/>
+    <family value="Graf von Testanwender">
+		<extension url="http://fhir.de/StructureDefinition/humanname-namenszusatz">
+			<valueString value="Graf" />
+		</extension>
+		<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+			<valueString value="Testanwender" />
+		</extension>
+		<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+			<valueString value="von" />
+		</extension>
+    </family>
+    <given value="Paul" />
+    <prefix value="Prof. Dr. med.">
+		<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
+			<valueCode value="AC" />
+        </extension>
+	</prefix>
+  </name>
+</Practitioner>

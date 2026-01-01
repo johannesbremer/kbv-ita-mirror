@@ -1,0 +1,59 @@
+<Contract xmlns="http://hl7.org/fhir">
+	<id value="3269"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-22T13:50:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Selektivvertrag|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<identifier>
+		<type>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Selektivvertrag_Identifiertyp"/>
+				<code value="Bezeichnung_Vertragskennzeichen"/>
+			</coding>
+		</type>
+		<value value="56456/5546S12"/>
+	</identifier>
+	<status value="executed"/>
+	<issued value="2014-01-01"/>
+	<applies>
+		<start value="2014-01-01"/>
+		<end value="2023-12-31"/>
+	</applies>
+	<subject>
+		<reference value="Patient/3181"/>
+	</subject>
+	<authority>
+		<display value="Allgemeine Technische Barmener BKK"/>
+	</authority>
+	<type>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp"/>
+			<code value="Selektivvertag"/>
+		</coding>
+	</type>
+	<term>
+		<type>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Gebuehrenordnung"/>
+				<code value="EBM"/>
+			</coding>
+		</type>
+		<offer>
+			<party>
+				<reference>
+					<reference value="Organization/3157"/>
+				</reference>
+				<role>
+					<text value="Rechnungempfaenger"/>
+				</role>
+			</party>
+		</offer>
+	</term>
+</Contract>

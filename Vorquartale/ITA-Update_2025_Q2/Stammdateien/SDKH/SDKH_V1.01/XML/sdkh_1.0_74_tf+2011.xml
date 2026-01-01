@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+  Dies ist eine manuell präparierte Testdatei als Beispiel für das Schema der Stammdatei Kodierhilfe.
+  Diese Datei ist nur für den technischen Test erstellt worden. Daher haben die verwendeten
+  Kodierungen keinen fachlichen Hintergrund.
+-->
+<ehd:ehd xmlns:ehd="urn:ehd/001" xmlns="urn:ehd/sdkh/001" xmlns:sdkh="urn:ehd/sdkh/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ehd_version="1.40">
+	<ehd:header>
+		<ehd:id EX="ag111105-2d51-4016-831e-cbd9e1a318h9" RT="1.2.276.0.76.5.3.1.1"/>
+		<ehd:document_type_cd V="SDKH" DN="Stammdatei Kodierhilfe" S="1.2.276.0.76.5.100"/>
+		<ehd:service_tmr V="2011-01-01.."/>
+		<ehd:origination_dttm V="2010-10-04"/>
+		<ehd:provider>
+			<ehd:organization>
+				<ehd:id EX="74" RT="1.2.276.0.76.5.233"/>
+				<ehd:organization.nm V="KBV"/>
+				<ehd:addr>
+					<ehd:ADL V="Kassenärztliche Bundesvereinigung, Dezernat 3"/>
+					<ehd:STR V="Herbert-Lewin-Platz"/>
+					<ehd:HNR V="2"/>
+					<ehd:ZIP V="10623"/>
+					<ehd:CTY V="Berlin"/>
+				</ehd:addr>
+				<ehd:telecom V="tel:++49 30 4005 2121"/>
+				<ehd:telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<ehd:telecom V="http://www.KBV.de/ita/register_C.html"/>
+			</ehd:organization>
+		</ehd:provider>
+		<ehd:interface>
+			<ehd:id EX="SDKH" RT="1.2.276.0.76.5.109"/>
+			<ehd:interface.nm V="Stammdatei Kodierhilfe"/>
+			<ehd:version V="1.00"/>
+		</ehd:interface>
+	</ehd:header>
+	<ehd:body>
+		<diagnosen_liste>
+			<diagnose>
+				<icd_code V="I21.0"/>
+				<hinweis_liste>
+					<hinweis>
+						<text V="Akute Notfallsituation"/>
+					</hinweis>
+					<hinweis>
+						<text V="Akute Brustschmerzen"/>
+					</hinweis>
+				</hinweis_liste>
+				<kriterien_liste>
+					<kriterium>
+						<id EX="AA6___H7____561" RT="1.2.276.0.76.3.1.1.5.4.4"/>
+						<notwendig V="true"/>
+						<text V="Akut oder bis zu vier Wochen (28 Tage) zurückliegend"/>
+					</kriterium>
+					<kriterium>
+						<id EX="CDA___H7____561" RT="1.2.276.0.76.3.1.1.5.4.4"/>
+						<notwendig V="true"/>
+						<text V="ST-Anhebung, Lokalisation im EKG"/>
+					</kriterium>
+					<kriterium>
+						<id EX="JH6___H7____561" RT="1.2.276.0.76.3.1.1.5.4.4"/>
+						<notwendig V="true"/>
+						<text V="Nachweis pathologischer Nekrosemarker"/>
+					</kriterium>
+					<kriterium>
+						<id EX="DSA___H7____561" RT="1.2.276.0.76.3.1.1.5.4.4"/>
+						<notwendig V="false"/>
+						<text V="Angina Pectoris"/>
+					</kriterium>
+				</kriterien_liste>
+			</diagnose>
+			<diagnose>
+				<icd_code V="E11.0"/>
+				<kriterien_liste>
+					<kriterium>
+						<id EX="DA1___H7____561" RT="1.2.276.0.76.3.1.1.5.4.4"/>
+						<notwendig V="false"/>
+						<text V="Bewußtseinsverlust bei hohem Blutzucker"/>
+					</kriterium>
+					<kriterium>
+						<id EX="D1A___H7____561" RT="1.2.276.0.76.3.1.1.5.4.4"/>
+						<notwendig V="false"/>
+						<text V="oGTT nach 2 Std > 200 mg/dl i.P."/>
+					</kriterium>
+					<kriterium>
+						<id EX="1SA___H7____561" RT="1.2.276.0.76.3.1.1.5.4.4"/>
+						<notwendig V="false"/>
+						<text V="2 x BZ nüchtern > 126 mg/dl i.P. (an mind. zwei Tagen oder 1 x bei typ. Symptomen (z.B. Polydipsie, Polyurie, anderweitig nicht erklärbare Gewichtsabnahme))"/>
+					</kriterium>
+					<kriterium>
+						<id EX="2SA___H7____561" RT="1.2.276.0.76.3.1.1.5.4.4"/>
+						<notwendig V="false"/>
+						<text V="2 x BZ nicht nüchtern > 200 mg/dl i.P. (z.B. Polydipsie, Polyurie, anderweitig nicht erklärbare Gewichtsabnahme))"/>
+					</kriterium>
+					<kriterium>
+						<id EX="3SA___H7____561" RT="1.2.276.0.76.3.1.1.5.4.4"/>
+						<notwendig V="false"/>
+						<text V="relativer Insulinmangel i.d.R. mit Insulinresistenz"/>
+					</kriterium>
+				</kriterien_liste>
+			</diagnose>
+		</diagnosen_liste>
+	</ehd:body>
+</ehd:ehd>

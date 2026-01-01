@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-PR-EAU-ServiceRequest-steps" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_ServiceRequest_steps" />
+  <version value="1.1.0" />
+  <name value="KBV_PR_EAU_ServiceRequest_steps" />
+  <status value="active"/>
+  <date value="2022-09-30" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="quick" />
+    <uri value="http://siframework.org/cqf" />
+    <name value="Quality Improvement and Clinical Knowledge (QUICK)" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="ServiceRequest" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ServiceRequest" />
+  <derivation value="constraint" />
+  <differential>
+	<element id="ServiceRequest">
+      <path value="ServiceRequest" />
+	  <constraint>
+        <key value="-eau-begrenzungDateWiedereingliederung-ab" />
+        <severity value="error" />
+        <human value="Begrenzung der Datumsangabe für das Datum der Wiedereingliederung auf 10 Zeichen JJJJ-MM-TT" />
+        <expression value="(extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_reintegration_date').exists()) implies ((extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_reintegration_date').value as dateTime).toString().length() = 10)" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_ServiceRequest_steps" />
+      </constraint>
+	  <constraint>
+        <key value="-eau-begrenzungDateEntlassungsdatum" />
+        <severity value="error" />
+        <human value="Begrenzung der Datumsangabe Entlassungsdatum auf 10 Zeichen JJJJ-MM-TT" />
+        <expression value="(extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_discharge_date').exists()) implies ((extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_discharge_date').value as dateTime).toString().length() = 10)" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_ServiceRequest_steps" />
+      </constraint>
+	  <constraint>
+        <key value="-eau-begrenzungDateAufnahmedatum" />
+        <severity value="error" />
+        <human value="Begrenzung der Datumsangabe Aufnahmedatum auf 10 Zeichen JJJJ-MM-TT" />
+        <expression value="(extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_admission_date').exists()) implies ((extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_admission_date').value as dateTime).toString().length() = 10)" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_ServiceRequest_steps" />
+      </constraint>
+	  <constraint>
+        <key value="-eau-EntlassungdatumNurRehaHeilbehandlung" />
+        <severity value="error" />
+        <human value="Das Entlassungsdatum, darf nur angegeben werden, wenn entweder Leistungen zur Reha oder stationaeren Heilbehandlung ausgewaehlt ist." />
+        <expression value="(extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_discharge_date').exists()) implies (code.coding.code = 'reha' or code.coding.code = 'stationaere_heilbehandlung')" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_ServiceRequest_steps" />
+      </constraint>
+	  <constraint>
+        <key value="-eau-AufnahmedatumNurRehaHeilbehandlung" />
+        <severity value="error" />
+        <human value="Das Aufnahmedatum, darf nur angegeben werden, wenn entweder Leistungen zur Reha oder stationaeren Heilbehandlung ausgewaehlt ist." />
+        <expression value="(extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_admission_date').exists()) implies (code.coding.code = 'reha' or code.coding.code = 'stationaere_heilbehandlung')" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_ServiceRequest_steps" />
+      </constraint>
+	  <constraint>
+        <key value="-eau-WiedereingliederungAbNurWiedereingliederung" />
+        <severity value="error" />
+        <human value="Die Extension KBV_EX_EAU_reintegration_date darf nur enthalten sein, wenn Wiedereingliederung ausgewaehlt wurde." />
+        <expression value="(extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_reintegration_date').exists()) implies (code.coding.code = 'wiedereingliederung')" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_ServiceRequest_steps" />
+      </constraint>
+    </element>
+    <element id="ServiceRequest.id">
+      <path value="ServiceRequest.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.meta">
+      <path value="ServiceRequest.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.meta.versionId">
+      <path value="ServiceRequest.meta.versionId" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.meta.lastUpdated">
+      <path value="ServiceRequest.meta.lastUpdated" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.meta.source">
+      <path value="ServiceRequest.meta.source" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.meta.profile">
+      <path value="ServiceRequest.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_ServiceRequest_steps|1.1.0" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.meta.security">
+      <path value="ServiceRequest.meta.security" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.meta.tag">
+      <path value="ServiceRequest.meta.tag" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.implicitRules">
+      <path value="ServiceRequest.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.language">
+      <path value="ServiceRequest.language" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.text">
+      <path value="ServiceRequest.text" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.contained">
+      <path value="ServiceRequest.contained" />
+      <max value="0" />
+    </element>
+	<element id="ServiceRequest.extension">
+      <path value="ServiceRequest.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="0" />
+    </element>
+	<element id="ServiceRequest.extension:Wiedereingliederung_ab">
+      <path value="ServiceRequest.extension" />
+      <sliceName value="Wiedereingliederung_ab" />
+      <min value="0" />
+	  <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_reintegration_date" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.extension:Wiedereingliederung_ab.value[x]">
+      <path value="ServiceRequest.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.extension:Wiedereingliederung_ab.value[x]:valueDateTime">
+      <path value="ServiceRequest.extension.value[x]" />
+      <sliceName value="valueDateTime" />
+      <mustSupport value="true" />
+    </element>
+	<element id="ServiceRequest.extension:Aufnahmedatum">
+      <path value="ServiceRequest.extension" />
+      <sliceName value="Aufnahmedatum" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_admission_date" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.extension:Aufnahmedatum.value[x]">
+      <path value="ServiceRequest.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.extension:Aufnahmedatum.value[x]:valueDateTime">
+      <path value="ServiceRequest.extension.value[x]" />
+      <sliceName value="valueDateTime" />
+      <mustSupport value="true" />
+    </element>
+	<element id="ServiceRequest.extension:Entlassungsdatum">
+      <path value="ServiceRequest.extension" />
+      <sliceName value="Entlassungsdatum" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_discharge_date" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.extension:Entlassungsdatum.value[x]">
+      <path value="ServiceRequest.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.extension:Entlassungsdatum.value[x]:valueDateTime">
+      <path value="ServiceRequest.extension.value[x]" />
+      <sliceName value="valueDateTime" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.identifier">
+      <path value="ServiceRequest.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.instantiatesCanonical">
+      <path value="ServiceRequest.instantiatesCanonical" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.instantiatesUri">
+      <path value="ServiceRequest.instantiatesUri" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.basedOn">
+      <path value="ServiceRequest.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.replaces">
+      <path value="ServiceRequest.replaces" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requisition">
+      <path value="ServiceRequest.requisition" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.status">
+      <path value="ServiceRequest.status" />
+      <fixedCode value="active" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.intent">
+      <path value="ServiceRequest.intent" />
+      <fixedCode value="proposal" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.category">
+      <path value="ServiceRequest.category" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.priority">
+      <path value="ServiceRequest.priority" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.doNotPerform">
+      <path value="ServiceRequest.doNotPerform" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.code">
+      <path value="ServiceRequest.code" />
+      <min value="1" />
+      <constraint>
+        <key value="-eau-keinTextBeiAnderen" />
+        <severity value="error" />
+        <human value="Wenn die Kennzeichnung &quot;D-Arzt&quot;, &quot;Reha&quot; oder &quot;Wiedereingliederung&quot; angegeben ist, dann darf kein Text enthalten sein." />
+        <expression value="(coding.code = 'd_arzt' or coding.code = 'reha' or coding.code = 'wiedereingliederung' or coding.code = 'stationaere_heilbehandlung') implies text.exists().not()" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_ServiceRequest_steps" />
+      </constraint>
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Abbildung der möglichen Werte" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_EAU_WeitereSchritte_Type" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.code.coding">
+      <path value="ServiceRequest.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.code.coding.system">
+      <path value="ServiceRequest.code.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.code.coding.version">
+      <path value="ServiceRequest.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.code.coding.code">
+      <path value="ServiceRequest.code.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.code.coding.display">
+      <path value="ServiceRequest.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.code.coding.userSelected">
+      <path value="ServiceRequest.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.code.text">
+      <path value="ServiceRequest.code.text" />
+      <short value="Sonstige Text" />
+      <definition value="Abbildung der Information Sonstige" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.orderDetail">
+      <path value="ServiceRequest.orderDetail" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.quantity[x]">
+      <path value="ServiceRequest.quantity[x]" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.subject">
+      <path value="ServiceRequest.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.subject.reference">
+      <path value="ServiceRequest.subject.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.subject.type">
+      <path value="ServiceRequest.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.subject.identifier">
+      <path value="ServiceRequest.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.subject.display">
+      <path value="ServiceRequest.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.encounter">
+      <path value="ServiceRequest.encounter" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]">
+      <path value="ServiceRequest.occurrence[x]" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.asNeeded[x]">
+      <path value="ServiceRequest.asNeeded[x]" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.authoredOn">
+      <path value="ServiceRequest.authoredOn" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requester">
+      <path value="ServiceRequest.requester" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner|1.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.requester.reference">
+      <path value="ServiceRequest.requester.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.requester.type">
+      <path value="ServiceRequest.requester.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requester.identifier">
+      <path value="ServiceRequest.requester.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requester.display">
+      <path value="ServiceRequest.requester.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.performerType">
+      <path value="ServiceRequest.performerType" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.performer">
+      <path value="ServiceRequest.performer" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.locationCode">
+      <path value="ServiceRequest.locationCode" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.locationReference">
+      <path value="ServiceRequest.locationReference" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode">
+      <path value="ServiceRequest.reasonCode" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonReference">
+      <path value="ServiceRequest.reasonReference" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Condition_AU|1.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonReference.reference">
+      <path value="ServiceRequest.reasonReference.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonReference.type">
+      <path value="ServiceRequest.reasonReference.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonReference.identifier">
+      <path value="ServiceRequest.reasonReference.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonReference.display">
+      <path value="ServiceRequest.reasonReference.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.insurance">
+      <path value="ServiceRequest.insurance" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo">
+      <path value="ServiceRequest.supportingInfo" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.specimen">
+      <path value="ServiceRequest.specimen" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.bodySite">
+      <path value="ServiceRequest.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.note">
+      <path value="ServiceRequest.note" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.patientInstruction">
+      <path value="ServiceRequest.patientInstruction" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.relevantHistory">
+      <path value="ServiceRequest.relevantHistory" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

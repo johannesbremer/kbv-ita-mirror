@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<header>
+		<id EX="86ba023a-0278-4553-ab66-709820a5967e" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2026-01-01.."/>
+		<origination_dttm V="2025-08-14"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat Sicherstellung und Versorgungsstruktur"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="https://update.kbv.de/ita-update/"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen für der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2025, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="https://update.kbv.de/ita-update/"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="09" DN="Bescheinigung einer Fehlgeburt, Frühgeburt oder Behinderung des Kindes">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Fehlgeburt am"/>
+					<hinweistext V="Hier ist das Datum der Fehlgeburt im Format TTMMJJ einzutragen. Bei einer verhaltenen Fehlgeburt (Missed Abortion) ist das Datum, an dem der Fötus vom Uterus getrennt wurde, etwa durch einen operativen oder medikamentösen Eingriff oder einen spontanen Abgang, anzugeben."/>
+				</feld>
+				<feld>
+					<nummer V="2"/>
+					<name V="Angabe der Schwangerschaftswoche"/>
+					<hinweistext V="Hier ist anzugeben, in welcher Schwangerschaftswoche sich die Versicherte zum Zeitpunkt der Fehlgeburt mindestens befand. Die Berechnung der Schwangerschaftswoche erfolgt post menstruationem, also ab dem ersten Tag der letzten Regelblutung.Hier ist anzugeben, in welcher Schwangerschaftswoche sich die Versicherte zum Zeitpunkt der Fehlgeburt mindestens befand. Die Berechnung der Schwangerschaftswoche erfolgt post menstruationem, also ab dem ersten Tag der letzten Regelblutung."/>
+				</feld>
+				<feld>
+					<nummer V="3"/>
+					<name V="Frühgeburt am"/>
+					<hinweistext V="Hier ist das Geburtsdatum des Kindes im Format TTMMJJ einzutragen."/>
+				</feld>
+				<feld>
+					<nummer V="4"/>
+					<name V="Geburtsgewicht unter 2.500 Gramm"/>
+					<hinweistext V="Wenn das Geburtsgewicht weniger als 2.500 Gramm beträgt, ist das durch Ankreuzen des betreffenden Kästchens zu bestätigen."/>
+				</feld>
+				<feld>
+					<nummer V="5"/>
+					<name V="Geburtsgewicht ab 2.500 Gramm, jedoch wesentlich erweiterter Pflegebedarf"/>
+					<hinweistext V="Wenn das Geburtsgewicht mindestens 2.500 Gramm beträgt, jedoch ein wesentlich erweiterter Pflegebedarf des Kindes wegen nicht voll ausgebildeter Reifezeichen (an Rumpf, Haut, Fettpolstern, Nägeln, Haaren, äußeren Geschlechtsorganen) oder wegen verfrühter Beendigung der Schwangerschaft besteht, liegt ebenfalls eine Frühgeburt im Sinne des Mutterschutzgesetzes und des § 24i SGB V (Mutterschaftsgeld) vor. Dies ist durch Ankreuzen des betreffenden Kästchens zu kennzeichnen."/>
+				</feld>
+				<feld>
+					<nummer V="6"/>
+					<name V="Bei dem Kind liegt eine Behinderung vor"/>
+					<hinweistext V="Von einer Behinderung im Sinne des § 2 Abs. 1 Satz 1 SGB IX ist auszugehen, wenn bei dem Kind körperliche, seelische, geistige oder Sinnesbeeinträchtigungen vorliegen, die es an der gleichberechtigten Teilhabe an der Gesellschaft mit hoher Wahrscheinlichkeit länger als sechs Monate hindern können. Eine solche Beeinträchtigung liegt vor, wenn der Körper- und Gesundheitszustand von dem für das Lebensalter typischen Zustand abweicht. In diesem Fall ist das betreffende Kästchen anzukreuzen. Die ärztliche Feststellung muss gemäß § 3 Abs. 2 Nr. 3 MuSchG innerhalb von acht Wochen nach der Entbindung erfolgen, damit sich die Schutzfrist nach der Entbindung und somit die Zahlung von Mutterschaftsgeld von acht auf zwölf Wochen verlängert."/>
+				</feld>
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

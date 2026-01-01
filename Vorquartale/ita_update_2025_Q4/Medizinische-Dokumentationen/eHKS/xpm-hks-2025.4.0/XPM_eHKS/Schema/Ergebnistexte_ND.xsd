@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn::sciphox-org/sciphox" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="MalignesMelanom">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Basalzellkarzinom">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpinozelluläresKarzinom">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VerdachtsdiagnoseND">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="andererHautkrebs">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="sonstigerdermatologischabklärungsbedürftigerBefund">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Screening-TeilnehmerwirdaneinenDermatologenüberwiesen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GleichzeitigGesundheitsuntersuchungdurchgeführt">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

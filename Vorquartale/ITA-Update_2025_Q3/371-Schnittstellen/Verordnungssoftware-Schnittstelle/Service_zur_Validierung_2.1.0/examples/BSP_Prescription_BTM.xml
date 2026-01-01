@@ -1,0 +1,74 @@
+<MedicationRequest xmlns="http://hl7.org/fhir">
+	<id value="100101"/>
+	<meta>
+		<versionId value="1"/>
+		<lastUpdated value="2022-10-07T13:40:00Z"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Prescription|2.1.0"/>
+	</meta>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis">
+		<valueCoding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN"/>
+			<code value="00"/>
+		</valueCoding>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee">
+		<valueBoolean value="false"/>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment">
+		<valueCoding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_StatusCoPayment"/>
+			<code value="0"/>
+		</valueCoding>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_BVG">
+		<valueBoolean value="false"/>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_PrescriptionType">
+		<valueCodeableConcept>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType"/>
+				<code value="BTM-RP"/>
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_BTM_Prescription_Marks">
+		<valueCoding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_BTM_Prescription_Marks"/>
+			<code value="S"/>
+		</valueCoding>
+	</extension>
+	<status value="active"/>
+	<intent value="order"/>
+	<medicationReference>
+		<reference value="Medication/100100"/>
+	</medicationReference>
+	<subject>
+		<reference value="Patient/91000"/>
+	</subject>
+	<authoredOn value="2022-10-07"/>
+	<requester>
+		<reference value="PractitionerRole/90002"/>
+	</requester>
+	<groupIdentifier>
+		<value value="GI-BTM-1"/>
+	</groupIdentifier>
+	<insurance>
+		<reference value="Coverage/91001"/>
+	</insurance>
+	<dosageInstruction>
+		<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag">
+			<valueBoolean value="true"/>
+		</extension>
+		<text value="1-0-0-0"/>
+	</dosageInstruction>
+	<dispenseRequest>
+		<quantity>
+			<value value="1"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="{Package}"/>
+		</quantity>
+	</dispenseRequest>
+	<substitution>
+		<allowedBoolean value="false"/>
+	</substitution>
+</MedicationRequest> 

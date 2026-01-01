@@ -1,0 +1,205 @@
+{
+	"resourceType": "Bundle",
+	"id": "dd43415e-0734-4fb0-82c5-5f672e450f87",
+	"meta": {
+		"profile": [
+			"https://fhir.kbv.de/StructureDefinition/74_PR_ETS_Bundle"
+		]
+	},
+	"type": "message",
+	"entry": [
+		{
+			"fullUrl": "urn:uuid:334bbf7f-9bcf-40ea-bc23-79436161c068",
+			"resource": {
+				"resourceType": "MessageHeader",
+				"id": "334bbf7f-9bcf-40ea-bc23-79436161c068",
+				"meta": {
+					"profile": [
+						"https://fhir.kbv.de/StructureDefinition/74_PR_ETS_MH_Daten_Response"
+					]
+				},
+				"eventCoding": {
+					"system": "https://fhir.kbv.de/CodeSystem/74_CS_ETS_Events",
+					"code": "daten"
+				},
+				"source": {
+					"endpoint": "mailto:eTerminservice.test@kv-safenet.de"
+				},
+				"response": {
+					"identifier": "0007c944-a37a-477e-ae8a-70715bd04f3a",
+					"code": "ok"
+				},
+				"focus": [
+					{
+						"reference": "urn:uuid:3593b464-3508-425f-8834-2fdf2b2aad01"
+					}
+				]
+			}
+		},
+		{
+			"fullUrl": "urn:uuid:3593b464-3508-425f-8834-2fdf2b2aad01",
+			"resource": {
+				"resourceType": "Bundle",
+				"id": "3593b464-3508-425f-8834-2fdf2b2aad01",
+				"meta": {
+					"profile": [
+						"https://fhir.kbv.de/StructureDefinition/74_PR_ETS_Bundle_Data"
+					]
+				},
+				"type": "searchset",
+				"total": 3,
+				"entry": [
+					{
+						"fullUrl": "urn:uuid:3593b464-3508-425f-8834-2fdf2b2aadxx",
+						"resource": {
+							"resourceType": "Appointment",
+							"id": "3593b464-3508-425f-8834-2fdf2b2aadxx",
+							"meta": {
+								"profile": [
+									"https://fhir.kbv.de/StructureDefinition/74_PR_ETS_Appointment"
+								]
+							},
+							"extension": [
+								{
+									"url": "https://fhir.kbv.de/StructureDefinition/74_EX_ETS_ErsterVermittlungsversuch",
+									"valueDate": "2023-09-12"
+								},
+								{
+									"url": "https://fhir.kbv.de/StructureDefinition/74_EX_ETS_AppointmentPriority",
+									"valueCoding": {
+										"system": "http://hl7.org/fhir/request-priority",
+										"code": "urgent"
+									}
+								},
+								{
+									"url": "https://fhir.kbv.de/StructureDefinition/74_EX_ETS_AppointmentBuchungsherkunft",
+									"valueCoding": {
+										"system": "https://fhir.kbv.de/CodeSystem/74_CS_ETS_Role",
+										"code": "tss"
+									}
+								}
+							],
+							"status": "booked",
+							"start": "2023-09-14T10:00:00.000+02:00",
+							"end": "2023-09-14T10:20:00.000+02:00",
+							"created": "2023-09-13T10:30:00.000+02:00",
+							"basedOn": [
+								{
+									"identifier": {
+										"system": "https://fhir.kbv.de/identifierer/74_ID_ETS_Vermittlungscode",
+										"value": "XA9WM84LPQ9R"
+									}
+								}
+							],
+							"participant": [
+								{
+									"type": [
+										{
+											"coding": [
+												{
+													"system": "http://hl7.org/fhir/v3/ParticipationType",
+													"code": "PART"
+												}
+											]
+										}
+									],
+									"actor": {
+										"reference": "urn:uuid:d7690087-f0db-422e-adc8-e52bd869aeeb"
+									},
+									"status": "accepted"
+								},
+								{
+									"type": [
+										{
+											"coding": [
+												{
+													"system": "http://hl7.org/fhir/v3/ParticipationType",
+													"code": "PPRF"
+												}
+											]
+										}
+									],
+									"actor": {
+										"reference": "urn:uuid:cadb8971-020f-400b-9efe-6ed2be9520fe"
+									},
+									"status": "accepted"
+								}
+							],
+							 "appointmentType": {
+                                "coding":  [
+                                    {
+                                        "system": "http://terminology.hl7.org/CodeSystem/v3-ActCode",
+                                        "code": "AMB"
+                                    }
+                                ]
+                            }
+						}
+					},
+					{
+						"fullUrl": "urn:uuid:d7690087-f0db-422e-adc8-e52bd869aeeb",
+						"resource": {
+							"resourceType": "Patient",
+							"id": "d7690087-f0db-422e-adc8-e52bd869aeeb",
+							"meta": {
+								"profile": [
+									"https://fhir.kbv.de/StructureDefinition/74_PR_ETS_Patient"
+								]
+							},
+							"name": [
+								{
+									"family": "Müller",
+									"given": [
+										"Fibor"
+									]
+								}
+							],
+							"gender": "male",
+							"birthDate": "1974-05-23",
+							"address": [
+								{
+									"line": [
+										"Hauptstraße 12"
+									],
+									"_line": [
+										{
+											"extension": [
+												{
+													"url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName",
+													"valueString": "Hauptstraße"
+												},
+												{
+													"url": "http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber",
+													"valueString": "12"
+												}
+											]
+										}
+									],
+									"city": "Potsdam",
+									"postalCode": "14469"
+								}
+							]
+						}
+					},
+					{
+						"fullUrl": "urn:uuid:cadb8971-020f-400b-9efe-6ed2be9520fe",
+						"resource": {
+							"resourceType": "PractitionerRole",
+							"id": "cadb8971-020f-400b-9efe-6ed2be9520fe",
+							"meta": {
+								"profile": [
+									"https://fhir.kbv.de/StructureDefinition/74_PR_ETS_PractitionerRole"
+								]
+							},
+							"organization": {
+								"identifier": {
+									"system": "http://fhir.de/NamingSystem/kbv/bsnr",
+									"value": "241234601"
+								}
+							}
+						}
+					}
+				]
+			}
+		}
+	]
+}

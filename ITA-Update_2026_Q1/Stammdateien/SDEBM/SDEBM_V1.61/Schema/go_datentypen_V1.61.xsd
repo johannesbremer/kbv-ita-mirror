@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2016 sp1 (x64) (http://www.altova.com) von KBV (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<!-- ======================================================================= 
+ Typdefinitionen für Schnittstellen,
+ Namensraum ist:  keins
+=======================================================================-->
+<xs:schema xmlns:ehd="urn:ehd/001" xmlns:go="urn:ehd/go/001" xmlns="urn:ehd/go/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ehd/go/001" elementFormDefault="qualified">
+	<!-- ************************ Datentypen für den Text ********************************* -->
+	<!-- ************************ ebm_text ********************************* -->
+	<xs:complexType name="ebm_text_absatz" mixed="true">
+		<xs:sequence>
+			<xs:element name="div" type="go:ebm_text" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ebm_text" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="ul" type="bullet" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Liste mit Bullet-Punkten</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ol" type="number" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Nummerierte Liste</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:group ref="ebmtextformattedtype_group" minOccurs="0"/>
+			<xs:element ref="table" minOccurs="0"/>
+		</xs:choice>
+	</xs:complexType>
+	<!-- ************************ ebmtextformattedtype_group ********************************* -->
+	<xs:complexType name="ebmtextformattedtype" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:group ref="ebmtextformattedtype_group"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:group name="ebmtextformattedtype_group">
+		<xs:choice>
+			<xs:element ref="b" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>fett</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="br" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Zeilenumbruch</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="go:div" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Absatz innerhalb eines Absatzes</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="em" minOccurs="0"/>
+			<xs:element ref="i" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>kursiv</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="u" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>unterstrichen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="sup" minOccurs="0"/>
+			<xs:element ref="sub" minOccurs="0"/>
+			<xs:element ref="strong" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>hervorgehoben</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="font" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Schriftgröße</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="a" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Verlinkung zu einer anderen GNR</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="ebmtextformattedtype">
+							<xs:attribute name="href"/>
+						</xs:extension>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:group>
+	<!-- ************************ Erlaubte Textformatierungen (Fett, kursiv, hoch, tief, Schriftgröße, etc.) ********************************* -->
+	<xs:element name="b" type="ebmtextformattedtype"/>
+	<xs:element name="br" type="ebmtextformattedtype"/>
+	<xs:element name="div" type="ebmtextformattedtype"/>
+	<xs:element name="em" type="ebmtextformattedtype"/>
+	<xs:element name="i" type="ebmtextformattedtype"/>
+	<xs:element name="u" type="ebmtextformattedtype"/>
+	<xs:element name="sup" type="ebmtextformattedtype"/>
+	<xs:element name="sub" type="ebmtextformattedtype"/>
+	<xs:element name="strong" type="ebmtextformattedtype"/>
+	<xs:element name="font">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="ebmtextformattedtype">
+					<xs:attribute name="size" type="xs:unsignedByte"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<!-- ************************ Listen mit und ohne Nummerierung ********************************* -->
+	<xs:complexType name="bullet" mixed="true">
+		<xs:annotation>
+			<xs:documentation>Liste mit Bullet-Punkten</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="li" type="go:listindex"/>
+		</xs:choice>
+		<xs:attribute name="style" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="number" mixed="true">
+		<xs:annotation>
+			<xs:documentation>Nummerierte Liste</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="li" type="go:listindex"/>
+		</xs:choice>
+		<xs:attribute name="style" type="xs:string"/>
+		<xs:attribute name="start" type="xs:unsignedByte"/>
+	</xs:complexType>
+	<xs:complexType name="listindex" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="ul" type="bullet"/>
+			<xs:element name="ol" type="number"/>
+			<xs:group ref="ebmtextformattedtype_group"/>
+			<xs:element ref="table" minOccurs="0"/>
+		</xs:choice>
+	</xs:complexType>
+	<!-- ************************ Tabelle ********************************* -->
+	<xs:element name="table">
+		<xs:annotation>
+			<xs:documentation>Tabelle im Text</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="tr" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Tabellenzeile</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tr">
+		<xs:complexType>
+			<xs:choice minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="td" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Tabellenspalte</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="th" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Tabellenspalte</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="th">
+		<xs:complexType mixed="true">
+			<xs:complexContent>
+				<xs:extension base="ebmtextformattedtype"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="td">
+		<xs:complexType mixed="true">
+			<xs:complexContent>
+				<xs:extension base="ebmtextformattedtype"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-PR-VoS-Device-PVS" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Device_PVS" />
+  <version value="2.1.0" />
+  <name value="KBV_PR_VoS_Device_PVS" />
+  <title value="KBV_PR_VoS_Device_PVS" />
+  <status value="active" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <description value="Übergabe der KBV-Prüfnummer des PVS an die VoS, optionale Angabe des PVS-Namens und Kontaktdaten des Herstellers" />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Device" />
+  <baseDefinition value="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Device|1.3.0" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Device.id">
+      <path value="Device.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.meta">
+      <path value="Device.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.meta.source">
+      <path value="Device.meta.source" />
+      <max value="0" />
+    </element>
+    <element id="Device.meta.profile">
+      <path value="Device.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Device_PVS|2.1.0" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.meta.security">
+      <path value="Device.meta.security" />
+      <max value="0" />
+    </element>
+    <element id="Device.meta.tag">
+      <path value="Device.meta.tag" />
+      <max value="0" />
+    </element>
+    <element id="Device.implicitRules">
+      <path value="Device.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Device.language">
+      <path value="Device.language" />
+      <max value="0" />
+    </element>
+    <element id="Device.contained">
+      <path value="Device.contained" />
+      <max value="0" />
+    </element>
+    <element id="Device.extension">
+      <path value="Device.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="0" />
+	  <max value="0" />
+    </element>
+    <element id="Device.extension:verantwortlichePersonEinrichtung">
+      <path value="Device.extension" />
+      <sliceName value="verantwortlichePersonEinrichtung" />
+      <min value="0" />
+      <max value="0" />
+    </element>
+    <element id="Device.identifier">
+      <path value="Device.identifier" />
+      <short value="KBV-Prüfnummer" />
+      <definition value="KBV-Prüfnummer der VoS-SST-Zertifizierung des PVS" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.identifier.use">
+      <path value="Device.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Device.identifier.type">
+      <path value="Device.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Device.identifier.system">
+      <path value="Device.identifier.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.identifier.value">
+      <path value="Device.identifier.value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.identifier.period">
+      <path value="Device.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Device.identifier.assigner">
+      <path value="Device.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Device.definition">
+      <path value="Device.definition" />
+      <max value="0" />
+    </element>
+    <element id="Device.udiCarrier">
+      <path value="Device.udiCarrier" />
+      <max value="0" />
+    </element>
+    <element id="Device.status">
+      <path value="Device.status" />
+      <max value="0" />
+    </element>
+    <element id="Device.statusReason">
+      <path value="Device.statusReason" />
+      <max value="0" />
+    </element>
+    <element id="Device.distinctIdentifier">
+      <path value="Device.distinctIdentifier" />
+      <max value="0" />
+    </element>
+    <element id="Device.manufacturer">
+      <path value="Device.manufacturer" />
+      <max value="0" />
+    </element>
+    <element id="Device.manufactureDate">
+      <path value="Device.manufactureDate" />
+      <max value="0" />
+    </element>
+    <element id="Device.expirationDate">
+      <path value="Device.expirationDate" />
+      <max value="0" />
+    </element>
+    <element id="Device.lotNumber">
+      <path value="Device.lotNumber" />
+      <max value="0" />
+    </element>
+    <element id="Device.serialNumber">
+      <path value="Device.serialNumber" />
+      <max value="0" />
+    </element>
+    <element id="Device.deviceName">
+      <path value="Device.deviceName" />
+      <definition value="Name des PVS" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.deviceName.name">
+      <path value="Device.deviceName.name" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.deviceName.type">
+      <path value="Device.deviceName.type" />
+      <fixedCode value="manufacturer-name" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.modelNumber">
+      <path value="Device.modelNumber" />
+      <max value="0" />
+    </element>
+    <element id="Device.partNumber">
+      <path value="Device.partNumber" />
+      <max value="0" />
+    </element>
+    <element id="Device.type">
+      <path value="Device.type" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.type.coding">
+      <path value="Device.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.type.coding:codeSnomed">
+      <path value="Device.type.coding" />
+      <sliceName value="codeSnomed" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.type.coding:codeSnomed.system">
+      <path value="Device.type.coding.system" />
+      <fixedUri value="http://snomed.info/sct" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.type.coding:codeSnomed.version">
+      <path value="Device.type.coding.version" />
+      <min value="1" />
+      <fixedString value="http://snomed.info/sct/900000000000207008/version/20220331" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.type.coding:codeSnomed.code">
+      <path value="Device.type.coding.code" />
+      <fixedCode value="463916008" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.type.coding:codeSnomed.display">
+      <path value="Device.type.coding.display" />
+      <min value="1" />
+      <fixedString value="Physician-practice-management information system application software (physical object)" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.type.coding:codeSnomed.userSelected">
+      <path value="Device.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Device.type.text">
+      <path value="Device.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Device.specialization">
+      <path value="Device.specialization" />
+      <max value="0" />
+    </element>
+    <element id="Device.version">
+      <path value="Device.version" />
+      <max value="0" />
+    </element>
+    <element id="Device.property">
+      <path value="Device.property" />
+      <max value="0" />
+    </element>
+    <element id="Device.patient">
+      <path value="Device.patient" />
+      <max value="0" />
+    </element>
+    <element id="Device.owner">
+      <path value="Device.owner" />
+      <max value="0" />
+    </element>
+    <element id="Device.contact">
+      <path value="Device.contact" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <short value="Kontaktangaben PVS" />
+      <definition value="Enthält die Kontaktmöglichkeiten des Supports des PVS-Herstellers" />
+      <max value="2" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.contact:Telefonnummer">
+      <path value="Device.contact" />
+      <sliceName value="Telefonnummer" />
+      <short value="Telefonnummer Support" />
+      <definition value="Enthält die Telefonnummer des Supports des PVS-Herstellers" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.contact:Telefonnummer.system">
+      <path value="Device.contact.system" />
+      <min value="1" />
+      <fixedCode value="phone" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.contact:Telefonnummer.value">
+      <path value="Device.contact.value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.contact:Telefonnummer.use">
+      <path value="Device.contact.use" />
+      <max value="0" />
+    </element>
+    <element id="Device.contact:Telefonnummer.rank">
+      <path value="Device.contact.rank" />
+      <max value="0" />
+    </element>
+    <element id="Device.contact:Telefonnummer.period">
+      <path value="Device.contact.period" />
+      <max value="0" />
+    </element>
+    <element id="Device.contact:E-Mail">
+      <path value="Device.contact" />
+      <sliceName value="E-Mail" />
+      <short value="E-Mail-Adresse Support" />
+      <definition value="Enthält die E-Mail-Adresse des Supports des PVS-Herstellers" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.contact:E-Mail.system">
+      <path value="Device.contact.system" />
+      <min value="1" />
+      <fixedCode value="email" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.contact:E-Mail.value">
+      <path value="Device.contact.value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.contact:E-Mail.use">
+      <path value="Device.contact.use" />
+      <max value="0" />
+    </element>
+    <element id="Device.contact:E-Mail.rank">
+      <path value="Device.contact.rank" />
+      <max value="0" />
+    </element>
+    <element id="Device.contact:E-Mail.period">
+      <path value="Device.contact.period" />
+      <max value="0" />
+    </element>
+    <element id="Device.location">
+      <path value="Device.location" />
+      <max value="0" />
+    </element>
+    <element id="Device.url">
+      <path value="Device.url" />
+      <max value="0" />
+    </element>
+    <element id="Device.note">
+      <path value="Device.note" />
+      <max value="0" />
+    </element>
+    <element id="Device.safety">
+      <path value="Device.safety" />
+      <max value="0" />
+    </element>
+    <element id="Device.parent">
+      <path value="Device.parent" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

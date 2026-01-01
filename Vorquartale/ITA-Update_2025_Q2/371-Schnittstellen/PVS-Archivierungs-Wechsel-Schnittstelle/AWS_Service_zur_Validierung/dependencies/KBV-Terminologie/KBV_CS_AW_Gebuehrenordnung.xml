@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Gebuehrenordnung"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Gebuehrenordnung"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Gebuehrenordnungen"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="BMAe"/>
+<display value="BMAe"/>
+</concept>
+<concept>
+<code value="E-GO"/>
+<display value="E-GO"/>
+</concept>
+<concept>
+<code value="EBM"/>
+<display value="EBM"/>
+</concept>
+<concept>
+<code value="GOAe"/>
+<display value="GOAe"/>
+</concept>
+<concept>
+<code value="UV_GOAe"/>
+<display value="UV GOAe"/>
+</concept>
+<concept>
+<code value="HzV/Selektiv"/>
+<display value="HzV/Selektiv"/>
+</concept>
+</CodeSystem>

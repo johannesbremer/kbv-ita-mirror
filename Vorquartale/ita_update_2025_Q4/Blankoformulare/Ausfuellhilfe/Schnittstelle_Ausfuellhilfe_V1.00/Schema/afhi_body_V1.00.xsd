@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2017 rel. 3 (http://www.altova.com) von brasul (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/afhi/001" xmlns:ehd="urn:ehd/001" targetNamespace="urn:ehd/afhi/001" elementFormDefault="qualified">
+	<xs:element name="ausfuellhilfen">
+		<xs:annotation>
+			<xs:documentation>
+				Musternummer, Strukturiert in eine Feldliste. Diese hat das Element Feld mit den Attributen Feldname, Feldnummer und Hinweistext.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="feld_liste"/>
+			</xs:sequence>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+			<xs:attribute name="DN" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="feld_liste">
+		<xs:annotation>
+			<xs:documentation>Liste der Felder eines Musters</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="feld" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="feld">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nummer">
+					<xs:annotation>
+						<xs:documentation>Dieses Feld stellt die Nummer des Feldes auf dem Muster dar (siehe durchnummeriertes Muster)</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="name">
+					<xs:annotation>
+						<xs:documentation>Dieses Element stellt den Feldnamen dar</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="hinweistext">
+					<xs:annotation>
+						<xs:documentation>Hier wird der Hinweistext für das entsprechende Feld eingetragen</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

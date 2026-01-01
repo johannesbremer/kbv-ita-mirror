@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krankenversicherungsverhaeltnis" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Krankenversicherungsverhaeltnis" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="cdanetv4" />
+    <uri value="http://www.cda-adc.ca/en/services/cdanet/" />
+    <name value="Canadian Dental Association eclaims standard" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="cpha3pharm" />
+    <uri value="http://www.pharmacists.ca/" />
+    <name value="Canadian Pharmacy Associaiton eclaims standard" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Coverage" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Coverage" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Coverage">
+      <path value="Coverage" />
+      <short value="Versicherungsdaten" />
+      <definition value="Kostenuebernahme im Rahmen eines Versicherungsverhaeltnisses in Deutschland" />
+    </element>
+    <element id="Coverage.id">
+      <path value="Coverage.id" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.meta">
+      <path value="Coverage.meta" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.meta.versionId">
+      <path value="Coverage.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.meta.lastUpdated">
+      <path value="Coverage.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.meta.profile">
+      <path value="Coverage.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krankenversicherungsverhaeltnis|1.2.0" />
+    </element>
+    <element id="Coverage.text">
+      <path value="Coverage.text" />
+      <min value="1" />
+    </element>	
+    <element id="Coverage.extension">
+      <path value="Coverage.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Coverage.extension:einlesedatumKarte">
+      <path value="Coverage.extension" />
+      <sliceName value="einlesedatumKarte" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gkv/einlesedatum-karte" />
+      </type>
+    </element>
+    <element id="Coverage.extension:onlinepruefung">
+      <path value="Coverage.extension" />
+      <sliceName value="onlinepruefung" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gkv/onlinepruefung-egk" />
+      </type>
+    </element>
+    <element id="Coverage.extension:versionEgk">
+      <path value="Coverage.extension" />
+      <sliceName value="versionEgk" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gkv/version-vsdm" />
+      </type>
+    </element>
+    <element id="Coverage.extension:generationEgk">
+      <path value="Coverage.extension" />
+      <sliceName value="generationEgk" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gkv/generation-egk" />
+      </type>
+    </element>
+    <element id="Coverage.extension:versichertenart">
+      <path value="Coverage.extension" />
+      <sliceName value="versichertenart" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gkv/versichertenart" />
+      </type>
+    </element>
+    <element id="Coverage.extension:kostenerstattung">
+      <path value="Coverage.extension" />
+      <sliceName value="kostenerstattung" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gkv/kostenerstattung" />
+      </type>
+    </element>
+    <element id="Coverage.extension:wop">
+      <path value="Coverage.extension" />
+      <sliceName value="wop" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gkv/wop" />
+      </type>
+    </element>
+    <element id="Coverage.extension:besonderePersonengruppe">
+      <path value="Coverage.extension" />
+      <sliceName value="besonderePersonengruppe" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gkv/besondere-personengruppe" />
+      </type>
+    </element>
+    <element id="Coverage.extension:dmpKennzeichen">
+      <path value="Coverage.extension" />
+      <sliceName value="dmpKennzeichen" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen" />
+      </type>
+    </element>
+    <element id="Coverage.extension:ruhenderLeistungsanspruch">
+      <path value="Coverage.extension" />
+      <sliceName value="ruhenderLeistungsanspruch" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gkv/ruhender-leistungsanspruch" />
+      </type>
+    </element>
+    <element id="Coverage.extension:zuzahlungsstatus">
+      <path value="Coverage.extension" />
+      <sliceName value="zuzahlungsstatus" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gkv/zuzahlungsstatus" />
+      </type>
+    </element>
+    <element id="Coverage.extension:skt-Zusatzangabe">
+      <path value="Coverage.extension" />
+      <sliceName value="skt-Zusatzangabe" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_SKT_Zusatzangabe" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.identifier">
+      <path value="Coverage.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <short value="Primärer Identifier der Versicherung" />
+      <definition value="Ein gesetzliches Versicherungsverhältnis sollte stets durch die eindeutige 30-stellige Versichertennummer identifiziert werden. Ist diese nicht bekannt, so wird die 10-stellige VersichertenID statt dessen verwendet." />
+      <comment value="TODO: Constraint, der prüft, dass mindestens entweder eine VersichertenID oder eine Krankenversichertennummer angegeben wurde." />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.identifier:KrankenversichertenID">
+      <path value="Coverage.identifier" />
+      <sliceName value="KrankenversichertenID" />
+      <max value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://fhir.de/StructureDefinition/identifier-kvid-10" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.identifier:KrankenversichertenID.type">
+      <path value="Coverage.identifier.type" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.identifier:KrankenversichertenID.period">
+      <path value="Coverage.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:KrankenversichertenID.assigner">
+      <path value="Coverage.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:KVK-Versichertennummer">
+      <path value="Coverage.identifier" />
+      <sliceName value="KVK-Versichertennummer" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.identifier:KVK-Versichertennummer.use">
+      <path value="Coverage.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:KVK-Versichertennummer.type">
+      <path value="Coverage.identifier.type" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.identifier:KVK-Versichertennummer.type.coding">
+      <path value="Coverage.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Coverage.identifier:KVK-Versichertennummer.type.coding.system">
+      <path value="Coverage.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_Base_identifier_type" />
+    </element>
+    <element id="Coverage.identifier:KVK-Versichertennummer.type.coding.version">
+      <path value="Coverage.identifier.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:KVK-Versichertennummer.type.coding.code">
+      <path value="Coverage.identifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="kvk" />
+    </element>
+    <element id="Coverage.identifier:KVK-Versichertennummer.type.coding.display">
+      <path value="Coverage.identifier.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:KVK-Versichertennummer.type.coding.userSelected">
+      <path value="Coverage.identifier.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:KVK-Versichertennummer.type.text">
+      <path value="Coverage.identifier.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:KVK-Versichertennummer.system">
+      <path value="Coverage.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/NamingSystem/gkv/kvk-versichertennummer" />
+    </element>
+    <element id="Coverage.identifier:KVK-Versichertennummer.value">
+      <path value="Coverage.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.identifier:KVK-Versichertennummer.period">
+      <path value="Coverage.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:KVK-Versichertennummer.assigner">
+      <path value="Coverage.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:versichertennummer_pkv">
+      <path value="Coverage.identifier" />
+      <sliceName value="versichertennummer_pkv" />
+      <max value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://fhir.de/StructureDefinition/identifier-pkv" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.identifier:versichertennummer_pkv.type.text">
+      <path value="Coverage.identifier.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:versichertennummer_pkv.period">
+      <path value="Coverage.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:versichertennummer_pkv.assigner">
+      <path value="Coverage.identifier.assigner" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation|1.2.0" />
+      </type>
+    </element>
+    <element id="Coverage.identifier:pseudo-Krankenversichertennummer">
+      <path value="Coverage.identifier" />
+      <sliceName value="pseudo-Krankenversichertennummer" />
+      <max value="1" />
+    </element>
+    <element id="Coverage.identifier:pseudo-Krankenversichertennummer.type">
+      <path value="Coverage.identifier.type" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.identifier:pseudo-Krankenversichertennummer.type.coding">
+      <path value="Coverage.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Coverage.identifier:pseudo-Krankenversichertennummer.type.coding.system">
+      <path value="Coverage.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_Base_identifier_type" />
+    </element>
+    <element id="Coverage.identifier:pseudo-Krankenversichertennummer.type.coding.version">
+      <path value="Coverage.identifier.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:pseudo-Krankenversichertennummer.type.coding.code">
+      <path value="Coverage.identifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="PseudoversichertenID" />
+    </element>
+    <element id="Coverage.identifier:pseudo-Krankenversichertennummer.type.coding.display">
+      <path value="Coverage.identifier.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:pseudo-Krankenversichertennummer.type.coding.userSelected">
+      <path value="Coverage.identifier.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:pseudo-Krankenversichertennummer.type.text">
+      <path value="Coverage.identifier.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:pseudo-Krankenversichertennummer.system">
+      <path value="Coverage.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/NamingSystem/gkv/pseudo-kvid" />
+    </element>
+    <element id="Coverage.identifier:pseudo-Krankenversichertennummer.value">
+      <path value="Coverage.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.identifier:pseudo-Krankenversichertennummer.period">
+      <path value="Coverage.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.identifier:pseudo-Krankenversichertennummer.assigner">
+      <path value="Coverage.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.status">
+      <path value="Coverage.status" />
+      <short value="active | cancelled" />
+      <definition value="Der Status der Ressource darf nur active oder cancelled sein" />
+    </element>
+    <element id="Coverage.type">
+      <path value="Coverage.type" />
+      <short value="Versicherungsart" />
+      <definition value="Art der Versicherung: Selbstzahler, gesetzliche/private Versicherung, Berufsgenossenschaft oder Sozialamt" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://fhir.de/ValueSet/versicherungsart-de-basis" />
+      </binding>
+    </element>
+    <element id="Coverage.type.coding">
+      <path value="Coverage.type.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Coverage.type.coding.system">
+      <path value="Coverage.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/CodeSystem/versicherungsart-de-basis" />
+    </element>
+    <element id="Coverage.type.coding.version">
+      <path value="Coverage.type.coding.version" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.type.coding.code">
+      <path value="Coverage.type.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.type.coding.display">
+      <path value="Coverage.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.type.coding.userSelected">
+      <path value="Coverage.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.type.text">
+      <path value="Coverage.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.policyHolder">
+      <path value="Coverage.policyHolder" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.subscriber">
+      <path value="Coverage.subscriber" />
+      <short value="Hauptversicherte Person / Mitglied" />
+      <definition value="Hauptversicherte Person (ggf. abweichend von beneficiary), z.B. bei Familienversicherung. Es muss entweder eine Referenz(mit den Attributen Haupterversichertenname und dessen ID) vorhanden sein oder die Attribute identifier und display müssen gefüllt sein." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Bezugsperson|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.subscriber.type">
+      <path value="Coverage.subscriber.type" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.subscriber.identifier">
+      <path value="Coverage.subscriber.identifier" />
+      <short value="HauptversichertenID" />
+      <definition value="Eine ID des Hauptversicherten" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.subscriber.identifier.type">
+      <path value="Coverage.subscriber.identifier.type" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.subscriber.identifier.type.coding">
+      <path value="Coverage.subscriber.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Coverage.subscriber.identifier.type.coding.system">
+      <path value="Coverage.subscriber.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenversicherung_ID_Typ" />
+    </element>
+    <element id="Coverage.subscriber.identifier.type.coding.version">
+      <path value="Coverage.subscriber.identifier.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.subscriber.identifier.type.coding.code">
+      <path value="Coverage.subscriber.identifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="HauptversichertenID" />
+    </element>
+    <element id="Coverage.subscriber.identifier.type.coding.display">
+      <path value="Coverage.subscriber.identifier.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.subscriber.identifier.type.coding.userSelected">
+      <path value="Coverage.subscriber.identifier.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.subscriber.identifier.type.text">
+      <path value="Coverage.subscriber.identifier.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.subscriber.identifier.system">
+      <path value="Coverage.subscriber.identifier.system" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.subscriber.identifier.value">
+      <path value="Coverage.subscriber.identifier.value" />
+      <short value="HauptversichertenID" />
+      <definition value="VersichertenID des Hauptversicherten" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.subscriber.identifier.period">
+      <path value="Coverage.subscriber.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.subscriber.identifier.assigner">
+      <path value="Coverage.subscriber.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.subscriber.display">
+      <path value="Coverage.subscriber.display" />
+      <short value="Hauptversichertenname" />
+      <definition value="Anzugeben ist der Name des Hauptversicherten." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.subscriberId">
+      <path value="Coverage.subscriberId" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.beneficiary">
+      <path value="Coverage.beneficiary" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.beneficiary.reference">
+      <path value="Coverage.beneficiary.reference" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.beneficiary.type">
+      <path value="Coverage.beneficiary.type" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.beneficiary.identifier">
+      <path value="Coverage.beneficiary.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.beneficiary.display">
+      <path value="Coverage.beneficiary.display" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.dependent">
+      <path value="Coverage.dependent" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.relationship">
+      <path value="Coverage.relationship" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.period">
+      <path value="Coverage.period" />
+      <definition value="In diesem Element werden der Beginn und das Ende des Krankenversicherungsverhaeltnisses angegeben" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor">
+      <path value="Coverage.payor" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor.identifier">
+      <path value="Coverage.payor.identifier" />
+      <short value="IKs" />
+      <min value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://fhir.de/StructureDefinition/identifier-iknr" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor.identifier.extension">
+      <path value="Coverage.payor.identifier.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Coverage.payor.identifier.extension:alternative_IK">
+      <path value="Coverage.payor.identifier.extension" />
+      <sliceName value="alternative_IK" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Alternative_IK" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor.identifier.extension:alternative_IK.value[x]:valueIdentifier">
+      <path value="Coverage.payor.identifier.extension.value[x]" />
+      <sliceName value="valueIdentifier" />
+    </element>
+    <element id="Coverage.payor.identifier.extension:alternative_IK.value[x]:valueIdentifier.system">
+      <path value="Coverage.payor.identifier.extension.value[x].system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor.identifier.extension:alternative_IK.value[x]:valueIdentifier.value">
+      <path value="Coverage.payor.identifier.extension.value[x].value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor.identifier.type.coding:XX-Type">
+      <path value="Coverage.payor.identifier.type.coding" />
+      <sliceName value="XX-Type" />
+    </element>
+    <element id="Coverage.payor.identifier.type.coding:XX-Type.version">
+      <path value="Coverage.payor.identifier.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.payor.identifier.type.coding:XX-Type.display">
+      <path value="Coverage.payor.identifier.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.payor.identifier.type.coding:XX-Type.userSelected">
+      <path value="Coverage.payor.identifier.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.payor.identifier.system">
+      <path value="Coverage.payor.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor.identifier.value">
+      <path value="Coverage.payor.identifier.value" />
+      <maxLength value="9" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor.identifier.period">
+      <path value="Coverage.payor.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.payor.identifier.assigner">
+      <path value="Coverage.payor.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.payor.display">
+      <path value="Coverage.payor.display" />
+      <short value="Kostenträgername" />
+      <min value="1" />
+    </element>
+    <element id="Coverage.class">
+      <path value="Coverage.class" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.order">
+      <path value="Coverage.order" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.network">
+      <path value="Coverage.network" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.costToBeneficiary">
+      <path value="Coverage.costToBeneficiary" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.subrogation">
+      <path value="Coverage.subrogation" />
+      <max value="0" />
+    </element>
+    <element id="Coverage.contract">
+      <path value="Coverage.contract" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

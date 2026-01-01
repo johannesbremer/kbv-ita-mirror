@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Diese Datei beschreibt die Meldungen eines Prueflaufs. -->
+<meldungen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Common/Schema/meldungen.xsd">
+
+	<meldung>
+		<nummer>DMP-001</nummer>
+		<typ>Fehler</typ>
+		<text>Das %s liegt in der Zukunft.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-002</nummer>
+		<typ>Fehler</typ>
+		<text>Feld %s ist ein Pflichtfeld.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-003</nummer>
+		<typ>Fehler</typ>
+		<text>Nicht zulässiger Wert '%s' zu Parameter '%s'</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-004</nummer>
+		<typ>Fehler</typ>
+        <text>Inkonsistente Angaben bzgl. Id's im Bereich '/clinical_document_header/'. Mindestens zwei unterschiedliche Angaben '%s' und '%s' wurden hierzu gemacht.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-005</nummer>
+		<typ>Fehler</typ>
+		<text>Die Datei '%s' entspricht nicht der Dateinamenskonvention gemäß '%s' mit AAAAAAAAA: KrankenhausIK 9-stellig, BBBBBBB: DMP-Fallnummer und JJJJMMTT: Dokumentationsdatum (origination_dttm). Erwartet wird folgender Dateiname: '%s'.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-006</nummer>
+		<typ>Fehler</typ>
+		<text>Der Wert für '%s' muss 9stellig sein.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-007</nummer>
+		<typ>Fehler</typ>
+		<text>Typ '%s' zu Parameter '%s' nicht zulässig.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-008</nummer>
+		<typ>Fehler</typ>
+		<text>Zu dem Parameter '%s' wurde im Datensatz kein Wert angegeben.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-009</nummer>
+		<typ>Fehler</typ>
+        	<text>Zwei verschachtelte Beobachtung-Elemente weisen den gleichen Parameter '%s' auf.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-010</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s'. Hier wird statt '%s' eine Fliesskommazahl mit Punkt als Dezimaltrenner erwartet.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-011</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s': Hier wird statt '%s' eine Integer-Zahl erwartet.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-012</nummer>
+		<typ>Fehler</typ>
+		<text>Nur eine Angabe zu Feld '%s' zulässig.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-013</nummer>
+		<typ>Fehler</typ>
+		<text>Feld %s: Es darf nur 'ja' oder 'nein' angekreuzt werden, nicht beides</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-014</nummer>
+		<typ>Fehler</typ>
+		<text>Der systolische Blutdruckwert muss zwischen 50 und 300 liegen.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-016</nummer>
+		<typ>Fehler</typ>
+		<text>Der systolische Blutdruckwert muss grösser als der diastolische Blutdruckwert sein.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-017</nummer>
+		<typ>Fehler</typ>
+		<text>Der diastolische Blutdruckwert muss zwischen 30 und 180 liegen.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-018</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s': Option "Keine der genannten Erkrankungen" schliesst weitere Angaben aus.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-019</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s': Option "nein" schliesst weitere Angaben aus.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-020</nummer>
+		<typ>Fehler</typ>
+		<text>Der Name der XML-Schemadatei '%s' im Dokument entspricht nicht dem Namen der XML-Schemadatei aus der Konfigurationsdatei '%s'.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-021</nummer>
+		<typ>Fehler</typ>
+		<text>Die 'Körpergrösse' muss zwischen 0 und 2,50 liegen.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-022</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe zur Körpergrösse muss dem Format 'n.nn' entsprechen.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-023</nummer>
+		<typ>Fehler</typ>
+		<text>Das 'Körpergewicht' muss zwischen 0 und 300 kg liegen.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-024</nummer>
+		<typ>Fehler</typ>
+		<text>Der Wert für '%s' muss grösser oder gleich 0 sein.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-025</nummer>
+		<typ>Warnung</typ>
+		<text>Gepackte Dokumentationen müssen im Ordner '%s' abgelegt werden.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-026</nummer>
+		<typ>Fehler</typ>
+		<text>Interner Fehler: Modulname für Anamnese- und Befunddaten fehlt.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-027</nummer>
+		<typ>Fehler</typ>
+		<text>Interner Fehler: Modulname für Anamnese- und Befunddaten unbekannt: '%s'</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-028</nummer>
+		<typ>Fehler</typ>
+		<text>Feld Serum Kreatinin: Wenn 'Nicht bestimmt' angekreuzt ist, kann nicht gleichzeitig ein Wert eingetragen sein.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-029</nummer>
+		<typ>Fehler</typ>
+		<text>Feld Serum Kreatinin: 'umol/l' und 'mg/dl' können nicht gleichzeitig angegeben werden.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-030</nummer>
+		<typ>Fehler</typ>
+		<text>Feld Serum Kreatinin: Wert für 'umol/l' muss innerhalb des Wertebereichs von 0 bis 7956 liegen.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-031</nummer>
+		<typ>Fehler</typ>
+		<text>Feld Serum Kreatinin: Wert für 'mg/dl' muss innerhalb des Wertebereichs von 0,00 bis 90,00 liegen.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-032</nummer>
+		<typ>Fehler</typ>
+		<text>Feld Serum Kreatinin: Wert für 'mg/dl' entspricht nicht dem Format n.nn bzw. nn.nn.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-033</nummer>
+		<typ>Fehler</typ>
+		<text>Feld Serum Kreatinin: Angabe '%s' ist nicht zulässig.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-035</nummer>
+		<typ>Fehler</typ>
+		<text>Bei vorhandenem 'Einlesedatum' muss eine Angabe zur 'Statusergänzung' erfolgen.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-036</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s': Ungültiges Datumsformat</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-037</nummer>
+		<typ>Warnung</typ>
+		<text>Das Kopfdatendatum (origination_dttm) sollte nicht jünger als das Unterschriftsdatum (service_tmr) sein.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-038</nummer>
+		<typ>Fehler</typ>
+		<text>Der Parameter '%s' ist nur im Zusammenhang mit der Verlaufsdokumentation zulässig.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-039</nummer>
+		<typ>Warnung</typ>
+		<text>IK '%s' in Stammdatei nicht gefunden.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-040</nummer>
+		<typ>Warnung</typ>
+		<text>Das IK '%s' ist für dieses Abrechnungsquartal ungültig.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-043</nummer>
+		<typ>Fehler</typ>
+		<text>'%s' ist keine gültige Einheit für Feld '%s'.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-044</nummer>
+		<typ>Fehler</typ>
+		<text>Der Einschreibegrund darf nicht als Begleiterkrankung aufgeführt werden.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-045</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe nur eines Blutdruckswerts, systolisch oder diastolisch, ist nicht zulässig.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-046</nummer>
+		<typ>Fehler</typ>
+		<text>Die gleichzeitige Angabe des Serum-Kreatinin in "umol/l" und "mg/dl" ist nicht zulässig.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-047</nummer>
+		<typ>Fehler</typ>
+		<text>Das Geburtsdatum muss vor dem Unterschriftsdatum liegen.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-048</nummer>
+		<typ>Fehler</typ>
+		<text>Der Kostenträgerabrechnungsbereich (KTAB) '%s' passt nicht zu dem angegebenen IK '%s'.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-049</nummer>
+		<typ>Fehler</typ>
+		<text>Parameter '%s': Kein Zahlenwert möglich bei Angabe von "Nicht bestimmt"</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-051</nummer>
+		<typ>Warnung</typ>
+		<text>Der angegebene Zeitpunkt für "Nächste Dokumentationserstellung geplant am" sollte nicht älter als das Datum der Erstellung (service_tmr) sein.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-052</nummer>
+		<typ>Warnung</typ>
+		<text>Die Angabe "Versicherungsschutzende" sollte nicht vor dem Erstellungsdatum (service_tmr) liegen.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-053</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe "Versicherungsschutzende" darf nicht länger als 3 Monate vor dem Erstellungsdatum (service_tmr) liegen.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-054</nummer>
+		<typ>Warnung</typ>
+		<text>Das Erstellungsdatum (service_tmr) darf nicht vor dem Einlesedatum liegen.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-055</nummer>
+		<typ>Fehler</typ>
+		<text>Der Wert für Parameter '%s' muss innerhalb von %s und %s liegen.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-056</nummer>
+		<typ>Fehler</typ>
+		<text>Angabe '0000' für das Geburtsjahr ist ungültig.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-057</nummer>
+		<typ>Fehler</typ>
+		<text>Die Versichertennummer darf ab dem zweiten Zeichen nur Ziffern beinhalten.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-058</nummer>
+		<typ>Fehler</typ>
+		<text>Feld 'AbrechnungsVKNR': Die VKNR '%s' ist in Stammdatei nicht enthalten.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-059</nummer>
+		<typ>Fehler</typ>
+		<text>Der erste Bestandteil des Dateinamens (bis zum Unterstrich) muss 9-stellig sein.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-060</nummer>
+		<typ>Fehler</typ>
+		<text>LANR und BSNR müssen gemeinsam genannt werden.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-061</nummer>
+		<typ>Fehler</typ>
+		<text>Weder LANR/BSNR noch Krankenhaus-IK sind genannt.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-062</nummer>
+		<typ>Fehler</typ>
+		<text>'Modul-Teilnahme Chronische Herzinsuffizienz' darf momentan nur den Wert 'Nein' erhalten.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-063</nummer>
+		<typ>Fehler</typ>
+		<text>Die Kombination '%s' und '%s' bei 'Einschreibung wegen' ist nicht zulässig.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-065</nummer>
+		<typ>Fehler</typ>
+		<text>Die Datei '%s' entspricht nicht der Dateinamenskonvention gemäß '%s' mit AAAAAAAAA: 9-stellige Angabe, BBBBBBB: DMP-Fallnummer und JJJJMMTT: Dokumentationsdatum (origination_dttm). Erwartet wird folgender Dateiname: '%s'.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-066</nummer>
+		<typ>Fehler</typ>
+		<text>Das Feld 'Modul-Teilnahme Chronische Herzinsuffizienz' ist zwingend notwendig bei Angabe von KHK als Einschreibegrund.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-067</nummer>
+		<typ>Fehler</typ>
+		<text>Der Indikationstyp muss als Einschreibegrund genannt werden.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-067b</nummer>
+		<typ>Fehler</typ>
+		<text>Der Dokument-Typ '%s' passt nicht zur Dateiendung '%s'.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-068</nummer>
+		<typ>Fehler</typ>
+		<text>BSNR oder Krankenhaus-IK muss identisch mit patient/person/id/@rt und id/@rt sein.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-069</nummer>
+		<typ>Fehler</typ>
+		<text>Der Beobachtungsblock "Serum-Kreatinin" ist aufgrund der Nennung von Diabetes mellitus Pflicht.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-070</nummer>
+		<typ>Fehler</typ>
+		<text>Angabe des Blutdrucks bei Asthma verpflichtend wegen Nennung von Diabetes mellitus</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-071</nummer>
+		<typ>Fehler</typ>
+		<text>Die Einschreibung in das DMP Asthma bronchiale ist für Patienten unter 1 Jahr nicht möglich.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-072</nummer>
+		<typ>Fehler</typ>
+		<text>Angabe des Blutdrucks bei Asthma verpflichtend sofern zusätzlich KHK genannt ist und das Alter des Patienten &lt; 18 Jahre.</text>
+	</meldung>
+	
+	<meldung>
+		<nummer>DMP-073</nummer>
+		<typ>Fehler</typ>
+		<text>Angabe des Blutdrucks bei Asthma verpflichtend sofern zusätzlich Chronische Herzinsuffizienz genannt ist.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-074a</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe 'Rheuma-Schulung schon vor Einschreibung in DMP bereits wahrgenommen' ist im Rahmen einer Folgedokumentation nicht zulässig.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-074b</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe 'Rheuma-Schulung wahrgenommen' ist im Rahmen einer Erstdokumentation nicht zulässig.</text>
+	</meldung>
+
+
+	<meldung>
+		<nummer>DMP-075</nummer>
+		<typ>Info</typ>
+		<text>Wenn im Feld 'lebenslange Arztnummer (LANR)' und im Feld 'Betriebsstätten-Nummer' eine Angabe erfolgte, ist im Feld 'Krankenhaus-IK' keine Angabe notwendig.</text>
+	</meldung>	
+	<meldung>
+		<nummer>DMP-077</nummer>
+		<typ>Fehler</typ>
+		<text>Das Versicherungsschutzende darf nicht vor dem Einlesedatum liegen, der Versicherungsschutzbeginn nicht nach dem Einlesedatum.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-078</nummer>
+		<typ>Fehler</typ>
+		<text>Die Krankenversichertenkarte ist seit dem 01.01.2015 ungültig und darf zur Abrechnung nicht verwendet werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-080F</nummer>
+		<typ>Fehler</typ>
+		<text>Das Zip-Archiv muss auf %s enden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-080W</nummer>
+		<typ>Warnung</typ>
+		<text>Das Zip-Archiv sollte auf %s enden.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-082</nummer>
+		<typ>Fehler</typ>
+		<text>Die Wertangabe im Feld '%s' muss zweistellig sein.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-100</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld '%s' ist nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-101</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld '%s' ist nicht zulässig.</text>
+	</meldung>
+	<meldung>
+	    <nummer>DMP-102</nummer>
+    	<typ>Fehler</typ>
+	    <text>Die Wertangabe zum Feld '%s' muss dreistellig sein und darf nur Ziffern enthalten.</text>
+    </meldung>
+	<meldung>
+	    <nummer>DMP-102b</nummer>
+    	<typ>Fehler</typ>
+	    <text>Die Wertangabe zum Feld '%s' muss zwei- oder dreistellig sein und darf nur Ziffern enthalten.</text>
+    </meldung>
+	<meldung>
+	    <nummer>DMP-102c</nummer>
+    	<typ>Fehler</typ>
+	    <text>Die Wertangabe zum Feld '%s' muss ein- oder zweistellig sein und darf nur Ziffern enthalten.</text>
+    </meldung>
+	<meldung>
+	    <nummer>DMP-110</nummer>
+    	<typ>Fehler</typ>
+	    <text>Bei einem Lebensalter &lt; 60 Jahre und dem Geschlecht "Männlich" ist eine Einschreibung wegen "Osteoporose" nicht möglich.</text>
+    </meldung>
+
+    <meldung>
+	    <nummer>DMP-111</nummer>
+    	<typ>Fehler</typ>
+	    <text>Bei einem Lebensalter &lt; 50 Jahre und dem Geschlecht "Weiblich", "Unbestimmt" oder "Divers" ist eine Einschreibung wegen "Osteoporose" nicht möglich.</text>
+    </meldung>
+
+    <meldung>
+	    <nummer>DMP-112</nummer>
+	    <typ>Fehler</typ>
+	    <text>Das für eine Einschreibung wegen COPD erforderliche Mindestalter des Patienten ist 18 Jahre.</text>
+    </meldung>
+
+	<meldung>
+		<nummer>DMP-113</nummer>
+		<typ>Fehler</typ>
+		<text>Das für eine Einschreibung wegen "rheumatoide Arthritis" erforderliche Mindestalter des Patienten ist 18 Jahre.</text>
+	</meldung>
+
+    <meldung>
+	    <nummer>DMP-121</nummer>
+	    <typ>Fehler</typ>
+	    <text>Der 'DAS-28-Wert' muss zwischen 0,0 und 9,9 liegen.</text>
+    </meldung>
+
+    <meldung>
+	    <nummer>DMP-122</nummer>
+	    <typ>Fehler</typ>
+	    <text>Die Angabe zum DAS-28-Wert muss dem Format 'n.n' entsprechen.</text>
+    </meldung>
+
+    <meldung>
+	    <nummer>DMP-123</nummer>
+	    <typ>Fehler</typ>
+	    <text>Feld '%s': Option "Ja" schliesst weitere Angaben aus.</text>
+    </meldung>
+
+	<meldung>
+		<nummer>XPM-JAVA-VER</nummer>
+		<typ>Info</typ>
+		<text>Auf Ihrem System ist eine Java Version kleiner 17 installiert. In der nächsten Version des Prüfmoduls wird diese Version nicht mehr unterstützt und das Prüfmodul wird dann nicht mehr starten.</text>
+	</meldung>
+
+</meldungen>

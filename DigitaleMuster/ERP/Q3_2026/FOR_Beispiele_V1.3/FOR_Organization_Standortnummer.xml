@@ -1,0 +1,35 @@
+<Organization xmlns="http://hl7.org/fhir">
+	<id value="for-organization-standortnummer"/>
+	<meta>
+		<versionId value="1"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.3"/>
+	</meta>
+	<identifier>
+		<type>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_Base_identifier_type"/>
+				<code value="KSN"/>
+			</coding>
+		</type>
+		<system value="http://fhir.de/sid/dkgev/standortnummer"/>
+		<value value="771300619"/>
+	</identifier>
+	<name value="Belegarztpraxis Dr. Topp-Glücklich"/>
+	<telecom>
+		<system value="phone"/>
+		<value value="03873587235"/>
+	</telecom>
+	<address>
+		<type value="both"/>
+		<line value="Auf dem Schafsberg 88">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="88"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Auf dem Schafsberg"/>
+			</extension>
+		</line>
+		<city value="Limburg"/>
+		<postalCode value="65549"/>
+	</address>
+</Organization>

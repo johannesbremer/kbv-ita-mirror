@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Bezugsperson" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Bezugsperson" />
+  <status value="active" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="RelatedPerson" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/RelatedPerson" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="RelatedPerson.id">
+      <path value="RelatedPerson.id" />
+      <min value="1" />
+    </element>
+    <element id="RelatedPerson.meta">
+      <path value="RelatedPerson.meta" />
+      <min value="1" />
+    </element>
+    <element id="RelatedPerson.meta.versionId">
+      <path value="RelatedPerson.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="RelatedPerson.meta.lastUpdated">
+      <path value="RelatedPerson.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="RelatedPerson.meta.profile">
+      <path value="RelatedPerson.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Bezugsperson|1.2.0" />
+    </element>
+    <element id="RelatedPerson.text">
+      <path value="RelatedPerson.text" />
+      <min value="1" />
+    </element>
+    <element id="RelatedPerson.identifier">
+      <path value="RelatedPerson.identifier" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.active">
+      <path value="RelatedPerson.active" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.patient">
+      <path value="RelatedPerson.patient" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="RelatedPerson.patient.reference">
+      <path value="RelatedPerson.patient.reference" />
+      <min value="1" />
+    </element>
+    <element id="RelatedPerson.patient.type">
+      <path value="RelatedPerson.patient.type" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.patient.identifier">
+      <path value="RelatedPerson.patient.identifier" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.patient.display">
+      <path value="RelatedPerson.patient.display" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.relationship">
+      <path value="RelatedPerson.relationship" />
+      <max value="1" />
+    </element>
+    <element id="RelatedPerson.relationship.coding">
+      <path value="RelatedPerson.relationship.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="RelatedPerson.relationship.coding.system">
+      <path value="RelatedPerson.relationship.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="RelatedPerson.relationship.coding.version">
+      <path value="RelatedPerson.relationship.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.relationship.coding.code">
+      <path value="RelatedPerson.relationship.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="RelatedPerson.relationship.coding.display">
+      <path value="RelatedPerson.relationship.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.relationship.coding.userSelected">
+      <path value="RelatedPerson.relationship.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.relationship.text">
+      <path value="RelatedPerson.relationship.text" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.name">
+      <path value="RelatedPerson.name" />
+      <min value="1" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://fhir.de/StructureDefinition/humanname-de-basis" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="RelatedPerson.name.family">
+      <path value="RelatedPerson.name.family" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="RelatedPerson.name.given">
+      <path value="RelatedPerson.name.given" />
+      <min value="1" />
+    </element>
+    <element id="RelatedPerson.name.suffix">
+      <path value="RelatedPerson.name.suffix" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.name.period">
+      <path value="RelatedPerson.name.period" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.telecom.system">
+      <path value="RelatedPerson.telecom.system" />
+      <min value="1" />
+    </element>
+    <element id="RelatedPerson.telecom.value">
+      <path value="RelatedPerson.telecom.value" />
+      <min value="1" />
+    </element>
+    <element id="RelatedPerson.telecom.rank">
+      <path value="RelatedPerson.telecom.rank" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.telecom.period">
+      <path value="RelatedPerson.telecom.period" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.gender.extension">
+      <path value="RelatedPerson.gender.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="RelatedPerson.gender.extension:gender_amtlich">
+      <path value="RelatedPerson.gender.extension" />
+      <sliceName value="gender_amtlich" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gender-amtlich-de" />
+      </type>
+    </element>
+    <element id="RelatedPerson.address">
+      <path value="RelatedPerson.address" />
+      <type>
+        <code value="Address" />
+        <profile value="http://fhir.de/StructureDefinition/address-de-basis" />
+      </type>
+    </element>
+    <element id="RelatedPerson.photo">
+      <path value="RelatedPerson.photo" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.period">
+      <path value="RelatedPerson.period" />
+      <max value="0" />
+    </element>
+    <element id="RelatedPerson.communication">
+      <path value="RelatedPerson.communication" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,46 @@
+<AllergyIntolerance xmlns="http://hl7.org/fhir">
+  <id value="3"/> 
+  <meta>
+	<versionId value="1"/>
+	<lastUpdated value="2022-09-01T09:06:00Z"/>
+    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_AllergyIntolerance|2.1.0" />
+  </meta>
+  <clinicalStatus>
+    <coding>
+		<system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"/>
+		<version value="0.5.0"/>
+		<code value="active"/>
+		<display value="Active"/>
+	</coding>
+  </clinicalStatus>
+  <verificationStatus>
+    <coding>
+		<system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"/>
+		<version value="0.5.0"/>
+		<code value="confirmed"/>
+		<display value="Confirmed"/>
+	</coding>
+  </verificationStatus>
+  <type value="allergy"/> 
+  <code> 
+	<coding>
+		<system value="http://snomed.info/sct"/>
+		<code value="128488006"/>
+		<display value="House dust (substance)"/>
+	</coding>
+    <text value="Hausstaub"/> 
+  </code> 
+  <patient> 
+    <reference value="Patient/100"/>  
+  </patient> 
+  <reaction>
+	<manifestation>
+		<text value="Atemnot"/>
+	</manifestation>
+  </reaction>
+  <reaction>
+	<manifestation>
+		<text value="Juckreiz"/>
+	</manifestation>
+  </reaction>
+</AllergyIntolerance>

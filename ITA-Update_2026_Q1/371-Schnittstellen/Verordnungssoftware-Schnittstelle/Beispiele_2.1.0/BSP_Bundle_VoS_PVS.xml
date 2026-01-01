@@ -1,0 +1,350 @@
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="2100"/>
+	<meta>
+		<lastUpdated value="2022-09-12T12:30:02Z"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS|2.1.0"/>
+	</meta>
+	<identifier>
+		<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_VoS_BundleID"/>
+		<value value="Test_ID_VoS"/>
+	</identifier>
+	<type value="transaction"/>
+	<timestamp value="2022-09-12T12:30:02Z"/>
+	<link>
+		<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_User_Device">
+			<extension url="Anwender">
+				<valueString value="TestanwenderVoS"/>
+			</extension>
+			<extension url="KBV-Pruefnummer">
+				<valueIdentifier>
+					<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer"/>
+					<value value="Y/70/0000/00/001"/>
+				</valueIdentifier>
+			</extension>
+			<extension url="systemID">
+				<valueIdentifier>
+					<value value="Installation PC-3"/>
+				</valueIdentifier>
+			</extension>
+		</extension>
+		<relation value="related"/>
+		<url value="http://pvs.praxis-testaerztin.local/fhir/Bundle/2000"/>
+	</link>
+	<entry>
+		<fullUrl value="http://vos.praxis-testaerztin.local/fhir/DocumentReference/2500"/>
+		<resource>
+			<DocumentReference xmlns="http://hl7.org/fhir">
+				<id value="2500"/>
+				<meta>
+					<lastUpdated value="2022-09-07T15:29:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_DocumentReference|2.1.0"/>
+				</meta>
+				<status value="current"/>
+				<type>
+					<coding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType"/>
+						<code value="Rezept"/>
+						<display value="Rezept"/>
+					</coding>
+					<coding>
+						<system value="http://ihe-d.de/CodeSystems/IHEXDStypeCode"/>
+						<code value="MEDI"/>
+						<display value="Medikamentöse Therapien"/>
+					</coding>
+				</type>
+				<category>
+					<coding>
+						<system value="http://ihe-d.de/CodeSystems/IHEXDSclassCode"/>
+						<code value="VER"/>
+						<display value="Verordnung"/>
+					</coding>
+				</category>
+				<subject>
+					<reference value="Patient/100"/>
+				</subject>
+				<date value="2022-09-07T15:29:00Z"/>
+				<author>
+					<reference value="Practitioner/200"/>
+					<type value="Practitioner"/>
+				</author>
+				<author>
+					<type value="Device"/>
+					<identifier>
+						<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer"/>
+						<value value="Y/70/2207/36/ID"/>
+					</identifier>
+				</author>
+				<custodian>
+					<reference value="Organization/250"/>
+				</custodian>
+				<content>
+					<attachment>
+						<contentType value="application/pdf"/>
+						<data value="2jmj7l5rSw0yVb/vlWAYkK/YBwk="/>
+					</attachment>
+				</content>
+				<context>
+					<related>
+						<reference value="MedicationRequest/700"/>
+					</related>
+				</context>
+			</DocumentReference>
+		</resource>
+		<request>
+			<method value="POST"/>
+			<url value="DocumentReference"/>
+		</request>
+	</entry>
+	<entry>
+		<fullUrl value="http://vos.praxis-testaerztin.local/fhir/MedicationRequest/700"/>
+		<resource>
+			<MedicationRequest xmlns="http://hl7.org/fhir">
+				<id value="700"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-07T14:18:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Prescription|2.1.0"/>
+				</meta>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis">
+					<valueCoding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN"/>
+						<code value="00"/>
+					</valueCoding>
+				</extension>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_EmergencyServicesFee">
+					<valueBoolean value="false"/>
+				</extension>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_StatusCoPayment">
+					<valueCoding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_StatusCoPayment"/>
+						<code value="0"/>
+					</valueCoding>
+				</extension>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_BVG">
+					<valueBoolean value="false"/>
+				</extension>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_PrescriptionType">
+					<valueCodeableConcept>
+						<coding>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType"/>
+							<code value="M16"/>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+				<status value="active"/>
+				<intent value="order"/>
+				<medicationReference>
+					<reference value="Medication/710"/>
+				</medicationReference>
+				<subject>
+					<reference value="Patient/100"/>
+				</subject>
+				<authoredOn value="2022-09-07"/>
+				<requester>
+					<reference value="PractitionerRole/210"/>
+				</requester>
+				<groupIdentifier>
+					<value value="GI-1"/>
+				</groupIdentifier>
+				<insurance>
+					<reference value="Coverage/600"/>
+				</insurance>
+				<dosageInstruction>
+					<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_DosageFlag">
+						<valueBoolean value="true"/>
+					</extension>
+					<text value="2-2-1-0,5"/>
+				</dosageInstruction>
+				<dispenseRequest>
+					<quantity>
+						<value value="2"/>
+						<system value="http://unitsofmeasure.org"/>
+						<code value="{Package}"/>
+					</quantity>
+				</dispenseRequest>
+				<substitution>
+					<allowedBoolean value="true"/>
+				</substitution>
+			</MedicationRequest>
+		</resource>
+		<request>
+			<method value="POST"/>
+			<url value="MedicationRequest"/>
+		</request>
+	</entry>
+	<entry>
+		<fullUrl value="http://vos.praxis-testaerztin.local/fhir/Medication/710"/>
+		<resource>
+			<Medication xmlns="http://hl7.org/fhir">
+				<id value="710"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-07T13:26:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_PZN|2.1.0"/>
+				</meta>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type">
+					<valueCodeableConcept>
+						<coding>
+							<system value="http://snomed.info/sct"/>
+							<version value="http://snomed.info/sct/900000000000207008/version/20220331"/>
+							<code value="763158003"/>
+							<display value="Medicinal product (product)"/>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine">
+					<valueBoolean value="false"/>
+				</extension>
+				<extension url="http://fhir.de/StructureDefinition/normgroesse">
+					<valueCode value="N2"/>
+				</extension>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category">
+					<valueCoding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"/>
+						<code value="00"/>
+					</valueCoding>
+				</extension>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_isOverTheCounter">
+					<valueBoolean value="false"/>
+				</extension>
+				<code>
+					<coding>
+						<system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+						<code value="01562958"/>
+					</coding>
+					<text value="Gabapentin AL 400mg 100 Hartkaps. N2"/>
+				</code>
+				<form>
+					<coding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"/>
+						<code value="HKP"/>
+					</coding>
+				</form>
+				<amount>
+					<numerator>
+						<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize">
+							<valueString value="100"/>
+						</extension>
+						<unit value="Hartkapseln"/>
+						<system value="http://unitsofmeasure.org"/>
+						<code value="{HKP}"/>
+					</numerator>
+					<denominator>
+						<value value="1"/>
+					</denominator>
+				</amount>
+				<ingredient>
+					<itemCodeableConcept>
+						<coding>
+							<system value="http://fhir.de/CodeSystem/ask"/>
+							<code value="22308"/>
+						</coding>
+						<text value="Gabapentin"/>
+					</itemCodeableConcept>
+					<strength>
+						<numerator>
+							<value value="400"/>
+							<unit value="mg"/>
+							<system value="http://unitsofmeasure.org"/>
+							<code value="mg"/>
+						</numerator>
+						<denominator>
+							<value value="1"/>
+						</denominator>
+					</strength>
+				</ingredient>
+			</Medication>
+		</resource>
+		<request>
+			<method value="POST"/>
+			<url value="Medication"/>
+		</request>
+	</entry>
+	<entry>
+		<fullUrl value="http://vos.praxis-testaerztin.local/fhir/MedicationStatement/720"/>
+		<resource>
+			<MedicationStatement xmlns="http://hl7.org/fhir">
+				<id value="720"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-07T14:41:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_MedicationStatement_MP|2.1.0"/>
+				</meta>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_isPermanent">
+					<valueBoolean value="false"/>
+				</extension>
+				<status value="active"/>
+				<medicationReference>
+					<reference value="Medication/710"/>
+				</medicationReference>
+				<subject>
+					<reference value="Patient/100"/>
+				</subject>
+				<dosage>
+					<timing>
+						<repeat>
+							<when value="MORN"/>
+						</repeat>
+					</timing>
+					<doseAndRate>
+						<doseQuantity>
+							<value value="2"/>
+							<unit value="Stück"/>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"/>
+							<code value="1"/>
+						</doseQuantity>
+					</doseAndRate>
+				</dosage>
+				<dosage>
+					<timing>
+						<repeat>
+							<when value="NOON"/>
+						</repeat>
+					</timing>
+					<doseAndRate>
+						<doseQuantity>
+							<value value="2"/>
+							<unit value="Stück"/>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"/>
+							<code value="1"/>
+						</doseQuantity>
+					</doseAndRate>
+				</dosage>
+				<dosage>
+					<timing>
+						<repeat>
+							<when value="EVE"/>
+						</repeat>
+					</timing>
+					<doseAndRate>
+						<doseQuantity>
+							<value value="1"/>
+							<unit value="Stück"/>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"/>
+							<code value="1"/>
+						</doseQuantity>
+					</doseAndRate>
+				</dosage>
+				<dosage>
+					<timing>
+						<repeat>
+							<when value="NIGHT"/>
+						</repeat>
+					</timing>
+					<doseAndRate>
+						<doseQuantity>
+							<value value="0.5"/>
+							<unit value="Stück"/>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"/>
+							<code value="1"/>
+						</doseQuantity>
+					</doseAndRate>
+				</dosage>
+			</MedicationStatement>
+		</resource>
+		<request>
+			<method value="POST"/>
+			<url value="MedicationStatement"/>
+		</request>
+	</entry>
+</Bundle>

@@ -1,0 +1,53 @@
+SDDA Schnittstellen-Paket (Version SDDA_1.14, 22.11.2024)
+************************************************************************
+
+Dieses Paket beschreibt die Datenstruktur zur Stammdatei SDDA.
+
+Alle Komponenten des Pakets sind separat versioniert. Es können keine 
+Schlussfolgerungen aus den Versionsnummern des Pakets und der Komponenten 
+untereinander gezogen werden. Die Versionsnummer der Schnittstelle muss auch 
+nicht identisch mit der Versionsnummer der Schnittstellenbeschreibung sein.
+
+
+0. Inhaltsverzeichnis
+1. Inhaltliche Änderungen
+2. Schnittstellenänderungen
+3. Sonstiges
+
+
+0. Inhaltsverzeichnis
+###########################################################################
+
+liesmich.txt			diese Datei
+
+Dokumentation:			KBV_ITA_VGEX_Schnittstelle_SDDA.pdf (Version 1.14, 22.11.2024)
+
+Schema:
+ehd_header.xsd			Schema
+ehd_root.xsd			Schema
+sdda_body.xsd			Schema
+sdda_header.xsd			Schema
+sdda_root.xsd			Root-Schema
+keytabs.xsd			Schema
+datentypen.xsd			Schema
+
+
+
+1. Inhaltliche Änderungen
+########################################
+
+--
+
+
+
+2. Schnittstellenänderungen
+########################################
+
+--
+
+
+3. Sonstiges
+########################################
+
+--
+

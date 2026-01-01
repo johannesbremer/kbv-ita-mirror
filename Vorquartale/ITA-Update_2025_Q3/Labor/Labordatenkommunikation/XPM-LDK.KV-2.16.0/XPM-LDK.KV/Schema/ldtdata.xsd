@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema elementFormDefault="qualified"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!-- Objektkatalog -->
+	<xsd:include schemaLocation="objekte.xsd" />
+	<!-- LDT-Datensatzbeschreibung Version 3.0.4 (a) vom 20.10.2016 Elemente 
+		sind alphabetisch sortiert. -->
+	<xsd:element name="s8205">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: Befund '8205'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+					<xsd:element ref="f8136" />
+					<xsd:element ref="s0036" />
+				</xsd:sequence>
+				<xsd:sequence>
+					<xsd:element ref="f8122" />
+					<xsd:element ref="s0022" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0">
+					<xsd:element ref="f8145" />
+					<xsd:element ref="s0045" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0">
+					<xsd:element ref="f8169" />
+					<xsd:element ref="s0069" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0">
+					<xsd:element ref="f8150" />
+					<xsd:element ref="s0050" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0">
+					<xsd:element ref="f8140" />
+					<xsd:element ref="s0040" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0">
+					<xsd:element ref="f8153" />
+					<xsd:element ref="s0053" />
+				</xsd:sequence>	<!-- KBV-Regel k083 -->
+				<xsd:sequence>
+					<xsd:element ref="f8117" />
+					<xsd:element ref="s0017" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+					<xsd:element ref="f8127" />
+					<xsd:element ref="s0027" />
+				</xsd:sequence>
+				<xsd:sequence maxOccurs="unbounded">
+					<xsd:element ref="f8137" />
+					<xsd:element ref="s0037" />
+				</xsd:sequence>
+				<xsd:sequence>
+					<xsd:element ref="f8135" />
+					<xsd:element ref="s0035" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+					<xsd:element ref="f8167" />
+					<xsd:element ref="s0068" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+					<xsd:element ref="f8110" />
+					<xsd:element ref="s0010" />
+				</xsd:sequence>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s8215">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: Auftrag '8215'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:sequence minOccurs="0">
+					<xsd:element ref="f8122" />
+					<xsd:element ref="s0022" />
+				</xsd:sequence>
+
+				<xsd:sequence>
+					<xsd:element ref="f8145" />
+					<xsd:element ref="s0045" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0">
+					<xsd:element ref="f8169" />
+					<xsd:element ref="s0069" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0">
+					<xsd:element ref="f8150" />
+					<xsd:element ref="s0050" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0">
+					<xsd:element ref="f8140" />
+					<xsd:element ref="s0040" />
+				</xsd:sequence>
+
+				<xsd:sequence minOccurs="0">
+					<xsd:element ref="f8153" />
+					<xsd:element ref="s0053" />
+				</xsd:sequence>
+				<!-- KBV-Regel k083 beachten! -->
+				<xsd:sequence minOccurs="0">
+					<xsd:element ref="f8113" />
+					<xsd:element ref="s0013" />
+				</xsd:sequence>
+				<xsd:sequence maxOccurs="unbounded">
+					<xsd:element ref="f8127" />
+					<xsd:element ref="s0027" />
+				</xsd:sequence>
+				<xsd:sequence>
+					<xsd:element ref="f8101" />
+					<xsd:element ref="s0001" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+					<xsd:element ref="f8137" />
+					<xsd:element ref="s0037" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+					<xsd:element ref="f8159" />
+					<xsd:element ref="s0059" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+					<xsd:element ref="f8167" />
+					<xsd:element ref="s0068" />
+				</xsd:sequence>
+				<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+					<xsd:element ref="f8110" />
+					<xsd:element ref="s0010" />
+				</xsd:sequence>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s8220">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: Labor-Datenpaket-Header '8220'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:sequence>
+					<xsd:element ref="f8132" />
+					<xsd:element ref="s0032" />
+				</xsd:sequence>
+				<xsd:sequence>
+					<xsd:element ref="f8136" />
+					<xsd:element ref="s0036" />
+				</xsd:sequence>
+				<xsd:sequence>
+					<xsd:element ref="f8119" />
+					<xsd:element ref="s0019" />
+				</xsd:sequence>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s8221">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: Labor-Datenpaket-Abschluss '8221'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f9300" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s8230">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: Praxis-Datenpaket-Header '8230'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:sequence>
+					<xsd:element ref="f8132" />
+					<xsd:element ref="s0032" />
+				</xsd:sequence>
+				<xsd:element ref="f7265" />
+				<xsd:sequence>
+					<xsd:element ref="f8122" />
+					<xsd:element ref="s0022" />
+				</xsd:sequence>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s8231">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: Praxis-Datenpaket-Abschluss '8231'
+			</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f9300" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--xsd:element name="satzlaenge" type="xsd:long"> <xsd:annotation> <xsd:appinfo>Satzlänge 
+		(Feld 8100)</xsd:appinfo> </xsd:annotation> </xsd:element -->
+	<xsd:element name="version">
+		<xsd:annotation>
+			<xsd:appinfo>Versionsnummer der Datensatzbeschreibung</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="LDT03.07/2.00" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="xdtdata">
+		<xsd:annotation>
+			<xsd:appinfo>LDT</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="version" />
+				<xsd:choice maxOccurs="1">
+					<xsd:sequence>
+						<xsd:element ref="s8230" minOccurs="1" />
+						<xsd:element ref="s8215" minOccurs="1" maxOccurs="unbounded" />
+						<xsd:element ref="s8231" minOccurs="1" />
+					</xsd:sequence>
+					<xsd:sequence>
+						<xsd:element ref="s8220" minOccurs="1" />
+						<xsd:element ref="s8205" minOccurs="1" maxOccurs="unbounded" />
+						<xsd:element ref="s8221" minOccurs="1" />
+					</xsd:sequence>
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,438 @@
+<html>
+<head>
+<title>Release Notes XKM (Kryptomodul), Version 1.42.9</title>
+<style type='text/css'>
+<!--
+h2 { background-color: #aaaaaa;}
+h3 { background-color: #cccccc;}
+h4 { background-color: #efefef;}
+h5.hot { color: #dd0000; }
+BODY  {
+    COLOR : #000000;
+    FONT-FAMILY : arial, helvetica;
+    FONT-SIZE : 10pt;
+}
+td {
+    FONT-FAMILY : arial, helvetica;
+    FONT-SIZE : 10pt;
+}
+-->
+</style>
+</head>
+<body text=#000000 bgColor=#e5e5e5>
+ <TABLE cellSpacing=12 cellPadding=32 width="100%" align=center border=0>
+  <TR>
+    <TD style="BORDER-RIGHT: #505050 1px solid; BORDER-TOP: #505050 1px solid; BORDER-LEFT: #505050 1px solid; BORDER-BOTTOM: #505050 1px solid; BACKGROUND-COLOR: #ffffff">
+
+<h2>Release Notes XKM (Kryptomodul), Version 1.42.9</h2>
+<h3>Inhalt</h3>
+<ul>
+<li><a href="#requirement">Systemvoraussetzungen</a></li>
+<li><a href="#changes">&Auml;nderungen zur Vorversion</a></li>
+<li><a href="#knownbugs">Bekannte Fehler</a></li>
+<li><a href="#installation">Hinweis zur Installation</a></li>
+<li><a href="#license">Lizenzvertragliche Regelungen</a></li>
+</ul>
+
+
+<h3><a name="requirement">Systemvoraussetzungen</a></h3>
+<ul>
+	<li>Das XKM verwendet die plattformunabh&auml;ngige Java Technologie. Dies erm&ouml;glicht den Einsatz dieser Applikation auf verschiedenen Betriebssystemen.</li>
+	<li>Ben&ouml;tigt wird ein beliebiges Computersystem das leistungsm&auml;&szlig;ig mindestens einem Pentium 500 Prozessor entspricht (besser 2GHz oder h&ouml;her).</li>
+    <li>Java Laufzeitumgebung 17 oder h&ouml;her</li>
+	<li>Arbeitsspeicher mindestens 256MB</li>
+</ul>
+<h3><a name="changes">&Auml;nderungen zur Vorversion</a></h3>
+
+        <h4>Version 1.42.9</h4>
+        <ul>
+            <li>Unterstriche in Schl¸sseldateipfaden erlauben</li>
+            <li>Update der Bouncy-Castle Abh‰ngigkeit</li>
+        </ul>
+
+        <h4>Version 1.42.8</h4>
+        <ul>
+            <li>iText-Abh‰ngigkeit entfernt</li>
+        </ul>
+
+
+        <h4>Version 1.42.7</h4>
+        <ul>
+            <li>Neue Schl¸ssel: Aktualisierung der schluesselintern.xml</li>
+            <li>ƒnderung bez¸glich der Beendigung der Ausf¸hrung der JVM nach Beendigung des Programms</li>
+        </ul>
+
+        <h4>Version 1.42.6</h4>
+        <ul>
+            <li>Fehlermeldung bei nicht vorhandenem HDRG-Arbeitsmodus in schluesselintern.xml entfernt</li>
+        </ul>
+
+        <h4>Version 1.42.5</h4>
+        <ul>
+            <li>Neuer Arbeitsmodus HDRG_Verschluesselung</li>
+            <li>Neuer Arbeitsmodus HDRG_Entschluesselung</li>
+        </ul>
+
+        <h4>Version 1.42.4</h4>
+        <ul>
+            <li>Schl¸ssel f¸r EHKS aktualisiert</li>
+        </ul>
+
+        <h4>Version 1.42.3</h4>
+        <ul>
+            <li>Schl¸ssel f¸r KV, EHKS, DA, ADMP und ZervixZyto aktualisiert</li>
+        </ul>
+
+        <h4>Version 1.42.2</h4>
+        <ul>
+            <li>F¸r die Ausf¸hrung ist eine Java Version von 17 oder hˆher erforderlich</li>
+        </ul>
+
+        <h4>Version 1.42.1</h4>
+        <ul>
+            <li>Warnmeldung bei Java Version kleiner 17</li>
+            <li>Neue Schl¸ssel: Aktualisierung der schluesselintern.xml</li>
+        </ul>
+
+        <h4>Version 1.42.0</h4>
+        <ul>
+            <li>Neue Schl¸ssel: Aktualisierung der schluesselintern.xml</li>
+        </ul>
+
+        <h4>Version 1.41.0</h4>
+        <ul>
+            <li>Schl¸ssel f¸r KV, ADMP, DA, EHKS und ZervixZyto aktualisiert</li>
+        </ul>
+
+        <h4>Version 1.40.3</h4>
+        <ul>
+            <li>Korrektur der linefeeds in den Linux-Batchdateien</li>
+        </ul>
+
+        <h4>Version 1.40.2</h4>
+        <ul>
+            <li>Sicherheitsupdate: Aktualisierung der log4j-Bibliothek auf Version 2.17.1</li>
+        </ul>
+
+        <h4>Version 1.40.1</h4>
+        <ul>
+            <li>Sicherheitsupdate: Aktualisierung der log4j-Bibliothek</li>
+        </ul>
+
+        <h4>Version 1.40.0</h4>
+        <ul>
+            <li>Neue Schl¸ssel: Aktualisierung der schluesselintern.xml</li>
+            <li>Bibliothek JasperReports auf ‰ltere Version (6.12.2) zur¸ckgesetzt, um Problem mit tempor‰ren Fonts-Dateien zu vermeiden</li>
+        </ul>
+
+
+        <h4>Version 1.39.0</h4>
+        <ul>
+            <li>Aktualisierung der Abh‰ngigkeiten</li>
+            <li>Umstellung auf LOG4j2 Logging</li>
+            <li>Aktualisierung des Loggings bei Verwendung von mehreren Schl¸sseln.</li>
+        </ul>
+
+        <h4>Version 1.38.4</h4>
+        <ul>
+            <li>Neue Schl¸ssel: Aktualisierung der schluesselintern.xml</li>
+        </ul>
+
+        <h4>Version 1.38.3</h4>
+        <ul>
+            <li>Aussagekr‰ftigere Fehlermeldung bei nicht passenden Schl¸sseln</li>
+        </ul>
+
+        <h4>Version 1.38.1</h4>
+        <ul>
+            <li>Umstellung auf Multi-Release-JAR: Warnung bzgl. einer von Java 11 nicht mehr unterst¸tzten Funktion wird nicht mehr ausgegeben</li>
+            <li>Bugfix (relevant nur bei einer Oracle-Runtime): falsche BouncyCastle-Versionsnummer in Batch- & Shell-Dateien korrigiert</li>
+        </ul>
+
+        <h4>Version 1.38.0</h4>
+        <ul>
+            <li>Update der Kompilierungsversion auf Java 11</li>
+            <li>Bugfix Dateiendungen bei der Schl¸sselgenerierung</li>
+        </ul>
+
+        <h4>Version 1.37.1</h4>
+        <ul>
+            <li>Bugfix Verzeichnisstruktur</li>
+        </ul>
+
+        <h4>Version 1.37.0</h4>
+        <ul>
+            <li>XKM-36: Einbindung der neuen schluesselindex.html</li>
+        </ul>
+
+        <h4>Version 1.36.6</h4>
+        <ul>
+            <li>Bugfix Verzeichnisstruktur</li>
+        </ul>
+
+        <h4>Version 1.36.5</h4>
+        <ul>
+            <li>Bugfix Entschl&uuml;sselung von Abrechnungsdateien welche mit Versionen < 1.35.0 verschl&uuml;sselt worden sind</li>
+        </ul>
+
+        <h4>Version 1.36.4</h4>
+        <ul>
+            <li>Bugfix Import-Statement in Steurungsklasse</li>
+        </ul>
+
+
+        <h4>Version 1.36.2</h4>
+        <ul>
+            <li>Bugfix Protokollerstellung unter Linux</li>
+            <li>Erg&auml;nzung der Installationshinweise bei Verwendung von OpenJDK und Linux-Serverbetriebssystemen</li>
+        </ul>
+
+        <h4>Version 1.36.0</h4>
+   <ul>
+      	<li>ƒnderung des Formats der Schl¸sseldateien in PEM (Privacy Enhanced Mail) </li>
+      	<li>Interner PDF-Viewer wurde entfernt </li>
+    	<li>Aktualisierung des Handbuchs</li>
+</ul>
+
+<h4>Version 1.33</h4>
+<ul>
+    <li>Aktualisierung des Handbuchs</li>
+    <li>Neue SchlÅ¸ssel fÅ¸r die Verfahren QSKE und QSHLT, die Datei 'schluesselintern.xml' wurde aktualisiert</li>
+</ul>
+
+<h4>Version 1.32</h4>
+<ul>
+    <li>Kompatibilit&auml;t zu Java 10 sichergestellt.</li>
+    <li>Korrektur eines Fehlers bei der Entschl&uuml;sselung von WTK- und QSHGV-Dateien, welche mit XKM-Versionen vor 1.31 verschl&uuml;sselt worden sind.</li>
+</ul>
+
+<h4>Version 1.31</h4>
+<ul>
+    <li>Die Unterst&uuml;tzung der Diskettenverarbeitung wurde entfernt. Alle hierzu geh&ouml;rigen Schalter wurden gel&ouml;scht.</li>
+    <li>Aktualisierung der Schl&uuml;ssel f&uuml;r 'DMP', 'Koloskopie', 'Abrechnung', 'Dialyse', 'ADMP', 'ZervixZyto', 'EHKS', 'WTK' und 'VIK'</li>
+    <li>Aktualisierung des Handbuchs</li>
+</ul>
+
+<h4>Version 1.30</h4>
+<ul>
+    <li>Kompatibilit&auml;t zu Java 9 sichergestellt.</li>
+</ul>
+
+
+<h4>Version 1.29</h4>
+<ul>
+    <li>Aktualisierung der Schl&uuml;ssel f&uuml;r 'QSHGV', 'QSMG' und 'QSHGVK' (._V02 wird durch ._V03 ersetzt)</li>
+    <li>Aktualisierung des Handbuchs</li>
+</ul>
+
+<h4>Version 1.28</h4>
+
+<ul>
+    <li>Aktualisierung des Schl&uuml;ssels f&uuml;r 'QSKE' (._V01 wird durch ._V02 ersetzt)</li>
+    <li>Neuen Arbeitsmodus 'QSHLT' hinzugef&uuml;gt.</li>
+    <li>Aktualisierung des Handbuchs</li>
+</ul>
+
+<h4>Version 1.27</h4>
+<ul>
+    <li>Aktualisierung einiger Schl&uuml;ssel (._V04 wird durch ._V05 ersetzt)</li>
+    <li>Aktualisierung des Handbuchs</li>
+</ul>
+
+<h4>Version 1.26</h4>
+<ul>
+    <li>Java 1.6 wird nicht mehr unterst&uuml;tzt.</li>
+    <li>Warnung in der Protokollausgabe bei Verwendung von Java 1.7</li>
+</ul>
+<h4>Version 1.25</h4>
+<ul>
+    <li>Aktualisierung des Schl&uuml;ssels f&uuml;r QSHGVK (_V01 wird durch _V02 ersetzt)</li>
+</ul>
+<h4>Version 1.24</h4>
+<ul>
+    <li>Aktualisierung der Schl&uuml;ssel f&uuml;r QSHGV und QSMG (_V01 wird durch _V02 ersetzt)</li>
+</ul>
+
+<h4>Version 1.23</h4>
+<ul>
+    <li>Es wurde der PDF-Viewer aktualisiert, das Handbuch aktualisiert, eine neue Lizenzvereinbarung eingebunden und die Schl¸ssel wurden aktualisiert.</li>
+</ul>
+
+<h4>Version 1.21</h4>
+<ul>
+    <li>Im Header der verschl&uuml;sselten Datei wird der Name des zur Verschl&uuml;sselung verwendeten Schl&uuml;ssels eingetragen.</li>
+</ul>
+
+<h4>Version 1.20</h4>
+<ul>
+    <li>Austausch und Umbenennung einiger Schl&uuml;ssel (._V02 wird durch ._V04 ersetzt.)</li>
+</ul>
+
+<h4>Version 1.19</h4>
+<ul>
+    <li>Neuen Arbeitsmodus 'QSHGVK' hinzugef&uuml;gt.</li>
+</ul>
+
+
+<h4>Version 1.18</h4>
+<ul>
+    <li>Neue Arbeitsmodi 'QSHGV' und 'QSMG' hinzugef&uuml;gt.</li>
+    <li>Umbenennung des XKM-Anwenderhandbuchs in 'KBV_ITA_AHEX_Handbuch_Kryptomodul.pdf':
+</ul>
+
+<h4>Version 1.17</h4>
+<ul>
+    <li>Austausch und Umbenennung einiger Schl&uuml;ssel (._V02 wird durch ._V03 ersetzt.)</li>
+</ul>
+
+<h4>Version 1.16</h4>
+<ul>
+    <li>Java 1.5 wird nicht mehr unterst&uuml;tzt..</li>
+</ul>
+
+<h4>Version 1.15</h4>
+<ul>
+    <li>Neuen Arbeitsmodus 'VIK' hinzugef&uuml;gt.</li>
+</ul>
+
+<h4>Version 1.14</h4>
+<ul>
+    <li>Bugfixing: Exception in der GUI-Startmaske bei Entschl&uuml;sselungsmodi mit mehreren Schl&uuml;sseldefinitionen beseitigt.</li>
+    <li>Bugfixing: Trotz Konfigurationsfehler (Status 3) wurde in einem Einzelfall eine Protokoll-Datei mit Status 0=Okay generiert.</li>
+</ul>
+
+<h4>Version 1.13</h4>
+<ul>
+    <li>In den Entschl&uuml;sselungsmodi k&ouml;nnen jetzt mehrere Schl&uuml;ssel definiert werden.</li>
+</ul>
+
+<h4>Version 1.12</h4>
+<ul>
+    <li>Java 1.4 wird nicht mehr unterst&uuml;tzt.</li>
+    <li>Austausch und Umbenennung einiger Schl&uuml;ssel (._V01 wird durch ._V02 ersetzt.)</li>
+    <li>Im Arbeitsmodus 'WTK' kann jetzt Komprimierung aktiviert werden.</li>
+</ul>
+
+<h4>Version 1.11</h4>
+<ul>
+    <li>Neuen Arbeitsmodus 'WTK' hinzugef&uuml;gt.</li>
+</ul>
+
+<h4>Version 1.10</h4>
+<ul>
+    <li>Bugfixing: Kleines Problem bei der Zusammenf&uuml;hrung gesplitteter Dateien beseitigt.</li>
+    <li>Neuen Arbeitsmodus 'ApothekenRZ' hinzugef&uuml;gt.</li>
+</ul>
+
+<h4>Version 1.09</h4>
+<ul>
+    <li>Protokoll um Angabe zur XKM-Version erweitert</li>
+    <li>Modus Abrechnungs-Verschl¸sselung: Im Dateiheader heiﬂt es jetzt "Arztnummer/BSNR" statt "Arztnummer"</li>
+</ul>
+
+<h4>Version 1.08</h4>
+<ul>
+    <li>Neuen Arbeitsmodus 'EHKS' hinzugef&uuml;gt.</li>
+</ul>
+
+<h4>Version 1.07</h4>
+<ul>
+    <li>Bugfixing: "H&auml;ngen" der XKM-GUI unter Java 1.6 beseitigt.</li>
+    <li>Bugfixing: Im Konfigurationsdialog konnte f&uuml;r Pr&uuml;finfo keine Datei ausgew&auml;hlt werden.</li>
+    <li>Bugfixing: Unter Unix Problem beim Entschl&uuml;sseln gesplitteter Dateien beseitigt.</li>
+    <li>Neuen Arbeitsmodus 'TEST' hinzugef&uuml;gt.</li>
+</ul>
+
+<h4>Version 1.06</h4>
+<ul>
+    <li>Konfigurationsdialog komplett &uuml;berarbeitet</li>
+    <li>Neuen Arbeitsmodus 'ZervixZyto' hinzugef&uuml;gt.</li>
+</ul>
+
+<h4>Version 1.05</h4>
+<ul>
+    <li>Zip-Funktionalit&auml;t f&uuml;r Arbeitsmodus 'Abrechnungs_Verschl&uuml;sselung' integriert. (Schalter '-q' bzw. '&lt;abrechnungskomprimierung&gt;')</li>
+    <li>Weitere Detailverbesserungen um CRC-Fehler zu reduzieren</li>
+</ul>
+
+<h4>Version 1.04</h4>
+<ul>
+    <li>Kurze Pause nach Diskettenoperationen eingef&uuml;gt um CRC-Fehler zu reduzieren.</li>
+    <li>Bugfixing: Fehler bei der Behandlung tempor&auml;rer Dateien korrigiert, der Pakete mit falschen Headern erzeugte.</li>
+    <li>Bugfixing: Beim manuellen Abbruch der Diskettenkopierung konnte es zuvor zum "H&auml;ngen" des XKM kommen.</li>
+    <li>Bugfixing: Tempor&auml;re Dateien werden jetzt ausschliesslich innerhalb des System-Verzeichnis erstellt.</li>
+    <li>Bugfixing: Fehlermeldung und Returncode bei Abbruch der Diskettenverarbeitung durch Benutzer korrigiert.</li>
+</ul>
+
+<h4>Version 1.03</h4>
+<ul>
+    <li>Bugfixing: Prozentzeichen in Pfad- und Dateinamen zul&auml;ssig.</li>
+</ul>
+
+<h4>Version 1.02</h4>
+<ul>
+    <li>Unix-Konsolenbetrieb: Mithilfe des Ausgabeformats TEXT k&ouml;nnen Protokolle jetzt auch ohne X11-Server erstellt werden.</li>
+    <li>Bugfixing bei Java-Einstiegsklasse 'XKMEinstieg.java'.</li>
+    <li>Neue Arbeitsmodi 'Dialyse' und 'ADMP' hinzugef&uuml;gt.</li>
+</ul>
+
+<h4>Version 1.01</h4>
+<ul>
+    <li>Alle XML-Schalter jetzt auch als Kommandozeilenparameter verf&uuml;gbar.</li>
+    <li>Qualit&auml;tspr&uuml;fung f&uuml;r Disketten integriert. (Abschaltbar &uuml;ber Parameter '-n')</li>
+    <li>&Uuml;bergabeparameter 'Schluesselpfad' kann mittels Umgebungsvariable gesteuert werden.</li>
+    <li>Plausibilit&auml;t des &Uuml;bergabe-Parameter 'Pruefinfo' wird nur noch im Modus 'Abrechnungs_Verschluesselung' getestet.</li>
+    <li>Dokumentation: Beschreibung des XKM-Header aufgenommen.</li>
+    <li>Klasse XKMEinstieg f&uuml;r den Java-gesteuerten Aufruf des XKM wurde &uuml;berarbeitet.</li>
+</ul>
+
+<h4>Version 1.00</h4>
+<ul>
+    <li>Protokollausgabe kann durch neuen Format-Schalter 'Kein' abgeschaltet werden.</li>
+    <li>Bugfixing: Aufruf von GUI-Dialogen im Konsolenbetrieb wird jetzt unterbunden.</li>
+</ul>
+
+<h3><a name="knownbugs">Bekannte Fehler</a></h3>
+<ul>
+    <li>Nach Start des XKM MIT grafischer Benutzeroberfl&auml;che kann es unter Windows 98
+    vorkommen, dass keine Bildschirmanzeige mehr dargestellt wird (schwarzer
+    Bildschirm). Dieser Fehler ist vermutlich auf Kompatibilit&auml;tsprobleme zwischen
+    Windows 98 und Java Swing zur&uuml;ckzuf&uuml;hren.
+    Eine Nutzung des XKM OHNE grafische Benutzeroberfl‰che ist jedoch
+    uneingeschr&auml;nkt m&ouml;glich.
+    </li>
+
+    <li>Bei Erstellung des Protokolls unter Linux/Mac kann es passieren, dass
+      Sonderzeichen nicht korrekt dargestellt werden.
+    </li>
+
+    <li>
+        Es werden bei der Erstellung des Protokolls Wanrungen zum Logging-Framework SLF4J ausgegeben, diese kˆnnen ignoriert werden.
+        In einer n‰chsten Version werden diese wieder entfernt.
+    </li>
+
+</ul>
+
+
+
+<h3><a name="installation">Hinweise zur Installation</a></h3>
+<ul>
+    <li>Gezipptes XKM-Paket XKM_V?.??.zip in Zielordner z.B. "C:\Programme\KBV\Kryptomodul" entpacken.</li>
+    <li>Bitte lesen Sie die <a href="Installation.txt">Hinweise zur Installation</a>.</li>
+    <li>Bitte lesen Sie die <a href="Readme.txt">Hinweise zur angelegten Ordnerstruktur</a>.</li>
+	<li>Informationen zur Konfiguration erhalten Sie im  <a href="XKM/Doku/KBV_ITA_AHEX_Handbuch_Kryptomodul.pdf">XKM Anwenderhandbuch</a>.</li>
+
+    <li>Falls erweiterte Fehlerausgaben notwendig sind, bitte in der Datei log4j2.xml das Logging-Level auf DEBUG setzen.</li>
+</ul>
+
+<h3><a name="license">Lizenzvertragliche Regelungen</a></h3>
+<ul>
+	<li>Bitte beachten Sie die Lizenzvereinbarungen im Ordner <a href="XKM/Bin/license">Bin/license</a>.</li>
+</ul>
+
+    </td>
+  </tr>
+ </TABLE>
+
+</body>
+</html>

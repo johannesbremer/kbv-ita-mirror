@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 ..\Schema\afhi_root_V1.00.xsd">
+	<header>
+		<id EX="9c84329f-2ca5-408e-8086-f14c0cb96b73" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2019-10-01.."/>
+		<origination_dttm V="2019-05-14"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat 4"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="ftp://ftp.kbv.de/ita-update"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen für der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2019, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="ftp://ftp.kbv.de/ita-update/"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="6" DN="Überweisungsschein">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Kurativ, präventiv, Behandlung gem. § 116B SGB V, bei belegärztl. Behandlung"/>
+					<hinweistext V="Bitte geben Sie an, ob die Überweisung zur kurativen Versorgung, zur Prävention, zur Hinzuziehung eines Arztes bei belegärztlicher Behandlung oder als Zuweisung zu einer Behandlung gemäß § 116b SGB V erfolgt."/>
+				</feld>				
+				<feld>
+					<nummer V="2"/>
+					<name V="Quartal"/>
+					<hinweistext V="Bitte tragen Sie das Quartal der Ausstellung der Überweisung in der Form &quot;QJJ&quot; ein. Überweisungen sind grundsätzlich quartalsübergreifend gültig. Auch wenn die Behandlung erst im Folgequartal aufgenommen wird oder sich über mehrere Quartale erstreckt, ist keine erneute Überweisung erforderlich."/>
+				</feld>				
+				<feld>
+					<nummer V="3"/>
+					<name V="Unfall, Unfallfolgen"/>
+					<hinweistext V="Wenn die Behandlung als Folge eines Unfalls erforderlich wird, kann die Krankenkasse ggf. Schadensersatzansprüche geltend machen.Bei Arbeitsunfällen, Berufskrankheiten und Schülerunfällen verwenden Sie das Muster 6 bitte nicht. Die Abrechnung der Behandlung ist in diesen Fällen mit dem zuständigen Unfallversicherungsträger vorzunehmen. Hierfür ist die &quot;Ärztliche Unfallmeldung&quot; (Formtext F 1050) nach dem Vertrag Ärzte/Unfallversicherungsträger zu verwenden. Unter Schülerunfällen sind auch Unfälle von Kindern in Kindergärten und von Studierenden während des Studiums zu verstehen."/>
+				</feld>				
+				<feld>
+					<nummer V="4"/>
+					<name V="Datum der OP bei Leistungen nach Abschnitt 31.2"/>
+					<hinweistext V="Wurden ambulante Operationen nach dem Abschnitt 31.2 EBM erbracht, geben Sie bitte das Datum der Operation in der Form &quot;TTMMJJ&quot; an."/>
+				</feld>				
+				<feld>
+					<nummer V="5"/>
+					<name V="Geschlecht"/>
+					<hinweistext V="Das Geschlecht des Patienten wird durch einen Buchstaben angegeben (D = divers, M = männlich, W = weiblich, X = unbestimmt). Die Bedruckung erfolgt durch das Auslesen der Information von der elektronischen Gesundheitskarte."/>
+				</feld>				
+				<feld>
+					<nummer V="6"/>
+					<name V="Überweisung an"/>
+					<hinweistext V="Bitte geben Sie hier die Gebiets-, Teilgebiets- oder Zusatzbezeichnung des Arztes an, an den überwiesen wird. Eine namentliche Überweisung soll nur zur Durchführung bestimmter Untersuchungs- oder Behandlungsmethoden an hierfür ermächtigte Ärzte erfolgen."/>
+				</feld>				
+				<feld>
+					<nummer V="7"/>
+					<name V="Ausführung von Auftragsleistungen"/>
+					<hinweistext V="Die Überweisung zur Ausführung von Auftragsleistungen erfordert
+1. die Definition der Leistungen nach Art und Umfang (Definitionsauftrag) oder
+2. eine Indikationsangabe mit Empfehlung der Methode (Indikationsauftrag)."/>
+				</feld>				
+				<feld>
+					<nummer V="8"/>
+					<name V="Konsiliaruntersuchung"/>
+					<hinweistext V="Mit der Überweisung zur Konsiliaruntersuchung werden diagnostische Leistungen veranlasst, über deren Art und Umfang der ausführende Arzt entscheidet. Der Grund für die Untersuchung ist einzutragen. Der ausführende Arzt ist in der Wahl seiner diagnostischen Schritte frei. Therapeutische Maßnahmen sind nicht berechnungsfähig."/>
+				</feld>				
+				<feld>
+					<nummer V="9"/>
+					<name V="Mit-/ Weiterbehandlung"/>
+					<hinweistext V="Bei einer Überweisung zur Weiterbehandlung wird die gesamte diagnostische und therapeutische Tätigkeit dem weiterbehandelnden Arzt übertragen. Auch bei Überweisungen zur Durchführung ambulanter Operationen ist das Feld &quot;Mit-/Weiterbehandlung&quot; anzukreuzen."/>
+				</feld>				
+				<feld>
+					<nummer V="10"/>
+					<name V="AU bis"/>
+					<hinweistext V="Falls Sie eine Arbeitsunfähigkeit bescheinigt haben, informieren Sie bitte den auf Überweisung tätig werdenden Arzt über das Datum des voraussichtlichen Endes der Arbeitsunfähigkeit in der Form &quot;TTMMJJ&quot;. Diese Angabe ist nur dann erforderlich, wenn die Behandlungsführung auf den weiterbehandelnden Arzt übergehen soll."/>
+				</feld>				
+				<feld>
+					<nummer V="11"/>
+					<name V="eingeschränkter Leistungsanspruch gemäß § 16 Abs. 3a SGB V"/>
+					<hinweistext V="Wenn Ihnen bekannt ist, dass der Patient wegen Rückständen bei den Mitgliedsbeiträgen nur einen eingeschränkten Leistungsanspruch hat, teilen Sie dies dem auf Überweisung tätig werdenden Arzt bitte hier mit."/>
+				</feld>
+				<feld>
+					<nummer V="12"/>
+					<name V="Diagnose/Verdachtsdiagnose - Befund/Medikation - Auftrag"/>
+					<hinweistext V="Unter &quot;Diagnose/Verdachtsdiagnose&quot;, &quot;Befund/Medikation&quot; bzw. &quot;Auftrag&quot; geben Sie bitte Informationen an, die der auf Überweisung tätig werdende Arzt für die Behandlung und zur Vermeidung von Mehrfachuntersuchungen benötigt. Hierzu zählen auch bisher erhobene Befunde und Behandlungsmaßnahmen."/>
+				</feld>
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

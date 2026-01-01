@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Krebsfrueherkennung_Teilbereiche"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value=" Teile der Composition Krebsfrueherkennung"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="Anamnese_Hormonanwendung"/>
+<display value="Anamnese Hormonanwendung"/>
+</concept>
+<concept>
+<code value="Anamnese_Diverse"/>
+<display value="Anamnese Diverse"/>
+</concept>
+<concept>
+<code value="Auftrag"/>
+<display value="Auftrag"/>
+</concept>
+<concept>
+<code value="Befund_Diverse"/>
+<display value="Befund Diverse"/>
+</concept>
+<concept>
+<code value="Befund_Diverse_Ab30"/>
+<display value="Befund Diverse Ab30"/>
+</concept>
+<concept>
+<code value="Befund_Rektum_Kolon"/>
+<display value="Befund Rektum Kolon"/>
+</concept>
+<concept>
+<code value="Gynaekologische_Diagnose"/>
+<display value="Gynaekologische Diagnose"/>
+</concept>
+<concept>
+<code value="Gynaekologische_Operation"/>
+<display value="gynaekologische Operation"/>
+</concept>
+<concept>
+<code value="Schwangerschaft"/>
+<display value="Schwangerschaft"/>
+</concept>
+<concept>
+<code value="Zytologischer_Befund"/>
+<display value="Zytologischer Befund"/>
+</concept>
+<concept>
+<code value="Blutdruck"/>
+<display value="Blutdruck"/>
+</concept>
+<concept>
+<code value="Hpv-hr"/>
+<display value="HPV-HR"/>
+</concept>
+<concept>
+<code value="Hpv_impfung"/>
+<display value="HPV Impfung"/>
+</concept>
+<concept>
+<code value="Zytologischer_Befund_Empfehlung"/>
+<display value="Zytologischer Befund Empfehlung"/>
+</concept>
+</CodeSystem>

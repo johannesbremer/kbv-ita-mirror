@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  
+<keytabs xmlns="urn:ehd/001">
+  <keytab SV="1.01" SN="S_GOS_KV_MS_LUGRUPPE" S="1.2.276.0.76.3.1.1.5.2.33">
+    <key V="0201" DN="Hausärztliche Grundvergütung, Ordination, Konsultation" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0202" DN="Besuche, Visiten" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0203" DN="Beratungs- und Betreuungsleistungen, Ganzkörperstatus" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0204" DN="Allgemeine Leistungen" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0205" DN="Mutterschaftvorsorge" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0206" DN="Früherkennungsuntersuchungen" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0207" DN="Empfängnisregelung, Sterilisation, Schwangerschaftsabbruch" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0208" DN="Sonderleistungen" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0209" DN="Physikalisch-medizinische Leistungen" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0210" DN="Laborpauschalen" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0211" DN="Laboratoriumsuntersuchungen" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0212" DN="Strahlendiagnostik und -therapie, Röntgen, CT, MRT" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0213" DN="Wegegebühren" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0214" DN="Pauschalerstattungen/Kosten" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0217" DN="Taxenpauschale" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0218" DN="Kostenbeteiligung" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="0220" DN="Nicht spezifizierte Leistungen" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9301" DN="Komplexe / Grundpauschalen" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9302" DN="Besuche / Visiten" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9304" DN="Mitteilungen / Gutachten" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9306" DN="Früherkennung / Vorsorge" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9307" DN="sonstige Hilfen" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9308" DN="allg Leistungsbedarf MGV" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9309" DN="allg Leistungsbedarf EGV" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9310" DN="Labor Wirtschaftlichkeitsbonus, Kennzeichnungen" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9311" DN="Labor Kosten" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9312" DN="Radiologie, CT, MRT" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9313" DN="Wegegelder" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9314" DN="Kosten, Pauschalen" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9315" DN="Kennzeichnungen" S="1.2.276.0.76.3.1.1.5.2.33" SV="1.01">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+  </keytab>
+</keytabs>
+

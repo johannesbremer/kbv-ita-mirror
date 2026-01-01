@@ -1,0 +1,58 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-EX-VoS-isPermanent" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_isPermanent" />
+  <version value="2.1.0" />
+  <name value="KBV_EX_VoS_isPermanent" />
+  <title value="KBV_EX_VoS_isPermanent" />
+  <status value="active" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <description value="Merkmal, ob eine Angabe dauerhaft gilt, bspw. eine Diagnose eine Dauerdiagnose oder eine Medikation eine Dauermedikation ist." />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Condition" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="MedicationStatement" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <definition value="Mit diesem Element kann angegeben werden, ob die Angabe dauerhaft gilt." />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_isPermanent" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.value[x]:valueBoolean">
+      <path value="Extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <definition value="Angabe, ob das Merkmal dauerhaft gilt. true = dauerhafte Angabe, false = keine dauerhafte Angabe" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

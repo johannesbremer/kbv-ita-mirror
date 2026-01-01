@@ -1,0 +1,382 @@
+<Bundle  xmlns="http://hl7.org/fhir">
+<id value="13000"/>
+<meta>
+	<versionId value="1" />
+	<lastUpdated value="2020-08-28T09:23:00+00:00" />
+	<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Bundle_Sprechstundenbedarf|1.2.0"/>
+</meta>
+<type value="history"/>	
+<entry>
+<fullUrl value="http://test.local/fhir/SupplyRequest/3161"/>
+<resource>
+<SupplyRequest>
+	<id value="3161"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-11T17:17:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Anforderung_Sprechstundenbedarf|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Anforderung von Tetanol Pur fÃ¼r den Sprechstundenbedarf
+		</div>
+	</text>
+	<category>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Arzneimittelart"/>
+			<code value="Impfstoffe"/>
+		</coding>
+	</category>
+	<itemReference>
+		<reference value="Medication/3168"/>
+		<display value="Tetanol Pur"/>
+	</itemReference>
+	<quantity>
+		<value value="1"/>
+		<unit value="1"/>
+		<system value="http://unitsofmeasure.org"/>
+		<code value="1"/>
+	</quantity>
+	<occurrenceDateTime value="2018-02-17"/>
+	<requester>
+		<reference value="Practitioner/3153"/>
+		<display value="Dr. Mustermann"/>
+	</requester>
+</SupplyRequest>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="SupplyRequest/3161"/>
+</request>
+<response>
+<status value="Nicht Verfügbar"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Practitioner/1000"/>
+<resource>
+	<Practitioner>
+	<id value="1000"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-26T08:58:11+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandelnder|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Dr. med. Max Freiherr von und zu Mustermann, Musterweg 42, 10787 Berlin
+		</div>
+	</text>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+				<code value="LANR" />
+			</coding>
+		</type>
+		<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"/>
+		<value value="123456701"/>
+	</identifier>
+	<name>
+		<use value="official" />
+		<text value="Dr. med Max Freiherr von und zu Mustermann" />
+		<family value="Freiherr von und zu Mustermann" >
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+				<valueString value="Mustermann"/>
+			</extension>
+			<extension url="http://fhir.de/StructureDefinition/humanname-namenszusatz">
+				<valueString value="Freiherr"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+				<valueString value="von und zu"/>
+			</extension>
+		</family>
+		<given value="Max"/>
+		<prefix value="Dr. med.">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
+				<valueCode value="AC"/>
+			</extension>
+		</prefix>
+	</name>
+	<address>
+		<type value="both" />
+		<line value="Musterweg 42">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Musterweg"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="42"/>
+			</extension>
+		</line>
+		<city value="Berlin"/>
+		<postalCode value="10787"/>
+		<country value="D"/>
+	</address>
+	<gender value="other">
+		<extension url="http://fhir.de/StructureDefinition/gender-amtlich-de">
+			<valueCoding>
+				<system value="http://fhir.de/CodeSystem/gender-amtlich-de"/>
+				<code value="D"/>
+				<display value="divers"/>
+			</valueCoding>
+		</extension>
+	</gender>
+<qualification>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BAR2_ARZTNRFACHGRUPPE"/>
+				<code value="01"/>
+			</coding>
+		</code>
+	</qualification>
+	<qualification>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BAR2_ARZTNRFACHGRUPPE"/>
+				<code value="33"/>
+			</coding>
+		</code>
+	</qualification>
+</Practitioner>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Practitioner/1000"/>
+</request>
+<response>
+<status value="Nicht Verfügbar"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Organization/3155"/>
+<resource>
+<Organization>
+	<id value="3155"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-24T16:50:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Praxis Dres. MÃ¼ller, Meier, Schulze
+			BSNR 987654321
+			Musterweg 33, 77777 Musterstadt
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Betriebsstaette_Hierarchie">
+		<valueCode value="BSNR"/>
+	</extension>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+				<code value="BSNR"/>
+			</coding>		
+		</type>
+		<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"/>
+		<value value="987654321"/>
+	</identifier>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+				<code value="XX"/>
+			</coding>		
+		</type>
+		<system value="http://fhir.de/NamingSystem/arge-ik/iknr"/>
+		<value value="271234567"/>
+	</identifier>
+	<name value="Praxis Dres. MÃ¼ller, Meier, Schulze"/>
+	<telecom>
+		<system value="phone"/>
+		<value value="09876/54321-0"/>
+	</telecom>
+	<telecom>
+		<system value="fax"/>
+		<value value="09876/54321-33"/>
+	</telecom>
+	<telecom>
+		<system value="email"/>
+		<value value="info@praxis-mms.de"/>
+	</telecom>
+	<address>
+		<type value="both"/>
+		<line value="Musterweg 33">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="33"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Musterweg"/>
+			</extension>
+		</line>
+		<city value="Musterstadt"/>
+		<postalCode value="77777"/>
+		<country value="D"/>
+	</address>
+</Organization>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Organization/3155"/>
+</request>
+<response>
+<status value="Nicht Verfügbar"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Medication/3167"/>
+<resource>
+<Medication>
+	<id value="3167"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-18T15:56:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Medikament|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<code>
+		<coding>
+			<system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+			<code value="13720486"/>
+		</coding>
+		<text value="Paracetamol 500 mg Tabletten"/>
+	</code>
+	<form>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"/>
+			<code value="TAB"/>
+		</coding>
+	</form>
+	<amount>
+		<numerator>
+			<value value="20"/>
+			<unit value="1"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="1"/>
+		</numerator>
+		<denominator>
+			<value value="1"/>
+		</denominator>
+	</amount>
+</Medication>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Medication/3167"/>
+</request>
+<response>
+<status value="Nicht Verfügbar"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Practitioner/3180"/>
+<resource>
+<Practitioner>
+	<id value="3180"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-24T10:50:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Mitarbeiter|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Mitarbeiterin Hanna Helfer
+			Telefon: 09876/55555
+		</div>
+	</text>
+	<identifier>
+		<system value="http://praxis-mueller-meier-schulze.de/identifiers/mitarbeiternummer"/>
+		<value value="17"/>
+	</identifier>
+	<name>
+		<family value="Helfer"/>
+		<given value="Hanna"/>
+	</name>
+	<telecom>
+		<system value="phone"/>
+		<value value="09876/55555"/>
+	</telecom>
+	<address>
+		<line value="Gartenweg 23"/>
+		<city value="Musterstadt"/>
+		<postalCode value="77777"/>
+	</address>
+	<qualification>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp"/>
+				<code value="Mitarbeiter"/>
+			</coding>
+		</code>
+	</qualification>
+</Practitioner>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Practitioner/3180"/>
+</request>
+<response>
+<status value="Nicht Verfügbar"/>
+</response>
+</entry>
+<entry>
+<fullUrl value="http://test.local/fhir/Provenance/300"/>
+<resource>
+<Provenance>
+	<id value="300"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-28T09:23:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Provenienz|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<target>
+		<reference value="Encounter/3188"/>
+	</target>
+	<recorded value="2020-08-12T16:50:00+00:00"/>
+	<activity>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-DataOperation"/>
+			<code value="CREATE"/>
+		</coding>
+	</activity>
+	<agent>
+		<role>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/contractsignertypecodes"/>
+				<code value="PRIMAUTH"/>
+			</coding>
+		</role>
+		<who>
+			<reference value="Practitioner/3180"/>
+		</who>
+		<onBehalfOf>
+			<reference value="Organization/3155"/>
+		</onBehalfOf>
+	</agent>
+</Provenance>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Provenance/300"/>
+</request>
+<response>
+<status value="Nicht Verfügbar"/>
+</response>
+</entry>
+</Bundle>

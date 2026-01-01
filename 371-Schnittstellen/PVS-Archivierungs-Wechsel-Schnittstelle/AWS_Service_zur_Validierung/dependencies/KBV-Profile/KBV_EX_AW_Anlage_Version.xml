@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Anlage_Version" />
+  <version value="1.2.0" />
+  <name value="KBV_EX_AW_Anlage_Version" />
+  <title value="KBV_EX_AW_Anlage_Version" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="DocumentReference.content.attachment" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Anlage_Version" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept">
+      <path value="Extension.value[x]" />
+      <sliceName value="valueCodeableConcept" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding">
+      <path value="Extension.value[x].coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding.code">
+      <path value="Extension.value[x].coding.code" />
+      <short value="Version des Dokumentes" />
+      <definition value="Version des Dokumentes" />
+      <min value="1" />
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.value[x].coding.display" />
+      <short value="Version des Dokumentes" />
+      <definition value="Version des Dokumentes" />
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding.userSelected">
+      <path value="Extension.value[x].coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.value[x].text" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

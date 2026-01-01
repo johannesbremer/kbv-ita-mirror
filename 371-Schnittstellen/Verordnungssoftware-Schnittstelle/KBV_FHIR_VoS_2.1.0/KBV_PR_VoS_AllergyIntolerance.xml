@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-PR-VoS-AllergyIntolerance" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_AllergyIntolerance" />
+  <version value="2.1.0" />
+  <name value="KBV_PR_VoS_AllergyIntolerance" />
+  <title value="KBV_PR_VoS_AllergyIntolerance" />
+  <status value="active" />
+  <date value="2023-02-01" />
+  <description value="Übergabe von Allergie-Informationen aus dem PVS an die VoS" />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="AllergyIntolerance" />
+  <baseDefinition value="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Allergy_Intolerance|1.3.0" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="AllergyIntolerance.id">
+      <path value="AllergyIntolerance.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.meta">
+      <path value="AllergyIntolerance.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.meta.source">
+      <path value="AllergyIntolerance.meta.source" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.meta.profile">
+      <path value="AllergyIntolerance.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_AllergyIntolerance|2.1.0" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.meta.security">
+      <path value="AllergyIntolerance.meta.security" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.meta.tag">
+      <path value="AllergyIntolerance.meta.tag" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.implicitRules">
+      <path value="AllergyIntolerance.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.language">
+      <path value="AllergyIntolerance.language" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.contained">
+      <path value="AllergyIntolerance.contained" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.extension">
+      <path value="AllergyIntolerance.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="0" />
+    </element>
+    <element id="AllergyIntolerance.extension:abatement">
+      <path value="AllergyIntolerance.extension" />
+      <sliceName value="abatement" />
+      <min value="0" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.extension:abatement-lebensphase-bis">
+      <path value="AllergyIntolerance.extension" />
+      <sliceName value="abatement-lebensphase-bis" />
+      <min value="0" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.identifier">
+      <path value="AllergyIntolerance.identifier" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.clinicalStatus">
+      <path value="AllergyIntolerance.clinicalStatus" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.clinicalStatus.coding">
+      <path value="AllergyIntolerance.clinicalStatus.coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.clinicalStatus.coding.system">
+      <path value="AllergyIntolerance.clinicalStatus.coding.system" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.clinicalStatus.coding.version">
+      <path value="AllergyIntolerance.clinicalStatus.coding.version" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.clinicalStatus.coding.code">
+      <path value="AllergyIntolerance.clinicalStatus.coding.code" />
+      <fixedCode value="active" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.clinicalStatus.coding.display">
+      <path value="AllergyIntolerance.clinicalStatus.coding.display" />
+      <fixedString value="Active" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.clinicalStatus.coding.userSelected">
+      <path value="AllergyIntolerance.clinicalStatus.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.clinicalStatus.text">
+      <path value="AllergyIntolerance.clinicalStatus.text" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.verificationStatus">
+      <path value="AllergyIntolerance.verificationStatus" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.verificationStatus.coding">
+      <path value="AllergyIntolerance.verificationStatus.coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.verificationStatus.coding.system">
+      <path value="AllergyIntolerance.verificationStatus.coding.system" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/allergyintolerance-verification" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.verificationStatus.coding.version">
+      <path value="AllergyIntolerance.verificationStatus.coding.version" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.verificationStatus.coding.code">
+      <path value="AllergyIntolerance.verificationStatus.coding.code" />
+      <fixedCode value="confirmed" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.verificationStatus.coding.display">
+      <path value="AllergyIntolerance.verificationStatus.coding.display" />
+      <fixedString value="Confirmed" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.verificationStatus.coding.userSelected">
+      <path value="AllergyIntolerance.verificationStatus.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.verificationStatus.text">
+      <path value="AllergyIntolerance.verificationStatus.text" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.type">
+      <path value="AllergyIntolerance.type" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.category">
+      <path value="AllergyIntolerance.category" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.criticality">
+      <path value="AllergyIntolerance.criticality" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.code">
+      <path value="AllergyIntolerance.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.code.coding">
+      <path value="AllergyIntolerance.code.coding" />
+      <slicing>
+		<discriminator>
+          <type value="pattern" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+    </element>
+    <element id="AllergyIntolerance.code.coding:codeSnomed">
+      <path value="AllergyIntolerance.code.coding" />
+      <sliceName value="codeSnomed" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.code.coding:codeSnomed.system">
+      <path value="AllergyIntolerance.code.coding.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.code.coding:codeSnomed.code">
+      <path value="AllergyIntolerance.code.coding.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.code.coding:codeASK">
+      <path value="AllergyIntolerance.code.coding" />
+      <sliceName value="codeASK" />
+      <definition value="Hier soll der Code für die Substanz als ASK-Nummer eingetragen werden." />
+      <type>
+        <code value="Coding" />
+        <profile value="http://fhir.de/StructureDefinition/CodingASK" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.code.coding:codeASK.system">
+      <path value="AllergyIntolerance.code.coding.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.code.coding:codeASK.code">
+      <path value="AllergyIntolerance.code.coding.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.code.coding:codeATC">
+      <path value="AllergyIntolerance.code.coding" />
+      <sliceName value="codeATC" />
+      <definition value="Hier soll der Code für die Substanz als ATC-Code eingetragen werden." />
+      <type>
+        <code value="Coding" />
+        <profile value="http://fhir.de/StructureDefinition/CodingATC" />
+      </type>
+      <patternCoding>
+        <system value="http://fhir.de/CodeSystem/bfarm/atc" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.code.coding:codeATC.system">
+      <path value="AllergyIntolerance.code.coding.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.code.coding:codeATC.version">
+      <path value="AllergyIntolerance.code.coding.version" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.code.coding:codeATC.code">
+      <path value="AllergyIntolerance.code.coding.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.code.coding:codePZN">
+      <path value="AllergyIntolerance.code.coding" />
+      <sliceName value="codePZN" />
+      <definition value="Hier soll der Code für ein Medikament als PZN eingetragen werden." />
+      <max value="1" />
+      <type>
+        <code value="Coding" />
+        <profile value="http://fhir.de/StructureDefinition/CodingPZN" />
+      </type>
+      <patternCoding>
+        <system value="http://fhir.de/CodeSystem/ifa/pzn" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.code.coding:codePZN.system">
+      <path value="AllergyIntolerance.code.coding.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.code.coding:codePZN.code">
+      <path value="AllergyIntolerance.code.coding.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.code.text">
+      <path value="AllergyIntolerance.code.text" />
+      <definition value="Hier muss die Bezeichnung der Substanz bzw. der Allergie oder Unverträglichkeit als Freitext eingetragen werden." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.patient">
+      <path value="AllergyIntolerance.patient" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Patient|2.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.patient.reference">
+      <path value="AllergyIntolerance.patient.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.patient.type">
+      <path value="AllergyIntolerance.patient.type" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.patient.identifier">
+      <path value="AllergyIntolerance.patient.identifier" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.patient.display">
+      <path value="AllergyIntolerance.patient.display" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.encounter">
+      <path value="AllergyIntolerance.encounter" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.onset[x]">
+      <path value="AllergyIntolerance.onset[x]" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.recordedDate">
+      <path value="AllergyIntolerance.recordedDate" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.recorder">
+      <path value="AllergyIntolerance.recorder" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.asserter">
+      <path value="AllergyIntolerance.asserter" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.lastOccurrence">
+      <path value="AllergyIntolerance.lastOccurrence" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.note">
+      <path value="AllergyIntolerance.note" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction">
+      <path value="AllergyIntolerance.reaction" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance">
+      <path value="AllergyIntolerance.reaction.substance" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation">
+      <path value="AllergyIntolerance.reaction.manifestation" />
+      <short value="Allergische Reaktion" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation.coding">
+      <path value="AllergyIntolerance.reaction.manifestation.coding" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation.text">
+      <path value="AllergyIntolerance.reaction.manifestation.text" />
+      <short value="Allergische Reaktion" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.reaction.description">
+      <path value="AllergyIntolerance.reaction.description" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.onset">
+      <path value="AllergyIntolerance.reaction.onset" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.severity">
+      <path value="AllergyIntolerance.reaction.severity" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.exposureRoute">
+      <path value="AllergyIntolerance.reaction.exposureRoute" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

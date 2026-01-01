@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 ../Schema/afhi_root_V1.00.xsd">
+	<header>
+		<id EX="adf02b8a-1750-476c-a9e0-026b8f0892c5" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2022-07-01.."/>
+		<origination_dttm V="2022-03-31"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat 4"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="https://update.kbv.de/ita-update/"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2022, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="https://update.kbv.de/ita-update/"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="61B-E" DN="Verordnung von medizinischer Rehabilitation">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Es handelt sich weder um eine Minderung / erhebliche Gefährdung der Erwerbsfähigkeit noch um die Folgen eines Arbeitsunfalls / einer Berufskrankheit"/>
+					<hinweistext V="Bei einer Minderung oder erheblichen Gefährdung der Erwerbsfähigkeit ist die Rentenversicherung zuständig, bei Arbeitsunfällen und Berufskrankheiten die Unfallversicherung. Diese Verordnung ist nur bei Zuständigkeit der Krankenversicherung auszufüllen."/>
+				</feld>
+				<feld>
+					<nummer V="2"/>
+					<name V="Bei gleichrangiger Zuständigkeit"/>
+					<hinweistext V="Leistungen der Kinder-Rehabilitation und onkologischen Rehabilitation für Rentnerinnen / Rentner können sowohl zulasten der Rentenversicherung als auch zulasten der Krankenversicherung erbracht werden. Wenn eine Rehabilitation zulasten der Krankenkasse gewünscht wird, geben Sie dies bitte hier an. Ansonsten wird für die Verordnung der Vordruck der Rentenversicherung genutzt."/>
+				</feld>
+				<feld>
+					<nummer V="3"/>
+					<name V="Rehabilitationsbegründende und weitere Diagnosen"/>
+					<hinweistext V="Geben Sie hier bitte die relevanten Diagnosen - sofern erforderlich mit Seitenlokalisation - als Funktionsdiagnosen an, z. B. 'Coxarthrose re. mit eingeschränkter Gehfähigkeit'. Die den Beeinträchtigungen zugrundeliegenden Diagnosen und weitere Diagnosen sind gemäß ICD-10-GM zu verschlüsseln."/>
+				</feld>
+				<feld>
+					<nummer V="4"/>
+					<name V="Ursache"/>
+					<hinweistext V="Wenn für die Diagnosen eine der rechts auf dem Vordruck aufgeführten Ursachen zutrifft, geben Sie dies, sofern bekannt, hier bitte an."/>
+				</feld>
+				<feld>
+					<nummer V="5"/>
+					<name V="Kurze Angaben zur Anamnese"/>
+					<hinweistext V="Bitte geben Sie hier die Anamnese und den bisherigen Verlauf der Krankenbehandlung sowie die Beschwerden der Patientin / des Patienten an und machen Angaben zu Krankenhaus- und Facharztbehandlungen."/>
+				</feld>
+				<feld>
+					<nummer V="6"/>
+					<name V="Rehabilitationsrelevante Schädigungen und Befunde"/>
+					<hinweistext V="Geben Sie hier bitte die für die Rehabilitation relevanten Funktionseinschränkungen an. Dies kann durch Ergebnisse entsprechender Untersuchungen und Assessments untermauert werden. Für die Verordnung einer geriatrischen Rehabilitation gelten davon abweichend nachfolgende Hinweise unter Punkt 7."/>
+				</feld>
+				<feld>
+					<nummer V="7"/>
+					<name V="Bei geriatrischer Rehabilitation"/>
+					<hinweistext V="Nur bei der Verordnung einer geriatrischen Rehabilitation, mittels Zuweisungsempfehlung unter Punkt 14, sind Ergebnisse von mindestens zwei Funktionstests aus unterschiedlichen Schädigungsbereichen anzugeben."/>
+				</feld>
+				<feld>
+					<nummer V="8"/>
+					<name V="Bisherige ärztliche/psychotherapeutische Interventionen, andere Maßnahmen, einschließlich Heilmittel"/>
+					<hinweistext V="Geben Sie in den Abschnitten D bis E bitte die bisher durchgeführten Leistungen der Krankenbehandlung an. Dies umfasst z. B. ärztliche und psychotherapeutische Leistungen, Heil- und Hilfsmittel, Patientenschulungen und medizinische Vorsorgeleistungen. Sofern bekannt, geben Sie zur Heilmitteltherapie bitte auch an, wie häufig welche Einzelleistungen in den letzten sechs Monaten verordnet wurden. Durch das Ankreuzfeld bestätigen Sie, dass das Behandlungsziel mit einer weiteren Heilmittelbehandlung nicht zu erreichen ist."/>
+				</feld>
+				<feld>
+					<nummer V="9"/>
+					<name V="Nicht nur vorübergehende Beeinträchtigungen der Aktivitäten/Teilhabe"/>
+					<hinweistext V="Geben Sie hier bitte die Beeinträchtigungen und den Unterstützungsbedarf der Patientin / des Patienten an. Relevant sind Beeinträchtigungen, die nicht nur vorübergehend sind. Die Kategorien 'Mobilität' und 'Selbstversorgung' sind untergliedert dargestellt. Hier kann ein übergeordnetes Kreuz gesetzt werden, falls keinerlei Beeinträchtigungen vorliegen."/>
+				</feld>
+				<feld>
+					<nummer V="10"/>
+					<name V="Lebensumstände/Kontextfaktoren"/>
+					<hinweistext V="Bitte machen Sie hier Angaben zu den Lebensumständen/Kontextfaktoren, die für den Rehabilitationserfolg relevant sind. Hierzu gehören die eigenen Kompetenzen aber auch externe Faktoren (z.B. soziales Umfeld) und Risiken."/>
+				</feld>
+				<feld>
+					<nummer V="11"/>
+					<name V="Angaben zur Rehabilitationsfähigkeit"/>
+					<hinweistext V="Rehabilitationsfähig sind Patientinnen/Patienten, die aufgrund ihrer somatischen und psychischen Verfassung in der Lage sind, an der Durchführung der Rehabilitation mitzuwirken."/>
+				</feld>
+				<feld>
+					<nummer V="12"/>
+					<name V="Rehabilitationsziele"/>
+					<hinweistext V="Bitte beschreiben Sie die Rehabilitationsziele möglichst konkret und realistisch (z.B. Gehen kurzer Strecken). Diese Ziele sollen mit der Patientin/dem Patienten und ggf. Angehörigen abgestimmt werden. Weichen die Ziele der Patientin/des Patienten von den Zielen ab, die Sie für realistisch halten, geben Sie dies hier bitte an."/>
+				</feld>
+				<feld>
+					<nummer V="13"/>
+					<name V="Rehabilitationsprognose"/>
+					<hinweistext V="In die Rehabilitationsprognose sollen sowohl Ihre medizinische Einschätzung als auch der Lebenshintergrund der Patientin/des Patienten einbezogen werden. Wichtig sind auch die Motivation und eventuelle Risikofaktoren."/>
+				</feld>
+				<feld>
+					<nummer V="14"/>
+					<name V="Zuweisungsempfehlungen"/>
+					<hinweistext V="Bitte geben Sie hier die zu empfehlende Rehabilitationsform an. Falls es weitere Anforderungen an die Rehabilitationseinrichtung gibt (z.B. Barrierefreiheit, Klima, Allergien), benennen Sie diese bitte hier. Zudem sind Angaben zu inhaltlichen Schwerpunkten/Indikationen der Rehabilitation, z.B. orthopädisch oder geriatrisch zu machen und, sofern erforderlich, besondere Anforderungen an die Rehabilitationseinrichtung anzugeben. Falls es sich bei Ihrer Patientin/Ihrem Patienten um eine(n) pflegende(n) Angehörige(n) handelt, ist dies hier anzukreuzen, um insbesondere die Durchführung einer stationären Rehabilitation zu begründen."/>
+				</feld>
+				<feld>
+					<nummer V="15"/>
+					<name V="Die beantragte Leistung ist vor Ablauf der gesetzlichen Wartefrist von 4 Jahren medizinisch notwendig aufgrund"/>
+					<hinweistext V="Im Regelfall ist eine medizinische Rehabilitation nur alle vier Jahre möglich. Ausnahmen sind bei Vorliegen einer neuen Indikation oder einer Verschlimmerung der gleichen Indikation möglich. Dies muss gesondert begründet werden. Für Kinder vor dem vollendeten 18. Lebensjahr findet die gesetzliche Wartefrist von 4 Jahren keine Anwendung."/>
+				</feld>
+				<feld>
+					<nummer V="16"/>
+					<name V="Die zeitweise Entlastung und Distanzierung vom sozialen Umfeld ist nötig"/>
+					<hinweistext V="Wenn eine zeitweilige Entlastung und Distanzierung vom sozialen Umfeld erforderlich ist, geben Sie dies bitte hier an. Die Krankenkasse kann dann eine wohnortferne Einrichtung auswählen."/>
+				</feld>
+				<feld>
+					<nummer V="17"/>
+					<name V="Im Falle einer ambulanten Rehabilitation ist die häusliche Versorgung gesichert"/>
+					<hinweistext V="Diese Angabe ist relevant, damit die Krankenkasse die Notwendigkeit einer Unterstützung bei der häuslichen Versorgung während der ambulanten Rehabilitation prüfen kann."/>
+				</feld>
+				<feld>
+					<nummer V="18"/>
+					<name V="Reisefähigkeit"/>
+					<hinweistext V="Bitte geben Sie hier an, ob die Patientin / der Patient in der Lage ist, mit öffentlichen Verkehrsmitteln anzureisen oder ob ein PKW oder eine Begleitperson erforderlich sind."/>
+				</feld>
+				<feld>
+					<nummer V="19"/>
+					<name V="Versorgung der/des Pflegebedürftigen während der stationären Rehabilitation der/des pflegenden Angehörigen"/>
+					<hinweistext V="Hier können Angaben zur möglichen Versorgung der/des Pflegebedürftigen während der stationären Rehabilitation der/des pflegenden Angehörigen gemacht werden. Sofern die Mitaufnahme der/des Pflegebedürftigen in derselben Einrichtung, d.h. der Rehabilitationseinrichtung oder die Koordination der Versorgung in einer anderen Einrichtung (z.B. Kurzzeitpflege) durch die Krankenkasse/Pflegekasse gewünscht wird, ist dies entsprechend anzukreuzen."/>
+				</feld>
+				<feld>
+					<nummer V="20"/>
+					<name V="Sonstiges / Rückruf erbeten unter"/>
+					<hinweistext V="Hier können Sie weitere Hinweise geben, die für die Durchführung der Rehabilitation erforderlich sind, beispielsweise zum Bestehen einer Schwangerschaft oder zu Anhaltspunkten für weitere Bedarfe an Leistungen zur Teilhabe. Sprechen medizinische Gründe (z.B. ein schweres Erschöpfungssyndrom oder depressive Störungen der/des pflegenden Angehörigen) gegen die Mitaufnahme der/des Pflegebedürftigen in der Rehabilitationseinrichtung, ist dies hier zu vermerken. Wenn Sie einen telefonischen Rückruf der Krankenkasse wünschen, geben Sie dies bitte ebenfalls hier an."/>
+				</feld>
+				<feld>
+					<nummer V="21"/>
+					<name V="Inhalt der abgegebenen Einwilligungserklärung und Angaben der/des Versicherten"/>
+					<hinweistext V="Der Inhalt der abgegebenen Einwilligungen der oder des Versicherten ist durch die Angabe unter Punkt 1 und 2 zu übermitteln."/>
+				</feld>
+				<feld>
+					<nummer V="22"/>
+					<name V="Angaben der/des Versicherten"/>
+					<hinweistext V="Sofern die oder der Versicherte die Einwilligung nach Punkt VIII A. 2. positiv vornimmt, ist darauf hinzuweisen, dass vor einer Weitergabe der Verordnung durch die oder den Versicherten konkrete Angaben zu den Angehörigen und Vertrauenspersonen sowie Pflege- und Betreuungseinrichtungen vorzunehmen sind. Die jeweiligen Angaben sind durch die oder den Versicherten vorzunehmen."/>
+				</feld>
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

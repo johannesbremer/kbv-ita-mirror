@@ -1,0 +1,89 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "KBV_CS_VoS_DocumentType",
+  "id": "KBV-CS-VoS-DocumentType",
+  "description": "Dokumententypen, die über die Verordnungssoftwareschnittstelle übertragen werden können.",
+  "version": "2.2.0",
+  "url": "https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType",
+  "concept": [
+    {
+      "code": "BMP-PDF",
+      "display": "Patientenausdruck des Bundeseinheitlichen Medikationsplans",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "deprecated"
+        }
+      ]
+    },
+    {
+      "code": "BMP-XML",
+      "display": "Inhalt des Barcodes des Bundeseinheitlichen Medikationsplans",
+      "property": [
+        {
+          "code": "status",
+          "valueCode": "deprecated"
+        }
+      ]
+    },
+    {
+      "code": "BMP",
+      "display": "Bundeseinheitlicher Medikationsplan"
+    },
+    {
+      "code": "EMP",
+      "display": "Elektronischer Medikationsplan"
+    },
+    {
+      "code": "Medikationsplan",
+      "display": "Medikationsplan"
+    },
+    {
+      "code": "Rezept",
+      "display": "Rezept"
+    },
+    {
+      "code": "Signiertes_eRezept",
+      "display": "Signiertes_eRezept"
+    },
+    {
+      "code": "Patientenausdruck_eRezept",
+      "display": "Patientenausdruck_eRezept"
+    },
+    {
+      "code": "eMedikationsplan",
+      "display": "eMedikationsplan"
+    },
+    {
+      "code": "eMedikationsliste",
+      "display": "eMedikationsliste"
+    }
+  ],
+  "experimental": false,
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "other",
+          "value": "http://www.kbv.de"
+        }
+      ]
+    }
+  ],
+  "copyright": "Copyright © [2022], Kassenärztliche Bundesvereinigung (KBV). All rights reserved.",
+  "caseSensitive": true,
+  "valueSet": "https://fhir.kbv.de/ValueSet/KBV_VS_VoS_DocumentType",
+  "property": [
+    {
+      "code": "status",
+      "uri": "http://hl7.org/fhir/concept-properties#status",
+      "description": "Status",
+      "type": "code"
+    }
+  ],
+  "count": 10
+}

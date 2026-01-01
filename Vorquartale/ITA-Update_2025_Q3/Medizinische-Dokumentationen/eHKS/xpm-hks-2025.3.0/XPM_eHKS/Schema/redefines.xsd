@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="service_tmr" type="service_tmr_typ"/>
+	<xs:element name="origination_dttm" type="origination_dttm_typ"/>
+	<xs:element name="id" type="id_typ"/>
+	<!-- ****************************** service_tmr_typ ****************************** -->
+	<xs:complexType name="service_tmr_typ">
+		<xs:annotation>
+			<xs:appinfo>Untersuchungsdatum</xs:appinfo>
+		</xs:annotation>
+		<xs:attribute name="V" type="xs:date" use="required"/>
+	</xs:complexType>
+	<!-- ****************************** origination_dttm_typ ****************************** -->
+	<xs:complexType name="origination_dttm_typ">
+		<xs:annotation>
+			<xs:appinfo>Datum der Erstellung</xs:appinfo>
+		</xs:annotation>
+		<xs:attribute name="V" type="xs:date" use="required"/>
+	</xs:complexType>
+
+	<xs:complexType name="id">
+		<xs:annotation>
+			<xs:appinfo>Dokument-ID bzw. Betriebsstättennummer/lebenslange Arztnummer bzw. Patientennummer (EDV)</xs:appinfo>
+		</xs:annotation>
+		<xs:attribute name="EX" type="xs:string" use="required"/>
+		<xs:attribute name="RT" type="xs:string" use="required"/>
+	</xs:complexType>
+</xs:schema>

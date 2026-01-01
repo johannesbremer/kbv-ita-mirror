@@ -1,0 +1,28 @@
+<ActivityDefinition xmlns="http://hl7.org/fhir">
+	<id value="3164"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-23T11:13:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_OMIMCode|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Behandlungsbaustein_Contributor">
+		<valueReference>
+			<reference value="PractitionerRole/1010"/>
+		</valueReference>
+	</extension>
+	<title value="OMIM-Code"/>
+	<status value="active"/>
+	<purpose value="Omim-Code"/>
+	<code>
+		<coding>
+			<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_AW_OMIM_G"/>
+			<code value="11111111"/>
+		</coding>
+	</code>
+</ActivityDefinition>

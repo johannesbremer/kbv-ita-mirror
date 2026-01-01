@@ -1,0 +1,2 @@
+Änderungen der Version 1.1.0 vom 15.05.2023 zum Stand Version 1.1.0 vom 30.09.2022
+- Im Profil KBV_PR_EAU_Bundle Constraint -eau-angabeFachgruppennummerAsvVerantwortlichePersonVerbot sowie "-eau-angabeAUseitErstbescheinigung" korrigiert

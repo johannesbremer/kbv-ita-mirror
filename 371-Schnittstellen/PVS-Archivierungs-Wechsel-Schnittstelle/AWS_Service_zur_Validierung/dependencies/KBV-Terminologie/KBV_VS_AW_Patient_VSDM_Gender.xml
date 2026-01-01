@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/ValueSet/KBV_VS_AW_Patient_VSDM_Gender"/>
+<version value="1.2.0" />
+<name value="KBV_VS_AW_Patient_VSDM_Gender"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Genderauswahl zur Nutzung in VSDM Extension"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<compose>
+<include>
+	<valueSet value="http://hl7.org/fhir/ValueSet/administrative-gender"/>
+</include>
+<include>
+	<valueSet value="http://fhir.de/ValueSet/gender-amtlich-de"/>
+</include>
+<exclude>
+	<system value="http://hl7.org/fhir/administrative-gender"/>
+	<concept>
+		<code value="other"/>
+	</concept>
+</exclude>
+</compose>
+</ValueSet>

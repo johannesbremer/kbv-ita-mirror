@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- Beispiel für eine elektronische Sammelerklärung der KV Schleswig-Holstein, Ausprägung: Arzt -->
+<ehd:ehd ehd_version="1.40" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:ehd/ese/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:ehd="urn:ehd/001" xsi:schemaLocation="urn:ehd/001 ..\Schema\ese_root.xsd">
+	<ehd:header>
+		<ehd:id EX="1" RT="123456789"/>					<!-- TODO-1: EX=Version RT=9-stellige LANR des Erklärenden -->
+		<ehd:version_nbr V="1"/>
+		<ehd:document_type_cd DN="Elektronische Sammelerklärung" S="1.2.276.0.76.5.100" V="ese"/>
+		<ehd:service_tmr V="2025-10-01..2025-12-31"/>	<!-- TODO-2: IV. Quartal 2025 -->
+		<ehd:origination_dttm V="2025-12-30"/>    		<!-- TODO-3: Erstellungsdatum der eSE -->
+		<ehd:intended_recipient>
+			<ehd:organization>
+				<ehd:organization.nm V="Arzt"/>   		<!-- eSE mit Ausprägung: Arzt -->
+			</ehd:organization>
+		</ehd:intended_recipient>
+		<ehd:originator>
+			<ehd:organization>							<!-- Empfänger ist die Landes-KV -->
+				<ehd:id EX="01" RT="1.2.276.0.76.5.233"/>
+				<ehd:organization.nm V="KV Schleswig-Holstein"/>
+				<ehd:addr>
+					<ehd:STR V="Bismarckallee"/>
+					<ehd:HNR V="1-6"/>
+					<ehd:POB V="23795"/>
+					<ehd:CTY V="Bad Segeberg"/>
+					<ehd:STA V="Schleswig-Holstein"/>
+				</ehd:addr>
+				<ehd:telecom V="tel:04551-8830"/>
+			</ehd:organization>
+		</ehd:originator>
+		<ehd:provider>
+			<ehd:person>
+				<!-- TODO-4: EX=9-stellige LANR des Erklärenden -->
+				<ehd:id EX="123456789" RT="1.2.276.0.76.4.16"/> 
+				<!-- TODO-5: Titel und Name des Erklärenden -->
+				<ehd:person_name>
+					<ehd:nm>
+						<ehd:PFX V="Dr. med."/>
+						<ehd:GIV V="Max"/>
+						<ehd:FAM V="Mustermann"/>
+					</ehd:nm>
+				</ehd:person_name>
+				<ehd:local_header>
+					<!-- TODO-6: Fachgebiet des Erklärenden -->
+					<ehd:fachgruppenbezeichnung V="Facharzt f. Innere Medizin"/> 
+				</ehd:local_header>
+			</ehd:person>
+			<ehd:organization>
+				<!-- TODO-7: EX=9-stellige BSNR der Hauptbetriebsstätte -->
+				<ehd:id EX="019999900" RT="1.2.276.0.76.4.17"/> 
+				<!-- TODO-8: Praxisstempel mit Praxisname, Adresse, Telefon -->
+				<ehd:organization.nm V="Gemeinschaftspraxis Dres. Max und Monika Mustermann"/>
+				<ehd:addr>
+					<ehd:STR V="Teststraße"/>
+					<ehd:HNR V="99"/>
+					<ehd:POB V="23795"/>
+					<ehd:CTY V="Bad Musterhausen"/>
+				</ehd:addr>
+				<ehd:telecom V="Tel:04551-123456"/>
+			</ehd:organization>
+		</ehd:provider>
+		<ehd:interface>
+			<ehd:id EX="ese" RT="1.2.276.0.76.5.109"/>
+			<ehd:interface.nm V="Elektronische Sammelerklärung (ese)"/>
+			<ehd:version V="1.21"/>
+		</ehd:interface>
+	</ehd:header>
+	<ehd:body>
+		<ese_data>
+		</ese_data>
+	</ehd:body>
+</ehd:ehd>

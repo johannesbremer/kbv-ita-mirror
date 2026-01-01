@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-PR-EAU-Storno" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Storno" />
+  <version value="1.1.0" />
+  <name value="KBV_PR_EAU_Storno" />
+  <status value="active" />
+  <date value="2022-09-30" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="List" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/List" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="List.id">
+      <path value="List.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="List.meta">
+      <path value="List.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="List.meta.versionId">
+      <path value="List.meta.versionId" />
+      <max value="0" />
+    </element>
+    <element id="List.meta.lastUpdated">
+      <path value="List.meta.lastUpdated" />
+      <max value="0" />
+    </element>
+    <element id="List.meta.source">
+      <path value="List.meta.source" />
+      <max value="0" />
+    </element>
+    <element id="List.meta.profile">
+      <path value="List.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Storno|1.1.0" />
+      <mustSupport value="true" />
+    </element>
+    <element id="List.meta.security">
+      <path value="List.meta.security" />
+      <max value="0" />
+    </element>
+    <element id="List.meta.tag">
+      <path value="List.meta.tag" />
+      <max value="0" />
+    </element>
+    <element id="List.implicitRules">
+      <path value="List.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="List.language">
+      <path value="List.language" />
+      <max value="0" />
+    </element>
+    <element id="List.text">
+      <path value="List.text" />
+      <max value="0" />
+    </element>
+    <element id="List.contained">
+      <path value="List.contained" />
+      <max value="0" />
+    </element>
+    <element id="List.identifier">
+      <path value="List.identifier" />
+      <max value="0" />
+    </element>
+    <element id="List.status">
+      <path value="List.status" />
+      <fixedCode value="current" />
+      <mustSupport value="true" />
+    </element>
+    <element id="List.mode">
+      <path value="List.mode" />
+      <fixedCode value="changes" />
+      <mustSupport value="true" />
+    </element>
+    <element id="List.title">
+      <path value="List.title" />
+      <max value="0" />
+    </element>
+    <element id="List.code">
+      <path value="List.code" />
+      <max value="0" />
+    </element>
+    <element id="List.subject">
+      <path value="List.subject" />
+      <max value="0" />
+    </element>
+    <element id="List.encounter">
+      <path value="List.encounter" />
+      <max value="0" />
+    </element>
+    <element id="List.date">
+      <path value="List.date" />
+      <short value="Datum der Nachricht" />
+      <max value="0" />
+    </element>
+    <element id="List.source">
+      <path value="List.source" />
+      <max value="0" />
+    </element>
+    <element id="List.orderedBy">
+      <path value="List.orderedBy" />
+      <max value="0" />
+    </element>
+    <element id="List.note">
+      <path value="List.note" />
+      <max value="0" />
+    </element>
+    <element id="List.entry">
+      <path value="List.entry" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="List.entry.flag">
+      <path value="List.entry.flag" />
+      <max value="0" />
+    </element>
+    <element id="List.entry.deleted">
+      <path value="List.entry.deleted" />
+      <min value="1" />
+      <fixedBoolean value="true" />
+      <mustSupport value="true" />
+    </element>
+    <element id="List.entry.date">
+      <path value="List.entry.date" />
+      <max value="0" />
+    </element>
+    <element id="List.entry.item">
+      <path value="List.entry.item" />
+      <definition value="Angabe des Bundle-Identifiers der eAU" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_Bundle" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="List.entry.item.reference">
+      <path value="List.entry.item.reference" />
+      <max value="0" />
+    </element>
+    <element id="List.entry.item.type">
+      <path value="List.entry.item.type" />
+      <max value="0" />
+    </element>
+    <element id="List.entry.item.identifier">
+      <path value="List.entry.item.identifier" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="List.entry.item.identifier.use">
+      <path value="List.entry.item.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="List.entry.item.identifier.type">
+      <path value="List.entry.item.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="List.entry.item.identifier.system">
+      <path value="List.entry.item.identifier.system" />
+      <min value="1" />
+      <fixedUri value="urn:ietf:rfc:3986" />
+      <mustSupport value="true" />
+    </element>
+    <element id="List.entry.item.identifier.value">
+      <path value="List.entry.item.identifier.value" />
+      <short value="Bundle-Identifier von der eAU" />
+      <definition value="An dieser Stelle wird der Bundle-Identifier von der eAU, welche storniert werden soll" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="List.entry.item.identifier.period">
+      <path value="List.entry.item.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="List.entry.item.identifier.assigner">
+      <path value="List.entry.item.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="List.entry.item.display">
+      <path value="List.entry.item.display" />
+      <max value="0" />
+    </element>
+    <element id="List.emptyReason">
+      <path value="List.emptyReason" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

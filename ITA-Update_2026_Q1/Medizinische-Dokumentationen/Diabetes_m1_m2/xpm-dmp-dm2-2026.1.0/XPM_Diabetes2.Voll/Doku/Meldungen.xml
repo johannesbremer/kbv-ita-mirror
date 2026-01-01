@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Diese Datei beschreibt die Meldungen eines Prueflaufs. -->
+<meldungen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Common/Schema/meldungen.xsd">
+	<meldung>
+		<nummer>DMP-002</nummer>
+		<typ>Fehler</typ>
+   		<text>Die Übertragung des Feldes %s ist verpflichtend.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-003</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn bei 'Fußstatus' die Angabe 'auffällig' erfolgt und der Patient volljährig ist, dann muss genau eine Angabe zur Ausprägung 'Wagner-Stadium 0 - 5' und geneu eine Angabe zur Ausprägung 'Armstrong A - D' erfolgen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-003a</nummer>
+		<typ>Fehler</typ>
+		<text>Erfolgt bei 'Fußstatus' die Angabe 'unauffällig' oder 'nicht erhoben', so ist eine Angabe zur Ausprägung 'Wagner-Stadium 0 - 5' und 'Armstrong A - D' nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-003b</nummer>
+		<typ>Fehler</typ>
+		<text>Nur wenn bei 'Fußstatus' die Angabe 'auffällig' erfolgt ist, dann darf eine Angabe zur Ausprägung 'Wagner-Stadium 0 - 5' und eine Angabe zur Ausprägung 'Armstrong A - D' erfolgen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-005</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn die Angabe 'keine der genannten Ereignisse' erfolgt ist, so ist keine weitere Angabe zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-022</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe zur Körpergrösse muss dem Format 'n.nn' entsprechen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-071</nummer>
+		<typ>Fehler</typ>
+		<text>Die Einschreibung in das DMP Asthma bronchiale ist für Patienten unter 1 Jahr nicht möglich.</text>
+	</meldung>
+	
+	<meldung>
+	    <nummer>DMP-110</nummer>
+    	<typ>Fehler</typ>
+	    <text>Bei einem Lebensalter &lt; 60 Jahre und dem Geschlecht "Männlich" ist eine Einschreibung wegen "Osteoporose" nicht möglich.</text>
+    </meldung>
+	<meldung>
+	    <nummer>DMP-111</nummer>
+    	<typ>Fehler</typ>
+	    <text>Bei einem Lebensalter &lt; 50 Jahre und dem Geschlecht "Weiblich", "Unbestimmt" oder "Divers" ist eine Einschreibung wegen "Osteoporose" nicht möglich.</text>
+    </meldung>
+   	<meldung>
+		<nummer>DMP-112</nummer>
+		<typ>Fehler</typ>
+		<text>Das für eine Einschreibung wegen COPD erforderliche Mindestalter des Patienten ist 18 Jahre.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A01</nummer>
+		<typ>Fehler</typ>
+		<text>Die DMP-Fallnummer ist nicht vorhanden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A01F</nummer>
+		<typ>Fehler</typ>
+		<text>Die DMP-Fallnummer '%s' darf nur bis 7 Stellen lang sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A02</nummer>
+		<typ>Fehler</typ>
+		<text>Der Name des Versicherten ist nicht vorhanden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A03</nummer>
+		<typ>Fehler</typ>
+		<text>Das Geburtsdatum '%s' des Versicherten muss kleiner dem Datum der Erstellung der Dokumentation sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A03a</nummer>
+		<typ>Fehler</typ>
+		<text>Das Geburtsjahr '%s' des Versicherten muss größer als 1900 sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A04</nummer>
+		<typ>Fehler</typ>
+		<text>Die Kostenträgerbezeichnung '%s' ist ungültig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A06</nummer>
+		<typ>Fehler</typ>
+		<text>Die Versicherten-Nummer '%s' ist ungültig. Erwartet wird eine bis zu 12 Stellen alphanummerische Zeichenfolge.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A06a</nummer>
+		<typ>Fehler</typ>
+		<text>Die Versicherten-Nummer '%s' ist ungültig. Nur das 1. Zeichen darf alphanumerisch sein, die restlichen Zeichen müssen Ziffern sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A07a</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld 'Betriebsstättennummer (BSNR)' und die Angabe '%s' im Element 'Patienten-ID' (RT-Attribut) müssen gleich sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A07b</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld 'Betriebsstättennummer (BSNR)' und die Angabe '%s' im Element 'Dokumenten-ID' (RT-Attribut) müssen gleich sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A07c</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn eine Betriebsstättennummer (BSNR) angegeben wurde, dann muss auch eine lebenslange Arztnummer (LANR) mitangegeben werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A07d</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn eine lebenslange Arztnummer (LANR) angegeben wurde, dann muss auch eine Betriebsstättennummer (BSNR) mitangegeben werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A07e</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn eine Betriebsstättennummer (BSNR) und eine Krankenhaus-IK angegeben wurde, dann muss entweder die BSNR oder die Krankenhaus-IK der Angabe im Element 'Patienten-ID' (RT-Attribut) und der Angabe im Element 'Dokumenten-ID' (RT-Attribut) gleich sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A08</nummer>
+		<typ>Info</typ>
+		<text>Wenn im Feld 'lebenslange Arztnummer (LANR)' und im Feld 'Betriebsstätten-Nummer' eine Angabe erfolgte, ist im Feld 'Krankenhaus-IK' keine Angabe notwendig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A08a</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld 'Krankenhaus-IK' und die Angabe '%s' im Element 'Patienten-ID' (RT-Attribut) müssen gleich sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A08b</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld 'Krankenhaus-IK' und die Angabe '%s' im Element 'Dokumenten-ID' (RT-Attribut) müssen gleich sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A08c</nummer>
+		<typ>Fehler</typ>
+		<text>Eine Angabe im Feld 'lebenslange Arztnummer (LANR)' und im Feld 'Betriebsstätten-Nummer' oder eine Angabe im Feld 'Krankenhaus-IK' ist notwendig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A09</nummer>
+		<typ>Warnung</typ>
+		<text>Das Datum (origination_dttm) ist jünger als das Datum der Erstellung (service_tmr).</text>
+		<!--text> Der Zeitpunkt der Unterschrift darf nicht vor dem Zeitpunkt der Erstellung des Bogens liegen.</text-->
+	</meldung>
+	<meldung>
+		<nummer>DM2-A10</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe 'Diabetes mellitus Typ 1' im Feld 'Einschreibung wegen' kann nicht gleichzeitig mit der Angabe 'Diabetes mellitus Typ 2' erfolgen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A10a</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe 'Asthma bronchiale' im Feld 'Einschreibung wegen' kann nicht gleichzeitig mit der Angabe 'COPD' erfolgen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A10b</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe 'Diabetes mellitus Typ 2' im Feld 'Einschreibung wegen' fehlt.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A15</nummer>
+		<typ>Fehler</typ>
+		<text>Der systolischer Wert '%s' muss größer dem diastolischen Wert '%s' sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-A21</nummer>
+		<typ>Warnung</typ>
+		<text>Das Datum im Feld '%s' muss nach dem Datum der Erstellung (service_tmr) liegen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-ABS</nummer>
+		<typ>Fehler</typ>
+		<text>Der Abschnittsname '%s' ist ungültig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-ASTH</nummer>
+		<typ>Fehler</typ>
+		<text>Minimumalter für Einschreibung in das DMP Asthma bronchiale beträgt 1 Jahr.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-COPD</nummer>
+		<typ>Fehler</typ>
+		<text>Minimumalter für Einschreibung in das DMP COPD beträgt 18 Jahre.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-EINH</nummer>
+		<typ>Fehler</typ>
+		<text>Im Feld '%s' wurde die falsche Einheit '%s' angegeben.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-ERK</nummer>
+		<typ>Fehler</typ>
+		<text>Feld 'Begleiterkrankungen': Option 'Keine der genannten Erkrankungen' schliesst weitere Angaben aus.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-FEHL</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe zum Feld '%s' fehlt.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-FELD</nummer>
+		<typ>Fehler</typ>
+		<text>Das Feld '%s' ist in diesem Abschnitt nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-FELDW</nummer>
+		<typ>Warnung</typ>
+		<text>Das Feld '%s' ist in diesem Abschnitt nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-FRMT</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld '%s' hat falsches Format.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-IK</nummer>
+		<typ>Warnung</typ>
+		<text>Das Krankenkassen-IK '%s' ist nicht in der Stammdatei.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-IK2</nummer>
+		<typ>Fehler</typ>
+		<text>Das Krankenhaus-IK '%s' muss 9-stellig sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-IKQ</nummer>
+		<typ>Warnung</typ>
+		<text>Das Krankenkassen-IK '%s' ist für dieses Abrechnungsquartal ungültig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-KONV</nummer>
+		<typ>Fehler</typ>
+		<text>Die Datei '%s' entspricht nicht der Dateinamenskonvention gemäß 'AAAAAAAAA_BBBBBBBB_JJJJMMTT.E%sD2' mit AAAAAAAAA: BSNR (9 stellig), BBBBBBBB: Patientennummer(EDV) und JJJJMMTT: Datum (origination_dttm). Erwartet wird folgender Dateiname: 'AAAAAAAAA_%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-KONV2</nummer>
+		<typ>Fehler</typ>
+		<text>Das Krankenhaus-IK '%s' muss mit dem ersten Teil des Dateinamens '%s' identisch sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-KTAB</nummer>
+		<typ>Fehler</typ>
+		<text>Der Kostenträgerabrechnungsbereich (KTAB) '%s' passt nicht zu dem angegebenen Krankenkassen-IK '%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-EGK</nummer>
+		<typ>Warnung</typ>
+		<text>Das Einlesedatum liegt in Bezug zu der Angabe im Feld 'Datum der Erstellung' (service_tmr) in der Zukunft.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-EGKG</nummer>
+		<typ>Fehler</typ>
+		<text>Das Versicherungsschutzendedatum der eGK ist seit mindestens vier Monaten abgelaufen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-EGKGw</nummer>
+		<typ>Warnung</typ>
+		<text>Das Versicherungsschutzendedatum der eGK ist bereits abgelaufen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-NKST</nummer>
+		<typ>Fehler</typ>
+		<text>Fehlerhafte Angabe '%s' im Feld '%s'. Der Wert muss genau '%s' Nachkommastelle(n) enthalten.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-PAR</nummer>
+		<typ>Fehler</typ>
+		<text>Zu dem Parameter '%s' wurde im Datensatz kein Wert angegeben.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-PAR2</nummer>
+		<typ>Fehler</typ>
+		<text>Zwei verschachtelte Beobachtung-Elemente sind bei dem Parameter '%s' nicht erlaubt.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-PAR3</nummer>
+		<typ>Fehler</typ>
+		<text>Bei dem Beobachtung-Element mit dem Parameter '%s' ist ein verschachteltes Beobachtung-Element mit dem Parameter '%s' nicht erlaubt.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-STRUKTUR</nummer>
+		<typ>Fehler</typ>
+		<text>Der Parameter '%s' erfordert laut Spezifikation einen übergeordneten Parameter 'Empfohlene Schulung(en) wahrgenommen'.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-SE</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn eine Angabe im Feld Einlesedatum erfolgte, dann darf die Angabe der Statusergänzung nicht fehlen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-SK</nummer>
+		<typ>Fehler</typ>
+		<text>Im Feld 'Serum-Kreatinin' wurden widersprüchliche Angaben gemacht. Die gleichzeitige Angabe in 'mg/dl' und in 'µmol/l' ist nicht erlaubt.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-VD</nummer>
+		<typ>Fehler</typ>
+		<text>Eine Angabe im Feld '%s' ist nur bei der Verlaufsdokumentation zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-ED</nummer>
+		<typ>Fehler</typ>
+		<text>Eine Angabe im Feld '%s' ist nur bei der Erstdokumentation zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-VKNR</nummer>
+		<typ>Inaktiv</typ>
+		<text>Die angegebene Abrechnungs-VKNR '%s' entspricht nicht der erwarteten VKNR '%s' aus der Kostenträgerstammdatei.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-VA</nummer>
+		<typ>Fehler</typ>
+		<text>Die Versichertenart ist nicht vorhanden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-WDSP</nummer>
+		<typ>Fehler</typ>
+		<text>Im Feld '%s' wurden widersprüchliche Angaben gemacht.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-WERT</nummer>
+		<typ>Fehler</typ>
+		<text>Im Feld '%s' liegt die Angabe '%s' nicht im erlaubten Wertebereich: %s.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-XMLB</nummer>
+		<typ>Fehler</typ>
+		<text>Dreifach verschachtelte Beobachtungen-Elemente sind nicht erlaubt. Bitte überprüfen Sie die Angaben im Feld '%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-XMLS</nummer>
+		<typ>Fehler</typ>
+		<text>Der Name der XML-Schemadatei '%s' im Dokument entspricht nicht dem Namen der XML-Schemadatei aus der Konfigurationsdatei '%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-ZEIT</nummer>
+		<typ>Fehler</typ>
+		<text>Das %s liegt in der Zukunft.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-ZEITw</nummer>
+		<typ>Warnung</typ>
+		<text>Das %s liegt in der Zukunft.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-ZIP</nummer>
+		<typ>Warnung</typ>
+		<text>Gepackte Dokumentationen müssen im Ordner '%s' abgelegt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-ZUL</nummer>
+		<typ>Fehler</typ>
+		<text>Der Wert '%s' im Feld '%s' ist in diesem Abschnitt nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-ZUL2</nummer>
+		<typ>Fehler</typ>
+		<text>Der Wert '%s' im Feld '%s' ist nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DM2-HBW</nummer>
+		<typ>Fehler</typ>
+		<text>Für HbA1c darf nur eine Ergebniswert-Einheit angegeben werden ('mmol/mol' oder '%'), nicht beide gleichzeitig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-012</nummer>
+		<typ>Fehler</typ>
+		<text>Nur eine Angabe zu Feld '%s' zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-013</nummer>
+		<typ>Fehler</typ>
+		<text>Für das Feld eGFR muss genau eine Angabe erfolgen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-014</nummer>
+		<typ>Fehler</typ>
+		<text>Für das Feld Injektionsstellen muss genau eine Angabe erfolgen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-015</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn für das Feld "Insulin und Insulinanaloga" der Wert "Nein" angegeben wird, dann darf für das Feld Injektionsstellen keine Angabe erfolgen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-063</nummer>
+		<typ>Fehler</typ>
+		<text>Die Kombination '%s' und '%s' bei 'Einschreibung wegen' ist nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-077</nummer>
+		<typ>Warnung</typ>
+		<text>Das Versicherungsschutzende darf nicht vor dem Einlesedatum liegen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-078</nummer>
+		<typ>Fehler</typ>
+		<text>Die Krankenversichertenkarte ist seit dem 01.01.2015 ungültig und darf zur Abrechnung nicht verwendet werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-080F</nummer>
+		<typ>Fehler</typ>
+		<text>Das Zip-Archiv muss auf %s enden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-080W</nummer>
+		<typ>Warnung</typ>
+		<text>Das Zip-Archiv sollte auf %s enden.</text>
+	</meldung>
+	  	<meldung>
+		<nummer>DMP-082</nummer>
+		<typ>Fehler</typ>
+		<text>Die Wertangabe im Feld '%s' muss zweistellig sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-101</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld '%s' ist nicht zulässig.</text>
+	</meldung>
+	<meldung>
+	    <nummer>DMP-102</nummer>
+    	<typ>Fehler</typ>
+	    <text>Die Wertangabe zum Feld '%s' muss dreistellig sein und darf nur Ziffern enthalten.</text>
+    </meldung>
+	<meldung>
+	    <nummer>DMP-102b</nummer>
+    	<typ>Fehler</typ>
+	    <text>Die Wertangabe zum Feld '%s' muss zwei- oder dreistellig sein und darf nur Ziffern enthalten.</text>
+    </meldung>
+    	<meldung>
+	    <nummer>DMP-102c</nummer>
+    	<typ>Fehler</typ>
+	    <text>Die Wertangabe zum Feld '%s' muss ein- oder zweistellig sein und darf nur Ziffern enthalten.</text>
+    </meldung>
+    <meldung>
+    	<nummer>DMP-102d</nummer>
+    	<typ>Fehler</typ>
+	    <text>Die Angabe zum HbA1c-Wert in Prozent muss dem Format 'n.n' bzw. 'nn.n' entsprechen.</text>
+    </meldung>
+    <meldung>
+    	<nummer>DMP-102e</nummer>
+    	<typ>Fehler</typ>
+	    <text>Die Angabe zum HbA1c-Wert in mmol/mol darf nur aus 1 bis 3 Ziffern bestehen.</text>
+    </meldung>
+    <meldung>
+        <nummer>DMP-103</nummer>
+    	<typ>Fehler</typ>
+	<text>Die Wertangabe zum Feld '%s' darf nur 1 bis 3 Ziffern enthalten.</text>
+    </meldung>
+    <meldung>
+	<nummer>DMP-110</nummer>
+    	<typ>Fehler</typ>
+	<text>Bei einem Lebensalter &lt; 60 Jahre und dem Geschlecht "Männlich" ist eine Einschreibung wegen "Osteoporose" nicht möglich.</text>
+    </meldung>
+    <meldung>
+	<nummer>DMP-111</nummer>
+    	<typ>Fehler</typ>
+	<text>Bei einem Lebensalter &lt; 50 Jahre und dem Geschlecht "Weiblich", "Unbestimmt" oder "Divers" ist eine Einschreibung wegen "Osteoporose" nicht möglich.</text>
+    </meldung>
+    <meldung>
+	<nummer>DMP-112</nummer>
+	<typ>Fehler</typ>
+	<text>Das für eine Einschreibung wegen COPD erforderliche Mindestalter des Patienten ist 18 Jahre.</text>
+    </meldung>
+	<meldung>
+		<nummer>DMP-113</nummer>
+		<typ>Fehler</typ>
+		<text>Das für eine Einschreibung wegen "rheumatoide Arthritis" erforderliche Mindestalter des Patienten ist 18 Jahre.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>XPM-JAVA-VER</nummer>
+		<typ>Info</typ>
+		<text>Auf Ihrem System ist eine Java Version kleiner 17 installiert. In der nächsten Version des Prüfmoduls wird diese Version nicht mehr unterstützt und das Prüfmodul wird dann nicht mehr starten.</text>
+	</meldung>
+
+</meldungen>

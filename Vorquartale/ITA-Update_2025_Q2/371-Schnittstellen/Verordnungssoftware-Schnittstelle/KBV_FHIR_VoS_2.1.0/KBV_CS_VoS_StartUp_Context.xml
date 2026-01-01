@@ -1,0 +1,69 @@
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="KBV-CS-VoS-StartUp-Context" />
+  <url value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context" />
+  <version value="2.1.0" />
+  <name value="KBV_CS_VoS_StartUp_Context" />
+  <status value="active" />
+  <experimental value="false" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <contact>
+    <telecom>
+      <system value="other" />
+      <value value="http://www.kbv.de" />
+    </telecom>
+  </contact>
+  <description value="Aufgerufene Funktionen." />
+  <copyright value="Copyright © [2021], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <caseSensitive value="true" />
+  <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_VoS_StartUp_Context" />
+  <content value="complete" />
+  <concept>
+    <code value="1" />
+    <display value="Ohne Aufrufkontext" />
+  </concept>
+  <concept>
+    <code value="2" />
+    <display value="Erstverordnung" />
+  </concept>
+  <concept>
+    <code value="3" />
+    <display value="Wiederverordnung" />
+  </concept>
+  <concept>
+    <code value="4" />
+    <display value="Administration" />
+  </concept>
+  <concept>
+    <code value="5" />
+    <display value="Arzneimittelrecherche ohne Patientenkontext" />
+  </concept>
+  <concept>
+    <code value="6" />
+    <display value="Arzneimittelrecherche mit Patientenkontext" />
+  </concept>
+  <concept>
+    <code value="7" />
+    <display value="Medikationsplan für Patienten neu erstellen" />
+  </concept>
+  <concept>
+    <code value="8" />
+    <display value="Medikationsplan auf Basis des Barcodes auf dem Medikationsplan aktualisieren" />
+  </concept>
+  <concept>
+    <code value="9" />
+    <display value="Medikationsplan auf Basis eines bestehenden strukturierten Medikationsplans aktualisieren" />
+  </concept>
+  <concept>
+    <code value="10" />
+    <display value="Statistiken ausführen" />
+  </concept>
+  <concept>
+    <code value="11" />
+    <display value="Hausapotheke" />
+  </concept>
+  <concept>
+    <code value="12" />
+    <display value="Storno eRezept" />
+  </concept>
+</CodeSystem>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!--
+		Basistypen
+	-->
+	<xsd:include schemaLocation="xdttypen.xsd"/>
+	<!--
+		Elemente die aufgrund fehlender FK in der Abrechnungsdatei generiert werden,
+		ohne dass es eine Definition für diese gäbe. XPM verwendet dieses XML-Schema
+		nur für die passenden Fehlermeldungen.
+	-->
+	<xsd:element name="sbesaf0211" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Arztname/Erläuterung (Feld 0211)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="s0102f4241" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Erstveranlassers (Feld 4241)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="s0102f4242" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Überweisers (Feld 4242)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="s0103f4242" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Überweisers (Feld 4242)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ssad2f4242" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Überweisers (Feld 4242)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="s0101f5098" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Ortes der Leistungserbringung (Feld 5098)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="s0101f5099" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Leistungserbringers (Feld 5099)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="s0102f5098" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Ortes der Leistungserbringung (Feld 5098)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="s0102f5099" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Leistungserbringers (Feld 5099)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="s0103f5098" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Ortes der Leistungserbringung (Feld 5098)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="s0103f5099" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Leistungserbringers (Feld 5099)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="s0104f5098" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Ortes der Leistungserbringung (Feld 5098)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="s0104f5099" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Leistungserbringers (Feld 5099)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="s0109f5098" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Ortes der Leistungserbringung (Feld 5098)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="s0109f5099" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Leistungserbringers (Feld 5099)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ssad1f5098" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Ortes der Leistungserbringung (Feld 5098)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ssad1f5099" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Leistungserbringers (Feld 5099)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ssad2f5098" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Ortes der Leistungserbringung (Feld 5098)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ssad2f5099" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Leistungserbringers (Feld 5099)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ssad3f5098" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Ortes der Leistungserbringung (Feld 5098)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="ssad3f5099" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Leistungserbringers (Feld 5099)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+</xsd:schema>

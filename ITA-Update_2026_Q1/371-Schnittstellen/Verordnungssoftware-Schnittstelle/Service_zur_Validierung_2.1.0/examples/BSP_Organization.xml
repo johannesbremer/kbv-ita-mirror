@@ -1,0 +1,51 @@
+<Organization xmlns="http://hl7.org/fhir">
+  <id value="250" />
+  <meta>
+	<versionId value="1"/>
+	<lastUpdated value="2022-09-05T13:06:00Z"/>
+    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Organization|2.1.0" />
+  </meta>
+  <identifier>
+	<use value="official"/>
+	<type>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+			<code value="BSNR"/>
+		</coding>
+	</type>
+    <system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR" />
+    <value value="721234567" />
+  </identifier>
+  <name value="Praxis Prof. Dr. Monika Gräfin von Testärztin" />
+  <telecom>
+    <system value="phone" />
+    <value value="030/1111111111" />
+  </telecom>
+  <telecom>
+    <system value="fax" />
+    <value value="030/2222222222" />
+  </telecom>
+  <telecom>
+	<system value="email"/>
+	<value value="monika@praxis_monika_testaerztin.de"/>
+  </telecom>
+  <address>
+	<type value="both"/>
+    <line value="Musterstr. 1">
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+        <valueString value="1" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+        <valueString value="Musterstr." />
+      </extension>
+    </line>
+	<line value="Hinterhaus">
+		<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+			<valueString value="Hinterhaus" />
+		</extension>
+	</line>
+    <city value="Berlin" />
+    <postalCode value="10623" />
+    <country value="D" />
+  </address>
+</Organization>

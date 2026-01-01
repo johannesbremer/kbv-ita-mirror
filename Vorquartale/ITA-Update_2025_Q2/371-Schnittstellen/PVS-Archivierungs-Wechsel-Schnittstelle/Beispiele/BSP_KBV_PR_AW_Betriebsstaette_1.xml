@@ -1,0 +1,66 @@
+<Organization xmlns="http://hl7.org/fhir">
+	<id value="3155"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-24T16:50:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Praxis Dres. Müller, Meier, Schulze
+			BSNR 987654321
+			Musterweg 33, 77777 Musterstadt
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Betriebsstaette_Hierarchie">
+		<valueCode value="BSNR"/>
+	</extension>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+				<code value="BSNR"/>
+			</coding>		
+		</type>
+		<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"/>
+		<value value="987654321"/>
+	</identifier>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+				<code value="XX"/>
+			</coding>		
+		</type>
+		<system value="http://fhir.de/NamingSystem/arge-ik/iknr"/>
+		<value value="271234567"/>
+	</identifier>
+	<name value="Praxis Dres. Müller, Meier, Schulze"/>
+	<telecom>
+		<system value="phone"/>
+		<value value="09876/54321-0"/>
+	</telecom>
+	<telecom>
+		<system value="fax"/>
+		<value value="09876/54321-33"/>
+	</telecom>
+	<telecom>
+		<system value="email"/>
+		<value value="info@praxis-mms.de"/>
+	</telecom>
+	<address>
+		<type value="both"/>
+		<line value="Musterweg 33">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="33"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Musterweg"/>
+			</extension>
+		</line>
+		<city value="Musterstadt"/>
+		<postalCode value="77777"/>
+		<country value="D"/>
+	</address>
+</Organization>

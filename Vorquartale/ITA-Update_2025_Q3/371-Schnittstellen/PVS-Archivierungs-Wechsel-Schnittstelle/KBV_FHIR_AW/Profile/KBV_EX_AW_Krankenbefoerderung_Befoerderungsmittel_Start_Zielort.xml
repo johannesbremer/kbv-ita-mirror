@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krankenbefoerderung_Befoerderungsmittel_Start_Zielort" />
+  <version value="1.2.0" />
+  <name value="KBV_EX_AW_Krankenbefoerderung_Befoerderungsmittel_Start_Zielort" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="ServiceRequest.performer" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Zusatzinformationen zum Start und Zielort" />
+      <definition value="Zusatzinformationen zum Start und Zielort. Siehe Formular/Muster 4 Teil 2 Beförderungsmittel." />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:startort_von">
+      <path value="Extension.extension" />
+      <sliceName value="startort_von" />
+      <short value="Startort/von" />
+      <definition value="Hier wird der Startort der Vorordnung angegeben" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:startort_von.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="startort_von" />
+    </element>
+    <element id="Extension.extension:startort_von.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:startort_von.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <min value="1" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <description value="Startort" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Krankenbefoerderung_Befoerderungsmittel_Von_Nach" />
+      </binding>
+    </element>
+    <element id="Extension.extension:startort_von.value[x]:valueCodeableConcept.coding">
+      <path value="Extension.extension.valueCodeableConcept.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:startort_von.value[x]:valueCodeableConcept.coding.system">
+      <path value="Extension.extension.valueCodeableConcept.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:startort_von.value[x]:valueCodeableConcept.coding.version">
+      <path value="Extension.extension.valueCodeableConcept.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:startort_von.value[x]:valueCodeableConcept.coding.code">
+      <path value="Extension.extension.valueCodeableConcept.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:startort_von.value[x]:valueCodeableConcept.coding.display">
+      <path value="Extension.extension.valueCodeableConcept.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:startort_von.value[x]:valueCodeableConcept.coding.userSelected">
+      <path value="Extension.extension.valueCodeableConcept.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:startort_von.value[x]:valueCodeableConcept.text">
+      <path value="Extension.extension.valueCodeableConcept.text" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:zielort_nach">
+      <path value="Extension.extension" />
+      <sliceName value="zielort_nach" />
+      <short value="Zielort/nach" />
+      <definition value="Hier wird der Zielort der Vorordnung angegeben" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:zielort_nach.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="zielort_nach" />
+    </element>
+    <element id="Extension.extension:zielort_nach.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:zielort_nach.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <min value="1" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <description value="Zielort" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Krankenbefoerderung_Befoerderungsmittel_Von_Nach" />
+      </binding>
+    </element>
+    <element id="Extension.extension:zielort_nach.value[x]:valueCodeableConcept.coding">
+      <path value="Extension.extension.valueCodeableConcept.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:zielort_nach.value[x]:valueCodeableConcept.coding.system">
+      <path value="Extension.extension.valueCodeableConcept.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:zielort_nach.value[x]:valueCodeableConcept.coding.version">
+      <path value="Extension.extension.valueCodeableConcept.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:zielort_nach.value[x]:valueCodeableConcept.coding.code">
+      <path value="Extension.extension.valueCodeableConcept.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:zielort_nach.value[x]:valueCodeableConcept.coding.display">
+      <path value="Extension.extension.valueCodeableConcept.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:zielort_nach.value[x]:valueCodeableConcept.coding.userSelected">
+      <path value="Extension.extension.valueCodeableConcept.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:zielort_nach.value[x]:valueCodeableConcept.text">
+      <path value="Extension.extension.valueCodeableConcept.text" />
+      <max value="0" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krankenbefoerderung_Befoerderungsmittel_Start_Zielort" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

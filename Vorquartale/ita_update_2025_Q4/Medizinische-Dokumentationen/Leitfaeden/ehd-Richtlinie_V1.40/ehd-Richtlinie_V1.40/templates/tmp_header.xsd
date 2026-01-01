@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Template für ehd_header:
+Projekt: tmp
+
+Namespace, Präfix und Typebezeichnungen sind mit tatsächlichen Projektspezifischen zu ersetzen.
+Verzeichnispfade überprüfen und gegebenfalls anpassen.
+-->
+<xs:schema targetNamespace="urn:ehd/001" xmlns="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<!-- ======================================================================= 
+	Einbinden der ehd-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="../typelib/schema_V1.40/ehd_header_V1.40.xsd"/>
+	<!-- ======================================================================= 
+	angepasster ehd_header: tmp_header (mini-header, besteht aus nur wenigen Elementen)
+	======================================================================= -->	
+	<xs:complexType name="tmp_header_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_header_typ">
+				<xs:sequence>
+					<xs:element ref="id"/>
+					<xs:element name="document_type_cd" type="tmp_document_type_cd_typ"/>
+					<xs:element ref="origination_dttm"/>
+					<xs:element ref="provider" maxOccurs="unbounded"/>
+					<xs:element name="interface" type="tmp_interface_typ"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster tmp_document_type_cd_typ  für das Projekt: tmp
+	======================================================================= -->		
+	<xs:complexType name="tmp_document_type_cd_typ">
+		<xs:complexContent>
+			<xs:restriction base="document_type_cd_typ">
+				<xs:attribute name="V" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="TMP"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster tmp_interface_typ für das Projekt: tmp
+	======================================================================= -->		
+	<xs:complexType name="tmp_interface_typ">
+		<xs:complexContent>
+			<xs:restriction base="interface_typ">
+				<xs:sequence>
+					<xs:element name="id" type="interface_id_typ"/>
+					<xs:element name="interface.nm">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_nm_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="TMP"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="version">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_version_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="1.00"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

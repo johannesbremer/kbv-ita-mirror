@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<xs:schema xmlns="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sciphox="urn::sciphox-org/sciphox" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<!-- ======================================================================= 
+  Einbinden der ehd-Bibliotheken
+  ======================================================================= -->
+	<xs:import namespace="urn::sciphox-org/sciphox" schemaLocation="software_ssu_typelib_V1.00.xsd"/>
+	<!-- ======================================================================= 
+  angepasster ehd_header: qske_header (mini-header, besteht aus nur wenigen Elementen)
+  ======================================================================= -->
+	<xs:complexType name="qske_header_typ">
+		<xs:sequence>
+			<xs:element name="id" type="header_id_typ"/>
+			<xs:element name="document_type_cd" type="qske_document_type_cd_typ"/>
+			<xs:element name="origination_dttm">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:date" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="document_relationship" minOccurs="0"/>
+			<xs:element name="provider">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="person">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="id"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="organization">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element ref="id"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="interface" type="qske_interface_typ"/>
+			<xs:element name="local_header" type="qske_local_header_typ" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ======================================================================= 
+  angepasster qske_document_type_cd_typ  für das Projekt: qske
+  ======================================================================= -->
+	<xs:complexType name="qske_document_type_cd_typ">
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="QSKE"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- ======================================================================= 
+  angepasster qske_interface_typ für das Projekt: qske
+  ======================================================================= -->
+	<xs:complexType name="qske_interface_typ">
+		<xs:sequence>
+			<xs:element name="id">
+				<xs:complexType>
+					<xs:attribute name="EX" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="QSKE"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="RT" type="xs:string" use="required" fixed="1.2.276.0.76.5.109"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="interface.nm">
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="QS Kapselendoskopie"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="version">
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.00"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="qske_local_header_typ">
+		<xs:sequence>
+			<xs:element ref="sciphox:sciphox-ssu"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="id" type="id_typ">
+		<xs:annotation>
+			<xs:documentation>enthõlt eindeutige Instanz-ID</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="id_typ">
+		<xs:attribute name="EX" type="xs:string" use="required"/>
+		<xs:attribute name="RT" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="header_id_typ">
+		<xs:attribute name="EX" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="RT" type="xs:string" use="required"/>
+	</xs:complexType>
+	<!-- ************************ document_relationship_typ ********************************* -->
+	<xs:element name="document_relationship" type="document_relationship_typ">
+		<xs:annotation>
+			<xs:documentation>Beziehung zu anderen Dokumenten ("Anhang", "Ersatz")</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="document_relationship_typ">
+		<xs:sequence>
+			<xs:element name="document_relationship.type_cd" type="document_relationship.type_cd_typ">
+				<xs:annotation>
+					<xs:documentation>Art der Dokumentbeziehung ("Anhang", "Ersatz")</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="related_document"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="document_relationship.type_cd_typ">
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="RPLC"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="S" type="xs:string" use="optional" fixed="1.2.276.0.76.5.101"/>
+	</xs:complexType>
+	<!-- ************************ related_document_typ ********************************* -->
+	<xs:element name="related_document" type="related_document_typ">
+		<xs:annotation>
+			<xs:documentation>Verweis auf das Original/Anhang-Dokument</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="related_document_typ">
+		<xs:sequence>
+			<xs:element name="id" type="header_id_typ"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

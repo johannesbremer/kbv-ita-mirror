@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-EX-VoS-ePrescription-Access" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_ePrescription_Access" />
+  <version value="2.1.0" />
+  <name value="KBV_EX_VoS_ePrescription_Access" />
+  <title value="KBV_EX_VoS_ePrescription_Access" />
+  <status value="active" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <description value="Enthält den AccessCode und die Task-ID für den erneuten Zugriff auf das eRezept." />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="DocumentReference" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Zugriffsdaten eRezept" />
+      <definition value="Wird genau dann verwendet, wenn die DocumentReference-Instanz ein signiertes eRezept enthält.&#xD;&#xA;Enthält den AccessCode und die Task-ID des eRezepts auf dem Fachdienst" />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="2" />
+	  <max value="2" />
+    </element>
+    <element id="Extension.extension:AccessCode">
+      <path value="Extension.extension" />
+      <sliceName value="AccessCode" />
+      <short value="AccessCode" />
+      <definition value="AccessCode des eRezepts." />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:AccessCode.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="AccessCode" />
+    </element>
+    <element id="Extension.extension:AccessCode.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:AccessCode.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:Task-ID">
+      <path value="Extension.extension" />
+      <sliceName value="Task-ID" />
+      <short value="Task-ID" />
+      <definition value="Task-ID des eRezepts" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:Task-ID.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="Task-ID" />
+    </element>
+    <element id="Extension.extension:Task-ID.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:Task-ID.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_ePrescription_Access" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

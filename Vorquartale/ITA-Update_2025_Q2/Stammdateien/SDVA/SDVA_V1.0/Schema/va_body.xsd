@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- Mit XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) von Hr. Börner (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<!-- 
+	Namespace: "urn:ehd/va/001", Präfix: va
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/va/001" xmlns:ehd="urn:ehd/001" targetNamespace="urn:ehd/va/001" elementFormDefault="qualified">
+	<xs:element name="titel">
+		<xs:annotation>
+			<xs:documentation>Titel des Kapitelelementes</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="nr">
+		<xs:annotation>
+			<xs:documentation>Nr des Kapitelelementes</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="va_text_absatz" mixed="true">
+		<xs:sequence>
+			<xs:element name="div" type="va_text" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="va_text" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="ul" type="bullet" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Liste mit Bullet-Punkten</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ol" type="number" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Nummerierte Liste</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:group ref="vatextformattedtype_group" minOccurs="0"/>
+			<xs:element ref="table" minOccurs="0"/>
+		</xs:choice>
+	</xs:complexType>
+	<!-- ************************ ebmtextformattedtype_group ********************************* -->
+	<xs:complexType name="vatextformattedtype" mixed="true">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:group ref="vatextformattedtype_group"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:group name="vatextformattedtype_group">
+		<xs:choice>
+			<xs:element ref="br" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Zeilenumbruch</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="div" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Absatz innerhalb eines Absatzes</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="p" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Absatz innerhalb eines Absatzes</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:group>
+	<!-- ************************ Erlaubte Textformatierungen (Fett, kursiv, hoch, tief, Schriftgröße, etc.) ********************************* -->
+	<!-- eigentlich fehlerhaft <xs:element name="br" type="ebmtextformattedtype"/>-->
+	<xs:element name="br"/>
+	<xs:element name="div" type="vatextformattedtype"/>
+	<xs:element name="p" type="vatextformattedtype"/>
+	<!-- ************************ Listen mit und ohne Nummerierung ********************************* -->
+	<xs:complexType name="bullet" mixed="true">
+		<xs:annotation>
+			<xs:documentation>Liste mit Bullet-Punkten</xs:documentation>
+		</xs:annotation>
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="li" type="listindex"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="number" mixed="true">
+		<xs:annotation>
+			<xs:documentation>Nummerierte Liste</xs:documentation>
+		</xs:annotation>
+		<xs:sequence maxOccurs="unbounded">
+			<xs:element name="li" type="listindex"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="listindex" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="ul" type="bullet"/>
+			<xs:element name="ol" type="number"/>
+			<xs:group ref="vatextformattedtype_group"/>
+		</xs:choice>
+	</xs:complexType>
+	<!-- ************************ Tabelle ********************************* -->
+	<xs:element name="table">
+		<xs:annotation>
+			<xs:documentation>Tabelle im Text</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="tr" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Tabellenzeile</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="tr">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="td" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Tabellenspalte</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="th" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Tabellenspalte</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="th">
+		<xs:complexType mixed="true">
+			<xs:complexContent>
+				<xs:extension base="vatextformattedtype"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="td">
+		<xs:complexType mixed="true">
+			<xs:complexContent>
+				<xs:extension base="vatextformattedtype"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="va_stammdaten">
+		<xs:annotation>
+			<xs:documentation>Strukturierung der Verschluesselungsanleitung des BfArMs zu ICD-10-GM-Kodes sowie der wesentlichen jaehrlichen Aenderung. 
+			</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="haupt_zweig_liste">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="haupt_zweig" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="titel"/>
+										<xs:element ref="nr"/>
+										<xs:element name="beschreibung" type="va_text_absatz" minOccurs="0"/>
+										<xs:element name="hauptkapitel_liste" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="hauptkapitel" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element ref="titel"/>
+																<xs:element ref="nr"/>
+																<xs:element name="beschreibung" type="va_text_absatz" minOccurs="0"/>
+																<xs:element name="kapitel_liste" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="kapitel" maxOccurs="unbounded">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element ref="titel"/>
+																						<xs:element ref="nr"/>
+																						<xs:element name="beschreibung" type="va_text_absatz" minOccurs="0"/>
+																						<xs:element name="unterkapitel_liste" minOccurs="0">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="unterkapitel" maxOccurs="unbounded">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element ref="titel"/>
+																												<xs:element ref="nr"/>
+																												<xs:element name="beschreibung" type="va_text_absatz"/>
+																											</xs:sequence>
+																											<xs:attribute name="V" use="required">
+																												<xs:annotation>
+																													<xs:documentation>Dieses Attribute enthält die ID Kapitelelementes</xs:documentation>
+																												</xs:annotation>
+																											</xs:attribute>
+																										</xs:complexType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																					<xs:attribute name="V" use="required">
+																						<xs:annotation>
+																							<xs:documentation>Dieses Attribute enthält die ID Kapitelelementes</xs:documentation>
+																						</xs:annotation>
+																					</xs:attribute>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="V" use="required">
+																<xs:annotation>
+																	<xs:documentation>Dieses Attribute enthält die ID Kapitelelementes</xs:documentation>
+																</xs:annotation>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="V" use="required">
+										<xs:annotation>
+											<xs:documentation>Dieses Attribute enthält die Informationen, um welchen anzuzeigenden Zweck es sich handelt </xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="DN" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

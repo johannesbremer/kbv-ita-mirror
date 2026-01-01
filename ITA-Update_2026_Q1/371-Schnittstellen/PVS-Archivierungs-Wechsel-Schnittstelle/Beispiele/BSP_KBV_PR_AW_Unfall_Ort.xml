@@ -1,0 +1,26 @@
+<Location xmlns="http://hl7.org/fhir">
+	<id value="3173"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-22T13:54:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Unfall_Ort|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<name value="Lagerhalle"/>
+	<type>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+			<code value="ACC"/>
+		</coding>
+	</type>
+	<address>
+		<line value="Baumeisterplatz 12"/>
+		<city value="Musterstadt"/>
+		<postalCode value="77783"/>
+	</address>
+</Location>

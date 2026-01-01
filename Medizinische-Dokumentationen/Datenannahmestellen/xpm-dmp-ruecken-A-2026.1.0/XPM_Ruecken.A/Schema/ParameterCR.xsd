@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) von Kassenärztliche Bundesvereinigung (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn::sciphox-org/sciphox" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="AdministrativeDaten">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Einschreibung wegen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Anamnese">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Körpergröße"/>
+			<xs:enumeration value="Körpergewicht"/>
+			<xs:enumeration value="Blutdruck systolisch"/>
+			<xs:enumeration value="Blutdruck diastolisch"/>
+			<xs:enumeration value="Raucher"/>
+			<xs:enumeration value="Begleiterkrankungen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="relevanteEreignisse">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ungeplante ambulante oder stationäre kreuzschmerzbedingte Akutbehandlung seit der letzten Dokumentation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Medikamente">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Aktuelle kreuzschmerzbedingte Schmerzmedikation: Opioidanalgetika"/>
+			<xs:enumeration value="Aktuelle kreuzschmerzbedingte Schmerzmedikation: Nicht-Opioidanalgetika"/>
+			<!--ausreichend-->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Schulung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bereits vor Einschreibung in das DMP an einer multimodalen Schulung teilgenommen"/>
+			<xs:enumeration value="Kreuzschmerz-spezifische Schulung empfohlen (bei aktueller Dokumentation)"/>
+			<xs:enumeration value="Kreuzschmerz-spezifische Schulung wahrgenommen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SonstigeBehandlung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Regelmäßig körperlich aktiv"/>
+			<xs:enumeration value="Erreichung mindestens eines der individuell vereinbarten Ziele seit der letzten Dokumentation"/>
+			<xs:enumeration value="CPG Item 3: Durchschnittliche Stärke der Kreuzschmerzen in den letzten drei Monaten (0 = &quot;Keine&quot; bis 10 = &quot;Stärkster Schmerz&quot;)"/>
+			<xs:enumeration value="CPG Item 5: Kreuzschmerzbedingte Beeinträchtigung der alltäglichen Aktivitäten (Ankleiden, Waschen, Essen, Einkaufen etc.) in den letzten drei Monaten (0 = &quot;Keine&quot; bis 10 = &quot;Maximale Beeinträchtigung&quot;)"/>
+			<xs:enumeration value="Beendigung der DMP-Teilnahme vereinbart"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Behandlungsplanung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Vom Patienten gewünschte Informationsangebote der Krankenkasse"/>
+			<xs:enumeration value="Dokumentationsintervall"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

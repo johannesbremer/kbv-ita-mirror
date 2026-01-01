@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="GNRListe" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="540" columnSpacing="15" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="ec57c03c-3b6b-47ab-af23-8d0fc33285e7">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="ISO-8859-1"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="DejavuSans_Normal" isDefault="true" fontName="DejaVu Sans" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="DejavuSans_Bold" fontName="DejaVu Sans" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="DejavuSans_Italic" fontName="DejaVu Sans" isBold="false" isItalic="true" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Oblique" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<parameter name="BSNR" class="java.lang.String"/>
+	<parameter name="BSNR_BEZ" class="java.lang.String"/>
+	<parameter name="DATEI" class="java.lang.String"/>
+	<parameter name="DATEI_DATUM" class="java.lang.String"/>
+	<parameter name="DATUM" class="java.lang.String"/>
+	<parameter name="PAKET" class="java.lang.String"/>
+	<parameter name="PRUEF_NR" class="java.lang.String"/>
+	<parameter name="QUARTAL" class="java.lang.String"/>
+	<parameter name="TITEL" class="java.lang.String"/>
+	<parameter name="ZEIT" class="java.lang.String"/>
+	<field name="LANR" class="java.lang.String"/>
+	<field name="GNR" class="java.lang.String"/>
+	<field name="QUARTAL_GESAMT" class="java.lang.Integer"/>
+	<field name="QUARTAL_AKT" class="java.lang.Integer"/>
+	<field name="QUARTAL_VOR" class="java.lang.Integer"/>
+	<field name="SATZ_0101" class="java.lang.Integer"/>
+	<field name="SATZ_0102" class="java.lang.Integer"/>
+	<field name="SATZ_0103" class="java.lang.Integer"/>
+	<field name="SATZ_0104" class="java.lang.Integer"/>
+	<group name="LANR_Group" minHeightToStartNewPage="40">
+		<groupExpression><![CDATA[$F{LANR}]]></groupExpression>
+		<groupHeader>
+			<band height="18" splitType="Stretch">
+				<line>
+					<reportElement x="0" y="16" width="555" height="1" uuid="c338949d-12a5-44f3-bb0b-87e4a1cfd73b"/>
+				</line>
+				<textField isBlankWhenNull="false">
+					<reportElement style="DejavuSans_Bold" x="0" y="3" width="555" height="14" uuid="59298872-d9ff-4549-85ad-bd067e1667b3"/>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Lebenslange Arztnummer (LANR) des Leistungserbringers: " + $F{LANR}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band splitType="Stretch"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="115" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Bold" x="0" y="0" width="555" height="30" uuid="c877e0e1-d21c-49fb-818b-43746338c442"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TITEL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="0" y="30" width="105" height="15" uuid="a416fd46-dc4c-494e-adb3-1af30161c188"/>
+				<text><![CDATA[Abrechnungsdatei:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="105" y="30" width="305" height="15" uuid="87284505-cb71-4cf9-b14f-2da81797974f"/>
+				<textFieldExpression><![CDATA[$P{DATEI}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="410" y="30" width="70" height="15" uuid="ce630b32-5047-4a37-a488-b00b4a777384"/>
+				<text><![CDATA[Prüfdatum:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="480" y="30" width="75" height="15" uuid="d92c4103-6635-45ed-8055-c3b07312b338"/>
+				<textFieldExpression><![CDATA[$P{DATUM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="0" y="45" width="105" height="15" uuid="50269095-e077-4377-84bd-74dc8c9c5255"/>
+				<text><![CDATA[Erstellungsdatum:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="105" y="45" width="305" height="15" uuid="c84fe4f5-8cb5-4ce5-af35-0e587219c8f7"/>
+				<textFieldExpression><![CDATA[$P{DATEI_DATUM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="410" y="45" width="70" height="15" uuid="ecd1b324-771f-448e-a758-616d7d36dc19"/>
+				<text><![CDATA[Prüfzeit:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="480" y="45" width="75" height="15" uuid="4db7c718-bc03-4b17-a8b5-ffe3bbeada86"/>
+				<textFieldExpression><![CDATA[$P{ZEIT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="0" y="60" width="105" height="15" uuid="3e12cb49-91d2-4f0f-8f70-1686a5c4996a"/>
+				<text><![CDATA[Prüfnummer:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="105" y="60" width="305" height="15" uuid="79ced77d-2712-4036-8ddb-3f4209e18c3b"/>
+				<textFieldExpression><![CDATA[$P{PRUEF_NR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="410" y="60" width="70" height="15" uuid="5ef2d611-8612-428e-8cd9-e71f3eca79e6"/>
+				<text><![CDATA[Quartal:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="480" y="60" width="75" height="15" uuid="2914be3f-1ec9-496e-8ebe-f5385f7ae576"/>
+				<textFieldExpression><![CDATA[$P{QUARTAL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="0" y="75" width="105" height="15" uuid="808358a7-0b67-4503-831e-141e07d67029"/>
+				<text><![CDATA[BSNR-Bezeichnung:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="105" y="75" width="305" height="15" uuid="a280f22d-06f2-4980-82db-4a74f985d335"/>
+				<textFieldExpression><![CDATA[$P{BSNR_BEZ}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="410" y="75" width="70" height="15" uuid="3bd7cb8e-f7be-4650-8eb7-8bdbb7512dd1"/>
+				<text><![CDATA[BSNR:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="480" y="75" width="75" height="15" uuid="ee85ee02-cb0e-40e0-b879-b5fe2dc5aae9"/>
+				<textFieldExpression><![CDATA[$P{BSNR}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="0" y="90" width="105" height="15" uuid="84056480-e2ae-4bcd-bf00-7af8a97abe0e"/>
+				<textFieldExpression><![CDATA[$P{PAKET}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="47" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" mode="Opaque" x="0" y="0" width="555" height="45" backcolor="#C0C0C0" uuid="ae5b525a-da3a-4ff4-bc3e-a87aa23ad6cf"/>
+				<textFieldExpression><![CDATA[]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" x="0" y="15" width="68" height="15" uuid="34e9f7b6-c2bb-4d45-8031-43552f577496"/>
+				<textElement>
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[GNR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" x="68" y="0" width="180" height="15" uuid="e0f8768c-34c0-4d17-970b-dab2ba93ecea"/>
+				<textElement textAlignment="Center">
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Quartale]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" x="68" y="15" width="60" height="15" uuid="fa74a00f-90d2-45ce-b8ee-649e9293d195"/>
+				<textElement textAlignment="Center">
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Gesamt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" x="128" y="15" width="60" height="15" uuid="189cf1ff-3670-4ea6-a168-474c5ea55287"/>
+				<textElement textAlignment="Center">
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[aktuell]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" x="188" y="15" width="60" height="15" uuid="09b74ef4-1e38-4e12-9c6e-7c31bdbfe4ea"/>
+				<textElement textAlignment="Center">
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Vorquartal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" x="270" y="0" width="280" height="15" uuid="e24dd7df-7d5c-4c27-9fa1-6a5e36306222"/>
+				<textElement textAlignment="Center">
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Scheinarten]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" x="270" y="15" width="70" height="15" uuid="3f434016-d3a4-4485-98bb-aa1f70a28959"/>
+				<textElement textAlignment="Center">
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Ambulant]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" x="340" y="15" width="70" height="15" uuid="68e963f4-5042-4c0e-a908-1d13d777221b"/>
+				<textElement textAlignment="Center">
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Überweisung]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" x="410" y="15" width="70" height="15" uuid="04c73a94-d413-4a20-b3d4-e266a9fb42a6"/>
+				<textElement textAlignment="Center">
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Beleg]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" x="480" y="15" width="70" height="15" uuid="05e66055-8610-4004-b443-345b5e229943"/>
+				<textElement textAlignment="Center">
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Notfall /]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" x="480" y="30" width="70" height="15" uuid="44f6f024-879b-4c1e-821c-b41af45eabc3"/>
+				<textElement textAlignment="Center">
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Vertretung]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="0" y="0" width="68" height="15" uuid="762fd158-4280-4e65-8eee-b3149cd485e6"/>
+				<textFieldExpression><![CDATA[$F{GNR}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="68" y="0" width="57" height="15" uuid="c543ea06-c268-401b-980f-8080992e064b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{QUARTAL_GESAMT}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="129" y="0" width="57" height="15" uuid="621a4aae-acc9-413a-9ef1-4198599d4d71"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{QUARTAL_AKT}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="189" y="0" width="57" height="15" uuid="5c84f81f-baaa-491e-8828-1554f0c2e55b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{QUARTAL_VOR}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="271" y="0" width="67" height="15" uuid="8045cf27-db51-4acf-a2d2-967edac9f687"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{SATZ_0101}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="341" y="0" width="67" height="15" uuid="459a5a50-f0e5-4b8e-8584-ceb57b3b39d1"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{SATZ_0102}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="411" y="0" width="67" height="15" uuid="5f691f60-022f-400f-b2d4-d2fc053351d7"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{SATZ_0103}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="481" y="0" width="67" height="15" uuid="f7818f11-9eb0-43d7-9edf-b382fac81153"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{SATZ_0104}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="0" y="0" width="40" height="20" uuid="454fd432-9ee1-409c-a436-16f80fe0afb2"/>
+				<text><![CDATA[Seite:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="40" y="0" width="100" height="20" uuid="f39bfab9-5820-4eeb-b0b6-57a932377e3b"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

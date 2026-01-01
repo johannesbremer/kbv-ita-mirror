@@ -1,0 +1,23 @@
+Beschreibung "Schema-QS Hörgeräteversorgung" 
+Version 1.12, 12.04.2019
+**************************************************************************
+
+Alle Komponenten des Pakets sind separat versioniert. Es können keine 
+Schlussfolgerungen aus den Versionsnummern des Pakets und der Komponenten 
+untereinander gezogen werden. Die Versionsnummer der Schnittstelle muss 
+auch nicht identisch mit der Versionsnummer der Schnittstellenbeschreibung 
+sein.
+
+
+2. Dokumente und Software
+*************************
+
+- Schnittstellenbeschreibung QS Hörgeräteversorgung (Version 1.12, Stand: 12.04.2019)
+- Schnittstellenbeschreibung eHeader (Version 2.12, Stand: 12.04.2019)
+- Schemata (Version 1.12 12.04.2019)
+- Beispieldateien (auf Basis der Version 1.12)
+
+Änderungen zur Vorversion
+*********************************************
+- Anpassung der Version des Schemas
+

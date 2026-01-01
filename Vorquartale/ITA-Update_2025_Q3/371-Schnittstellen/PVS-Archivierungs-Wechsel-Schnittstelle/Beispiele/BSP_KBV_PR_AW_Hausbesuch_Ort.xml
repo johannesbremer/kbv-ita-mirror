@@ -1,0 +1,45 @@
+<Location xmlns="http://hl7.org/fhir">
+	<id value="3172"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-13T15:15:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Hausbesuch_Ort|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Adresse des Hausbesuchs: 
+			Wohnung Frau Mustermann
+			Musterweg 42, Hinterhof 3. Etage, 10787 Berlin
+		</div>
+	</text>
+	<description value="Frau Mustermanns Wohnung"/>
+	<type>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+			<code value="PTRES"/>
+		</coding>
+	</type>
+	<telecom>
+		<system value="phone"/>
+		<value value="077553/32211"/>
+	</telecom>
+	<address>
+		<line value="Musterweg 42">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Musterweg"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="42"/>
+			</extension>
+		</line>
+		<line value="Hinterhof 3. Etage">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+				<valueString value="Hinterhof 3. Etage"/>
+			</extension>
+		</line>
+		<city value="Berlin"/>
+		<postalCode value="10787"/>
+		<country value="D"/>
+	</address>
+</Location>

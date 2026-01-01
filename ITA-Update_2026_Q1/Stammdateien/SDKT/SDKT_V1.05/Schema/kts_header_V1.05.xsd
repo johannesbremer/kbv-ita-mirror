@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- History
+* 23.10.2006 version 1.00
+* 21.06.2007 Version 1.01
+* 					 Element bedruckungsname als Kind-Element von kt_abrechnungsbereich definiert (früher Kind-Element von bezeichnung)
+* 18.12.2007 Version 1.02
+* 					 Anzahl der WOP-Felder reduziert sich von 21 auf 18 aufgrund der KV-Fusion in Baden-Württemberg
+* 11.03.2025 Version 1.05
+* 					 neue DAV-Typen ergänzt und entsprechende Anpassungen des Elementes dav vorgenommen. 
+*					 Korrektur der Constraints nur_ein_versicherte_typ und nur_ein_abrechnungs_ik
+*					 Umbenennung des complexType addr_typ in kts_addr_typ
+*					 Umbenennung des Constraints nur_ein_addr_typ in nur_ein_kts_addr_typ
+*					 Verschiebung des Elemente ebs von kostentraeger_liste/kostentraeger nach kostentraeger_liste/kostentraeger/dav_liste/dav. Das Element ebs ist jetzt ein optionales Kindelement von dav
+*
+* -->
+<xs:schema xmlns="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<xs:include schemaLocation="ehd_header_V1.40.xsd"/>
+	<xs:complexType name="kts_organization_typ">
+		<xs:complexContent>
+			<xs:restriction base="organization_typ">
+				<xs:sequence>
+					<xs:element name="id" type="kts_organization_id_typ"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="kts_provider_typ">
+		<xs:complexContent>
+			<xs:restriction base="provider_typ">
+				<xs:sequence>
+					<xs:element name="organization" type="kts_organization_typ"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- Schema -->
+	<xs:complexType name="kts_header_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_header_typ">
+				<xs:sequence>
+					<xs:element name="id" type="kts_header_id_typ"/>
+					<xs:element name="document_type_cd" type="kts_document_type_cd_typ"/>
+					<xs:element name="service_tmr" type="service_tmr_typ"/>
+					<!-- Abrechnungsquartal_im_Header-->
+					<xs:element name="origination_dttm" type="origination_dttm_typ"/>
+					<xs:element name="document_relationship" type="kts_document_relationship_typ" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="provider" type="kts_provider_typ" maxOccurs="unbounded"/>
+					<xs:element name="interface" type="kts_interface_typ"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ************************ kts_document_type_cd_typ ********************************* -->
+	<xs:complexType name="kts_document_type_cd_typ">
+		<xs:complexContent>
+			<xs:restriction base="document_type_cd_typ">
+				<xs:attribute name="V" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="KTS"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ************************ kts_interface_typ ********************************* -->
+	<xs:complexType name="kts_interface_typ">
+		<xs:complexContent>
+			<xs:restriction base="interface_typ">
+				<xs:sequence>
+					<xs:element name="id">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_id_typ">
+									<xs:attribute name="EX" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="KTS"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="interface.nm">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_nm_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Kostenträgerstammdatei"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="version">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_version_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="1.05"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="kts_originator_typ">
+		<xs:complexContent>
+			<xs:restriction base="originator_typ">
+				<xs:sequence>
+					<xs:element name="originator.type_cd" type="originator.type_cd_typ"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="kts_header_id_typ">
+		<xs:annotation>
+			<xs:documentation>id wird im Teillieferungskonzept verwendet</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="id_typ">
+				<xs:attribute name="EX" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:minLength value="9"/>
+							<xs:maxLength value="128"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="RT" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="RTV" type="xs:string" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="kts_organization_id_typ">
+		<xs:annotation>
+			<xs:documentation>EX-Attribut beinhaltet die 2stellige zahlungsfordernde KV-Stelle und im RT-Attribut die OID der Schluesseltabelle S_KBV_KV</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="id_typ">
+				<xs:attribute name="EX" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:length value="2"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="RT" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="1.2.276.0.76.5.233"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="RTV" type="xs:string" use="prohibited"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="kts_related_document_typ">
+		<xs:complexContent>
+			<xs:restriction base="related_document_typ">
+				<xs:sequence>
+					<xs:element ref="id"/>
+					<xs:element ref="set_id" minOccurs="0"/>
+					<xs:element ref="version_nbr" minOccurs="0"/>
+					<xs:element name="local_header" type="kts_local_header-cont.model"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="kts_local_header-cont.model">
+		<xs:complexContent>
+			<xs:restriction base="local_header-cont.model">
+				<xs:choice>
+					<xs:element name="filename">
+						<xs:complexType>
+							<xs:attribute name="V" type="xs:string" use="required"/>
+						</xs:complexType>
+					</xs:element>
+				</xs:choice>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="kts_document_relationship_typ">
+		<xs:complexContent>
+			<xs:restriction base="document_relationship_typ">
+				<xs:sequence>
+					<xs:element name="document_relationship.type_cd" type="document_relationship.type_cd_typ">
+						<xs:annotation>
+							<xs:documentation>Art der Dokumentbeziehung ("Anhang", "Ersatz")</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="related_document" type="kts_related_document_typ"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

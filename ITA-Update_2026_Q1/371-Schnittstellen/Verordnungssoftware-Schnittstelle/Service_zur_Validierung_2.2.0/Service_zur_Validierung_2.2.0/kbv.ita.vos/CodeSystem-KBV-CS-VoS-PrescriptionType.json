@@ -1,0 +1,57 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "KBV_CS_VoS_PrescriptionType",
+  "id": "KBV-CS-VoS-PrescriptionType",
+  "description": "Alle Rezepttypen, die gemäß Anforderungskatalog EXT_ITA_VGEX_Anforderungskatalog_AVWG vorkommen können.",
+  "version": "2.2.0",
+  "url": "https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType",
+  "concept": [
+    {
+      "code": "M16",
+      "display": "Muster 16"
+    },
+    {
+      "code": "BTM-RP",
+      "display": "BTM-Rezept"
+    },
+    {
+      "code": "T-RP",
+      "display": "T-Rezept"
+    },
+    {
+      "code": "PKV-RP-blau",
+      "display": "Privat Rezept (blauer Vordruck)"
+    },
+    {
+      "code": "PKV-RP-individuell",
+      "display": "Privat Rezept frei gestaltet"
+    },
+    {
+      "code": "RP-gruen",
+      "display": "grüner Vordruck"
+    },
+    {
+      "code": "Sonstiges-Rezept",
+      "display": "Sonstiges Rezept"
+    }
+  ],
+  "experimental": false,
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "other",
+          "value": "http://www.kbv.de"
+        }
+      ]
+    }
+  ],
+  "copyright": "Copyright © [2021], Kassenärztliche Bundesvereinigung (KBV). All rights reserved.",
+  "caseSensitive": true,
+  "valueSet": "https://fhir.kbv.de/ValueSet/KBV_VS_VoS_PrescriptionType",
+  "count": 7
+}

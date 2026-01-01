@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<ehd:ehd ehd_version="1.40" xmlns:ehd="urn:ehd/001" xmlns="urn:ehd/sdhmbv/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 ../Schema/sdhmbv_root.xsd">
+	<ehd:header>
+		<ehd:id EX="7d64df6c-9842-4e4d-9926-112eda962868" RT="1.2.276.0.76.3.1.?"/>
+		<ehd:document_type_cd V="SDHMBV" DN="Stammdatei Heilmittel-Blankoverordnung" S="1.2.276.0.76.5.100"/>
+		<ehd:service_tmr V="2020-10-01.."/>
+		<ehd:origination_dttm V="2019-12-12+12:00"/>
+		<ehd:provider>
+			<ehd:organization>
+				<ehd:id EX="?" RT="1.2.276.0.76.5.?"/>
+			</ehd:organization>
+		</ehd:provider>
+		<ehd:interface>
+			<ehd:id EX="SDHMBV" RT="1.2.276.0.76.5.109"/>
+			<ehd:interface.nm V="sdhmbv-Stammdatei"/>
+			<ehd:version V="1.0"/>
+			<ehd:description V="Stammdatei Heilmittel-Blankoverordnung im XML-Format, Version 2020, COPYRIGHT-HINWEIS: ***" URL="http://***"/>
+		</ehd:interface>
+	</ehd:header>
+	<ehd:body>
+		<sdhmbv_stammdaten>
+			<indikation_liste>
+				<indikation>
+					<erster_icd_code V="M54.0-">
+						<zweiter_icd_code V="Z98.8"/>
+					</erster_icd_code>
+					<diagnosegruppe V="WS" DN="Wirbelsäulenerkrankungen" S="1.2.276.0.76.3.1.1.5.2.30"/>
+				</indikation>
+				<indikation>
+					<erster_icd_code V="F98.5"/>
+					<diagnosegruppe V="RE2" DN="Störungen des Redeflusses" S="1.2.276.0.76.3.1.1.5.2.30"/>
+					<hoechstalter_jahre V="17"/>
+				</indikation>
+				<indikation>
+					<erster_icd_code V="F90.0"/>
+					<diagnosegruppe V="PS1" DN="Entwicklungs-, Verhaltens- und emotionale Störungen mit Beginn in Kindheit und Jugend" S="1.2.276.0.76.3.1.1.5.2.30"/>
+					<hoechstalter_jahre V="17"/>
+				</indikation>
+				<indikation>
+					<diagnosegruppe V="SAS" DN="Seltene angeborene Stoffwechselerkrankungen" S="1.2.276.0.76.3.1.1.5.2.30"/>
+					<mindestalter_jahre V="18"/>
+				</indikation>
+				<indikation>
+					<diagnosegruppe V="DF" DN="Diabetisches Fußsyndrom" S="1.2.276.0.76.3.1.1.5.2.30"/>
+				</indikation>
+				<indikation>
+					<erster_icd_code V="E10.74"/>
+				</indikation>
+				<indikation>
+					<erster_icd_code V="F32.2">
+						<zweiter_icd_code V="Z60"/>
+					</erster_icd_code>
+					<diagnosegruppe V="PS3" DN="Wahnhafte und affektive Störungen / Abhängigkeitserkrankungen" S="1.2.276.0.76.3.1.1.5.2.30"/>
+					<mindestalter_jahre V="18"/>
+				</indikation>
+			</indikation_liste>
+		</sdhmbv_stammdaten>
+	</ehd:body>
+</ehd:ehd>

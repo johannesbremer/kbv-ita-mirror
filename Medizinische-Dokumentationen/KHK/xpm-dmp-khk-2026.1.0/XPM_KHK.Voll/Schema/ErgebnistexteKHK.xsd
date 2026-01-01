@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) von Kassenärztliche Bundesvereinigung (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<xs:schema xmlns="urn::sciphox-org/sciphox" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="Einschreibungwegen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="KHK"/>
+			<xs:enumeration value="Diabetes mellitus Typ 1"/>
+			<xs:enumeration value="Diabetes mellitus Typ 2"/>
+			<xs:enumeration value="Asthma bronchiale"/>
+			<xs:enumeration value="COPD"/>
+			<xs:enumeration value="Chronische Herzinsuffizienz"/>
+			<xs:enumeration value="Depression"/>
+			<xs:enumeration value="chronischer Rückenschmerz"/>
+			<xs:enumeration value="Osteoporose"/>
+			<xs:enumeration value="rheumatoide Arthritis"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Begleiterkrankungen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Keine der genannten Erkrankungen"/>
+			<xs:enumeration value="Arterielle Hypertonie"/>
+			<xs:enumeration value="Fettstoffwechselstörung"/>
+			<xs:enumeration value="Diabetes mellitus"/>
+			<xs:enumeration value="KHK"/>
+			<xs:enumeration value="AVK"/>
+			<xs:enumeration value="Chronische Herzinsuffizienz"/>
+			<xs:enumeration value="Asthma bronchiale"/>
+			<xs:enumeration value="COPD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Raucher">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Anginapectoris">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="CCS I"/>
+			<xs:enumeration value="CCS II"/>
+			<xs:enumeration value="CCS III"/>
+			<xs:enumeration value="CCS IV"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LDL-Cholesterin">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nicht bestimmt"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RelevanteEreignisse">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Herzinfarkt"/>
+			<xs:enumeration value="Instabile Angina pectoris"/>
+			<xs:enumeration value="Schlaganfall"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Herzinfarktinnerhalbderletzten12Monate">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Betablocker">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Kontraindikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Thrombozytenaggregationshemmer">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Kontraindikation"/>
+			<xs:enumeration value="Orale Antikoagulation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ACEHemmer">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Kontraindikation"/>
+			<xs:enumeration value="ARB"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AktuelleStatin-Dosis">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Hoch"/>
+			<xs:enumeration value="Moderat"/>
+			<xs:enumeration value="Niedrig"/>
+			<xs:enumeration value="Kein Statin"/>
+			<xs:enumeration value="Kontraindikation gegen Statin"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AktuelleTherapiestrategieStatin">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Feste Hochdosis-Strategie"/>
+			<xs:enumeration value="Zielwert-Strategie"/>
+			<xs:enumeration value="Keine Strategie vereinbart"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GrundfuermoderateoderniedrigeStatin-Dosis">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Aufdosierungsphase"/>
+			<xs:enumeration value="LDL-Zielwert erreicht"/>
+			<xs:enumeration value="Kontraindikation gegen Hochdosis"/>
+			<xs:enumeration value="Ablehnung durch Patienten"/>
+			<xs:enumeration value="Keine Begründung"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SchulungbereitsvorEinschreibunginDMPwahrgenommen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SchulungempfohlenbeiaktuellerDokumentation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EmpfohleneSchulungen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="War aktuell nicht möglich"/>
+			<xs:enumeration value="Bei letzter Dokumentation keine Schulung empfohlen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VomPatientgewuenschteInfo">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Tabakverzicht"/>
+			<xs:enumeration value="Ernährungsberatung"/>
+			<xs:enumeration value="Körperliches Training"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Dokumentationsintervall">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Quartalsweise"/>
+			<xs:enumeration value="Jedes zweite Quartal"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RegelmaessigessportlichesTraining">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Nicht möglich"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

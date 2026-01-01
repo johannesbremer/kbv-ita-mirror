@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Diese Datei beschreibt die Meldungen eines Prueflaufs. -->
+<meldungen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Common/Schema/meldungen.xsd">
+	<meldung>
+		<nummer>KVDT-FILE</nummer>
+		<typ>Fehler</typ>
+		<text>Verwendeter Zeichensatz laut Feld 9106 mit Inhalt '%s' ist nicht kompatibel mit dem Aufbau des Dateinamens der Abrechnung. Der Dateiname muss mit einem '%s' beginnen, siehe KVDT-Satzbeschreibung (Kapitel 1.9 'Der Datenträger').</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-FILE2</nummer>
+		<typ>Warnung</typ>
+		<text>Der Dateiname '%s' entspricht nicht der Dateinamenskonvention gemäß 'Zhhnnnnnnnnn_TT.MM.JJJJ_hh.mm.[CON|VIK|WTK]'. %s</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+
+</meldungen>

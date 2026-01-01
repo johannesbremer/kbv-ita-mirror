@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Anforderung_Sprechstundenbedarf" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Anforderung_Sprechstundenbedarf" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="SupplyRequest" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/SupplyRequest" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="SupplyRequest.id">
+      <path value="SupplyRequest.id" />
+      <min value="1" />
+    </element>
+    <element id="SupplyRequest.meta">
+      <path value="SupplyRequest.meta" />
+      <min value="1" />
+    </element>
+    <element id="SupplyRequest.meta.versionId">
+      <path value="SupplyRequest.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="SupplyRequest.meta.lastUpdated">
+      <path value="SupplyRequest.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="SupplyRequest.meta.profile">
+      <path value="SupplyRequest.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Anforderung_Sprechstundenbedarf|1.2.0" />
+    </element>
+    <element id="SupplyRequest.text">
+      <path value="SupplyRequest.text" />
+      <min value="1" />
+    </element>
+    <element id="SupplyRequest.identifier">
+      <path value="SupplyRequest.identifier" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.status">
+      <path value="SupplyRequest.status" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.category">
+      <path value="SupplyRequest.category" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Arzneimittelart" />
+      </binding>
+    </element>
+    <element id="SupplyRequest.category.coding">
+      <path value="SupplyRequest.category.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="SupplyRequest.category.coding.system">
+      <path value="SupplyRequest.category.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="SupplyRequest.category.coding.version">
+      <path value="SupplyRequest.category.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.category.coding.code">
+      <path value="SupplyRequest.category.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="SupplyRequest.category.coding.display">
+      <path value="SupplyRequest.category.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.category.coding.userSelected">
+      <path value="SupplyRequest.category.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.category.text">
+      <path value="SupplyRequest.category.text" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.priority">
+      <path value="SupplyRequest.priority" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.item[x]">
+      <path value="SupplyRequest.item[x]" />
+      <short value="Angabe des angeforderten Sprechstundenbedarfes" />
+      <definition value="Dieses Element dient zur Angabe des angeforderten Sprechstundenbedarfes. Es sollte immer die Referenz bevorzugt werden. Sollte es kein Medikament nach dem Profil KBV_PR_AW_Medikament sein, kann alternativ display genutzt werden." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Medikament|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="SupplyRequest.item[x].reference">
+      <path value="SupplyRequest.item[x].reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="SupplyRequest.item[x].type">
+      <path value="SupplyRequest.item[x].type" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.item[x].identifier">
+      <path value="SupplyRequest.item[x].identifier" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.item[x].display">
+      <path value="SupplyRequest.item[x].display" />
+      <short value="Bezeichnung des angeforderten Sprechstundenbedarfes" />
+      <definition value="Bezeichnung des angeforderten Sprechstundenbedarfes" />
+      <mustSupport value="true" />
+    </element>
+    <element id="SupplyRequest.quantity">
+      <path value="SupplyRequest.quantity" />
+      <short value="Anzahl Medikament/Rezeptur" />
+      <definition value="In einem Proil Anforderung_Sprechstundenbedarf ist immer genau ein Medikament/Rezeptur enthalten." />
+    </element>
+    <element id="SupplyRequest.quantity.value">
+      <path value="SupplyRequest.quantity.value" />
+      <min value="1" />
+      <fixedDecimal value="1" />
+    </element>
+    <element id="SupplyRequest.quantity.comparator">
+      <path value="SupplyRequest.quantity.comparator" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.quantity.unit">
+      <path value="SupplyRequest.quantity.unit" />
+      <min value="1" />
+      <fixedString value="1" />
+    </element>
+    <element id="SupplyRequest.quantity.system">
+      <path value="SupplyRequest.quantity.system" />
+      <min value="1" />
+      <fixedUri value="http://unitsofmeasure.org" />
+    </element>
+    <element id="SupplyRequest.quantity.code">
+      <path value="SupplyRequest.quantity.code" />
+      <min value="1" />
+      <fixedCode value="1" />
+    </element>
+    <element id="SupplyRequest.parameter">
+      <path value="SupplyRequest.parameter" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.occurrence[x]">
+      <path value="SupplyRequest.occurrence[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <short value="Anforderungsdatum" />
+      <definition value="Es ist das Datum der Anforderung anzugeben." />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="SupplyRequest.occurrence[x]:occurrenceDateTime">
+      <path value="SupplyRequest.occurrence[x]" />
+      <sliceName value="occurrenceDateTime" />
+      <short value="Anforderungsdatum" />
+      <definition value="Es ist das Datum der Anforderung anzugeben." />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="SupplyRequest.authoredOn">
+      <path value="SupplyRequest.authoredOn" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.requester">
+      <path value="SupplyRequest.requester" />
+      <short value="BehandelnderFunktion" />
+      <definition value="Die Referenz zu einer BehandelnderFunktion (enthält LANR, ASV-Teamnummer und BSNR) ist zu bevorzugen. Nur wenn keine Ressource BehandelnderFunktion erzeugt werden kann, müssen im Element display die vorhandenen Informationen (Arztnamen, LANR, BSNR, ASV-Teamnummer) übertragen werden." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="SupplyRequest.requester.reference">
+      <path value="SupplyRequest.requester.reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="SupplyRequest.requester.type">
+      <path value="SupplyRequest.requester.type" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.requester.identifier">
+      <path value="SupplyRequest.requester.identifier" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.requester.display">
+      <path value="SupplyRequest.requester.display" />
+      <short value="Name des Behandelnden" />
+      <definition value="Name des Behandelnden" />
+      <mustSupport value="true" />
+    </element>
+    <element id="SupplyRequest.supplier">
+      <path value="SupplyRequest.supplier" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.reasonCode">
+      <path value="SupplyRequest.reasonCode" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.reasonReference">
+      <path value="SupplyRequest.reasonReference" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.deliverFrom">
+      <path value="SupplyRequest.deliverFrom" />
+      <max value="0" />
+    </element>
+    <element id="SupplyRequest.deliverTo">
+      <path value="SupplyRequest.deliverTo" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

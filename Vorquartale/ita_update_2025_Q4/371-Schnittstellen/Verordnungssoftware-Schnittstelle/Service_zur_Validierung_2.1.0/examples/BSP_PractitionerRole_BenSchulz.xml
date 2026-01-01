@@ -1,0 +1,14 @@
+<PractitionerRole xmlns="http://hl7.org/fhir">
+	<id value="90002"/>
+	<meta>
+		<versionId value="1"/>
+		<lastUpdated value="2022-10-07T13:40:00Z"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_PractitionerRole|2.1.0"/>
+	</meta>
+	<practitioner>
+		<reference value="Practitioner/90000"/>
+	</practitioner>
+	<organization>
+		<reference value="Organization/90001"/>
+	</organization>
+</PractitionerRole>

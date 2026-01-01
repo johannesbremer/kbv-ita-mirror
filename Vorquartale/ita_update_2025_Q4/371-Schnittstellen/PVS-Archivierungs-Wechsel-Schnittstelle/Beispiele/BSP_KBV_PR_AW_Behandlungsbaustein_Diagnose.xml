@@ -1,0 +1,29 @@
+<ActivityDefinition xmlns="http://hl7.org/fhir">
+	<id value="3162"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-22T12:12:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_Diagnose|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Behandlungsbaustein Diagnose
+			Schenkelhalsfraktur, S72.0
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Behandlungsbaustein_Contributor">
+		<valueReference>
+			<reference value="PractitionerRole/3153"/>
+		</valueReference>
+	</extension>
+	<title value="Schenkelhalsfraktur"/>
+	<status value="active"/>
+	<purpose value="Diagnose"/>
+	<code>
+		<coding>
+			<system value="http://fhir.de/CodeSystem/dimdi/icd-10-gm"/>
+			<code value="S72.0"/>
+		</coding>
+	</code>
+</ActivityDefinition>

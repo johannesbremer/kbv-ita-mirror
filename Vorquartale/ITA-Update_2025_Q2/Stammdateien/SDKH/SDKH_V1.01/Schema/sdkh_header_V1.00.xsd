@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2006 sp2 U bearbeitet (http://www.altova.com) von XMLSPY 2006 Professional Ed. Release 3, Installed for 13 users (Kassenärztliche Bundesvereinigung) -->
+<!-- Mit XMLSpy v2006 sp2 U bearbeitet (http://www.altova.com) von XMLSPY 2006 Professional Ed. Release 3, Installed for 13 users (Kassenärztliche Bundesvereinigung) -->
+<!--
+Template für ehd_header:
+Projekt: sdkh
+
+Namespace, Präfix und Typebezeichnungen sind mit tatsächlichen Projektspezifischen zu ersetzen.
+Verzeichnispfade überprüfen und gegebenfalls anpassen.
+-->
+<xs:schema xmlns="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<!-- ======================================================================= 
+	Einbinden der ehd-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="ehd_header_V1.40.xsd"/>
+	<!-- ======================================================================= 
+	angepasster ehd_header: sdkh_header (mini-header, besteht aus nur wenigen Elementen)
+	======================================================================= -->
+	<xs:complexType name="sdkh_header_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_header_typ">
+				<xs:sequence>
+					<xs:element name="id">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="id_typ">
+									<xs:attribute name="RT" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="1.2.276.0.76.5.3.1.1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="document_type_cd" type="sdkh_document_type_cd_typ"/>
+					<xs:element ref="service_tmr"/>
+					<xs:element ref="origination_dttm"/>					
+					<xs:element name="provider">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="provider_typ">
+									<xs:sequence>
+										<xs:element name="organization">
+											<xs:complexType>
+												<xs:complexContent>
+													<xs:restriction base="organization_typ">
+														<xs:sequence>
+															<xs:element name="id">
+																<xs:complexType>
+																	<xs:complexContent>
+																		<xs:restriction base="id_typ">
+																			<xs:attribute name="EX" use="optional">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:enumeration value="74"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:attribute>
+																			<xs:attribute name="RT" use="required">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:enumeration value="1.2.276.0.76.5.233"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:attribute>
+																		</xs:restriction>
+																	</xs:complexContent>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="organization.nm" type="v_string_typ" minOccurs="0" maxOccurs="unbounded"/>
+															<xs:element ref="addr" minOccurs="0" maxOccurs="unbounded"/>
+															<xs:element ref="telecom" minOccurs="0" maxOccurs="unbounded"/>
+														</xs:sequence>
+													</xs:restriction>
+												</xs:complexContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="interface" type="sdkh_interface_typ"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster sdkh_document_type_cd_typ  für das Projekt: sdkh
+	======================================================================= -->
+	<xs:complexType name="sdkh_document_type_cd_typ">
+		<xs:complexContent>
+			<xs:restriction base="document_type_cd_typ">
+				<xs:attribute name="V" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="SDKH"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster sdkh_interface_typ für das Projekt: sdkh
+	======================================================================= -->
+	<xs:complexType name="sdkh_interface_typ">
+		<xs:complexContent>
+			<xs:restriction base="interface_typ">
+				<xs:sequence>
+					<xs:element name="id">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_id_typ">
+									<xs:attribute name="EX" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="SDKH"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="interface.nm">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_nm_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Stammdatei Kodierhilfe"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="version">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_version_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="1.00"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

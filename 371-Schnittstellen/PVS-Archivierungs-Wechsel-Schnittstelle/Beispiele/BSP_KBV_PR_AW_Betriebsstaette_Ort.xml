@@ -1,0 +1,24 @@
+<Location xmlns="http://hl7.org/fhir">
+	<id value="3171"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-12T18:55:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette_Ort|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<name value="Labor 1"/>
+	<type>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+			<code value="AMB"/>
+		</coding>
+	</type>
+	<managingOrganization>
+		<reference value="Organization/3156"/>
+	</managingOrganization>
+</Location>

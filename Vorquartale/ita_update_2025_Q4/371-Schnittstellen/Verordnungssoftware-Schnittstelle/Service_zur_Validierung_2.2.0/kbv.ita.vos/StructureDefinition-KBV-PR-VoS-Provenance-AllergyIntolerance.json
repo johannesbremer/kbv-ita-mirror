@@ -1,0 +1,361 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "KBV-PR-VoS-Provenance-AllergyIntolerance",
+  "url": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Provenance_AllergyIntolerance",
+  "version": "2.2.0",
+  "name": "KBV_PR_VoS_Provenance_AllergyIntolerance",
+  "title": "KBV_PR_VoS_Provenance_AllergyIntolerance",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "description": "Eine Provenance-Ressource, die vom PVS an die VoS gesendet wird, um zu übertragen, ob Allergien ärztlich diagnostiziert oder Eigenangaben der behandelten Person sind.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Provenance",
+  "baseDefinition": "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Provenance|1.7.0",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Provenance",
+        "path": "Provenance",
+        "definition": "Hier wird für Allergien übertragen, ob diese ärztlich diagnostiziert oder Eigenangaben der behandelten Person sind."
+      },
+      {
+        "id": "Provenance.id",
+        "path": "Provenance.id",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.meta",
+        "path": "Provenance.meta",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.meta.source",
+        "path": "Provenance.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.meta.profile",
+        "path": "Provenance.meta.profile",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.meta.profile:vosProfile",
+        "path": "Provenance.meta.profile",
+        "sliceName": "vosProfile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Provenance_AllergyIntolerance|2.2.0",
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.meta.security",
+        "path": "Provenance.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.meta.tag",
+        "path": "Provenance.meta.tag",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.implicitRules",
+        "path": "Provenance.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.language",
+        "path": "Provenance.language",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.contained",
+        "path": "Provenance.contained",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.target",
+        "path": "Provenance.target",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_AllergyIntolerance|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.target.reference",
+        "path": "Provenance.target.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.target.type",
+        "path": "Provenance.target.type",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.target.identifier",
+        "path": "Provenance.target.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.target.display",
+        "path": "Provenance.target.display",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.occurred[x]",
+        "path": "Provenance.occurred[x]",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.occurred[x]:occurredDateTime",
+        "path": "Provenance.occurred[x]",
+        "sliceName": "occurredDateTime",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.recorded",
+        "path": "Provenance.recorded",
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.policy",
+        "path": "Provenance.policy",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.location",
+        "path": "Provenance.location",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.reason",
+        "path": "Provenance.reason",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.activity",
+        "path": "Provenance.activity",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.activity.coding",
+        "path": "Provenance.activity.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.activity.coding.system",
+        "path": "Provenance.activity.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/v3-DataOperation",
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.activity.coding.code",
+        "path": "Provenance.activity.coding.code",
+        "min": 1,
+        "fixedCode": "CREATE",
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.activity.coding.userSelected",
+        "path": "Provenance.activity.coding.userSelected",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.activity.text",
+        "path": "Provenance.activity.text",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.agent",
+        "path": "Provenance.agent",
+        "definition": "Hier wird eine Person angegeben, die die Allergie festgestellt hat.",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.agent.type",
+        "path": "Provenance.agent.type",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.agent.type.coding",
+        "path": "Provenance.agent.type.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.agent.type.coding.system",
+        "path": "Provenance.agent.type.coding.system",
+        "min": 1,
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/provenance-participant-type",
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.agent.type.coding.version",
+        "path": "Provenance.agent.type.coding.version",
+        "min": 1,
+        "fixedString": "1.1.0",
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.agent.type.coding.code",
+        "path": "Provenance.agent.type.coding.code",
+        "min": 1,
+        "fixedCode": "author",
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.agent.type.coding.display",
+        "path": "Provenance.agent.type.coding.display",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.agent.type.coding.userSelected",
+        "path": "Provenance.agent.type.coding.userSelected",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.agent.type.text",
+        "path": "Provenance.agent.type.text",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.agent.role",
+        "path": "Provenance.agent.role",
+        "definition": "Angabe, der Rolle der feststellenden Person mit coding.code = PAT (patient) oder PROV (healthcare provider, ärztliche Person)",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.kbv.de/ValueSet/KBV_VS_VoS_AgentRoles",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "ProvenanceAgentRole"
+            }
+          ]
+        }
+      },
+      {
+        "id": "Provenance.agent.role.coding",
+        "path": "Provenance.agent.role.coding",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.agent.role.coding.system",
+        "path": "Provenance.agent.role.coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.agent.role.coding.code",
+        "path": "Provenance.agent.role.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.agent.role.coding.userSelected",
+        "path": "Provenance.agent.role.coding.userSelected",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.agent.role.text",
+        "path": "Provenance.agent.role.text",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.agent.who",
+        "path": "Provenance.agent.who",
+        "definition": "Hier kann die konkrete Person referenziert werden, welche die Allergie/Unverträglichkeit festgestellt hat. Es muss dabei auf jeden Fall der Typ (Patient, Practitioner oder PractitionerRole) angegeben werden. Falls die genaue Person nicht referenziert werden kann, kann durch den Typ für den eMP angegeben werden, welcher Personentyp für die Information verantwortlich ist.",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Patient|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Practitioner|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_PractitionerRole|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.agent.who.reference",
+        "path": "Provenance.agent.who.reference",
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.agent.who.type",
+        "path": "Provenance.agent.who.type",
+        "definition": "Hier wird der Typ (Patient, Practitioner oder PractitionerRole) angegeben. Falls die genaue Person nicht referenziert werden kann, kann durch den Typ für den eMP angegeben werden, welcher Personentyp für die Information verantwortlich ist.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Provenance.agent.who.identifier",
+        "path": "Provenance.agent.who.identifier",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.agent.who.display",
+        "path": "Provenance.agent.who.display",
+        "definition": "Falls nur \"type\" ausgefüllt werden kann, kann hier eine Beschreibung des Typs eingefügt werden."
+      },
+      {
+        "id": "Provenance.agent.onBehalfOf",
+        "path": "Provenance.agent.onBehalfOf",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.entity",
+        "path": "Provenance.entity",
+        "max": "0"
+      },
+      {
+        "id": "Provenance.signature",
+        "path": "Provenance.signature",
+        "max": "0"
+      }
+    ]
+  }
+}

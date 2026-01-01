@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Ressourcentyp"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Ressourcentypen"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="Abrechnung_BG"/>
+<display value="Abrechnung BG"/>
+</concept>
+<concept>
+<code value="Abrechnung_HzV_BesondereVersorgung_Selektiv"/>
+<display value="Abrechnung HzV BesondereVersorgung Selektiv"/>
+</concept>
+<concept>
+<code value="Abrechnung_Privat"/>
+<display value="Abrechnung Privat"/>
+</concept>
+<concept>
+<code value="Abrechnung_Vertragsaerztlich"/>
+<display value="Abrechnung Vertragsaerztlich"/>
+</concept>
+<concept>
+<code value="Abrechnung_Vorlaeufig"/>
+<display value="Abrechnung Vorlaeufig"/>
+</concept>
+<concept>
+<code value="Allergie"/>
+<display value="Allergie"/>
+</concept>
+<concept>
+<code value="Begegnung"/>
+<display value="Begegnung"/>
+</concept>
+<concept>
+<code value="Behandlungsbaustein_Textvorlage"/>
+<display value="Behandlungsbaustein Textvorlage"/>
+</concept>
+<concept>
+<code value="Betriebsstaette"/>
+<display value="Betriebsstaette"/>
+</concept>
+<concept>
+<code value="Ambulante_Operation"/>
+<display value="Ambulante Operation"/>
+</concept>
+<concept>
+<code value="Ambulante_Operation_General"/>
+<display value="Ambulante Operation General"/>
+</concept>
+<concept>
+<code value="Gesundheitspass"/>
+<display value="Gesundheitspass"/>
+</concept>
+<concept>
+<code value="Anlage"/>
+<display value="Anlage"/>
+</concept>
+<concept>
+<code value="Krankenbefoerderung"/>
+<display value="Krankenbefoerderung"/>
+</concept>
+<concept>
+<code value="Krankenbefoerderung_42019"/>
+<display value="Krankenbefoerderung 42019"/>
+</concept>
+<concept>
+<code value="Krebsfrueherkennung_Frauen"/>
+<display value="Krebsfrueherkennung Frauen"/>
+</concept>
+<concept>
+<code value="Krebsfrueherkennung_Frauen_2020"/>
+<display value="Krebsfrueherkennung Frauen 2020"/>
+</concept>
+<concept>
+<code value="Krebsfrueherkennung_Frauen_Auftrag"/>
+<display value="Krebsfrueherkennung Frauen Auftrag"/>
+</concept>
+<concept>
+<code value="Krebsfrueherkennung_Frauen_Auftrag_2020"/>
+<display value="Krebsfrueherkennung Frauen Auftrag 2020"/>
+</concept>
+<concept>
+<code value="Anamnese_Hormonanwendung"/>
+<display value="Anamnese Hormonanwendung"/>
+</concept>
+<concept>
+<code value="Anamnese_Hormonanwendung_2020"/>
+<display value="Anamnese Hormonanwendung 2020"/>
+</concept>
+<concept>
+<code value="Gynaekologische_Diagnose"/>
+<display value="Gynaekologische Diagnose"/>
+</concept>
+<concept>
+<code value="Gynaekologischen_OP_Strahlen_oder_Chemotherapie_des_Genitals"/>
+<display value="Gynaekologischen OP Strahlen oder Chemotherapie des Genitals"/>
+</concept>
+<concept>
+<code value="Schwangerschaft"/>
+<display value="Schwangerschaft"/>
+</concept>
+<concept>
+<code value="Zytologischer_Befund"/>
+<display value="Zytologischer Befund"/>
+</concept>
+<concept>
+<code value="Zytologischer_Befund_2020"/>
+<display value="Zytologischer Befund 2020"/>
+</concept>
+<concept>
+<code value="Krebsfrueherkennung_Maenner"/>
+<display value="Krebsfrueherkennung Maenner"/>
+</concept>
+<concept>
+<code value="Krebsfrueherkennung_Maenner_Auftrag"/>
+<display value="Krebsfrueherkennung Maenner Auftrag"/>
+</concept>
+<concept>
+<code value="Kur"/>
+<display value="Kur"/>
+</concept>
+<concept>
+<code value="Kur_Antrag"/>
+<display value="Kur Antrag"/>
+</concept>
+<concept>
+<code value="Kurgenehmigung"/>
+<display value="Kurgenehmigung"/>
+</concept>
+<concept>
+<code value="Kurverlaengerung"/>
+<display value="Kurverlaengerung"/>
+</concept>
+<concept>
+<code value="Leistungsanfrage_Heilmittel"/>
+<display value="Leistungsanfrage Heilmittel"/>
+</concept>
+<concept>
+<code value="Leistungsgenehmigung_Heilmittel"/>
+<display value="Leistungsgenehmigung Heilmittel"/>
+</concept>
+<concept>
+<code value="Leistungsgenehmigung_Psychotherapie"/>
+<display value="Leistungsgenehmigung Psychtherapie"/>
+</concept>
+<concept>
+<code value="Notfall"/>
+<display value="Notfall"/>
+</concept>
+<concept>
+<code value="Notfallberechtigter"/>
+<display value="Notfallberechtigter"/>
+</concept>
+<concept>
+<code value="Anamnese"/>
+<display value="Anamnese"/>
+</concept>
+<concept>
+<code value="Befund"/>
+<display value="Befund"/>
+</concept>
+<concept>
+<code value="Patientenverfuegung"/>
+<display value="Patientenverfuegung"/>
+</concept>
+<concept>
+<code value="Therapie"/>
+<display value="Therapie"/>
+</concept>
+<concept>
+<code value="Genetische_Untersuchung"/>
+<display value="Genetische Untersuchung"/>
+</concept>
+<concept>
+<code value="Unfall"/>
+<display value="Unfall"/>
+</concept>
+<concept>
+<code value="Untersuchung"/>
+<display value="Untersuchung"/>
+</concept>
+<concept>
+<code value="Vorsorgevollmacht"/>
+<display value="Vorsorgevollmacht"/>
+</concept>
+<concept>
+<code value="Weiterbehandlung_durch"/>
+<display value="Weiterbehandlung durch"/>
+</concept>
+<concept>
+<code value="Material_Sache"/>
+<display value="Material Sache"/>
+</concept>
+<concept>
+<code value="Ringversuchszertifikat"/>
+<display value="Ringversuchszertifikat"/>
+</concept>
+<concept>
+<code value="Mitarbeiter"/>
+<display value="Mitarbeiter"/>
+</concept>
+<concept>
+<code value="Organisation"/>
+<display value="Organisation"/>
+</concept>
+<concept>
+<code value="Adressbuch"/>
+<display value="Adressbuch"/>
+</concept>
+<concept>
+<code value="Begegnung_Historie"/>
+<display value="Begegnung Historie"/>
+</concept>
+<concept>
+<code value="Behandlungsbaustein"/>
+<display value="Behandlungsbaustein"/>
+</concept>
+<concept>
+<code value="Patient"/>
+<display value="Patient"/>
+</concept>
+<concept>
+<code value="Patient_Termin"/>
+<display value="Patient Termin"/>
+</concept>
+<concept>
+<code value="Termin"/>
+<display value="Termin"/>
+</concept>
+<concept>
+<code value="Sprechstundenbedarf"/>
+<display value="Sprechstundenbedarf"/>
+</concept>
+<concept>
+<code value="Selektivvertag"/>
+<display value="Selektivvertag"/>
+</concept>
+<concept>
+<code value="Verordnung_Arbeitsunfaehigkeit"/>
+<display value="Verordnung Arbeitsunfaehigkeit"/>
+</concept>
+<concept>
+<code value="Observation_Bauchumfang"/>
+<display value="Observation Bauchumfang"/>
+</concept>
+<concept>
+<code value="Observation_Blutdruck"/>
+<display value="Observation Blutdruck"/>
+</concept>
+<concept>
+<code value="Observation_Hueftumfang"/>
+<display value="Observation Hueftumfang"/>
+</concept>
+<concept>
+<code value="Observation_Koerpergewicht"/>
+<display value="Observation Koerpergewicht"/>
+</concept>
+<concept>
+<code value="Observation_Koerpergroesse"/>
+<display value="Observation Koerpergroesse"/>
+</concept>
+<concept>
+<code value="Observation_Koerpertemperatur"/>
+<display value="Observation Koerpertemperatur"/>
+</concept>
+<concept>
+<code value="Observation_Puls"/>
+<display value="Observation Puls"/>
+</concept>
+<concept>
+<code value="Observation_Raucherstatus"/>
+<display value="Observation Raucherstatus"/>
+</concept>
+<concept>
+<code value="Observation_Schwangerschaft"/>
+<display value="Observation Schwangerschaft"/>
+</concept>
+<concept>
+<code value="Diagnose"/>
+<display value="Diagnose"/>
+</concept>
+<concept>
+<code value="Behandlung_im_Auftrag_Ueberweisung"/>
+<display value="Behandlung im Auftrag Ueberweisung"/>
+</concept>
+<concept>
+<code value="Verordnung_Arzneimitel"/>
+<display value="Verordnung Arzneimitel"/>
+</concept>
+<concept>
+<code value="Verordnung_Heilmittel"/>
+<display value="Verordnung Heilmittel"/>
+</concept>
+<concept>
+<code value="Verordnung_Hilfsmittel"/>
+<display value="Verordnung Hilfsmittel"/>
+</concept>
+<concept>
+<code value="Hausbesuch"/>
+<display value="Hausbesuch"/>
+</concept>
+</CodeSystem>

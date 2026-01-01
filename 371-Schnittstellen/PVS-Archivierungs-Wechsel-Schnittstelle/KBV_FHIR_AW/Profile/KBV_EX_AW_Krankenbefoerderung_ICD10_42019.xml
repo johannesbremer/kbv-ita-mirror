@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krankenbefoerderung_ICD10_42019" />
+  <version value="1.2.0" />
+  <name value="KBV_EX_AW_Krankenbefoerderung_ICD10_42019" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="ServiceRequest.reasonCode" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="ICD10 Begründung" />
+      <definition value="Diese Extension transportiert einen icd-10 Code zur Begründung eines Krankentransportes" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krankenbefoerderung_ICD10_42019" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept">
+      <path value="Extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <min value="1" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding">
+      <path value="Extension.valueCodeableConcept.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding.system">
+      <path value="Extension.valueCodeableConcept.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/CodeSystem/dimdi/icd-10-gm" />
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding.code">
+      <path value="Extension.valueCodeableConcept.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding.display">
+      <path value="Extension.valueCodeableConcept.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept.coding.userSelected">
+      <path value="Extension.valueCodeableConcept.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Extension.value[x]:valueCodeableConcept.text">
+      <path value="Extension.valueCodeableConcept.text" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

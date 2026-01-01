@@ -1,0 +1,45 @@
+<Patient xmlns="http://hl7.org/fhir">
+	<id value="for-patient-pkv"/>
+	<meta>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2"/>
+	</meta>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+				<code value="KVZ10"/>
+			</coding>
+		</type>
+		<system value="http://fhir.de/sid/gkv/kvid-10"/>
+		<value value="C703617498"/>
+	</identifier>
+	<name>
+		<use value="official"/>
+		<family value="Fürst von und zur Baustelle">
+			<extension url="http://fhir.de/StructureDefinition/humanname-namenszusatz">
+				<valueString value="Fürst"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+				<valueString value="Baustelle"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+				<valueString value="von und zur"/>
+			</extension>
+		</family>
+		<given value="Franz Alexander"/>
+	</name>
+	<birthDate value="1957-11-17"/>
+	<address>
+		<type value="both"/>
+		<line value="Musterstr. 4">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="4"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Musterstr."/>
+			</extension>
+		</line>
+		<city value="Berlin"/>
+		<postalCode value="10623"/>
+	</address>
+</Patient>

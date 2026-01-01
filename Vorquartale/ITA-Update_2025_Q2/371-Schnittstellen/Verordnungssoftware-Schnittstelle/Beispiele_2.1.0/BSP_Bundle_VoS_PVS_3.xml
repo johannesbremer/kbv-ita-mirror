@@ -1,0 +1,73 @@
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="300001"/>
+	<meta>
+		<lastUpdated value="2022-10-07T13:41:02Z"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS|2.1.0"/>
+	</meta>
+	<identifier>
+		<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_VoS_BundleID"/>
+		<value value="Test_ID_VoS_Storno"/>
+	</identifier>
+	<type value="transaction"/>
+	<timestamp value="2022-10-07T13:41:02Z"/>
+	<link>
+		<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_User_Device">
+			<extension url="Anwender">
+				<valueString value="TestanwenderVoS"/>
+			</extension>
+			<extension url="KBV-Pruefnummer">
+				<valueIdentifier>
+					<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer"/>
+					<value value="Y/70/0000/00/001"/>
+				</valueIdentifier>
+			</extension>
+			<extension url="systemID">
+				<valueIdentifier>
+					<value value="Installation PC-3"/>
+				</valueIdentifier>
+			</extension>
+		</extension>
+		<relation value="related"/>
+		<url value="http://pvs.praxis-testaerztin.local/fhir/Bundle/300000"/>
+	</link>
+	<entry>
+		<fullUrl value="http://vos.praxis-testaerztin.local/fhir/Provenance/300002"/>
+		<resource>
+			<Provenance xmlns="http://hl7.org/fhir">
+				<id value="300002"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-10-07T13:35:03Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Provenance_ePrescription|2.1.0"/>
+				</meta>
+				<target>
+					<reference value="Bundle/60e48db8-1164-4535-8600-ba83785ac58a"/>
+					<type value="Bundle"/>
+				</target>
+				<target>
+					<reference value="DocumentReference/85201"/>
+					<type value="DocumentReference"/>
+				</target>
+				<recorded value="2022-10-07T13:35:03Z"/>
+				<activity>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-DataOperation"/>
+						<code value="DELETE"/>
+					</coding>
+				</activity>
+				<agent>
+					<who>
+						<reference value="Practitioner/90000"/>
+					</who>
+					<onBehalfOf>
+						<reference value="Organization/90001"/>
+					</onBehalfOf>
+				</agent>
+			</Provenance>
+		</resource>
+		<request>
+			<method value="POST"/>
+			<url value="Provenance"/>
+		</request>
+	</entry>
+</Bundle>

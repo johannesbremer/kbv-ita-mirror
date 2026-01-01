@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mit XMLSpy v2010 rel. 3 (x64) (http://www.altova.com) von IT- Betrieb (adesso AG) bearbeitet -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:altova="http://www.altova.com/xml-schema-extensions" xmlns="http://www.kv-telematik.de/1-Click/Meldung_Einlieferung/1.0.0" targetNamespace="http://www.kv-telematik.de/1-Click/Meldung_Einlieferung/1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../Schema/KVTA_Datentypen_1_0_4.xsd"/>
+	<xs:element name="einlieferung">
+		<xs:annotation>
+			<xs:documentation>Einliefungsdokument für eDoku.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="Einlieferung_typ">
+					<xs:sequence>
+						<xs:element name="bsnr">
+							<xs:complexType>
+								<xs:attribute name="V" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:maxLength value="9"/>
+											<xs:whiteSpace value="collapse"/>
+											<xs:pattern value="[0-9]+"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="testdaten">
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:boolean" use="required"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="lieferungs_zeitpunkt">
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:dateTime" use="required"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="dokumenten_typ">
+							<xs:annotation>
+								<xs:documentation>QSMG, QSHGV, QSHGVK, QSHLT oder QSKE (Wird als Schlüssel benutzt um das Dokument einer Gruppe von Dokumenten zuzuordnen).</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" use="required">
+									<xs:simpleType>
+										<xs:restriction base="Abstrakt_dokumententyp_typ">
+											<xs:enumeration value="QSMG"/>
+											<xs:enumeration value="QSHGV"/>
+											<xs:enumeration value="QSHGVK"/>
+											<xs:enumeration value="QSHLT"/>
+											<xs:enumeration value="QSKE"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="quartal">
+							<xs:annotation>
+								<xs:documentation>Abrechnungszeitraum mit Jahresangabe, z.B.: für 1 Quartal 2011 ist 2011-1 zu übermitteln</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" use="required">
+									<xs:annotation>
+										<xs:appinfo>
+											<altova:exampleValues>
+												<altova:example value="2011-1"/>
+												<altova:example value="2011-2"/>
+												<altova:example value="2011-3"/>
+												<altova:example value="2011-4"/>
+											</altova:exampleValues>
+										</xs:appinfo>
+									</xs:annotation>
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:length value="6"/>
+											<xs:pattern value="[\d]{4}[\-]+[1-4]+"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="anhang" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>eDoku Dokumente eines Types.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

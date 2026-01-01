@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_Vsdm_Zusatzinformationen" />
+  <version value="1.2.0" />
+  <name value="KBV_EX_AW_Patient_Vsdm_Zusatzinformationen" />
+  <title value="KBV_EX_AW_Patient_Vsdm_Zusatzinformationen" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Patient" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Versichertendaten" />
+      <definition value="Dieses Element beschreibt Informationen, welche von der Versicherung unverändert (amtliche Daten), bspw. von einer KVK/eGK/Versicherungsschein, übernommen wurden." />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:geschlecht">
+      <path value="Extension.extension" />
+      <sliceName value="geschlecht" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:geschlecht.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="geschlecht" />
+    </element>
+    <element id="Extension.extension:geschlecht.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Coding" />
+      </type>	  
+    </element>
+    <element id="Extension.extension:geschlecht.value[x]:valueCoding">
+      <path value="Extension.extension.valueCoding" />
+      <sliceName value="valueCoding" />
+      <definition value="Der Code Other darf nicht genutzt werden. Es stehen dafür die deutschen Alternativen zur Verfügung." />
+      <min value="1" />
+      <type>
+        <code value="Coding" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Patient_VSDM_Gender" />
+      </binding>
+    </element>
+    <element id="Extension.extension:geschlecht.value[x]:valueCoding.system">
+      <path value="Extension.extension.valueCoding.system" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:geschlecht.value[x]:valueCoding.code">
+      <path value="Extension.extension.valueCoding.code" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:geschlecht.value[x]:valueCoding.userSelected">
+      <path value="Extension.extension.valueCoding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:geburtsdatum">
+      <path value="Extension.extension" />
+      <sliceName value="geburtsdatum" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:geburtsdatum.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="geburtsdatum" />
+    </element>
+    <element id="Extension.extension:geburtsdatum.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+	  <type>
+		<code value="date"/>
+	  </type>
+    </element>
+    <element id="Extension.extension:geburtsdatum.value[x]:valueDate">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueDate" />
+      <min value="1" />
+      <type>
+        <code value="date" />
+      </type>
+    </element>
+    <element id="Extension.extension:adresse">
+      <path value="Extension.extension" />
+      <sliceName value="adresse" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:adresse.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="adresse" />
+    </element>
+    <element id="Extension.extension:adresse.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+	  <type>
+		<code value="Address"/>
+	  </type>	  
+    </element>
+    <element id="Extension.extension:adresse.value[x]:valueAddress">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueAddress" />
+      <min value="1" />
+      <type>
+        <code value="Address" />
+        <profile value="http://fhir.de/StructureDefinition/address-de-basis" />
+      </type>
+    </element>
+    <element id="Extension.extension:adresse.value[x]:valueAddress.line">
+      <path value="Extension.extension.value[x].line" />
+      <max value="2" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_Vsdm_Zusatzinformationen" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,21 @@
+<Condition xmlns="http://hl7.org/fhir">
+  <meta>
+    <profile value="http://fhir.de/StructureDefinition/condition-de-basis/0.2" />
+  </meta>
+  <text>
+    <status value="generated" />
+    <div xmlns="http://www.w3.org/1999/xhtml">Trisomie 21, meiotische Non-disjunction</div>
+  </text>
+  <code>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/dimdi/icd-10-gm" />
+      <version value="2017" />
+      <code value="Q90.0" />
+      <display value="Trisomie 21, meiotische Non-disjunction" />
+    </coding>
+    <text value="Trisomie 21, meiotische Non-disjunction" />
+  </code>
+  <subject>
+    <reference value="Patient/12345" />
+  </subject>
+</Condition>

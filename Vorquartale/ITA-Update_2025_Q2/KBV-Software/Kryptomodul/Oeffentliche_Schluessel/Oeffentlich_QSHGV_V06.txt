@@ -1,0 +1,3 @@
+Schlüsseldatei:		Oeffentlich_QSHGV_V06.pub
+gültig ab:				01.10.2023
+Verwendung:				QS Horgeraeteversorgung Verschluesselung

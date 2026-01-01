@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Psychotherapie_Behandlungsart"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Psychotherapie_Behandlungsart"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Psychotherapeutische Behandlungsarten"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+     <concept>
+        <code value="ausschliesslich_Einzeltherapie" />
+        <display value="ausschliesslich Einzeltherapie" />
+      </concept>
+      <concept>
+        <code value="ausschliesslich_Gruppentherapie" />
+        <display value="ausschliesslich Gruppentherapie" />
+      </concept>
+      <concept>
+        <code value="Kombinationsbehandlung_ohne_weitere_Angaben" />
+        <display value="Kombinationsbehandlung ohne weitere Angaben" />
+      </concept>
+      <concept>
+        <code value="Kombinationsbehandlung_mit_ueberwiegend_Einzeltherapie_und_einem_Therapeuten" />
+        <display value="Kombinationsbehandlung mit ueberwiegend Einzeltherapie und einem Therapeuten" />
+      </concept>
+      <concept>
+        <code value="Kombinationsbehandlung_mit_ueberwiegend_Einzeltherapie_und_zwei_Therapeuten" />
+        <display value="Kombinationsbehandlung mit ueberwiegend Einzeltherapie und zwei Therapeuten" />
+      </concept>
+      <concept>
+        <code value="Kombinationsbehandlung_mit_ueberwiegend_Gruppentherapie_und_einem_Therapeuten" />
+        <display value="Kombinationsbehandlung mit ueberwiegend Gruppentherapie und einem Therapeuten" />
+      </concept>
+      <concept>
+        <code value="Kombinationsbehandlung_mit_ueberwiegend_Gruppentherapie_und_zwei_Therapeuten" />
+        <display value="Kombinationsbehandlung mit ueberwiegend Gruppentherapie und zwei Therapeuten" />
+      </concept>
+</CodeSystem>

@@ -1,0 +1,1160 @@
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="2000"/>
+	<meta>
+		<versionId value="1"/>
+		<lastUpdated value="2022-09-09T13:49:00Z"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS|2.1.0"/>
+	</meta>
+	<identifier>
+		<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_VoS_BundleID"/>
+		<value value="Test-ID-PVS"/>
+	</identifier>
+	<type value="document"/>
+	<timestamp value="2022-09-09T13:49:00Z"/>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Composition/1500"/>
+		<resource>
+			<Composition xmlns="http://hl7.org/fhir">
+				<id value="1500"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-09T12:51:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Composition|2.1.0"/>
+				</meta>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis">
+					<valueCoding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN"/>
+						<code value="01"/>
+					</valueCoding>
+				</extension>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_StartUp_Context">
+					<valueCodeableConcept>
+						<coding>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context"/>
+							<code value="1"/>
+							<display value="Ohne Aufrufkontext"/>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+				<status value="final"/>
+				<type>
+					<coding>
+						<system value="http://loinc.org"/>
+						<code value="11503-0"/>
+					</coding>
+				</type>
+				<subject>
+					<reference value="Patient/100"/>
+				</subject>
+				<date value="2022-09-09T12:51:00Z"/>
+				<author>
+					<reference value="Practitioner/2"/>
+					<type value="Practitioner"/>
+				</author>
+				<author>
+					<reference value="Device/20000"/>
+					<type value="Device"/>
+				</author>
+				<author>
+					<reference value="PractitionerRole/210"/>
+					<type value="PractitionerRole"/>
+				</author>
+				<title value="Aufruf der VoS"/>
+				<custodian>
+					<reference value="Organization/250"/>
+				</custodian>
+				<section>
+					<code>
+						<coding>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType"/>
+							<code value="Additional patient information"/>
+						</coding>
+					</code>
+					<entry>
+						<reference value="AllergyIntolerance/3"/>
+					</entry>
+					<entry>
+						<reference value="AllergyIntolerance/4"/>
+					</entry>
+					<entry>
+						<reference value="Observation/500"/>
+					</entry>
+					<entry>
+						<reference value="Observation/510"/>
+					</entry>
+					<entry>
+						<reference value="Observation/520"/>
+					</entry>
+					<entry>
+						<reference value="Observation/530"/>
+					</entry>
+					<entry>
+						<reference value="Observation/540"/>
+					</entry>
+					<entry>
+						<reference value="Condition/50"/>
+					</entry>
+					<entry>
+						<reference value="Coverage/600"/>
+					</entry>
+				</section>
+				<section>
+					<code>
+						<coding>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType"/>
+							<code value="Documents"/>
+						</coding>
+					</code>
+					<entry>
+						<reference value="DocumentReference/2500"/>
+					</entry>
+				</section>
+				<section>
+					<code>
+						<coding>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType"/>
+							<code value="Medications"/>
+						</coding>
+					</code>
+					<entry>
+						<reference value="Medication/710"/>
+					</entry>
+					<entry>
+						<reference value="MedicationStatement/720"/>
+					</entry>
+				</section>
+			</Composition>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Practitioner/2"/>
+		<resource>
+			<Practitioner xmlns="http://hl7.org/fhir">
+				<id value="2"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-05T14:14:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_User|2.1.0"/>
+				</meta>
+				<identifier>
+					<value value="testanwender"/>
+				</identifier>
+				<name>
+					<use value="official"/>
+					<text value="Prof. Dr. med. Paul Graf von Testanwender"/>
+					<family value="Graf von Testanwender">
+						<extension url="http://fhir.de/StructureDefinition/humanname-namenszusatz">
+							<valueString value="Graf"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+							<valueString value="Testanwender"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+							<valueString value="von"/>
+						</extension>
+					</family>
+					<given value="Paul"/>
+					<prefix value="Prof. Dr. med.">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
+							<valueCode value="AC"/>
+						</extension>
+					</prefix>
+				</name>
+			</Practitioner>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Organization/250"/>
+		<resource>
+			<Organization xmlns="http://hl7.org/fhir">
+				<id value="250"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-05T13:06:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Organization|2.1.0"/>
+				</meta>
+				<identifier>
+					<use value="official"/>
+					<type>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+							<code value="BSNR"/>
+						</coding>
+					</type>
+					<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"/>
+					<value value="721234567"/>
+				</identifier>
+				<name value="Praxis Prof. Dr. Monika Gräfin von Testärztin"/>
+				<telecom>
+					<system value="phone"/>
+					<value value="030/1111111111"/>
+				</telecom>
+				<telecom>
+					<system value="fax"/>
+					<value value="030/2222222222"/>
+				</telecom>
+				<telecom>
+					<system value="email"/>
+					<value value="monika@praxis_monika_testaerztin.de"/>
+				</telecom>
+				<address>
+					<type value="both"/>
+					<line value="Musterstr. 1">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+							<valueString value="1"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+							<valueString value="Musterstr."/>
+						</extension>
+					</line>
+					<line value="Hinterhaus">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+							<valueString value="Hinterhaus"/>
+						</extension>
+					</line>
+					<city value="Berlin"/>
+					<postalCode value="10623"/>
+					<country value="D"/>
+				</address>
+			</Organization>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Device/20000"/>
+		<resource>
+			<Device xmlns="http://hl7.org/fhir">
+				<id value="20000"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-07T15:14:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Device_PVS|2.1.0"/>
+				</meta>
+				<identifier>
+					<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer"/>
+					<value value="Y/70/2207/36/ID"/>
+				</identifier>
+				<deviceName>
+					<name value="KBV-PVS"/>
+					<type value="manufacturer-name"/>
+				</deviceName>
+				<type>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<version value="http://snomed.info/sct/900000000000207008/version/20220331"/>
+						<code value="463916008"/>
+						<display value="Physician-practice-management information system application software (physical object)"/>
+					</coding>
+				</type>
+				<contact>
+					<system value="phone"/>
+					<value value="030/4005-0"/>
+				</contact>
+				<contact>
+					<system value="email"/>
+					<value value="ita@kbv.de"/>
+				</contact>
+			</Device>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/PractitionerRole/210"/>
+		<resource>
+			<PractitionerRole xmlns="http://hl7.org/fhir">
+				<id value="210"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-06T14:01:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_PractitionerRole|2.1.0"/>
+				</meta>
+				<practitioner>
+					<reference value="Practitioner/200"/>
+				</practitioner>
+				<organization>
+					<reference value="Organization/250"/>
+					<identifier>
+						<system value="http://fhir.de/NamingSystem/asv/teamnummer"/>
+						<value value="003456789"/>
+					</identifier>
+				</organization>
+			</PractitionerRole>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Provenance/10000"/>
+		<resource>
+			<Provenance xmlns="http://hl7.org/fhir">
+				<id value="10000"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-06T14:22:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Provenance_AllergyIntolerance|2.1.0"/>
+				</meta>
+				<target>
+					<reference value="AllergyIntolerance/3"/>
+				</target>
+				<recorded value="2022-09-06T09:06:00Z"/>
+				<activity>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-DataOperation"/>
+						<version value="4.1.0"/>
+						<code value="CREATE"/>
+					</coding>
+				</activity>
+				<agent>
+					<type>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+							<version value="4.0.1"/>
+							<code value="author"/>
+						</coding>
+					</type>
+					<role>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/v3-RoleClass"/>
+							<code value="PAT"/>
+						</coding>
+					</role>
+					<who>
+						<reference value="Patient/100"/>
+						<type value="Patient"/>
+					</who>
+				</agent>
+			</Provenance>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Provenance/10001"/>
+		<resource>
+			<Provenance xmlns="http://hl7.org/fhir">
+				<id value="10001"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-06T14:22:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Provenance_AllergyIntolerance|2.1.0"/>
+				</meta>
+				<target>
+					<reference value="AllergyIntolerance/4"/>
+				</target>
+				<recorded value="2022-09-06T09:06:00Z"/>
+				<activity>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-DataOperation"/>
+						<version value="4.1.0"/>
+						<code value="CREATE"/>
+					</coding>
+				</activity>
+				<agent>
+					<type>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+							<version value="4.0.1"/>
+							<code value="author"/>
+						</coding>
+					</type>
+					<role>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/v3-RoleClass"/>
+							<code value="PROV"/>
+						</coding>
+					</role>
+					<who>
+						<reference value="Practitioner/200"/>
+						<type value="Practitioner"/>
+					</who>
+				</agent>
+			</Provenance>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Coverage/600"/>
+		<resource>
+			<Coverage xmlns="http://hl7.org/fhir">
+				<id value="600"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-07T15:05:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Coverage|2.1.0"/>
+				</meta>
+				<extension url="http://fhir.de/StructureDefinition/gkv/einlesedatum-karte">
+					<valueDateTime value="2022-09-07"/>
+				</extension>
+				<extension url="http://fhir.de/StructureDefinition/gkv/besondere-personengruppe">
+					<valueCoding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE"/>
+						<code value="00"/>
+					</valueCoding>
+				</extension>
+				<extension url="http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen">
+					<valueCoding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DMP"/>
+						<code value="00"/>
+					</valueCoding>
+				</extension>
+				<extension url="http://fhir.de/StructureDefinition/gkv/wop">
+					<valueCoding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP"/>
+						<code value="72"/>
+					</valueCoding>
+				</extension>
+				<extension url="http://fhir.de/StructureDefinition/gkv/versichertenart">
+					<valueCoding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS"/>
+						<code value="1"/>
+					</valueCoding>
+				</extension>
+				<extension url="http://fhir.de/StructureDefinition/gkv/zuzahlungsstatus">
+					<extension url="status">
+						<valueBoolean value="true"/>
+					</extension>
+					<extension url="gueltigBis">
+						<valueDate value="2022-12-31"/>
+					</extension>
+				</extension>
+				<status value="active"/>
+				<type>
+					<coding>
+						<system value="http://fhir.de/CodeSystem/versicherungsart-de-basis"/>
+						<code value="GKV"/>
+					</coding>
+				</type>
+				<beneficiary>
+					<reference value="Patient/100"/>
+				</beneficiary>
+				<period>
+					<end value="2023-12-31"/>
+				</period>
+				<payor>
+					<identifier>
+						<system value="http://fhir.de/sid/arge-ik/iknr"/>
+						<value value="109719018"/>
+					</identifier>
+					<display value="AOK Nordost"/>
+				</payor>
+			</Coverage>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Practitioner/200"/>
+		<resource>
+			<Practitioner xmlns="http://hl7.org/fhir">
+				<id value="200"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-05T13:47:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Practitioner|2.1.0"/>
+				</meta>
+				<identifier>
+					<use value="official"/>
+					<type>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+							<code value="LANR"/>
+						</coding>
+					</type>
+					<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"/>
+					<value value="123456667"/>
+				</identifier>
+				<name>
+					<use value="official"/>
+					<text value="Prof. Dr. Monika Gräfin von Testärztin"/>
+					<family value="Gräfin von Testärztin">
+						<extension url="http://fhir.de/StructureDefinition/humanname-namenszusatz">
+							<valueString value="Gräfin"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+							<valueString value="Testärztin"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+							<valueString value="von"/>
+						</extension>
+					</family>
+					<given value="Monika"/>
+					<prefix value="Prof. Dr.">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
+							<valueCode value="AC"/>
+						</extension>
+					</prefix>
+				</name>
+				<qualification>
+					<code>
+						<coding>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type"/>
+							<code value="00"/>
+						</coding>
+					</code>
+				</qualification>
+				<qualification>
+					<code>
+						<coding>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung"/>
+							<code value="Berufsbezeichnung"/>
+						</coding>
+						<text value="Fachärztin für Urologie"/>
+					</code>
+				</qualification>
+			</Practitioner>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Patient/100"/>
+		<resource>
+			<Patient xmlns="http://hl7.org/fhir">
+				<id value="100"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-05T13:24:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Patient|2.1.0"/>
+				</meta>
+				<identifier>
+					<type>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+							<code value="MR"/>
+						</coding>
+					</type>
+					<system value="http://kbv-testpraxis.de/patient-identifier"/>
+					<value value="P0042"/>
+				</identifier>
+				<identifier>
+					<use value="official"/>
+					<type>
+						<coding>
+							<system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+							<code value="GKV"/>
+						</coding>
+					</type>
+					<system value="http://fhir.de/sid/gkv/kvid-10"/>
+					<value value="F150156148"/>
+				</identifier>
+				<name>
+					<use value="official"/>
+					<text value="Klaus Freiherr von und zu Freiberg"/>
+					<family value="Freiherr von und zu Freiberg">
+						<extension url="http://fhir.de/StructureDefinition/humanname-namenszusatz">
+							<valueString value="Freiherr"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+							<valueString value="Freiberg"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+							<valueString value="von und zu"/>
+						</extension>
+					</family>
+					<given value="Klaus"/>
+				</name>
+				<gender value="other">
+					<extension url="http://fhir.de/StructureDefinition/gender-amtlich-de">
+						<valueCoding>
+							<system value="http://fhir.de/CodeSystem/gender-amtlich-de"/>
+							<code value="D"/>
+							<display value="divers"/>
+						</valueCoding>
+					</extension>
+				</gender>
+				<birthDate value="1956-01-15"/>
+				<address>
+					<type value="both"/>
+					<line value="Herbert-Lewin-Platz 578">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+							<valueString value="Herbert-Lewin-Platz"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+							<valueString value="578"/>
+						</extension>
+					</line>
+					<line value="2. OG">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+							<valueString value="2. OG"/>
+						</extension>
+					</line>
+					<city value="Berlin"/>
+					<postalCode value="10623"/>
+					<country value="D"/>
+				</address>
+			</Patient>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/AllergyIntolerance/3"/>
+		<resource>
+			<AllergyIntolerance xmlns="http://hl7.org/fhir">
+				<id value="3"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-01T09:06:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_AllergyIntolerance|2.1.0"/>
+				</meta>
+				<clinicalStatus>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"/>
+						<version value="0.5.0"/>
+						<code value="active"/>
+						<display value="Active"/>
+					</coding>
+				</clinicalStatus>
+				<verificationStatus>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"/>
+						<version value="0.5.0"/>
+						<code value="confirmed"/>
+						<display value="Confirmed"/>
+					</coding>
+				</verificationStatus>
+				<type value="allergy"/>
+				<code>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="128488006"/>
+						<display value="House dust (substance)"/>
+					</coding>
+					<text value="Hausstaub"/>
+				</code>
+				<patient>
+					<reference value="Patient/100"/>
+				</patient>
+				<reaction>
+					<manifestation>
+						<text value="Atemnot"/>
+					</manifestation>
+				</reaction>
+				<reaction>
+					<manifestation>
+						<text value="Juckreiz"/>
+					</manifestation>
+				</reaction>
+			</AllergyIntolerance>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/AllergyIntolerance/4"/>
+		<resource>
+			<AllergyIntolerance xmlns="http://hl7.org/fhir">
+				<id value="4"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-01T09:06:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_AllergyIntolerance|2.1.0"/>
+				</meta>
+				<clinicalStatus>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"/>
+						<version value="0.5.0"/>
+						<code value="active"/>
+						<display value="Active"/>
+					</coding>
+				</clinicalStatus>
+				<verificationStatus>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"/>
+						<version value="0.5.0"/>
+						<code value="confirmed"/>
+						<display value="Confirmed"/>
+					</coding>
+				</verificationStatus>
+				<type value="allergy"/>
+				<code>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<code value="323389000"/>
+						<display value="Benzylpenicillin (substance)"/>
+					</coding>
+					<coding>
+						<system value="http://fhir.de/CodeSystem/ask"/>
+						<code value="00246"/>
+						<display value="Benzylpenicillin"/>
+					</coding>
+					<coding>
+						<system value="http://fhir.de/CodeSystem/bfarm/atc"/>
+						<version value="2022"/>
+						<code value="J01CE01"/>
+						<display value="Benzylpenicillin"/>
+					</coding>
+					<coding>
+						<system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+						<code value="16849789"/>
+					</coding>
+					<text value="Benzylpenicillin/Penicillin G"/>
+				</code>
+				<patient>
+					<reference value="Patient/100"/>
+				</patient>
+				<reaction>
+					<manifestation>
+						<text value="anaphylaktischer Schock"/>
+					</manifestation>
+				</reaction>
+			</AllergyIntolerance>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Observation/500"/>
+		<resource>
+			<Observation xmlns="http://hl7.org/fhir">
+				<id value="500"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-05T14:13:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Body_Height|2.1.0"/>
+				</meta>
+				<status value="final"/>
+				<category>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+						<code value="vital-signs"/>
+					</coding>
+				</category>
+				<code>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<version value="http://snomed.info/sct/900000000000207008/version/20220331"/>
+						<code value="1153637007"/>
+						<display value="Body height (observable entity)"/>
+					</coding>
+					<coding>
+						<system value="http://loinc.org"/>
+						<version value="2.72"/>
+						<code value="8302-2"/>
+						<display value="Body height"/>
+					</coding>
+				</code>
+				<subject>
+					<reference value="Patient/100"/>
+				</subject>
+				<effectiveDateTime value="2022-09-05"/>
+				<valueQuantity>
+					<value value="168"/>
+					<unit value="cm"/>
+					<system value="http://unitsofmeasure.org"/>
+					<code value="cm"/>
+				</valueQuantity>
+			</Observation>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Observation/510"/>
+		<resource>
+			<Observation xmlns="http://hl7.org/fhir">
+				<id value="510"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-05T14:26:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Body_Weight|2.1.0"/>
+				</meta>
+				<status value="final"/>
+				<category>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+						<code value="vital-signs"/>
+					</coding>
+				</category>
+				<code>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<version value="http://snomed.info/sct/900000000000207008/version/20220331"/>
+						<code value="27113001"/>
+						<display value="Body weight (observable entity)"/>
+					</coding>
+					<coding>
+						<system value="http://loinc.org"/>
+						<version value="2.72"/>
+						<code value="29463-7"/>
+						<display value="Body weight"/>
+					</coding>
+				</code>
+				<subject>
+					<reference value="Patient/100"/>
+				</subject>
+				<effectiveDateTime value="2022-09-05"/>
+				<valueQuantity>
+					<value value="70.1"/>
+					<unit value="kilogram"/>
+					<system value="http://unitsofmeasure.org"/>
+					<code value="kg"/>
+				</valueQuantity>
+			</Observation>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Observation/520"/>
+		<resource>
+			<Observation xmlns="http://hl7.org/fhir">
+				<id value="520"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-05T18:53:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Creatinine_Level|2.1.0"/>
+				</meta>
+				<status value="final"/>
+				<code>
+					<coding>
+						<system value="http://loinc.org"/>
+						<code value="2160-0"/>
+						<display value="Creatinine [Mass/volume] in Serum or Plasma"/>
+					</coding>
+					<coding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_VitalSigns"/>
+						<code value="Kreatinin"/>
+						<display value="Kreatinin"/>
+					</coding>
+				</code>
+				<subject>
+					<reference value="Patient/100"/>
+				</subject>
+				<effectiveDateTime value="2021-10-01"/>
+				<valueQuantity>
+					<value value="1.1"/>
+					<unit value="mg/dL"/>
+					<system value="http://unitsofmeasure.org"/>
+					<code value="mg/dL"/>
+				</valueQuantity>
+			</Observation>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Observation/530"/>
+		<resource>
+			<Observation xmlns="http://hl7.org/fhir">
+				<id value="530"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-05T18:53:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Pregnancy_Status|2.1.0"/>
+				</meta>
+				<status value="final"/>
+				<code>
+					<coding>
+						<system value="http://loinc.org"/>
+						<code value="11449-6"/>
+						<display value="Pregnancy status - Reported"/>
+					</coding>
+					<coding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_VitalSigns"/>
+						<code value="Schwangerschaft"/>
+						<display value="Schwangerschaft"/>
+					</coding>
+				</code>
+				<subject>
+					<reference value="Patient/100"/>
+				</subject>
+				<effectiveDateTime value="2021-10-01"/>
+				<valueBoolean value="true"/>
+			</Observation>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Observation/540"/>
+		<resource>
+			<Observation xmlns="http://hl7.org/fhir">
+				<id value="540"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-05T18:47:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Breastfeeding_Status|2.1.0"/>
+				</meta>
+				<status value="final"/>
+				<code>
+					<coding>
+						<system value="http://loinc.org"/>
+						<code value="63895-7"/>
+						<display value="Breastfeeding status"/>
+					</coding>
+					<coding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_VitalSigns"/>
+						<code value="Stillend"/>
+						<display value="Stillend"/>
+					</coding>
+				</code>
+				<subject>
+					<reference value="Patient/100"/>
+				</subject>
+				<effectiveDateTime value="2022-09-05"/>
+				<valueBoolean value="false"/>
+			</Observation>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Condition/50"/>
+		<resource>
+			<Condition xmlns="http://hl7.org/fhir">
+				<id value="50"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-08T09:20:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Condition|2.1.0"/>
+				</meta>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_isPermanent">
+					<valueBoolean value="true"/>
+				</extension>
+				<clinicalStatus>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+						<version value="0.5.0"/>
+						<code value="active"/>
+						<display value="Active"/>
+					</coding>
+				</clinicalStatus>
+				<verificationStatus>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+						<version value="0.5.0"/>
+						<code value="confirmed"/>
+						<display value="Confirmed"/>
+					</coding>
+				</verificationStatus>
+				<code>
+					<coding>
+						<extension url="http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit">
+							<valueCoding>
+								<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT"/>
+								<code value="G"/>
+								<display value="gesicherte Diagnose"/>
+							</valueCoding>
+						</extension>
+						<extension url="http://fhir.de/StructureDefinition/seitenlokalisation">
+							<valueCoding>
+								<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION"/>
+								<code value="L"/>
+								<display value="links"/>
+							</valueCoding>
+						</extension>
+						<system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm"/>
+						<version value="2022"/>
+						<code value="N18.80"/>
+						<display value="Einseitige chronische Nierenfunktionsstörung"/>
+					</coding>
+				</code>
+				<subject>
+					<reference value="Patient/100"/>
+				</subject>
+			</Condition>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/DocumentReference/2500"/>
+		<resource>
+			<DocumentReference xmlns="http://hl7.org/fhir">
+				<id value="2500"/>
+				<meta>
+					<lastUpdated value="2022-09-07T15:29:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_DocumentReference|2.1.0"/>
+				</meta>
+				<status value="current"/>
+				<type>
+					<coding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType"/>
+						<code value="Rezept"/>
+						<display value="Rezept"/>
+					</coding>
+					<coding>
+						<system value="http://ihe-d.de/CodeSystems/IHEXDStypeCode"/>
+						<code value="MEDI"/>
+						<display value="Medikamentöse Therapien"/>
+					</coding>
+				</type>
+				<category>
+					<coding>
+						<system value="http://ihe-d.de/CodeSystems/IHEXDSclassCode"/>
+						<code value="VER"/>
+						<display value="Verordnung"/>
+					</coding>
+				</category>
+				<subject>
+					<reference value="Patient/100"/>
+				</subject>
+				<date value="2022-09-07T15:29:00Z"/>
+				<author>
+					<reference value="Practitioner/200"/>
+					<type value="Practitioner"/>
+				</author>
+				<author>
+					<type value="Device"/>
+					<identifier>
+						<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer"/>
+						<value value="Y/70/2207/36/ID"/>
+					</identifier>
+				</author>
+				<custodian>
+					<reference value="Organization/250"/>
+				</custodian>
+				<content>
+					<attachment>
+						<contentType value="application/pdf"/>
+						<data value="2jmj7l5rSw0yVb/vlWAYkK/YBwk="/>
+					</attachment>
+				</content>
+				<context>
+					<related>
+						<reference value="MedicationRequest/700"/>
+					</related>
+				</context>
+			</DocumentReference>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Medication/710"/>
+		<resource>
+			<Medication xmlns="http://hl7.org/fhir">
+				<id value="710"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-07T13:26:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_PZN|2.1.0"/>
+				</meta>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type">
+					<valueCodeableConcept>
+						<coding>
+							<system value="http://snomed.info/sct"/>
+							<version value="http://snomed.info/sct/900000000000207008/version/20220331"/>
+							<code value="763158003"/>
+							<display value="Medicinal product (product)"/>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine">
+					<valueBoolean value="false"/>
+				</extension>
+				<extension url="http://fhir.de/StructureDefinition/normgroesse">
+					<valueCode value="N2"/>
+				</extension>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category">
+					<valueCoding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"/>
+						<code value="00"/>
+					</valueCoding>
+				</extension>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_isOverTheCounter">
+					<valueBoolean value="false"/>
+				</extension>
+				<code>
+					<coding>
+						<system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+						<code value="01562958"/>
+					</coding>
+					<text value="Gabapentin AL 400mg 100 Hartkaps. N2"/>
+				</code>
+				<form>
+					<coding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"/>
+						<code value="HKP"/>
+					</coding>
+				</form>
+				<amount>
+					<numerator>
+						<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize">
+							<valueString value="100"/>
+						</extension>
+						<unit value="Hartkapseln"/>
+						<system value="http://unitsofmeasure.org"/>
+						<code value="{HKP}"/>
+					</numerator>
+					<denominator>
+						<value value="1"/>
+					</denominator>
+				</amount>
+				<ingredient>
+					<itemCodeableConcept>
+						<coding>
+							<system value="http://fhir.de/CodeSystem/ask"/>
+							<code value="22308"/>
+						</coding>
+						<text value="Gabapentin"/>
+					</itemCodeableConcept>
+					<strength>
+						<numerator>
+							<value value="400"/>
+							<unit value="mg"/>
+							<system value="http://unitsofmeasure.org"/>
+							<code value="mg"/>
+						</numerator>
+						<denominator>
+							<value value="1"/>
+						</denominator>
+					</strength>
+				</ingredient>
+			</Medication>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/MedicationStatement/720"/>
+		<resource>
+			<MedicationStatement xmlns="http://hl7.org/fhir">
+				<id value="720"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-07T14:41:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_MedicationStatement_MP|2.1.0"/>
+				</meta>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_isPermanent">
+					<valueBoolean value="false"/>
+				</extension>
+				<status value="active"/>
+				<medicationReference>
+					<reference value="Medication/710"/>
+				</medicationReference>
+				<subject>
+					<reference value="Patient/100"/>
+				</subject>
+				<dosage>
+					<timing>
+						<repeat>
+							<when value="MORN"/>
+						</repeat>
+					</timing>
+					<doseAndRate>
+						<doseQuantity>
+							<value value="2"/>
+							<unit value="Stück"/>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"/>
+							<code value="1"/>
+						</doseQuantity>
+					</doseAndRate>
+				</dosage>
+				<dosage>
+					<timing>
+						<repeat>
+							<when value="NOON"/>
+						</repeat>
+					</timing>
+					<doseAndRate>
+						<doseQuantity>
+							<value value="2"/>
+							<unit value="Stück"/>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"/>
+							<code value="1"/>
+						</doseQuantity>
+					</doseAndRate>
+				</dosage>
+				<dosage>
+					<timing>
+						<repeat>
+							<when value="EVE"/>
+						</repeat>
+					</timing>
+					<doseAndRate>
+						<doseQuantity>
+							<value value="1"/>
+							<unit value="Stück"/>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"/>
+							<code value="1"/>
+						</doseQuantity>
+					</doseAndRate>
+				</dosage>
+				<dosage>
+					<timing>
+						<repeat>
+							<when value="NIGHT"/>
+						</repeat>
+					</timing>
+					<doseAndRate>
+						<doseQuantity>
+							<value value="0.5"/>
+							<unit value="Stück"/>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BMP_DOSIEREINHEIT"/>
+							<code value="1"/>
+						</doseQuantity>
+					</doseAndRate>
+				</dosage>
+			</MedicationStatement>
+		</resource>
+	</entry>
+</Bundle>

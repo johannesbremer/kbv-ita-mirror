@@ -1,0 +1,2027 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="urn:hl7-org:elm:r1" xmlns:t="urn:hl7-org:elm-types:r1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fhir="http://hl7.org/fhir" xmlns:a="urn:hl7-org:cql-annotations:r1">
+   <identifier id="FHIRHelpers" version="3.2.0"/>
+   <schemaIdentifier id="urn:hl7-org:elm" version="r1"/>
+   <usings>
+      <def localIdentifier="System" uri="urn:hl7-org:elm-types:r1"/>
+      <def localIdentifier="FHIR" uri="http://hl7.org/fhir" version="3.2.0"/>
+   </usings>
+   <statements>
+      <def name="ToInterval" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+            <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+         </resultTypeSpecifier>
+         <expression lowClosed="true" highClosed="true" xsi:type="Interval">
+            <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+               <pointType name="t:DateTime" xsi:type="NamedTypeSpecifier"/>
+            </resultTypeSpecifier>
+            <low resultTypeName="t:DateTime" path="value" xsi:type="Property">
+               <source resultTypeName="fhir:dateTime" path="start" xsi:type="Property">
+                  <source resultTypeName="fhir:Period" name="period" xsi:type="OperandRef"/>
+               </source>
+            </low>
+            <high resultTypeName="t:DateTime" path="value" xsi:type="Property">
+               <source resultTypeName="fhir:dateTime" path="end" xsi:type="Property">
+                  <source resultTypeName="fhir:Period" name="period" xsi:type="OperandRef"/>
+               </source>
+            </high>
+         </expression>
+         <operand name="period">
+            <operandTypeSpecifier resultTypeName="fhir:Period" name="fhir:Period" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:Quantity" name="ToQuantity" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:Quantity" classType="t:Quantity" xsi:type="Instance">
+            <element name="value">
+               <value resultTypeName="t:Decimal" path="value" xsi:type="Property">
+                  <source resultTypeName="fhir:decimal" path="value" xsi:type="Property">
+                     <source resultTypeName="fhir:Quantity" name="quantity" xsi:type="OperandRef"/>
+                  </source>
+               </value>
+            </element>
+            <element name="unit">
+               <value resultTypeName="t:String" path="value" xsi:type="Property">
+                  <source resultTypeName="fhir:string" path="unit" xsi:type="Property">
+                     <source resultTypeName="fhir:Quantity" name="quantity" xsi:type="OperandRef"/>
+                  </source>
+               </value>
+            </element>
+         </expression>
+         <operand name="quantity">
+            <operandTypeSpecifier resultTypeName="fhir:Quantity" name="fhir:Quantity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def name="ToInterval" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+            <pointType name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+         </resultTypeSpecifier>
+         <expression lowClosed="true" highClosed="true" xsi:type="Interval">
+            <resultTypeSpecifier xsi:type="IntervalTypeSpecifier">
+               <pointType name="t:Quantity" xsi:type="NamedTypeSpecifier"/>
+            </resultTypeSpecifier>
+            <low resultTypeName="t:Quantity" name="ToQuantity" xsi:type="FunctionRef">
+               <operand resultTypeName="fhir:Quantity" path="low" xsi:type="Property">
+                  <source resultTypeName="fhir:Range" name="range" xsi:type="OperandRef"/>
+               </operand>
+            </low>
+            <high resultTypeName="t:Quantity" name="ToQuantity" xsi:type="FunctionRef">
+               <operand resultTypeName="fhir:Quantity" path="high" xsi:type="Property">
+                  <source resultTypeName="fhir:Range" name="range" xsi:type="OperandRef"/>
+               </operand>
+            </high>
+         </expression>
+         <operand name="range">
+            <operandTypeSpecifier resultTypeName="fhir:Range" name="fhir:Range" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:Code" name="ToCode" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:Code" classType="t:Code" xsi:type="Instance">
+            <element name="code">
+               <value resultTypeName="t:String" path="value" xsi:type="Property">
+                  <source resultTypeName="fhir:code" path="code" xsi:type="Property">
+                     <source resultTypeName="fhir:Coding" name="coding" xsi:type="OperandRef"/>
+                  </source>
+               </value>
+            </element>
+            <element name="system">
+               <value resultTypeName="t:String" path="value" xsi:type="Property">
+                  <source resultTypeName="fhir:uri" path="system" xsi:type="Property">
+                     <source resultTypeName="fhir:Coding" name="coding" xsi:type="OperandRef"/>
+                  </source>
+               </value>
+            </element>
+            <element name="version">
+               <value resultTypeName="t:String" path="value" xsi:type="Property">
+                  <source resultTypeName="fhir:string" path="version" xsi:type="Property">
+                     <source resultTypeName="fhir:Coding" name="coding" xsi:type="OperandRef"/>
+                  </source>
+               </value>
+            </element>
+            <element name="display">
+               <value resultTypeName="t:String" path="value" xsi:type="Property">
+                  <source resultTypeName="fhir:string" path="display" xsi:type="Property">
+                     <source resultTypeName="fhir:Coding" name="coding" xsi:type="OperandRef"/>
+                  </source>
+               </value>
+            </element>
+         </expression>
+         <operand name="coding">
+            <operandTypeSpecifier resultTypeName="fhir:Coding" name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:Concept" name="ToConcept" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:Concept" classType="t:Concept" xsi:type="Instance">
+            <element name="codes">
+               <value xsi:type="Query">
+                  <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                     <elementType name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                  </resultTypeSpecifier>
+                  <source alias="C">
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                     <expression path="coding" xsi:type="Property">
+                        <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                           <elementType name="fhir:Coding" xsi:type="NamedTypeSpecifier"/>
+                        </resultTypeSpecifier>
+                        <source name="concept" xsi:type="OperandRef"/>
+                     </expression>
+                  </source>
+                  <return>
+                     <resultTypeSpecifier xsi:type="ListTypeSpecifier">
+                        <elementType name="t:Code" xsi:type="NamedTypeSpecifier"/>
+                     </resultTypeSpecifier>
+                     <expression resultTypeName="t:Code" name="ToCode" xsi:type="FunctionRef">
+                        <operand resultTypeName="fhir:Coding" name="C" xsi:type="AliasRef"/>
+                     </expression>
+                  </return>
+               </value>
+            </element>
+            <element name="display">
+               <value resultTypeName="t:String" path="value" xsi:type="Property">
+                  <source resultTypeName="fhir:string" path="text" xsi:type="Property">
+                     <source resultTypeName="fhir:CodeableConcept" name="concept" xsi:type="OperandRef"/>
+                  </source>
+               </value>
+            </element>
+         </expression>
+         <operand name="concept">
+            <operandTypeSpecifier resultTypeName="fhir:CodeableConcept" name="fhir:CodeableConcept" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:uuid" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:uuid" name="fhir:uuid" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:TestScriptRequestMethodCode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:TestScriptRequestMethodCode" name="fhir:TestScriptRequestMethodCode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:BiologicallyDerivedProductStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:BiologicallyDerivedProductStatus" name="fhir:BiologicallyDerivedProductStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:RetirementStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:RetirementStatus" name="fhir:RetirementStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:UnitsOfTime" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:UnitsOfTime" name="fhir:UnitsOfTime" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AddressType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AddressType" name="fhir:AddressType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AllergyIntoleranceCategory" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AllergyIntoleranceCategory" name="fhir:AllergyIntoleranceCategory" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:IssueSeverity" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:IssueSeverity" name="fhir:IssueSeverity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:CareTeamStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:CareTeamStatus" name="fhir:CareTeamStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:EncounterStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:EncounterStatus" name="fhir:EncounterStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:StructureDefinitionKind" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:StructureDefinitionKind" name="fhir:StructureDefinitionKind" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:PublicationStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:PublicationStatus" name="fhir:PublicationStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:CarePlanActivityKind" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:CarePlanActivityKind" name="fhir:CarePlanActivityKind" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:StructureMapSourceListMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:StructureMapSourceListMode" name="fhir:StructureMapSourceListMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:RequestStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:RequestStatus" name="fhir:RequestStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:QuestionnaireResponseStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:QuestionnaireResponseStatus" name="fhir:QuestionnaireResponseStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SearchComparator" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SearchComparator" name="fhir:SearchComparator" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ChargeItemStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ChargeItemStatus" name="fhir:ChargeItemStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ActionParticipantType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ActionParticipantType" name="fhir:ActionParticipantType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AllergyIntoleranceType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AllergyIntoleranceType" name="fhir:AllergyIntoleranceType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:CarePlanActivityStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:CarePlanActivityStatus" name="fhir:CarePlanActivityStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:InvoiceStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:InvoiceStatus" name="fhir:InvoiceStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ActionList" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ActionList" name="fhir:ActionList" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ClaimProcessingCodes" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ClaimProcessingCodes" name="fhir:ClaimProcessingCodes" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ParticipationStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ParticipationStatus" name="fhir:ParticipationStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:DocumentMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:DocumentMode" name="fhir:DocumentMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AssertionOperatorType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AssertionOperatorType" name="fhir:AssertionOperatorType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:DaysOfWeek" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:DaysOfWeek" name="fhir:DaysOfWeek" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:IssueType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:IssueType" name="fhir:IssueType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:StructureMapContextType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:StructureMapContextType" name="fhir:StructureMapContextType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:FamilyHistoryStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:FamilyHistoryStatus" name="fhir:FamilyHistoryStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:status" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:status" name="fhir:status" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AssertionResponseTypes" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AssertionResponseTypes" name="fhir:AssertionResponseTypes" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:RequestIntent" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:RequestIntent" name="fhir:RequestIntent" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:string" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:string" name="fhir:string" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ActionRequiredBehavior" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ActionRequiredBehavior" name="fhir:ActionRequiredBehavior" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:GraphCompartmentUse" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:GraphCompartmentUse" name="fhir:GraphCompartmentUse" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AccountStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AccountStatus" name="fhir:AccountStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:MedicationDispenseStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:MedicationDispenseStatus" name="fhir:MedicationDispenseStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:IdentifierUse" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:IdentifierUse" name="fhir:IdentifierUse" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:StructureMapTargetListMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:StructureMapTargetListMode" name="fhir:StructureMapTargetListMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:TestReportParticipantType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:TestReportParticipantType" name="fhir:TestReportParticipantType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:BindingStrength" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:BindingStrength" name="fhir:BindingStrength" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:RequestPriority" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:RequestPriority" name="fhir:RequestPriority" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ParticipantRequired" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ParticipantRequired" name="fhir:ParticipantRequired" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:XPathUsageType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:XPathUsageType" name="fhir:XPathUsageType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:InstanceAvailability" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:InstanceAvailability" name="fhir:InstanceAvailability" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:id" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:id" name="fhir:id" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:FilterOperator" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:FilterOperator" name="fhir:FilterOperator" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:NamingSystemType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:NamingSystemType" name="fhir:NamingSystemType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ContractResourceStatusCodes" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ContractResourceStatusCodes" name="fhir:ContractResourceStatusCodes" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:validationType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:validationType" name="fhir:validationType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ResearchSubjectStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ResearchSubjectStatus" name="fhir:ResearchSubjectStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:StructureMapTransform" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:StructureMapTransform" name="fhir:StructureMapTransform" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ResponseType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ResponseType" name="fhir:ResponseType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:Decimal" name="ToDecimal" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:Decimal" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:decimal" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:decimal" name="fhir:decimal" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AggregationMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AggregationMode" name="fhir:AggregationMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SystemRestfulInteraction" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SystemRestfulInteraction" name="fhir:SystemRestfulInteraction" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AdverseEventActuality" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AdverseEventActuality" name="fhir:AdverseEventActuality" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SubscriptionChannelType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SubscriptionChannelType" name="fhir:SubscriptionChannelType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AssertionDirectionType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AssertionDirectionType" name="fhir:AssertionDirectionType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:canPushUpdates" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:canPushUpdates" name="fhir:canPushUpdates" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:CarePlanIntent" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:CarePlanIntent" name="fhir:CarePlanIntent" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ConsentState" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ConsentState" name="fhir:ConsentState" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AllergyIntoleranceCriticality" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AllergyIntoleranceCriticality" name="fhir:AllergyIntoleranceCriticality" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:PropertyRepresentation" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:PropertyRepresentation" name="fhir:PropertyRepresentation" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:TriggerType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:TriggerType" name="fhir:TriggerType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:CompositionStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:CompositionStatus" name="fhir:CompositionStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AppointmentStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AppointmentStatus" name="fhir:AppointmentStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:MessageSignificanceCategory" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:MessageSignificanceCategory" name="fhir:MessageSignificanceCategory" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ListMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ListMode" name="fhir:ListMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ObservationStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ObservationStatus" name="fhir:ObservationStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ConsentScopeCodes" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ConsentScopeCodes" name="fhir:ConsentScopeCodes" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ResourceType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ResourceType" name="fhir:ResourceType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:Boolean" name="ToBoolean" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:Boolean" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:boolean" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:boolean" name="fhir:boolean" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:StructureMapGroupTypeMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:StructureMapGroupTypeMode" name="fhir:StructureMapGroupTypeMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SupplyRequestStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SupplyRequestStatus" name="fhir:SupplyRequestStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:EncounterLocationStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:EncounterLocationStatus" name="fhir:EncounterLocationStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:CarePlanStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:CarePlanStatus" name="fhir:CarePlanStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ConditionClinicalStatusCodes" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ConditionClinicalStatusCodes" name="fhir:ConditionClinicalStatusCodes" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ProcessOutcomeCodes" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ProcessOutcomeCodes" name="fhir:ProcessOutcomeCodes" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ConditionalDeleteStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ConditionalDeleteStatus" name="fhir:ConditionalDeleteStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:NutritionOrderStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:NutritionOrderStatus" name="fhir:NutritionOrderStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:uri" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:uri" name="fhir:uri" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:Use" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:Use" name="fhir:Use" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:IdentityAssuranceLevel" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:IdentityAssuranceLevel" name="fhir:IdentityAssuranceLevel" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:DeviceMetricColor" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:DeviceMetricColor" name="fhir:DeviceMetricColor" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:Time" name="ToTime" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:Time" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:time" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:time" name="fhir:time" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ConditionalReadStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ConditionalReadStatus" name="fhir:ConditionalReadStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ConditionVerificationStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ConditionVerificationStatus" name="fhir:ConditionVerificationStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AllergyIntoleranceSeverity" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AllergyIntoleranceSeverity" name="fhir:AllergyIntoleranceSeverity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:FinancialResourceStatusCodes" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:FinancialResourceStatusCodes" name="fhir:FinancialResourceStatusCodes" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:OperationKind" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:OperationKind" name="fhir:OperationKind" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SubscriptionStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SubscriptionStatus" name="fhir:SubscriptionStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:DocumentReferenceStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:DocumentReferenceStatus" name="fhir:DocumentReferenceStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:repositoryType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:repositoryType" name="fhir:repositoryType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:LocationStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:LocationStatus" name="fhir:LocationStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:NoteType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:NoteType" name="fhir:NoteType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:TestReportStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:TestReportStatus" name="fhir:TestReportStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:CodeSystemContentMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:CodeSystemContentMode" name="fhir:CodeSystemContentMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:FHIRDeviceStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:FHIRDeviceStatus" name="fhir:FHIRDeviceStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ContactPointSystem" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ContactPointSystem" name="fhir:ContactPointSystem" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SlotStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SlotStatus" name="fhir:SlotStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:PropertyType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:PropertyType" name="fhir:PropertyType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:TypeDerivationRule" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:TypeDerivationRule" name="fhir:TypeDerivationRule" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:GuidanceResponseStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:GuidanceResponseStatus" name="fhir:GuidanceResponseStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:RelatedArtifactType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:RelatedArtifactType" name="fhir:RelatedArtifactType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:oid" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:oid" name="fhir:oid" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:MediaStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:MediaStatus" name="fhir:MediaStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:CompartmentType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:CompartmentType" name="fhir:CompartmentType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:DeviceMetricCalibrationState" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:DeviceMetricCalibrationState" name="fhir:DeviceMetricCalibrationState" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:InvoicePriceComponentType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:InvoicePriceComponentType" name="fhir:InvoicePriceComponentType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:GroupType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:GroupType" name="fhir:GroupType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ImmunizationEvaluationStatusCodes" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ImmunizationEvaluationStatusCodes" name="fhir:ImmunizationEvaluationStatusCodes" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ExampleScenarioActorType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ExampleScenarioActorType" name="fhir:ExampleScenarioActorType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:HazardousDutyWork" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:HazardousDutyWork" name="fhir:HazardousDutyWork" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ProvenanceEntityRole" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ProvenanceEntityRole" name="fhir:ProvenanceEntityRole" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ContractDataMeaning" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ContractDataMeaning" name="fhir:ContractDataMeaning" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SpecimenStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SpecimenStatus" name="fhir:SpecimenStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:RestfulCapabilityMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:RestfulCapabilityMode" name="fhir:RestfulCapabilityMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:DetectedIssueSeverity" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:DetectedIssueSeverity" name="fhir:DetectedIssueSeverity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:VisionEyes" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:VisionEyes" name="fhir:VisionEyes" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ConsentDataMeaning" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ConsentDataMeaning" name="fhir:ConsentDataMeaning" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:DocumentRelationshipType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:DocumentRelationshipType" name="fhir:DocumentRelationshipType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AllergyIntoleranceClinicalStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AllergyIntoleranceClinicalStatus" name="fhir:AllergyIntoleranceClinicalStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:TestReportResult" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:TestReportResult" name="fhir:TestReportResult" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ConceptMapGroupUnmappedMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ConceptMapGroupUnmappedMode" name="fhir:ConceptMapGroupUnmappedMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:DateTime" name="ToDateTime" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:DateTime" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:instant" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:instant" name="fhir:instant" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:DateTime" name="ToDateTime" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:DateTime" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:dateTime" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:dateTime" name="fhir:dateTime" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:DateTime" name="ToDateTime" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:DateTime" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:date" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:date" name="fhir:date" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:Integer" name="ToInteger" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:Integer" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:positiveInt" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:positiveInt" name="fhir:positiveInt" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ClinicalImpressionStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ClinicalImpressionStatus" name="fhir:ClinicalImpressionStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:NarrativeStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:NarrativeStatus" name="fhir:NarrativeStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:MeasmntPrinciple" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:MeasmntPrinciple" name="fhir:MeasmntPrinciple" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:EndpointStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:EndpointStatus" name="fhir:EndpointStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:GuidePageKind" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:GuidePageKind" name="fhir:GuidePageKind" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:GuideDependencyType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:GuideDependencyType" name="fhir:GuideDependencyType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:BiologicallyDerivedProductCategory" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:BiologicallyDerivedProductCategory" name="fhir:BiologicallyDerivedProductCategory" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ResourceVersionPolicy" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ResourceVersionPolicy" name="fhir:ResourceVersionPolicy" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:MedicationRequestStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:MedicationRequestStatus" name="fhir:MedicationRequestStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:MedicationAdministrationStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:MedicationAdministrationStatus" name="fhir:MedicationAdministrationStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ActionCardinalityBehavior" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ActionCardinalityBehavior" name="fhir:ActionCardinalityBehavior" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:MedicationRequestIntent" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:MedicationRequestIntent" name="fhir:MedicationRequestIntent" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:NamingSystemIdentifierType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:NamingSystemIdentifierType" name="fhir:NamingSystemIdentifierType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ImmunizationStatusCodes" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ImmunizationStatusCodes" name="fhir:ImmunizationStatusCodes" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ConfidentialityClassification" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ConfidentialityClassification" name="fhir:ConfidentialityClassification" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:need" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:need" name="fhir:need" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:HistoryOfEmploymentStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:HistoryOfEmploymentStatus" name="fhir:HistoryOfEmploymentStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:DiscriminatorType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:DiscriminatorType" name="fhir:DiscriminatorType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:StructureMapInputMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:StructureMapInputMode" name="fhir:StructureMapInputMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:LinkageType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:LinkageType" name="fhir:LinkageType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ReferenceHandlingPolicy" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ReferenceHandlingPolicy" name="fhir:ReferenceHandlingPolicy" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:MedicationStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:MedicationStatus" name="fhir:MedicationStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ResearchStudyStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ResearchStudyStatus" name="fhir:ResearchStudyStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ExtensionContext" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ExtensionContext" name="fhir:ExtensionContext" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:FHIRDefinedType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:FHIRDefinedType" name="fhir:FHIRDefinedType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AuditEventOutcome" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AuditEventOutcome" name="fhir:AuditEventOutcome" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SpecimenContainedPreference" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SpecimenContainedPreference" name="fhir:SpecimenContainedPreference" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ActionRelationshipType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ActionRelationshipType" name="fhir:ActionRelationshipType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ConstraintSeverity" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ConstraintSeverity" name="fhir:ConstraintSeverity" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:failureAction" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:failureAction" name="fhir:failureAction" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:EventCapabilityMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:EventCapabilityMode" name="fhir:EventCapabilityMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:CodeSearchSupport" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:CodeSearchSupport" name="fhir:CodeSearchSupport" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:UDIEntryType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:UDIEntryType" name="fhir:UDIEntryType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:UserSessionStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:UserSessionStatus" name="fhir:UserSessionStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:UserSessionStatusSource" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:UserSessionStatusSource" name="fhir:UserSessionStatusSource" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:DeviceMetricCategory" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:DeviceMetricCategory" name="fhir:DeviceMetricCategory" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:TestReportActionResult" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:TestReportActionResult" name="fhir:TestReportActionResult" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:CapabilityStatementKind" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:CapabilityStatementKind" name="fhir:CapabilityStatementKind" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AllergyIntoleranceVerificationStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AllergyIntoleranceVerificationStatus" name="fhir:AllergyIntoleranceVerificationStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:EventTiming" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:EventTiming" name="fhir:EventTiming" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:GoalStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:GoalStatus" name="fhir:GoalStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SearchParamType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SearchParamType" name="fhir:SearchParamType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ActionGroupingBehavior" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ActionGroupingBehavior" name="fhir:ActionGroupingBehavior" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:StructureMapModelMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:StructureMapModelMode" name="fhir:StructureMapModelMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:TaskStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:TaskStatus" name="fhir:TaskStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:BiologicallyDerivedProductStorageScale" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:BiologicallyDerivedProductStorageScale" name="fhir:BiologicallyDerivedProductStorageScale" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:GraphCompartmentRule" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:GraphCompartmentRule" name="fhir:GraphCompartmentRule" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:pushTypeAvailable" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:pushTypeAvailable" name="fhir:pushTypeAvailable" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SlicingRules" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SlicingRules" name="fhir:SlicingRules" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ExplanationOfBenefitStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ExplanationOfBenefitStatus" name="fhir:ExplanationOfBenefitStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:LinkType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:LinkType" name="fhir:LinkType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ConceptMapEquivalence" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ConceptMapEquivalence" name="fhir:ConceptMapEquivalence" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:FHIRAllTypes" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:FHIRAllTypes" name="fhir:FHIRAllTypes" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AuditEventAction" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AuditEventAction" name="fhir:AuditEventAction" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SearchModifierCode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SearchModifierCode" name="fhir:SearchModifierCode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:EventStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:EventStatus" name="fhir:EventStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:OperationParameterUse" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:OperationParameterUse" name="fhir:OperationParameterUse" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ConsentProvisionType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ConsentProvisionType" name="fhir:ConsentProvisionType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ActionConditionKind" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ActionConditionKind" name="fhir:ActionConditionKind" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:qualityType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:qualityType" name="fhir:qualityType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AdministrativeGender" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AdministrativeGender" name="fhir:AdministrativeGender" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:QuestionnaireItemType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:QuestionnaireItemType" name="fhir:QuestionnaireItemType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:DeviceMetricCalibrationType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:DeviceMetricCalibrationType" name="fhir:DeviceMetricCalibrationType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:code" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:code" name="fhir:code" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ActionSelectionBehavior" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ActionSelectionBehavior" name="fhir:ActionSelectionBehavior" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SupplyDeliveryStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SupplyDeliveryStatus" name="fhir:SupplyDeliveryStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:DiagnosticReportStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:DiagnosticReportStatus" name="fhir:DiagnosticReportStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:FlagStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:FlagStatus" name="fhir:FlagStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:UsualOccupation" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:UsualOccupation" name="fhir:UsualOccupation" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ListStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ListStatus" name="fhir:ListStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToBase64Binary" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:base64Binary" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:base64Binary" name="fhir:base64Binary" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:DeviceUseStatementStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:DeviceUseStatementStatus" name="fhir:DeviceUseStatementStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AuditEventAgentNetworkType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AuditEventAgentNetworkType" name="fhir:AuditEventAgentNetworkType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ExpressionLanguage" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ExpressionLanguage" name="fhir:ExpressionLanguage" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:AddressUse" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:AddressUse" name="fhir:AddressUse" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ContactPointUse" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ContactPointUse" name="fhir:ContactPointUse" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:DeviceMetricOperationalStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:DeviceMetricOperationalStatus" name="fhir:DeviceMetricOperationalStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ContributorType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ContributorType" name="fhir:ContributorType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ReferenceVersionRules" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ReferenceVersionRules" name="fhir:ReferenceVersionRules" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:MeasureReportStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:MeasureReportStatus" name="fhir:MeasureReportStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SearchEntryMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SearchEntryMode" name="fhir:SearchEntryMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:Integer" name="ToInteger" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:Integer" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:unsignedInt" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:unsignedInt" name="fhir:unsignedInt" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:NameUse" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:NameUse" name="fhir:NameUse" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:LocationMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:LocationMode" name="fhir:LocationMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:Integer" name="ToInteger" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:Integer" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:integer" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:integer" name="fhir:integer" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:FHIRSubstanceStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:FHIRSubstanceStatus" name="fhir:FHIRSubstanceStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:UnknownContentCode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:UnknownContentCode" name="fhir:UnknownContentCode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:HTTPVerb" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:HTTPVerb" name="fhir:HTTPVerb" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:EpisodeOfCareStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:EpisodeOfCareStatus" name="fhir:EpisodeOfCareStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:RemittanceOutcome" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:RemittanceOutcome" name="fhir:RemittanceOutcome" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:markdown" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:markdown" name="fhir:markdown" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:MedicationStatementStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:MedicationStatementStatus" name="fhir:MedicationStatementStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:QuantityComparator" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:QuantityComparator" name="fhir:QuantityComparator" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:MeasureReportType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:MeasureReportType" name="fhir:MeasureReportType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:ActionPrecheckBehavior" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:ActionPrecheckBehavior" name="fhir:ActionPrecheckBehavior" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SampledDataDataType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SampledDataDataType" name="fhir:SampledDataDataType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:CompositionAttestationMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:CompositionAttestationMode" name="fhir:CompositionAttestationMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:TypeRestfulInteraction" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:TypeRestfulInteraction" name="fhir:TypeRestfulInteraction" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:CodeSystemHierarchyMeaning" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:CodeSystemHierarchyMeaning" name="fhir:CodeSystemHierarchyMeaning" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:validationStatus" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:validationStatus" name="fhir:validationStatus" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:VisionBase" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:VisionBase" name="fhir:VisionBase" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:BundleType" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:BundleType" name="fhir:BundleType" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+      <def resultTypeName="t:String" name="ToString" context="Patient" accessLevel="Public" xsi:type="FunctionDef">
+         <expression resultTypeName="t:String" path="value" xsi:type="Property">
+            <source resultTypeName="fhir:SystemVersionProcessingMode" name="value" xsi:type="OperandRef"/>
+         </expression>
+         <operand name="value">
+            <operandTypeSpecifier resultTypeName="fhir:SystemVersionProcessingMode" name="fhir:SystemVersionProcessingMode" xsi:type="NamedTypeSpecifier"/>
+         </operand>
+      </def>
+   </statements>
+</library>
+
+

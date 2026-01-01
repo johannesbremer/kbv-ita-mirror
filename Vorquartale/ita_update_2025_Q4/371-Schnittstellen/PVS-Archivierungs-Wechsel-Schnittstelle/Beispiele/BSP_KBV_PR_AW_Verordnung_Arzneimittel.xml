@@ -1,0 +1,39 @@
+<MedicationRequest xmlns="http://hl7.org/fhir">
+	<id value="3210"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-22T15:36:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Verordnung_Arzneimittel|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<status value="active"/>
+	<intent value="order"/>
+	<medicationReference>
+		<reference value="Medication/3167"/>
+	</medicationReference>
+	<subject>
+		<reference value="Patient/3181"/>
+	</subject>
+	<authoredOn value="2018-08-15"/>
+	<requester>
+		<reference value="Practitioner/3153"/>
+	</requester>
+	<note>
+		<text value="bei Schmerzen"/>
+	</note>
+	<dosageInstruction>
+		<patientInstruction value="max. 4x tgl. 1 Tbl."/>
+	</dosageInstruction>
+	<dispenseRequest>
+		<quantity>
+			<value value="1"/> 
+            <system value="http://unitsofmeasure.org"/> 
+            <code value="{Package}"/>
+		</quantity>
+	</dispenseRequest>
+</MedicationRequest>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 file:///J:/ITA/Update/Softwarehaeuser/Blankoformulare/in_Arbeit/Ausfuellhilfe_Schema/Schema/afhi_root_V1.00.xsd">
+	<header>
+		<id EX="86ba023a-0278-4553-ab66-709820a5967e" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2018-07-01.."/>
+		<origination_dttm V="2019-02-10"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat 4"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="ftp://ftp.kbv.de/ita-update"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen für der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2018, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="ftp://ftp.kbv.de/ita-update/"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="09" DN="Bescheinigung einer Frühgeburt oder einer Behinderung des Kindes">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Geburtsdatum"/>
+					<hinweistext V="Tragen Sie hier bitte das Geburtsdatum des Kinders im Format TTMMJJ ein."/>
+				</feld>				
+				<feld>
+					<nummer V="2"/>
+					<name V="Geburtsgewicht unter 2.500 Gramm"/>
+					<hinweistext V="Wenn das Geburtsgewicht weniger als 2.500 Gramm beträgt, geben Sie dies bitte hier an."/>
+				</feld>				
+				<feld>
+					<nummer V="3"/>
+					<name V="Geburtsgewicht ab 2.500 Gramm, es besteht jedoch ein wesentlich erweiterter Pflegebedarf wegen nicht voll ausgebildeter Reifezeichen oder verfrühter Beendigung der Schwangerschaft"/>
+					<hinweistext V="Wenn das Geburtsgewicht zwar 2.500 Gramm oder mehr beträgt, aber wegen nicht voll ausgebildeter Reifezeichen (an Rumpf, Haut, Fettpolstern, Nägeln, Haaren, äußeren Geschlechtsorganen) ein wesentlich erweiterter Pflegebedarf besteht, hat die Mutter ebenfalls Anspruch auf eine verlängerte Zahlung des Mutterschaftsgeldes."/>
+				</feld>				
+				<feld>
+					<nummer V="4"/>
+					<name V="Totgeburt"/>
+					<hinweistext V="Wenn Anzeichen einer Frühgeburt vorliegen (siehe 2. und 3.) und das Kind mit einem Geburtsgewicht von mindestens 500 Gramm oder bei Erreichen der 24. Schwangerschaftswoche auch mit einem Gewicht von unter 500 Gramm tot geboren wird oder während der Geburt verstirbt, geben Sie dies bitte hier an. Beträgt das Geburtsgewicht weniger als 500 Gramm und wurde die 24. Schwangerschaftswoche nicht erreicht (Fehlgeburt), besteht kein Anspruch auf Mutterschaftsgeld."/>
+				</feld>				
+				<feld>
+					<nummer V="5"/>
+					<name V="Bei dem Kind liegt eine Behinderung vor"/>
+					<hinweistext V="Wenn bei dem Kind innerhalb der ersten acht Wochen nach der Geburt eine Behinderung gem. § 2 Abs. 1 Satz 1 SGB IX, also körperliche, seelische, geistige oder Sinnesbeeinträchtigungen festgestellt werden, die es an der gleichberechtigten Teilhabe an der Gesellschaft mit hoher Wahrscheinlichkeit länger als sechs Monate hindern können, geben Sie dies bitte hier an. Eine solche Beeinträchtigung liegt vor, wenn der Körper und Gesundheitszustand von dem für das Lebensalter typischen Zustand abweicht."/>
+				</feld>				
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

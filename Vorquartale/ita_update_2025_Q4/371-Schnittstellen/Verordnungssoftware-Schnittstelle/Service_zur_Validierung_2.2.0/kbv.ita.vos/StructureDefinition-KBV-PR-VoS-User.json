@@ -1,0 +1,191 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "KBV-PR-VoS-User",
+  "url": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_User",
+  "version": "2.2.0",
+  "name": "KBV_PR_VoS_User",
+  "title": "KBV_PR_VoS_User",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "description": "Die anwendende Person eines Systems. Diese wird durch eine ID identifiziert und kann einen Namen haben.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "Practitioner",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Practitioner",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Practitioner",
+        "path": "Practitioner",
+        "short": "Anwender",
+        "definition": "Diese Ressource beschreibt eine Person in der Betriebstaette, welche das System nutzt. Dies kann sowohl eine behandelnde als auch eine mitarbeitende Person (z.B. MFA) sein."
+      },
+      {
+        "id": "Practitioner.id",
+        "path": "Practitioner.id",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.meta",
+        "path": "Practitioner.meta",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.meta.source",
+        "path": "Practitioner.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.meta.profile",
+        "path": "Practitioner.meta.profile",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.meta.profile:vosProfile",
+        "path": "Practitioner.meta.profile",
+        "sliceName": "vosProfile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_User|2.2.0",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.meta.security",
+        "path": "Practitioner.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.meta.tag",
+        "path": "Practitioner.meta.tag",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.implicitRules",
+        "path": "Practitioner.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.language",
+        "path": "Practitioner.language",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.contained",
+        "path": "Practitioner.contained",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.identifier",
+        "path": "Practitioner.identifier",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier.use",
+        "path": "Practitioner.identifier.use",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.identifier.type",
+        "path": "Practitioner.identifier.type",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.identifier.value",
+        "path": "Practitioner.identifier.value",
+        "short": "BenutzerID",
+        "definition": "ID der anwendenden Person im entsprechenden System",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.identifier.period",
+        "path": "Practitioner.identifier.period",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.identifier.assigner",
+        "path": "Practitioner.identifier.assigner",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.active",
+        "path": "Practitioner.active",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.name",
+        "path": "Practitioner.name",
+        "short": "Anwendername",
+        "definition": "Name der anwendenden Person im entsprechenden System",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "HumanName",
+            "profile": [
+              "http://fhir.de/StructureDefinition/humanname-de-basis"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.name.text",
+        "path": "Practitioner.name.text",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Practitioner.telecom",
+        "path": "Practitioner.telecom",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.address",
+        "path": "Practitioner.address",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.gender",
+        "path": "Practitioner.gender",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.birthDate",
+        "path": "Practitioner.birthDate",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.photo",
+        "path": "Practitioner.photo",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.qualification",
+        "path": "Practitioner.qualification",
+        "max": "0"
+      },
+      {
+        "id": "Practitioner.communication",
+        "path": "Practitioner.communication",
+        "max": "0"
+      }
+    ]
+  }
+}

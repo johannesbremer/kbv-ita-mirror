@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn::sciphox-org/sciphox" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="AdministrativeDaten">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Einschreibung wegen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Anamnese">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Körpergröße"/>
+			<xs:enumeration value="Körpergewicht"/>
+			<xs:enumeration value="Blutdruck systolisch"/>
+			<xs:enumeration value="Blutdruck diastolisch"/>
+			<xs:enumeration value="Raucher"/>
+			<xs:enumeration value="Begleiterkrankungen"/>
+			<xs:enumeration value="In den letzten 4 Wochen: Häufigkeit von Asthma-Symptomen tagsüber"/>
+			<xs:enumeration value="In den letzten 4 Wochen: Häufigkeit des Einsatzes der Bedarfsmedikation"/>
+			<xs:enumeration value="In den letzten 4 Wochen: Einschränkung von Aktivitäten im Alltag wegen Asthma bronchiale"/>
+			<xs:enumeration value="In den letzten 4 Wochen: Asthmabedingte Störung des Nachtschlafes"/>
+			<xs:enumeration value="Aktueller FEV1-Wert (mindestens alle 12 Monate)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RelevanteEreignisse">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ungeplante, auch notfallmäßige (ambulant und stationär) ärztliche Behandlung wegen Asthma bronchiale seit der letzten Dokumentation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Medikamente">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Inhalative Glukokortikosteroide"/>
+			<xs:enumeration value="Inhalative lang wirksame Beta-2-Sympathomimetika"/>
+			<xs:enumeration value="Kurz wirksame inhalative Beta-2-Sympathomimetika"/>
+			<xs:enumeration value="Systemische Glukokortikosteroide"/>
+			<xs:enumeration value="Inhalationstechnik überprüft"/>
+			<xs:enumeration value="Sonstige asthmaspezifische Medikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Schulung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Empfohlene Asthma-Schulung wahrgenommen"/>
+			<xs:enumeration value="Asthma-Schulung empfohlen (bei aktueller Dokumentation)"/>
+			<xs:enumeration value="Asthma-Schulung schon vor Einschreibung in DMP bereits wahrgenommen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Behandlungsplanung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Vom Patienten gewünschte Informationsangebote der Krankenkasse"/>
+			<xs:enumeration value="Dokumentationsintervall"/>
+			<xs:enumeration value="Schriftlicher Selbstmanagementplan"/>
+			<xs:enumeration value="Therapieanpassung"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,20 @@
+<PractitionerRole xmlns="http://hl7.org/fhir">
+	<id value="1010"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-10T14:37:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Arzt in Betriebsstaette 987654321
+		</div>
+	</text>
+	<practitioner>
+		<reference value="Practitioner/1000"/>
+	</practitioner>
+	<organization>
+		<reference value="Organization/1020"/>
+	</organization>
+</PractitionerRole>

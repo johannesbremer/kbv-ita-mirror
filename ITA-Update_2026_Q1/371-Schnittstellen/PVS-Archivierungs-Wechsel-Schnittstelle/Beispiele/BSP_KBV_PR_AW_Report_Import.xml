@@ -1,0 +1,77 @@
+<AuditEvent xmlns="http://hl7.org/fhir">
+	<id value="5050"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-28T09:08:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Report_Import|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+		Software:
+			Softwarehaus Mustersoftware
+			Test-Software
+			V1.23
+		</div>
+	</text>	
+	<contained>
+		<Device xmlns="http://hl7.org/fhir">
+			<id value="3500"/>
+			<meta>
+				<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Hersteller_Software|1.2.0"/>
+			</meta>
+			<text>
+				<status value="extensions"/>
+				<div xmlns="http://www.w3.org/1999/xhtml">
+					Softwarehaus Mustersoftware
+					Test-Software
+					V1.23
+				</div>
+			</text>				
+			<manufacturer value="Softwarehaus Mustersoftware"/>
+			<deviceName>
+				<name value="Test-Software"/>
+				<type value="model-name"/>
+			</deviceName>
+			<version>
+				<value value="1.23"/>
+			</version>
+		</Device>
+	</contained>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Report_Import_Information">
+		<extension url="element">
+			<valueUrl value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_OMIMCode"/>
+		</extension>
+		<extension url="begruendung">
+			<valueString value="Nicht umgesetzte Ressource"/>
+		</extension>
+	</extension>
+	<type>
+		<system value="http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle"/>
+		<code value="receive"/>
+	</type>
+	<recorded value="2020-08-28T09:06:01+00:00"/>
+	<agent>
+		<who>
+			<reference value="#3500"/>
+		</who>
+		<requestor value="true"/>
+	</agent>
+	<agent>
+		<name value="Dr. Max Mustermann"/>
+		<requestor value="true"/>
+	</agent>
+	<source>
+		<observer>
+			<identifier>
+				<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer"/>
+				<value value="DUMMY"/>
+			</identifier>
+		</observer>
+	</source>
+	<entity>
+		<what>
+			<reference value="AuditEvent/5000"/>
+		</what>
+	</entity>
+</AuditEvent>

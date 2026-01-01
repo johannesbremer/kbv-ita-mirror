@@ -1,0 +1,657 @@
+<html>
+<head>
+<title>Pr&uuml;fmodul f&uuml;r Pr&uuml;fung
+	LDT3.2.18 sowie der digitalen Muster 10 & 10A, Version
+	2.18.0</title>
+<style type='text/css'>
+<!--
+h2 {
+	background-color: #aaaaaa;
+}
+
+h3 {
+	background-color: #cccccc;
+}
+
+h4 {
+	background-color: #efefef;
+}
+
+h5.hot {
+	color: #dd0000;
+}
+
+BODY {
+	COLOR: #000000;
+	FONT-FAMILY: arial, helvetica;
+	FONT-SIZE: 10pt;
+	background-color: White;
+}
+
+td {
+	FONT-FAMILY: arial, helvetica;
+	FONT-SIZE: 10pt;
+}
+-->
+</style>
+</head>
+
+<body>
+	<h2>Pr&uuml;fmodul f&uuml;r Pr&uuml;fung
+		LDT3.2.18 sowie der digitalen Muster 10 & 10A,
+		Version 2.18.0</h2>
+	<h3>Inhalt</h3>
+	<ul>
+		<li><a href="#requirement">Systemvoraussetzungen</a></li>
+		<li><a href="#changes">&Auml;nderungen zur Vorversion</a></li>
+		<li><a href="#knownbugs">Bekannte Fehler</a></li>
+		<li><a href="#installation">Hinweis zur Installation</a></li>
+		<li><a href="#dokumentation">Dokumentation</a></li>
+		<li><a href="#hinweise_allgemein">Allgemeine Hinweise</a></li>
+		<li><a href="#hinweise_recht">Rechtliche Hinweise</a></li>
+		<li><a href="#license">Lizenzvertragliche Regelungen</a></li>
+	</ul>
+
+	<h3>
+		<a name="requirement">Systemvoraussetzungen</a>
+	</h3>
+	<ul>
+		<li>Ben&ouml;tigt wird ein beliebiges Computersystem
+			leistungsm&auml;&szlig;ig vergleichbar mit einem PC
+			mit einem 500 MHz Prozessor oder h&ouml;her.</li>
+		<li>Das XPM verwendet die plattformunabh&auml;ngige Java
+			Technologie. Dies erm&ouml;glicht den Einsatz dieser Applikation auf
+			verschiedenen Betriebssystemen, f&uuml;r die die Java
+			Laufzeitumgebung verf&uuml;gbar ist.</li>
+		<li>Java Laufzeitumgebung 17 oder h&ouml;her</li>
+		<li>Arbeitsspeicher mindestens 256 MB RAM</li>
+		<li>Bei Verwendung der GUI unter Linux ist darauf zu achten dass die lib GTK => 2.18 installiert ist</li>
+		<li>Falls unter Windows oder Linux durch die GUI ein PDF angezeigt werden soll, muss ein PDF-Viewer installiert sein.</li>
+	</ul>
+
+	<h3>
+		<a name="changes">&Auml;nderungen zur Vorversion</a>
+	</h3>
+
+	<h4>Version 2.18.0</h4>
+	<h5>Änderungen</h5>
+	<ul>
+		<li>Inhalt Regel E001 geändert</li>
+		<li>Anpassung Regel K090</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.18</li>
+		<li>Quartal: 1/2025</li>
+		<li>Version XPM-Paket: 2.18.0</li>
+		<li>Version XPM-Kernel: 4.2.27</li>
+		<li>Version Steuerdatei: LDK/2.18.0(12025)</li>
+		<li>Version XML-Schema: 3.2.18</li>
+	</ul>
+
+	<h4>Version 2.17.0</h4>
+	<h5>Änderungen</h5>
+	<ul>
+		<li>Inhalt Regel E001 geändert</li>
+		<li>Erweiterung der Regel E020</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.17</li>
+		<li>Quartal: 4/2024</li>
+		<li>Version XPM-Paket: 2.17.0</li>
+		<li>Version XPM-Kernel: 4.2.27</li>
+		<li>Version Steuerdatei: LDK/2.17.0(42024)</li>
+		<li>Version XML-Schema: 3.2.17</li>
+	</ul>
+
+	<h4>Version 2.16.0</h4>
+	<h5>Änderungen</h5>
+	<ul>
+		<li>Inhalt Regel E001 geändert</li>
+		<li>Aufnahme des Feldes FK4210</li>
+		<li>Erweiterung des Objektes Obj_0002 um die FK4210</li>
+		<li>Technische Versionen 6 und 7 des digitalen Musters 10 können neben der Version 8 ebenfalls geprüft werden</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.16</li>
+		<li>Quartal: 2/2024</li>
+		<li>Version XPM-Paket: 2.16.0</li>
+		<li>Version XPM-Kernel: 4.2.26</li>
+		<li>Version Steuerdatei: LDK/2.16.0(22024)</li>
+		<li>Version XML-Schema: 3.2.16</li>
+	</ul>
+
+	<h4>Version 2.15.2</h4>
+	<h5>Änderungen</h5>
+	<ul>
+		<li>Korrektur Prüfung der Regel K126</li>
+		<li>Handbuch aktualisiert</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.15</li>
+		<li>Quartal: 1/2024</li>
+		<li>Version XPM-Paket: 2.15.2</li>
+		<li>Version XPM-Kernel: 4.2.25</li>
+		<li>Version Steuerdatei: LDK/2.15.2(12024)</li>
+		<li>Version XML-Schema: 3.2.15</li>
+	</ul>
+
+	<h4>Version 2.15.1</h4>
+	<h5>Änderungen</h5>
+	<ul>
+		<li>Signaturprüfung angepasst</li>
+		<li>Technische Version 6 des digitalen Musters 10 kann neben der Version 7 ebenfalls geprüft werden</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.15</li>
+		<li>Quartal: 1/2024</li>
+		<li>Version XPM-Paket: 2.15.1</li>
+		<li>Version XPM-Kernel: 4.2.25</li>
+		<li>Version Steuerdatei: LDK/2.15.1(12024)</li>
+		<li>Version XML-Schema: 3.2.15</li>
+	</ul>
+
+	<h4>Version 2.15.0</h4>
+	<h5>Änderungen</h5>
+	<ul>
+		<li>Update der Kompilierungsversion auf Java 17</li>
+		<li>Signaturprüfung aktualisiert</li>
+		<li>Vorgabe für technische Version des digitalen Musters 10 erhöht auf 7</li>
+		<li>Prüfung der Java-Version hinzugefügt</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.15</li>
+		<li>Quartal: 1/2024</li>
+		<li>Version XPM-Paket: 2.15.0</li>
+		<li>Version XPM-Kernel: 4.2.25</li>
+		<li>Version Steuerdatei: LDK/2.15.0(12024)</li>
+		<li>Version XML-Schema: 3.2.15</li>
+	</ul>
+
+	<h4>Version 2.14.3</h4>
+	<h5>Änderungen</h5>
+	<ul>
+	<li>Korrektur Quartalsangabe</li>
+	</ul>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.15</li>
+		<li>Quartal: 4/2023</li>
+		<li>Version XPM-Paket: 2.14.2</li>
+		<li>Version XPM-Kernel: 4.2.23</li>
+		<li>Version Steuerdatei: LDK/2.14.2(42023)</li>
+		<li>Version XML-Schema: 3.2.15</li>
+	</ul>
+
+	<h4>Version 2.14.2</h4>
+	<h5>Anforderungen / Änderungen</h5>
+	<ul>
+		<li>Warnmeldung bei Java-Version < 17</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.15</li>
+		<li>Quartal: 4/2023</li>
+		<li>Version XPM-Paket: 2.14.2</li>
+		<li>Version XPM-Kernel: 4.2.23</li>
+		<li>Version Steuerdatei: LDK/2.14.2(42023)</li>
+		<li>Version XML-Schema: 3.2.15</li>
+	</ul>
+
+	<h4>Version 2.14.1</h4>
+	<h5>Anforderungen / Änderungen</h5>
+	<ul>
+		<li>Korrektur der Sonderzeichenausgabe in PDF Listen</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.15</li>
+		<li>Quartal: 3/2023</li>
+		<li>Version XPM-Paket: 2.14.1</li>
+		<li>Version XPM-Kernel: 4.2.22</li>
+		<li>Version Steuerdatei: LDK/2.14.1(32023)</li>
+		<li>Version XML-Schema: 3.2.15</li>
+	</ul>
+
+	<h4>Version 2.14.0</h4>
+	<h5>Anforderungen / Änderungen</h5>
+	<ul>
+		<li>[XPMLDK-2139] Anpassung der Regel K125</li>
+		<li>[XPMLDK-2140] Erweiterung des Objektes 0063</li>
+		<li>[XPMLDK-2141] Anpassung der Regel E001</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.15</li>
+		<li>Quartal: 3/2022</li>
+		<li>Version XPM-Paket: 2.14.0</li>
+		<li>Version XPM-Kernel: 4.2.17</li>
+		<li>Version Steuerdatei: LDK/2.14.0(32022)</li>
+		<li>Version XML-Schema: 3.2.15</li>
+	</ul>
+	
+	<h4>Version 2.13.0</h4>
+	<h5>Anforderungen / Änderungen</h5>
+	<ul>
+		<li>[XPMLDK-2134] Neue Kontext-Regel K135</li>
+		<li>[XPMLDK-2135] K132: Anpassung des Regelinhaltes</li>
+		<li>[XPMLDK-2136] FK 8632: Regel K132 gestrichen und K135 ergänzt</li>
+		<li>[XPMLDK-2137] E172: Anpassung des Regelinhaltes</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.14</li>
+		<li>Quartal: 2/2022</li>
+		<li>Version XPM-Paket: 2.13.0</li>
+		<li>Version XPM-Kernel: 4.2.16</li>
+		<li>Version Steuerdatei: LDK03.2.14/22022/74/01</li>
+		<li>Version XML-Schema: 3.2.14</li>
+	</ul>
+
+	<h4>Version 2.12.2</h4>
+	<h5>Änderungen</h5>
+	<ul>
+		<li>Sicherheitsupdate: log4j-Version aktualisiert auf 2.17.1</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.13</li>
+		<li>Quartal: 3/2021</li>
+		<li>Version XPM-Paket: 2.12.2</li>
+		<li>Version XPM-Kernel: 4.2.11</li>
+		<li>Version Steuerdatei: LDK03.2.13/32021/74/01</li>
+		<li>Version XML-Schema: 3.2.13</li>
+	</ul>
+
+
+	<h4>Version 2.12.1</h4>
+	<h5>Änderungen</h5>
+	<ul>
+		<li>Sicherheitsupdate: log4j-Version aktualisiert</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.13</li>
+		<li>Quartal: 3/2021</li>
+		<li>Version XPM-Paket: 2.12.1</li>
+		<li>Version XPM-Kernel: 4.2.10</li>
+		<li>Version Steuerdatei: LDK03.2.13/32021/74/01</li>
+		<li>Version XML-Schema: 3.2.13</li>
+	</ul>
+
+	<h4>Version 2.12.0</h4>
+	<h5>Änderungen</h5>
+	<ul>
+		<li>[XPMLDK-2110] - E001: Anpassung des Regelinhaltes</li>
+		<li>[XPMLDK-2111] - K134: Anpassung des Regelinhaltes</li>
+		<li>[XPMLDK-2112] - E020: Anpassung des Regelinhaltes</li>
+		<li>[XPMLDK-2113] - FK7400, FK7401, FK7402, FK7403 und FK7404: Neue Feldkennungen</li>
+		<li>[XPMLDK-2114] - Obj_0063: Struktur angepasst</li>
+		<li>[XPMLDK-2115] - F024: Neue Regel</li>
+		<li>[XPMLDK-2116] - Prüfung streichen der Verweise auf den QMS bei Fehlertexten</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.13</li>
+		<li>Quartal: 3/2021</li>
+		<li>Version XPM-Paket: 2.12.0</li>
+		<li>Version XPM-Kernel: 4.2.5</li>
+		<li>Version Steuerdatei: LDK03.2.13/32021/74/01</li>
+		<li>Version XML-Schema: 3.2.13</li>
+	</ul>
+
+	<h4>Version 2.11.0</h4>
+	<h5>Änderungen</h5>
+	<ul>
+		<li>[XPMLDK-2101] - E001: Anpassung des Regelinhaltes</li>
+		<li>[XPMLDK-2102] - K132: Anpassung des Regelinhaltes</li>
+		<li>[XPMLDK-2103] - FK8631, FK8632: Anpassung der Feldart</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.12</li>
+		<li>Quartal: 2/2021</li>
+		<li>Version XPM-Paket: 2.11.0</li>
+		<li>Version XPM-Kernel: 4.2.4</li>
+		<li>Version Steuerdatei: LDK03.2.12/22021/74/01</li>
+		<li>Version XML-Schema: 3.2.12</li>
+	</ul>
+
+	<h4>Version 2.10.0</h4>
+	<h5>Änderungen</h5>
+	<ul>
+		<li>[XPMLDK-2093] - E001: Anpassung des Regelinhaltes</li>
+		<li>[XPMLDK-2094] - E172: Anpassung des Regelinhaltes</li>
+		<li>[XPMLDK-2095] - FK8631, FK8632: Neue Feldkennungen</li>
+		<li>[XPMLDK-2096] - E180, E180: Neue Regeln</li>
+		<li>[XPMLDK-2097] - Obj_0009: Struktur angepasst</li>
+		<li>[XPMLDK-2098] - Obj_0017: Struktur angepasst</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.11</li>
+		<li>Quartal: 2/2021</li>
+		<li>Version XPM-Paket: 2.10.0</li>
+		<li>Version XPM-Kernel: 4.2.4</li>
+		<li>Version Steuerdatei: LDK03.2.11/22021/74/01</li>
+		<li>Version XML-Schema: 3.2.11</li>
+	</ul>
+
+	<h4>Version 2.9.0</h4>
+	<h5>Änderungen</h5>
+	<ul>
+		<li>[XPMLDK-2054] - E001: Anpassung des Regelinhaltes</li>
+		<li>[XPMLDK-2055] - Obj_0062: Anpassung des Objektes</li>
+		<li>[XPMLDK-2056] - FK 3316: Regel ergänzt im Objekt Obj_0062</li>
+		<li>[XPMLDK-2057] - K108: Regel gestrichen</li>
+		<li>[XPMLDK-2058] - FK7400: gestrichen</li>
+		<li>[XPMLDK-2059] - FK7401: gestrichen</li>
+		<li>[XPMLDK-2060] - FK7402: gestrichen</li>
+		<li>[XPMLDK-2061] - FK7403: gestrichen</li>
+		<li>[XPMLDK-2062] - FK7404: gestrichen</li>
+		<li>[XPMLDK-2063] - Regel K109: gestrichen</li>
+		<li>[XPMLDK-2064] - Regel K110: gestrichen</li>
+		<li>[XPMLDK-2065] - FK8422: Apassung der Feldart in Objekt Obj_0073</li>
+		<li>[XPMLDK-2066] - E058: Anpassung des Regelinhaltes</li>
+		<li>[XPMLDK-2068] - [neu] Kontextregel K134</li>
+		<li>[XPMLDK-2069] - Obj_0062: Regel K108 gestrichen und Regel K134 ergänzt</li>
+		<li>[XPMLDK-2070] - FK7414: Anpassung der Feldart</li>
+		<li>[XPMLDK-2071] - K127: Anpassung des Regelinhaltes</li>
+		<li>[XPMLDK-2077] - Obj_0073: Regel K081 gestrichen und K082 ergänzt</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.10</li>
+		<li>Quartal: 2/2021</li>
+		<li>Version XPM-Paket: 2.9.0</li>
+		<li>Version XPM-Kernel: 4.2.4</li>
+		<li>Version Steuerdatei: LDK03.2.10/22021/74/01</li>
+		<li>Version XML-Schema: 3.2.10</li>
+	</ul>
+
+	<h4>Version 2.8.2</h4>
+	<h5>Bugfix</h5>
+	<ul>
+		Bugfix bei Regel 127
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.9</li>
+		<li>Quartal: 1/2021</li>
+		<li>Version XPM-Paket: 2.8.2</li>
+		<li>Version XPM-Kernel: 4.2.4</li>
+		<li>Version Steuerdatei: LDK03.2.9/12021/74/01</li>
+		<li>Version XML-Schema: 3.2.9</li>
+	</ul>
+	<h4>Version 2.8.1</h4>
+	<h5>Anforderungen / Änderungen</h5>
+	<ul>
+		[XPMLDK-2051] - Warnung bei Übertragung des Wertes 6 in FK 8617
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.9</li>
+		<li>Quartal: 1/2021</li>
+		<li>Version XPM-Paket: 2.8.1</li>
+		<li>Version XPM-Kernel: 4.2.4</li>
+		<li>Version Steuerdatei: LDK03.2.9/12021/74/01</li>
+		<li>Version XML-Schema: 3.2.9</li>
+	</ul>
+
+
+	<h4>Version 2.8.0</h4>
+	<h5>Anforderungen / Änderungen</h5>
+	<ul>
+		[XPMLDK-1997] - FK8629: neu aufgenommen
+		[XPMLDK-1998] - E177: neu aufgenommen
+		[XPMLDK-1999] - E178: neu aufgenommen
+		[XPMLDK-2000] - FK8630: neu aufgenommen
+		[XPMLDK-2001] - E176: neu aufgenommen
+		[XPMLDK-2002] - E179: neu aufgenommen
+		[XPMLDK-2003] - E179: neu aufgenommen
+		[XPMLDK-2004] - K129: gestrichen
+		[XPMLDK-1991] - Obj_0009: Struktur angepasst
+		[XPMLDK-1992] - K131: Regelinhalt angepasst
+		[XPMLDK-1993] - Obj_0017: K131 ergänzt
+		[XPMLDK-1994] - E066: Regelinhalt angepasst
+		[XPMLDK-1995] - E172: Regelinhalt angepasst
+		[XPMLDK-1996] - E175: Regelinhalt angepasst
+		[XPMLDK-2005] - K128: angepasst
+		[XPMLDK-2006] - Tabelle zur Regel E028: angepasst
+		[XPMLDK-2007] - FK3315: gestrichen
+		[XPMLDK-2008] - FK3312: gestrichen
+		[XPMLDK-2009] - FK7298: gestrichen
+		[XPMLDK-2010] - FK7299: gestrichen
+		[XPMLDK-2011] - FK7381: gestrichen
+		[XPMLDK-2012] - FK7385: gestrichen
+		[XPMLDK-2013] - FK7386: gestrichen
+		[XPMLDK-2014] - FK7387: gestrichen
+		[XPMLDK-2015] - FK7388: gestrichen
+		[XPMLDK-2016] - FK7389: gestrichen
+		[XPMLDK-2017] - Obj_0034: Struktur geändert
+		[XPMLDK-2018] - FK7336: Änderung der Bezeichnung
+		[XPMLDK-2019] - FK7337: Bezeichnung geändert
+		[XPMLDK-2020] - FK7338: Bezeichnung geändert
+		[XPMLDK-2021] - FK7380: Bezeichnung geändert
+		[XPMLDK-2022] - FK7383: Bezeichnung geändert
+		[XPMLDK-2023] - FK7384: Bezeichnung und Regeln geändert
+		[XPMLDK-2024] - FK7423: Bezeichnung geändert
+		[XPMLDK-2025] - FK8618: Regel ergänzt
+		[XPMLDK-2026] - FK8618: Regel ergänzt
+		[XPMLDK-2027] - FK8619: Regel ergänzt
+		[XPMLDK-2028] - FK8620: Regel geändert
+		[XPMLDK-2029] - Einbindung des neuen Muster 10D (PDF2A_A) - Technische Version ist jetzt 6
+		[XPMLDK-2030] - Einbindung des neuen Muster 10AD (PDF2A_A) - Technische Version ist jetzt 6
+		[XPMLDK-2045] - E174: Anpassung
+		[XPMLDK-1988] - E001: Anpassung des Regelinhaltes
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.9</li>
+		<li>Quartal: 1/2021</li>
+		<li>Version XPM-Paket: 2.8.0</li>
+		<li>Version XPM-Kernel: 4.2.4</li>
+		<li>Version Steuerdatei: LDK03.2.9/12021/74/01</li>
+		<li>Version XML-Schema: 3.2.9</li>
+	</ul>
+
+	<h4>Version 2.7.1</h4>
+	<h5>Verschiedene Bugfixes</h5>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.8</li>
+		<li>Quartal: 4/2020</li>
+		<li>Version XPM-Paket: 2.7.1</li>
+		<li>Version XPM-Kernel: 4.2.4</li>
+		<li>Version Steuerdatei: LDK03.2.8/42020/74/01</li>
+		<li>Version XML-Schema: 3.2.8</li>
+	</ul>
+	<h4>Version 2.7.0</h4>
+	<h5>Anforderungen / Änderungen</h5>
+	<ul>
+
+		<li>[XPMLDK-1928] - [geändert] FK 4229</li>
+		<li>Aktualierung der Muster 10 und 10A</li>
+		<li>[XPMLDK-1930] - Anf022: Übergreifende Prüfungen</li>
+		<li>[XPMLDK-1931] - Anf023: Muster 10 spezifische Prüfungen</li>
+		<li>[XPMLDK-1933] - Anf024: Muster 10A spezifische Prüfungen</li>
+		<li>[XPMLDK-1947] - [neu] FK 4209</li>
+		<li>[XPMLDK-1949] - [geändert] Kontextregel K040 entfällt</li>
+		<li>[XPMLDK-1950] - [geändert] Obj_0027</li>
+		<li>[XPMLDK-1954] - [geändert] Obj_0100</li>
+		<li>[XPMLDK-1948] - [neu] Kontextregel K133<li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.8</li>
+		<li>Quartal: 4/2020</li>
+		<li>Version XPM-Paket: 2.7.0</li>
+		<li>Version XPM-Kernel: 4.2.4</li>
+		<li>Version Steuerdatei: LDK03.2.8/42020/74/01</li>
+		<li>Version XML-Schema: 3.2.8</li>
+	</ul>
+
+	<h4>Version 2.6.0</h4>
+	<h5>Anforderungen / Änderungen</h5>
+	<ul>
+		<h5>Anforderung</h5>
+		<li>[XPMLDK-1917] - [neu] FK 8626</li>
+		<li>[XPMLDK-1918] - [neu] FK 8627</li>
+		<li>[XPMLDK-1919] - [geändert] Regel E001</li>
+		<li>[XPMLDK-1921] - [neu] E175</li>
+		<li>[XPMLDK-1923] - [neu] K131</li>
+		<li>[XPMLDK-1924] - [neu] K132</li>
+
+		<h5>Änderung</h5>
+		<li>[XPMLDK-1920] - [geändert] E172</li>
+		<li>[XPMLDK-1922] - [geändert] K130</li>
+		<li>[XPMLDK-1925] - [geändert] Objekt Obj_0002</li>
+		<li>[XPMLDK-1926] - [geändert] Objekt Obj_0009</li>
+		<li>[XPMLDK-1927] - [geändert] Objekt Obj_0017</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.7</li>
+		<li>Quartal: 3/2020</li>
+		<li>Version XPM-Paket: 2.6.0</li>
+		<li>Version XPM-Kernel: 4.2.3</li>
+		<li>Version Steuerdatei:
+			LDK03.2.7/32020/74/01</li>
+		<li>Version XML-Schema: 3.2.7</li>
+	</ul>
+
+	<h4>Version 2.5.0</h4>
+	<h5>Anforderungen / Änderungen</h5>
+    <ul>
+    	<li>Neues Objekt 0009 in Objekt 0001</li>
+    	<li>Neue Feldkennungen in Objekt 0002</li>
+    	<li>Neue FK in Objekt 0017</li>
+    	<li>E050 um zwei Werte ergänzt</li>
+    	<li>Neue Regel K130</li>
+   	</ul>
+
+	<h4>Version 2.4.1</h4>
+	<h5>Anforderungen / Änderungen</h5>
+    <ul>
+		<li>Bugfix bzgl. Warmeldung Reflection.getCallerClass</li>
+    	<li>Xml-Apis entfernt, nicht mehr notwendig ab Java 11</li>
+   	</ul>
+
+	<h4>Version 2.4.0</h4>
+	<h5>Anforderungen / Änderungen</h5>
+    <ul>
+    	<li>Update der Kompilierungsversion auf Java 11</li>
+    	<li>Update von Verapdf auf 1.16.1 und PDFBox auf 2.0.19</li>
+        <li>[XPMLDK-1888] - FK 7404: Anpassung der Feldlänge und des Datentyps</li>
+   		<li>[XPMLDK-1889] - E001: Anpassung des erlaubten Wertes</li>
+    	<li>[XPMLDK-1890] - FK 7401: Änderung des Vorkommens in Objekt Obj_0063</li>
+   		<li>[XPMLDK-1893] - FK7404 hat jetzt alphanumerischen Inhalt und <=120 Zeichen Länge</li>
+   	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.5</li>
+		<li>Quartal: 2/2020</li>
+		<li>Version XPM-Paket: 2.4.0</li>
+		<li>Version XPM-Kernel: 4.2.1</li>
+		<li>Version Steuerdatei:
+			LDK03.2.4/32020/74/01</li>
+		<li>Version XML-Schema: 3.2.5</li>
+	</ul>
+
+	<h4>Version 2.3.2</h4>
+	<h5>Schema-Bugfix: Vorkommen FK 3312</h5>
+    <ul>
+    	<li>F&uuml;r den seit der Version 2.3.0 bei der PDF-Erzeugung verwendeten Zeichensatz DejaVu-Sans wurde die jasperreports-fonts Bilbiothek mit in den Classpath aufgenommen. Unter MacOS wird dieser sonst nicht gefunden und durch eine andere Schriftart ersetzt.
+    	</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.4</li>
+		<li>Quartal: 2/2020</li>
+		<li>Version XPM-Paket: 2.3.2</li>
+		<li>Version XPM-Kernel: 4.1.15</li>
+		<li>Version Steuerdatei:
+			LDK03.2.4/22020/74/01</li>
+		<li>Version XML-Schema: 3.2.4</li>
+	</ul>
+
+	<h4>Version 2.3.1</h4>
+	<h5>Bugfix</h5>
+    <ul>
+    	<li>F&uuml;r den seit der Version 2.3.0 bei der PDF-Erzeugung verwendeten Zeichensatz DejaVu-Sans wurde die jasperreports-fonts Bilbiothek mit in den Classpath aufgenommen. Unter MacOS wird dieser sonst nicht gefunden und durch eine andere Schriftart ersetzt.
+    	</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.4</li>
+		<li>Quartal: 2/2020</li>
+		<li>Version XPM-Paket: 2.3.1</li>
+		<li>Version XPM-Kernel: 4.1.15</li>
+		<li>Version Steuerdatei:
+			LDK03.2.4/22020/74/01</li>
+		<li>Version XML-Schema: 3.2.4</li>
+	</ul>
+
+	<h4>Version 2.3.0</h4>
+	<h5>Änderung</h5>
+    <ul>
+    	<li>Änderung der PDF-Protokoll-Schriftart auf die Schriftart DejavuSans <br/>
+    		jasperreports-fonts enhtält diese Schriftart; mit in den Classpath aufgenommen.
+    	</li>
+		<li>Inhalt Regel E001 geändert</li>
+		<li>Regel K129 eingefügt</li>
+		<li>Beliebige Anordnung einiger Objekte im Obj_0035 (Laborergebnisbericht)</li>
+	</ul>
+	<ul>
+		<li>Schnittstellenbeschreibung LDT 3.2.4</li>
+		<li>Quartal: 2/2020</li>
+		<li>Version XPM-Paket: 2.3.0</li>
+		<li>Version XPM-Kernel: 4.1.15</li>
+		<li>Version Steuerdatei: LDK03.2.4/22020/74/01</li>
+		<li>Version XML-Schema: 3.2.4</li>
+	</ul>
+
+
+
+
+
+	<h3>
+		<a name="knownbugs">Bekannte Fehler</a>
+	</h3>
+	<ul>
+		<li>Bei der Prüfung der PDF-Dokumente über die XPMEinstieg-Klasse kommt es derzeit noch zu einem Fehler: Das PDF Dokument wird nach der Prüfung nicht korrekt geschlossen. Dies muss durch einen Third-Party-Library Hersteller behoben werden.</li>
+	</ul>
+	<h3>
+		<a name="installation">Hinweis zur Installation</a>
+	</h3>
+	<ul>
+		<li>Zip-Datei XPM-Paket_LDK_V?.??.zip im Zielordner z.B.
+			"C:\Programme\XPM\LDK" entpacken.</li>
+		<li>Bitte lesen Sie die <a href="Installation.txt">Hinweise
+				zur Installation</a>.
+		</li>
+		<li>Bitte lesen Sie die <a href="Readme.txt">Hinweise zur
+				angelegten Ordnerstruktur</a>.
+		</li>
+	</ul>
+
+	<h3>
+		<a name="dokumentation">Dokumentation</a>
+	</h3>
+	<ul>
+		<li>N&auml;here Hinweise und Informationen im <a
+			href="XPM_LDK/Doku/Handbuch_Pruefmodul_LDK.pdf">XPM
+				Anwenderhandbuch</a>. (falls Adobe Reader nicht vorhanden, Download und
+			Installation unter <a
+			href="http://www.adobe.de/products/acrobat/readermain.html">www.adobe.de/products/acrobat/readermain.html</a>).
+		</li>
+	</ul>
+
+	<h3>
+		<a name="hinweise_allgemein">Allgemeine Hinweise</a>
+	</h3>
+	<ul>
+		<li>Bei dem Ausgabeformat TEXT wird empfohlen die Seitenbreite
+			auf 120 Zeichen einzustellen, z.B: &lt;FehlerListe Format="TEXT"
+			Seitenbreite="120"&gt;Listen/FehlerListe.txt&lt;/FehlerListe&gt;.</li>
+	</ul>
+
+	<h3>
+		<a name="hinweise_recht">Rechtliche Hinweise</a>
+	</h3>
+	<ul>
+		<li>keine</li>
+	</ul>
+
+	<h3>
+		<a name="license">Lizenzvertragliche Regelungen</a>
+	</h3>
+	<ul>
+		<li>Bitte beachten Sie die Lizenzvereinbarungen im <a
+			href="XPM_LDK/Doku/Lizenzvereinbarung.pdf">Lizenzvereinbarung</a>.
+			(falls Adobe Reader nicht vorhanden, Download und Installation unter
+			<a href="http://www.adobe.de/products/acrobat/readermain.html">www.adobe.de/products/acrobat/readermain.html</a>).
+		</li>
+	</ul>
+</body>
+</html>

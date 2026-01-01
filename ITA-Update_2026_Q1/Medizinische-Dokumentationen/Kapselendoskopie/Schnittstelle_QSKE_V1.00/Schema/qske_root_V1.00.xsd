@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!--
+Projekt: 
+  Namespace: "urn:ehd/qske/001", Präfix: qske
+
+-->
+<xs:schema xmlns:ehd="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/001" xmlns:qske="urn:ehd/qske/001" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<!-- ======================================================================= 
+	Einbinden der ehd-Bibliotheken
+	======================================================================= -->
+	<!-- ======================================================================= 
+	Einbinden der qske-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="qske_header_V1.00.xsd"/>
+	<xs:import namespace="urn:ehd/qske/001" schemaLocation="qske_body_V1.00.xsd"/>
+	<!-- ======================================================================= 
+	EHD-root
+	hier ist des ehd-root-Element definiert, welches "header" und "body" sowie "keytabs"
+	Elemente enthält.
+	======================================================================= -->
+	<xs:element name="ehd" type="qske_root_typ">
+		<xs:annotation>
+			<xs:documentation>root element ehd "eHealthData"</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- ======================================================================= 
+	vom Basistyp: ehd_root_typ
+  abgeleiteter Typ: gsmg_root_typ
+	======================================================================= -->
+	<xs:complexType name="qske_root_typ">
+		<xs:sequence>
+			<xs:element name="header" type="ehd:qske_header_typ">
+				<xs:annotation>
+					<xs:documentation>alle Metainformationen zu den Daten</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="body" type="qske_body_typ">
+				<xs:annotation>
+					<xs:documentation>die eigentlichen Daten</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	vom Basistyp: ehd_body_typ
+  abgeleiteter Typ: gsmg_body_typ 
+	======================================================================= -->
+	<xs:complexType name="qske_body_typ">
+		<xs:sequence>
+			<xs:element ref="qske:qske_dokumentation"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) von Kassenärztliche Bundesvereinigung (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn::sciphox-org/sciphox" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="AdministrativeDaten">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Einschreibung wegen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Anamnese">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Körpergröße"/>
+			<xs:enumeration value="Körpergewicht"/>
+			<xs:enumeration value="Blutdruck systolisch"/>
+			<xs:enumeration value="Blutdruck diastolisch"/>
+			<xs:enumeration value="Raucher"/>
+			<xs:enumeration value="Begleiterkrankungen"/>
+			<xs:enumeration value="Angina pectoris"/>
+			<xs:enumeration value="LDL-Cholesterin"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="relevanteEreignisse">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Relevante Ereignisse"/>
+			<xs:enumeration value="Herzinfarkt innerhalb der letzten 12 Monate"/>
+			<xs:enumeration value="Ungeplante stationäre Behandlung wegen KHK seit der letzten Dokumentation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Medikamente">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Thrombozytenaggregationshemmer"/>
+			<xs:enumeration value="Betablocker"/>
+			<xs:enumeration value="ACE-Hemmer"/>
+			<xs:enumeration value="Aktuelle Statin-Dosis"/>
+			<xs:enumeration value="Aktuelle Therapiestrategie Statin"/>
+			<xs:enumeration value="Grund für moderate oder niedrige Statin-Dosis"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Schulung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Schulung bereits vor Einschreibung in DMP wahrgenommen"/>
+			<xs:enumeration value="Schulung empfohlen (bei aktueller Dokumentation)"/>
+			<xs:enumeration value="Empfohlene Schulung(en) wahrgenommen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Behandlungsplanung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Vom Patienten gewünschte Informationsangebote der Krankenkasse"/>
+			<xs:enumeration value="Dokumentationsintervall"/>
+			<xs:enumeration value="Regelmäßiges sportliches Training"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

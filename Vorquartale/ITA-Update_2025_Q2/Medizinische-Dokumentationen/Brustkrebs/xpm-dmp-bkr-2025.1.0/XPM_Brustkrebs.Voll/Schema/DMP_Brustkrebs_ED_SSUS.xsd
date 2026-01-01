@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2017 rel. 3 (http://www.altova.com) von Raphael Gantenberg (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<xs:schema xmlns:cda="urn::hl7-org/cda" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns="urn::sciphox-org/sciphox" xmlns:kbv="urn::hl7-org/kbv" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<xs:import namespace="urn::hl7-org/kbv" schemaLocation="all_kbv_typelib.xsd"/>
+	<xs:include schemaLocation="insurance_ssu_typelib.xsd"/>
+	<xs:include schemaLocation="Ergebnistexte_EFBK.xsd"/>
+	<xs:include schemaLocation="Parameter_EBK.xsd"/>
+	<xs:include schemaLocation="DMP_Brustkrebs_software_ssu.xsd"/>
+	<!--***********************************************************************************************************************************************-->
+	<!--Element - sciphox-ssu -->
+	<!--***********************************************************************************************************************************************-->
+	<xs:element name="sciphox-ssu">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:group ref="observation"/>
+			</xs:sequence>
+			<xs:attribute name="type" type="xs:string" fixed="observation"/>
+			<xs:attribute name="country" type="xs:string" use="required" fixed="de"/>
+			<xs:attribute name="version" type="xs:string" use="required" fixed="v1"/>
+		</xs:complexType>
+	</xs:element>
+	<!--************************************************************************************-->
+	<!--Group - observation -->
+	<!--************************************************************************************-->
+	<xs:group name="observation">
+		<xs:sequence>
+			<xs:element ref="Beobachtungen"/>
+		</xs:sequence>
+	</xs:group>
+	<!--***********************************************************************************************************************************************-->
+	<!--Element - Beobachtungen-->
+	<!--***********************************************************************************************************************************************-->
+	<xs:element name="Beobachtungen">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Beobachtung" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="u_Parameter">
+			<xs:selector xpath="./sciphox:Beobachtung/sciphox:Parameter"/>
+			<xs:field xpath="@DN"/>
+		</xs:unique>
+	</xs:element>
+	<!--***********************************************************************************************************************************************-->
+	<!--Element - Beobachtung -->
+	<!--***********************************************************************************************************************************************-->
+	<xs:element name="Beobachtung">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Parameter"/>
+				<xs:element ref="Ergebnistext" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="Zeitpunkt_dttm" minOccurs="0"/>
+				<xs:element ref="Ergebniswert" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="u_Ergebnistext">
+			<xs:selector xpath="./sciphox:Ergebnistext"/>
+			<xs:field xpath="@V"/>
+		</xs:unique>
+		<xs:unique name="u_Ergebniswert">
+			<xs:selector xpath="./sciphox:Ergebniswert"/>
+			<xs:field xpath="@U"/>
+		</xs:unique>
+	</xs:element>
+	<!--***********************************************************************************************************************************************-->
+	<!--Element -  Parameter-->
+	<!--***********************************************************************************************************************************************-->
+	<xs:element name="Parameter">
+		<xs:complexType>
+			<xs:attribute name="DN" use="required">
+				<xs:simpleType>
+					<xs:union memberTypes="Einschreibung AnamneseundBehandlungsstatusdesPrimärtumorskontralateralenBrustkrebses AktuellerBefundstatusdesPrimärtumorskontralateralenBrustkrebses BehandlungdesPrimärtumorskontralateralenBrustkrebses BefundeundTherapienvonFernmetastasen SonstigeBefunde Behandlungsplanung"/>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<!--***********************************************************************************************************************************************-->
+	<!--Element -  Ergebnistext-->
+	<!--***********************************************************************************************************************************************-->
+	<xs:element name="Ergebnistext">
+		<xs:complexType>
+			<xs:attribute name="V" use="required">
+				<xs:simpleType>
+					<xs:union memberTypes="Anamnese_txt AktuellerBefundstatus_txt Behandlung_txt BefundeFernmetastasen_txt SonstigeBefunde_txt Behandlungsplanung_txt"/>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<!--***********************************************************************************************************************************************-->
+	<!--Element -  Ergebniswert-->
+	<!--***********************************************************************************************************************************************-->
+	<xs:element name="Ergebniswert">
+		<xs:complexType>
+			<xs:attribute name="V" type="kbv:string_max_60_typ" use="required"/>
+			<xs:attribute name="U" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="kg"/>
+						<xs:enumeration value="m"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<!--***********************************************************************************************************************************************-->
+	<!--Element -  Zeitpunkt_dttm-->
+	<!--***********************************************************************************************************************************************-->
+	<xs:element name="Zeitpunkt_dttm">
+		<xs:complexType>
+			<xs:attribute name="V" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:pattern value="(19|20)\d\d"/>
+						<xs:pattern value="(19|20)\d\d-(0[0-9]|1[0-2])"/>
+						<xs:pattern value="(19|20)\d\d-(0[0-9]|1[0-2])-(([0-2][0-9])|([3][0-1]))"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - Einschreibung-->
+	<!--************************************************************************************-->
+	<!-- Enfällt, da nur eine Datumsangaben möglich-->
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - Anamnese-->
+	<!--************************************************************************************-->
+	<xs:simpleType name="Anamnese_txt">
+		<xs:union memberTypes="OperativeTherapie"/>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - Aktueller Befundstatus -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="AktuellerBefundstatus_txt">
+		<xs:union memberTypes="TNM-Klassifizierung T N M HormonrezeptorstatusÖstrogenundoderProgesterongemäßImmunreaktiverScoreIRS"/>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - Behandlung -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="Behandlung_txt">
+		<xs:union memberTypes="AktuelleadjuvanteendokrineTherapie NebenwirkungenderaktuellenadjuvantenendokrinenTherapie FortführungderadjuvantenendokrinenTherapie BeiPatientinnenunteradjuvanterTherapiemitAromataseinhibitorensoferndieAbsichtfüreinespezifischemedikamentöseTherapieeinerOsteoporosebestehtDXA-Befund"/>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - Befunde und Therapien Fernmetastasen-->
+	<!--************************************************************************************-->
+	<xs:simpleType name="BefundeFernmetastasen_txt">
+		<xs:union memberTypes="LokalisationvonFernmetastasen TherapiebeiKnochenmetastasenBisphosphonate TherapiebeiKnochenmetastasenDenosumab"/>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - Sonstige Beratung -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="SonstigeBefunde_txt">
+		<xs:union memberTypes="SymptomatischesLymphödem EmpfehlungzuregelmäßigemkörperlichenTrainingabgegeben Z.n.besonderskardiotoxischerTumortherapie Körpergröße Körpergewicht"/>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!-- Ergebnistexte - Behandlungsplanung -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="Behandlungsplanung_txt">
+		<xs:union memberTypes="Dokumentationsintervall"/>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,58 @@
+KBV-Pruefassistent bis Quartal 4/2025 Version 2025.4.2
+==================================================
+
+Mit dem KBV-Pruefassistent koennen Sie eine Abrechnungsdatei pruefen und uebergabefertig
+verschluesseln. Der Pruefassistent enthaelt das aktuelle KVDT-Pruefmodul Version 2025.4.2
+fuer das Quartal 4/2025 sowie noch drei Vorquartalspruefmodule.
+Somit koennen mit dem Pruefassistenten auch Abrechnungen aus vorangegangenen Quartalen
+geprueft werden. Die Auswahl des passenden Pruefmoduls geschieht automatisch anhand
+des Abrechnungsquartals.
+
+Die Datei KBV_ITA_AHEX_Handbuch_Pruefassistent.pdf enthaelt ausfuehrliche Anleitung zur Installation
+und Bedienung des KBV-Pruefassistenten. Um die Anleitung anzuzeigen und ggf.
+auszudrucken benoetigen Sie den Acrobat-Reader.
+Diesen koennen Sie unter: http://www.adobe.de/products/acrobat/readermain.html
+herunterladen.
+
+
+Installation unter Unix/Linux
+==================================================
+
+Zum Installieren starten Sie bitte die Datei KBV-Pruefassistent_V2025.4.2.jar durch ein
+Klick/Doppelklick und folgen den Anweisungen. Vorraussetzung fuer die Installation
+ist eine vorhandene Java-Laufzeitumgebung ab der Version 17.
+Sollte die Installationsroutine nicht erfolgreich ausgefuehrt werden, so koennen Sie
+die Installation auch ueber die Eingabe:
+    java -jar KBV-Pruefassistent_V2025.4.2.jar
+in einem Terminal- bzw. Shellfernster initieren.
+
+Nach der Installation wird auf Unix-/Linux-Systemen eine Verknuepfung auf dem Desktop
+und im Startmenue erscheinen. Ueber diese Verknuepfung koennen Sie den KBV Pruefassistenten
+starten. Unter den Betriebssystemen Mac OS X (und anderen Plattformen) fehlt diese
+Verknuepfung.
+
+Der KBV Pruefassistent kann jedoch ueber folgende Eingabe:
+    ./StartAssistenten.sh
+in einem Terminalfenster gestartet werden.
+Bitte ueberpruefen Sie, ob dieses Kommando in dem Installationsverzeichnis ausgefuehrt
+wird.
+
+Auch unter Windows kann der Prüfassistent auf diese Art installiert werden.
+
+DMG-Version für MacOS
+======================
+
+Bis zum 2. Quartal 2020 wurde auch eine Disk Image-Datei für MacOS-Systeme mit ausgeliefert. 
+Aufgrund der Änderung der Oracle Lizenzbestimmungen wird auf vielen Macs derzeit und auch 
+zukünftig meist ein OpenJDK als JRE installiert sein. Leider ist derzeit Aufgrund eines 
+Bugs im Tool welches für die Erstellung der Mac App (als .dmg-Datei) zuständig ist eine 
+Benutzung des KVDT-Prüfassistenten als Mac-App aus einem DMG mit einer Java 11 Variante 
+nicht möglich.
+
+https://github.com/federkasten/appbundle-maven-plugin/issues/59
+
+Als vollständiger Ersatz kann jedoch der Jar-Installer des KVDT-Prüfassistenten auf MacOS 
+mit Java 11 (OracleJDK oder OpenJDK) verwendet werden. Bei dieser Installation wird 
+allerdings kein Icon für Mac-Systeme erzeugt.
+
+

@@ -1,0 +1,36 @@
+Dieses Paket enthält das XKM Kryptomodul.
+
+Das Paket muss auf eine Festplatte kopiert und entpackt werden.
+
+Im obersten Verzeichnis dieses Paketes existiert der Ordner 'XKM'.
+In diesem Verzeichnis befinden sich Batchdateien, die das KBV-Kryptomodul
+mit unterschiedlichen Optionen ausführen.
+
+Zur Performanzsteigerung des XKM kann das Verzeichnis 'System' auf ein lokales
+Laufwerk verschoben werden.
+
+Das KBV-Kryptomodul kann nur gestartet werden, wenn eine Java Laufzeitumgebung
+in der Version 11 oder höher bereits installiert wurde.
+Unter Linux ist noch folgendes zu beachten: Bei Verwendung einer auf OpenJDK
+basierenden Laufzeitumgebung und einer Servervariante eines Linux-Betriebssystems
+muss zusätzlich die Bibliothek fontconfig installiert werden bzw. bereits
+installiert sein. Das ist notwendig, da die fontconfig.properties Datei für Linux
+im OpenJDK im Gegensatz zur Oracle-Variante nicht enthalten ist.
+Wenn eine Desktop-Variante von Linux oder eine Oracle-Laufzeitumgebung verwendet
+wird, muss die Bibliothek nicht installiert werden.
+
+Bitte lesen Sie auch das Dokument 'KBV_ITA_AHEX_Handbuch_Kryptomodul.pdf'.
+
+Sollten Sie Anregungen, Testberichte und/oder Korrekturvorschläge haben,
+so wenden Sie sich an folgende Adresse:
+
+Kassenärztliche Bundesvereinigung
+Körperschaft des öffentlichen Rechts
+Dezernat Digitalisierung und IT
+Herbert-Lewin-Platz 2
+10623 Berlin
+
+Telefon: 030 / 4005 - 2077
+Fax:     030 / 4005 - 27 2077
+mailto:ITA@kbv.de
+www: http://www.kbv.de

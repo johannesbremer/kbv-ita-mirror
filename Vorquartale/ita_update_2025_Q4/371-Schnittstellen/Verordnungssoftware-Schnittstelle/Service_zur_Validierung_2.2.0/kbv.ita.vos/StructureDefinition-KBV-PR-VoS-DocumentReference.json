@@ -1,0 +1,803 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "KBV-PR-VoS-DocumentReference",
+  "url": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_DocumentReference",
+  "version": "2.2.0",
+  "name": "KBV_PR_VoS_DocumentReference",
+  "title": "KBV_PR_VoS_DocumentReference",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "description": "Übergabe von Rezepten, signierten eRezepten oder Medikationsplänen als pkcs#7-, pdf- oder XML-Dateien vom PVS an die VoS und vice versa.",
+  "fhirVersion": "4.0.1",
+  "mapping": [
+    {
+      "identity": "cda",
+      "name": "CDA (R2)",
+      "uri": "http://hl7.org/v3/cda"
+    },
+    {
+      "identity": "fhircomposition",
+      "name": "FHIR Composition",
+      "uri": "http://hl7.org/fhir/composition"
+    },
+    {
+      "identity": "rim",
+      "name": "RIM Mapping",
+      "uri": "http://hl7.org/v3"
+    },
+    {
+      "identity": "v2",
+      "name": "HL7 v2 Mapping",
+      "uri": "http://hl7.org/v2"
+    },
+    {
+      "identity": "w5",
+      "name": "FiveWs Pattern Mapping",
+      "uri": "http://hl7.org/fhir/fivews"
+    },
+    {
+      "identity": "workflow",
+      "name": "Workflow Pattern",
+      "uri": "http://hl7.org/fhir/workflow"
+    },
+    {
+      "identity": "xds",
+      "name": "XDS metadata equivalent",
+      "uri": "http://ihe.net/xds"
+    }
+  ],
+  "kind": "resource",
+  "abstract": false,
+  "type": "DocumentReference",
+  "baseDefinition": "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_DocumentReference|1.7.0",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "DocumentReference",
+        "path": "DocumentReference",
+        "definition": "Das Profil beinhaltet ein Rezept, ein signiertes eRezept oder einen Medikationsplan als pkcs#7-, pdf- oder XML-Datei",
+        "constraint": [
+          {
+            "key": "-vos-Extension-eRezept",
+            "human": "Die Extension mit den Zugriffsdaten des eRezepts muss genau dann verwendet werden, wenn der DokumentenTyp ein signiertes eRezept ist.",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_DocumentReference",
+            "severity": "error",
+            "expression": "(extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_ePrescription_Access').empty() and (type.coding.where(code='Signiertes_eRezept').exists().not())) or (extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_ePrescription_Access').exists() and type.coding.where(code='Signiertes_eRezept').exists())"
+          }
+        ]
+      },
+      {
+        "id": "DocumentReference.id",
+        "path": "DocumentReference.id",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.meta",
+        "path": "DocumentReference.meta",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.meta.source",
+        "path": "DocumentReference.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.meta.profile",
+        "path": "DocumentReference.meta.profile",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.meta.profile:vosProfile",
+        "path": "DocumentReference.meta.profile",
+        "sliceName": "vosProfile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_DocumentReference|2.2.0",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.meta.security",
+        "path": "DocumentReference.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.meta.tag",
+        "path": "DocumentReference.meta.tag",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.implicitRules",
+        "path": "DocumentReference.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.language",
+        "path": "DocumentReference.language",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.contained",
+        "path": "DocumentReference.contained",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.extension",
+        "path": "DocumentReference.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "closed"
+        },
+        "max": "1"
+      },
+      {
+        "id": "DocumentReference.extension:eRezept-Zugriffsdaten",
+        "path": "DocumentReference.extension",
+        "sliceName": "eRezept-Zugriffsdaten",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_ePrescription_Access"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "isModifier": false
+      },
+      {
+        "id": "DocumentReference.extension:eRezept-Zugriffsdaten.extension:AccessCode",
+        "path": "DocumentReference.extension.extension",
+        "sliceName": "AccessCode",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.extension:eRezept-Zugriffsdaten.extension:AccessCode.value[x]",
+        "path": "DocumentReference.extension.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.extension:eRezept-Zugriffsdaten.extension:AccessCode.value[x]:valueString",
+        "path": "DocumentReference.extension.extension.value[x]",
+        "sliceName": "valueString",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.extension:eRezept-Zugriffsdaten.extension:Task-ID",
+        "path": "DocumentReference.extension.extension",
+        "sliceName": "Task-ID",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.extension:eRezept-Zugriffsdaten.extension:Task-ID.value[x]",
+        "path": "DocumentReference.extension.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.extension:eRezept-Zugriffsdaten.extension:Task-ID.value[x]:valueString",
+        "path": "DocumentReference.extension.extension.value[x]",
+        "sliceName": "valueString",
+        "type": [
+          {
+            "code": "string"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.masterIdentifier",
+        "path": "DocumentReference.masterIdentifier",
+        "short": "Versionsspezifischer Identifikator",
+        "definition": "Angabe eines versionsabhängigen Identifiers für das Dokument.",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.masterIdentifier.use",
+        "path": "DocumentReference.masterIdentifier.use",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.masterIdentifier.type",
+        "path": "DocumentReference.masterIdentifier.type",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.masterIdentifier.value",
+        "path": "DocumentReference.masterIdentifier.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.masterIdentifier.period",
+        "path": "DocumentReference.masterIdentifier.period",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.masterIdentifier.assigner",
+        "path": "DocumentReference.masterIdentifier.assigner",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.identifier",
+        "path": "DocumentReference.identifier",
+        "short": "Versionsunabhängiger Identifikator",
+        "definition": "Angabe von versionsunabhängigen Identifiern für das Dokument.",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.identifier.use",
+        "path": "DocumentReference.identifier.use",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.identifier.type",
+        "path": "DocumentReference.identifier.type",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.identifier.value",
+        "path": "DocumentReference.identifier.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.identifier.period",
+        "path": "DocumentReference.identifier.period",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.identifier.assigner",
+        "path": "DocumentReference.identifier.assigner",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.status",
+        "path": "DocumentReference.status",
+        "fixedCode": "current",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.docStatus",
+        "path": "DocumentReference.docStatus",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.type",
+        "path": "DocumentReference.type",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type.coding",
+        "path": "DocumentReference.type.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "max": "2",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type.coding:xds",
+        "path": "DocumentReference.type.coding",
+        "sliceName": "xds",
+        "short": "Dokumenttyp gem. IHE-De-Terminologie",
+        "definition": "Die Übermittlung des xds-Type-Codes ist im Rahmen der Dokumentenbereitstellung für Clients nicht verpflichtend, muss jedoch vom Server bei der Entgegennahme ggf. ergänzt und bei der Dokumentenabfrage zurückgegeben werden. Der XDS-Type-Code kann über die im Rahmen der [KDL-Spezifikation](https://simplifier.net/kdl) publizierten [ConceptMaps](https://simplifier.net/kdl/~resources?category=ConceptMap) aus dem KDL-Code ermittelt werden.",
+        "patternCoding": {
+          "system": "http://ihe-d.de/CodeSystems/IHEXDStypeCode"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type.coding:xds.system",
+        "path": "DocumentReference.type.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type.coding:xds.code",
+        "path": "DocumentReference.type.coding.code",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type.coding:xds.display",
+        "path": "DocumentReference.type.coding.display",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type.coding:Dokumententyp",
+        "path": "DocumentReference.type.coding",
+        "sliceName": "Dokumententyp",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.kbv.de/ValueSet/KBV_VS_VoS_DocumentType"
+        }
+      },
+      {
+        "id": "DocumentReference.type.coding:Dokumententyp.system",
+        "path": "DocumentReference.type.coding.system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type.coding:Dokumententyp.code",
+        "path": "DocumentReference.type.coding.code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.type.text",
+        "path": "DocumentReference.type.text",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.category",
+        "path": "DocumentReference.category",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.category.coding",
+        "path": "DocumentReference.category.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.category.coding:xds",
+        "path": "DocumentReference.category.coding",
+        "sliceName": "xds",
+        "min": 1,
+        "patternCoding": {
+          "system": "http://ihe-d.de/CodeSystems/IHEXDSclassCode"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.category.coding:xds.system",
+        "path": "DocumentReference.category.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.category.coding:xds.code",
+        "path": "DocumentReference.category.coding.code",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.category.coding:xds.display",
+        "path": "DocumentReference.category.coding.display",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.subject",
+        "path": "DocumentReference.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Patient|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.subject.reference",
+        "path": "DocumentReference.subject.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.subject.type",
+        "path": "DocumentReference.subject.type",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.subject.identifier",
+        "path": "DocumentReference.subject.identifier",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.subject.display",
+        "path": "DocumentReference.subject.display",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.date",
+        "path": "DocumentReference.date",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.author",
+        "path": "DocumentReference.author",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "type"
+            }
+          ],
+          "rules": "closed"
+        },
+        "max": "2",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_PractitionerRole|1.7.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner|1.7.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization|1.7.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient|1.7.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_RelatedPerson|1.7.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Device|1.7.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.author:Behandelnder",
+        "path": "DocumentReference.author",
+        "sliceName": "Behandelnder",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Practitioner|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.author:Behandelnder.reference",
+        "path": "DocumentReference.author.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.author:Behandelnder.type",
+        "path": "DocumentReference.author.type",
+        "min": 1,
+        "fixedUri": "Practitioner",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.author:Behandelnder.identifier",
+        "path": "DocumentReference.author.identifier",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.author:Behandelnder.display",
+        "path": "DocumentReference.author.display",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.author:AusstellendesSystem",
+        "path": "DocumentReference.author",
+        "sliceName": "AusstellendesSystem",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.author:AusstellendesSystem.reference",
+        "path": "DocumentReference.author.reference",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.author:AusstellendesSystem.type",
+        "path": "DocumentReference.author.type",
+        "min": 1,
+        "fixedUri": "Device",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.author:AusstellendesSystem.identifier",
+        "path": "DocumentReference.author.identifier",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.author:AusstellendesSystem.identifier.use",
+        "path": "DocumentReference.author.identifier.use",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.author:AusstellendesSystem.identifier.type",
+        "path": "DocumentReference.author.identifier.type",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.author:AusstellendesSystem.identifier.system",
+        "path": "DocumentReference.author.identifier.system",
+        "min": 1,
+        "fixedUri": "https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.author:AusstellendesSystem.identifier.value",
+        "path": "DocumentReference.author.identifier.value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.author:AusstellendesSystem.identifier.period",
+        "path": "DocumentReference.author.identifier.period",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.author:AusstellendesSystem.identifier.assigner",
+        "path": "DocumentReference.author.identifier.assigner",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.author:AusstellendesSystem.display",
+        "path": "DocumentReference.author.display",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.authenticator",
+        "path": "DocumentReference.authenticator",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.custodian",
+        "path": "DocumentReference.custodian",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Organization|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.custodian.reference",
+        "path": "DocumentReference.custodian.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.custodian.type",
+        "path": "DocumentReference.custodian.type",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.custodian.identifier",
+        "path": "DocumentReference.custodian.identifier",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.custodian.display",
+        "path": "DocumentReference.custodian.display",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.relatesTo",
+        "path": "DocumentReference.relatesTo",
+        "short": "Medikationsplanverknüpfung",
+        "definition": "Verknüpfung zwischen verschiedenen Repräsentationen (PDF oder XML) eines bundeseinheitlichen Medikationsplans. In diesem Fall ist relatesTo.code = transforms. Alternativ können auch Verknüpfungen zwischen verschiedenen Seiten eines bundeseinheitlichen Medikationsplans übertragen werden. In diesem Fall ist relatesTo.code = appends.",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.relatesTo.code",
+        "path": "DocumentReference.relatesTo.code",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.relatesTo.target",
+        "path": "DocumentReference.relatesTo.target",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_DocumentReference|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.relatesTo.target.reference",
+        "path": "DocumentReference.relatesTo.target.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.relatesTo.target.type",
+        "path": "DocumentReference.relatesTo.target.type",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.relatesTo.target.identifier",
+        "path": "DocumentReference.relatesTo.target.identifier",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.relatesTo.target.display",
+        "path": "DocumentReference.relatesTo.target.display",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.description",
+        "path": "DocumentReference.description",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.securityLabel",
+        "path": "DocumentReference.securityLabel",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.content",
+        "path": "DocumentReference.content",
+        "max": "1"
+      },
+      {
+        "id": "DocumentReference.content:verweis",
+        "path": "DocumentReference.content",
+        "sliceName": "verweis",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.content:anhang",
+        "path": "DocumentReference.content",
+        "sliceName": "anhang",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.content:anhang.attachment",
+        "path": "DocumentReference.content.attachment",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.content:anhang.attachment.contentType",
+        "path": "DocumentReference.content.attachment.contentType",
+        "definition": "Hier wird das Dateiformat ausgewählt. PDF-Dokument: application/pdf, XML-Dokument: application/xml, pkcs#7-Datei: application/pkcs7-mime",
+        "mustSupport": true,
+        "binding": {
+          "strength": "required",
+          "valueSet": "https://fhir.kbv.de/ValueSet/KBV_VS_VoS_ContentTypes",
+          "extension": [
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName",
+              "valueString": "MimeType"
+            },
+            {
+              "url": "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding",
+              "valueBoolean": true
+            }
+          ]
+        }
+      },
+      {
+        "id": "DocumentReference.content:anhang.attachment.data",
+        "path": "DocumentReference.content.attachment.data",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.context",
+        "path": "DocumentReference.context",
+        "definition": "Verweis auf die im PDF-Ausdruck eines Rezeptes vorhandenen FHIR-Ressourcen gemäß https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Prescription bzw. auf die eRezept-Bundles gemäß https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle aus dem Patientenausdruck.",
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.context.encounter",
+        "path": "DocumentReference.context.encounter",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.context.event",
+        "path": "DocumentReference.context.event",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.context.period",
+        "path": "DocumentReference.context.period",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.context.facilityType",
+        "path": "DocumentReference.context.facilityType",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.context.practiceSetting",
+        "path": "DocumentReference.context.practiceSetting",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.context.sourcePatientInfo",
+        "path": "DocumentReference.context.sourcePatientInfo",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.context.related",
+        "path": "DocumentReference.context.related",
+        "min": 1,
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Prescription|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.context.related.reference",
+        "path": "DocumentReference.context.related.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "DocumentReference.context.related.type",
+        "path": "DocumentReference.context.related.type",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.context.related.identifier",
+        "path": "DocumentReference.context.related.identifier",
+        "max": "0"
+      },
+      {
+        "id": "DocumentReference.context.related.display",
+        "path": "DocumentReference.context.related.display",
+        "max": "0"
+      }
+    ]
+  }
+}

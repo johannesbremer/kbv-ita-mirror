@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Verordnung_Kur_Kurart"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Verordnung_Kur_Kurart"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Art der Kur"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="Ambulante_Vorsorgeleistung_zur_Krankheitsverhuetung"/>
+<display value="Ambulante Vorsorgeleistung zur Krankheitsverhuetung"/>
+</concept>
+<concept>
+<code value="Ambulante_Vorsorgeleistung_bei_bestehenden_Krankheiten"/>
+<display value="Ambulante Vorsorgeleistung bei bestehenden Krankheiten"/>
+</concept>
+<concept>
+<code value="Ambulante_Vorsorgeleistung_fuer_Kinder"/>
+<display value="Ambulante Vorsorgeleistung fuer Kinder"/>
+</concept>
+</CodeSystem>

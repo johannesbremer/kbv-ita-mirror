@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Report_Export" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Report_Export" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="dicom" />
+    <uri value="http://nema.org/dicom" />
+    <name value="DICOM Tag Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w3c.prov" />
+    <uri value="http://www.w3.org/ns/prov" />
+    <name value="W3C PROV" />
+  </mapping>
+  <mapping>
+    <identity value="fhirprovenance" />
+    <uri value="http://hl7.org/fhir/provenance" />
+    <name value="FHIR Provenance Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="AuditEvent" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/AuditEvent" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="AuditEvent.id">
+      <path value="AuditEvent.id" />
+      <min value="1" />
+    </element>
+    <element id="AuditEvent.meta">
+      <path value="AuditEvent.meta" />
+      <min value="1" />
+    </element>
+    <element id="AuditEvent.meta.versionId">
+      <path value="AuditEvent.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="AuditEvent.meta.lastUpdated">
+      <path value="AuditEvent.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="AuditEvent.meta.profile">
+      <path value="AuditEvent.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Report_Export|1.2.0" />
+    </element>
+    <element id="AuditEvent.contained">
+      <path value="AuditEvent.contained" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Hersteller_Software" />
+      </type>
+    </element>
+    <element id="AuditEvent.type.system">
+      <path value="AuditEvent.type.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle" />
+    </element>
+    <element id="AuditEvent.type.code">
+      <path value="AuditEvent.type.code" />
+      <min value="1" />
+      <fixedCode value="extract" />
+    </element>
+    <element id="AuditEvent.type.display">
+      <path value="AuditEvent.type.display" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.type.userSelected">
+      <path value="AuditEvent.type.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.subtype">
+      <path value="AuditEvent.subtype" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.action">
+      <path value="AuditEvent.action" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.period">
+      <path value="AuditEvent.period" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.recorded">
+      <path value="AuditEvent.recorded" />
+      <short value="Zeitstempel des Exports" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.outcome">
+      <path value="AuditEvent.outcome" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.outcomeDesc">
+      <path value="AuditEvent.outcomeDesc" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.purposeOfEvent">
+      <path value="AuditEvent.purposeOfEvent" />
+      <short value="Zweck des Exports" />
+      <definition value="Die folgenden Zwecke des Exports sind erlaubt&#xD;&#xA;RECORDMGT records management = normaler Export&#xD;&#xA;HTEST test health data = test Export" />
+      <min value="1" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Report_Export_Purpose" />
+      </binding>
+    </element>
+    <element id="AuditEvent.purposeOfEvent.coding">
+      <path value="AuditEvent.purposeOfEvent.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="AuditEvent.purposeOfEvent.coding.system">
+      <path value="AuditEvent.purposeOfEvent.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="AuditEvent.purposeOfEvent.coding.code">
+      <path value="AuditEvent.purposeOfEvent.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="AuditEvent.purposeOfEvent.coding.userSelected">
+      <path value="AuditEvent.purposeOfEvent.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.purposeOfEvent.text">
+      <path value="AuditEvent.purposeOfEvent.text" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent">
+      <path value="AuditEvent.agent" />
+      <slicing>
+        <discriminator>
+          <type value="exists" />
+          <path value="name" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="2" />
+      <max value="2" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.agent:export_Benutzer">
+      <path value="AuditEvent.agent" />
+      <sliceName value="export_Benutzer" />
+      <short value="Exportbenutzer" />
+      <definition value="Angabe des Benutzers der Software ." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.agent:export_Benutzer.type">
+      <path value="AuditEvent.agent.type" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Benutzer.role">
+      <path value="AuditEvent.agent.role" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Benutzer.who">
+      <path value="AuditEvent.agent.who" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Benutzer.altId">
+      <path value="AuditEvent.agent.altId" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Benutzer.name">
+      <path value="AuditEvent.agent.name" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.agent:export_Benutzer.requestor">
+      <path value="AuditEvent.agent.requestor" />
+      <fixedBoolean value="true" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.agent:export_Benutzer.location">
+      <path value="AuditEvent.agent.location" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Benutzer.policy">
+      <path value="AuditEvent.agent.policy" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Benutzer.media">
+      <path value="AuditEvent.agent.media" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Benutzer.network">
+      <path value="AuditEvent.agent.network" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Benutzer.purposeOfUse">
+      <path value="AuditEvent.agent.purposeOfUse" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Software">
+      <path value="AuditEvent.agent" />
+      <sliceName value="export_Software" />
+      <short value="Exportsoftware" />
+      <definition value="Angabe der Daten zur Software des Exports." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.type">
+      <path value="AuditEvent.agent.type" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.role">
+      <path value="AuditEvent.agent.role" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.who">
+      <path value="AuditEvent.agent.who" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Hersteller_Software|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.who.reference">
+      <path value="AuditEvent.agent.who.reference" />
+      <min value="1" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.who.type">
+      <path value="AuditEvent.agent.who.type" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.who.identifier">
+      <path value="AuditEvent.agent.who.identifier" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.who.display">
+      <path value="AuditEvent.agent.who.display" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.altId">
+      <path value="AuditEvent.agent.altId" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.name">
+      <path value="AuditEvent.agent.name" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.requestor">
+      <path value="AuditEvent.agent.requestor" />
+      <fixedBoolean value="true" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.location">
+      <path value="AuditEvent.agent.location" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.policy">
+      <path value="AuditEvent.agent.policy" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.media">
+      <path value="AuditEvent.agent.media" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.network">
+      <path value="AuditEvent.agent.network" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.agent:export_Software.purposeOfUse">
+      <path value="AuditEvent.agent.purposeOfUse" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.source">
+      <path value="AuditEvent.source" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.source.site">
+      <path value="AuditEvent.source.site" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.source.observer">
+      <path value="AuditEvent.source.observer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.source.observer.reference">
+      <path value="AuditEvent.source.observer.reference" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.source.observer.type">
+      <path value="AuditEvent.source.observer.type" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.source.observer.identifier">
+      <path value="AuditEvent.source.observer.identifier" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.source.observer.identifier.use">
+      <path value="AuditEvent.source.observer.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.source.observer.identifier.type">
+      <path value="AuditEvent.source.observer.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.source.observer.identifier.system">
+      <path value="AuditEvent.source.observer.identifier.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.source.observer.identifier.value">
+      <path value="AuditEvent.source.observer.identifier.value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.source.observer.identifier.period">
+      <path value="AuditEvent.source.observer.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.source.observer.identifier.assigner">
+      <path value="AuditEvent.source.observer.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.source.observer.display">
+      <path value="AuditEvent.source.observer.display" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.source.type">
+      <path value="AuditEvent.source.type" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.entity">
+      <path value="AuditEvent.entity" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.entity.what">
+      <path value="AuditEvent.entity.what" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.entity.type">
+      <path value="AuditEvent.entity.type" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.entity.type.system">
+      <path value="AuditEvent.entity.type.system" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.entity.role">
+      <path value="AuditEvent.entity.role" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.entity.lifecycle">
+      <path value="AuditEvent.entity.lifecycle" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.entity.securityLabel">
+      <path value="AuditEvent.entity.securityLabel" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.entity.name">
+      <path value="AuditEvent.entity.name" />
+      <short value="Auswahl Datenbereich" />
+      <definition value="Auswahl des Datenbereiches" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Datenbereich" />
+      </binding>
+    </element>
+    <element id="AuditEvent.entity.description">
+      <path value="AuditEvent.entity.description" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.entity.query">
+      <path value="AuditEvent.entity.query" />
+      <max value="0" />
+    </element>
+    <element id="AuditEvent.entity.detail">
+      <path value="AuditEvent.entity.detail" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <short value="Datenbereich Einschränkung" />
+      <definition value="Angabe nach welchem Filter der Export eingeschränkt worden ist. Möglich sind z.B. Einschränkungen über einen Patienten oder über den Zeitraum." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.entity.detail:datenbereich_einschraenkung">
+      <path value="AuditEvent.entity.detail" />
+      <sliceName value="datenbereich_einschraenkung" />
+      <definition value="Angabe nach welchem Filter der Export eingeschränkt worden ist. Möglich sind z.B. Einschränkungen über einen Patienten oder über den Zeitraum" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.entity.detail:datenbereich_einschraenkung.type">
+      <path value="AuditEvent.entity.detail.type" />
+      <fixedString value="Datenbereich_Einschraenkung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.entity.detail:datenbereich_einschraenkung.value[x]">
+      <path value="AuditEvent.entity.detail.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <type>
+        <code value="string" />
+      </type>
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Datenbereichparameter" />
+      </binding>
+    </element>
+    <element id="AuditEvent.entity.detail:datenbereich_einschraenkung.value[x]:valueString">
+      <path value="AuditEvent.entity.detail.value[x]" />
+      <sliceName value="valueString" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="AuditEvent.entity.detail:einschraenkung_erlaeuterung">
+      <path value="AuditEvent.entity.detail" />
+      <sliceName value="einschraenkung_erlaeuterung" />
+      <short value="Erläuterung der Einschränkung" />
+      <definition value="Hier soll die Einschränkung z.B. Zeitraum explizit angegeben werdn" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.entity.detail:einschraenkung_erlaeuterung.type">
+      <path value="AuditEvent.entity.detail.type" />
+      <fixedString value="Einschraenkung_erlaeuterung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.entity.detail:einschraenkung_erlaeuterung.value[x]">
+      <path value="AuditEvent.entity.detail.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="AuditEvent.entity.detail:einschraenkung_erlaeuterung.value[x]:valueString">
+      <path value="AuditEvent.entity.detail.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

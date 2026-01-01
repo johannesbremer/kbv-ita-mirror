@@ -1,0 +1,142 @@
+<Composition xmlns="http://hl7.org/fhir">
+	<id value="3262"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-16T14:15:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_2020|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<status value="final"/>
+	<type>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp"/>
+			<code value="Krebsfrueherkennung_Frauen_2020"/>
+		</coding>
+	</type>
+	<subject>
+		<reference value="Patient/3181"/>
+	</subject>
+	<encounter>
+		<reference value="Encounter/3188"/>
+	</encounter>
+	<date value="2020-08-08"/>
+	<author>
+		<display value="System"/>
+	</author>
+	<title value="Krebsfrueherkennung_Frauen_2020"/>
+	<section>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche"/>
+				<code value="Anamnese_Hormonanwendung"/>
+			</coding>
+		</code>
+		<entry>
+			<reference value="Observation/3229"/>
+		</entry>
+	</section>
+	<section>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche"/>
+				<code value="Anamnese_Diverse"/>
+			</coding>
+		</code>
+		<entry>
+			<reference value="Observation/3228"/>
+		</entry>
+	</section>
+	<section>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche"/>
+				<code value="Auftrag"/>
+			</coding>
+		</code>
+		<entry>
+			<reference value="ServiceRequest/8002"/>
+		</entry>
+	</section>
+	<section>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche"/>
+				<code value="Befund_Diverse"/>
+			</coding>
+		</code>
+		<entry>
+			<reference value="Observation/8006"/>
+		</entry>
+	</section>
+	<section>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche"/>
+				<code value="Gynaekologische_Diagnose"/>
+			</coding>
+		</code>
+		<entry>
+			<reference value="Observation/3232"/>
+		</entry>
+	</section>
+	<section>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche"/>
+				<code value="Gynaekologische_Operation"/>
+			</coding>
+		</code>
+		<entry>
+			<reference value="Procedure/3203"/>
+		</entry>
+	</section>
+	<section>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche"/>
+				<code value="Zytologischer_Befund"/>
+			</coding>
+		</code>
+		<entry>
+			<reference value="DiagnosticReport/8006"/>
+		</entry>
+		<section>
+			<code>
+				<coding>
+					<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche"/>
+					<code value="Zytologischer_Befund_Empfehlung"/>
+				</coding>
+			</code>
+			<entry>
+				<reference value="ServiceRequest/8005"/>
+			</entry>
+		</section>
+	</section>
+	<section>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche"/>
+				<code value="Hpv-hr"/>
+			</coding>
+		</code>
+		<entry>
+			<reference value="Observation/8011"/>
+		</entry>
+	</section>
+	<section>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche"/>
+				<code value="Hpv_impfung"/>
+			</coding>
+		</code>
+		<entry>
+			<reference value="Observation/8003"/>
+		</entry>
+	</section>	
+</Composition>

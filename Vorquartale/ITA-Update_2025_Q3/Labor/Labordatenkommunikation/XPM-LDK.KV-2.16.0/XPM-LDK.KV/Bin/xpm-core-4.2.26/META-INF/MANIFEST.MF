@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven 3.8.8
+Built-By: jenkins-slave
+Build-Jdk: 17.0.9
+Main-Class: de.kbv.xpm.core.Main
+Multi-Release: true
+

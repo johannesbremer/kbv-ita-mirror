@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 ..\Schema\afhi_root_V1.00.xsd">
+	<header>
+		<id EX="016f750f-7a05-40a6-93bc-01d74a08a44f" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2022-10-01.."/>
+		<origination_dttm V="2022-08-26"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat 4"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="https://update.kbv.de/ita-update"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen für der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2022, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="https://update.kbv.de/ita-update"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="64" DN="Verordnung medizinischer Vorsorge für Mütter oder Väter gemäß § 24 SGB V">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Vorsorgerelevante Gesundheitsstörungen/Erkrankungen"/>
+					<hinweistext V="Geben Sie in den Abschnitten A und B die relevanten Gesundheitsstörungen einschließlich Risikofaktoren (z. B. Übergewicht, Tabak- und Alkoholkonsum, Bewegungsmangel) und die relevanten Erkrankungen in der Reihenfolge ihrer Bedeutung an. Die Diagnosen sind nach ICD-10-GM zu verschlüsseln."/>
+				</feld>
+				<feld>
+					<nummer V="2"/>
+					<name V="Kurze Angaben zur Anamnese"/>
+					<hinweistext V="Geben Sie hier die Anamnese und ggf. den bisherigen Verlauf der Krankenbehandlung einschließlich der Beschwerden an."/>
+				</feld>
+				<feld>
+					<nummer V="3"/>
+					<name V="Vorübergehende Beeinträchtigungen der Aktivitäten/Teilhabe in Folge der unter I.B. genannten Erkrankungen"/>
+					<hinweistext V="Geben Sie hier die Schwierigkeiten an, die Beeinträchtigungen der Aktivitäten (z. B. mit Stress umgehen, auf die eigene Gesundheit und Ernährung achten) und Teilhabe (z. B. am Familienleben, an der Arbeitswelt oder am sozialen Umfeld) darstellen."/>
+				</feld>
+				<feld>
+					<nummer V="4"/>
+					<name V="Kontextfaktoren, die für die mütter-/väterspezifische Problemkonstellation relevant sind"/>
+					<hinweistext V="Geben Sie die Lebensumstände an, die für die mütter-/väterspezifische Problemkonstellation relevant sind. Hierzu gehören die Kompetenzen des Patienten, aber auch externe Faktoren (z. B. soziales Umfeld). Die Angabe zusätzlicher Faktoren sowie Erläuterungen sind im Freitextfeld möglich."/>
+				</feld>
+				<feld>
+					<nummer V="5"/>
+					<name V="Krankenbehandlung und andere Maßnahmen"/>
+					<hinweistext V="Geben Sie in den Abschnitten A und B die bisher durchgeführten Leistungen der Krankenbehandlung an und bestätigen Sie, dass die bisherigen Maßnahmen nicht ausreichend bzw. zielführend sind."/>
+				</feld>
+				<feld>
+					<nummer V="6"/>
+					<name V="Vorsorgeziele"/>
+					<hinweistext V="Geben Sie die Vorsorgeziele möglichst in Bezug auf den genannten Gesundheitsstörungen/Erkrankungen bzw. Kontext- und Risikofaktoren an (z. B. Erlernen von Bewältigungsstrategien)."/>
+				</feld>
+				<feld>
+					<nummer V="7"/>
+					<name V="Empfohlene Leistungsform: Medizinische Vorsorge für Mütter oder Väter nach § 24 SGB V"/>
+					<hinweistext V="Geben Sie hier die Ihrer Einschätzung nach geeignete Leistungsform an (z. B. Mütter-Leistung, Mutter-Kind-Leistung, Väter-Leistung, Vater-Kind-Leistung)."/>
+				</feld>
+				<feld>
+					<nummer V="8"/>
+					<name V="Angaben zu Kindern, die mit aufgenommen werden sollen"/>
+					<hinweistext V="Geben Sie hier bei einer Mutter-Kind-Leistung oder Vater-Kind-Leistung Name und Geburtsdatum des Kindes an. Darüber hinaus ist anzukreuzen, aus welchem Grund eine Aufnahme erfolgen soll."/>
+				</feld>
+				<feld>
+					<nummer V="9"/>
+					<name V="Anforderungen an die Einrichtung"/>
+					<hinweistext V="Geben Sie hier an, welche Anforderungen an die Vorsorgeeinrichtung gestellt werden (z. B. Klima, Barriere-freiheit, spezialisierte Therapieangebote, besondere Kostformen)."/>
+				</feld>
+				<feld>
+					<nummer V="10"/>
+					<name V="Die Leistung ist vor Ablauf der gesetzlichen Wartefrist von 4 Jahren dringend medizinisch notwendig"/>
+					<hinweistext V="Im Regelfall ist eine medizinische Vorsorge alle vier Jahre möglich. Ausnahmen sind bei Vorliegen einer neuen Indikation oder einer Verschlimmerung der gleichen Indikation möglich und müssen begründet werden."/>
+				</feld>
+				<feld>
+					<nummer V="11"/>
+					<name V="Sonstiges"/>
+					<hinweistext V="Hier können Sie weitere Hinweise geben, z.B. zur Reisefähigkeit oder zum Vorliegen einer Schwangerschaft."/>
+				</feld>
+				<feld>
+					<nummer V="12"/>
+					<name V="Rückruf erbeten unter"/>
+					<hinweistext V="Wenn Sie einen telefonischen Rückruf der Krankenkasse wünschen, geben Sie dies hier an."/>
+				</feld>
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

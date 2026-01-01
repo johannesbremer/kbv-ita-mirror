@@ -1,0 +1,209 @@
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-EX-VoS-User-Device" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_User_Device" />
+  <version value="2.1.0" />
+  <name value="KBV_EX_VoS_User_Device" />
+  <title value="KBV_EX_VoS_User_Device" />
+  <status value="active" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <description value="Anwender und System im Bundle KBV_PR_VoS_Bundle_VoS_PVS" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Bundle.link" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Systemkontext der VoS" />
+      <definition value="Benutzername, SystemID und Prüfnummer der VoS." />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="0" />
+	  <max value="3" />
+    </element>
+    <element id="Extension.extension:Anwender">
+      <path value="Extension.extension" />
+      <sliceName value="Anwender" />
+      <short value="Anwender" />
+      <definition value="Hier ist die BenutzerID des Anwenders im jeweiligen System anzugeben" />
+      <min value="0" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:Anwender.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="Anwender" />
+    </element>
+    <element id="Extension.extension:Anwender.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <short value="BenutzerID" />
+      <definition value="BenutzerID des Anwenders" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:Anwender.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <short value="BenutzerID" />
+      <definition value="BenutzerID des Anwenders" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:KBV-Pruefnummer">
+      <path value="Extension.extension" />
+      <sliceName value="KBV-Pruefnummer" />
+      <short value="KBV-Prüfnummer" />
+      <definition value="Die KBV-Prüfnummer aus dem Zertifizierungsverfahren gemäß §371 Absatz 1 SGB V" />
+      <min value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Extension.extension:KBV-Pruefnummer.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="KBV-Pruefnummer" />
+    </element>
+    <element id="Extension.extension:KBV-Pruefnummer.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Identifier" />
+      </type>
+    </element>
+    <element id="Extension.extension:KBV-Pruefnummer.value[x]:valueIdentifier">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueIdentifier" />
+      <short value="KBV-Prüfnummer" />
+      <definition value="Die KBV-Prüfnummer aus dem Zertifizierungsverfahren gemäß §371 Absatz 1 SGB V" />
+      <type>
+        <code value="Identifier" />
+      </type>
+    </element>
+    <element id="Extension.extension:KBV-Pruefnummer.value[x]:valueIdentifier.use">
+      <path value="Extension.extension.value[x].use" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:KBV-Pruefnummer.value[x]:valueIdentifier.type">
+      <path value="Extension.extension.value[x].type" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:KBV-Pruefnummer.value[x]:valueIdentifier.system">
+      <path value="Extension.extension.value[x].system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Extension.extension:KBV-Pruefnummer.value[x]:valueIdentifier.value">
+      <path value="Extension.extension.value[x].value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Extension.extension:KBV-Pruefnummer.value[x]:valueIdentifier.period">
+      <path value="Extension.extension.value[x].period" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:KBV-Pruefnummer.value[x]:valueIdentifier.assigner">
+      <path value="Extension.extension.value[x].assigner" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:systemID">
+      <path value="Extension.extension" />
+      <sliceName value="systemID" />
+      <short value="SystemID" />
+      <definition value="Ein Identifier, der die konkrete Instanz des Systems kennzeichnet" />
+      <min value="0" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:systemID.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="systemID" />
+    </element>
+    <element id="Extension.extension:systemID.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Identifier" />
+      </type>
+    </element>
+    <element id="Extension.extension:systemID.value[x]:valueIdentifier">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueIdentifier" />
+      <short value="SystemID" />
+      <definition value="Ein Identifier, der die konkrete Instanz des Systems kennzeichnet" />
+      <type>
+        <code value="Identifier" />
+      </type>
+    </element>
+    <element id="Extension.extension:systemID.value[x]:valueIdentifier.use">
+      <path value="Extension.extension.value[x].use" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:systemID.value[x]:valueIdentifier.type">
+      <path value="Extension.extension.value[x].type" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:systemID.value[x]:valueIdentifier.value">
+      <path value="Extension.extension.value[x].value" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:systemID.value[x]:valueIdentifier.period">
+      <path value="Extension.extension.value[x].period" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:systemID.value[x]:valueIdentifier.assigner">
+      <path value="Extension.extension.value[x].assigner" />
+      <max value="0" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_User_Device" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

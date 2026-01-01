@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlung_im_Auftrag_Ueberweisung" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Behandlung_im_Auftrag_Ueberweisung" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <description value="Profil für Patient der mit Überweisung zum Behandelnden kommt" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="quick" />
+    <uri value="http://siframework.org/cqf" />
+    <name value="Quality Improvement and Clinical Knowledge (QUICK)" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="ServiceRequest" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ServiceRequest" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="ServiceRequest">
+      <path value="ServiceRequest" />
+      <short value="Behandlung_im_Auftrag_Überweisung" />
+      <definition value="Diese Ressource beschreibt eine empfangene Überweisung von einem Überweiser an den Behandelnden des exportierenden Systems." />
+    </element>
+    <element id="ServiceRequest.id">
+      <path value="ServiceRequest.id" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.meta">
+      <path value="ServiceRequest.meta" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.meta.versionId">
+      <path value="ServiceRequest.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.meta.lastUpdated">
+      <path value="ServiceRequest.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.meta.profile">
+      <path value="ServiceRequest.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlung_im_Auftrag_Ueberweisung|1.2.0" />
+    </element>
+    <element id="ServiceRequest.text">
+      <path value="ServiceRequest.text" />
+      <min value="1" />
+    </element>	
+    <element id="ServiceRequest.extension">
+      <path value="ServiceRequest.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="ServiceRequest.extension:istAbrechnungsrelevant">
+      <path value="ServiceRequest.extension" />
+      <sliceName value="istAbrechnungsrelevant" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_istAbrechnungsrelevant" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.identifier">
+      <path value="ServiceRequest.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.instantiatesCanonical">
+      <path value="ServiceRequest.instantiatesCanonical" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.instantiatesUri">
+      <path value="ServiceRequest.instantiatesUri" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.basedOn">
+      <path value="ServiceRequest.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.replaces">
+      <path value="ServiceRequest.replaces" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requisition">
+      <path value="ServiceRequest.requisition" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.status">
+      <path value="ServiceRequest.status" />
+      <fixedCode value="completed" />
+    </element>
+    <element id="ServiceRequest.intent">
+      <path value="ServiceRequest.intent" />
+      <fixedCode value="proposal" />
+    </element>
+    <element id="ServiceRequest.category">
+      <path value="ServiceRequest.category" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.priority">
+      <path value="ServiceRequest.priority" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.doNotPerform">
+      <path value="ServiceRequest.doNotPerform" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.code">
+      <path value="ServiceRequest.code" />
+      <short value="Auftragsbeschreibung" />
+      <definition value="In diesem Element wird eine Beschreibung des Auftrags eingetragen." />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.code.coding">
+      <path value="ServiceRequest.code.coding" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.code.text">
+      <path value="ServiceRequest.code.text" />
+      <short value="Auftragsbeschreibung" />
+      <definition value="In diesem Element wird eine Beschreibung des Auftrags eingetragen." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.orderDetail">
+      <path value="ServiceRequest.orderDetail" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Leistungsart" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.orderDetail.coding">
+      <path value="ServiceRequest.orderDetail.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="ServiceRequest.orderDetail.coding.system">
+      <path value="ServiceRequest.orderDetail.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.orderDetail.coding.code">
+      <path value="ServiceRequest.orderDetail.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.orderDetail.text">
+      <path value="ServiceRequest.orderDetail.text" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.quantity[x]">
+      <path value="ServiceRequest.quantity[x]" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.subject">
+      <path value="ServiceRequest.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.subject.reference">
+      <path value="ServiceRequest.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.subject.type">
+      <path value="ServiceRequest.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.subject.identifier">
+      <path value="ServiceRequest.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.subject.display">
+      <path value="ServiceRequest.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.encounter">
+      <path value="ServiceRequest.encounter" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Begegnung|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.encounter.reference">
+      <path value="ServiceRequest.encounter.reference" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.encounter.type">
+      <path value="ServiceRequest.encounter.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.encounter.identifier">
+      <path value="ServiceRequest.encounter.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.encounter.display">
+      <path value="ServiceRequest.encounter.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]">
+      <path value="ServiceRequest.occurrence[x]" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.asNeeded[x]">
+      <path value="ServiceRequest.asNeeded[x]" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.authoredOn">
+      <path value="ServiceRequest.authoredOn" />
+      <short value="Ausstellungsdatum des Auftrags / der Ueberweisung" />
+      <definition value="In diesem Element wird das Ausstellungsdatum des Auftrags / der Ueberweisung angegeben." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.requester">
+      <path value="ServiceRequest.requester" />
+      <short value="Erstveranlasser/Ueberweiser" />
+      <definition value="Die Referenz zu einer BehandelnderFunktion (enthält LANR, ASV-Teamnummer und BSNR) ist zu bevorzugen. Nur wenn keine Ressource BehandelnderFunktion erzeugt werden kann, müssen im Element display die vorhandenen Informationen (Arztnamen, LANR, BSNR, ASV-Teamnummer) übertragen werden." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.requester.reference">
+      <path value="ServiceRequest.requester.reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.requester.type">
+      <path value="ServiceRequest.requester.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requester.identifier">
+      <path value="ServiceRequest.requester.identifier" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.requester.identifier.use">
+      <path value="ServiceRequest.requester.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requester.identifier.type">
+      <path value="ServiceRequest.requester.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requester.identifier.system">
+      <path value="ServiceRequest.requester.identifier.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.requester.identifier.value">
+      <path value="ServiceRequest.requester.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.requester.identifier.period">
+      <path value="ServiceRequest.requester.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requester.identifier.assigner">
+      <path value="ServiceRequest.requester.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requester.display">
+      <path value="ServiceRequest.requester.display" />
+      <short value="Bezeichner des Überweisers" />
+      <definition value="Bezeichner des Überweisers" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.performerType">
+      <path value="ServiceRequest.performerType" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.performer">
+      <path value="ServiceRequest.performer" />
+      <short value="Überweiung an" />
+      <definition value="Hiermit ist der Empfänger des Formulares gemeint, also der Behandelnde des exportierenden AIS." />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.performer.reference">
+      <path value="ServiceRequest.performer.reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.performer.type">
+      <path value="ServiceRequest.performer.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.performer.identifier">
+      <path value="ServiceRequest.performer.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.performer.display">
+      <path value="ServiceRequest.performer.display" />
+      <short value="Ueberweisung an" />
+      <definition value="Hier können die Angaben vom Formular übertragen werden." />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.locationCode">
+      <path value="ServiceRequest.locationCode" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.locationReference">
+      <path value="ServiceRequest.locationReference" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode">
+      <path value="ServiceRequest.reasonCode" />
+      <short value="Diagnose/Verdachtsdiagnose" />
+      <definition value="In diesem Element kann eine Diagnose oder Verdachtsdiagnose eingetragen werden. Die Angabe einer Referenz zu einer Diagnoseklasse in reasonReference ist zu bevorzugen." />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="example" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/clinical-findings" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.reasonCode.coding">
+      <path value="ServiceRequest.reasonCode.coding" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode.text">
+      <path value="ServiceRequest.reasonCode.text" />
+      <short value="Diagnose/Verdachtsdiagnose" />
+      <definition value="Diagnose/Verdachtsdiagnose" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonReference">
+      <path value="ServiceRequest.reasonReference" />
+      <short value="Strukturierte Diagnose" />
+      <definition value="In diesem Element kann eine strukturierte Diagnose referenziert werden." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Diagnose|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonReference.reference">
+      <path value="ServiceRequest.reasonReference.reference" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.reasonReference.type">
+      <path value="ServiceRequest.reasonReference.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonReference.identifier">
+      <path value="ServiceRequest.reasonReference.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonReference.display">
+      <path value="ServiceRequest.reasonReference.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.insurance">
+      <path value="ServiceRequest.insurance" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo">
+      <path value="ServiceRequest.supportingInfo" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="identifier.type.coding.code" />
+        </discriminator>
+        <description value="befund_Medikation&#xD;&#xA;ausnahmeindikation" />
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation">
+      <path value="ServiceRequest.supportingInfo" />
+      <sliceName value="befund_Medikation" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Medikament|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Befund|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.reference">
+      <path value="ServiceRequest.supportingInfo.reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.type">
+      <path value="ServiceRequest.supportingInfo.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.identifier">
+      <path value="ServiceRequest.supportingInfo.identifier" />
+      <short value="Klassifizierung des Eintrags" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Eintrags verwendet." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.identifier.use">
+      <path value="ServiceRequest.supportingInfo.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.identifier.type">
+      <path value="ServiceRequest.supportingInfo.identifier.type" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.identifier.type.coding">
+      <path value="ServiceRequest.supportingInfo.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.identifier.type.coding.system">
+      <path value="ServiceRequest.supportingInfo.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ueberweisung_KH-Einweisung_Kategorien" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.identifier.type.coding.version">
+      <path value="ServiceRequest.supportingInfo.identifier.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.identifier.type.coding.code">
+      <path value="ServiceRequest.supportingInfo.identifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="Befund_Medikation" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.identifier.type.coding.display">
+      <path value="ServiceRequest.supportingInfo.identifier.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.identifier.type.coding.userSelected">
+      <path value="ServiceRequest.supportingInfo.identifier.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.identifier.type.text">
+      <path value="ServiceRequest.supportingInfo.identifier.type.text" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.identifier.system">
+      <path value="ServiceRequest.supportingInfo.identifier.system" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.identifier.value">
+      <path value="ServiceRequest.supportingInfo.identifier.value" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.identifier.period">
+      <path value="ServiceRequest.supportingInfo.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.identifier.assigner">
+      <path value="ServiceRequest.supportingInfo.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:befund_Medikation.display">
+      <path value="ServiceRequest.supportingInfo.display" />
+      <short value="Befund Medikation" />
+      <definition value="In diesem Element können Befunde oder Medikationen zur Dokumentation angegeben werden" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation">
+      <path value="ServiceRequest.supportingInfo" />
+      <sliceName value="Ausnahmeindikation" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Diagnose|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.reference">
+      <path value="ServiceRequest.supportingInfo.reference" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.type">
+      <path value="ServiceRequest.supportingInfo.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.identifier">
+      <path value="ServiceRequest.supportingInfo.identifier" />
+      <short value="Klassifizierung des Eintrags" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Eintrags verwendet." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.identifier.use">
+      <path value="ServiceRequest.supportingInfo.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.identifier.type">
+      <path value="ServiceRequest.supportingInfo.identifier.type" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.identifier.type.coding">
+      <path value="ServiceRequest.supportingInfo.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.identifier.type.coding.system">
+      <path value="ServiceRequest.supportingInfo.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ueberweisung_KH-Einweisung_Kategorien" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.identifier.type.coding.version">
+      <path value="ServiceRequest.supportingInfo.identifier.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.identifier.type.coding.code">
+      <path value="ServiceRequest.supportingInfo.identifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="Ausnahmeindikation" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.identifier.type.coding.display">
+      <path value="ServiceRequest.supportingInfo.identifier.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.identifier.type.coding.userSelected">
+      <path value="ServiceRequest.supportingInfo.identifier.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.identifier.type.text">
+      <path value="ServiceRequest.supportingInfo.identifier.type.text" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.identifier.system">
+      <path value="ServiceRequest.supportingInfo.identifier.system" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.identifier.value">
+      <path value="ServiceRequest.supportingInfo.identifier.value" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.identifier.period">
+      <path value="ServiceRequest.supportingInfo.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.identifier.assigner">
+      <path value="ServiceRequest.supportingInfo.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo:Ausnahmeindikation.display">
+      <path value="ServiceRequest.supportingInfo.display" />
+      <short value="Ausnahmekennziffer" />
+      <definition value="Dieses Element wird zur Angabe von Ausnahmekennziffern genutzt z.B. technische Kennziffer." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.specimen">
+      <path value="ServiceRequest.specimen" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.bodySite">
+      <path value="ServiceRequest.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.note">
+      <path value="ServiceRequest.note" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.patientInstruction">
+      <path value="ServiceRequest.patientInstruction" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.relevantHistory">
+      <path value="ServiceRequest.relevantHistory" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

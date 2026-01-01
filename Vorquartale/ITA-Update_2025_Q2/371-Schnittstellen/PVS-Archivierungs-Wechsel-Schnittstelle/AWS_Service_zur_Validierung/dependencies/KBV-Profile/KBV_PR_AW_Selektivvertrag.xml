@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Selektivvertrag" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Selektivvertrag" />
+  <status value="active" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Contract" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Contract" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Contract">
+      <path value="Contract" />
+      <short value="Selektivvertrag" />
+      <definition value="In dieser Ressource können Vertragsdetails zu einem Selektivvertrag dokumentiert werden." />
+      <constraint>
+        <key value="AWS-1" />
+        <severity value="error" />
+        <human value="Der Status darf nur executed, cancelled oder offered sein" />
+        <expression value="status='executed' or status='cancelled' or status='offered'" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Selektivvertrag" />
+      </constraint>
+    </element>
+    <element id="Contract.id">
+      <path value="Contract.id" />
+      <min value="1" />
+    </element>
+    <element id="Contract.meta">
+      <path value="Contract.meta" />
+      <min value="1" />
+    </element>
+    <element id="Contract.meta.versionId">
+      <path value="Contract.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Contract.meta.lastUpdated">
+      <path value="Contract.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Contract.meta.profile">
+      <path value="Contract.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Selektivvertrag|1.2.0" />
+    </element>
+    <element id="Contract.text">
+      <path value="Contract.text" />
+      <min value="1" />
+    </element>
+    <element id="Contract.identifier">
+      <path value="Contract.identifier" />
+      <short value="Vertragskennzeichen" />
+      <definition value="Vertragskennzeichen des Selektivvertrages" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.identifier.type">
+      <path value="Contract.identifier.type" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.identifier.type.coding">
+      <path value="Contract.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.identifier.type.coding.system">
+      <path value="Contract.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Selektivvertrag_Identifiertyp" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.identifier.type.coding.version">
+      <path value="Contract.identifier.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Contract.identifier.type.coding.code">
+      <path value="Contract.identifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="Bezeichnung_Vertragskennzeichen" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.identifier.type.coding.display">
+      <path value="Contract.identifier.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Contract.identifier.type.coding.userSelected">
+      <path value="Contract.identifier.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Contract.identifier.type.text">
+      <path value="Contract.identifier.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Contract.identifier.value">
+      <path value="Contract.identifier.value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.identifier.period">
+      <path value="Contract.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Contract.identifier.assigner">
+      <path value="Contract.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Contract.url">
+      <path value="Contract.url" />
+      <max value="0" />
+    </element>
+    <element id="Contract.version">
+      <path value="Contract.version" />
+      <max value="0" />
+    </element>
+    <element id="Contract.status">
+      <path value="Contract.status" />
+      <definition value="In diesem Feld wird der Einschreibestatus mit den drei erblaubten Statuswerten angegeben:&#xD;&#xA;Eingeschrieben: executed&#xD;&#xA;Nicht Eingeschrieben: cancelled&#xD;&#xA;Beantragt: offered" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.legalState">
+      <path value="Contract.legalState" />
+      <max value="0" />
+    </element>
+    <element id="Contract.instantiatesCanonical">
+      <path value="Contract.instantiatesCanonical" />
+      <max value="0" />
+    </element>
+    <element id="Contract.instantiatesUri">
+      <path value="Contract.instantiatesUri" />
+      <max value="0" />
+    </element>
+    <element id="Contract.contentDerivative">
+      <path value="Contract.contentDerivative" />
+      <max value="0" />
+    </element>
+    <element id="Contract.issued">
+      <path value="Contract.issued" />
+      <short value="Antragsstellung" />
+      <definition value="In diesem Feld ist das Datum der Antragsstellung zu dokumentieren" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.applies">
+      <path value="Contract.applies" />
+      <short value="Teilnahme" />
+      <definition value="In diesem Element ist die Teilnahme zu erfassen." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.applies.start">
+      <path value="Contract.applies.start" />
+      <short value="Teilnahme von" />
+      <definition value="Datum des Beginns der Teilnahme" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.applies.end">
+      <path value="Contract.applies.end" />
+      <short value="Teilnahme bis" />
+      <definition value="Enddatum der Teilnahme" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.expirationType">
+      <path value="Contract.expirationType" />
+      <max value="0" />
+    </element>
+    <element id="Contract.subject">
+      <path value="Contract.subject" />
+      <label value="TR01" />
+      <short value="Patientenbezug" />
+      <definition value="Siehe Reason for inclusion and constrainment" />
+      <requirements value="Diese Referenz wurde aus technischen Gründen erzeugt, um dieser patientenbezogenen Ressource zu genügen. Aus informationstechnischer Sicht ist Diese jedoch nicht notwendig, da der Zusammenhang bereits über das Attribut related hergestellt worden ist." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.subject.reference">
+      <path value="Contract.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="Contract.subject.type">
+      <path value="Contract.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="Contract.subject.identifier">
+      <path value="Contract.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Contract.subject.display">
+      <path value="Contract.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Contract.authority">
+      <path value="Contract.authority" />
+      <short value="Kostenträger" />
+      <definition value="Es ist ein Kostentraeger anzugeben. Dazu ist mindestens der Name" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.authority.reference">
+      <path value="Contract.authority.reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.authority.type">
+      <path value="Contract.authority.type" />
+      <max value="0" />
+    </element>
+    <element id="Contract.authority.identifier">
+      <path value="Contract.authority.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Contract.authority.display">
+      <path value="Contract.authority.display" />
+      <short value="Kostenträgername" />
+      <definition value="Name des Kostenträgers" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.domain">
+      <path value="Contract.domain" />
+      <max value="0" />
+    </element>
+    <element id="Contract.site">
+      <path value="Contract.site" />
+      <max value="0" />
+    </element>
+    <element id="Contract.name">
+      <path value="Contract.name" />
+      <max value="0" />
+    </element>
+    <element id="Contract.title">
+      <path value="Contract.title" />
+      <max value="0" />
+    </element>
+    <element id="Contract.subtitle">
+      <path value="Contract.subtitle" />
+      <max value="0" />
+    </element>
+    <element id="Contract.alias">
+      <path value="Contract.alias" />
+      <max value="0" />
+    </element>
+    <element id="Contract.author">
+      <path value="Contract.author" />
+      <max value="0" />
+    </element>
+    <element id="Contract.scope">
+      <path value="Contract.scope" />
+      <max value="0" />
+    </element>
+    <element id="Contract.topic[x]">
+      <path value="Contract.topic[x]" />
+      <max value="0" />
+    </element>
+    <element id="Contract.type">
+      <path value="Contract.type" />
+      <short value="Klassifizierung der Ressource" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieser Ressource verwendet." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.type.coding">
+      <path value="Contract.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.type.coding.system">
+      <path value="Contract.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.type.coding.version">
+      <path value="Contract.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Contract.type.coding.code">
+      <path value="Contract.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="Selektivvertag" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.type.coding.display">
+      <path value="Contract.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Contract.type.coding.userSelected">
+      <path value="Contract.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Contract.type.text">
+      <path value="Contract.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Contract.subType">
+      <path value="Contract.subType" />
+      <max value="0" />
+    </element>
+    <element id="Contract.contentDefinition">
+      <path value="Contract.contentDefinition" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term">
+      <path value="Contract.term" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.term.identifier">
+      <path value="Contract.term.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.issued">
+      <path value="Contract.term.issued" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.applies">
+      <path value="Contract.term.applies" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.topic[x]">
+      <path value="Contract.term.topic[x]" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.type">
+      <path value="Contract.term.type" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Gebuehrenordnung" />
+      </binding>
+    </element>
+    <element id="Contract.term.type.coding">
+      <path value="Contract.term.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.term.type.coding.system">
+      <path value="Contract.term.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Gebuehrenordnung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.term.type.coding.version">
+      <path value="Contract.term.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.type.coding.code">
+      <path value="Contract.term.type.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.term.type.coding.display">
+      <path value="Contract.term.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.type.coding.userSelected">
+      <path value="Contract.term.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.type.text">
+      <path value="Contract.term.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.subType">
+      <path value="Contract.term.subType" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.text">
+      <path value="Contract.term.text" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.securityLabel">
+      <path value="Contract.term.securityLabel" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.offer">
+      <path value="Contract.term.offer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.term.offer.identifier">
+      <path value="Contract.term.offer.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.offer.party">
+      <path value="Contract.term.offer.party" />
+      <short value="Rechnungsempfänger" />
+      <definition value="Informationen zum Rechnungempfänger" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.term.offer.party.reference">
+      <path value="Contract.term.offer.party.reference" />
+      <short value="Rechnungsempfänger" />
+      <definition value="Informationen zum Rechnungempfänger" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Bezugsperson|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.term.offer.party.reference.reference">
+      <path value="Contract.term.offer.party.reference.reference" />
+      <min value="1" />
+    </element>
+    <element id="Contract.term.offer.party.reference.type">
+      <path value="Contract.term.offer.party.reference.type" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.offer.party.reference.identifier">
+      <path value="Contract.term.offer.party.reference.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.offer.party.reference.display">
+      <path value="Contract.term.offer.party.reference.display" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.offer.party.role">
+      <path value="Contract.term.offer.party.role" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.term.offer.party.role.coding">
+      <path value="Contract.term.offer.party.role.coding" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.offer.party.role.text">
+      <path value="Contract.term.offer.party.role.text" />
+      <definition value="Die rolle ist immer" />
+      <min value="1" />
+      <fixedString value="Rechnungempfaenger" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Contract.term.offer.topic">
+      <path value="Contract.term.offer.topic" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.offer.type">
+      <path value="Contract.term.offer.type" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.offer.decision">
+      <path value="Contract.term.offer.decision" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.offer.decisionMode">
+      <path value="Contract.term.offer.decisionMode" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.offer.answer">
+      <path value="Contract.term.offer.answer" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.offer.text">
+      <path value="Contract.term.offer.text" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.offer.linkId">
+      <path value="Contract.term.offer.linkId" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.offer.securityLabelNumber">
+      <path value="Contract.term.offer.securityLabelNumber" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.asset">
+      <path value="Contract.term.asset" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.action">
+      <path value="Contract.term.action" />
+      <max value="0" />
+    </element>
+    <element id="Contract.term.group">
+      <path value="Contract.term.group" />
+      <max value="0" />
+    </element>
+    <element id="Contract.supportingInfo">
+      <path value="Contract.supportingInfo" />
+      <max value="0" />
+    </element>
+    <element id="Contract.relevantHistory">
+      <path value="Contract.relevantHistory" />
+      <max value="0" />
+    </element>
+    <element id="Contract.signer">
+      <path value="Contract.signer" />
+      <max value="0" />
+    </element>
+    <element id="Contract.friendly">
+      <path value="Contract.friendly" />
+      <max value="0" />
+    </element>
+    <element id="Contract.legal">
+      <path value="Contract.legal" />
+      <max value="0" />
+    </element>
+    <element id="Contract.rule">
+      <path value="Contract.rule" />
+      <max value="0" />
+    </element>
+    <element id="Contract.legallyBinding[x]">
+      <path value="Contract.legallyBinding[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

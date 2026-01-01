@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns="urn::sciphox-org/sciphox" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="ohneName">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Alter"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Verdachtsdiagnose">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Malignes Melanom"/>
+			<xs:enumeration value="Basalzellkarzinom"/>
+			<xs:enumeration value="Spinozelluläres Karzinom"/>
+			<xs:enumeration value="anderer Hautkrebs"/>
+			<xs:enumeration value="sonstiger dermatologisch abklärungsbedürftiger Befund"/>
+			<xs:enumeration value="VerdachtsdiagnoseND"/>
+			<xs:enumeration value="Screening-Teilnehmer wird an einen Dermatologen überwiesen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Gesundheitsuntersuchung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Gleichzeitig Gesundheitsuntersuchung durchgeführt"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,97 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "KBV-EX-VoS-StartUp-Context",
+  "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_StartUp_Context",
+  "version": "2.2.0",
+  "name": "KBV_EX_VoS_StartUp_Context",
+  "title": "KBV_EX_VoS_StartUp_Context",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "description": "Extension zur Erfassung des Aufrufkontexts mit dem die Verordnungssoftware aufgerufen wurde. Der Aufrufkontext entspricht der vom Anwender gewünschten Funktionalität in der Verordnungssoftware.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "Composition",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Aufrufkontext",
+        "definition": "Aufrufkontext, mit dem die VoS gestartet werden soll"
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_StartUp_Context"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueCodeableConcept",
+        "path": "Extension.value[x]",
+        "sliceName": "valueCodeableConcept",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueCodeableConcept.coding",
+        "path": "Extension.value[x].coding",
+        "min": 1,
+        "max": "1"
+      },
+      {
+        "id": "Extension.value[x]:valueCodeableConcept.coding.system",
+        "path": "Extension.value[x].coding.system",
+        "min": 1,
+        "fixedUri": "https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context"
+      },
+      {
+        "id": "Extension.value[x]:valueCodeableConcept.coding.code",
+        "path": "Extension.value[x].coding.code",
+        "min": 1
+      },
+      {
+        "id": "Extension.value[x]:valueCodeableConcept.text",
+        "path": "Extension.value[x].text",
+        "max": "0"
+      }
+    ]
+  }
+}

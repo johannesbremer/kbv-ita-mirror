@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Anlage" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Anlage" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <description value="Beschreibung von Informationen zu einer Anlage" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV).All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="fhircomposition" />
+    <uri value="http://hl7.org/fhir/composition" />
+    <name value="FHIR Composition" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="cda" />
+    <uri value="http://hl7.org/v3/cda" />
+    <name value="CDA (R2)" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="xds" />
+    <uri value="http://ihe.net/xds" />
+    <name value="XDS metadata equivalent" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="DocumentReference" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/DocumentReference" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="DocumentReference">
+      <path value="DocumentReference" />
+      <constraint>
+        <key value="NotAllOrNothingHASOne" />
+        <severity value="error" />
+        <human value="Min. eine aber auch nur eine Referenz aus Betriebsstaette, Patient und Begegnung ist erlaubt." />
+        <expression value="subject.reference.exists() xor context.encounter.reference.exists() xor context.related.reference.exists()" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Anlage" />
+      </constraint>
+      <constraint>
+        <key value="SpezifikationsVersionKBVMuster" />
+        <severity value="error" />
+        <human value="Ist ein KBV-Muster gewählt worden muss die Spezifikationsversion im Format 1-4QJJJJ angegeben werden" />
+        <expression value="type.coding.code.startsWith('KV-Muster') implies masterIdentifier.value.matches('[1-4][qQ]\\d{4}')" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Anlage" />
+      </constraint>
+      <constraint>
+        <key value="SpezifikationsVersionDPE" />
+        <severity value="error" />
+        <human value="Für DPE ist die Spezifikationsversion im Format x.x.x anzugegeben" />
+        <expression value="type.coding.code.startsWith('DPE') implies masterIdentifier.value.matches('\\d{1}\\.\\d{1}\\.\\d{1}')" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Anlage" />
+      </constraint>
+      <constraint>
+        <key value="SpezifikationsVersionNFD" />
+        <severity value="error" />
+        <human value="Für NFD ist die Spezifikationsversion im Format x.x.x anzugegeben" />
+        <expression value="type.coding.code.startsWith('NFD') implies masterIdentifier.value.matches('\\d{1}\\.\\d{1}\\.\\d{1}')" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Anlage" />
+      </constraint>
+      <constraint>
+        <key value="EnteredInError" />
+        <severity value="error" />
+        <human value="Der Status &quot;Entered in Error&quot; ist nicht erlaubt" />
+        <expression value="status!='entered-in-error'" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Anlage" />
+      </constraint>	  
+    </element>
+    <element id="DocumentReference.id">
+      <path value="DocumentReference.id" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.meta">
+      <path value="DocumentReference.meta" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.meta.versionId">
+      <path value="DocumentReference.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.meta.lastUpdated">
+      <path value="DocumentReference.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.meta.profile">
+      <path value="DocumentReference.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+        <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Anlage|1.2.0" />
+    </element>	
+    <element id="DocumentReference.text">
+      <path value="DocumentReference.text" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.masterIdentifier">
+      <path value="DocumentReference.masterIdentifier" />
+      <definition value="Der Masteridentifier beschreibt die Spezifikationsversion der Anlage" />
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.masterIdentifier.use">
+      <path value="DocumentReference.masterIdentifier.use" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.masterIdentifier.type">
+      <path value="DocumentReference.masterIdentifier.type" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.masterIdentifier.type.coding">
+      <path value="DocumentReference.masterIdentifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.masterIdentifier.type.coding.system">
+      <path value="DocumentReference.masterIdentifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Anlage_Identifiertyp" />
+    </element>
+    <element id="DocumentReference.masterIdentifier.type.coding.version">
+      <path value="DocumentReference.masterIdentifier.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.masterIdentifier.type.coding.code">
+      <path value="DocumentReference.masterIdentifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="Spezifikationsversion" />
+    </element>
+    <element id="DocumentReference.masterIdentifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="DocumentReference.masterIdentifier.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.masterIdentifier.type.coding.userSelected">
+      <path value="DocumentReference.masterIdentifier.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.masterIdentifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="DocumentReference.masterIdentifier.type.text" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.masterIdentifier.system">
+      <path value="DocumentReference.masterIdentifier.system" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.masterIdentifier.value">
+      <path value="DocumentReference.masterIdentifier.value" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.masterIdentifier.period">
+      <path value="DocumentReference.masterIdentifier.period" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.masterIdentifier.assigner">
+      <path value="DocumentReference.masterIdentifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.identifier">
+      <path value="DocumentReference.identifier" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Bezeichnung" />
+      </mapping>
+    </element>
+    <element id="DocumentReference.identifier.use">
+      <path value="DocumentReference.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.identifier.type">
+      <path value="DocumentReference.identifier.type" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.identifier.type.coding">
+      <path value="DocumentReference.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="DocumentReference.identifier.type.coding.system">
+      <path value="DocumentReference.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Anlage_Identifiertyp" />
+    </element>
+    <element id="DocumentReference.identifier.type.coding.version">
+      <path value="DocumentReference.identifier.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.identifier.type.coding.code">
+      <path value="DocumentReference.identifier.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="Bezeichnung" />
+    </element>
+    <element id="DocumentReference.identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="DocumentReference.identifier.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.identifier.type.coding.userSelected">
+      <path value="DocumentReference.identifier.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="DocumentReference.identifier.type.text" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.identifier.system">
+      <path value="DocumentReference.identifier.system" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.identifier.value">
+      <path value="DocumentReference.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.identifier.period">
+      <path value="DocumentReference.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.identifier.assigner">
+      <path value="DocumentReference.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.status">
+      <path value="DocumentReference.status" />
+      <definition value="Der Status einer Anlage kann &quot;current&quot; oder &quot;superseded&quot; sein, jedoch nicht &quot;entered-in-error&quot;." />
+    </element>
+    <element id="DocumentReference.docStatus">
+      <path value="DocumentReference.docStatus" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.type">
+      <path value="DocumentReference.type" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="DocumentC80Type" />
+        </extension>
+        <strength value="required" />
+        <description value="Anlagetyp" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Anlagetyp" />
+      </binding>
+    </element>
+    <element id="DocumentReference.type.coding">
+      <path value="DocumentReference.type.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="DocumentReference.type.coding.system">
+      <path value="DocumentReference.type.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.type.coding.version">
+      <path value="DocumentReference.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.type.coding.code">
+      <path value="DocumentReference.type.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="DocumentReference.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.type.coding.userSelected">
+      <path value="DocumentReference.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="DocumentReference.type.text" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.category">
+      <path value="DocumentReference.category" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="DocumentReference.category.coding">
+      <path value="DocumentReference.category.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="DocumentReference.category.coding.system">
+      <path value="DocumentReference.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp" />
+    </element>
+    <element id="DocumentReference.category.coding.version">
+      <path value="DocumentReference.category.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.category.coding.code">
+      <path value="DocumentReference.category.coding.code" />
+      <min value="1" />
+      <fixedCode value="Anlage" />
+    </element>
+    <element id="DocumentReference.category.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="DocumentReference.category.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.category.coding.userSelected">
+      <path value="DocumentReference.category.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.category.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="DocumentReference.category.text" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.subject">
+      <path value="DocumentReference.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.subject.reference">
+      <path value="DocumentReference.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.subject.type">
+      <path value="DocumentReference.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.subject.identifier">
+      <path value="DocumentReference.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.subject.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="DocumentReference.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.date">
+      <path value="DocumentReference.date" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.author">
+      <path value="DocumentReference.author" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.authenticator">
+      <path value="DocumentReference.authenticator" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.custodian">
+      <path value="DocumentReference.custodian" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.relatesTo">
+      <path value="DocumentReference.relatesTo" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.description">
+      <path value="DocumentReference.description" />
+      <short value="Weitere Anmerkungen" />
+      <definition value="In diesem Element können weitere Anmerkungen zur Anlage eingetragen werden." />
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.securityLabel">
+      <path value="DocumentReference.securityLabel" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.content">
+      <path value="DocumentReference.content" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.content.attachment">
+      <path value="DocumentReference.content.attachment" />
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.content.attachment.extension">
+      <path value="DocumentReference.content.attachment.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="DocumentReference.content.attachment.extension:version_der_Anlage">
+      <path value="DocumentReference.content.attachment.extension" />
+      <sliceName value="version_der_Anlage" />
+      <short value="Versionsangabe des Dokumentes" />
+      <definition value="Angabe der Dokumentenversion der Anlage. Mindestens das Attribut display ist zu füllen, jedoch ist die Kombination aus system und code zu bevorzugen." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Anlage_Version" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.content.attachment.extension:version_der_Anlage.value[x]">
+      <path value="DocumentReference.content.attachment.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.content.attachment.extension:version_der_Anlage.value[x]:valueCodeableConcept">
+      <path value="DocumentReference.content.attachment.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.content.attachment.extension:version_der_Anlage.value[x]:valueCodeableConcept.coding">
+      <path value="DocumentReference.content.attachment.extension.valueCodeableConcept.coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.content.attachment.extension:version_der_Anlage.value[x]:valueCodeableConcept.coding.system">
+      <path value="DocumentReference.content.attachment.extension.valueCodeableConcept.coding.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.content.attachment.extension:version_der_Anlage.value[x]:valueCodeableConcept.coding.code">
+      <path value="DocumentReference.content.attachment.extension.valueCodeableConcept.coding.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.content.attachment.language">
+      <path value="DocumentReference.content.attachment.language" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.content.attachment.data">
+      <path value="DocumentReference.content.attachment.data" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.content.attachment.url">
+      <path value="DocumentReference.content.attachment.url" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.content.attachment.title">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="DocumentReference.content.attachment.title" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.content.format">
+      <path value="DocumentReference.content.format" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.context">
+      <path value="DocumentReference.context" />
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.context.encounter">
+      <path value="DocumentReference.context.encounter" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Begegnung|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.context.encounter.reference">
+      <path value="DocumentReference.context.encounter.reference" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.context.encounter.type">
+      <path value="DocumentReference.context.encounter.type" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.context.encounter.identifier">
+      <path value="DocumentReference.context.encounter.identifier" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.context.encounter.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="DocumentReference.context.encounter.display" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.context.event">
+      <path value="DocumentReference.context.event" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.context.period">
+      <path value="DocumentReference.context.period" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.context.facilityType">
+      <path value="DocumentReference.context.facilityType" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.context.practiceSetting">
+      <path value="DocumentReference.context.practiceSetting" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.context.sourcePatientInfo">
+      <path value="DocumentReference.context.sourcePatientInfo" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.context.related">
+      <path value="DocumentReference.context.related" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Abrechnung_BG|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Abrechnung_HzV_BesondereVersorgung_Selektiv|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Abrechnung_privat|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Abrechnung_vertragsaerztlich|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_Textvorlage|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Anamnese|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Bauchumfang|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Befund|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Blutdruck|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Hueftumfang|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Observation_Body_Weight|1.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Observation_Body_Height|1.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Observation_Head_Circumference|1.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Observation_Apgar_Score|1.1.0" />		
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Koerpertemperatur|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Puls|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Raucherstatus|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Schwangerschaft|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Diagnose|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Allergie|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlung_im_Auftrag_Ueberweisung|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Unfall|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Ueberweisung_KH_Einweisung|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Notfall|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Therapie|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Untersuchung|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Verordnung_Arbeitsunfaehigkeit|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Verordnung_Arzneimittel|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Verordnung_Heilmittel|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Verordnung_Hilfsmittel|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Kur|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krankenbefoerderung|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Maenner|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Hausbesuch|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Genetische_Untersuchung|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Ambulante_Operation_General|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Ringversuchszertifikat|1.2.0" />
+		<targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Gesundheitspass|1.2.0" />
+		<targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krankenbefoerderung_42019|1.2.0" />
+		<targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krankenversicherungsverhaeltnis|1.2.0" />
+		<targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_2020|1.2.0" />
+		<targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Selektivvertrag|1.2.0" />
+		<targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Weiterbehandlung_durch|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="DocumentReference.context.related.reference">
+      <path value="DocumentReference.context.related.reference" />
+      <min value="1" />
+    </element>
+    <element id="DocumentReference.context.related.type">
+      <path value="DocumentReference.context.related.type" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.context.related.identifier">
+      <path value="DocumentReference.context.related.identifier" />
+      <max value="0" />
+    </element>
+    <element id="DocumentReference.context.related.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="DocumentReference.context.related.display" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Unfall_Zusatzinfo" />
+  <version value="1.2.0" />
+  <name value="KBV_EX_AW_Unfall_Zusatzinfo" />
+  <status value="active" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Condition" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Zusatzinformationen" />
+      <definition value="In diesem Element werden diverse zuästzliche Informationen transportiert. Siehe DGUV-Formulare (z.B. F1030, F1040, F1050)" />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:unfallbetrieb">
+      <path value="Extension.extension" />
+      <sliceName value="unfallbetrieb" />
+      <short value="Unfallbetrieb" />
+      <definition value="Angabe zum Betrieb in dem der Unfall erfolgte." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="unfallbetrieb" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation|1.2.0" />
+      </type>
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x].identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x].identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.text" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x].identifier.assigner.identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x].identifier.assigner.identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.text" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x].identifier.assigner.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.display" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x].display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].display" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x]:valueReference">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueReference" />
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x]:valueReference.reference">
+      <path value="Extension.extension.value[x].reference" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x]:valueReference.type">
+      <path value="Extension.extension.value[x].type" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x]:valueReference.identifier">
+      <path value="Extension.extension.value[x].identifier" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x]:valueReference.identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x]:valueReference.identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.text" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x]:valueReference.identifier.assigner.identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x]:valueReference.identifier.assigner.identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.text" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x]:valueReference.identifier.assigner.identifier.assigner.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.assigner.display" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x]:valueReference.identifier.assigner.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.display" />
+    </element>
+    <element id="Extension.extension:unfallbetrieb.value[x]:valueReference.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].display" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:unfallort">
+      <path value="Extension.extension" />
+      <sliceName value="unfallort" />
+      <short value="Unfallort" />
+      <definition value="Beschreibung/ Adresse des Ortes an dem der Unfall erfolgte." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:unfallort.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="unfallort" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Unfall_Ort|1.2.0" />
+      </type>
+    </element>
+    <element id="Extension.extension:unfallort.value[x].identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x].identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.text" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x].identifier.assigner.identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x].identifier.assigner.identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.text" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x].identifier.assigner.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.display" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x].display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].display" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x]:valueReference">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueReference" />
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+    <element id="Extension.extension:unfallort.value[x]:valueReference.type">
+      <path value="Extension.extension.value[x].type" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x]:valueReference.identifier">
+      <path value="Extension.extension.value[x].identifier" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x]:valueReference.identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x]:valueReference.identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.text" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x]:valueReference.identifier.assigner.identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x]:valueReference.identifier.assigner.identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.text" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x]:valueReference.identifier.assigner.identifier.assigner.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.assigner.display" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x]:valueReference.identifier.assigner.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.display" />
+    </element>
+    <element id="Extension.extension:unfallort.value[x]:valueReference.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].display" />
+      <short value="Unfallort" />
+      <definition value="Beschreibung des Unfallortes" />
+    </element>
+    <element id="Extension.extension:beginn_der_Arbeitszeit">
+      <path value="Extension.extension" />
+      <sliceName value="beginn_der_Arbeitszeit" />
+      <short value="Beginn der Arbeitszeit" />
+      <definition value="Beginn der Arbeitszeit am Unfalltag." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:beginn_der_Arbeitszeit.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="beginn_der_Arbeitszeit" />
+    </element>
+    <element id="Extension.extension:beginn_der_Arbeitszeit.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="Extension.extension:beginn_der_Arbeitszeit.value[x]:valueDateTime">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueDateTime" />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="Extension.extension:ende_der_Arbeitszeit">
+      <path value="Extension.extension" />
+      <sliceName value="ende_der_Arbeitszeit" />
+      <short value="Ende der Arbeitszeit" />
+      <definition value="Ende der Arbeitszeit am Unfalltag." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:ende_der_Arbeitszeit.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="ende_der_Arbeitszeit" />
+    </element>
+    <element id="Extension.extension:ende_der_Arbeitszeit.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="Extension.extension:ende_der_Arbeitszeit.value[x]:valueDateTime">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueDateTime" />
+      <min value="1" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="Extension.extension:angaben_zum_Unfallhergang_und_zur_Taetigkeit">
+      <path value="Extension.extension" />
+      <sliceName value="angaben_zum_Unfallhergang_und_zur_Taetigkeit" />
+      <short value="Unfallerhergang" />
+      <definition value="Dokumentation der Angaben des Patienten zum Unfallerhergang." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:angaben_zum_Unfallhergang_und_zur_Taetigkeit.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="angaben_zum_Unfallhergang_und_zur_Taetigkeit" />
+    </element>
+    <element id="Extension.extension:angaben_zum_Unfallhergang_und_zur_Taetigkeit.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:angaben_zum_Unfallhergang_und_zur_Taetigkeit.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:verhalten_der_versicherten_Person_nach_dem_Unfall">
+      <path value="Extension.extension" />
+      <sliceName value="verhalten_der_versicherten_Person_nach_dem_Unfall" />
+      <short value="Verhalten des Patienten nach dem Unfall" />
+      <definition value="Dokumentation zum Verhalten des Patienten nach dem Unfall." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:verhalten_der_versicherten_Person_nach_dem_Unfall.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="verhalten_der_versicherten_Person_nach_dem_Unfall" />
+    </element>
+    <element id="Extension.extension:verhalten_der_versicherten_Person_nach_dem_Unfall.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:verhalten_der_versicherten_Person_nach_dem_Unfall.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:art_der_ersten_nicht_zu_der_Fachgruppe_des_behandelnden_Arztes_spezifizierte_Versorgung">
+      <path value="Extension.extension" />
+      <sliceName value="art_der_ersten_nicht_zu_der_Fachgruppe_des_behandelnden_Arztes_spezifizierte_Versorgung" />
+      <short value="Vorherige Behandlungen" />
+      <definition value="Dokumentation von vorherigen Behandlungen im Rahmen der Unfallbehandlung." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:art_der_ersten_nicht_zu_der_Fachgruppe_des_behandelnden_Arztes_spezifizierte_Versorgung.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="art_der_ersten_nicht_zu_der_Fachgruppe_des_behandelnden_Arztes_spezifizierte_Versorgung" />
+    </element>
+    <element id="Extension.extension:art_der_ersten_nicht_zu_der_Fachgruppe_des_behandelnden_Arztes_spezifizierte_Versorgung.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:art_der_ersten_nicht_zu_der_Fachgruppe_des_behandelnden_Arztes_spezifizierte_Versorgung.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:allgemeine_besondere_Behandlung">
+      <path value="Extension.extension" />
+      <sliceName value="allgemeine_besondere_Behandlung" />
+      <short value="Art der Heilbehandlung" />
+      <definition value="Kennzeichnung der Art der Heilbehandlung, siehe DGUV-Formulare.&#xD;&#xA;0 = bedeutet „allgemeiner Behandlung“&#xD;&#xA;1 = bedeutet „besondere Behandlung“" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:allgemeine_besondere_Behandlung.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="allgemeine_besondere_Behandlung" />
+    </element>
+    <element id="Extension.extension:allgemeine_besondere_Behandlung.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:allgemeine_besondere_Behandlung.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:ambulant_stationaer">
+      <path value="Extension.extension" />
+      <sliceName value="ambulant_stationaer" />
+      <short value="Ambulant oder Stationär" />
+      <definition value="Kennzeichnung Bereich der Heilbehandlung, siehe DGUV-Formulare.&#xD;&#xA;0 = ambulant&#xD;&#xA;1 = stationär" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:ambulant_stationaer.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="ambulant_stationaer" />
+    </element>
+    <element id="Extension.extension:ambulant_stationaer.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:ambulant_stationaer.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch">
+      <path value="Extension.extension" />
+      <sliceName value="weiterbehandlung_erfolgt_durch" />
+      <short value="Weiterbehandlung" />
+      <definition value="Beschreibung der Stelle, die die Weiterbehandlung durchführt." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="weiterbehandlung_erfolgt_durch" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0" />
+      </type>
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x].identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x].identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.text" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x].identifier.assigner.identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x].identifier.assigner.identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.text" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x].identifier.assigner.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.display" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x].display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].display" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x]:valueReference">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueReference" />
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x]:valueReference.type">
+      <path value="Extension.extension.value[x].type" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x]:valueReference.identifier">
+      <path value="Extension.extension.value[x].identifier" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x]:valueReference.identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x]:valueReference.identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.text" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x]:valueReference.identifier.assigner.identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x]:valueReference.identifier.assigner.identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.text" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x]:valueReference.identifier.assigner.identifier.assigner.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.assigner.display" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x]:valueReference.identifier.assigner.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.display" />
+    </element>
+    <element id="Extension.extension:weiterbehandlung_erfolgt_durch.value[x]:valueReference.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].display" />
+      <short value="Weiterbehandlung erfolgt durch" />
+      <definition value="Weiterbehandlung als String." />
+    </element>
+    <element id="Extension.extension:beurteilung_der_arbeitsfaehigkeit">
+      <path value="Extension.extension" />
+      <sliceName value="beurteilung_der_arbeitsfaehigkeit" />
+      <short value="Beschreibung der Arbeitsfähigkeit" />
+      <definition value="Beschreibung der Arbeitsfähigkeit." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:beurteilung_der_arbeitsfaehigkeit.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="beurteilung_der_arbeitsfaehigkeit" />
+    </element>
+    <element id="Extension.extension:beurteilung_der_arbeitsfaehigkeit.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:beurteilung_der_arbeitsfaehigkeit.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:ergeben_sich_Zweifel_an_einem_Arbeitsunfall_aus_Hergang_und_Befund">
+      <path value="Extension.extension" />
+      <sliceName value="ergeben_sich_Zweifel_an_einem_Arbeitsunfall_aus_Hergang_und_Befund" />
+      <short value="Zweifel am Arbeitsunfall" />
+      <definition value="Dokumentation der Zweifel des Arztes, ob es sich um einen Arbeitsunfall handelt." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:ergeben_sich_Zweifel_an_einem_Arbeitsunfall_aus_Hergang_und_Befund.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="ergeben_sich_Zweifel_an_einem_Arbeitsunfall_aus_Hergang_und_Befund" />
+    </element>
+    <element id="Extension.extension:ergeben_sich_Zweifel_an_einem_Arbeitsunfall_aus_Hergang_und_Befund.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:ergeben_sich_Zweifel_an_einem_Arbeitsunfall_aus_Hergang_und_Befund.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig">
+      <path value="Extension.extension" />
+      <sliceName value="folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig" />
+      <short value="Folgende Ärzte" />
+      <definition value="Beschreibung weiterer Fachgruppen bzw. Ärzte." />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0" />
+      </type>
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x].identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x].identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.text" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x].identifier.assigner.identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x].identifier.assigner.identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.text" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x].identifier.assigner.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.display" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x].display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].display" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x]:valueReference">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueReference" />
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x]:valueReference.type">
+      <path value="Extension.extension.value[x].type" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x]:valueReference.identifier">
+      <path value="Extension.extension.value[x].identifier" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x]:valueReference.identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x]:valueReference.identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.type.text" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x]:valueReference.identifier.assigner.identifier.type.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.coding.display" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x]:valueReference.identifier.assigner.identifier.type.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.type.text" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x]:valueReference.identifier.assigner.identifier.assigner.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.identifier.assigner.display" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x]:valueReference.identifier.assigner.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].identifier.assigner.display" />
+    </element>
+    <element id="Extension.extension:folgende_Aerzte_sind_zur_Klaerung_der_Diagnose_oder_Weiterbehandlung_notwendig.value[x]:valueReference.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].display" />
+      <definition value="Beschreibung der Ärzte als Freitext" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Unfall_Zusatzinfo" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

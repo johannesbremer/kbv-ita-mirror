@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  
+<keytabs xmlns="urn:ehd/001">
+  <keytab SV="1.01" SN="S_EBM_GOP_ART" S="1.2.276.0.76.5.245">
+    <key V="DIFF" DN="Differenzierung" S="1.2.276.0.76.5.245" SV="1.01"/>
+    <key V="EBM" DN="normale EBM-Leistung" S="1.2.276.0.76.5.245" SV="1.01"/>
+    <key V="HW" DN="Höchstwerte" S="1.2.276.0.76.5.245" SV="1.01"/>
+    <key V="LGV" DN="Vergütungsanteil 1 (LGV)" S="1.2.276.0.76.5.245" SV="1.01"/>
+    <key V="MOD" DN="Modifizierung (GOP nach einer Ableitung aus einer GOP)" S="1.2.276.0.76.5.245" SV="1.01"/>
+    <key V="NEU" DN="kv-spezifische neue GOP ohne Referenz" S="1.2.276.0.76.5.245" SV="1.01"/>
+    <key V="PSEUDO" DN="Pseudoleistungen (technische Ziffern wie z.B. Ausnahmeziffern Labor und MRSA-Ziffern, Vertragsleistungen nach §73b und §73c SGB V)" S="1.2.276.0.76.5.245" SV="1.01"/>
+    <key V="TL_BHF+" DN="Vergütungsanteil 3 (TL_BHF, TL-Zuschlag bis best. BHF) für mehr als eine GOP" S="1.2.276.0.76.5.245" SV="1.01"/>
+    <key V="TL_BHF1" DN="Vergütungsanteil 3 (TL_BHF, TL-Zuschlag bis best. BHF) für eine GOP" S="1.2.276.0.76.5.245" SV="1.01"/>
+    <key V="TL_EL" DN="Vergütungsanteil 2 (TL_EL, TL-Zuschlag bis best. LH)" S="1.2.276.0.76.5.245" SV="1.01"/>
+  </keytab>
+</keytabs>
+

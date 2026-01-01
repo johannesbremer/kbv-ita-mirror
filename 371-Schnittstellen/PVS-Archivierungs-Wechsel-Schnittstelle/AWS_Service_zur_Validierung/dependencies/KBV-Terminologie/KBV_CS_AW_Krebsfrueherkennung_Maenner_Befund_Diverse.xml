@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Maenner_Befund_Diverse"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Krebsfrueherkennung_Maenner_Befund_Diverse"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Krebsfrueherkennung Maenner Beobachtungen Befund Diverse"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="Haut_Wachstum_Verfaerbung_oder_Blutung_eines_Piegmentfleckes_Knotens"/>
+<display value="Haut Wachstum Verfärbung oder Blutung eines Piegmentfleckes/Knotens"/>
+</concept>
+<concept>
+<code value="Aeusseres_Genital_Auffaellig"/>
+<display value="Aeusseres Genital Auffaellig"/>
+</concept>
+<concept>
+<code value="Prostata_auffaellig_isolierte_Verhaertung"/>
+<display value="Prostata auffaellig isolierte Verhaertung"/>
+</concept>
+<concept>
+<code value="Prostata_auffaellig_totale_Verhaertung"/>
+<display value="Prostata auffaellig totale Verhaertung"/>
+</concept>
+<concept>
+<code value="Inguiale_Lymphknoten_auffaellig"/>
+<display value="Inguiale Lymphknoten auffaellig"/>
+</concept>
+<concept>
+<code value="Bisher_unbekannte_behandlungsbeduerftige_Nebenbefunde"/>
+<display value="Bisher unbekannte behandlungsbeduerftige Nebenbefund"/>
+</concept>
+</CodeSystem>

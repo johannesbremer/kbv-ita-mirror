@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 ..\Schema\afhi_root_V1.00.xsd">
+	<header>
+		<id EX="963d7446-c196-4c03-abef-1a22d5f4d6e7" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2022-10-01.."/>
+		<origination_dttm V="2022-08-26"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat 4"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="https://update.kbv.de/ita-update"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen für der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2022, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="https://update.kbv.de/ita-update"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="65" DN="Ärztliches Attest Kind zur Verordnung einer medizinischen Vorsorge / Rehabilitation für Mütter oder Väter gemäß §§ 24, 41 SGB V">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Kurze Angaben zur Anamnese"/>
+					<hinweistext V="Geben Sie hier bitte an, seit wann (TTMMJJ) der Versicherte sich in Dauerbehandlung befindet. Eine 'Dauerbehandlung' liegt vor, wenn der Versicherte mindestens ein Jahr lang vor Ausstellen dieser Bescheinigung jeweils wenigstens einmal im Quartal wegen derselben Erkrankung in ärztlicher Behandlung war."/>
+				</feld>
+				<feld>
+					<nummer V="2"/>
+					<name V="Gesundheitsstörungen"/>
+					<hinweistext V="Geben Sie hier die Gesundheitsstörungen des Kindes an (z.B. Übergewicht, psychische Auffälligkeiten)."/>
+				</feld>
+				<feld>
+					<nummer V="3"/>
+					<name V="Erkrankungen"/>
+					<hinweistext V="Geben Sie hier die relevanten Erkrankungen in der Reihenfolge ihrer Bedeutung an. Die Diagnosen sind nach ICD-10-GM zu verschlüsseln. Zusätzlich kann die Diagnose als Klartext oder Freitext angegeben werden."/>
+				</feld>
+				<feld>
+					<nummer V="4"/>
+					<name V="Weitere relevante Informationen"/>
+					<hinweistext V="Hier können weitere Informationen, z.B. zu Behinderungen und Entwicklungsverzögerungen sowie Pflegegraden angegeben werden."/>
+				</feld>
+				<feld>
+					<nummer V="5"/>
+					<name V="Bisherigen Krankenbehandlung und andere Maßnahmen"/>
+					<hinweistext V="Hier sollen die bisher durchgeführten Leistungen der Krankenbehandlung wie ärztliche/psychotherapeutische Interventionen, Arzneimittel-/Heilmitteltherapie und andere Maßnahmen aufgeführt werden."/>
+				</feld>
+				<feld>
+					<nummer V="6"/>
+					<name V="Empfohlene Interventionen während der Maßnahme"/>
+					<hinweistext V="Geben Sie die empfohlenen Interventionen für das Kind während der Vorsorge- und Rehabilitationsmaßnahme an (z.B. Ernährungsberatung, Mutter-Kind-Interaktion, Sport und Gesundheitstraining)."/>
+				</feld>
+				<feld>
+					<nummer V="7"/>
+					<name V="Anforderungen an die Einrichtung"/>
+					<hinweistext V="Geben Sie hier an, welche Anforderungen an die Vorsorge- oder Rehabilitationseinrichtung gestellt werden (z.B. Klima, Barrierefreiheit, spezialisierte Therapieangebote, besondere Kostformen)."/>
+				</feld>
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

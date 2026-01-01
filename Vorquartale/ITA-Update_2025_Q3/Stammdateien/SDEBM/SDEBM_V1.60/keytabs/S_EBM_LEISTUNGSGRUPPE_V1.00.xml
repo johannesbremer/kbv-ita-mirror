@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<keytabs xmlns="urn:ehd/001">
+  <keytab S="1.2.276.0.76.5.227" SN="S_EBM_LEISTUNGSGRUPPE" SV="1.00">
+    <key V="1" DN="Hausärztliche Grundvergütung, Ordination, Konsultation" S="1.2.276.0.76.5.227" SV="1.00"/>
+    <key V="10" DN="Laborpauschalen" S="1.2.276.0.76.5.227" SV="1.00"/>
+    <key V="11" DN="Laboratoriumsuntersuchungen" S="1.2.276.0.76.5.227" SV="1.00"/>
+    <key V="12" DN="Strahlendiagnostik und -therapie, Röntgen, CT, MRT" S="1.2.276.0.76.5.227" SV="1.00"/>
+    <key V="13" DN="Wegegebühren" S="1.2.276.0.76.5.227" SV="1.00"/>
+    <key V="14" DN="Pauschalerstattungen/Kosten" S="1.2.276.0.76.5.227" SV="1.00"/>
+    <key V="2" DN="Besuche, Visiten" S="1.2.276.0.76.5.227" SV="1.00"/>
+    <key V="20" DN="Nicht spezifizierte Leistungen" S="1.2.276.0.76.5.227" SV="1.00"/>
+    <key V="3" DN="Beratungs- und Betreuungsleistungen, Ganzkörperstatus" S="1.2.276.0.76.5.227" SV="1.00"/>
+    <key V="4" DN="Allgemeine Leistungen" S="1.2.276.0.76.5.227" SV="1.00"/>
+    <key V="5" DN="Mutterschaftvorsorge" S="1.2.276.0.76.5.227" SV="1.00"/>
+    <key V="6" DN="Früherkennungsuntersuchungen" S="1.2.276.0.76.5.227" SV="1.00"/>
+    <key V="7" DN="Empfängnisregelung, Sterilisation, Schwangerschaftsabbruch" S="1.2.276.0.76.5.227" SV="1.00"/>
+    <key V="8" DN="Sonderleistungen" S="1.2.276.0.76.5.227" SV="1.00"/>
+    <key V="9" DN="Physikalisch-medizinische Leistungen" S="1.2.276.0.76.5.227" SV="1.00"/>
+  </keytab>
+</keytabs>

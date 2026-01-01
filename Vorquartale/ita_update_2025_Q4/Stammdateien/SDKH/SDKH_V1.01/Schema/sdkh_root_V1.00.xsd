@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2006 sp2 U bearbeitet (http://www.altova.com) von XMLSPY 2006 Professional Ed. Release 3, Installed for 13 users (Kassenärztliche Bundesvereinigung) -->
+<!-- Mit XMLSpy v2006 sp2 U bearbeitet (http://www.altova.com) von XMLSPY 2006 Professional Ed. Release 3, Installed for 13 users (Kassenärztliche Bundesvereinigung) -->
+<!--
+Template für ehd_root:
+Projekt: sdkh
+Namespace: "urn:ehd/sdkh/001", Präfix: sdkh
+
+Namespace und Präfix sind mit tatsächlichen Projektspezifischen zu ersetzen.
+Verzeichnispfade überprüfen und gegebenfalls anpassen.
+-->
+<xs:schema xmlns:sdkh="urn:ehd/sdkh/001" xmlns="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ehd="urn:ehd/001" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<!-- ======================================================================= 
+	Einbinden der ehd-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="ehd_root_V1.40.xsd"/>
+	<!-- ======================================================================= 
+	Einbinden der sdkh-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="sdkh_header_V1.00.xsd"/>
+	<xs:import namespace="urn:ehd/sdkh/001" schemaLocation="sdkh_body_V1.00.xsd"/>
+	<!-- ======================================================================= 
+	EHD-root
+	hier ist des EHD-root-Element definiert, welches das "header" und "body" sowie "keytabs"
+	Elemnte enthält.
+	======================================================================= -->
+	<xs:element name="ehd" type="sdkh_root_typ">
+		<xs:annotation>
+			<xs:documentation>root element ehd "eHealthData"</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- ======================================================================= 
+	das abgeleitete sdkh_root_typ des Basistyps: ehd_root_typ
+	======================================================================= -->
+	<xs:complexType name="sdkh_root_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_root_typ">
+				<xs:sequence>
+					<xs:element name="header" type="sdkh_header_typ">
+						<xs:annotation>
+							<xs:documentation>alle Metainformationen zu den Daten</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="body" type="sdkh_body_typ">
+						<xs:annotation>
+							<xs:documentation>die eigentlichen Daten</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	sdkh_body_typ
+	das abgeleitete sdkh_body_typ des Basistyps: ehd_body_typ
+	======================================================================= -->
+	<xs:complexType name="sdkh_body_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_body_typ">
+				<xs:sequence>
+					<xs:element ref="sdkh:diagnosen_liste"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

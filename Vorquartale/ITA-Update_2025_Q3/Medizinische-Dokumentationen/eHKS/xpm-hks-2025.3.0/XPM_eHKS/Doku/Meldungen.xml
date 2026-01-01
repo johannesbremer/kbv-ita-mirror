@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Diese Datei beschreibt die Meldungen eines Prueflaufs. -->
+<meldungen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Common/Schema/meldungen.xsd">
+	<meldung>
+		<nummer>HKS-H01</nummer>
+		<typ>Fehler</typ>
+		<text>Die Patientennummer ist nicht vorhanden.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H01F</nummer>
+		<typ>Fehler</typ>
+		<text>Die Patientennummer '%s' darf nur bis 8 Stellen lang sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H03</nummer>
+		<typ>Fehler</typ>
+		<text>Das Geburtsdatum '%s' des Versicherten muss kleiner gleich dem Untersuchungsdatum sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H03a</nummer>
+		<typ>Fehler</typ>
+		<text>Das Alter des Versicherten muss mindestens 35 Jahre sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H04</nummer>
+		<typ>Fehler</typ>
+		<text>Die Kostenträgerbezeichnung '%s' ist ungültig.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H06</nummer>
+		<typ>Fehler</typ>
+		<text>Die Versicherten-Nummer '%s' ist ungültig. Erwartet wird eine bis zu 12 Stellen alphanummerische Zeichenfolge.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H06a</nummer>
+		<typ>Fehler</typ>
+		<text>Die Versicherten-Nummer '%s' ist ungültig. Nur das 1. Zeichen darf alphanumerisch sein, die restlichen Zeichen müssen Ziffern sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H08</nummer>
+		<typ>Fehler</typ>
+		<text>Ungültige Angabe '%s' im Attribut '/levelone/clinical_document_header/provider/person/id/@RT'. Als Inhalt des RT-Attributs sind die Werte 'BSNR' und 'LANR' zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H09</nummer>
+		<typ>Warnung</typ>
+		<text>Das Untersuchungsdatum (service_tmr) ist jünger als das Erstellungsdatum der Datei (origination_dttm).</text>
+		<text> Der Zeitpunkt der Erstellung der Datei darf nicht vor dem Untersuchungsdatum liegen.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H10</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld 'Einschreibung wegen' kann nicht gleichzeitig mit der Angabe '%s' erfolgen.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H10a</nummer>
+		<typ>Fehler</typ>
+		<text>Eine Angabe im Feld 'Einschreibung wegen' fehlt.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H10b</nummer>
+		<typ>Fehler</typ>
+		<text>Ungültige Angabe '%s' zum Dokumententyp im Element 'document_type_cd'. Erlaubte Werte: EHKS_D, EHKS_ND, EHKS_D_EV, EHKS_ND_EV.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H10c</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld 'Einschreibung wegen' passt nicht zu dem Dokumententyp '%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H11</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld 'BSNR' und die Angabe '%s' im Element 'Dokumenten-ID' (RT-Attribut) müssen gleich sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H11a</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld 'BSNR' und die Angabe '%s' im Element 'Patienten-ID' (RT-Attribut) müssen gleich sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H11b</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Element 'Dokumenten-ID' (RT-Attribut) und die Angabe '%s' im Element 'Patienten-ID' (RT-Attribut) müssen gleich sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-H21</nummer>
+		<typ>Warnung</typ>
+		<text>Das Datum im Feld '%s' muss nach dem Unterschriftsdatum liegen.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-ABS</nummer>
+		<typ>Fehler</typ>
+		<text>Der Abschnittsname '%s' ist ungültig.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-AGE</nummer>
+		<typ>Fehler</typ>
+		<text>Entweder das Geburtsdatum im Element 'birth_dttm' oder das Alter muss angegeben werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-ANB</nummer>
+		<typ>Inaktiv</typ>
+		<text>Der System-Anbieter mit der KBV-Prüfnummer '%s' ist nicht in der Anbieter-Stammdatei.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-EINH</nummer>
+		<typ>Fehler</typ>
+		<text>Im Feld '%s' wurde die falsche Einheit '%s' angegeben.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-FEHL</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe zum Feld '%s' fehlt.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-FELD</nummer>
+		<typ>Fehler</typ>
+		<text>Das Feld '%s' ist in diesem Abschnitt nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-FRMT</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld '%s' hat falsches Format.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-FRMT2</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld '%s' hat falsches Dezimaltrennzeichen. Nur Kommas sind erlaubt.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-IK</nummer>
+		<typ>Warnung</typ>
+		<text>Das Krankenkassen-IK '%s' ist nicht in der Stammdatei.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-IK2</nummer>
+		<typ>Fehler</typ>
+		<text>Das Krankenhaus-IK '%s' muss 9-stellig sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-IKQ</nummer>
+		<typ>Warnung</typ>
+		<text>Das Krankenkassen-IK '%s' ist für dieses Abrechnungsquartal ungültig.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-KONV</nummer>
+		<typ>Fehler</typ>
+		<text>Die Datei '%s' entspricht nicht der Dateinamenskonvention gemäß 'AAAAAAAAA_BBBBBBBB_JJJJMMTT.%s' mit AAAAAAAAA: BSNR 9-stellig (Ort der Erstellung), BBBBBBBB: Patienten-ID und JJJJMMTT: Datum (origination_dttm). Erwartet wird folgender Dateiname: 'AAAAAAAAA_%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-LEN</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld '%s' muss 9-stellig sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-NKST</nummer>
+		<typ>Fehler</typ>
+		<text>Fehlerhafte Angabe '%s' im Feld '%s'. Der Wert muss genau '%s' Nachkommastelle(n) enthalten.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-PAR</nummer>
+		<typ>Fehler</typ>
+		<text>Zu dem Parameter '%s' wurde im Datensatz kein Wert angegeben.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-PAR2</nummer>
+		<typ>Fehler</typ>
+		<text>Zwei verschachtelte Beobachtung-Elemente sind bei dem Parameter '%s' nicht erlaubt.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-PAR3</nummer>
+		<typ>Fehler</typ>
+		<text>Bei dem Beobachtung-Element mit dem Parameter '%s' ist ein verschachteltes Beobachtung-Element mit dem Parameter '%s' nicht erlaubt.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-PAR4</nummer>
+		<typ>Fehler</typ>
+		<text>Das verschachtelte Beobachtung-Element mit dem Parameter '%s' darf nur innerhalb von Beobachtung-Element mit dem Parameter '%s' angegeben werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-VKNR</nummer>
+		<typ>Inaktiv</typ>
+		<text>Die angegebene Abrechnungs-VKNR '%s' entspricht nicht der erwarteten VKNR '%s' aus der Kostenträgerstammdatei.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-WDSP</nummer>
+		<typ>Fehler</typ>
+		<text>Im Feld '%s' wurden widersprüchliche Angaben gemacht.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-WERT</nummer>
+		<typ>Fehler</typ>
+		<text>Im Feld '%s' liegt die Angabe '%s' nicht im erlaubten Wertebereich: %s.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-WERT2</nummer>
+		<typ>Fehler</typ>
+		<text>Im Feld '%s' entspricht die Angabe '%s' nicht dem erlaubten Format [n][n]n[,][n] mit n=numerisch und []=optional.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-XMLB</nummer>
+		<typ>Fehler</typ>
+		<text>Dreifach verschachtelte Beobachtungen-Elemente sind nicht erlaubt. Bitte überprüfen Sie die Angaben im Feld '%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-XMLS</nummer>
+		<typ>Fehler</typ>
+		<text>Der Name der XML-Schemadatei '%s' im Dokument entspricht nicht dem Namen der XML-Schemadatei aus der Konfigurationsdatei '%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-ZEIT</nummer>
+		<typ>Fehler</typ>
+		<text>Das %s liegt in der Zukunft.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-ZEITw</nummer>
+		<typ>Warnung</typ>
+		<text>Das %s liegt in der Zukunft.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-ZIP</nummer>
+		<typ>Warnung</typ>
+		<text>Gepackte Dokumentationen müssen im Ordner '%s' abgelegt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-ZUL</nummer>
+		<typ>Fehler</typ>
+		<text>Der Wert '%s' im Feld '%s' ist in diesem Abschnitt nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-ZUL2</nummer>
+		<typ>Fehler</typ>
+		<text>Nur wenn im Feld '%s' die Angabe '%s' erfolgte, darf im Feld '%s' eine Angabe gemacht werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-ZUL2A</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn im Feld '%s' die Angabe '%s' erfolgte, darf im Feld '%s' keine Angabe gemacht werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-ZUL3</nummer>
+		<typ>Fehler</typ>
+		<text>Der Wert '%s' im Feld '%s' ist nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>HKS-ZUL4</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn im Feld '%s' die Angabe '%s' erfolgte, muss im Feld '%s' die Angabe '%s' gemacht werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-080</nummer>
+		<typ>Fehler</typ>
+		<text>Das Zip-Archiv muss auf 2014.zip enden.</text>
+	</meldung>
+	<meldung>
+		<nummer>XPM-JAVA-VER</nummer>
+		<typ>Info</typ>
+		<text>Auf Ihrem System ist eine Java Version kleiner 17 installiert. In der nächsten Version des Prüfmoduls wird diese Version nicht mehr unterstützt und das Prüfmodul wird dann nicht mehr starten.</text>
+	</meldung>
+
+</meldungen>

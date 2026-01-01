@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Template für ehd_root:
+Projekt: sdda
+Namespace: "urn:ehd/sdda/001", Präfix: sdda
+
+Namespace und Präfix sind mit tatsächlichen Projektspezifischen zu ersetzen.
+Verzeichnispfade überprüfen und gegebenfalls anpassen.
+-->
+<xs:schema targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution" xmlns:sdda="urn:ehd/sdda/001" xmlns="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ehd="urn:ehd/001">
+	<!-- ======================================================================= 
+	Einbinden der ehd-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="ehd_root.xsd"/>
+	<!-- ======================================================================= 
+	Einbinden der sdda-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="sdda_header.xsd"/>
+	<xs:import namespace="urn:ehd/sdda/001" schemaLocation="sdda_body.xsd"/>
+	<!-- ======================================================================= 
+	EHD-root
+	hier ist des EHD-root-Element definiert, welches das "header" und "body" sowie "keytabs"
+	Elemnte enthält.
+	======================================================================= -->
+	<xs:element name="ehd" type="sdda_root_typ">
+		<xs:annotation>
+			<xs:documentation>root element ehd "eHealthData"</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- ======================================================================= 
+	das abgeleitete sdda_root_typ des Basistyps: ehd_root_typ
+	======================================================================= -->
+	<xs:complexType name="sdda_root_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_root_typ">
+				<xs:sequence>
+					<xs:element name="header" type="sdda_header_typ">
+						<xs:annotation>
+							<xs:documentation>alle Metainformationen zu den Daten</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="body" type="sdda_body_typ">
+						<xs:annotation>
+							<xs:documentation>die eigentlichen Daten</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	sdda_body_typ
+	das abgeleitete sdda_body_typ des Basistyps: ehd_body_typ
+	======================================================================= -->
+	<xs:complexType name="sdda_body_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_body_typ">
+				<xs:sequence>
+					<xs:element ref="sdda:datenannahmestellen_liste"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

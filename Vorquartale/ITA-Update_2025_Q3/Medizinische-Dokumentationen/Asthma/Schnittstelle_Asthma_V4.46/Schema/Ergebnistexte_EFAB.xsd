@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) von KBV (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<xs:schema xmlns="urn::sciphox-org/sciphox" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="Einschreibungwegen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="KHK"/>
+			<xs:enumeration value="Diabetes mellitus Typ 1"/>
+			<xs:enumeration value="Diabetes mellitus Typ 2"/>
+			<xs:enumeration value="Asthma bronchiale"/>
+			<xs:enumeration value="COPD"/>
+			<xs:enumeration value="Chronische Herzinsuffizienz"/>
+			<xs:enumeration value="Depression"/>
+			<xs:enumeration value="chronischer Rückenschmerz"/>
+			<xs:enumeration value="Osteoporose"/>
+			<xs:enumeration value="rheumatoide Arthritis"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Begleiterkrankungen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Keine der genannten Erkrankungen"/>
+			<xs:enumeration value="Arterielle Hypertonie"/>
+			<xs:enumeration value="Fettstoffwechselstörung"/>
+			<xs:enumeration value="Diabetes mellitus"/>
+			<xs:enumeration value="KHK"/>
+			<xs:enumeration value="AVK"/>
+			<xs:enumeration value="Chronische Herzinsuffizienz"/>
+			<xs:enumeration value="Asthma bronchiale"/>
+			<xs:enumeration value="COPD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Raucher">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HäufigkeitaktuellvorliegenderAsthmaSymptome">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Häufiger als 2 mal wöchentlich"/>
+			<xs:enumeration value="2 mal wöchentlich"/>
+			<xs:enumeration value="1 mal wöchentlich"/>
+			<xs:enumeration value="&lt; 1 mal wöchentlich"/>
+			<xs:enumeration value="Keine"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HäufigkeitdesEinsatzesderBedarfsmedikation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Häufiger als 2 mal wöchentlich"/>
+			<xs:enumeration value="2 mal wöchentlich"/>
+			<xs:enumeration value="1 mal wöchentlich"/>
+			<xs:enumeration value="&lt; 1 mal wöchentlich"/>
+			<xs:enumeration value="Keine"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AktuellerFEV1Wert">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nicht durchgeführt"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EinschränkungvonAktivitätenimAlltagwegenAsthmabronchiale">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AsthmabedingteStörungdesNachtschlafes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EinschraenkungvonAktivitaetenimAlltagwegenAsthmabronchiale">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="KurzwirksameBeta2Sympathomimetikabevorzugtinhalativ">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bei Bedarf"/>
+			<xs:enumeration value="Dauermedikation"/>
+			<xs:enumeration value="Keine"/>
+			<xs:enumeration value="Kontraindikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InhalativeGlukokortikosteroide">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bei Bedarf"/>
+			<xs:enumeration value="Dauermedikation"/>
+			<xs:enumeration value="Keine"/>
+			<xs:enumeration value="Kontraindikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InhalativelangwirksameBeta2Sympathomimetika">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bei Bedarf"/>
+			<xs:enumeration value="Dauermedikation"/>
+			<xs:enumeration value="Keine"/>
+			<xs:enumeration value="Kontraindikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SystemischeGlukokortisteroide">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bei Bedarf"/>
+			<xs:enumeration value="Dauermedikation"/>
+			<xs:enumeration value="Keine"/>
+			<xs:enumeration value="Kontraindikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SonstigeAsthmatischeMedikation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Leukotrien-Rezeptor-Antagonisten"/>
+			<xs:enumeration value="Andere"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Inhalationstechniküberprüft">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EmpfohleneAsthmaSchulungWahrgenommen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="War aktuell nicht möglich"/>
+			<xs:enumeration value="Bei letzter Dokumentation keine Schulung empfohlen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AsthmaSchulungempfohlenbeiaktuellerDokumentation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AsthmaSchulungschonvorEinschreibunginDMPbereitswahrgenommen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SchriftlicherSelbstmanagementPlan">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Therapieanpassung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Keine"/>
+			<xs:enumeration value="Steigerung der Medikation"/>
+			<xs:enumeration value="Verbesserung der Anwendung der Medikation"/>
+			<xs:enumeration value="Reduktion der Medikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Dokumentationsintervall">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Quartalsweise"/>
+			<xs:enumeration value="Jedes zweite Quartal"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VomPatientgewuenschteInfo">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Tabakverzicht"/>
+			<xs:enumeration value="Ernährungsberatung"/>
+			<xs:enumeration value="Körperliches Training"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

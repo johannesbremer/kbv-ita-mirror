@@ -1,0 +1,2682 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<ehd:ehd xmlns:ehd="urn:ehd/001" xmlns="urn:ehd/sdda/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ehd_version="1.30">
+	<ehd:header>
+		<ehd:id EX="1613" RT="1.2.276.0.76.3.1.1"/>
+		<ehd:document_type_cd V="SDDA" S="1.2.276.0.76.5.100" DN="Stammdatei-Datenannahmestellen"/>
+		<ehd:service_tmr V="2025-01-01.."/>
+		<ehd:origination_dttm V="2024-11-22"/>
+		<!-- Erstellungsdatum der Datei -->
+		<ehd:provider>
+			<ehd:organization>
+				<ehd:id EX="1.2.276.0.76.3.1.1" RT="1.2.276.0.76"/>
+				<ehd:organization.nm V="Kassenärztliche Bundesvereinigung"/>
+				<ehd:addr>
+					<ehd:CNT V="Deutschland"/>
+					<ehd:CTY V="Berlin"/>
+					<ehd:HNR V="2"/>
+					<ehd:ZIP V="10623"/>
+					<ehd:STR V="Herbert-Lewin-Platz"/>
+				</ehd:addr>
+				<ehd:telecom V="http://www.kbv.de"/>
+			</ehd:organization>
+		</ehd:provider>
+		<!--
+		-->
+		<ehd:interface>
+			<ehd:id EX="19441" RT="1.2.276.0.76.5.109"/>
+			<ehd:interface.nm V="SDDA"/>
+			<ehd:version V="1.14"/>
+		</ehd:interface>
+	</ehd:header>
+	<!--
+	-->
+	<ehd:body>
+		<datenannahmestellen_liste>
+			<intended_recipient>
+				<person>
+					<telecom V="tel:(0951)3093973"/>
+					<telecom V="mailto:datenstelle@dmpservices.de"/>
+					<telecom V="mailto:dmp-nordrhein@dmpservices.de"/>
+				</person>
+				<organization>
+					<id RT="590912218"/>
+					<organization.nm V="SPS Germany GmbH"/>
+					<addr>
+						<ADL V="DMP Datenstelle-Nordrhein"/>
+						<POB V="100423"/>
+						<ZIP V="96056"/>
+						<CTY V="Bamberg"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="38" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="11" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvno.bamberg@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<telecom V="tel:(0951)3093968"/>
+					<telecom V="mailto:datenstelle@dmpservices.de"/>
+				</person>
+				<organization>
+					<id RT="590912218"/>
+					<organization.nm V="SPS Germany GmbH"/>
+					<addr>
+						<ADL V="DMP Datenstelle-Baden Württemberg"/>
+						<POB V="100318"/>
+						<ZIP V="96055"/>
+						<CTY V="Bamberg"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="52" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvbawue.bamberg@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+						<kv_bereich V="55" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvbawue.bamberg@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+						<kv_bereich V="60" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvbawue.bamberg@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+						<kv_bereich V="61" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvbawue.bamberg@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+						<kv_bereich V="62" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvbawue.bamberg@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<telecom V="tel:(0951)3093962"/>
+					<telecom V="mailto:datenstelle@dmpservices.de"/>
+					<telecom V="mailto:dmp-thueringen@dmpservices.de"/>
+				</person>
+				<organization>
+					<id RT="590912218"/>
+					<organization.nm V="SPS Germany GmbH"/>
+					<addr>
+						<ADL V="DMP-Datenstelle Thüringen"/>
+						<POB V="100438"/>
+						<ZIP V="96056"/>
+						<CTY V="Bamberg"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="93" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<telecom V="tel:(0951)3093953"/>
+					<telecom V="tel:(0951)3093921"/>
+					<telecom V="mailto:datenstelle@dmpservices.de"/>
+					<telecom V="mailto:dmp-hessen@dmpservices.de"/>
+				</person>
+				<organization>
+					<id RT="590912218"/>
+					<organization.nm V="SPS Germany GmbH"/>
+					<addr>
+						<ADL V="DMP-Datenstelle Hessen"/>
+						<POB V="100202"/>
+						<ZIP V="96054"/>
+						<CTY V="Bamberg"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="46" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="eDMP.KVH.Bamberg@kv-safenet.de">
+								<service_tmr V="2020-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<telecom V="tel:(0951)3093961"/>
+					<telecom V="mailto:datenstelle@dmpservices.de"/>
+					<telecom V="mailto:dmp-sachsen@dmpservices.de"/>
+				</person>
+				<organization>
+					<id RT="590912218"/>
+					<organization.nm V="SPS Germany GmbH"/>
+					<addr>
+						<ADL V="DMP-Datenstelle Sachsen"/>
+						<POB V="100437"/>
+						<ZIP V="96056"/>
+						<CTY V="Bamberg"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="98" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvs.bamberg@kv-safenet.de">
+								<service_tmr V="2017-10-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<person_name>
+						<nm>
+							<FAM V="Brummer"/>
+						</nm>
+					</person_name>
+					<telecom V="tel:(089)327332600"/>
+					<telecom V="mailto:info@dmp-bayern.de"/>
+				</person>
+				<organization>
+					<id RT="590914492"/>
+					<organization.nm V="Arbeitsgemeinschaft DMP-Datenstelle Bayern GbR"/>
+					<addr>
+						<ADL V="Arbeitsgemeinschaft DMP-Datenstelle Bayern GbR"/>
+						<POB V="210140"/>
+						<ZIP V="80671"/>
+						<CTY V="München"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="71" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvb.muenchen@kv-safenet.de">
+								<service_tmr V="2019-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<telecom V="tel:(030)54708126"/>
+					<telecom V="fax:(030)5470829126"/>
+					<telecom V="mailto:dmpdatenstelle@data-experts.de"/>
+					<telecom V="mailto:DMP-Annahme-Berlin@data-experts.de"/>
+				</person>
+				<organization>
+					<id RT="591102528"/>
+					<organization.nm V="data experts gmbH"/>
+					<addr>
+						<ADL V="data experts gmbh Niederlassung Berlin"/>
+						<STR V="Allee der Kosmonauten"/>
+						<HNR V="33g"/>
+						<ZIP V="12681"/>
+						<CTY V="Berlin"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="72" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<telecom V="tel:(030)54708136"/>
+					<telecom V="fax:(030)5470829126"/>
+					<telecom V="mailto:dmpdatenstelle@data-experts.de"/>
+				</person>
+				<organization>
+					<id RT="591102528"/>
+					<organization.nm V="data experts gmbh"/>
+					<addr>
+						<ADL V="data experts gmbh Datenstelle Brandenburg"/>
+						<POB V="400160"/>
+						<ZIP V="12631"/>
+						<CTY V="Berlin"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="83" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvbb.berlin@kv-safenet.de">
+								<service_tmr V="2018-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<person_name>
+						<nm>
+							<GIV V="Corinna"/>
+							<FAM V="Penno"/>
+						</nm>
+					</person_name>
+					<telecom V="tel:(0341)-25920-45"/>
+					<telecom V="fax:(0341)-25920-22"/>
+					<telecom V="mailto:dmp-hh@davaso.de"/>
+				</person>
+				<organization>
+					<id RT="661430035"/>
+					<organization.nm V="DAVASO GmbH"/>
+					<addr>
+						<ADL V="DAVASO GmbH Abteilung DMP-HH"/>
+						<POB V="500753"/>
+						<ZIP V="04304"/>
+						<CTY V="Leipzig"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="02" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvhh.leipzig@kv-safenet.de">
+								<service_tmr V="2016-04-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<person_name>
+						<nm>
+							<GIV V="Corinna"/>
+							<FAM V="Penno"/>
+						</nm>
+					</person_name>
+					<telecom V="tel:(0341)-25920-45"/>
+					<telecom V="fax:(0341)-25920-22"/>
+					<telecom V="mailto:dmp-hb@davaso.de"/>
+				</person>
+				<organization>
+					<id RT="661430035"/>
+					<organization.nm V="DAVASO GmbH"/>
+					<addr>
+						<ADL V="DAVASO GmbH Abteilung DMP-HB"/>
+						<POB V="500662"/>
+						<ZIP V="04305"/>
+						<CTY V="Leipzig"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="03" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="11" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvhb.leipzig@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<person_name>
+						<nm>
+							<GIV V="Corinna"/>
+							<FAM V="Penno"/>
+						</nm>
+					</person_name>
+					<telecom V="tel:(0341)-25920-45"/>
+					<telecom V="fax:(0341)-25920-22"/>
+					<telecom V="mailto:dmp-nds@davaso.de"/>
+				</person>
+				<organization>
+					<id RT="661430035"/>
+					<organization.nm V="DAVASO GmbH"/>
+					<addr>
+						<ADL V="DAVASO GmbH Abteilung DMP-NDS"/>
+						<POB V="500653"/>
+						<ZIP V="04305"/>
+						<CTY V="Leipzig"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="17" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvn.leipzig@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<person_name>
+						<nm>
+							<GIV V="Corinna"/>
+							<FAM V="Penno"/>
+						</nm>
+					</person_name>
+					<telecom V="tel:(0341)-25920-45"/>
+					<telecom V="fax:(0341)-25920-22"/>
+					<telecom V="mailto:dmp-mv@davaso.de"/>
+				</person>
+				<organization>
+					<id RT="661430035"/>
+					<organization.nm V="DAVASO GmbH"/>
+					<addr>
+						<ADL V="DAVASO GmbH Abteilung DMP-MV"/>
+						<POB V="500654"/>
+						<ZIP V="04305"/>
+						<CTY V="Leipzig"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="78" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="11" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvmv.leipzig@kv-safenet.de">
+								<service_tmr V="2016-07-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<person_name>
+						<nm>
+							<GIV V="Corinna"/>
+							<FAM V="Penno"/>
+						</nm>
+					</person_name>
+					<telecom V="tel:(0341)-25920-45"/>
+					<telecom V="fax:(0341)-25920-22"/>
+					<telecom V="mailto:dmp-sl@davaso.de"/>
+				</person>
+				<organization>
+					<id RT="661430035"/>
+					<organization.nm V="DAVASO GmbH"/>
+					<addr>
+						<ADL V="DAVASO GmbH Abteilung DMP-SL"/>
+						<POB V="500208"/>
+						<ZIP V="04302"/>
+						<CTY V="Leipzig"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="73" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvsl.leipzig@kv-safenet.de">
+								<service_tmr V="2018-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<person_name>
+						<nm>
+							<GIV V="Corinna"/>
+							<FAM V="Penno"/>
+						</nm>
+					</person_name>
+					<telecom V="tel:(0341)-25920-45"/>
+					<telecom V="fax:(0341)-25920-22"/>
+					<telecom V="mailto:dmp-wl@davaso.de"/>
+					<telecom V="mailto:dmp-datenaustausch@davaso.de"/>
+				</person>
+				<organization>
+					<id RT="661430035"/>
+					<organization.nm V="DAVASO GmbH"/>
+					<addr>
+						<ADL V="DAVASO GmbH Abteilung DMP-WL"/>
+						<POB V="500655"/>
+						<ZIP V="04305"/>
+						<CTY V="Leipzig"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="20" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="11" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvwl.leipzig@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<person_name>
+						<nm>
+							<GIV V="Corinna"/>
+							<FAM V="Penno"/>
+						</nm>
+					</person_name>
+					<telecom V="tel:(0341)-25920-45"/>
+					<telecom V="fax:(0341)-25920-22"/>
+					<telecom V="mailto:dmp-bw@davaso.de"/>
+				</person>
+				<organization>
+					<id RT="661430035"/>
+					<organization.nm V="DAVASO GmbH"/>
+					<addr>
+						<ADL V="DAVASO GmbH Abteilung DMP-BW"/>
+						<POB V="500751"/>
+						<ZIP V="04304"/>
+						<CTY V="Leipzig"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="52" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvbawue.leipzig@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+						<kv_bereich V="55" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvbawue.leipzig@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+						<kv_bereich V="60" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvbawue.leipzig@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+						<kv_bereich V="61" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvbawue.leipzig@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+						<kv_bereich V="62" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvbawue.leipzig@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<person_name>
+						<nm>
+							<GIV V="Corinna"/>
+							<FAM V="Penno"/>
+						</nm>
+					</person_name>
+					<telecom V="tel:(0341)-25920-45"/>
+					<telecom V="fax:(0341)-25920-22"/>
+					<telecom V="mailto:dmp-san@davaso.de"/>
+				</person>
+				<organization>
+					<id RT="661430035"/>
+					<organization.nm V="DAVASO GmbH"/>
+					<addr>
+						<ADL V="DAVASO GmbH Abteilung DMP-SAN"/>
+						<POB V="500555"/>
+						<ZIP V="04305"/>
+						<CTY V="Leipzig"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="88" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="11" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvsa.leipzig@kv-safenet.de">
+								<service_tmr V="2016-01-01.."></service_tmr>
+							</kv_connect>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<person_name>
+						<nm>
+							<GIV V="Corinna"/>
+							<FAM V="Penno"/>
+						</nm>
+					</person_name>
+					<telecom V="tel:(0341)-25920-45"/>
+					<telecom V="fax:(0341)-25920-22"/>
+					<telecom V="mailto:dmp-sh@davaso.de"/>
+				</person>
+				<organization>
+					<id RT="661430035"/>
+					<organization.nm V="DAVASO GmbH"/>
+					<addr>
+						<ADL V="DAVASO GmbH Abteilung DMP-SH"/>
+						<POB V="500752"/>
+						<ZIP V="04304"/>
+						<CTY V="Leipzig"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="01" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="11" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<person_name>
+						<nm>
+							<GIV V="Simon"/>
+							<FAM V="Daneluk"/>
+						</nm>
+					</person_name>
+					<telecom V="tel:(06352)714103"/>
+					<telecom V="mailto:simon.daneluk@rps.aok.de" />
+					<telecom V="mailto:dmp@rps.aok.de" />
+					<telecom V="mailto:edmp@rps.aok.de" />
+				</person>
+				<organization>
+					<id RT="107310373"/>
+					<organization.nm V="DMP-Datenstelle der AOK RP"/>
+					<addr>
+						<ADL V="DMP-Datenstelle für die Region Rheinland-Pfalz"/>
+						<STR V="Virchowstr."/>
+						<HNR V="30"/>
+						<ZIP V="67304"/>
+						<CTY V="Eisenberg"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="47" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="11" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+						</kv_bereich>
+						<kv_bereich V="48" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="11" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+						</kv_bereich>
+						<kv_bereich V="49" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="11" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+						</kv_bereich>
+						<kv_bereich V="50" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="11" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+						</kv_bereich>
+						<kv_bereich V="51" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="11" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="01" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+			<intended_recipient>
+				<person>
+					<person_name>
+						<nm>
+							<GIV V="Joachim"/>
+							<FAM V="Schu"/>
+						</nm>
+					</person_name>
+					<telecom V="tel:(0651)170390"/>
+					<telecom V="mailto:info@datenstelle-trier.de"/>
+				</person>
+				<organization>
+					<id RT="985000011"/>
+					<organization.nm V="DMP-Datenstelle Trier"/>
+					<addr>
+						<ADL V="Datenstelle für DMP Trier"/>
+						<POB V="4240"/>
+						<ZIP V="54232"/>
+						<CTY V="Trier"/>
+					</addr>
+				</organization>
+				<local_header>
+					<kv_bereich_liste>
+						<kv_bereich V="47" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvrlp.trier@kv-safenet.de">
+								<service_tmr V="2017-07-01.."></service_tmr>
+							</kv_connect>
+							<kim_email V="edmp@datenstelle-trier.kim.telematik">
+								<service_tmr V="2025-02-01.."></service_tmr>
+							</kim_email>
+						</kv_bereich>
+						<kv_bereich V="48" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvrlp.trier@kv-safenet.de">
+								<service_tmr V="2017-07-01.."></service_tmr>
+							</kv_connect>
+							<kim_email V="edmp@datenstelle-trier.kim.telematik">
+								<service_tmr V="2025-02-01.."></service_tmr>
+							</kim_email>
+						</kv_bereich>
+						<kv_bereich V="49" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvrlp.trier@kv-safenet.de">
+								<service_tmr V="2017-07-01.."></service_tmr>
+							</kv_connect>
+							<kim_email V="edmp@datenstelle-trier.kim.telematik">
+								<service_tmr V="2025-02-01.."></service_tmr>
+							</kim_email>
+						</kv_bereich>
+						<kv_bereich V="50" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvrlp.trier@kv-safenet.de">
+								<service_tmr V="2017-07-01.."></service_tmr>
+							</kv_connect>
+							<kim_email V="edmp@datenstelle-trier.kim.telematik">
+								<service_tmr V="2025-02-01.."></service_tmr>
+							</kim_email>
+						</kv_bereich>
+						<kv_bereich V="51" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="02" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="03" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="05" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="11" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="71" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="73" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="75" S="1.2.276.0.76.5.240"/>
+										<kostentraeger_gruppe V="81" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvrlp.trier@kv-safenet.de">
+								<service_tmr V="2017-07-01.."></service_tmr>
+							</kv_connect>
+							<kim_email V="edmp@datenstelle-trier.kim.telematik">
+								<service_tmr V="2025-02-01.."></service_tmr>
+							</kim_email>
+						</kv_bereich>
+						<kv_bereich V="73" S="1.2.276.0.76.5.233">
+							<dmp_liste>
+								<dmp V="01" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="02" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="03" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="04" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="05" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+								<dmp V="06" S="1.2.276.0.76.5.223">
+									<kostentraeger_gruppe_liste>
+										<kostentraeger_gruppe V="04" S="1.2.276.0.76.5.240"/>
+									</kostentraeger_gruppe_liste>
+								</dmp>
+							</dmp_liste>
+							<kv_connect V="edmp.kvsl.trier@kv-safenet.de">
+								<service_tmr V="2018-01-01.."></service_tmr>
+							</kv_connect>
+							<kim_email V="edmp@datenstelle-trier.kim.telematik">
+								<service_tmr V="2025-02-01.."></service_tmr>
+							</kim_email>
+						</kv_bereich>
+					</kv_bereich_liste>
+				</local_header>
+			</intended_recipient>
+		</datenannahmestellen_liste>
+	</ehd:body>
+</ehd:ehd>

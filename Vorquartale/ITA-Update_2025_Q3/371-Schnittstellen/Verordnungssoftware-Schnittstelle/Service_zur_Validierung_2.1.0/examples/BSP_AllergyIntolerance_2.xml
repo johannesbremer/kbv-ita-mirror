@@ -1,0 +1,56 @@
+<AllergyIntolerance xmlns="http://hl7.org/fhir">
+  <id value="4"/> 
+  <meta>
+	<versionId value="1"/>
+	<lastUpdated value="2022-09-01T09:06:00Z"/>
+    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_AllergyIntolerance|2.1.0" />
+  </meta>
+  <clinicalStatus>
+    <coding>
+		<system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"/>
+		<version value="0.5.0"/>
+		<code value="active"/>
+		<display value="Active"/>
+	</coding>
+  </clinicalStatus>
+  <verificationStatus>
+    <coding>
+		<system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"/>
+		<version value="0.5.0"/>
+		<code value="confirmed"/>
+		<display value="Confirmed"/>
+	</coding>
+  </verificationStatus>
+  <type value="allergy"/> 
+  <code> 
+	<coding>
+		<system value="http://snomed.info/sct"/>
+		<code value="323389000"/>
+		<display value="Benzylpenicillin (substance)"/>
+	</coding>
+	<coding>
+		<system value="http://fhir.de/CodeSystem/ask"/>
+		<code value="00246"/>
+		<display value="Benzylpenicillin"/>
+	</coding>
+	<coding>
+		<system value="http://fhir.de/CodeSystem/bfarm/atc"/>
+		<version value="2022"/>
+		<code value="J01CE01"/>
+		<display value="Benzylpenicillin"/>
+	</coding>
+	<coding>
+		<system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+		<code value="16849789"/>
+	</coding>
+    <text value="Benzylpenicillin/Penicillin G"/> 
+  </code> 
+  <patient> 
+    <reference value="Patient/100"/>  
+  </patient> 
+  <reaction>
+	<manifestation>
+		<text value="anaphylaktischer Schock"/>
+	</manifestation>
+  </reaction>
+</AllergyIntolerance>

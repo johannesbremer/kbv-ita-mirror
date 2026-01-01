@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  
+<keytabs xmlns="urn:ehd/001">
+  <keytab S="1.2.276.0.76.5.231" SN="S_KBV_GEBUEHRENORDNUNG" SV="1.02">
+    <key V="0" DN="Einheitlicher Bewertungsmaßstab" S="1.2.276.0.76.5.231" SV="1.02"/>
+    <key V="1" DN="Bewertungsmaßstab Ärzte" S="1.2.276.0.76.5.231" SV="1.02"/>
+    <key V="2" DN="Ersatzkassengebührenordnung" S="1.2.276.0.76.5.231" SV="1.02"/>
+    <key V="3" DN="Gebührenordnung Ärzte" S="1.2.276.0.76.5.231" SV="1.02"/>
+  </keytab>
+</keytabs>
+

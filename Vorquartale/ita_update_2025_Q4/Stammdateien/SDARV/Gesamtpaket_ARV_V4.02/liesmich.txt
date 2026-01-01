@@ -1,0 +1,48 @@
+1. Beschreibung "Gesamtpaket ARV" 
+   (Version 4.03, 12.08.2019)
+******************************************************************************
+
+Dieses Gesamtpaket beschreibt die Datenstruktur der bundeseinheitlichen
+XML-Schnittstelle zur Übermittlung der Inhalte aus regionalen
+kollektivvertraglichen Arzneimittelvereinbarungen.
+
+Alle Komponenten des Pakets sind separat versioniert. Es können keine 
+Schlussfolgerungen aus den Versionsnummern des Pakets und der Komponenten 
+untereinander gezogen werden. Die Versionsnummer der Schnittstelle (Schema) ist
+nicht identisch mit der Versionsnummer der Schnittstellenbeschreibung.
+
+Die Schnittstellenbeschreibung 4.03 bezieht sich auf die aktuelle Schemaversion 4.02. 
+
+
+2. Dokumente, Schema und Beispieldateien
+******************************************************************************
+
+-  KBV_ITA_VGEX_Schnittstelle_ARV.pdf (Version 4.02, Stand: 12.08.2019)
+-  KBV_ITA_VGEX_Implementierungshinweise_ARV.pdf (Version 2.02, Stand: 12.12.2018)
+-  KBV_ITA_AHEX_Verfahrensbeschreibung_ARV.pdf (Version 2.02, Stand 14.08.2018)
+
+Schema-Dateien der Schema-Version 4.02:
+
+- arv_body_V4.02.xsd
+- arv_header_V4.02.xsd
+- arv_root_V4.02.xsd
+- datentypen_V1.40.xsd
+- ehd_header_V1.40.xsd
+- ehd_root_V1.40.xsd
+- keytabs_V1.40.xsd
+
+Beispiel-Datei:
+
+ARV_04.02_17_tf+2019q2_nr+1_st+RELEASE.xml
+ARV_04.02_71_tf+2019q2_nr+5_st+TEST.xml
+
+4. Änderungen zur Gesamtpaket-Version 4.02 
+******************************************************************************
+
+- Aktualisierung des Dokumentes KBV_ITA_VGEX_Schnittstelle_ARV.pdf in der Version 4.02
+- Aktualisierung des Dokumentes KBV_ITA_AHEX_Verfahrensbeschreibung_ARV.pdf in der Version 2.02
+
+
+5. Rechtliche Hinweise
+**********************
+Die KBV übernimmt keine Garantie für die Fehlerfreiheit.

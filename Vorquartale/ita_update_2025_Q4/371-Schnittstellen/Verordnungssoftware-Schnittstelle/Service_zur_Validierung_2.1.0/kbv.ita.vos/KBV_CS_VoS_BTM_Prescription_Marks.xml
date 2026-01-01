@@ -1,0 +1,45 @@
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="KBV-CS-VoS-BTM-Prescription-Marks" />
+  <url value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_BTM_Prescription_Marks" />
+  <version value="2.1.0" />
+  <name value="KBV_CS_VoS_BTM_Prescription_Marks" />
+  <status value="active" />
+  <experimental value="false" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <contact>
+    <telecom>
+      <system value="other" />
+      <value value="http://www.kbv.de" />
+    </telecom>
+  </contact>
+  <description value="Kennzeichen für die Darstellung der Sonderregelungen bei der Verordnung von Betäubungsmitteln" />
+  <copyright value="Copyright © [2022], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <caseSensitive value="true" />
+  <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_VoS_BTM_Prescription_Marks" />
+  <content value="complete" />
+  <concept>
+    <code value="A" />
+    <display value="Überschreitung der Höchstverschreibungsmenge innerhalb von 30 Tagen" />
+  </concept>
+  <concept>
+    <code value="N" />
+    <display value="Nachreichung einer notfallbedingten Verschreibung" />
+  </concept>
+  <concept>
+    <code value="S" />
+    <display value="Verschreibung von Substitutionsmitteln" />
+  </concept>
+  <concept>
+    <code value="SZ" />
+    <display value="Verschreibung von Substitutionsmitteln nach §5 Abs. 8 BtMVV" />
+  </concept>
+  <concept>
+    <code value="ST" />
+    <display value="Verschreibung von 'Take Home'-Substitutionsmitteln nach §5 Abs. 9 BtMVV" />
+  </concept>
+  <concept>
+    <code value="K" />
+    <display value="Verschreibung für Kauffahrteischiffe" />
+  </concept>
+</CodeSystem>

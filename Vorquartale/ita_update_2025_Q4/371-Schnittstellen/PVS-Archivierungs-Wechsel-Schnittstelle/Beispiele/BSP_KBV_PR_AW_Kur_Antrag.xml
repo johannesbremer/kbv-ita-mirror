@@ -1,0 +1,49 @@
+<CoverageEligibilityRequest xmlns="http://hl7.org/fhir">
+	<id value="3207"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-18T14:06:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Kur_Antrag|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Kur_Antrag_Zusatzinfo">
+		<extension url="kompaktkur">
+			<valueBoolean value="false"/>
+		</extension>
+		<extension url="kompaktkur_nicht_moeglich">
+			<valueBoolean value="true"/>
+		</extension>
+	</extension>
+	<status value="active"/>
+	<purpose value="auth-requirements"/>
+	<patient>
+		<reference value="Patient/3181"/>
+	</patient>
+	<created value="2020-09-18"/>
+	<insurer>
+		<identifier>
+			<system value="http://fhir.de/NamingSystem/arge-ik/iknr"/>
+			<value value="109999999"/>
+		</identifier>
+		<display value="Allgemeine Technische Barmener BKK"/>
+	</insurer>
+	<item>
+	<category>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp"/>
+			<code value="Kur_Antrag"/>
+		</coding>	
+	</category>
+	<productOrService>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Verordnung_Kur_Kurart"/>
+			<code value="Ambulante_Vorsorgeleistung_zur_Krankheitsverhuetung"/>
+		</coding>
+	</productOrService>
+	</item>
+</CoverageEligibilityRequest>

@@ -1,0 +1,105 @@
+Manifest-Version: 1.0
+Created-By: Maven JAR Plugin 3.2.2
+Build-Jdk-Spec: 17
+Class-Path: ca/uhn/hapi/fhir/org.hl7.fhir.validation/6.7.8/org.hl7.fhir.
+ validation-6.7.8.jar ca/uhn/hapi/fhir/hapi-fhir-base/6.4.1/hapi-fhir-ba
+ se-6.4.1.jar com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.1
+ 7.0/jackson-datatype-jsr310-2.17.0.jar org/apache/commons/commons-text/
+ 1.10.0/commons-text-1.10.0.jar org/slf4j/jcl-over-slf4j/2.0.3/jcl-over-
+ slf4j-2.0.3.jar com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar 
+ ca/uhn/hapi/fhir/org.hl7.fhir.utilities/6.7.8/org.hl7.fhir.utilities-6.
+ 7.8.jar ca/uhn/hapi/fhir/org.hl7.fhir.dstu2/6.7.8/org.hl7.fhir.dstu2-6.
+ 7.8.jar ca/uhn/hapi/fhir/org.hl7.fhir.dstu2016may/6.7.8/org.hl7.fhir.ds
+ tu2016may-6.7.8.jar ca/uhn/hapi/fhir/org.hl7.fhir.dstu3/6.7.8/org.hl7.f
+ hir.dstu3-6.7.8.jar ca/uhn/hapi/fhir/org.hl7.fhir.dstu3.support/6.7.8/o
+ rg.hl7.fhir.dstu3.support-6.7.8.jar ca/uhn/hapi/fhir/org.hl7.fhir.r4/6.
+ 7.8/org.hl7.fhir.r4-6.7.8.jar ca/uhn/hapi/fhir/org.hl7.fhir.r5/6.7.8/or
+ g.hl7.fhir.r5-6.7.8.jar ca/uhn/hapi/fhir/org.hl7.fhir.model/6.7.8/org.h
+ l7.fhir.model-6.7.8.jar ca/uhn/hapi/fhir/org.hl7.fhir.support/6.7.8/org
+ .hl7.fhir.support-6.7.8.jar ca/uhn/hapi/fhir/org.hl7.fhir.convertors/6.
+ 7.8/org.hl7.fhir.convertors-6.7.8.jar com/google/code/gson/gson/2.13.1/
+ gson-2.13.1.jar com/google/errorprone/error_prone_annotations/2.38.0/er
+ ror_prone_annotations-2.38.0.jar org/apache/commons/commons-collections
+ 4/4.4/commons-collections4-4.4.jar com/fasterxml/jackson/core/jackson-d
+ atabind/2.17.0/jackson-databind-2.17.0.jar com/fasterxml/jackson/core/j
+ ackson-annotations/2.17.0/jackson-annotations-2.17.0.jar com/fasterxml/
+ jackson/core/jackson-core/2.17.0/jackson-core-2.17.0.jar org/thymeleaf/
+ thymeleaf/3.1.2.RELEASE/thymeleaf-3.1.2.RELEASE.jar ognl/ognl/3.3.4/ogn
+ l-3.3.4.jar org/javassist/javassist/3.22.0-GA/javassist-3.22.0-GA.jar o
+ rg/attoparser/attoparser/2.0.7.RELEASE/attoparser-2.0.7.RELEASE.jar org
+ /unbescape/unbescape/1.1.6.RELEASE/unbescape-1.1.6.RELEASE.jar com/goog
+ le/guava/guava/32.0.1-jre/guava-32.0.1-jre.jar com/google/guava/failure
+ access/1.0.1/failureaccess-1.0.1.jar com/google/guava/listenablefuture/
+ 9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty
+ -to-avoid-conflict-with-guava.jar org/checkerframework/checker-qual/3.3
+ 3.0/checker-qual-3.33.0.jar com/google/j2objc/j2objc-annotations/2.8/j2
+ objc-annotations-2.8.jar org/apache/santuario/xmlsec/4.0.4/xmlsec-4.0.4
+ .jar com/fasterxml/woodstox/woodstox-core/6.4.0/woodstox-core-6.4.0.jar
+  org/codehaus/woodstox/stax2-api/4.2.1/stax2-api-4.2.1.jar org/junit/ju
+ piter/junit-jupiter-api/5.9.1/junit-jupiter-api-5.9.1.jar org/opentest4
+ j/opentest4j/1.2.0/opentest4j-1.2.0.jar org/junit/platform/junit-platfo
+ rm-commons/1.9.1/junit-platform-commons-1.9.1.jar org/apiguardian/apigu
+ ardian-api/1.1.2/apiguardian-api-1.1.2.jar net/bytebuddy/byte-buddy/1.1
+ 4.8/byte-buddy-1.14.8.jar org/junit/jupiter/junit-jupiter-engine/5.9.1/
+ junit-jupiter-engine-5.9.1.jar org/junit/platform/junit-platform-engine
+ /1.9.1/junit-platform-engine-1.9.1.jar org/junit/jupiter/junit-jupiter-
+ params/5.9.1/junit-jupiter-params-5.9.1.jar org/junit/platform/junit-pl
+ atform-launcher/1.8.2/junit-platform-launcher-1.8.2.jar junit/junit/4.1
+ 3.2/junit-4.13.2.jar org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.j
+ ar ca/uhn/hapi/fhir/org.hl7.fhir.utilities/6.7.8/org.hl7.fhir.utilities
+ -6.7.8-tests.jar com/ibm/icu/icu4j/78.1/icu4j-78.1.jar commons-net/comm
+ ons-net/3.9.0/commons-net-3.9.0.jar ca/uhn/hapi/fhir/org.hl7.fhir.conve
+ rtors/6.7.8/org.hl7.fhir.convertors-6.7.8-tests.jar ca/uhn/hapi/fhir/or
+ g.hl7.fhir.r4b/6.7.8/org.hl7.fhir.r4b-6.7.8.jar org/xerial/sqlite-jdbc/
+ 3.50.3.0/sqlite-jdbc-3.50.3.0.jar ca/uhn/hapi/fhir/org.hl7.fhir.dstu2/6
+ .7.8/org.hl7.fhir.dstu2-6.7.8-tests.jar ca/uhn/hapi/fhir/org.hl7.fhir.d
+ stu3/6.7.8/org.hl7.fhir.dstu3-6.7.8-tests.jar ca/uhn/hapi/fhir/org.hl7.
+ fhir.dstu2016may/6.7.8/org.hl7.fhir.dstu2016may-6.7.8-tests.jar ca/uhn/
+ hapi/fhir/org.hl7.fhir.r4/6.7.8/org.hl7.fhir.r4-6.7.8-tests.jar ca/uhn/
+ hapi/fhir/org.hl7.fhir.r4b/6.7.8/org.hl7.fhir.r4b-6.7.8-tests.jar ca/uh
+ n/hapi/fhir/org.hl7.fhir.r5/6.7.8/org.hl7.fhir.r5-6.7.8-tests.jar com/n
+ imbusds/nimbus-jose-jwt/10.0.2/nimbus-jose-jwt-10.0.2.jar net/sourcefor
+ ge/plantuml/plantuml-mit/1.2023.9/plantuml-mit-1.2023.9.jar ca/uhn/hapi
+ /fhir/org.hl7.fhir.validation/6.7.8/org.hl7.fhir.validation-6.7.8-tests
+ .jar org/mockito/mockito-core/4.8.1/mockito-core-4.8.1.jar net/bytebudd
+ y/byte-buddy-agent/1.12.16/byte-buddy-agent-1.12.16.jar org/objenesis/o
+ bjenesis/3.2/objenesis-3.2.jar org/mockito/mockito-junit-jupiter/4.8.1/
+ mockito-junit-jupiter-4.8.1.jar org/commonmark/commonmark/0.21.0/common
+ mark-0.21.0.jar org/commonmark/commonmark-ext-gfm-tables/0.21.0/commonm
+ ark-ext-gfm-tables-0.21.0.jar org/apache/poi/poi/5.4.1/poi-5.4.1.jar co
+ mmons-codec/commons-codec/1.15/commons-codec-1.15.jar org/apache/common
+ s/commons-math3/3.6.1/commons-math3-3.6.1.jar commons-io/commons-io/2.1
+ 7.0/commons-io-2.17.0.jar com/zaxxer/SparseBitSet/1.3/SparseBitSet-1.3.
+ jar org/apache/logging/log4j/log4j-api/2.24.3/log4j-api-2.24.3.jar org/
+ apache/poi/poi-ooxml/5.4.1/poi-ooxml-5.4.1.jar org/apache/xmlbeans/xmlb
+ eans/5.3.0/xmlbeans-5.3.0.jar com/github/virtuald/curvesapi/1.08/curves
+ api-1.08.jar org/apache/poi/poi-ooxml-full/5.4.1/poi-ooxml-full-5.4.1.j
+ ar org/everit/json/org.everit.json.schema/1.1.0/org.everit.json.schema-
+ 1.1.0.jar org/everit/osgi/bundles/org.everit.osgi.bundles.org.json/1.0.
+ 0-v20140107/org.everit.osgi.bundles.org.json-1.0.0-v20140107.jar com/sq
+ uareup/okhttp3/mockwebserver/4.11.0/mockwebserver-4.11.0.jar org/jetbra
+ ins/kotlin/kotlin-stdlib-jdk8/1.6.10/kotlin-stdlib-jdk8-1.6.10.jar org/
+ jetbrains/kotlin/kotlin-stdlib-jdk7/1.6.10/kotlin-stdlib-jdk7-1.6.10.ja
+ r com/squareup/okio/okio/3.4.0/okio-3.4.0.jar com/squareup/okio/okio-jv
+ m/3.4.0/okio-jvm-3.4.0.jar org/jetbrains/kotlin/kotlin-stdlib-common/1.
+ 8.0/kotlin-stdlib-common-1.8.0.jar org/antlr/ST4/4.1/ST4-4.1.jar org/an
+ tlr/antlr-runtime/3.5.2/antlr-runtime-3.5.2.jar ch/qos/logback/logback-
+ classic/1.5.20/logback-classic-1.5.20.jar ch/qos/logback/logback-core/1
+ .5.20/logback-core-1.5.20.jar org/slf4j/slf4j-api/2.0.3/slf4j-api-2.0.3
+ .jar org/apache/commons/commons-compress/1.27.1/commons-compress-1.27.1
+ .jar org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar 
+ org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar commons-l
+ ogging/commons-logging/1.2/commons-logging-1.2.jar org/fhir/ucum/1.0.10
+ /ucum-1.0.10.jar org/apache/commons/commons-lang3/3.18.0/commons-lang3-
+ 3.18.0.jar org/ogce/xpp3/1.1.6/xpp3-1.1.6.jar jakarta-regexp/jakarta-re
+ gexp/1.4/jakarta-regexp-1.4.jar com/squareup/okhttp3/okhttp/4.11.0/okht
+ tp-4.11.0.jar org/jetbrains/kotlin/kotlin-stdlib/1.6.20/kotlin-stdlib-1
+ .6.20.jar org/projectlombok/lombok/1.18.38/lombok-1.18.38.jar net/sf/sa
+ xon/Saxon-HE/11.6/Saxon-HE-11.6.jar org/xmlresolver/xmlresolver/5.2.1/x
+ mlresolver-5.2.1.jar org/apache/httpcomponents/client5/httpclient5/5.1.
+ 3/httpclient5-5.1.3.jar org/apache/httpcomponents/core5/httpcore5-h2/5.
+ 1.3/httpcore5-h2-5.1.3.jar org/apache/httpcomponents/core5/httpcore5/5.
+ 1.3/httpcore5-5.1.3.jar org/xmlresolver/xmlresolver/5.2.1/xmlresolver-5
+ .2.1-data.jar
+Main-Class: org.hl7.fhir.validation.cli.ValidatorCli
+

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Krebsfrueherkennung Frauen Beobachtungen zytologischer Befund"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="Zellmaterial_nicht_verwendbar"/>
+<display value="Zellmaterial nicht verwendbar"/>
+</concept>
+<concept>
+<code value="Endozervikale_Zellen"/>
+<display value="Endozervikale Zellen"/>
+</concept>
+<concept>
+<code value="Endozervikale_Zellen_Proliferationsgrad"/>
+<display value="Endozervikale Zellen Proliferationsgrad"/>
+</concept>
+<concept>
+<code value="Doederleinflora"/>
+<display value="Doederleinflora"/>
+</concept>
+<concept>
+<code value="Mischflora"/>
+<display value="Mischflora"/>
+</concept>
+<concept>
+<code value="Candida"/>
+<display value="Candida"/>
+</concept>
+<concept>
+<code value="Trichomonaden"/>
+<display value="Trichomonaden"/>
+</concept>
+<concept>
+<code value="Kokkenflora"/>
+<display value="Kokkenflora"/>
+</concept>
+<concept>
+<code value="Gardnerella"/>
+<display value="Gardnerella"/>
+</concept>
+<concept>
+<code value="Gruppe"/>
+<display value="Gruppe"/>
+</concept>
+<concept>
+<code value="Bemerkungen"/>
+<display value="Bemerkungen"/>
+</concept>
+<concept>
+<code value="Zytologische_Kontrolle"/>
+<display value="Zytologische Kontrolle"/>
+</concept>
+<concept>
+<code value="Zytologische_Kontrolle_nach_Entzuendungsbehandlung"/>
+<display value="Zytologische Kontrolle nach Entzuendungsbehandlung"/>
+</concept>
+<concept>
+<code value="Zytologische_Kontrolle_nach_Oestrogenbehandlung"/>
+<display value="Zytologische Kontrolle nach Oestrogenbehandlung"/>
+</concept>
+<concept>
+<code value="Zytologische_Kontrolle_nach_Freitext"/>
+<display value="Zytologische Kontrolle nach Freitext"/>
+</concept>
+<concept>
+<code value="histologische_Klaerung"/>
+<display value="Histologische Klaerung"/>
+</concept>
+<concept>
+<code value="HPV_Test"/>
+<display value="HPV Test"/>
+</concept>
+<concept>
+<code value="Ko_Test"/>
+<display value="Ko Test"/>
+</concept>
+<concept>
+<code value="Abklaerungskoloskopie"/>
+<display value="Abklärungskoloskopie"/>
+</concept>
+<concept>
+<code value="Befund_Diverse"/>
+<display value="Befund Diverse"/>
+</concept>
+</CodeSystem>
+

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:ns2="http://www.w3.org/1999/xhtml">
+	<id value="KBV-CS-EAU-AU-Type" />
+    <url value="https://fhir.kbv.de/CodeSystem/KBV_CS_EAU_AU_Type"/>
+    <version value="1.1.0"/>
+    <name value="KBV_CS_EAU_AU_Type"/>
+    <status value="active"/>
+    <date value="2022-09-30" />
+	<publisher value="Kassenärztliche Bundesvereinigung" />
+    <contact>
+        <telecom>
+            <system value="url"/>
+            <value value="http://www.kbv.de"/>
+        </telecom>
+    </contact>
+    <description value="Angabe, um welche Art von AU es sich handelt."/>
+    <copyright value="Kassenärztliche Bundesvereinigung"/>
+    <caseSensitive value="true"/>
+    <content value="complete"/>
+    <concept>
+        <code value="ERST"/>
+        <display value="Erstbescheinigung"/>
+    </concept>
+    <concept>
+        <code value="FOLGE"/>
+        <display value="Folgebescheinigung"/>
+    </concept>
+	<concept>
+        <code value="ERST_END"/>
+        <display value="Erst- und Endbescheinigung"/>
+    </concept>
+    <concept>
+        <code value="FOLGE_END"/>
+        <display value="Folge- und Endbescheinigung"/>
+    </concept>
+</CodeSystem>

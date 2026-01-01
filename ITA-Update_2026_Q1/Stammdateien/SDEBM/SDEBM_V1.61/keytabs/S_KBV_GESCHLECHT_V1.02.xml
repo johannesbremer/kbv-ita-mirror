@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  
+<keytabs xmlns="urn:ehd/001">
+  <keytab SV="1.02" SN="S_KBV_GESCHLECHT" S="1.2.276.0.76.5.232">
+    <key V="0" DN="unbekannt" S="1.2.276.0.76.5.232" SV="1.02"/>
+    <key V="1" DN="männlich" S="1.2.276.0.76.5.232" SV="1.02"/>
+    <key V="2" DN="weiblich" S="1.2.276.0.76.5.232" SV="1.02"/>
+    <key V="3" DN="unbestimmt" S="1.2.276.0.76.5.232" SV="1.02"/>
+    <key V="4" DN="divers" S="1.2.276.0.76.5.232" SV="1.02"/>
+  </keytab>
+</keytabs>
+

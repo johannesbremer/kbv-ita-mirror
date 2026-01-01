@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Beispieldatei für benutzerdefinierte Arbeitsmodi -->
+
+<arbeitsmodi>
+
+  <arbeitsmodus>
+    <typ>verschluesselung</typ>
+    <name>Meine Verschluesselung</name>
+    <schluessel>public.key</schluessel>
+  </arbeitsmodus>
+
+  <arbeitsmodus>
+    <typ>entschluesselung</typ>
+    <name>Meine Entschluesselung</name>
+    <schluessel>private.key</schluessel>
+  </arbeitsmodus>
+
+</arbeitsmodi>

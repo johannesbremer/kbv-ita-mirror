@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Patient" />
+  <title value="KBV_PR_AW_Patient" />
+  <status value="active" />
+  <description value="StructureDefinition fuer die Verwendung des KBV-Profils &quot;KBV_PR_AW_Patient&quot;" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="cda" />
+    <uri value="http://hl7.org/v3/cda" />
+    <name value="CDA (R2)" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="loinc" />
+    <uri value="http://loinc.org" />
+    <name value="LOINC code for the element" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Patient" />
+  <baseDefinition value="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient|1.1.0" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Patient.id">
+      <path value="Patient.id" />
+      <min value="1" />
+    </element>
+    <element id="Patient.meta">
+      <path value="Patient.meta" />
+      <min value="1" />
+    </element>
+    <element id="Patient.meta.versionId">
+      <path value="Patient.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Patient.meta.lastUpdated">
+      <path value="Patient.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Patient.meta.profile">
+      <path value="Patient.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+    </element>
+    <element id="Patient.text">
+      <path value="Patient.text" />
+      <min value="1" />
+    </element>  
+    <element id="Patient.extension">
+      <path value="Patient.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.extension:kostenuebernahmeIgeL">
+      <path value="Patient.extension" />
+      <sliceName value="kostenuebernahmeIgeL" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_KostenuebernahmeIgeL" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.extension:aktuelle_Taetigkeit">
+      <path value="Patient.extension" />
+      <sliceName value="aktuelle_Taetigkeit" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_Aktuelle_Taetigkeit" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.extension:zusatzinformationen">
+      <path value="Patient.extension" />
+      <sliceName value="zusatzinformationen" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_Zusatzinformationen" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.extension:zusatzinformationen.extension">
+      <path value="Patient.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.extension:zusatzinformationen.extension:religionszugehoerigkeit">
+      <path value="Patient.extension.extension" />
+      <sliceName value="religionszugehoerigkeit" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.extension:staatsangehoerigkeit">
+      <path value="Patient.extension" />
+      <sliceName value="staatsangehoerigkeit" />
+      <short value="Staatsangehörigkeit" />
+      <definition value="Zur Dokumentation der Staatsangehörigkeit ist dieses Feld vorgesehen." />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/patient-citizenship" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.extension:staatsangehoerigkeit.extension">
+      <path value="Patient.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.extension:staatsangehoerigkeit.extension:code">
+      <path value="Patient.extension.extension" />
+      <sliceName value="code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.extension:staatsangehoerigkeit.extension:code.value[x]">
+      <path value="Patient.extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.extension:staatsangehoerigkeit.extension:code.value[x]:valueCodeableConcept">
+      <path value="Patient.extension.extension.value[x]" />
+      <sliceName value="valueCodeableConcept" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="extensible" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_BASE_GemRS_Anlage_8" />
+      </binding>
+    </element>
+    <element id="Patient.extension:staatsangehoerigkeit.extension:period">
+      <path value="Patient.extension.extension" />
+      <sliceName value="period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.extension:versichertendaten_Zusatzinformationen">
+      <path value="Patient.extension" />
+      <sliceName value="versichertendaten_Zusatzinformationen" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_Vsdm_Zusatzinformationen" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.extension:versichertendaten_Zusatzinformationen.extension">
+      <path value="Patient.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.extension:versichertendaten_Zusatzinformationen.extension:adresse">
+      <path value="Patient.extension.extension" />
+      <sliceName value="adresse" />
+    </element>
+    <element id="Patient.extension:versichertendaten_Zusatzinformationen.extension:adresse.value[x]:valueAddress">
+      <path value="Patient.extension.extension.value[x]" />
+      <sliceName value="valueAddress" />
+    </element>
+    <element id="Patient.extension:versichertendaten_Zusatzinformationen.extension:adresse.value[x]:valueAddress.country">
+      <path value="Patient.extension.extension.value[x].country" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_BASE_GemRS_Anlage_8" />
+      </binding>
+    </element>
+    <element id="Patient.extension:kommentar">
+      <path value="Patient.extension" />
+      <sliceName value="kommentar" />
+      <short value="Kommentar" />
+      <definition value="Kommentar zum Patienten" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Additional_Comment" />
+      </type>
+    </element>
+    <element id="Patient.identifier">
+      <path value="Patient.identifier" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:pid">
+      <path value="Patient.identifier" />
+      <sliceName value="pid" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:pid.system">
+      <path value="Patient.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:pid.value">
+      <path value="Patient.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:pid.period">
+      <path value="Patient.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:pid.assigner">
+      <path value="Patient.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:versichertenId_GKV">
+      <path value="Patient.identifier" />
+      <sliceName value="versichertenId_GKV" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:versichertenId_GKV.type">
+      <path value="Patient.identifier.type" />
+      <min value="1" />
+    </element>
+    <element id="Patient.identifier:versichertenId_GKV.system">
+      <path value="Patient.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:versichertenId_GKV.value">
+      <path value="Patient.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:versichertenId_GKV.period">
+      <path value="Patient.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:versichertenId_GKV.assigner">
+      <path value="Patient.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:versichertennummer_pkv">
+      <path value="Patient.identifier" />
+      <sliceName value="versichertennummer_pkv" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:versichertennummer_pkv.value">
+      <path value="Patient.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:versichertennummer_pkv.period">
+      <path value="Patient.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:versichertennummer_pkv.assigner">
+      <path value="Patient.identifier.assigner" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:reisepassnummer">
+      <path value="Patient.identifier" />
+      <sliceName value="reisepassnummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:reisepassnummer.value">
+      <path value="Patient.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:reisepassnummer.period">
+      <path value="Patient.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:reisepassnummer.assigner">
+      <path value="Patient.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:versichertennummer_kvk">
+      <path value="Patient.identifier" />
+      <sliceName value="versichertennummer_kvk" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:versichertennummer_kvk.system">
+      <path value="Patient.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:versichertennummer_kvk.value">
+      <path value="Patient.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:versichertennummer_kvk.period">
+      <path value="Patient.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.identifier:versichertennummer_kvk.assigner">
+      <path value="Patient.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Patient.active">
+      <path value="Patient.active" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name">
+      <path value="Patient.name" />
+		<slicing>
+			<discriminator>
+				<type value="value" />
+				<path value="use" />
+			</discriminator>
+			<rules value="closed" />
+		</slicing>
+      <max value="3" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:name">
+      <path value="Patient.name" />
+      <sliceName value="name" />
+      <short value="Versichertendaten" />
+      <definition value="Dieses Element beschreibt diverse Namensbestandteile des Patienten. Diese werden hier als Versichertendaten des PVS bezeichnen." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:stammdaten">
+      <path value="Patient.name" />
+      <sliceName value="stammdaten" />
+      <short value="Stammdaten" />
+      <definition value="Dieses Element beschreibt einen Namen, welcher in den Stammdaten des exportierenden Systems enthalten ist, also z.B. bei der Anmeldung aufgenommen wurde, falls diese sich von den offiziellen Daten des Versicherten von der EGK o.Ä. unterscheiden" />
+      <max value="1" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://fhir.de/StructureDefinition/humanname-de-basis" />
+      </type>
+    </element>
+    <element id="Patient.name:stammdaten.use">
+      <path value="Patient.name.use" />
+      <min value="1" />
+      <fixedCode value="usual" />
+    </element>
+    <element id="Patient.name:stammdaten.family">
+      <path value="Patient.name.family" />
+      <min value="1" />
+    </element>
+    <element id="Patient.name:stammdaten.given">
+      <path value="Patient.name.given" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Patient.name:stammdaten.prefix">
+      <path value="Patient.name.prefix" />
+      <max value="1" />
+    </element>
+    <element id="Patient.name:stammdaten.prefix.extension">
+      <path value="Patient.name.prefix.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.name:stammdaten.prefix.extension:prefix-qualifier">
+      <path value="Patient.name.prefix.extension" />
+      <sliceName value="prefix-qualifier" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Patient.name:stammdaten.prefix.extension:prefix-qualifier.value[x]">
+      <path value="Patient.name.prefix.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+    </element>
+    <element id="Patient.name:stammdaten.prefix.extension:prefix-qualifier.value[x]:valueCode">
+      <path value="Patient.name.prefix.extension.value[x]" />
+      <sliceName value="valueCode" />
+      <min value="1" />
+      <fixedCode value="AC" />
+    </element>
+    <element id="Patient.telecom">
+      <path value="Patient.telecom" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.gender">
+      <path value="Patient.gender" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.birthDate">
+      <path value="Patient.birthDate" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.deceased[x]">
+      <path value="Patient.deceased[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="Patient.deceased[x]:deceasedDateTime">
+      <path value="Patient.deceased[x]" />
+      <sliceName value="deceasedDateTime" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="Patient.address">
+      <path value="Patient.address" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift">
+      <path value="Patient.address" />
+      <sliceName value="Strassenanschrift" />
+      <short value="Adress-Stammdaten-Strassenanschrift" />
+      <definition value="In diesem Slice sollen die Stammdaten des Systems hinterlegt werden.&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;Eine Adresse gemäß postalischer Konventionen (im Gegensatz zu bspw. GPS-Koordinaten). Die Adresse kann sowohl zur Zustellung von Postsendungen oder zum Aufsuchen von Orten, die keine gültige Postadresse haben, verwendet werden.&#xD;&#xA;&#xD;&#xA;Die verwendeten Extensions in diesem Profil bilden die Struktur der Adresse ab, wie sie im VSDM-Format der elektronischen Versichertenkarte verwendet wird.&#xD;&#xA;&#xD;&#xA;Insbesondere bei ausländischen Adresse oder Adressen, die nicht durch Einlesen einer elektronischen Versichertenkarte erfasst wurden, sind abweichende Strukturen möglich. Die Verwendung der Extensions ist nicht verpflichtend." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.extension">
+      <path value="Patient.address.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.address:Strassenanschrift.extension:Stadtteil">
+      <path value="Patient.address.extension" />
+      <sliceName value="Stadtteil" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.line">
+      <path value="Patient.address.line" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.line.extension">
+      <path value="Patient.address.line.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.address:Strassenanschrift.line.extension:Strasse">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Strasse" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.line.extension:Hausnummer">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Hausnummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.line.extension:Adresszusatz">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Adresszusatz" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.city">
+      <path value="Patient.address.city" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.postalCode">
+      <path value="Patient.address.postalCode" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.country">
+      <path value="Patient.address.country" />
+      <definition value="Nach DEÜV Anlage8" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Postfach">
+      <path value="Patient.address" />
+      <sliceName value="Postfach" />
+      <short value="Adress-Stammdaten-Postfach" />
+      <definition value="In diesem Slice sollen die Adress-Stammdaten hinterlegt werden.&#xD;&#xA;&#xD;&#xA;Eine Adresse gemäß postalischer Konventionen (im Gegensatz zu bspw. GPS-Koordinaten). Die Adresse kann sowohl zur Zustellung von Postsendungen oder zum Aufsuchen von Orten, die keine gültige Postadresse haben, verwendet werden.&#xD;&#xA;&#xD;&#xA;Die verwendeten Extensions in diesem Profil bilden die Struktur der Adresse ab, wie sie im VSDM-Format der elektronischen Versichertenkarte verwendet wird.&#xD;&#xA;&#xD;&#xA;Insbesondere bei ausländischen Adresse oder Adressen, die nicht durch Einlesen einer elektronischen Versichertenkarte erfasst wurden, sind abweichende Strukturen möglich. Die Verwendung der Extensions ist nicht verpflichtend." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Postfach.extension">
+      <path value="Patient.address.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.address:Postfach.extension:Stadtteil">
+      <path value="Patient.address.extension" />
+      <sliceName value="Stadtteil" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Postfach.line">
+      <path value="Patient.address.line" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Postfach.line.extension">
+      <path value="Patient.address.line.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.address:Postfach.line.extension:Postfach">
+      <path value="Patient.address.line.extension" />
+      <sliceName value="Postfach" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Postfach.postalCode">
+      <path value="Patient.address.postalCode" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Postfach.country">
+      <path value="Patient.address.country" />
+      <definition value="Nach DEÜV Anlage8" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.maritalStatus">
+      <path value="Patient.maritalStatus" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+      </binding>
+    </element>
+    <element id="Patient.maritalStatus.coding">
+      <path value="Patient.maritalStatus.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Patient.maritalStatus.coding.system">
+      <path value="Patient.maritalStatus.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="Patient.maritalStatus.coding.version">
+      <path value="Patient.maritalStatus.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Patient.maritalStatus.coding.code">
+      <path value="Patient.maritalStatus.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Patient.maritalStatus.coding.display">
+      <path value="Patient.maritalStatus.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Patient.maritalStatus.coding.userSelected">
+      <path value="Patient.maritalStatus.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Patient.maritalStatus.text">
+      <path value="Patient.maritalStatus.text" />
+      <max value="0" />
+    </element>
+    <element id="Patient.multipleBirth[x]">
+      <path value="Patient.multipleBirth[x]" />
+      <max value="0" />
+    </element>
+    <element id="Patient.photo">
+      <path value="Patient.photo" />
+      <short value="Bild des Patienten" />
+      <definition value="In diesem Element kann ein Foto des Patienten eingefügt werden." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact">
+      <path value="Patient.contact" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="relationship.coding.code" />
+        </discriminator>
+        <description value="Vertrauter&#xD;&#xA;Rechnungsempfaenger" />
+        <rules value="closed" />
+      </slicing>
+    </element>
+    <element id="Patient.contact:vertrauter">
+      <path value="Patient.contact" />
+      <sliceName value="vertrauter" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:vertrauter.relationship">
+      <path value="Patient.contact.relationship" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Patient.contact:vertrauter.relationship.coding">
+      <path value="Patient.contact.relationship.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:vertrauter.relationship.coding.system">
+      <path value="Patient.contact.relationship.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v2-0131" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:vertrauter.relationship.coding.code">
+      <path value="Patient.contact.relationship.coding.code" />
+      <min value="1" />
+      <fixedCode value="CP" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:vertrauter.relationship.coding.display">
+      <path value="Patient.contact.relationship.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact:vertrauter.relationship.coding.userSelected">
+      <path value="Patient.contact.relationship.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact:vertrauter.relationship.text">
+      <path value="Patient.contact.relationship.text" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact:vertrauter.name">
+      <path value="Patient.contact.name" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://fhir.de/StructureDefinition/humanname-de-basis" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:vertrauter.telecom">
+      <path value="Patient.contact.telecom" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:vertrauter.telecom.system">
+      <path value="Patient.contact.telecom.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:vertrauter.telecom.value">
+      <path value="Patient.contact.telecom.value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:vertrauter.address">
+      <path value="Patient.contact.address" />
+      <type>
+        <code value="Address" />
+        <profile value="http://fhir.de/StructureDefinition/address-de-basis" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:vertrauter.gender">
+      <path value="Patient.contact.gender" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:vertrauter.gender.extension">
+      <path value="Patient.contact.gender.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.contact:vertrauter.gender.extension:gender-amtlich">
+      <path value="Patient.contact.gender.extension" />
+      <sliceName value="gender-amtlich" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gender-amtlich-de" />
+      </type>
+    </element>
+    <element id="Patient.contact:vertrauter.organization">
+      <path value="Patient.contact.organization" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:vertrauter.organization.reference">
+      <path value="Patient.contact.organization.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:vertrauter.organization.identifier">
+      <path value="Patient.contact.organization.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact:vertrauter.organization.display">
+      <path value="Patient.contact.organization.display" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact:vertrauter.period">
+      <path value="Patient.contact.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger">
+      <path value="Patient.contact" />
+      <sliceName value="rechnungsempfaenger" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.relationship">
+      <path value="Patient.contact.relationship" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.relationship.coding">
+      <path value="Patient.contact.relationship.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.relationship.coding.system">
+      <path value="Patient.contact.relationship.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v2-0131" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.relationship.coding.code">
+      <path value="Patient.contact.relationship.coding.code" />
+      <min value="1" />
+      <fixedCode value="BP" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.relationship.coding.display">
+      <path value="Patient.contact.relationship.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.relationship.coding.userSelected">
+      <path value="Patient.contact.relationship.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.relationship.text">
+      <path value="Patient.contact.relationship.text" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.name">
+      <path value="Patient.contact.name" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://fhir.de/StructureDefinition/humanname-de-basis" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.telecom">
+      <path value="Patient.contact.telecom" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.telecom.system">
+      <path value="Patient.contact.telecom.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.telecom.value">
+      <path value="Patient.contact.telecom.value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.address">
+      <path value="Patient.contact.address" />
+      <type>
+        <code value="Address" />
+        <profile value="http://fhir.de/StructureDefinition/address-de-basis" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.gender">
+      <path value="Patient.contact.gender" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.gender.extension">
+      <path value="Patient.contact.gender.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.gender.extension:gender-amtlich">
+      <path value="Patient.contact.gender.extension" />
+      <sliceName value="gender-amtlich" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gender-amtlich-de" />
+      </type>
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.organization">
+      <path value="Patient.contact.organization" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.organization.reference">
+      <path value="Patient.contact.organization.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.organization.type">
+      <path value="Patient.contact.organization.type" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.organization.identifier">
+      <path value="Patient.contact.organization.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.organization.display">
+      <path value="Patient.contact.organization.display" />
+      <max value="0" />
+    </element>
+    <element id="Patient.contact:rechnungsempfaenger.period">
+      <path value="Patient.contact.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.communication">
+      <path value="Patient.communication" />
+      <short value="Sprachfähigkeiten" />
+      <definition value="In diesem Element kann z.B. die Muttersprache des Patienten angegeben werden." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.communication.language">
+      <path value="Patient.communication.language" />
+      <binding>
+        <strength value="extensible" />
+      </binding>
+    </element>
+    <element id="Patient.communication.language.coding">
+      <path value="Patient.communication.language.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Patient.communication.language.coding.system">
+      <path value="Patient.communication.language.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="Patient.communication.language.coding.code">
+      <path value="Patient.communication.language.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Patient.communication.language.coding.display">
+      <path value="Patient.communication.language.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Patient.communication.language.coding.userSelected">
+      <path value="Patient.communication.language.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Patient.communication.language.text">
+      <path value="Patient.communication.language.text" />
+      <max value="0" />
+    </element>
+    <element id="Patient.communication.preferred">
+      <path value="Patient.communication.preferred" />
+      <min value="1" />
+    </element>
+    <element id="Patient.generalPractitioner">
+      <path value="Patient.generalPractitioner" />
+      <short value="Hausarzt" />
+      <definition value="Ist ein Hausarzt des Patienten bekannt, so kann dieser in diesem Element dokumentiert werden. Eine Referenz zum Profil 74_PR_AW_BehandelnderFunktion ist zu bevorzugen." />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.generalPractitioner.reference">
+      <path value="Patient.generalPractitioner.reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.generalPractitioner.type">
+      <path value="Patient.generalPractitioner.type" />
+      <max value="0" />
+    </element>
+    <element id="Patient.generalPractitioner.identifier">
+      <path value="Patient.generalPractitioner.identifier" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://fhir.de/StructureDefinition/identifier-lanr" />
+      </type>
+    </element>
+    <element id="Patient.generalPractitioner.identifier.use">
+      <path value="Patient.generalPractitioner.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Patient.generalPractitioner.identifier.type">
+      <path value="Patient.generalPractitioner.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Patient.generalPractitioner.identifier.type.coding">
+      <path value="Patient.generalPractitioner.identifier.type.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Patient.generalPractitioner.identifier.period">
+      <path value="Patient.generalPractitioner.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Patient.generalPractitioner.identifier.assigner">
+      <path value="Patient.generalPractitioner.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Patient.managingOrganization">
+      <path value="Patient.managingOrganization" />
+      <max value="0" />
+    </element>
+    <element id="Patient.link">
+      <path value="Patient.link" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

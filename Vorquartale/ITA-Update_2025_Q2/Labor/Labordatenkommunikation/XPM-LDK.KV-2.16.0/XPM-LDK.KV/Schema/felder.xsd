@@ -1,0 +1,2595 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<!-- Basistypen	-->
+	<xsd:include schemaLocation="xdttypen.xsd"/>
+
+	<xsd:element name="f0080" type ="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>ID der Fallakte oder Studie (Feld 0080)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0081" type ="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Bezeichnung der Fallakte oder Studie (Feld 0081)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0103" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Name der Software (Feld 0103)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0105" type ="F012">
+		<xsd:annotation>
+			<xsd:appinfo>KBV-Prüfnummer (Feld 0105)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0132" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Version/Releasestand der Software (Feld 0132)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f1252" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Funktionsbezeichnung der Person innerhalb der Organisation (Feld 1252)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0200" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Betriebsstätten-ID (Feld 0200)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0201" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Betriebs- (BSNR) oder Nebenbetriebsstättennummer (NBSNR) (Feld 0201)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0203" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR-Bezeichnung (Feld 0203)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0204" type="E046">
+		<xsd:annotation>
+			<xsd:appinfo>Status der Betriebsstätte (Feld 0204)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0212" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) (Feld 0212)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0213" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Institutionskennzeichen (IK) (der Betriebsstätte) (Feld 0213)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0222" type="F014">
+		<xsd:annotation>
+			<xsd:appinfo>ASV-Teamnummer (Feld 0222)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0223" type="F022">
+		<xsd:annotation>
+			<xsd:appinfo>Dummy-LANR für Krankenhausärzte im Rahmen der ASV-Abrechnung (Feld 0223)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0600" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Name der Einrichtung des Auftraggebers (Feld 0600)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f1251" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Rechtsform der Organisation (Feld 1251)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f1250" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Organisation / Firma (Feld 1250)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f2002" type="TEXT_BIS_28">
+		<xsd:annotation>
+			<xsd:appinfo>Kassenname (Feld 2002)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3000" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Patienten-ID (Feld 3000)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3100" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Namenszusatz (Feld 3100)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3101" type="TEXT_BIS_45">
+		<xsd:annotation>
+			<xsd:appinfo>Name (Feld 3101)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3102" type="TEXT_BIS_45">
+		<xsd:annotation>
+			<xsd:appinfo>Vorname (Feld 3102)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3103" type="F003">
+		<xsd:annotation>
+			<xsd:appinfo>Geburtsdatum (Feld 3103)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3104" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Titel (Feld 3104)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3105" type="VERS_NUMMER">
+		<xsd:annotation>
+			<xsd:appinfo>Versichertennummer (Feld 3105)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3107" type="TEXT_BIS_46">
+		<xsd:annotation>
+			<xsd:appinfo>Straße (Feld 3107)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3108" type="E002">
+		<xsd:annotation>
+			<xsd:appinfo>Versichertenart (Feld 3108)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3109">
+		<xsd:annotation>
+			<xsd:appinfo>Hausnummer (Feld 3109)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="9"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f3110" type="E019">
+		<xsd:annotation>
+			<xsd:appinfo>Geschlecht (Feld 3110)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3112" type="TEXT_BIS_10">
+		<xsd:annotation>
+			<xsd:appinfo>Postleitzahl (PLZ) (Feld 3112)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3113" type="TEXT_BIS_40">
+		<xsd:annotation>
+			<xsd:appinfo>Ort (Feld 3113)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3114" type="TEXT_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>Wohnsitzländercode (Feld 3114)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3115" type="TEXT_BIS_40">
+		<xsd:annotation>
+			<xsd:appinfo>Anschriftenzusatz (Feld 3115)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3116" type="E022">
+		<xsd:annotation>
+			<xsd:appinfo>WOP (Feld 3116)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3119" type="F013">
+		<xsd:annotation>
+			<xsd:appinfo>Versicherten-ID (Feld 3119)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3120" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Vorsatzwort (Feld 3120)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3121" type="TEXT_BIS_10">
+		<xsd:annotation>
+			<xsd:appinfo>Postfach PLZ (Feld 3121)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3122" type="TEXT_BIS_40">
+		<xsd:annotation>
+			<xsd:appinfo>Postfach Ort (Feld 3122)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3123" type="TEXT_BIS_8">
+		<xsd:annotation>
+			<xsd:appinfo>Postfach (Feld 3123)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3124" type="TEXT_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>Postfach Wohnsitzländercode (Feld 3124)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3130" type="E041">
+		<xsd:annotation>
+			<xsd:appinfo>Einschreibestatus Selektivverträge (Feld 3130)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3131" type="F002">
+		<xsd:annotation>
+			<xsd:appinfo>Teilnahme von (Feld 3131)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3132" type="F002">
+		<xsd:annotation>
+			<xsd:appinfo>Teilnahme bis (Feld 3132)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3133" type="F002">
+		<xsd:annotation>
+			<xsd:appinfo>Datum der Antragstellung (Feld 3133)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3134" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Bezeichnung des Selektivertrages (Feld 3134)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+
+	<xsd:element name="f3313" type="NUMMER1_BIS_4">
+		<xsd:annotation>
+			<xsd:appinfo>HPV-Impfung (Feld 3313)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3314" type="NUMMER0_BIS_1">
+		<xsd:annotation>
+			<xsd:appinfo>HPV-HR-Test (Feld 3314)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="f3316" type="NUMMER1_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>HPV-HR-Testergebnis (Feld 3316)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3317" type="E179">
+		<xsd:annotation>
+			<xsd:appinfo>HPV-Typ 16/18 (Feld 3317)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3318" type="NUMMER0_BIS_1">
+		<xsd:annotation>
+			<xsd:appinfo>HPV-Test (Feld 3318)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3319" type="NUMMER0_BIS_1">
+		<xsd:annotation>
+			<xsd:appinfo>Ko-Test (Feld 3319)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3320" type="NUMMER_1">
+		<xsd:annotation>
+			<xsd:appinfo>Zeitraum sofort (Feld 3320)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3321" type="F023">
+		<xsd:annotation>
+			<xsd:appinfo>Zeitraum in Monaten (Feld 3321)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3322" type="NUMMER1_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>Alterskategorie (Feld 3322)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+
+	<xsd:element name="f3412" type="TEXT_BIS_6">
+		<xsd:annotation>
+			<xsd:appinfo>Blutgruppe-Eurocode (Feld 3412)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3413" type="E054">
+		<xsd:annotation>
+			<xsd:appinfo>Antikörpersuchtest (gegen Erythrozytenantigene) (Feld 3413)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3414" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Spezifität weitere Erythrozytenantigene (Feld 3414)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3415" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Spezifität Erythrozytenantikörper (Feld 3415)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3416" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Spezifität HLA-, HPA-, HNA-Antigene (Feld 3416)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3417" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Spezifität HLA-, HPA-, HNA-Antikörper (Feld 3417)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3418" type="E055">
+		<xsd:annotation>
+			<xsd:appinfo>Direkter Coombstest (DCT) (Feld 3418)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3419" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Ergebnis Kreuzprobe (Feld 3419)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3420" type="E056">
+		<xsd:annotation>
+			<xsd:appinfo>Anforderung NHP (Feld 3420)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3424" type="F002">
+		<xsd:annotation>
+			<xsd:appinfo>Therapiebeginn (Feld 3424)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3425" type="F002">
+		<xsd:annotation>
+			<xsd:appinfo>Therapiende (Feld 3425)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3471" type="F002">
+		<xsd:annotation>
+			<xsd:appinfo>Entbindungstermin (errechnet) (Feld 3471)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3473" type="NUMMER_LEN_1">
+		<xsd:annotation>
+			<xsd:appinfo>Untersuchungsergebnis durch Auftragslaboratorium erstellt (Feld 3473)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3564" type="TEXT_BIS_990">
+		<xsd:annotation>
+			<xsd:appinfo>Text (Feld 3564)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="f3622" type="FLOAT_VAR">
+		<xsd:annotation>
+			<xsd:appinfo>Größe der Person (Feld 3622)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3623" type="FLOAT_VAR">
+		<xsd:annotation>
+			<xsd:appinfo>Gewicht der Person (Feld 3623)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3628" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Muttersprache (Feld 3628)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3664" type="NUMMER2">
+		<xsd:annotation>
+			<xsd:appinfo>Anzahl Geburten (Feld 3664)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3666" type="NUMMER2">
+		<xsd:annotation>
+			<xsd:appinfo>Anzahl Kinder (Feld 3666)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3668" type="NUMMER2">
+		<xsd:annotation>
+			<xsd:appinfo>Anzahl Schwangerschaften (Feld 3668)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3689" type="E156">
+		<xsd:annotation>
+			<xsd:appinfo>Status der Medikation (Feld 3689)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4104" type="F001">
+		<xsd:annotation>
+			<xsd:appinfo>Abrechnungs-VKNR (Feld 4104)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4106" type="E015">
+		<xsd:annotation>
+			<xsd:appinfo>Kostenträger-Abrechnungsbereich (KTAB) (Feld 4106)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4108" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Zulassungsnummer (mobiles Lesegerät) (Feld 4108)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4109" type="F002">
+		<xsd:annotation>
+			<xsd:appinfo>Letzter Einlesetag der Versichertenkarte im Quartal (Feld 4109)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4110" type="F002">
+		<xsd:annotation>
+			<xsd:appinfo>Versicherungsschutz-Ende (Feld 4110)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4111" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Kostenträgerkennung (Feld 4111)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4122" type="E010">
+		<xsd:annotation>
+			<xsd:appinfo>Abrechnungsgebiet (Feld 4122)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4124" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>SKT-Zusatzangaben (Feld 4124)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4126" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>SKT-Zusatzbemerkung (Feld 4126)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4131" type="E021">
+		<xsd:annotation>
+			<xsd:appinfo>Besondere Personengruppen (Feld 4131)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4132" type="E020">
+		<xsd:annotation>
+			<xsd:appinfo>DMP-Kennzeichnung (Feld 4132)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4133" type="F002">
+		<xsd:annotation>
+			<xsd:appinfo>Versicherungsschutz-Beginn (Feld 4133)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4202" type="E011">
+		<xsd:annotation>
+			<xsd:appinfo>Unfall, Unfallfolgen (Feld 4202)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4204" type="E011">
+		<xsd:annotation>
+			<xsd:appinfo>Eingeschränkter Leistungsanspruch gemäß § 16 Abs. 3a SGB V (Feld 4204)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4207" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Diagnose/Verdachtsdiagnose (Feld 4207)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4208" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Vorbefund/Medikation (Feld 4208)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4209" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Vorbefund/Medikation (Feld 4208)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4210" type="E011">
+		<xsd:annotation>
+			<xsd:appinfo>SER (Feld 4210)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4217" type="F010">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Erstveranlassers (Feld 4217)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4221" type="E039">
+		<xsd:annotation>
+			<xsd:appinfo>Kurativ/Präventiv/ESS/bei belegärztlicher Behandlung (Feld 4221)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4225" type="F010">
+		<xsd:annotation>
+			<xsd:appinfo>ASV-Teamnummer des Erstveranlassers (Feld 4225)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4229" type="NUMMER5">
+		<xsd:annotation>
+			<xsd:appinfo>Knappschaftskennziffer (Feld 4229)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4231" type="E011">
+		<xsd:annotation>
+			<xsd:appinfo>Kontrolluntersuchung einer bekannten Infektion (Feld 4231)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4239" type="E009">
+		<xsd:annotation>
+			<xsd:appinfo>Scheinuntergruppe (Feld 4239)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4241" type="F011">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Erstveranlassers (Feld 4241)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4248" type="F022">
+		<xsd:annotation>
+			<xsd:appinfo>Dummy-LANR für Krankenhäuser im Rahmen der ASV-Abrechnung des Erstveranlassers (Feld 4248)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5001" type="TEXT_BIS_9">
+		<xsd:annotation>
+			<xsd:appinfo>Gebührennummer (GNR) (Feld 5001)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5005" type="E003">
+		<xsd:annotation>
+			<xsd:appinfo>Multiplikator für GOAE (Feld 5005)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5009" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Freier Begründungstext (Feld 5009)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6001" type="F004">
+		<xsd:annotation>
+			<xsd:appinfo>ICD-Code (Feld 6001)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6003" type="E037">
+		<xsd:annotation>
+			<xsd:appinfo>Diagnosesicherheit (Feld 6003)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6004" type="E038">
+		<xsd:annotation>
+			<xsd:appinfo>Seitenlokalisation (Feld 6004)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6006" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Diagnoseerläuterung (Feld 6006)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6008" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Diagnosenausnahmetatbestand (Feld 6008)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6206" type="NUMMER_LEN_BIS_8">
+		<xsd:annotation>
+			<xsd:appinfo>Pharmazentralnummer (PZN) (Feld 6206)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6207" type="TEXT_BIS_990">
+		<xsd:annotation>
+			<xsd:appinfo>Rezeptur (Feld 6207)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6208" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Handelsname des Arzneimittels (Feld 6208)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6212" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Arzneimittelwirkstoff / Wirkstoff (Feld 6212)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6214" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Wirkstoff-Klassifikation (Code-System) (Feld 6214)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6221" type="E011">
+		<xsd:annotation>
+			<xsd:appinfo>Kennzeichnung Fremdbefund (Feld 6221)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6224" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Wirkstoff-Code (Feld 6224)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6303" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Dateiformat (Feld 6303)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6305" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Verweis auf die Datei (Feld 6305)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6327" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Bildinhalt/Dokumentinhalt (Feld 6327)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6328" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Dateicodierung (Feld 6328)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6329" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Inhalt der Datei als base64-codierte Anlage (Feld 6329)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7251" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Bezeichnung des verwendeten Kataloges (Feld 7251)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7253" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Kostenübernahmeerklärung des Auftraggebers liegt vor (Feld 7253)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4134" type="TEXT_BIS_45">
+		<xsd:annotation>
+			<xsd:appinfo>Kostenträgername (Feld 4134)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7258" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>ID Katalog durchgeführte Leistungen (Feld 7258)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7259" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>ID Katalog abrechenbare Leistungen (Feld 7259)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7260" type="E057">
+		<xsd:annotation>
+			<xsd:appinfo>ID Katalog anforderbare Leistungen (Feld 7260)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7261" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Sonstige Versichertennummer (Feld 7261)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7263" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Test-ID (Feld 7263)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7264" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Test-Gerät-UID (Feld 7264)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7265" type="E067">
+		<xsd:annotation>
+			<xsd:appinfo>Absender des Datensatzes (Feld 7265)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7266" type="E051">
+		<xsd:annotation>
+			<xsd:appinfo>Laborart (Feld 7266)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7267" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>ID des Auftraggebers (Feld 7267)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7268" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Fachrichtung oder Stationskennung (Feld 7268)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8315" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>ID des Empfängers (Feld 8315)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8316" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>ID des Senders (Feld 8316)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7272" type="TEXT_BIS_990">
+		<xsd:annotation>
+			<xsd:appinfo>Freitext zum Timestamp (Feld 7272)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7273" type="E163">
+		<xsd:annotation>
+			<xsd:appinfo>Zeitzone (Feld 7273)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7275" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>ID verwendeter Terminologie (Feld 7275)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7276" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>ID verwendeter Nummernpool (Feld 7276)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7278" type="F002">
+		<xsd:annotation>
+			<xsd:appinfo>Datum des Timestamp (Feld 7278)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7279" type="F016">
+		<xsd:annotation>
+			<xsd:appinfo>Uhrzeit des Timestamp (Feld 7279)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7280" type="E049">
+		<xsd:annotation>
+			<xsd:appinfo>Grund der Benachrichtigung (Feld 7280)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7281" type="E069">
+		<xsd:annotation>
+			<xsd:appinfo>Nachweisverfahren (Feld 7281)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0306" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Vertrags-ID des behandelnden Arztes (Feld 0306)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0307" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Arzt-ID eines Arztes (Feld 0305)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0308" type="E047">
+		<xsd:annotation>
+			<xsd:appinfo>Typ der Arzt-ID (Feld 0308)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7285" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Keim-Nummer (Feld 7285)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7286" type="E059">
+		<xsd:annotation>
+			<xsd:appinfo>Resistenz-Methode (Feld 7286)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7287" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Wirkstoff-Ident (Feld 7287)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7288" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Wirkstoff-Generic-Nummer (Feld 7288)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7289" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>MHK/Breakpoint-Wert (Feld 7289)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7290" type="E030">
+		<xsd:annotation>
+			<xsd:appinfo>Resistenz-Interpretation (Feld 7290)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7292" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Lokalisation Probenmaterial (Feld 7292)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7293" type="TEXT_BIS_990">
+		<xsd:annotation>
+			<xsd:appinfo>Einheit Mengenangabe (Feld 7293)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+<!-- 	<xsd:element name="f7295" type="F002">
+		<xsd:annotation>
+			<xsd:appinfo>Tag der Untersuchung (Feld 7295)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element> -->
+	<xsd:element name="f7296" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Wiederholungsuntersuchung (Feld 7296)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7297" type="F018">
+		<xsd:annotation>
+			<xsd:appinfo>Datum der letzten Untersuchung (Feld 7297)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+
+
+	<xsd:element name="f7301" type="E064">
+		<xsd:annotation>
+			<xsd:appinfo>Ergebnis (Feld 7301)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7302" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Methode (Feld 7302)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7303" type="E050">
+		<xsd:annotation>
+			<xsd:appinfo>Abrechnungsinfo zur Untersuchung (Feld 7303)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7304" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Ergebnis ID (Feld 7304)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7305" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Befund ID (Feld 7305)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7306" type="E058">
+		<xsd:annotation>
+			<xsd:appinfo>Darstellung Ergebniswerte (Feld 7306)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7308" type="NUMMER_LEN_1_BIS_2">
+		<xsd:annotation>
+			<xsd:appinfo>Anzahl Laborergebnisberichte(Feld 7308)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7310" type="E033">
+		<xsd:annotation>
+			<xsd:appinfo>Art des Materials (Feld 7310)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7311" type="E034">
+		<xsd:annotation>
+			<xsd:appinfo>Organisches Material (Feld 7311)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7312" type="E035">
+		<xsd:annotation>
+			<xsd:appinfo>Anorganisches Material (Feld 7312)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7313" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Art/Rasse/Material (Feld 7313)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7314" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Name/Kennung (Feld 7314)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7315" type="NUMMER_BIS_9999999999">
+		<xsd:annotation>
+			<xsd:appinfo>Alter (Feld 7315)</xsd:appinfo>
+		</xsd:annotation>
+
+	</xsd:element>
+	<xsd:element name="f7316" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Normalwert Listenbezeichnung (Feld 7316)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7317" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Normalwert Listenzeile (Feld 7317)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7318" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Nahrungsaufnahme zum Zeitpunkt der Materialentnahme (Feld 7318)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7319" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Identifikationsnummer der Quelle (Feld 7319)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7320" type="E011">
+		<xsd:annotation>
+			<xsd:appinfo>Recall empfohlen (Feld 7320)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7321" type="E023">
+		<xsd:annotation>
+			<xsd:appinfo>Status Einsender (Feld 7321)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7323" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Namenszusatz der Person (Feld 7323)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7324" type="TEXT_BIS_45">
+		<xsd:annotation>
+			<xsd:appinfo>Vorname der Person (Feld 7324)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7325" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Titel der Person (Feld 7325)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7326" type="E068">
+		<xsd:annotation>
+			<xsd:appinfo>Alter in (Feld 7326)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7327" type="E019">
+		<xsd:annotation>
+			<xsd:appinfo>Geschlecht der Person (Feld 7327)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7328" type="TEXT_BIS_10">
+		<xsd:annotation>
+			<xsd:appinfo>Zusätzliche Namenszeile (Feld 7328)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7329" type="E018">
+		<xsd:annotation>
+			<xsd:appinfo>Normalbereichsrelevantes Geschlecht (Feld 7329)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7330" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Telefonnummer (Feld 7330)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7331" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Mobiltelefonnummer (Feld 7331)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7332" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Alternative elektronische Postadresse (Feld 7332)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7333" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Faxnummer (Feld 7333)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7334" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Webadresse (Feld 7334)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7335" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>E-Mail-Adresse (Feld 7335)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7336" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Gyn. OP, Strahlen oder Chemotherapie des Genitales (Feld 7336)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7337" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Gyn. OP, Strahlen oder Chemotherapie des Genitales - Welche? (Feld 7337)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7338" type="F018">
+		<xsd:annotation>
+			<xsd:appinfo>Gyn. OP, Strahlen oder Chemotherapie des Genitales - Wann? (Feld 7338)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7339" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Gravidität (Feld 7339)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7340" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Spezifizierung der alternativen elektronischen Postadresse (Feld 7340)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f1202" type="E042">
+		<xsd:annotation>
+			<xsd:appinfo>Adresstyp (Feld 1202)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7351" type="F002">
+		<xsd:annotation>
+			<xsd:appinfo>Datum der Geburt des Tieres (Feld 7351)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7352" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>URL Katalog (Feld 7352)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7354" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Keim/Pilz-Identifizierung (Feld 7354)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7355" type="TEXT_BIS_120">
+		<xsd:annotation>
+			<xsd:appinfo>Keim/Pilz-Name (Feld 7355)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7356" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Keim-OID (Feld 7356)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7357" type="E026">
+		<xsd:annotation>
+			<xsd:appinfo>Wachstum (Feld 7357)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7358" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Name im Klartext (Feld 7358)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7359" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Wirkstoff-OID (Feld 7359)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8422" type="E005">
+		<xsd:annotation>
+			<xsd:appinfo>Grenzwertindikator des Laborwerts (Feld 7360)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7361" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Keim-ID (Feld 7361)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7362" type="E024">
+		<xsd:annotation>
+			<xsd:appinfo>Abrechnungsart PKV (Feld 7362)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7363" type="FLOAT_VAR">
+		<xsd:annotation>
+			<xsd:appinfo>Alarmwert untere Grenze (Feld 7363)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7364" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Probengefäß-Ident (Feld 7364)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7365" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Analysen-ID (Feld 7365)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7366" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Langbezeichnung der angeforderten Leistung (Feld 7366)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7367" type="E025">
+		<xsd:annotation>
+			<xsd:appinfo>Sensitivität (Feld 7367)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7368" type="E048">
+		<xsd:annotation>
+			<xsd:appinfo>Zellmaterial nicht verwertbar (Feld 7368)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7369" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>MHK-Einheit (Feld 7369)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7370" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Wirkstoff- oder Handelsname (Feld 7370)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7371" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Alarmwert obere Grenze (Feld 7371)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7372" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Tumorklassifikation (Feld 7372)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7373" type="TEXT_BIS_5">
+		<xsd:annotation>
+			<xsd:appinfo>Grading (Feld 7373)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7374" type="TEXT_BIS_5">
+		<xsd:annotation>
+			<xsd:appinfo>Stadium (Feld 7374)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7375" type="F017">
+		<xsd:annotation>
+			<xsd:appinfo>Jahr der Tumordiagnose (Feld 7375)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7376" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Lokalisation (Feld 7376)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7377" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Maße (Feld 7377)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7378" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Farbe (Feld 7378)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7379" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Infiltrationstiefe (Feld 7379)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7380" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Ausfluss / path. Blutung (Feld 7380)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="f7382" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>IUP (Feld 7382)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7383" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Einnahme von Ovulationshemmer / sonstige Hormon-Anwendung (Feld 7383)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7384" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Klinischer Befund (Feld 7384)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+<!-- 	<xsd:element name="f7390" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Haut (Feld 7390)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element> -->
+<!-- 	<xsd:element name="f7391" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Mamma auffällig (Feld 7391)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element> -->
+<!-- 	<xsd:element name="f7392" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Axilläre Lymphknoten auffällig (Feld 7392)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element> -->
+<!-- 	<xsd:element name="f7393" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Rektum/Kolon: Blut oder Schleim (Feld 7393)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element> -->
+<!-- 	<xsd:element name="f7394" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Neu aufgetr. Unregelmäßigkeiten (Feld 7394)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element> -->
+<!-- 	<xsd:element name="f7395" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Rektum/Kolon: Tastbefund auffällig (Feld 7395)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element> -->
+<!-- 	<xsd:element name="f7396" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Stuhltest zurückgegeben (Feld 7396)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element> -->
+<!-- 	<xsd:element name="f7397" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Stuhltest positiv (Feld 7397)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element> -->
+	<xsd:element name="f7398" type="F015">
+		<xsd:annotation>
+			<xsd:appinfo>RR (Blutdruck) (Feld 7398)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+<!-- 	<xsd:element name="f7399" type="F015">
+		<xsd:annotation>
+			<xsd:appinfo>RR, zweite Messung (Feld 7399)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element> -->
+	<xsd:element name="f7400" type="E011">
+		<xsd:annotation>
+			<xsd:appinfo>HPV Befund (Feld 7400)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7401" type="E169">
+		<xsd:annotation>
+			<xsd:appinfo>High-Risk (Feld 7401)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7402" type="F024">
+		<xsd:annotation>
+			<xsd:appinfo>High Risk Typ (Feld 7402)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7403" type="E169">
+		<xsd:annotation>
+			<xsd:appinfo>Low-Risk (Feld 7403)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7404" type="F024">
+		<xsd:annotation>
+			<xsd:appinfo>Low Risk Typ (Feld 7404)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7405" type="E060">
+		<xsd:annotation>
+			<xsd:appinfo>Endozervikale Zellen (Feld 7405)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7406" type="TEXT_BIS_10">
+		<xsd:annotation>
+			<xsd:appinfo>Proliferationsgrad (Feld 7406)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7407" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Döderleinflora (Feld 7407)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7408" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Mischflora (Feld 7408)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7409" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Kokkenflora (Feld 7409)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7410" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Trichomonaden (Feld 7410)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7411" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Candida (Feld 7411)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7412" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Gardnerella (Feld 7412)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7413" type="E028">
+		<xsd:annotation>
+			<xsd:appinfo>Codierung der Gruppe (Feld 7413)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7414" type="E028FK7414">
+		<xsd:annotation>
+			<xsd:appinfo>Gruppe (Feld 7414)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7415" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Zytologische Kontrolle (Feld 7415)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7416" type="E061">
+		<xsd:annotation>
+			<xsd:appinfo>Grund der Nachkontrolle (Feld 7416)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7417" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Abklärungskolposkopie (Feld 7417)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7418" type="E063">
+		<xsd:annotation>
+			<xsd:appinfo>p16/Ki67 (Feld 7418)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7419" type="E062">
+		<xsd:annotation>
+			<xsd:appinfo>L1 (Feld 7419)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7420" type="E027">
+		<xsd:annotation>
+			<xsd:appinfo>Status Person (Feld 7420)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="f7430" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Patienten-ID im Selektivvertrag (Feld 7430)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7431" type="E164">
+		<xsd:annotation>
+			<xsd:appinfo>Fachgebiet (Feld 7431)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7421" type="E029">
+		<xsd:annotation>
+			<xsd:appinfo>Status Rechnungsempfänger (Feld 7421)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7422" type="E063">
+		<xsd:annotation>
+			<xsd:appinfo>Chlamydien (Feld 7422)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7423" type="TEXT_BIS_990">
+		<xsd:annotation>
+			<xsd:appinfo>Erläuterungen (Feld 7423)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7424" type="E065">
+		<xsd:annotation>
+			<xsd:appinfo>Resistenz erstellt nach (Feld 7424)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7425" type="E063">
+		<xsd:annotation>
+			<xsd:appinfo>Extragynäkologische Zytologie (Feld 7425)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7426" type="E062">
+		<xsd:annotation>
+			<xsd:appinfo>Neisseria Gonorrhoeae (Feld 7426)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7427" type="NUMMER1_BIS_2">
+		<xsd:annotation> <!-- E016-->
+			<xsd:appinfo>Art (Feld 7427)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7428" type="NUMMER0_BIS_3">
+		<xsd:annotation> <!-- E165-->
+			<xsd:appinfo>Geschlecht des Tieres (Feld 7428)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7429" type="TEXT_BIS_990">
+		<xsd:annotation>
+			<xsd:appinfo>DRG_Hinweis (Feld 7427)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7432" type="NUMMER1_BIS_2">
+		<xsd:annotation> <!-- E166-->
+			<xsd:appinfo>kastriert/sterilisiert (Feld 7432)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f7922" type="F002">
+		<xsd:annotation>
+			<xsd:appinfo>Sterbedatum des Patienten (Feld 7922)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8000" type="E004">
+		<xsd:annotation>
+			<xsd:appinfo>Satzbeginn (Feld 8000)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8001" type="E004">
+		<xsd:annotation>
+			<xsd:appinfo>Satzende (Feld 8001)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8100" type="NUMMER8">
+		<xsd:annotation>
+			<xsd:appinfo>Satzlänge (Feld 8100)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8002" type="E066">
+		<xsd:annotation>
+			<xsd:appinfo>Objektident (Feld 8002)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8003" type="E066">
+		<xsd:annotation>
+			<xsd:appinfo>Objektende (Feld 8003)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8310" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Auftragsnummer des Einsenders (Feld 8310)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8311" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>ID Auftragsnummer des Labors (Feld 8311)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8312" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Kunden- (Arzt-) Nummer (Feld 8312)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8313" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>ID Nachforderung (Feld 8313)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8320" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Laborname (Feld 8320)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8324" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>ID eines Laborstandortes (Feld 8324)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8401" type="E006">
+		<xsd:annotation>
+			<xsd:appinfo>Status (Befund/Bericht) (Feld 8401)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4121" type="E008">
+		<xsd:annotation>
+			<xsd:appinfo>Gebührenordnung (Feld 4121)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8406" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Kosten in Euro-Cent (Feld 8406)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8410" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Test-Ident (Feld 8410)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8411" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Testbezeichnung (Feld 8411)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8417" type="E146">
+		<xsd:annotation>
+			<xsd:appinfo>Anlass der Untersuchung (Feld 8417)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8418" type="E007">
+		<xsd:annotation>
+			<xsd:appinfo>Ergebnisstatus (Feld 8418)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8419" type="E070">
+		<xsd:annotation>
+			<xsd:appinfo>Einheitensystem des Messwertes/Wertes in (Feld 8419)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8420" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Ergebniswert (Feld 8420)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8421" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Maßeinheit des Messwertes / Wertes (Feld 8421)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8423" type="E011">
+		<xsd:annotation>
+			<xsd:appinfo>Pathologisch bekannt (Feld 8423)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8424" type="E052">
+		<xsd:annotation>
+			<xsd:appinfo>Normalwertspezifikation (Feld 8424)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8427" type="E147">
+		<xsd:annotation>
+			<xsd:appinfo>Spezifizierung des Veranlassungsgrundes (Feld 8427)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8428" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Probenmaterial-Ident (Feld 8428)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8429" type="E012">
+		<xsd:annotation>
+			<xsd:appinfo>Probenmaterial-Index (Feld 8429)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8430" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Probenmaterial-Bezeichnung (Feld 8430)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8431" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Probenmaterial-Spezifikation (Feld 8431)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8434" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Anforderungen (Feld 8434)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8460" type="TEXT_BIS_990">
+		<xsd:annotation>
+			<xsd:appinfo>Normalwert-Text (Feld 8460)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8461" type="FLOAT_VAR">
+		<xsd:annotation>
+			<xsd:appinfo>Normalwert untere Grenze (Feld 8461)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8462" type="FLOAT_VAR">
+		<xsd:annotation>
+			<xsd:appinfo>Normalwert obere Grenze (Feld 8462)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8480" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Ergebnis-Text (Feld 8480)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8491" type="E011">
+		<xsd:annotation>
+			<xsd:appinfo>Einwilligungserklärung des Patienten liegt vor (Feld 8491)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8501" type="E032">
+		<xsd:annotation>
+			<xsd:appinfo>Dringlichkeit (Feld 8501)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8504" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>Medikamenteneinnahme zum Zeitpunkt der Probenentnahme (Feld 8504)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8511" type="F005">
+		<xsd:annotation>
+			<xsd:appinfo>Schwangerschaftsdauer (Feld 8511)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8512" type="F018">
+		<xsd:annotation>
+			<xsd:appinfo>letzte Periode (Feld 8512)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8520" type="FLOAT_VAR">
+		<xsd:annotation>
+			<xsd:appinfo>Menge des Probenmaterials (Feld 8520)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8522" type="F006">
+		<xsd:annotation>
+			<xsd:appinfo>Sammelzeit des Probenmaterials (Feld 8522)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8523" type="FLOAT_VAR">
+		<xsd:annotation>
+			<xsd:appinfo>Wirkstoffmenge, Menge / Bezugsmenge Wirkstärke (Feld 8523)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8608" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Kommentar/Aktenzeichen (Feld 8608)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8610" type="E017">
+		<xsd:annotation>
+			<xsd:appinfo>Privattarif (Feld 8610)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8611" type="E013">
+		<xsd:annotation>
+			<xsd:appinfo>Zusätzlicher Befundweg (Feld 8611)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8614" type="E040_E176">
+		<xsd:annotation>
+			<xsd:appinfo>bereits abgerechnet (Feld 8614)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+
+	<xsd:element name="f8616" type="E171">
+		<xsd:annotation>
+			<xsd:appinfo>Testung (Feld 8616)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8617" type="E172">
+		<xsd:annotation>
+			<xsd:appinfo>Beauftragungsgrund (Feld 8617)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8618" type="E011">
+		<xsd:annotation>
+			<xsd:appinfo>Person ist/lebt in (Feld 8618)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8619" type="E011">
+		<xsd:annotation>
+			<xsd:appinfo>Personal in (Feld 8619)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8620" type="E173">
+		<xsd:annotation>
+			<xsd:appinfo>Betroffene Einrichtung (Feld 8620)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8621" type="E011">
+		<xsd:annotation>
+			<xsd:appinfo>Einverständnis (Feld 8621)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8622" type="TEXT_43">
+		<xsd:annotation>
+			<xsd:appinfo>Corona-UUID (Feld 8622)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8623" type="TEXT_BIS_22">
+		<xsd:annotation>
+			<xsd:appinfo>Identifikation ÖGD (Feld 8623)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8624" type="E174">
+		<xsd:annotation>
+			<xsd:appinfo>Covid-Beauftragung (Feld 8624)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8625" type="TEXT_BIS_5">
+		<xsd:annotation>
+			<xsd:appinfo>PLZ ÖGD (Feld 8625)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8626" type="E175"> <!-- E175 -->
+		<xsd:annotation>
+			<xsd:appinfo>Rechtsgrundlage der Testung (Feld 8626)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8627" type="TEXT_BIS_5">
+		<xsd:annotation>
+			<xsd:appinfo>KV-Sonderziffer (Feld 8627)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="f8629" type="E178">
+		<xsd:annotation>
+			<xsd:appinfo>Auftrag (Feld 8629)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8630" type="E177">
+		<xsd:annotation>
+			<xsd:appinfo>Auftragsart (Feld 8630)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8631" type="NUMMER_1">
+		<xsd:annotation>
+			<xsd:appinfo>Bestätigungsdiagnostik (Feld 8631)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f8632" type="NUMMER_1">
+		<xsd:annotation>
+			<xsd:appinfo>Virusvariantendiagnostik (Feld 8632)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="f8990" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Namenskürzel/Namenszeichen (Feld 8990)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9202" type="NUMMER8">
+		<xsd:annotation>
+			<xsd:appinfo>Gesamtlänge des Datenpaketes (Feld 9202)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0001" type="F007">
+		<xsd:annotation>
+			<xsd:appinfo>Version der Satzbeschreibung (Feld 0001)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9300" type="TEXT40">
+		<xsd:annotation>
+			<xsd:appinfo>Prüfsumme (Feld 9300)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9900" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Referenz auf die Datei-Inhaltsbeschreibung (Spec-ID) (Feld 9900)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9908" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Originaldokument: Pfad/Speicherort (Feld 9908)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9909" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Langzeit-Archivierung: Pfad/Speicherort (Feld 9909)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9970" type="TEXT_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>Dokumententyp (Feld 9970)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9980" type="ALNUM_VAR">
+		<xsd:annotation>
+			<xsd:appinfo>Externe Dokumenten_ID zur Archivierung (Feld 9980)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9981" type="E044">
+		<xsd:annotation>
+			<xsd:appinfo>Dokumentenquelle (Feld 9981)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="f8101">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8101 Abrechnungsinformation: Verweis auf Obj_0001 (Abrechnungsinformation)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Abrechnungsinformation"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8102">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8102 Abrechnung_GKV: Verweis auf Obj_0002 (Abrechnung_GKV)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Abrechnung_GKV"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8103">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8103 Abrechnung_PKV: Verweis auf Obj_0003 (Abrechnung_PKV)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Abrechnung_PKV"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8104">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8104 Abrechnung_IGe-Leistungen: Verweis auf Obj_0004 (Abrechnung_IGe-Leistungen)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Abrechnung_IGEL"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8105">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8105 Abrechnung_Sonstige_Kostenuebernahme: Verweis auf Obj_0005 (Abrechnung_Sonstige_Kostenuebernahme)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Abrechnung_Sonstige_Kostenuebernahme"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8106">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8106 Abrechnung_Selektivvertrag: Verweis auf Obj_0006 (Abrechnung_Selektivvertrag)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Abrechnung_Selektivvertrag"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8107">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8107 Anschrift: Verweis auf Obj_0007 (Anschrift)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Anschrift"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8108">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8108 Adressat: Verweis auf Obj_0008 (Adressat)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Adressat"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8109">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8109 Abrechnung_OEGD: Verweis auf Obj_0009 (Abrechnung OEGD)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Abrechnung_OEGD"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8110">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8110 Anhang: Verweis auf Obj_0010 (Anhang)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Anhang"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8111">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8111 Antibiogramm: Verweis auf Obj_0011 (Antibiogramm)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Antibiogramm"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8113">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8113 Auftragsinformation: Verweis auf Obj_0013 (Auftragsinformation)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Auftragsinformation"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8114">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8114 Arztidentifikation: Verweis auf Obj_0014 (Arztidentifikation)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Arztidentifikation"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8117">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8117 Befundinformationen: Verweis auf Obj_0017 (Befundinformationen)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Befundinformationen"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8118">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8118 Abweichender_Befundweg: Verweis auf Obj_0031 (Kommunikationsdaten)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Abweichender_Befundweg"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8119">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8119 Betriebsstaette: Verweis auf Obj_0019 (Betriebsstaette)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Betriebsstaette"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8122">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8122 Einsenderidentifikation: Verweis auf Obj_0022 (Einsenderidentifikation)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Einsenderidentifikation"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8126">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8126 Fehlermeldung/Aufmerksamkeit: Verweis auf Obj_0026 (Fehlermeldung/Aufmerksamkeit)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Fehlermeldung_Aufmerksamkeit"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8127">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8127 Veranlassungsgrund: Verweis auf Obj_0027 (Veranlassungsgrund)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Veranlassungsgrund"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8131">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8131 Kommunikationsdaten: Verweis auf Obj_0031 (Kommunikationsdaten)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Kommunikationsdaten"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8132">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8132 Kopfdaten: Obj_0032 (Obj_Kopfdaten) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Kopfdaten"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8134">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8134 Krebsfrueherkennung_Zervix-Karzinom: Obj_0034 (Krebsfrueherkennung Frauen (Muster39)) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Krebsfrueherkennung_Zervix-Karzinom"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8135">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8135 Laborergebnisbericht: Obj_0035 (Obj_Laborergebnisbericht) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Laborergebnisbericht"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8136">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8136 Laborkennung: Obj_0036 (Obj_Laborkennung) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Laborkennung"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8137">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8137 Material: Obj_0037 (Obj_Material) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Material"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8140">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8140 Person: Obj_0040 (Mutterschaft) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Mutterschaft"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8141">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8141 Namenskennung: Obj_0041 (Namenskennung) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Namenskennung"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8142">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8142 Normalwert: Obj_0042 (Normalwert) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Normalwert"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8143">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8143 Organisation: Obj_0043 (Organisation) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Organisation"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8145">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8145 Patient: Obj_0045 (Patient) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Patient"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8147">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8147 Person: Obj_0047 (Obj_Person) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Person"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8148">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8148 Rechnungsempfaenger: Obj_0048 (Rechnungsempfaenger) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="RgEmpfaenger"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8150">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8150 Schwangerschaft: Obj_0050 (Schwangerschaft) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Schwangerschaft"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8151">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8151 Sendendes_System: Obj_0051 (Obj_Sendendes System) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Sendendes_System"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8153">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8153 Tier/Sonstiges: Obj_0053 (Tier/Sonstiges) folgt (Regel K083: Darf nicht im Befund auftreten)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Tier_Sonstiges"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8154">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8154 Timestamp: Obj_0054 (Timestamp) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8155">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8155 Blutgruppenzugehoerigkeit: Obj_0055 (Blutgruppenzugehoerigkeit) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Blutgruppenzugehoerigkeit"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8156">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8156 Tumor: Obj_0056 (Tumor) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Tumor"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8158">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8158 Untersuchungsabrechnung: Obj_0058 (Untersuchungsabrechnung) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Untersuchungsabrechnung"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8159">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8159 Untersuchungsanforderung: Obj_0059 (Untersuchungsanforderung) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Untersuchungsanforderung"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8160">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8160 UE_Klinische_Chemie: Obj_0060 (Untersuchungsergebnis_Klinische_Chemie) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="UE_Klinische_Chemie"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8161">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8161 UE_Mikrobiologie: Obj_0061 (Untersuchungsergebnis_Mikrobiologie) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="UE_Mikrobiologie"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8162">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8162 UE_Krebsfrueherkennung_Zervix-Karzinom: Obj_0062 (Untersuchungsergebnis_Krebsfrueherkennung Zervix-Karzinom) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="UE_Krebsfrueherkennung_Zervix-Karzinom"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8163">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8163 UE_Zytologie: Obj_0063 (Obj_Untersuchungsergebnis_Zytologie) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="UE_Zytologie"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8167">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8167 Zusaetzliche_Informationen: Obj_0068 (Fließtext) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Zusaetzliche_Informationen"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8169">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8169 Koerperkenngroessen: Obj_0069 (Obj_Koerperkenngroessen) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Koerperkenngroessen"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8170">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8170 Medikament: Obj_0070 (Medikament) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Medikament"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8171">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8171 Wirkstoff: Obj_0071 (Wirkstoff) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Wirkstoff"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8200">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8200 Akutdiagnose: Obj_0100 (Diagnose) folgt. </xsd:appinfo>
+			<xsd:appinfo>Die aus der Sicht des beauftragenden Arztes für die Fragestellung relevanten Diagnosen können im jeweils nachfolgenden Obj_0100 (Diagnose) übermittelt werden.</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Akutdiagnose"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8212">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8212 Softwareverantwortlicher: Verweis auf Obj_0043 (Organisation)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Softwareverantwortlicher"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8213">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8213 Timestamp Erstellung Untersuchungsanforderung: Verweis auf Obj_0054 (Timestamp)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_Erstellung_Untersuchungsanforderung"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8214">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8214 Timestamp Auftragserteilung: Obj_0054 (Timestamp) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_Auftragserteilung"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8215">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8215 Timestamp Auftragseingang: Obj_0054 (Timestamp) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_Auftragseingang"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8216">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8216 Timestamp Befunderstellung: Obj_0054 (Timestamp) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_Befunderstellung"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8217">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8217 Präzisierung des Veranlassungsgrundes: Obj_0068 (Fließtext) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Praezisierung_Veranlassungsgrund"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+		<xsd:element name="f8218">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8218 Timestamp der Erstellung des Datensatzes: Verweis auf Obj_0054 (Timestamp)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_Erstellung_Datensatz"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8219">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8219 Timestamp_Materialabnahme_Entnahme: Verweis auf Obj_0054 (Timestamp)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_Materialabnahme_entnahme"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8220">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8220 Timestamp_Eingangserfassung_Material: Verweis auf Obj_0054 (Timestamp)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_Eingangserfassung_Material"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8221">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8221 Timestamp_Erstellung_Laborergebnisbericht: Verweis auf Obj_0054 (Timestamp)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_Erstellung_Laborergebnisbericht"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8222">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8222 Timestamp Beginn Analytik: Verweis auf Obj_0054 (Timestamp)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_Beginn_Analytik"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8223">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8223 Timestamp Ergebniserstellung: Verweis auf Obj_0054 (Timestamp)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_Ergebniserstellung"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8224">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8224 Timestamp QM-Erfassung: Verweis auf Obj_0054 (Timestamp)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_QM_Erfassung"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8225">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8225 Zeitpunkt der Messung: Verweis auf Obj_0054 (Timestamp)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_Messung"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8226">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8226 Timestamp_Gueltig_ab: Verweis auf Obj_0054 (Timestamp)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_Gueltig_ab"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8227">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8227 Timestamp_Gueltig_bis: Verweis auf Obj_0054 (Timestamp)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_Gueltig_bis"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8228">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8228 Wohnanschrift: Verweis auf Obj_0007 (Anschrift)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Wohnanschrift"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+		<xsd:element name="f8229">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8229 Anschrift Arbeitsstelle: Verweis auf Obj_0007 (Anschrift)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Anschrift_Arbeitsstelle"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8230">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8230 Rechnungsanschrift: Verweis auf Obj_0007 (Anschrift)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Rechnungsanschrift"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+
+	<xsd:element name="f8231">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8231 Temporäre Anschrift: Verweis auf Obj_0007 (Anschrift)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Temporaere_Anschrift"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8232">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8232 Private Kommunikationsdaten: Verweis auf Obj_0031 (Kommunikationsdaten)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Private_Kommunikationsdaten"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8233">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8233 Geschaeftliche Kommunikationsdaten: Verweis auf Obj_0031 (Kommunikationsdaten)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Geschaeftliche_Kommunikationsdaten"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8235">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8235 Person zum Timestamp: Verweis auf 0047 (Person)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Person_zum_Timestamp"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8236">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8236 Testbezogene Hinweise: Verweis auf 0068 (Fließtext)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Testbezogene_Hinweise"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8237">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8237 Ergebnistext: Verweis auf 0068 (Fließtext)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Ergebnistext"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8238">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8238 Auftragsbezogene Hinweise: Verweis auf 0068 (Fließtext)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Auftragsbezogene_Hinweise"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8239">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8239 Laborbezeichnung: Verweis auf 0043 (Organisation)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Laborbezeichnung"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8240">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8240 Überweisung von anderen Ärzten: Verweis auf 0014 (Arztidentifikation)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Ueberweisung_von_anderen_Aerzten"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8241">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8241 Überweisung an: Verweis auf 0014 (Arztidentifikation)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Ueberweisung_an"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8242">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8242 base64-kodierte Anlage: Obj_0068 (Fließtext) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="base64-kodierte_Anlage"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8243">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8243 Timestamp_Zeitpunkt_Medikamenteneinnahme: Obj_0054 (Timestamp) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Timestamp_Zeitpunkt_Medikamenteneinnahme"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8248">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8248 UE_Sonstige_Untersuchungsergebnisse: Obj_0073 (Obj_Sonstige Untersuchungsergebnisse) folgt</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="UE_Sonstige_Untersuchungsergebnisse"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+		<xsd:element name="f8244">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8244 BAK: Verweis auf Obj_0072 (BAK)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="BAK" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8245">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8245 BAK-Ergebnis: Verweis auf Obj_0068 (Fließtext)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="BAK-Ergebnis" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8246">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8246 BAK-Ergebnisbezogene Hinweise: Verweis auf Obj_0068 (Fließtext)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="BAK-Ergebnisbezogene_Hinweise" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f8247">
+		<xsd:annotation>
+			<xsd:appinfo>Feld 8247 Diagnostische_Bewertung_Empfehlung: Verweis auf Obj_0068 (Fließtext)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="Diagnostische_Bewertung_Empfehlung" />
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+</xsd:schema>

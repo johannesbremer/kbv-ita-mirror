@@ -1,0 +1,25 @@
+﻿SDKVCA 
+********************************************************************
+
+Dieses Paket beschreibt die Datenstruktur zur Stammdatei KVCA.
+
+Alle Komponenten des Pakets sind separat versioniert. Es können keine 
+Schlussfolgerungen aus den Versionsnummern des Pakets und der Komponenten 
+untereinander gezogen werden. Die Versionsnummer der Schnittstelle (Schema) ist
+nicht identisch mit der Versionsnummer der Schnittstellenbeschreibung.
+
+Die Schnittstellenbeschreibung 0.8 bezieht sich auf die aktuelle Schemaversion 1.20. 
+
+
+1. Inhaltliche Änderungen
+2. Schnittstellenänderungen
+3. Sonstiges
+
+
+1. Inhaltliche Änderungen
+*******************************************************************
+Alle inhaltlichen Änderungen sind im ITA-Update-Anschreiben aufgeführt.
+
+2. Schnittstellenänderungen
+*******************************************************************
+Schnittstellenänderungen sind in der Dokumentation aufgeführt.

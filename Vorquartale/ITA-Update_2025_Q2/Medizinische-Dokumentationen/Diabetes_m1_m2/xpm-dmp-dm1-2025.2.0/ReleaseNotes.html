@@ -1,0 +1,954 @@
+<html>
+<head>
+<title>KBV-Pr&uuml;fmodul f&uuml;r DMP Diabetes mellitus Typ 1 Pr&uuml;fung, Version 2025.2.0 2/2025</title>
+<style type='text/css'>
+	<!--
+	h2 { background-color: #aaaaaa;}
+	h3 { background-color: #cccccc;}
+	h4 { background-color: #efefef;}
+	h5.hot { color: #dd0000; }
+	BODY  {
+		COLOR : #000000;
+		FONT-FAMILY : arial, helvetica;
+		FONT-SIZE : 10pt;
+		background-color : White;
+	}
+	td {
+		FONT-FAMILY : arial, helvetica;
+		FONT-SIZE : 10pt;
+	}
+	-->
+</style>
+</head>
+
+<body>
+<h2>KBV-Pr&uuml;fmodul f&uuml;r DMP Diabetes mellitus Typ 1 Pr&uuml;fung, Version 2025.2.0 2/2025</h2>
+<h3>Inhalt</h3>
+<ul>
+	<li><a href="#requirement">Systemvoraussetzungen</a></li>
+	<li><a href="#changes">&Auml;nderungen zur Vorversion</a></li>
+	<li><a href="#knownbugs">Bekannte Fehler</a></li>
+	<li><a href="#installation">Hinweis zur Installation</a></li>
+	<li><a href="#dokumentation">Dokumentation</a></li>
+	<li><a href="#hinweise_allgemein">Allgemeine Hinweise</a></li>
+	<li><a href="#hinweise_recht">Rechtliche Hinweise</a></li>
+	<li><a href="#license">Lizenzvertragliche Regelungen</a></li>
+</ul>
+
+<h3><a name="requirement">Systemvoraussetzungen</a></h3>
+<ul>
+	<li>Ben&ouml;tigt wird ein beliebiges Computersystem leistungsm&auml;&szlig;ig vergleichbar mit einem IBM-kompatiblen PC mit Pentium 500 MHz Prozessor oder h&ouml;her.</li>
+	<li>Das XPM verwendet die plattformunabh&auml;ngige Java Technologie. Dies erm&ouml;glicht den Einsatz dieser Applikation auf verschiedenen Betriebssystemen, f&uuml;r die die Java Laufzeitumgebung verf&uuml;gbar ist.</li>
+	<li>Java Laufzeitumgebung 17 oder h&ouml;her</li>
+	<li>Arbeitsspeicher mindestens 128 MB RAM</li>
+</ul>
+
+<h3><a name="changes">&Auml;nderungen zur Vorversion</a></h3>
+
+<h4>Version 2025.2.0 2/2025</h4>
+    <ul>
+        <li>Update der KT-Stamm</li>
+      	<li>&Auml;nderung bez&uuml;glich der Beendigung der Ausf&uuml;hrung der JVM nach Beendigung des Pr&uuml;fmoduls</li>
+        <li>Version XPM-Kernel: XPM 4.2.28</li>
+    	<li>Version Steuerdatei: DM1/22025/74/01</li>
+        <li>Version KT-Stammdatei: KTS1.02/22025/74/2025-02-04+01:00</li>
+    	<li>Version XML-Schema: 5.07</li>
+    </ul>
+
+<h4>Version 2025.1.0 1/2025</h4>
+    <ul>
+        <li>Update der KT-Stamm</li>
+        <li>Version XPM-Kernel: XPM 4.2.27</li>
+    	<li>Version Steuerdatei: DM1/12025/74/01</li>
+        <li>Version KT-Stammdatei: KTS1.02/12025/74/2024-11-13+01:00</li>
+    	<li>Version XML-Schema: 5.07</li>
+    </ul>
+
+<h4>Version 2024.4.1 4/2024</h4>
+    <ul>
+        <li>Bugfixing: Korrektur der SetVariablen.sh-Datei</li>
+        <li>Version XPM-Kernel: XPM 4.2.27</li>
+    	<li>Version Steuerdatei: DM1/42024/74/01</li>
+        <li>Version KT-Stammdatei: KTS1.02/32024/74/2024-08-01+02:00</li>
+    	<li>Version XML-Schema: 5.07</li>
+    </ul>
+
+<h4>Version 2024.4.0 4/2024</h4>
+    <ul>
+        <li>Update der KT-Stamm</li>
+        <li>Erweiterung der erlaubten DMP-Kennzeichen</li>
+        <li>Version XPM-Kernel: XPM 4.2.27</li>
+    	<li>Version Steuerdatei: DM1/42024/74/01</li>
+        <li>Version KT-Stammdatei: KTS1.02/32024/74/2024-08-01+02:00</li>
+    	<li>Version XML-Schema: 5.07</li>
+    </ul>
+
+<h4>Version 2024.3.0 3/2024</h4>
+    <ul>
+        <li>Update der KT-Stamm</li>
+        <li>Version XPM-Kernel: XPM 4.2.27</li>
+    	<li>Version Steuerdatei: DM1/32024/74/01</li>
+        <li>Version KT-Stammdatei: KTS1.02/32024/74/2024-05-02+02:00</li>
+    	<li>Version XML-Schema: 5.07</li>
+    </ul>
+
+<h4>Version 2024.2.0 2/2024</h4>
+    <ul>
+        <li>Update der KT-Stamm</li>
+        <li>Version XPM-Kernel: XPM 4.2.25</li>
+    	<li>Version Steuerdatei: DM1/22024/74/01</li>
+        <li>Version KT-Stammdatei: KTS1.02/22024/74/2024-02-01+01:00</li>
+    	<li>Version XML-Schema: 5.07</li>
+    </ul>
+
+<h4>Version 2024.1.0 1/2024</h4>
+    <ul>
+        <li>XPM-Kernel aktualisiert</li>
+        <li>Update der KT-Stamm</li>
+        <li>Version XPM-Kernel: XPM 4.2.25</li>
+    	<li>Version Steuerdatei: DM1/12024/74/01</li>
+        <li>Version KT-Stammdatei: KTS1.02/12024/74/2023-11-01+01:00</li>
+    	<li>Version XML-Schema: 5.07</li>
+    </ul>
+
+<h4>Version 2023.4.2 4/2023</h4>
+<ul>
+	<li>Linefeed der Linux-Batchdateien korrigiert</li>
+</ul>
+
+<h4>Version 2023.4.1 4/2023</h4>
+<ul>
+    <li>Korrektur für Pr&uuml;fung zu Blutdruck-Angaben bei Patientenalter kleiner 11 Jahren</li>
+    <li>Minimale Java-Version ist Java 17</li>
+    <li>Version XPM-Kernel: XPM 4.2.17</li>
+    <li>Version Steuerdatei: DM1/42023/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/42023/74/2023-08-01+02:00</li>
+    <li>Version XML-Schema: 5.07</li>
+</ul>
+
+
+<h4>Version 2023.4.1 4/2023</h4>
+<ul>
+    <li>Korrektur für Pr&uuml;fung zu Blutdruck-Angaben bei Patientenalter kleiner 11 Jahren</li>
+    <li>Minimale Java-Version ist Java 17</li>
+    <li>Version XPM-Kernel: XPM 4.2.28</li>
+    <li>Version Steuerdatei: DM1/22025/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/22025/74/2023-08-01+02:00</li>
+    <li>Version XML-Schema: 5.07</li>
+</ul>
+<h4>Version 2023.4.0 4/2023</h4>
+<ul>
+    <li>Neue Schnittstelle 5.07</li>
+    <li>Update der KT-Stamm</li>
+    <li>Minimale Java-Version ist Java 17</li>
+    <li>Version XPM-Kernel: XPM 4.2.17</li>
+    <li>Version Steuerdatei: DM1/42023/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/42023/74/2023-08-01+02:00</li>
+    <li>Version XML-Schema: 5.07</li>
+</ul>
+
+<h4>Version 2023.3.0 3/2023</h4>
+<ul>
+    <li>Update der KT-Stamm</li>
+    <li>Version XPM-Kernel: XPM 4.2.17</li>
+    <li>Version Steuerdatei: DM1/32023/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/32023/74/2023-05-02+02:00</li>
+    <li>Version XML-Schema: 5.06</li>
+</ul>
+
+<h4>Version 2023.2.0 2/2023</h4>
+<ul>
+    <li>Neue Einschreibungsursache "rheumatoide Arthritis"</li>
+    <li>Update der KT-Stamm</li>
+    <li>Version XPM-Kernel: XPM 4.2.17</li>
+    <li>Version Steuerdatei: DM1/22023/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/22023/74/2023-02-01+01:00</li>
+    <li>Version XML-Schema: 5.06</li>
+</ul>
+
+<h4>Version 2022.4.0 4/2022</h4>
+<ul>
+    <li>Aktualisierung der KT-Stammdatei</li>
+    <li>Version XPM-Kernel: XPM 4.2.17</li>
+    <li>Version Steuerdatei: DM1/42022/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/42022/74/2022-08-03+02:00</li>
+    <li>Version XML-Schema: 5.05</li>
+</ul>
+
+<h4>Version 2022.3.0 3/2022</h4>
+<ul>
+	<li>Aktualisierung der KT-Stammdatei</li>
+    <li>Version XPM-Kernel: XPM 4.2.17</li>
+	<li>Version Steuerdatei: DM1/32022/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/32022/74/2022-05-02+02:00</li>
+ 	<li>Version XML-Schema: 5.05</li>
+</ul>
+
+<h4>Version 2022.2.1 2/2022</h4>
+<ul>
+	<li>BUGFIX im XPM-Core: Bei der Ermittlung des XML-Encodings von XML-Eingabedateien kam es zu einem Fehler.</li>
+	<li>Version XPM-Kernel: XPM 4.2.17</li>
+	<li>Version Steuerdatei: DM1/22022/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/22022/74/2022-02-07+01:00</li>
+	<li>Version XML-Schema: 5.05</li>
+</ul>
+
+<h4>Version 2022.2.0 2/2022</h4>
+<ul>
+	<li>Aktualisierung der KT-Stammdatei</li>
+	<li>Zeichenkodierungspr&uuml;fung erweitert</li>
+	<li>Handbuch des Pr&uuml;fmoduls &uuml;berarbeitet</li>
+	<li>jasperreports-dependency aktualisiert</li>
+	<li>Korrektur der PDF-Protokollausgabe</li>
+	<li>Version XPM-Kernel: XPM 4.2.16</li>
+	<li>Version Steuerdatei: DM1/22022/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/22022/74/2022-02-07+01:00</li>
+	<li>Version XML-Schema: 5.05</li>
+</ul>
+
+<h4>Version 2022.1.2 1/2022</h4>
+
+<ul> 
+    <li>Aktualisierung der Log4j-Bibliothek auf Version 2.17.1</li>
+    <li>Version XPM-Kernel: XPM 4.2.11</li>
+    <li>Version Steuerdatei: DM1/12022/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/12021/74/2020-11-02+01:00</li>
+    <li>Version XML-Schema: 5.05</li>
+</ul>
+<h4>Version 2022.1.1 1/2022</h4>
+<ul>
+    <li>Core-Update wegen einer Sicherheitslücke in der log4j-Bibliothek</li>
+    <li>Version XPM-Kernel: XPM 4.2.10</li>
+    <li>Version Steuerdatei: DM1/12022/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/12022/74/2021-11-03+01:00</li>
+    <li>Version XML-Schema: 5.05</li>
+</ul>
+<h4>Version 2022.1.0 1/2022</h4>
+<ul>
+    <li>KT-Stamm-Update</li>
+    <li>Version XPM-Kernel: XPM 4.2.4</li>
+    <li>Version Steuerdatei: DM1/12022/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/12022/74/2021-11-03+01:00</li>
+    <li>Version XML-Schema: 5.05</li>
+</ul>
+
+<h4>Version 2021.4.0 4/2021</h4>
+<ul>
+    <li>KT-Stamm-Update</li>
+    <li>Formatprüfung diverser numerischer Felder (z.Bsp. Blutdruck) überarbeitet</li>
+    <li>Version XPM-Kernel: XPM 4.2.4</li>
+    <li>Version Steuerdatei: DM1/42021/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/42021/74/2021-08-02+02:00</li>
+    <li>Version XML-Schema: 5.05</li>
+</ul>
+
+
+<h4>Version 2021.3.1 3/2021</h4>
+<ul>
+    <li>Neue Schnittstelle 5.05</li>
+    <li>Version XPM-Kernel: XPM 4.2.4</li>
+    <li>Version Steuerdatei: DM1/32021/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/32021/74/2021-05-03+02:00</li>
+    <li>Version XML-Schema: 5.05</li>
+</ul>
+
+<h4>Version 2021.2.0 2/2021</h4>
+<ul>
+
+    <li>Aktualisierung der Log4j-Bibliothek auf Version 2.17.1</li>
+    <li>Version XPM-Kernel: XPM 4.2.28</li>
+    <li>Version Steuerdatei: DM1/22025/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/12021/74/2020-11-02+01:00</li>
+    <li>Version XML-Schema: 5.05</li>
+</ul>
+
+<h4>Version 2022.1.2 1/2022</h4>
+<ul> 
+    <li>Aktualisierung der Log4j-Bibliothek auf Version 2.17.1</li>
+    <li>Version XPM-Kernel: XPM 4.2.11</li>
+    <li>Version Steuerdatei: DM1/12022/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/12021/74/2020-11-02+01:00</li>
+    <li>Version XML-Schema: 5.05</li>
+</ul>
+
+<h4>Version 2022.1.1 1/2022</h4>
+<ul>
+    <li>Core-Update wegen einer Sicherheitslücke in der log4j-Bibliothek</li>
+    <li>Version XPM-Kernel: XPM 4.2.10</li>
+    <li>Version Steuerdatei: DM1/12022/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/12022/74/2021-11-03+01:00</li>
+    <li>Version XML-Schema: 5.05</li>
+</ul>
+<h4>Version 2022.1.0 1/2022</h4>
+<ul>
+    <li>KT-Stamm-Update</li>
+    <li>Version XPM-Kernel: XPM 4.2.4</li>
+    <li>Version Steuerdatei: DM1/12022/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/12022/74/2021-11-03+01:00</li>
+    <li>Version XML-Schema: 5.05</li>
+</ul>
+
+<h4>Version 2021.4.0 4/2021</h4>
+<ul>
+    <li>KT-Stamm-Update</li>
+    <li>Formatprüfung diverser numerischer Felder (z.Bsp. Blutdruck) überarbeitet</li>
+    <li>Version XPM-Kernel: XPM 4.2.4</li>
+    <li>Version Steuerdatei: DM1/42021/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/42021/74/2021-08-02+02:00</li>
+    <li>Version XML-Schema: 5.05</li>
+</ul>
+
+<h4>Version 2021.3.1 3/2021</h4>
+<ul>
+    <li>Neue Schnittstelle 5.05</li>
+    <li>Version XPM-Kernel: XPM 4.2.4</li>
+    <li>Version Steuerdatei: DM1/32021/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/32021/74/2021-05-03+02:00</li>
+    <li>Version XML-Schema: 5.05</li>
+</ul>
+
+<h4>Version 2021.2.0 2/2021</h4>
+<ul>
+    <li>KT-Stamm-Update</li>
+    <li>Anpassung an die Plausibilitätsrichtlinie Version 5.0 des indikationsübergreifenden, allgemeinen Datensatzes</li>
+    <li>Neue Schnittstelle 5.04</li>
+    <li>Version XPM-Kernel: XPM 4.2.4</li>
+    <li>Version Steuerdatei: DM1/22021/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/12021/74/2020-11-02+01:00</li>
+    <li>Version XML-Schema: 5.04</li>
+</ul>
+
+<h4>Version 2021.1.0 1/2021</h4>
+<ul>
+	<li>KT-Stamm-Update</li>
+    <li>Version XPM-Kernel: 4.2.4</li>
+	<li>Version Steuerdatei: DM1/12021/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/12021/74/2020-11-02+01:00</li>
+	<li>Version XML-Schema: 5.03</li>
+</ul>
+
+<h4>Version 2020.4.0 4/2020</h4>
+<ul>
+	<li>KT-Stamm-Update</li>
+    <li>Version XPM-Kernel: 4.2.0</li>
+	<li>Version Steuerdatei: DM1/42020/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/42020/74/2020-08-03+02:00</li>
+	<li>Version XML-Schema: 5.03</li>
+</ul>
+
+<h4>Version 2020.3.1 3/2020</h4>
+<ul>
+	<li>KT-Stamm-Update</li>
+	<li>Minimale Java-Version ist Java 11</li>
+    <li>Version XPM-Kernel: XPM 4.2.0</li>
+	<li>Version Steuerdatei: DM1/32020/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/32020/74/2020-05-05+02:00</li>
+	<li>Version XML-Schema: 5.03</li>
+</ul>
+
+<h4>Version 2020.2.0 2/2020</h4>
+
+<ul>
+	<li>KT-Stamm-Update</li>
+   	<li>Schriftart bei PDF-Ausgabe in DejaVu-Sans ge&auml;ndert</li>
+    <li>Version XPM-Kernel: XPM 4.1.14</li>
+	<li>Version Steuerdatei: DM1/22020/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/22020/74/KTS1.02/42019/74/2020-02-05+01:00</li>
+	<li>Version XML-Schema: 5.03</li>
+</ul>
+
+<h4>Version 2020.1.0 1/2020</h4>
+<ul>
+	<li>KT-Stamm-Update</li>
+    <li>Version XPM-Kernel: XPM 4.1.9</li>
+	<li>Version Steuerdatei: DM1/12020/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/12020/74/KTS1.02/12020/74/2019-11-12+01:00</li>
+	<li>Version XML-Schema: 5.03</li>
+</ul>
+
+<h4>Version 2019.4.0 4/2019</h4>
+<ul>
+<li>KT-Stamm-Update</li>
+
+    <li>Version XPM-Kernel: XPM 4.0.20</li>
+	<li>Version Steuerdatei: khk/42019/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/4/2019/74/2019-08-01+02:00</li>
+	<li>Version XML-Schema: 4.14</li>
+</ul>
+
+<h4>Version 2019.3.0 3/2019</h4>
+
+<ul>
+	<li>KT-Stamm-Update</li>
+
+  <li>Version XPM-Kernel: XPM 4.0.20</li>
+	<li>Version Steuerdatei: DM1/32019/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/32019/74/2019-05-06+01:00</li>
+	<li>Version XML-Schema: 5.03</li>
+</ul>
+
+
+<h4>Version 6.3.0 2/2019</h4>
+
+	<ul>
+	    <li>Neue Schnittstelle 5.03</li>
+	<li>Neuer Wert X für administrative_gender_cd</li>
+    <li>Angabe zum Raucherstatus ist jetzt optional, wenn das Lebensalter kleiner oder gleich 12 ist.</li>
+	<li>Angabe zum Körpergewicht muss jetzt dreistellig erfolgen</li>
+		<li>KT-Stamm-Update</li>
+	
+    <li>Version XPM-Kernel: XPM 4.0.20</li>
+	<li>Version Steuerdatei: DM1/22019/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/22019/74/2019-02-11+01:00</li>
+	<li>Version XML-Schema: 5.03</li>
+</ul>
+
+
+<h4>Version 5.10 1/2019</h4>
+<ul>
+   	<li>Lauff&auml;higkeit unter Java 11 sichergestellt (OracleJDK und OpenJDK)</li>
+    <li>Neue DMP-Kennzeichen 07, 08 und 09</li>
+   	<li>Version XPM-Kernel: XPM 3.2.8 05.11.2015</li>
+	<li>Version Steuerdatei: EED105.10/12019/74/01</li>
+	<li>Version Steuerdatei: EVD105.10/12019/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/12019/74/2018-11-05+01:00</li>
+	<li>Version XML-Schema: 5.02</li>
+</ul>
+
+<h4>Version 6.1.1 4/2018</h4>
+<ul>
+	<li>KT-Stamm-Update</li>
+	
+    <li>Version XPM-Kernel: XPM 4.0.18</li>
+	<li>Version Steuerdatei: DM1/42018/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/4/2018/74/2018-07-26+02:00</li>
+	<li>Version XML-Schema: 5.02</li>
+</ul>
+
+
+
+<h4>Version 6.1.0 3/2018</h4>
+<ul>
+	<li>Core-Update</li>
+		<li>Kompatibilit&auml;t zu JAVA 10 sichergestellt</li>
+	
+    <li>Version XPM-Kernel: XPM 4.0.13 20.02.2018</li>
+	<li>Version Steuerdatei: DM1/32018/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/12018/74/2017-11-10+01:00</li>
+	<li>Version XML-Schema: 5.02</li>
+</ul>
+
+<h4>Version 5.07 3/2018</h4>
+<ul>
+<li>[<a>XPMDMB-53</a>] -         Anpassung bzgl. der Archivnamen</li>
+<li>[<a>XPMDMB-54</a>] -         Einbindung der neuen Schnittstelle</li>
+<li>[<a>XPMDMB-55</a>] -         Neue Werte für die Besondere Personengruppe</li>
+<li>[<a>XPMDMB-56</a>] -         Neue Werte für DMP-Kennzeichen</li>
+<li>[<a>XPMDMB-56</a>] -         Besondere Personengruppe und DMP-Kennzeichen verpflichtend</li>
+    <li>Version XPM-Kernel: XPM 3.2.8 05.11.2015</li>
+	<li>Version Steuerdatei: EED105.07/32018/74/01</li>
+	<li>Version Steuerdatei: EVD105.07/32018/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/12018/74/2017-11-10+01:00</li>
+	<li>Version XML-Schema: 5.02</li>
+</ul>
+
+<h4>Version 5.05 2/2018</h4>
+<ul>
+    <li>Neue Schnittstelle 5.01</li>
+    <li>Version XPM-Kernel: XPM 3.2.8 05.11.2015</li>
+	<li>Version Steuerdatei: EED105.05/22018/74/01</li>
+	<li>Version Steuerdatei: EVD105.05/22018/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/12018/74/2017-11-10+01:00</li>
+	<li>Version XML-Schema: 5.01</li>
+</ul>
+
+
+<h4>Version 5.04 1/2018</h4>
+<ul>
+    <li>Lauff&auml;higkeit unter Java 9 sichergestellt</li>
+    <li>Version XPM-Kernel: XPM 3.2.8 05.11.2015</li>
+	<li>Version Steuerdatei: EED105.04/12018/74/01</li>
+	<li>Version Steuerdatei: EVD105.04/12018/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/12018/74/2017-11-10+01:00</li>
+	<li>Version XML-Schema: 5.00</li>
+</ul>
+
+<h4>Version 5.03 4/2017</h4>
+<ul>
+    <li>Bugfixing: Pr&uuml;fung auf einen &uuml;bergeordneten Parameter 'Empfohlene Schulung(en) wahrgenommen' bei den Parametern 'Hypertonie_Schulung' und 'Diabetes-Schulung'.</li>
+	<li>Lauff&auml;higkeit unter Java 9 sichergestellt</li>
+	<li>Version XPM-Kernel: XPM 3.2.8 05.11.2015</li>
+	<li>Version Steuerdatei: EED105.03/42017/74/02</li>
+	<li>Version Steuerdatei: EVD105.03/42017/74/02</li>
+	<li>Version KT-Stammdatei: KTS1.02/42017/74/2017-08-02+02:00</li>
+	<li>Version XML-Schema: 5.00</li>
+</ul>
+
+<h4>Version 5.02 4/2017</h4>
+<ul>
+	<li>Version XPM-Kernel: XPM 3.2.8 05.11.2015</li>
+	<li>Version Steuerdatei: EED105.02/42017/74/01</li>
+	<li>Version Steuerdatei: EVD105.02/42017/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/42017/74/2017-08-02+02:00</li>
+	<li>Version XML-Schema: 5.00</li>
+</ul>
+
+<h4>Version 5.01 3/2017</h4>
+<ul>
+    <li>Pr&uuml;fung der zeitlichen Abfolge von service_tmr und origination_dttm wurde gestrichen</li>
+	<li>neue Schnittstellenversion 5.00</li>
+	<li>Version XPM-Kernel: XPM 3.2.8 05.11.2015</li>
+	<li>Version Steuerdatei: EED105.01/32017/74/01</li>
+	<li>Version Steuerdatei: EVD105.01/32017/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/32017/74/2017-05-03+02:00</li>
+	<li>Version XML-Schema: 5.00</li>
+</ul>
+
+<h4>Version 4.07 3/2016</h4>
+<ul>
+	<li>Version XPM-Kernel: XPM 3.2.8 05.11.2015</li>
+	<li>Version Steuerdatei: EED104.07/32016/74/01</li>
+	<li>Version Steuerdatei: EVD104.07/32016/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/32016/74/2016-05-03+02:00</li>
+	<li>Version XML-Schema: 4.11</li>
+</ul>
+
+<h4>Version 4.06 2/2016</h4>
+<ul>
+	<li>Version XPM-Kernel: XPM 3.2.8 05.11.2015</li>
+	<li>Version Steuerdatei: EED104.06/22016/74/01</li>
+	<li>Version Steuerdatei: EVD104.06/22016/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/22016/74/2016-02-03+01:00</li>
+	<li>Version XML-Schema: 4.11</li>
+</ul>
+
+<h4>Version 4.05 1/2016</h4>
+<ul>
+    <li>Schemaversion korrigiert</li>
+	<li>Version XPM-Kernel: XPM 3.2.8 05.11.2015</li>
+	<li>Version Steuerdatei: EED104.05/12016/74/02</li>
+	<li>Version Steuerdatei: EVD104.05/12016/74/02</li>
+	<li>Version KT-Stammdatei: KTS1.02/12016/74/2015-11-04+01:00</li>
+	<li>Version XML-Schema: 4.11</li>
+</ul>
+
+<h4>Version 4.04 1/2016</h4>
+<ul>
+    <li>DMP-Modul setzt Java 1.8 oder h&ouml;her voraus</li>
+   	<li>Bitte beachten: Das Prüfmodul ist mit einer Java Version kleiner 7 nicht mehr lauffähig</li>
+    	<li>Anpassung an Personenstandsgesetz</li>
+	<li>Neuer Wert 9 für Besondere Personengruppe</li>
+	<li>Version XPM-Kernel: XPM 3.2.8 05.11.2015</li>
+	<li>Version Steuerdatei: EED104.04/12016/74/01</li>
+	<li>Version Steuerdatei: EVD104.04/12016/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/12016/74/2015-11-04+01:00</li>
+	<li>Version XML-Schema: 4.00</li>
+</ul>
+
+<h4>Version 4.03 4/2015</h4>
+<ul>
+	<li>Version XPM-Kernel: XPM 3.2.7 30.06.2015</li>
+	<li>Version Steuerdatei: EED104.03/42015/74/01</li>
+	<li>Version Steuerdatei: EVD104.03/42015/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/42015/74/2015-08-04+02:00</li>
+	<li>Version XML-Schema: 4.00</li>
+</ul>
+
+<h4>Version 4.02 3/2015</h4>
+<ul>
+    <li>Bugfix: &Auml;ltere WOP-Kennzeichen werden wieder akzeptiert.</li>
+	<li>Version XPM-Kernel: XPM 3.2.6 27.04.2015</li>
+	<li>Version Steuerdatei: EED104.02/32015/74/02</li>
+	<li>Version Steuerdatei: EVD104.02/32015/74/02</li>
+	<li>Version KT-Stammdatei: KTS1.02/32015/74/2015-05-05+02:00</li>
+	<li>Version XML-Schema: 4.00</li>
+</ul>
+
+<h4>Version 4.01 3/2015</h4>
+<ul>
+    <li>Das Handbuch 'KBV_ITA_AHEX_Handbuch_Pruefmodul.pdf' liegt in einer neuen Version vor.</li>
+    <li>Warnmeldung bei Verwendung von Java 6 ge&auml;ndert, da die Funktionsf&auml;higkeit nicht mehr sichergestellt ist</li>
+    <li>Warnmeldung bei Verwendung von Java 7 wieder hinzugef&uuml;gt</li>
+    <li>Ge&auml;nderte Pr&uuml;fung des Dateinamens bei Archiven</li>
+	<li>Version XPM-Kernel: XPM 3.2.6 27.04.2015</li>
+	<li>Version Steuerdatei: EED104.01/32015/74/01</li>
+	<li>Version Steuerdatei: EVD104.01/32015/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/32015/74/2015-05-05+02:00</li>
+	<li>Version XML-Schema: 4.00</li>
+</ul>
+
+<h4>Version 4.00 1/2015</h4>
+<ul>
+	<li>Anpassungen an DMP - Neu - Siehe dazu Anlage 8 der DMP-A-RL und Anlage 2</li>
+	<li>Version XPM-Paket: 4.00</li>
+	<li>Version XPM-Kernel: XPM 3.2.4 30.10.2014</li>
+	<li>Version Steuerdatei: EED104.00/12015/74/01</li>
+	<li>Version Steuerdatei: EVD104.00/12015/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/32014/74/2014-05-07+02:00</li>
+	<li>Version XML-Schema: 4.00</li>
+</ul>
+
+<h4>Version 3.03 4/2014</h4>
+<ul>
+    <li>KT Stammdatei aktualisiert</li>
+	<li>Version XPM-Paket: 3.03</li>
+	<li>Version XPM-Kernel: XPM 3.2.1 30.01.2014</li>
+	<li>Version Steuerdatei: EED103.03/42014/74/01</li>
+	<li>Version Steuerdatei: EVD103.03/42014/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/32014/74/2014-05-07+02:00</li>
+	<li>Version XML-Schema: 3.20</li>
+</ul>
+
+<h4>Version 3.02 4/2014</h4>
+<ul>
+    <li>Schema aktualisiert auf V3.20</li>
+	<li>Version XPM-Paket: 3.02</li>
+	<li>Version XPM-Kernel: XPM 3.2.1 30.01.2014</li>
+	<li>Version Steuerdatei: EED103.02/42014/74/01</li>
+	<li>Version Steuerdatei: EVD103.02/42014/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/22014/74/2014-02-04+01:00</li>
+	<li>Version XML-Schema: 3.20</li>
+</ul>
+
+<h4>Version 3.01 4/2014</h4>
+<ul>
+    <li>Schema bugfix bzgl. Adressen</li>
+	<li>Abgelaufene IKs welche einen aufnehmenden KT enthalten erzeugen keine Warnung mehr</li>
+	<li>Version XPM-Paket: 3.01</li>
+	<li>Version XPM-Kernel: XPM 3.2.0 17.07.2013</li>
+	<li>Version Steuerdatei: EED103.01/42014/74/01</li>
+	<li>Version Steuerdatei: EVD103.01/42014/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/12014/74/2013-11-04+01:00</li>
+	<li>Version XML-Schema: 3.00</li>
+</ul>
+
+<h4>Version 3.00 4/2014</h4>
+<ul>
+    <li>Neue Version 1.15 des PDF-Viewers.</li>
+	<li>Version XPM-Paket: 3.00</li>
+	<li>Version XPM-Kernel: XPM 3.2.0 17.07.2013</li>
+	<li>Version Steuerdatei: EED103.00/42014/74/01</li>
+	<li>Version Steuerdatei: EVD103.00/42014/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/12014/74/2013-11-04+01:00</li>
+	<li>Version XML-Schema: 3.00</li>
+</ul>
+
+<h4>Version 2.26 4/2013</h4>
+<ul>
+	<li>Version XPM-Paket: 2.26</li>
+	<li>Version XPM-Kernel: XPM 3.2.0 17.07.2013</li>
+	<li>Version Steuerdatei: EED102.02/42013/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/42013/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/42013/74/2013-08-01+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.25 3/2013</h4>
+<ul>
+	<li>Version XPM-Paket: 2.25</li>
+	<li>Version XPM-Kernel: XPM 3.1.7 29.04.2013</li>
+	<li>Version Steuerdatei: EED102.02/32013/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/32013/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/32013/74/2013-05-06+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.24 2/2013</h4>
+<ul>
+	<li>Version XPM-Paket: 2.24</li>
+	<li>Version XPM-Kernel: XPM 3.1.5 13.09.2012</li>
+	<li>Version Steuerdatei: EED102.02/22013/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/22013/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/22013/74/2013-02-07+01:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.23 1/2013</h4>
+<ul>
+	<li>Version XPM-Paket: 2.23</li>
+	<li>Version XPM-Kernel: XPM 3.1.5 13.09.2012</li>
+	<li>Version Steuerdatei: EED102.02/12013/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/12013/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/12013/74/2012-11-07+01:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.22 4/2012</h4>
+<ul>
+	<li>Das Anwenderhandbuch in KBV_ITA_AHEX_Handbuch_Pruefmodul.pdf umbenannt.</li>
+	<li>Version XPM-Paket: 2.22</li>
+	<li>Version XPM-Kernel: XPM 3.1.4 20.07.2012</li>
+	<li>Version Steuerdatei: EED102.02/42012/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/42012/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/42012/74/2012-08-02+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.21 3/2012</h4>
+<ul>
+	<li>Version XPM-Paket: 2.21</li>
+	<li>Version XPM-Kernel: XPM 3.1.2 25.04.2012</li>
+	<li>Version Steuerdatei: EED102.02/32012/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/32012/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/32012/74/2012-05-04+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.20 2/2012</h4>
+<ul>
+	<li>Neuer Konfigurationsschalter log_datei.</li>
+	<li>Die Jar Dateien im Bin Verzeichnis erhielten eine einheitliche Namensgebung &uuml;ber alle Pr&uuml;fpakete.</li>
+	<li>Die Batchdateien bzw. Shellskripte verwenden die Datei SetVariablen zum Setzen von globalen Einstellungen.</li>
+	<li>Version XPM-Paket: 2.20</li>
+	<li>Version XPM-Kernel: XPM 3.1.1 03.02.2012</li>
+	<li>Version Steuerdatei: EED102.02/22012/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/22012/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/22012/74/2012-02-02+01:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.19 1/2012</h4>
+<ul>
+	<li>XPM ist nur noch für die Java Laufzeitumgebung in der Version 1.6 oder h&ouml;her lauff&auml;hig.</li>
+	<li>Bei jedem Prüflauf wird eine neue Protokolldatei XPM_Logfile.log erstellt.</li>
+	<li>Version XPM-Paket: 2.19</li>
+	<li>Version XPM-Kernel: XPM 3.0.1 04.10.2011</li>
+	<li>Version Steuerdatei: EED102.02/12012/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/12012/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/12012/74/2011-11-02+01:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.18 4/2011</h4>
+<ul>
+	<li>Version XPM-Paket: 2.18</li>
+	<li>Version XPM-Kernel: XPM 2.07 26.05.2011</li>
+	<li>Version Steuerdatei: EED102.02/42011/74/02</li>
+	<li>Version Steuerdatei: EVD102.02/42011/74/02</li>
+	<li>Version KT-Stammdatei: KTS1.02/42011/74/2011-08-16+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.17 4/2011</h4>
+<ul>
+	<li>Version XPM-Paket: 2.17</li>
+	<li>Version XPM-Kernel: XPM 2.07 26.05.2011</li>
+	<li>Version Steuerdatei: EED102.02/42011/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/42011/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/42011/74/2011-08-03+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.16 3/2011</h4>
+<ul>
+	<li>Version XPM-Paket: 2.16</li>
+	<li>Version XPM-Kernel: XPM 2.06 05.04.2011</li>
+	<li>Version Steuerdatei: EED102.02/32011/74/02</li>
+	<li>Version Steuerdatei: EVD102.02/32011/74/02</li>
+	<li>Version KT-Stammdatei: KTS1.02/32011/74/2011-05-13+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.15 3/2011</h4>
+<ul>
+	<li>Version XPM-Paket: 2.15</li>
+	<li>Version XPM-Kernel: XPM 2.06 05.04.2011</li>
+	<li>Version Steuerdatei: EED102.02/32011/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/32011/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/32011/74/2011-05-04+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.14 2/2011</h4>
+<ul>
+	<li>Version XPM-Paket: 2.14</li>
+	<li>Version XPM-Kernel: XPM 2.05 01.02.2011</li>
+	<li>Version Steuerdatei: EED102.02/22011/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/22011/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/22011/74/2011-02-02+01:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.13 1/2011</h4>
+<ul>
+	<li>Version XPM-Paket: 2.13</li>
+	<li>Version XPM-Kernel: XPM 2.03 02.11.2010</li>
+	<li>Version Steuerdatei: EED102.02/12011/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/12011/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/12011/74/2010-11-02+01:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.12 4/2010</h4>
+<ul>
+	<li>Version XPM-Paket: 2.12</li>
+	<li>Version XPM-Kernel: XPM 2.02 26.07.2010</li>
+	<li>Version Steuerdatei: EED102.02/42010/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/42010/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/42010/74/2010-08-02+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.11 3/2010</h4>
+<ul>
+	<li>Version XPM-Paket: 2.11</li>
+	<li>Version XPM-Kernel: XPM 2.01 21.04.2010</li>
+	<li>Version Steuerdatei: EED102.02/32010/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/32010/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/32010/74/2010-04-30+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.10 2/2010</h4>
+<ul>
+	<li>XPM ist nur noch unter Java 1.5 oder h&ouml;her lauff&auml;hig.</li>
+	<li>Version XPM-Paket: 2.10</li>
+	<li>Version XPM-Kernel: XPM 2.00 19.01.2010</li>
+	<li>Version Steuerdatei: EED102.02/22010/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/22010/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/22010/74/2010-02-03+01:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.09 1/2010</h4>
+<ul>
+	<li>Version XPM-Paket: 2.09</li>
+	<li>Version XPM-Kernel: XPM 1.72 18.08.2009</li>
+	<li>Version Steuerdatei: EED102.02/12010/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/12010/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/12010/74/2009-11-06+01:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.08 4/2009</h4>
+<ul>
+	<li>Version XPM-Paket: 2.08</li>
+	<li>Version XPM-Kernel: XPM 1.72 22.06.2009</li>
+	<li>Version Steuerdatei: EED102.02/42009/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/42009/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/42009/74/2009-08-06+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.07 3/2009</h4>
+<ul>
+	<li>Im Feld 'Modul-Teilnahme Chronische Herzinsuffizienz' sind nun die Werte 'Ja' und 'Nein' erlaubt.</li>
+	<li>Version XPM-Paket: 2.07</li>
+	<li>Version XPM-Kernel: XPM 1.71 08.05.2009</li>
+	<li>Version Steuerdatei: EED102.02/32009/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/32009/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/32009/74/2009-05-04+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.06 2/2009</h4>
+<ul>
+	<li>Datumsbezeichnungen abgeglichen: Element &lt;origination_dttm&gt; wird als Datum und Element &lt;service_tmr&gt; als Datum der Erstellung bezeichnet.</li>
+	<li>Version XPM-Paket: 2.06</li>
+	<li>Version XPM-Kernel: XPM 1.70 21.01.2009</li>
+	<li>Version Steuerdatei: EED102.02/22009/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/22009/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/22009/74/2009-02-05+01:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.05 1/2009</h4>
+<ul>
+	<li>Liegt das KVK-Einlesedatum in Bezug zum Feld 'Datum der Erstellung' in der Zukunft, so wird nur eine Warnung ausgegeben</li>
+	<li>Der Parameter 'Empfohlene Schulung(en) wahrgenommen' ist nur noch bei der Verlaufsdokumentation zul&auml;ssig und Pflicht.</li>
+	<li>Version XPM-Paket: 2.05</li>
+	<li>Version XPM-Kernel: XPM 1.69 27.10.2008</li>
+	<li>Version Steuerdatei: EED102.02/12009/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/12009/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/12009/74/2008-10-17+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.04 4/2008</h4>
+<ul>
+	<li>Neue PDF-Viewer Version 1.14</li>
+	<li>Version XPM-Paket: 2.04</li>
+	<li>Version XPM-Kernel: XPM 1.66 17.06.2008</li>
+	<li>Version Steuerdatei: EED102.02/42008/74/01</li>
+	<li>Version Steuerdatei: EVD102.02/42008/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/42008/74/2008-07-15+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.03 3/2008</h4>
+<ul>
+	<li>Konstistenzprüfung der LANR/BSNR bzw. Krankenhaus-IK gegen Patienten-ID und Dokumenten-ID geändert.</li>
+	<li>Version XPM-Paket: 2.03</li>
+	<li>Version XPM-Kernel: XPM 1.66 15.05.2008</li>
+	<li>Version Steuerdatei: DM102.02/32008/74/02</li>
+	<li>Version KT-Stammdatei: KTS1.02/32008/74/2008-04-18+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.02 3/2008</h4>
+<ul>
+	<li>Neue XML-Schema Version 2.02.</li>
+	<li>Neuer Abschnitt 'Administrative Daten'.</li>
+	<li>Umsetzung Vertragsarztnummer => LANR/BSNR.</li>
+	<li>Version XPM-Paket: 2.02</li>
+	<li>Version XPM-Kernel: XPM 1.65 15.04.2008</li>
+	<li>Version Steuerdatei: DM102.02/32008/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/32008/74/2008-04-18+02:00</li>
+	<li>Version XML-Schema: 2.02</li>
+</ul>
+
+<h4>Version 2.01 2/2008</h4>
+<ul>
+	<li>Neue XML-Schema Version 2.01 mit neuem KV Bereich 52.</li>
+	<li>Version XPM-Paket: 2.01</li>
+	<li>Version XPM-Kernel: XPM 1.64 20.12.2007</li>
+	<li>Version Steuerdatei: DM102.01/22008/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.01/22008/74/2008-01-18+01:00</li>
+	<li>Version XML-Schema: 2.01</li>
+</ul>
+
+<h4>Version 2.00 1/2008</h4>
+<ul>
+	<li>Neue Schnittstelle Version 2.00.</li>
+	<li>Version XPM-Paket: 2.00</li>
+	<li>Version XPM-Kernel: XPM 1.64 20.12.2007</li>
+	<li>Version Steuerdatei: DM102.00/12008/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.01/12008/74/2007-10-19+02:00</li>
+	<li>Version XML-Schema: 2.00</li>
+</ul>
+
+
+<h3><a name="knownbugs">Bekannte Fehler</a></h3>
+<ul>
+	<li>Keine</li>
+</ul>
+
+<h3><a name="installation">Hinweis zur Installation</a></h3>
+<ul>
+	<li>Zip-Datei XPM-Paket_Diabetes1_V?.??.zip in Zielordner z.B. "C:\Programme\KBV\DM1" entpacken.</li>
+	<li>Bitte lesen Sie die <a href="Installation.txt">Hinweise zur Installation</a>.</li>
+	<li>Bitte lesen Sie die <a href="Readme.txt">Hinweise zur angelegten Ordnerstruktur</a>.</li>
+</ul>
+
+<h3><a name="dokumentation">Dokumentation</a></h3>
+<ul>
+	<li>N&auml;here Hinweise und Informationen siehe <a href="XPM_Diabetes1.Voll/Doku/KBV_ITA_AHEX_Handbuch_Pruefmodul.pdf">XPM Anwenderhandbuch</a>. (falls Adobe Reader nicht vorhanden, Download und Installation unter <a href="http://www.adobe.de/products/acrobat/readermain.html">www.adobe.de/products/acrobat/readermain.html</a>).</li>
+</ul>
+
+<h3><a name="hinweise_allgemein">Allgemeine Hinweise</a></h3>
+<ul>
+	<li>Bei dem Ausgabeformat TEXT wird empfohlen die Seitenbreite auf 120 Zeichen einzustellen, z.B: &lt;FehlerListe Format="TEXT" Seitenbreite="120"&gt;Listen/FehlerListe.txt&lt;/FehlerListe&gt;.</li>
+</ul>
+
+<h3><a name="hinweise_recht">Rechtliche Hinweise</a></h3>
+<ul>
+	<li>keine</li>
+</ul>
+
+<h3><a name="license">Lizenzvertragliche Regelungen</a></h3>
+<ul>
+	<li>Bitte beachten Sie die Lizenzvereinbarungen im Ordner <a href="XPM_Diabetes1.Voll/Bin/license">license</a>.</li>
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<Claim xmlns="http://hl7.org/fhir">
+	<id value="3195"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-24T16:50:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Abrechnung_privat|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Abrechnung_Mahnung">
+		<extension url="mahndatum">
+			<valueDateTime value="2018-05-15"/>
+		</extension>
+		<extension url="mahnstufe">
+			<valueCodeableConcept>
+				<coding>
+					<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Mahnung"/>
+					<code value="1"/>
+				</coding>
+			</valueCodeableConcept>
+		</extension>
+		<extension url="mahngebuehr">
+			<valueMoney>
+				<value value="0.00"/>
+				<currency value="EUR"/>
+			</valueMoney>
+		</extension>
+		<extension url="zahldatum">
+			<valueDateTime value="2018-05-25"/>
+		</extension>
+		<extension url="zahlbetrag">
+			<valueMoney>
+				<value value="0.45"/>
+				<currency value="EUR"/>
+			</valueMoney>
+		</extension>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Abrechnung_Mahnung">
+		<extension url="mahndatum">
+			<valueDateTime value="2018-07-29"/>
+		</extension>
+		<extension url="mahnstufe">
+			<valueCodeableConcept>
+				<coding>
+					<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Mahnung"/>
+					<code value="2"/>
+				</coding>
+			</valueCodeableConcept>
+		</extension>
+		<extension url="mahngebuehr">
+			<valueMoney>
+				<value value="2.00"/>
+				<currency value="EUR"/>
+			</valueMoney>
+		</extension>
+		<extension url="zahldatum">
+			<valueDateTime value="2018-08-05"/>
+		</extension>
+		<extension url="zahlbetrag">
+			<valueMoney>
+				<value value="4.45"/>
+				<currency value="EUR"/>
+			</valueMoney>
+		</extension>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Privatabrechnung_Rechnungsempfaenger">
+		<valueReference>
+			<reference value="RelatedPerson/3183"/>
+		</valueReference>
+	</extension>
+	<identifier>
+		<type>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Identifiertyp"/>
+				<code value="Rechnungsnummer"/>
+			</coding>
+		</type>
+		<value value="99886654"/>
+	</identifier>
+	<status value="active"/>
+	<type>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/claim-type"/>
+			<code value="professional"/>
+		</coding>
+	</type>
+	<subType>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Art"/>
+			<code value="Privat"/>
+		</coding>
+	</subType>
+	<use value="claim"/>
+	<patient>
+		<reference value="Patient/3181"/>
+	</patient>
+	<created value="2018-03-31"/>
+	<insurer>
+		<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Abrechnung_Kundennummer_Abrechungsdienst">
+			<valueString value="1234455"/>
+		</extension>
+		<identifier>
+			<system value="http://fhir.de/NamingSystem/arge-ik/iknr"/>
+			<value value="123"/>
+		</identifier>
+	</insurer>
+	<provider>
+		<reference value="Organization/3155"/>
+	</provider>	
+	<priority>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/processpriority"/>
+			<code value="normal"/> 
+		</coding>
+	</priority>	
+	<related>
+		<claim>
+			<reference value="Claim/3197"/>
+		</claim>
+	</related>
+	<payee>
+		<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Privatabrechnung_Kontoverbindung">
+			<extension url="iban">
+				<valueString value="DE12500105170648489890"/>
+			</extension>
+			<extension url="bic">
+				<valueString value="ABCDEFGH"/>
+			</extension>
+		</extension>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/payeetype"/>
+				<code value="provider"/>
+			</coding>
+		</type>
+	</payee>
+	<referral>
+		<reference value="ReferralRequest/3218"/>
+	</referral>
+	<insurance>
+		<sequence value="1"/>
+		<focal value="true"/>
+		<coverage>
+			<display value="Selbstzahler"/>
+		</coverage>
+	</insurance>
+	<item>
+		<sequence value="1"/>
+		<productOrService>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Item_Kategorie"/>
+				<code value="Entschaedigung"/>
+			</coding>
+		</productOrService>
+		<modifier>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Entschaedigungsart"/>
+				<code value="Reisekosten"/>
+			</coding>
+		</modifier>
+		<quantity>
+			<value value="18"/>
+			<unit value="1"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="1"/>
+		</quantity>
+		<unitPrice>
+			<value value="0.30"/>
+			<currency value="EUR"/>
+		</unitPrice>
+		<encounter>
+			<reference value="Encounter/3188"/>
+		</encounter>
+	</item>
+	<item>
+		<sequence value="2"/>
+		<productOrService>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Item_Kategorie"/>
+				<code value="Auslagen"/>
+			</coding>
+		</productOrService>
+		<modifier>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Auslagenart"/>
+				<code value="Porto_Versandkosten"/>
+			</coding>
+		</modifier>
+		<quantity>
+			<value value="1"/>
+			<unit value="1"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="1"/>
+		</quantity>
+		<unitPrice>
+			<value value="0.70"/>
+			<currency value="EUR"/>
+		</unitPrice>
+		<encounter>
+			<reference value="Encounter/3188"/>
+		</encounter>
+	</item>
+	<item>
+		<sequence value="3"/>
+		<productOrService>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Item_Kategorie"/>
+				<code value="Besondere_Kosten"/>
+			</coding>
+			<text value="Desinfektionsmittel"/>
+		</productOrService>
+		<quantity>
+			<value value="1"/>
+			<unit value="1"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="1"/>
+		</quantity>
+		<unitPrice>
+			<value value="1.55"/>
+			<currency value="EUR"/>
+		</unitPrice>
+		<encounter>
+			<reference value="Encounter/3188"/>
+		</encounter>
+	</item>
+</Claim>

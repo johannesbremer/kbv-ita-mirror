@@ -1,0 +1,26 @@
+<ActivityDefinition xmlns="http://hl7.org/fhir">
+	<id value="3166"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-23T11:16:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_Textvorlage|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Behandlungsbaustein_Contributor">
+		<valueReference>
+			<reference value="PractitionerRole/1010"/>
+		</valueReference>
+	</extension>
+	<title value="TBS Oberschenkelhalsfraktur"/>
+	<status value="active"/>
+	<purpose value="Textvorlage"/>
+	<relatedArtifact>
+		<type value="documentation"/>
+		<display value="Pat. stellte sich mit Schmerzen im _____ Oberschenkel vor. Bildgebende Sicherung durch Röntgen im KH _____. Bein entlastet und Paracetamol verabreicht."/>
+	</relatedArtifact>
+</ActivityDefinition>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/ValueSet/KBV_VS_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Diverse_2020"/>
+<version value="1.2.0" />
+<name value="KBV_VS_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Diverse_2020"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Krebsfrueherkennung Frauen Beobachtungen zytologischer Befund"/>
+<compose> 
+	<include> 
+		<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund"/> 
+		<concept>
+		<code value="Doederleinflora"/>
+		<display value="Doederleinflora"/>
+		</concept>		
+		<concept>
+		<code value="Mischflora"/>
+		<display value="Mischflora"/>
+		</concept>
+		<concept>
+		<code value="Candida"/>
+		<display value="Candida"/>
+		</concept>
+		<concept>
+		<code value="Trichomonaden"/>
+		<display value="Trichomonaden"/>
+		</concept>
+		<concept>
+		<code value="Kokkenflora"/>
+		<display value="Kokkenflora"/>
+		</concept>
+		<concept>
+		<code value="Gardnerella"/>
+		<display value="Gardnerella"/>
+		</concept>
+    </include> 
+  </compose> 
+</ValueSet>		

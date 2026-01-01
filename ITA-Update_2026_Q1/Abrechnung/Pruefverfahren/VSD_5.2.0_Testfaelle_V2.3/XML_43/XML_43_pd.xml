@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<vsd:UC_PersoenlicheVersichertendatenXML xmlns:vsd="http://ws.gematik.de/fa/vsdm/vsd/v5.2" CDM_VERSION="5.2.0">
+	<vsd:Versicherter>
+		<vsd:Versicherten_ID>G123456757</vsd:Versicherten_ID>
+		<vsd:Person>
+			<vsd:Geburtsdatum>20051103</vsd:Geburtsdatum>
+			<vsd:Vorname>Leonie</vsd:Vorname>
+			<vsd:Nachname>Gonzales</vsd:Nachname>
+			<vsd:Geschlecht>W</vsd:Geschlecht>
+			<vsd:StrassenAdresse>
+				<vsd:Postleitzahl>81828</vsd:Postleitzahl>
+				<vsd:Ort>München</vsd:Ort>
+				<vsd:Land>
+					<vsd:Wohnsitzlaendercode>D</vsd:Wohnsitzlaendercode>
+				</vsd:Land>
+				<vsd:Strasse>An der Brauhausallee</vsd:Strasse>
+				<vsd:Hausnummer>16</vsd:Hausnummer>
+			</vsd:StrassenAdresse>
+		</vsd:Person>
+	</vsd:Versicherter>
+</vsd:UC_PersoenlicheVersichertendatenXML>
+
+

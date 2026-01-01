@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- Beispiel für eine elektronische Sammelerklärung der KV Nordrhein, Ausprägung: ermächtigter Arzt -->
+<ehd:ehd ehd_version="1.40" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:ehd/ese/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:ehd="urn:ehd/001" xsi:schemaLocation="urn:ehd/001 ..\Schema\ese_root.xsd">
+	<ehd:header>
+		<ehd:id EX="1" RT="123456789"/>  <!-- EX=lfd.Nr.   RT=LANR -->
+		<ehd:version_nbr V="1"/>
+		<ehd:document_type_cd DN="Elektronische Sammelerklärung" S="1.2.276.0.76.5.100" V="ese"/>
+		<ehd:service_tmr V="2015-07-01..2015-09-30"/> <!-- III. Quartal 2015 -->
+		<ehd:origination_dttm V="2015-09-30"/> <!-- Erstellungsdatum dieser Datei -->
+		<ehd:intended_recipient>
+			<ehd:organization>
+				<ehd:organization.nm V="Ermächtigt"/>  <!-- Ausprägung: ermächtigte Ärzte -->
+			</ehd:organization>
+		</ehd:intended_recipient>
+		<ehd:originator>
+			<ehd:organization>
+				<ehd:id EX="38" RT="1.2.276.0.76.5.233"/>
+				<ehd:organization.nm V="KV Nordrhein"/> <!-- Sammelerklärung der KV Nordrhein -->
+			</ehd:organization>
+		</ehd:originator>
+		<ehd:provider>
+			<ehd:person>
+				<ehd:id EX="123456789" RT="1.2.276.0.76.4.16"/>
+				<ehd:person_name>
+					<ehd:nm>
+						<ehd:PFX V="Dr. med."/>
+						<ehd:GIV V="Hans"/>
+						<ehd:FAM V="Schloedermann"/>
+					</ehd:nm>
+				</ehd:person_name>
+				<ehd:local_header>
+					<ehd:fachgruppenbezeichnung V="Facharzt für Orthopädie und Unfallchirurgie"/>
+				</ehd:local_header>
+			</ehd:person>
+			<ehd:organization>
+				<ehd:id EX="274432100" RT="1.2.276.0.76.4.17"/>
+				<ehd:organization.nm V="Klinik für Orthopädie und Orthopädische Chirurgie mit Sportmedizin Städtisches Krankenhaus"/>
+				<ehd:addr>
+					<ehd:STR V="Hahnenweg"/>
+					<ehd:HNR V="4"/>
+					<ehd:ZIP V="51371"/>
+					<ehd:CTY V="Leverkusen"/>
+				</ehd:addr>
+			</ehd:organization>
+		</ehd:provider>
+		<ehd:interface>
+			<ehd:id EX="ese" RT="1.2.276.0.76.5.109"/>
+			<ehd:interface.nm V="Elektronische Sammelerklärung (ese)"/>
+			<ehd:version V="1.21"/>
+		</ehd:interface>
+	</ehd:header>
+	<ehd:body>
+		<ese_data>
+			<fall_statistik>
+				<anzahl_gesamt V="1302"/>
+			</fall_statistik>
+		</ese_data>
+	</ehd:body>
+</ehd:ehd>

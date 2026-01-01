@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Organisation" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="servd" />
+    <uri value="http://www.omg.org/spec/ServD/1.0/" />
+    <name value="ServD" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Organization" />
+  <baseDefinition value="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization|1.1.0" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Organization.id">
+      <path value="Organization.id" />
+      <min value="1" />
+    </element>
+    <element id="Organization.meta">
+      <path value="Organization.meta" />
+      <min value="1" />
+    </element>
+    <element id="Organization.meta.versionId">
+      <path value="Organization.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Organization.meta.lastUpdated">
+      <path value="Organization.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Organization.meta.profile">
+      <path value="Organization.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation|1.2.0" />
+    </element>
+    <element id="Organization.text">
+      <path value="Organization.text" />
+      <min value="1" />
+    </element>  
+    <element id="Organization.extension">
+      <path value="Organization.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Organization.extension:ergaenzende_Angaben">
+      <path value="Organization.extension" />
+      <sliceName value="ergaenzende_Angaben" />
+      <max value="0" />
+    </element>
+    <element id="Organization.extension:KBV_EX_AW_Adressbuchzuordnung">
+      <path value="Organization.extension" />
+      <sliceName value="KBV_EX_AW_Adressbuchzuordnung" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Adressbuchzuordnung" />
+      </type>
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen">
+      <path value="Organization.identifier" />
+      <sliceName value="Institutionskennzeichen" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type">
+      <path value="Organization.identifier.type" />
+      <min value="1" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type.coding">
+      <path value="Organization.identifier.type.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Organization.identifier:Betriebsstaettennummer">
+      <path value="Organization.identifier" />
+      <sliceName value="Betriebsstaettennummer" />
+    </element>
+    <element id="Organization.identifier:Betriebsstaettennummer.type">
+      <path value="Organization.identifier.type" />
+      <min value="1" />
+    </element>
+    <element id="Organization.identifier:VKNR">
+      <path value="Organization.identifier" />
+      <sliceName value="VKNR" />
+    </element>
+    <element id="Organization.identifier:VKNR.type">
+      <path value="Organization.identifier.type" />
+      <min value="1" />
+    </element>
+    <element id="Organization.identifier:KZV-Abrechnungsnummer">
+      <path value="Organization.identifier" />
+      <sliceName value="KZV-Abrechnungsnummer" />
+    </element>
+    <element id="Organization.identifier:KZV-Abrechnungsnummer.type">
+      <path value="Organization.identifier.type" />
+      <min value="1" />
+    </element>
+    <element id="Organization.active">
+      <path value="Organization.active" />
+      <max value="0" />
+    </element>
+    <element id="Organization.type">
+      <path value="Organization.type" />
+      <max value="0" />
+    </element>
+    <element id="Organization.name">
+      <path value="Organization.name" />
+      <short value="Name der Betriebsstätte" />
+      <definition value="Menschenlesbarer Name der Betriebsstätte, z.B.: &quot;Gemeinschaftspraxis Dr. Soundso&quot;" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.alias">
+      <path value="Organization.alias" />
+      <max value="0" />
+    </element>
+    <element id="Organization.telecom">
+      <path value="Organization.telecom" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address">
+      <path value="Organization.address" />
+      <type>
+        <code value="Address" />
+        <profile value="http://fhir.de/StructureDefinition/address-de-basis" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.partOf">
+      <path value="Organization.partOf" />
+      <max value="0" />
+    </element>
+    <element id="Organization.contact">
+      <path value="Organization.contact" />
+      <max value="0" />
+    </element>
+    <element id="Organization.endpoint">
+      <path value="Organization.endpoint" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

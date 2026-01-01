@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2017 rel. 3 sp1 (x64) (http://www.altova.com) von Kassenärztliche Bundesvereinigung (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn::sciphox-org/sciphox" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="AdministrativeDaten">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Einschreibung wegen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Anamnese">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Körpergröße"/>
+			<xs:enumeration value="Körpergewicht"/>
+			<xs:enumeration value="Blutdruck systolisch"/>
+			<xs:enumeration value="Blutdruck diastolisch"/>
+			<xs:enumeration value="Raucher"/>
+			<xs:enumeration value="Begleiterkrankungen"/>
+			<xs:enumeration value="Serum-Elektrolyte und eGFR in den letzten sechs Monaten"/>
+			<xs:enumeration value="Symptomatik"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="relevanteEreignisse">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ungeplante stationäre Behandlung, wegen Herzinsuffizienz, seit der letzten Dokumentation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Medikamente">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACE-Hemmer"/>
+			<xs:enumeration value="Evidenzbasierte Zieldosis ACE-Hemmer oder ARB"/>
+			<xs:enumeration value="Betablocker"/>
+			<xs:enumeration value="Evidenzbasierte Zieldosis Betablocker"/>
+			<xs:enumeration value="Mineralokortikoid-Rezeptor-Antagonist (MRA)"/>
+			<xs:enumeration value="Evidenzbasierte Zieldosis MRA"/>
+			<xs:enumeration value="SGLT2-Inhibitor"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Schulung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Herzinsuffizienz-spezifische Schulung empfohlen (bei aktueller Dokumentation)"/>
+			<xs:enumeration value="Empfohlene Herzinsuffizienz-spezifische Schulung wahrgenommen"/>
+			<xs:enumeration value="Bereits vor Einschreibung in das DMP an einer Herzinsuffizienz-spezifischen Schulung teilgenommen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Behandlungsplanung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Vom Patienten gewünschte Informationsangebote der Krankenkasse"/>
+			<xs:enumeration value="Dokumentationsintervall"/>
+			<xs:enumeration value="Regelmäßiges körperliches Training"/>
+			<xs:enumeration value="Führen eines Gewichtsprotokolls"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

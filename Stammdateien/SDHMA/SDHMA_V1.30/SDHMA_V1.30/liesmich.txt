@@ -1,0 +1,59 @@
+SDHMA Schnittstellen-Paket (Version 1.30, Stand Dezember 2019)
+************************************************************************
+
+Dieses Paket beschreibt die Datenstruktur zur Stammdatei SDHMA.
+
+Alle Komponenten des Pakets sind separat versioniert. Es können keine 
+Schlussfolgerungen aus den Versionsnummern des Pakets und der Komponenten 
+untereinander gezogen werden. Die Versionsnummer der Schnittstelle muss auch 
+nicht identisch mit der Versionsnummer der Schnittstellenbeschreibung sein.
+
+
+1. Inhaltsverzeichnis
+2. Änderungshistorie
+   - Inhaltliche Änderungen
+   - Schnittstellenänderungen
+
+1. Inhaltsverzeichnis
+###########################################################################
+
+./
+liesmich.txt                                                    (diese Datei)
+
+./Dokumentation:
+KBV_ITA_VGEX_Schnittstelle_SDHMA.pdf (Version 1.32)             (Schnittstellenbeschreibung SDHMA)
+
+./Schema:
+datentypen_V1.40.xsd                                            (Definition der Elemente für Datentypen EHD)
+ehd_header_V1.40.xsd                                            (Definition der Elemente für Kopfdaten EHD)
+ehd_root_V1.40.xsd                                              (referenziertes Schema EHD - eHealthData, Version 1.40)
+sdhma_body.xsd                                                  (Definition der Elemente für die SDHMA)
+sdhma_header.xsd                                                (Definition der Elemente für Kopfdaten SDHMA)
+sdhma_root.xsd                                                  (Root-Schema der SDHMA)
+keytabs_V1.40.xsd                                               (Platzhalter für Definition der Elemente für Schlüsseltabellen)
+
+./XML:
+sdhma_1.30_74_tf+2021q1.xml                                     (rein technische Beispieldatei ohne fachlichen Bezug)
+
+2. Änderungshistorie
+###########################################################################
+
+Änderung in der Version 1.30 im Vergleich zur Vorversion 1.20
+	-Erweiterung der Stammdatei um den zulässigen Zeitraum nach einem Akutereignis <zeitraum_akutereignis> 
+	-Erweiterung der maximal möglichen Anzahl von Einträgen in der Kapitelliste auf 5
+
+Änderung in der Version 1.20 im Vergleich zur Vorversion 1.11
+	-Erweiterung der Stammdatei um regionale Besonderheiten <geltungsbereich_kv> 
+	-Erweiterung der Beispieldatei (Maßnahmen der Ernährungstherapie, <geltungsbereich_kv>)
+	-Schnittstellenbeschreibung (Maßnahmen der Ernährungstherapie)
+
+Änderung in der Version 1.11 im Vergleich zur Vorversion 1.10
+	-Ausführlichere Beispieldatei hinzugefügt
+
+
+Änderung in der Version 1.10 im Vergleich zur Vorversion 1.01
+	-Schemaanpassung des Elements <heilmittel_liste> die max. Anzahl der erlaubten <heilmittel>Elemente wurde von 2 auf unbeschränkt geändert
+
+
+Änderung in der Version 1.01 im Vergleich zur Vorversion 1.00 
+	- Aktualisierung der Beispiel XML-Datei

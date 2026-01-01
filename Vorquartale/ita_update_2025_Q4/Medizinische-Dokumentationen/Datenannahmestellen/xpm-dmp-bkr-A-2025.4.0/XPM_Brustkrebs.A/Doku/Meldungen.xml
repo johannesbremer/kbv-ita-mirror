@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Diese Datei beschreibt die Meldungen eines Prueflaufs. -->
+<meldungen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Common/Schema/meldungen.xsd">
+
+	<meldung>
+		<nummer>DMP-002</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s' ist ein Pflichtfeld.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-004</nummer>
+		<typ>Fehler</typ>
+        <text>Inkonsistente Angaben bzgl. Id's im Bereich '/clinical_document_header/'. Mindestens zwei unterschiedliche Angaben '%s' und '%s' wurden hierzu gemacht.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-005</nummer>
+		<typ>Fehler</typ>
+		<text>Das %s liegt in der Zukunft.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-006</nummer>
+		<typ>Fehler</typ>
+		<text>Der Wert für '%s' muss 9stellig sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-007</nummer>
+		<typ>Fehler</typ>
+		<text>Typ '%s' zu Parameter '%s' nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-008</nummer>
+		<typ>Fehler</typ>
+		<text>Der Kostenträgerabrechnungsbereich (KTAB) '%s' passt nicht zu dem angegebenen IK '%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-011</nummer>
+		<typ>Warnung</typ>
+		<text>Das IK '%s' ist für dieses Abrechnungsquartal ungültig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-012</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s'. Hier wird statt '%s' eine Fliesskommazahl mit Punkt als Dezimaltrenner erwartet.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-013</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s'. Hier wird statt '%s' eine Integer-Zahl erwartet.</text>
+	</meldung>
+    <meldung>
+        <nummer>DMP-020</nummer>
+        <typ>Fehler</typ>
+        <text>Der Name der XML-Schemadatei '%s' im Dokument entspricht nicht dem Namen der XML-Schemadatei aus der Konfigurationsdatei '%s'.</text>
+    </meldung>
+	<meldung>
+		<nummer>DMP-021</nummer>
+		<typ>Fehler</typ>
+		<text>Die 'Körpergrösse' muss zwischen 0 und 2,50 liegen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-023</nummer>
+		<typ>Fehler</typ>
+		<text>Das 'Körpergewicht' muss zwischen 0 und 300 kg liegen.</text>
+	</meldung>
+
+    <meldung>
+        <nummer>DMP-039</nummer>
+        <typ>Warnung</typ>
+        <text>IK '%s' in Stammdatei nicht gefunden.</text>
+    </meldung>
+
+	<meldung>
+		<nummer>DMP-043</nummer>
+		<typ>Fehler</typ>
+		<text>'%s' ist keine gültige Einheit für Feld '%s'.</text>
+	</meldung>
+
+	<meldung>
+		<nummer>DMP-059</nummer>
+		<typ>Fehler</typ>
+		<text>Der erste Bestandteil des Dateinamens (bis zum Unterstrich) muss 9-stellig sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-060</nummer>
+		<typ>Fehler</typ>
+		<text>LANR und BSNR müssen gemeinsam genannt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-061</nummer>
+		<typ>Fehler</typ>
+		<text>Weder LANR/BSNR noch Krankenhaus-IK sind genannt.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-062</nummer>
+		<typ>Fehler</typ>
+		<text>'Modul-Teilnahme Chronische Herzinsuffizienz' darf momentan nur den Wert 'Nein' erhalten.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-063</nummer>
+		<typ>Fehler</typ>
+		<text>Die Kombination '%s' und '%s' bei 'Einschreibung wegen' ist nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-064</nummer>
+		<typ>Fehler</typ>
+		<text>'Modul-Teilnahme Chronische Herzinsuffizienz' hier nicht zulässig, da keine Angabe zu KHK in 'Einschreibung wegen'</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-065</nummer>
+		<typ>Fehler</typ>
+		<text>Die Datei '%s' entspricht nicht der Dateinamenskonvention gemäß '%s' mit AAAAAAAAA: 9-stellige Angabe, BBBBBBB: DMP-Fallnummer und JJJJMMTT: Dokumentationsdatum (origination_dttm). Erwartet wird folgender Dateiname: '%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-068</nummer>
+		<typ>Fehler</typ>
+		<text>BSNR oder Krankenhaus-IK muss identisch mit patient/person/id/@rt und id/@rt sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-077</nummer>
+		<typ>Warnung</typ>
+		<text>Das Versicherungsschutzende darf nicht vor dem Einlesedatum liegen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-078</nummer>
+		<typ>Fehler</typ>
+		<text>Die Krankenversichertenkarte ist seit dem 01.01.2015 ungültig und darf zur Abrechnung nicht verwendet werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-082</nummer>
+		<typ>Fehler</typ>
+		<text>Die Wertangabe im Feld '%s' muss zweistellig sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-100</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld '%s' ist nicht zulässig.</text>
+	</meldung>
+	<meldung>
+    	<nummer>DMP-102</nummer>
+		<typ>Fehler</typ>
+		<text>Die Wertangabe zum Feld '%s' muss dreistellig sein und darf nur Ziffern enthalten.</text>
+	</meldung>
+    <meldung>
+    	<nummer>DMP-103</nummer>
+		<typ>Fehler</typ>
+		<text>Die Wertangabe zum Feld '%s' muss das Format [0-9].[0-9][0-9] aufweisen.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-001</nummer>
+		<typ>Fehler</typ>
+		<text>Es darf zum Feld '%s' nur eine Option angekreuzt werden.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-003</nummer>
+		<typ>Fehler</typ>
+		<text>Eine Angabe zu '%s' macht auch eine Angabe zu '%s' erforderlich.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-004</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s' ist ein Pflichtfeld.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-005</nummer>
+		<typ>Warnung</typ>
+		<text>Es liegt eine "Postoperative Erstdokumentation nach präoperativer Einschreibung (pnp)" vor.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-006</nummer>
+		<typ>Fehler</typ>
+		<text>Der Behandlungsstatus muss 'OP nicht geplant' oder 'Postoperativ' sein.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-010</nummer>
+		<typ>Fehler</typ>
+		<text>Das Datumsfeld '%s' muss im Format 'TT.MM.JJJJ' vorliegen und darf keine '00'-Angaben im Tag oder Monat enthalten.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-011</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn im Feld 'Lokalisation von Fernmetastasen' 'Knochen' angegeben wurde, muss im Feld 'Therapie bei Knochenmetastasen' eine Angabe zu 'Bisphophonate' und 'Denosumab' erfolgen.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-012</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn im Feld 'Lokalisation von Fernmetastasen' der Wert 'Knochen' nicht angegeben wurde, darf im Feld 'Therapie bei Knochenmetastasen' keine Angabe zu 'Bisphophonate' und/oder 'Denosumab' erfolgen.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-013</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn bei '%s' 'Ja' angekreuzt wurde, darf weder 'Nein' noch 'Nicht erforderlich' angekreuzt werden..</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-014</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn bei '%s' 'Ja' angekreuzt wurde, darf weder 'Nein' noch 'Kontraindikation' angekreuzt werden..</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-015</nummer>
+		<typ>Fehler</typ>
+		<text>Datumsfeld '%s' darf nicht jünger als als Datum der Erstellung (service_tmr) sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-016</nummer>
+		<typ>Fehler</typ>
+		<text>Datumsfeld '%s' darf nicht jünger als '%s' sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-017</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn Wert '%s' zu Feld '%s' angekreuzt wurde, darf keine weitere Ausprägung angekreuzt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-020</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s': Es darf nur 'ja' oder 'nein' angekreuzt werden, nicht beides.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-021</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn bei "%s" 'keine' angekreuzt wurde, dann dürfen keine weiteren Optionen ausgewählt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-022</nummer>
+		<typ>Fehler</typ>
+		<text>Im Feld '%s' darf nicht gleichzeitig  '%s' und '%s' angekreuzt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-023</nummer>
+		<typ>Fehler</typ>
+		<text>'Teilremission' und 'Vollremission' dürfen nicht gleichzeitig angekreuzt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-024</nummer>
+		<typ>Fehler</typ>
+		<text>Zum aktuellen Behandlungsstatus muss eine Option angekreuzt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-025</nummer>
+		<typ>Fehler</typ>
+		<text>Datum 'Manifestation von Fernmetastasen' muss immer in Verbindung mit 'Lunge','Leber','Knochen' oder 'Andere' angekreuzt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-026</nummer>
+		<typ>Fehler</typ>
+		<text>Datumsfeld '%s' und Option 'Nein' können nicht gleichzeitig angegeben werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-027</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s': Die Option 'Nein' schliesst weitere Angaben aus.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-028</nummer>
+		<typ>Fehler</typ>
+		<text>Datum 'Manifestation lokoregionäres Rezidiv' muss immer in Verbindung mit 'Intramammär','Thoraxwand' oder 'Axilla' angekreuzt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-029</nummer>
+		<typ>Fehler</typ>
+		<text>Nicht zulässiger Wert '%s' zu Parameter '%s'</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-030</nummer>
+		<typ>Fehler</typ>
+		<text>Zu 'Welche Untersuchungen wurden zur Diagnostik durchgeführt?' darf nicht nur 'Andere' angekreuzt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-031</nummer>
+		<typ>Fehler</typ>
+		<text>Zu 'Aktueller Behandlungsstatus bezogen auf das operative Vorgehen' darf nur eine Option angekreuzt werden</text>
+	</meldung>
+    <meldung>
+        <nummer>BKA-032</nummer>
+        <typ>Fehler</typ>
+        <text>'Art der erfolgten operativen Therapie': 'Keine OP' darf nicht mit anderen Optionen kombiniert werden.</text>
+    </meldung>
+	<meldung>
+		<nummer>BKA-033</nummer>
+		<typ>Fehler</typ>
+		<text>Die Differenz zwischen einschreiberelevantem Datumsfeld und dem Datum der Erstellung (service_tmr) darf max. 10 Jahre betragen.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-034</nummer>
+		<typ>Fehler</typ>
+		<text>Neben 'Fernmetastasen erstmals gesichert' muss in der Einschreibung noch ein weiteres Datumsfeld ausgefüllt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-038</nummer>
+		<typ>Fehler</typ>
+		<text>Die Datei '%s' entspricht nicht der Dateinamenskonvention gemäß '%s' mit AAAAAAAAA: KrankenhausIK 9-stellig, BBBBBBB: DMP-Fallnummer und JJJJMMTT: Dokumentationsdatum (origination_dttm). Erwartet wird folgender Dateiname: '%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-039</nummer>
+		<typ>Warnung</typ>
+		<text>Gepackte Dokumentationen müssen im Ordner '%s' abgelegt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-040</nummer>
+		<typ>Fehler</typ>
+		<text>Ungültiges Element '%s' in Abschnitt '%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-042</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn zu 'Art der erfolgten operativen Therapie' 'Keine OP' angegeben wurde, darf kein weiteres Feld angekreuzt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-043</nummer>
+		<typ>Warnung</typ>
+		<text>Es handelt sich bei dieser Dokumentation um eine postoperative Erstdokumentation nach vorheriger präoperativer Einschreibung.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-044</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s': Ungültiges Datumsformat</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-045</nummer>
+		<typ>Warnung</typ>
+		<text>Das Kopfdatendatum (origination_dttm) sollte nicht jünger als das Datum der Erstellung (service_tmr) sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-046</nummer>
+		<typ>Warnung</typ>
+		<text>Das %s liegt in der Zukunft.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-047</nummer>
+		<typ>Warnung</typ>
+		<text>Das Einlesedatum liegt in Bezug zu der Angabe im Feld 'Datum der Erstellung' (service_tmr) in der Zukunft.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-048</nummer>
+		<typ>Fehler</typ>
+		<text>Datumsangabe zu Feld '%s' nicht zulässig</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-049</nummer>
+		<typ>Fehler</typ>
+		<text>Die Krankenhaus-IK muss 9stellig sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-050</nummer>
+		<typ>Fehler</typ>
+		<text>Typ '%s' zu Parameter '%s' nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-051</nummer>
+		<typ>Fehler</typ>
+		<text>Ergebnistext in Abschnitt '%s' zu Parameter '%s' nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-052</nummer>
+		<typ>Fehler</typ>
+		<text>Feld 'Anzahl der entfernten Lymphknoten': Wenn 'Keine' angekreuzt ist, sind weitere Optionen ausgeschlossen.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-053</nummer>
+		<typ>Fehler</typ>
+		<text>Feld 'Anzahl der entfernten Lymphknoten': Die Optionen '&lt;10' und '&gt;=10' schliessen sich aus.</text>
+	</meldung>
+    <meldung>
+        <nummer>BKA-054</nummer>
+        <typ>Fehler</typ>
+        <text>Zu dem Parameter '%s' wurde im Datensatz kein Wert angegeben.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-055</nummer>
+        <typ>Fehler</typ>
+        <text>Feld 'Anzahl der befallenen Lymphknoten': '%s' schliesst weitere Optionen aus.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-056</nummer>
+        <typ>Fehler</typ>
+        <text>Nur eine der Optionen 'Präoperativ', 'Exzision' und 'Mastektomie' darf angekreuzt werden.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-057</nummer>
+        <typ>Fehler</typ>
+        <text>Feld '%s': wenn 'ja' angekreuzt wurde, sind keine weiteren Optionen möglich.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-058</nummer>
+        <typ>Warnung</typ>
+        <text>'%s' sollte in der Zukunft liegen.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-059</nummer>
+        <typ>Fehler</typ>
+        <text>Wenn bei 'Art der erfolgten Therapie' 'Keine OP' angekreuzt wurde, muss bei '%s' auch 'Keine OP' angekreuzt werden.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-061</nummer>
+        <typ>Fehler</typ>
+        <text>Ungültiges Geburtsdatum.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-062</nummer>
+        <typ>Fehler</typ>
+        <text>Feld 'Aktuelle adjuvante endokrine Therapie': 'Aromataseinhibitoren' schliesst zusätzliche Angabe von 'Tamoxifen', 'Keine' und 'Endokrine Therapie geplant' aus.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-063</nummer>
+        <typ>Fehler</typ>
+        <text>Feld 'Aktuelle adjuvante endokrine Therapie': 'Tamoxifen' schliesst zusätzliche Angabe von 'Keine' und 'Endokrine Therapie geplant' aus.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-064</nummer>
+        <typ>Fehler</typ>
+        <text>Feld 'Aktuelle adjuvante endokrine Therapie': 'Andere' schliesst zusätzliche Angabe von 'Keine' und 'Endokrine Therapie geplant' aus.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-065</nummer>
+        <typ>Fehler</typ>
+        <text>Die Vertragsarztnummer ist nicht konsistent. Mindestens zwei unterschiedliche Angaben '%s' und '%s' wurden hierzu gemacht.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-066</nummer>
+        <typ>Fehler</typ>
+        <text>Wird zu 'Manifestation von Fernmetastasen' eine andere Angabe als 'Nein' gemacht, muss ein Datum mit angegeben werden.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-067</nummer>
+        <typ>Fehler</typ>
+        <text>Zwei verschachtelte Beobachtung-Elemente weisen den gleichen Parameter '%s' auf.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-068</nummer>
+        <typ>Fehler</typ>
+        <text>Die Angabe männlich ist nicht erlaubt, zur Teilnahme an DMP-Brustkrebs sind nur Frauen zugelassen.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-069</nummer>
+        <typ>Fehler</typ>
+        <text>Wenn das Einlesedatum vorhanden ist, dann muss auch das Feld '%s' vorhanden sein.</text>
+    </meldung>
+    <meldung>
+        <nummer>BKA-070</nummer>
+        <typ>Fehler</typ>
+        <text>Eine Angabe im Feld 'Präoperative/neoadjuvante Therapie' ist nicht zulässig, wenn in Feld 'Aktueller Behandlungsstatus bezogen auf das operative Vorgehen' die Angabe 'OP nicht geplant' erfolgt ist.</text>
+    </meldung>
+	<meldung>
+		<nummer>BKA-071</nummer>
+		<typ>Warnung</typ>
+		<text>Das Versicherungsschutz Ende '%s' liegt vor dem Erstellungsdatum.</text>
+	</meldung>
+		<meldung>
+		<nummer>BKA-072</nummer>
+		<typ>Fehler</typ>
+		<text>Das Versicherungsschutz Ende '%s' liegt mehr als 4 Monate vor dem Erstellungsdatum.</text>
+	</meldung>
+		<meldung>
+		<nummer>DMP-073</nummer>
+		<typ>Info</typ>
+		<text>Wenn im Feld 'lebenslange Arztnummer (LANR)' und im Feld 'Betriebsstätten-Nummer' eine Angabe erfolgte, ist im Feld 'Krankenhaus-IK' keine Angabe notwendig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-074</nummer>
+		<typ>Info</typ>
+		<text>Wenn im Feld 'lebenslange Arztnummer (LANR)' und im Feld 'Betriebsstätten-Nummer' eine Angabe erfolgte, ist im Feld 'Krankenhaus-IK' keine Angabe notwendig.</text>
+	</meldung>
+    <meldung>
+        <nummer>BKA-078</nummer>
+        <typ>Fehler</typ>
+        <text>Die Angabe unbestimmt ist nicht erlaubt, zur Teilnahme am DMP-Brustkrebs sind nur Frauen zugelassen.</text>
+    </meldung>
+	<meldung>
+    	<nummer>BKA-075</nummer>
+		<typ>Fehler</typ>
+		<text>In Feld '%s' ist nur eine Angabe zulässig.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-076</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in Feld ein Datum angegeben wurde, muss mindestens 'Knochen' und/oder 'viszeral' und oder 'ZNS' und/oder 'Andere' angegeben werden.</text>
+	</meldung>
+   	<meldung>
+		<nummer>BKA-079F</nummer>
+		<typ>Fehler</typ>
+		<text>Das Zip-Archiv muss auf %s enden.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-079W</nummer>
+		<typ>Warnung</typ>
+		<text>Das Zip-Archiv sollte auf %s enden.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-080</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe in Feld '%s' darf nicht jünger als das Erstellungsdatum sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>BKA-081</nummer>
+		<typ>Fehler</typ>
+		<text>In Feld %s muss eine gültige Datumsangabe im Format 'JJJJ', '00.00.JJJJ', '00.MM.JJJJ' oder 'TT.MM.JJJJ' gemacht werden</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-082</nummer>
+		<typ>Fehler</typ>
+		<text>Datumsfeld '%s' muss kleiner oder gleich '%s' sein.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-083</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in keinem der Felder 10-12 das Sicherungsdatum im Format 'TT.MM.JJJJ' vorliegt, muss 'Fernmetastasen Datum der diagnostischen Sicherung von Fernmetastasen' vorhanden sein und das Format 'TT.MM.JJJ' aufweisen.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-084</nummer>
+		<typ>Fehler</typ>
+		<text>Es konnte keine gültige Einschreibung festgestellt werden.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-085</nummer>
+		<typ>Fehler</typ>
+		<text>Eine Angabe in Feld '%s' ist nicht zulässig.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-086</nummer>
+		<typ>Fehler</typ>
+		<text>Eine Angabe in Feld '%s' ist nicht zulässig, wenn in Feld '%s' keine Angabe gemacht wurde.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-087</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in Feld 'M' eine '1' angegeben wurde, ist das Ausfüllen der Felder 19 bis 23 nicht zulässig.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-088</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in Feld 'Operative Therapie' 'OP nicht geplant' oder 'OP geplant' angegeben wurde, ist in Feld 'TNM-Klassifizierung' ausschliesslich die Angabe '(c) Klinisch' zulässig.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-089</nummer>
+		<typ>Fehler</typ>
+		<text>Eine Angabe in Feld '%s' ist erforderlich, wenn in Feld '%s' mindestens eine Angabe gemacht wurde.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-090</nummer>
+		<typ>Fehler</typ>
+		<text>Eine Angabe in Feld 'Hormonrezeptorstatus'  ist nicht zulässig, wenn in Feld 'M' eine '1' angekreuzt wurde.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-091</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in Feld 'Hormonrezeptorstatus' die Angabe 'Positiv' gewählt wurde, dann muss mindestens jeweils eine Angabe in Feld 20 und Feld 22 erfolgen.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-092</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in Feld 'Hormonrezeptorstatus' die Angabe 'Negativ' gewählt wurde, dann ist eine Angabe in den  Feldern 20 bis 22 nicht zulässig.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-093</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in Feld 'Aktuelle adjuvante endokrine Therapie' die Angabe 'Aromataseinhibitoren' nicht gewählt wurde, dann ist in Feld 23 keine Angabe zulässig.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-094</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in Feld 'Aktuelle adjuvante endokrine Therapie' die Angabe 'Aromataseinhibitoren' gewählt wurde, dann ist eine gleichzeitige Angabe von 'Tamoxifen', 'Keine' oder 'Endokrine Therapie geplant' nicht zulässig.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-096</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in Feld 'Aktuelle adjuvante endokrine Therapie' die Angabe 'Andere' gewählt wurde, dann ist eine zusätzliche Angabe von 'Keine' oder 'Endokrine Therapie geplant' nicht zulässig.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-097</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in Feld 'Operative Therapie' 'OP nicht geplant' angegeben wurde, ist in Feld 'TNM-Klassifizierung' ausschliesslich die Angabe '(c) Klinisch' zulässig.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-098</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in Feld '%s' die Angabe '%s' gewählt wurde, dann sind weitere Angaben nicht zulässig.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-099</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in Feld 'Lokalisation von Fernmetastasen' der Wert 'Knochen' gewählt wurde, dann ist eine Angabe zu '%s' in Feld 'Therapie bei Knochenmetastasen' erforderlich.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-100</nummer>
+		<typ>Fehler</typ>
+		<text>Es darf in Feld 'TNM-Klassifizierung' nicht 'Klinisch' angegeben werden, wenn Feld 'Operative Therapie' etwas anderes als 'OP geplant' oder 'OP nicht geplant' enthält.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-101</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in Feld 14 mindestens eine Angabe erfolgt ist UND in Feld 18 '0' angegeben ist, muss zusätzlich zu den Angaben in den Feldern 15 - 18 in Feld 19 eine Angabe erfolgen.</text>
+	</meldung>
+	<meldung>
+    	<nummer>BKA-102</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in Feld 14 mindestens eine Angabe erfolgt ist UND in Feld 18 '1' angegeben ist, ist zusätzlich zu den Angaben in den Feldern 15 - 18 eine Angabe in Feld 19 nicht zulässig.</text>
+	</meldung>
+    <meldung>
+    	<nummer>BKA-103</nummer>
+		<typ>Fehler</typ>
+		<text>Das Feld 'Dokumentationsintervall' darf bei pnp Dokumentation nicht vorhanden sein.</text>
+	</meldung>
+    <meldung>
+		<nummer>XPM-JAVA-VER</nummer>
+		<typ>Info</typ>
+		<text>Auf Ihrem System ist eine Java Version kleiner 17 installiert. In der nächsten Version des Prüfmoduls wird diese Version nicht mehr unterstützt und das Prüfmodul wird dann nicht mehr starten.</text>
+	</meldung>
+
+</meldungen>

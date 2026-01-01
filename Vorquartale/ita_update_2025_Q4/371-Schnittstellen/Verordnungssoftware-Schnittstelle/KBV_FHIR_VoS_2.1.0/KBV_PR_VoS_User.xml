@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-PR-VoS-User" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_User" />
+  <version value="2.1.0" />
+  <name value="KBV_PR_VoS_User" />
+  <title value="KBV_PR_VoS_User" />
+  <status value="active" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <description value="Die anwendende Person eines Systems. Diese wird durch eine ID identifiziert und kann einen Namen haben." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="servd" />
+    <uri value="http://www.omg.org/spec/ServD/1.0/" />
+    <name value="ServD" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Practitioner" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Practitioner">
+      <path value="Practitioner" />
+      <short value="Anwender" />
+      <definition value="Diese Ressource beschreibt eine Person in der Betriebstaette, welche das System nutzt. Dies kann sowohl eine behandelnde als auch eine mitarbeitende Person (z.B. MFA) sein." />
+    </element>
+    <element id="Practitioner.id">
+      <path value="Practitioner.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.meta">
+      <path value="Practitioner.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.meta.source">
+      <path value="Practitioner.meta.source" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.meta.profile">
+      <path value="Practitioner.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_User|2.1.0" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.meta.security">
+      <path value="Practitioner.meta.security" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.meta.tag">
+      <path value="Practitioner.meta.tag" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.implicitRules">
+      <path value="Practitioner.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.language">
+      <path value="Practitioner.language" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.contained">
+      <path value="Practitioner.contained" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.identifier">
+      <path value="Practitioner.identifier" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.identifier.use">
+      <path value="Practitioner.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.identifier.type">
+      <path value="Practitioner.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.identifier.value">
+      <path value="Practitioner.identifier.value" />
+      <short value="BenutzerID" />
+      <definition value="ID der anwendenden Person im entsprechenden System" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.identifier.period">
+      <path value="Practitioner.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.identifier.assigner">
+      <path value="Practitioner.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.active">
+      <path value="Practitioner.active" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.name">
+      <path value="Practitioner.name" />
+      <short value="Anwendername" />
+      <definition value="Name der anwendenden Person im entsprechenden System" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://fhir.de/StructureDefinition/humanname-de-basis" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name.text">
+      <path value="Practitioner.name.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.telecom">
+      <path value="Practitioner.telecom" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.address">
+      <path value="Practitioner.address" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.gender">
+      <path value="Practitioner.gender" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.birthDate">
+      <path value="Practitioner.birthDate" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.photo">
+      <path value="Practitioner.photo" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.qualification">
+      <path value="Practitioner.qualification" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.communication">
+      <path value="Practitioner.communication" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

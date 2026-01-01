@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) von Kassenärztliche Bundesvereinigung (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn::sciphox-org/sciphox" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="AdministrativeDaten">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Einschreibung wegen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Anamnese">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Körpergröße"/>
+			<xs:enumeration value="Körpergewicht"/>
+			<xs:enumeration value="Blutdruck systolisch"/>
+			<xs:enumeration value="Blutdruck diastolisch"/>
+			<xs:enumeration value="Raucher"/>
+			<xs:enumeration value="Begleiterkrankungen"/>
+			<xs:enumeration value="Aktuelle Symptomatik - PHQ-9 Summenwert"/>
+			<xs:enumeration value="Schweregrad zu Beginn der aktuellen depressiven Episode"/>
+			<xs:enumeration value="Dauer der aktuellen depressiven Episode"/>
+			<xs:enumeration value="Suizidalität eingeschätzt"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Nicht-medikamentoeseundmedikamentoeseBehandlung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Aktuelle Psychotherapie"/>
+			<xs:enumeration value="Aktuelle medikamentöse Therapie mit Antidepressiva"/>
+			<!--ausreichend-->
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Schulung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bereits vor Einschreibung in das DMP an einer depressionsspezifischen Schulung teilgenommen"/>
+			<xs:enumeration value="Depressionsspezifische Schulung empfohlen (bei aktueller Dokumentation)"/>
+			<xs:enumeration value="Depressionsspezifische Schulung wahrgenommen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Behandlungsplanung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Vom Patienten gewünschte Informationsangebote der Krankenkasse"/>
+			<xs:enumeration value="Dokumentationsintervall"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

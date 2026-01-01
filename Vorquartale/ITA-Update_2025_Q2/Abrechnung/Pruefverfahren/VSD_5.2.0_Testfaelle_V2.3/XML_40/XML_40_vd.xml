@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<vsd:UC_AllgemeineVersicherungsdatenXML xmlns:vsd="http://ws.gematik.de/fa/vsdm/vsd/v5.2" CDM_VERSION="5.2.0">
+	<vsd:Versicherter>
+		<vsd:Versicherungsschutz>
+			<vsd:Beginn>20110101</vsd:Beginn>
+			<vsd:Ende>20341231</vsd:Ende>
+			<vsd:Kostentraeger>
+				<vsd:Kostentraegerkennung>101308719</vsd:Kostentraegerkennung>
+				<vsd:Kostentraegerlaendercode>D</vsd:Kostentraegerlaendercode>
+				<vsd:Name>LKK Schlesw-Holst. und Hamburg</vsd:Name>
+				<vsd:AbrechnenderKostentraeger>
+					<vsd:Kostentraegerkennung>101308719</vsd:Kostentraegerkennung>
+					<vsd:Kostentraegerlaendercode>D</vsd:Kostentraegerlaendercode>
+					<vsd:Name>LKK Schlesw-Holst. und Hamburg</vsd:Name>
+				</vsd:AbrechnenderKostentraeger>
+			</vsd:Kostentraeger>
+		</vsd:Versicherungsschutz>
+		<vsd:Zusatzinfos>
+			<vsd:ZusatzinfosGKV>
+				<vsd:Versichertenart>1</vsd:Versichertenart>
+				<vsd:Zusatzinfos_Abrechnung_GKV>
+					<vsd:WOP>38</vsd:WOP>
+				</vsd:Zusatzinfos_Abrechnung_GKV>
+			</vsd:ZusatzinfosGKV>
+		</vsd:Zusatzinfos>
+	</vsd:Versicherter>
+</vsd:UC_AllgemeineVersicherungsdatenXML>

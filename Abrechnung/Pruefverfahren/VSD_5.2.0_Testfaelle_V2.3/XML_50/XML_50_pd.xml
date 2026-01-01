@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<vsd:UC_PersoenlicheVersichertendatenXML xmlns:vsd="http://ws.gematik.de/fa/vsdm/vsd/v5.2" CDM_VERSION="5.2.0">
+	<vsd:Versicherter>
+		<vsd:Versicherten_ID>D466384763</vsd:Versicherten_ID>
+		<vsd:Person>
+			<vsd:Geburtsdatum>19890512</vsd:Geburtsdatum>
+			<vsd:Vorname>Ernesto</vsd:Vorname>
+			<vsd:Nachname>Müller</vsd:Nachname>
+			<vsd:Geschlecht>M</vsd:Geschlecht>
+			<vsd:StrassenAdresse>
+				<vsd:Postleitzahl>14469</vsd:Postleitzahl>
+				<vsd:Ort>Potsdam</vsd:Ort>
+				<vsd:Land>
+					<vsd:Wohnsitzlaendercode>D</vsd:Wohnsitzlaendercode>
+				</vsd:Land>
+				<vsd:Strasse>Kaiser-Friedrich-Straße</vsd:Strasse>
+				<vsd:Hausnummer>143</vsd:Hausnummer>
+			</vsd:StrassenAdresse>
+		</vsd:Person>
+	</vsd:Versicherter>
+</vsd:UC_PersoenlicheVersichertendatenXML>

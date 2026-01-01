@@ -1,0 +1,1390 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Validation Results</title>
+  <link href="http://hl7.org/fhir/fhir.css" rel="stylesheet"/>
+  <style>
+    span.flip  { background-color: #4CAF50; color: white; border: solid 1px #a6d8a8; padding: 2px }
+  </style>
+  <script>
+    function flip(id) {
+      var span = document.getElementById('s'+id);
+      var div = document.getElementById(id);
+      if (document.getElementById('s'+id).innerHTML == 'Show Reasoning') {
+        div.style.display = 'block';
+        span.innerHTML = 'Hide Reasoning';
+      } else {
+        div.style.display = 'none';
+        span.innerHTML = 'Show Reasoning';
+      }
+    }
+  </script>
+</head>
+<body style="margin: 20px; background-color: #ffffff">
+ <h1>Validation Results</h1>
+ <p>16 errors, 100 warnings, 185 hints. Generated 20.10.2025, 15:45:21 by Validator Version 6.7.2 (Git# 1fc0f6593dc4). Built 2025-10-09T01:06:12.562Z (11 days old) (41878ms)</p>
+ <table class="grid">
+   <tr>
+     <td><b>Filename</b></td><td><b>Errors</b></td><td><b>Warnings</b></td><td><b>Hints</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;1"><b>examples\example-ak1-aufruf-bundle-ASV.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>3</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;2"><b>examples\example-ak1-aufruf-bundle-MFA-verantwortliche-Person.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>5</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;3"><b>examples\example-ak1-aufruf-bundle-MFA.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>3</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;4"><b>examples\example-ak1-aufruf-bundle-min.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>3</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;5"><b>examples\example-ak10-aufruf-bundle-min.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>3</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;6"><b>examples\example-ak11-aufruf-bundle-min.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>3</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;7"><b>examples\example-ak12-aufruf-bundle-eRezept.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>6</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#;8"><b>examples\example-ak12-speicher-bundle-eRezept.xml</b></a></td><td><b>3</b></td><td><b>0</b></td><td><b>0</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;9"><b>examples\example-ak2-aufruf-bundle-basisinformation.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>5</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;10"><b>examples\example-ak2-speicher-bundle-eRezept.xml</b></a></td><td><b>0</b></td><td><b>3</b></td><td><b>2</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#;11"><b>examples\example-ak2-speicher-bundle-muster16.xml</b></a></td><td><b>1</b></td><td><b>8</b></td><td><b>3</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;12"><b>examples\example-ak3-aufruf-bundle-eRezept.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>8</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#;13"><b>examples\example-ak3-aufruf-bundle-muster16.xml</b></a></td><td><b>2</b></td><td><b>2</b></td><td><b>10</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;14"><b>examples\example-ak3-speicher-bundle-eRezept.xml</b></a></td><td><b>0</b></td><td><b>3</b></td><td><b>2</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#;15"><b>examples\example-ak3-speicher-bundle-muster16.xml</b></a></td><td><b>1</b></td><td><b>8</b></td><td><b>3</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;16"><b>examples\example-ak4-aufruf-bundle-basisinformation.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>3</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;17"><b>examples\example-ak5-aufruf-bundle-basisinformation.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>3</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;18"><b>examples\example-ak5-aufruf-bundle-eRezept.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>6</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#;19"><b>examples\example-ak5-aufruf-bundle-muster16.xml</b></a></td><td><b>2</b></td><td><b>4</b></td><td><b>10</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;20"><b>examples\example-ak6-aufruf-bundle-basisinformation.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>5</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;21"><b>examples\example-ak6-aufruf-bundle-eRezept.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>8</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#;22"><b>examples\example-ak6-aufruf-bundle-muster16.xml</b></a></td><td><b>2</b></td><td><b>2</b></td><td><b>10</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;23"><b>examples\example-ak7-aufruf-bundle-basisinformation.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>5</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#;24"><b>examples\example-ak7-aufruf-bundle-oberservations-BMP-muster16-eMP.xml</b></a></td><td><b>2</b></td><td><b>6</b></td><td><b>12</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#;25"><b>examples\example-ak7-aufruf-bundle-oberservations-BMP-muster16.xml</b></a></td><td><b>2</b></td><td><b>6</b></td><td><b>10</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;26"><b>examples\example-ak7-aufruf-bundle-oberservations-BMP.xml</b></a></td><td><b>0</b></td><td><b>4</b></td><td><b>8</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;27"><b>examples\example-ak7-aufruf-bundle-oberservations-eRezept.xml</b></a></td><td><b>0</b></td><td><b>4</b></td><td><b>8</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;28"><b>examples\example-ak7-aufruf-bundle-oberservations.xml</b></a></td><td><b>0</b></td><td><b>4</b></td><td><b>5</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;29"><b>examples\example-ak7-speicher-bundle-eRezept-eMP.xml</b></a></td><td><b>0</b></td><td><b>11</b></td><td><b>5</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;30"><b>examples\example-ak7-speicher-bundle-medicationService-Nachtrag-eML.xml</b></a></td><td><b>0</b></td><td><b>4</b></td><td><b>3</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><a href="#;31"><b>examples\example-ak7-speicher-bundle-muster16-eMP.xml</b></a></td><td><b>1</b></td><td><b>11</b></td><td><b>5</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;32"><b>examples\example-ak8-aufruf-bundle-oberservations-BMP.xml</b></a></td><td><b>0</b></td><td><b>4</b></td><td><b>8</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;33"><b>examples\example-ak8-speicher-bundle-BMP-muster16.xml</b></a></td><td><b>0</b></td><td><b>8</b></td><td><b>3</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;34"><b>examples\example-ak9-aufruf-bundle-eMP.xml</b></a></td><td><b>0</b></td><td><b>0</b></td><td><b>6</b></td>
+   </tr>
+   <tr style="background-color: #EFFFEF">
+     <td><a href="#;35"><b>examples\example-ak9-speicher-bundle-eMP-muster16.xml</b></a></td><td><b>0</b></td><td><b>8</b></td><td><b>3</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l1"> </a>
+<h2><a href="file:examples\example-ak1-aufruf-bundle-ASV.xml">examples\example-ak1-aufruf-bundle-ASV.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l35/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l106/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l114/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l2"> </a>
+<h2><a href="file:examples\example-ak1-aufruf-bundle-MFA-verantwortliche-Person.xml">examples\example-ak1-aufruf-bundle-MFA-verantwortliche-Person.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l95/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#03)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l103/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[6].resource/*Practitioner/be291530-2f6f-4412-94ea-ecf5257226b2*/.qualification[0].code (l285/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[6].resource/*Practitioner/be291530-2f6f-4412-94ea-ecf5257226b2*/.qualification[1].code (l293/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l3"> </a>
+<h2><a href="file:examples\example-ak1-aufruf-bundle-MFA.xml">examples\example-ak1-aufruf-bundle-MFA.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l100/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l108/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l4"> </a>
+<h2><a href="file:examples\example-ak1-aufruf-bundle-min.xml">examples\example-ak1-aufruf-bundle-min.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l100/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l108/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l5"> </a>
+<h2><a href="file:examples\example-ak10-aufruf-bundle-min.xml">examples\example-ak10-aufruf-bundle-min.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l100/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l108/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l6"> </a>
+<h2><a href="file:examples\example-ak11-aufruf-bundle-min.xml">examples\example-ak11-aufruf-bundle-min.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l100/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l108/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l7"> </a>
+<h2><a href="file:examples\example-ak12-aufruf-bundle-eRezept.xml">examples\example-ak12-aufruf-bundle-eRezept.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l67/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l111/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l119/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l256/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l256/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://ihe-d.de/CodeSystems/IHEXDStypeCode#MEDI, https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#Signiertes_eRezept)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l8"> </a>
+<h2><a href="file:examples\example-ak12-speicher-bundle-eRezept.xml">examples\example-ak12-speicher-bundle-eRezept.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*Provenance/77b5dfb5-3954-45ea-83a4-7a5c46953c1f*/.target[0] (l48/c21)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Der Profilbezug 'https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle' konnte nicht aufgelöst werden.</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*Provenance/77b5dfb5-3954-45ea-83a4-7a5c46953c1f*/.target[0] (l48/c21)</b></td><td><b>error</b></td><td title="Reference_REF_WrongTarget"><b>Der Typ 'Bundle' ist kein gültiges Ziel für dieses Element (muss einer von [CanonicalType[https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle]] sein)</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*Provenance/77b5dfb5-3954-45ea-83a4-7a5c46953c1f*/.target[0] (l48/c21)</b></td><td><b>error</b></td><td title="Reference_REF_WrongTarget"><b>Der Typ 'Bundle' ist kein gültiges Ziel für dieses Element (muss einer von [CanonicalType[https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_DocumentReference|2.2.0], CanonicalType[https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle]] sein)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l9"> </a>
+<h2><a href="file:examples\example-ak2-aufruf-bundle-basisinformation.xml">examples\example-ak2-aufruf-bundle-basisinformation.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l70/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l114/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l122/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*Coverage/5caa1f52-b926-4331-9e66-6768e6f083e7*/.type (l279/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Coverage Type and Self-Pay Codes' (http://hl7.org/fhir/ValueSet/coverage-type|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l10"> </a>
+<h2><a href="file:examples\example-ak2-speicher-bundle-eRezept.xml">examples\example-ak2-speicher-bundle-eRezept.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.type (l56/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.type (l56/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://ihe-d.de/CodeSystems/IHEXDStypeCode#MEDI, https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#Signiertes_eRezept)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.author[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:f2ea54b9-ab1a-43d9-8727-fa24c61c820d</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.custodian</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:8d9fc65d-7baa-4b44-be96-5874b94c6471</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l11"> </a>
+<h2><a href="file:examples\example-ak2-speicher-bundle-muster16.xml">examples\example-ak2-speicher-bundle-muster16.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.type (l48/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.type (l48/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://ihe-d.de/CodeSystems/IHEXDStypeCode#MEDI, https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#Rezept)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.author[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:f2ea54b9-ab1a-43d9-8727-fa24c61c820d</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.custodian</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:8d9fc65d-7baa-4b44-be96-5874b94c6471</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.context.related[0] (l93/c30)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Der Profilbezug 'https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle' konnte nicht aufgelöst werden.</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.extension[2].value.ofType(CodeableConcept) (l121/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.requester</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:e120bfbc-604d-4f82-bd21-313aad02fa76</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.insurance[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:5caa1f52-b926-4331-9e66-6768e6f083e7</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[2].resource/*Medication/86688c42-e8e9-45d5-8a6e-f7288e9d62ce*/.code.coding[0].system (l241/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[2].resource/*Medication/86688c42-e8e9-45d5-8a6e-f7288e9d62ce*/.ingredient[0].item.ofType(CodeableConcept).coding[0].system (l266/c42)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' could not be found, so the code cannot be validated</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l12"> </a>
+<h2><a href="file:examples\example-ak3-aufruf-bundle-eRezept.xml">examples\example-ak3-aufruf-bundle-eRezept.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l35/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l71/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[1].code (l82/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l126/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l134/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*Coverage/5caa1f52-b926-4331-9e66-6768e6f083e7*/.type (l291/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Coverage Type and Self-Pay Codes' (http://hl7.org/fhir/ValueSet/coverage-type|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[7].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l387/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[7].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l387/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://ihe-d.de/CodeSystems/IHEXDStypeCode#MEDI, https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#Signiertes_eRezept)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l13"> </a>
+<h2><a href="file:examples\example-ak3-aufruf-bundle-muster16.xml">examples\example-ak3-aufruf-bundle-muster16.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l35/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l71/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[1].code (l82/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[2].code (l93/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[2].entry[0] (l99/c28)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Der Profilbezug 'https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle' konnte nicht aufgelöst werden.</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[2].entry[1] (l102/c28)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Der Profilbezug 'https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle' konnte nicht aufgelöst werden.</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l140/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l148/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*Coverage/5caa1f52-b926-4331-9e66-6768e6f083e7*/.type (l305/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Coverage Type and Self-Pay Codes' (http://hl7.org/fhir/ValueSet/coverage-type|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[7].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l393/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[7].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l393/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#BMP)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[8].resource/*MedicationRequest/15b353fe-2348-49ac-8cce-58cdfe5b3704*/.extension[2].value.ofType(CodeableConcept) (l452/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*Medication/72cc9e3d-49d5-4397-a9dc-2a37f9552a74*/.code.coding[0].system (l568/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*Medication/72cc9e3d-49d5-4397-a9dc-2a37f9552a74*/.ingredient[0].item.ofType(CodeableConcept).coding[0].system (l593/c42)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' could not be found, so the code cannot be validated</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l14"> </a>
+<h2><a href="file:examples\example-ak3-speicher-bundle-eRezept.xml">examples\example-ak3-speicher-bundle-eRezept.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297f*/.type (l56/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297f*/.type (l56/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://ihe-d.de/CodeSystems/IHEXDStypeCode#MEDI, https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#Signiertes_eRezept)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297f*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297f*/.author[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:f2ea54b9-ab1a-43d9-8727-fa24c61c820d</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297f*/.custodian</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:8d9fc65d-7baa-4b44-be96-5874b94c6471</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l15"> </a>
+<h2><a href="file:examples\example-ak3-speicher-bundle-muster16.xml">examples\example-ak3-speicher-bundle-muster16.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297f*/.type (l48/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297f*/.type (l48/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://ihe-d.de/CodeSystems/IHEXDStypeCode#MEDI, https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#Rezept)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297f*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297f*/.author[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:f2ea54b9-ab1a-43d9-8727-fa24c61c820d</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297f*/.custodian</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:8d9fc65d-7baa-4b44-be96-5874b94c6471</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297f*/.context.related[0] (l93/c30)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Der Profilbezug 'https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle' konnte nicht aufgelöst werden.</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010461*/.extension[2].value.ofType(CodeableConcept) (l121/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010461*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010461*/.requester</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:e120bfbc-604d-4f82-bd21-313aad02fa76</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010461*/.insurance[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:5caa1f52-b926-4331-9e66-6768e6f083e7</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[2].resource/*Medication/86688c42-e8e9-45d5-8a6e-f7288e9d62ce*/.code.coding[0].system (l241/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[2].resource/*Medication/86688c42-e8e9-45d5-8a6e-f7288e9d62ce*/.ingredient[0].item.ofType(CodeableConcept).coding[0].system (l266/c42)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' could not be found, so the code cannot be validated</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l16"> </a>
+<h2><a href="file:examples\example-ak4-aufruf-bundle-basisinformation.xml">examples\example-ak4-aufruf-bundle-basisinformation.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l100/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l108/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l17"> </a>
+<h2><a href="file:examples\example-ak5-aufruf-bundle-basisinformation.xml">examples\example-ak5-aufruf-bundle-basisinformation.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l100/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l108/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l18"> </a>
+<h2><a href="file:examples\example-ak5-aufruf-bundle-eRezept.xml">examples\example-ak5-aufruf-bundle-eRezept.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l35/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l68/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l112/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l120/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l257/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l257/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://ihe-d.de/CodeSystems/IHEXDStypeCode#MEDI, https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#Signiertes_eRezept)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l19"> </a>
+<h2><a href="file:examples\example-ak5-aufruf-bundle-muster16.xml">examples\example-ak5-aufruf-bundle-muster16.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l35/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l68/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[1].code (l79/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[1].entry[0] (l85/c28)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Der Profilbezug 'https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle' konnte nicht aufgelöst werden.</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[1].entry[1] (l88/c28)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Der Profilbezug 'https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle' konnte nicht aufgelöst werden.</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l126/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l134/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l263/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l263/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#BMP)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[6].resource/*MedicationRequest/15b353fe-2348-49ac-8cce-58cdfe5b3704*/.extension[2].value.ofType(CodeableConcept) (l319/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[6].resource/*MedicationRequest/15b353fe-2348-49ac-8cce-58cdfe5b3704*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[6].resource/*MedicationRequest/15b353fe-2348-49ac-8cce-58cdfe5b3704*/.insurance[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:5caa1f52-b926-4331-9e66-6768e6f083e7</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[7].resource/*Medication/72cc9e3d-49d5-4397-a9dc-2a37f9552a74*/.code.coding[0].system (l435/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[7].resource/*Medication/72cc9e3d-49d5-4397-a9dc-2a37f9552a74*/.ingredient[0].item.ofType(CodeableConcept).coding[0].system (l460/c42)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle (l7/c37)</b></td><td><b>information</b></td><td title="Bundle_BUNDLE_Entry_NotFound"><b>Can't find 'urn:uuid:371cf692-89dd-4a19-a180-d78991a32950' in the bundle (Bundle.entry[6].resource.subject)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle (l7/c37)</b></td><td><b>information</b></td><td title="Bundle_BUNDLE_Entry_NotFound"><b>Can't find 'urn:uuid:5caa1f52-b926-4331-9e66-6768e6f083e7' in the bundle (Bundle.entry[6].resource.insurance[0])</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l20"> </a>
+<h2><a href="file:examples\example-ak6-aufruf-bundle-basisinformation.xml">examples\example-ak6-aufruf-bundle-basisinformation.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l70/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l114/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l122/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*Coverage/5caa1f52-b926-4331-9e66-6768e6f083e7*/.type (l279/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Coverage Type and Self-Pay Codes' (http://hl7.org/fhir/ValueSet/coverage-type|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l21"> </a>
+<h2><a href="file:examples\example-ak6-aufruf-bundle-eRezept.xml">examples\example-ak6-aufruf-bundle-eRezept.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l35/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l71/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[1].code (l82/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l126/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l134/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*Coverage/5caa1f52-b926-4331-9e66-6768e6f083e7*/.type (l291/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Coverage Type and Self-Pay Codes' (http://hl7.org/fhir/ValueSet/coverage-type|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[7].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l387/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[7].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l387/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://ihe-d.de/CodeSystems/IHEXDStypeCode#MEDI, https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#Signiertes_eRezept)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l22"> </a>
+<h2><a href="file:examples\example-ak6-aufruf-bundle-muster16.xml">examples\example-ak6-aufruf-bundle-muster16.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l35/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l71/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[1].code (l82/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[2].code (l93/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[2].entry[0] (l99/c28)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Der Profilbezug 'https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle' konnte nicht aufgelöst werden.</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[2].entry[1] (l102/c28)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Der Profilbezug 'https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle' konnte nicht aufgelöst werden.</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l140/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l148/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*Coverage/5caa1f52-b926-4331-9e66-6768e6f083e7*/.type (l305/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Coverage Type and Self-Pay Codes' (http://hl7.org/fhir/ValueSet/coverage-type|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[7].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l393/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[7].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l393/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#BMP)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[8].resource/*MedicationRequest/15b353fe-2348-49ac-8cce-58cdfe5b3704*/.extension[2].value.ofType(CodeableConcept) (l452/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*Medication/72cc9e3d-49d5-4397-a9dc-2a37f9552a74*/.code.coding[0].system (l568/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*Medication/72cc9e3d-49d5-4397-a9dc-2a37f9552a74*/.ingredient[0].item.ofType(CodeableConcept).coding[0].system (l593/c42)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' could not be found, so the code cannot be validated</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l23"> </a>
+<h2><a href="file:examples\example-ak7-aufruf-bundle-basisinformation.xml">examples\example-ak7-aufruf-bundle-basisinformation.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l70/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l114/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l122/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*Coverage/5caa1f52-b926-4331-9e66-6768e6f083e7*/.type (l279/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Coverage Type and Self-Pay Codes' (http://hl7.org/fhir/ValueSet/coverage-type|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l24"> </a>
+<h2><a href="file:examples\example-ak7-aufruf-bundle-oberservations-BMP-muster16-eMP.xml">examples\example-ak7-aufruf-bundle-oberservations-BMP-muster16-eMP.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l70/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[1].code (l102/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[2].code (l116/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[2].entry[0] (l122/c28)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Der Profilbezug 'https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle' konnte nicht aufgelöst werden.</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[2].entry[1] (l125/c28)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Der Profilbezug 'https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle' konnte nicht aufgelöst werden.</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l163/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l171/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*Coverage/5caa1f52-b926-4331-9e66-6768e6f083e7*/.type (l328/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Coverage Type and Self-Pay Codes' (http://hl7.org/fhir/ValueSet/coverage-type|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[0].system (l527/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION"><b>A definition for CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000274103/version/20240515' could not be found, so the code cannot be validated. Valid versions: http://snomed.info/sct/11000146104/version/20240930,http://snomed.info/sct/11000172109/version/20231115,http://snomed.info/sct/2011000195101/version/20230607,http://snomed.info/sct/20611000087101/version/20220930,http://snomed.info/sct/32506021000036107/version/20230731,http://snomed.info/sct/45991000052106/version/20220531,http://snomed.info/sct/45991000052106/version/20231130,http://snomed.info/sct/554471000005108/version/20250331,http://snomed.info/sct/731000124108/version/20250301,http://snomed.info/sct/827022005/version/20241216,http://snomed.info/sct/83821000000107/version/20230412,http://snomed.info/sct/900000000000207008/version/20240201,http://snomed.info/sct/900000000000207008/version/20240801,http://snomed.info/sct/900000000000207008/version/20250201,http://snomed.info/xsct/900000000000207008/version/20250814</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[1].system (l527/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION_NONE"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' version '1.5.4' could not be found, so the code cannot be validated. No versions of this code system are known</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[2].system (l527/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION_NONE"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/bfarm/atc' version '2022' could not be found, so the code cannot be validated. No versions of this code system are known</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[3].system (l527/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[11].resource/*Observation/45e5778e-1c5e-4223-9dcd-81e755f8cf10*/ (l609/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body height profile (http://hl7.org/fhir/StructureDefinition/bodyheight) which is required by the FHIR specification because the LOINC code 8302-2 was found</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[12].resource/*Observation/fd68d6a2-3a2d-4bc8-b821-37095ba2830d*/ (l653/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body weight profile (http://hl7.org/fhir/StructureDefinition/bodyweight) which is required by the FHIR specification because the LOINC code 29463-7 was found</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[16].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l812/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[16].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l812/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#BMP)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[17].resource/*DocumentReference/d722c7c1-623d-49b3-9471-d0a62b736569*/.type (l864/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[17].resource/*DocumentReference/d722c7c1-623d-49b3-9471-d0a62b736569*/.type (l864/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#BMP)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[18].resource/*MedicationRequest/15b353fe-2348-49ac-8cce-58cdfe5b3704*/.extension[2].value.ofType(CodeableConcept) (l923/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[19].resource/*Medication/72cc9e3d-49d5-4397-a9dc-2a37f9552a74*/.code.coding[0].system (l1039/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[19].resource/*Medication/72cc9e3d-49d5-4397-a9dc-2a37f9552a74*/.ingredient[0].item.ofType(CodeableConcept).coding[0].system (l1064/c42)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[11].resource (l609/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body height profile (http://hl7.org/fhir/StructureDefinition/bodyheight) which is required by the FHIR specification because the LOINC code 8302-2 was found</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[12].resource (l653/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body weight profile (http://hl7.org/fhir/StructureDefinition/bodyweight) which is required by the FHIR specification because the LOINC code 29463-7 was found</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l25"> </a>
+<h2><a href="file:examples\example-ak7-aufruf-bundle-oberservations-BMP-muster16.xml">examples\example-ak7-aufruf-bundle-oberservations-BMP-muster16.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l70/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[1].code (l102/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[2].code (l113/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[2].entry[0] (l119/c28)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Der Profilbezug 'https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle' konnte nicht aufgelöst werden.</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[2].entry[1] (l122/c28)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Der Profilbezug 'https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle' konnte nicht aufgelöst werden.</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l160/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l168/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*Coverage/5caa1f52-b926-4331-9e66-6768e6f083e7*/.type (l325/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Coverage Type and Self-Pay Codes' (http://hl7.org/fhir/ValueSet/coverage-type|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[0].system (l523/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION"><b>A definition for CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000274103/version/20240515' could not be found, so the code cannot be validated. Valid versions: http://snomed.info/sct/11000146104/version/20240930,http://snomed.info/sct/11000172109/version/20231115,http://snomed.info/sct/2011000195101/version/20230607,http://snomed.info/sct/20611000087101/version/20220930,http://snomed.info/sct/32506021000036107/version/20230731,http://snomed.info/sct/45991000052106/version/20220531,http://snomed.info/sct/45991000052106/version/20231130,http://snomed.info/sct/554471000005108/version/20250331,http://snomed.info/sct/731000124108/version/20250301,http://snomed.info/sct/827022005/version/20241216,http://snomed.info/sct/83821000000107/version/20230412,http://snomed.info/sct/900000000000207008/version/20240201,http://snomed.info/sct/900000000000207008/version/20240801,http://snomed.info/sct/900000000000207008/version/20250201,http://snomed.info/xsct/900000000000207008/version/20250814</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[1].system (l523/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION_NONE"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' version '1.5.4' could not be found, so the code cannot be validated. No versions of this code system are known</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[2].system (l523/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION_NONE"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/bfarm/atc' version '2022' could not be found, so the code cannot be validated. No versions of this code system are known</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[3].system (l523/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[11].resource/*Observation/45e5778e-1c5e-4223-9dcd-81e755f8cf10*/ (l604/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body height profile (http://hl7.org/fhir/StructureDefinition/bodyheight) which is required by the FHIR specification because the LOINC code 8302-2 was found</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[12].resource/*Observation/fd68d6a2-3a2d-4bc8-b821-37095ba2830d*/ (l648/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body weight profile (http://hl7.org/fhir/StructureDefinition/bodyweight) which is required by the FHIR specification because the LOINC code 29463-7 was found</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[16].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l807/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[16].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l807/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#BMP)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[17].resource/*MedicationRequest/15b353fe-2348-49ac-8cce-58cdfe5b3704*/.extension[2].value.ofType(CodeableConcept) (l866/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[18].resource/*Medication/72cc9e3d-49d5-4397-a9dc-2a37f9552a74*/.code.coding[0].system (l982/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[18].resource/*Medication/72cc9e3d-49d5-4397-a9dc-2a37f9552a74*/.ingredient[0].item.ofType(CodeableConcept).coding[0].system (l1007/c42)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[11].resource (l604/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body height profile (http://hl7.org/fhir/StructureDefinition/bodyheight) which is required by the FHIR specification because the LOINC code 8302-2 was found</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[12].resource (l648/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body weight profile (http://hl7.org/fhir/StructureDefinition/bodyweight) which is required by the FHIR specification because the LOINC code 29463-7 was found</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l26"> </a>
+<h2><a href="file:examples\example-ak7-aufruf-bundle-oberservations-BMP.xml">examples\example-ak7-aufruf-bundle-oberservations-BMP.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l70/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[1].code (l102/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l146/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l154/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*Coverage/5caa1f52-b926-4331-9e66-6768e6f083e7*/.type (l311/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Coverage Type and Self-Pay Codes' (http://hl7.org/fhir/ValueSet/coverage-type|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[0].system (l510/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION"><b>A definition for CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000274103/version/20240515' could not be found, so the code cannot be validated. Valid versions: http://snomed.info/sct/11000146104/version/20240930,http://snomed.info/sct/11000172109/version/20231115,http://snomed.info/sct/2011000195101/version/20230607,http://snomed.info/sct/20611000087101/version/20220930,http://snomed.info/sct/32506021000036107/version/20230731,http://snomed.info/sct/45991000052106/version/20220531,http://snomed.info/sct/45991000052106/version/20231130,http://snomed.info/sct/554471000005108/version/20250331,http://snomed.info/sct/731000124108/version/20250301,http://snomed.info/sct/827022005/version/20241216,http://snomed.info/sct/83821000000107/version/20230412,http://snomed.info/sct/900000000000207008/version/20240201,http://snomed.info/sct/900000000000207008/version/20240801,http://snomed.info/sct/900000000000207008/version/20250201,http://snomed.info/xsct/900000000000207008/version/20250814</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[1].system (l510/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION_NONE"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' version '1.5.4' could not be found, so the code cannot be validated. No versions of this code system are known</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[2].system (l510/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION_NONE"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/bfarm/atc' version '2022' could not be found, so the code cannot be validated. No versions of this code system are known</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[3].system (l510/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[11].resource/*Observation/45e5778e-1c5e-4223-9dcd-81e755f8cf10*/ (l592/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body height profile (http://hl7.org/fhir/StructureDefinition/bodyheight) which is required by the FHIR specification because the LOINC code 8302-2 was found</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[12].resource/*Observation/fd68d6a2-3a2d-4bc8-b821-37095ba2830d*/ (l636/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body weight profile (http://hl7.org/fhir/StructureDefinition/bodyweight) which is required by the FHIR specification because the LOINC code 29463-7 was found</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[16].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l795/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[16].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l795/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#BMP)</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[11].resource (l592/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body height profile (http://hl7.org/fhir/StructureDefinition/bodyheight) which is required by the FHIR specification because the LOINC code 8302-2 was found</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[12].resource (l636/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body weight profile (http://hl7.org/fhir/StructureDefinition/bodyweight) which is required by the FHIR specification because the LOINC code 29463-7 was found</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l27"> </a>
+<h2><a href="file:examples\example-ak7-aufruf-bundle-oberservations-eRezept.xml">examples\example-ak7-aufruf-bundle-oberservations-eRezept.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l35/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l71/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[1].code (l103/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l147/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l155/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*Coverage/5caa1f52-b926-4331-9e66-6768e6f083e7*/.type (l312/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Coverage Type and Self-Pay Codes' (http://hl7.org/fhir/ValueSet/coverage-type|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[0].system (l511/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION"><b>A definition for CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000274103/version/20240515' could not be found, so the code cannot be validated. Valid versions: http://snomed.info/sct/11000146104/version/20240930,http://snomed.info/sct/11000172109/version/20231115,http://snomed.info/sct/2011000195101/version/20230607,http://snomed.info/sct/20611000087101/version/20220930,http://snomed.info/sct/32506021000036107/version/20230731,http://snomed.info/sct/45991000052106/version/20220531,http://snomed.info/sct/45991000052106/version/20231130,http://snomed.info/sct/554471000005108/version/20250331,http://snomed.info/sct/731000124108/version/20250301,http://snomed.info/sct/827022005/version/20241216,http://snomed.info/sct/83821000000107/version/20230412,http://snomed.info/sct/900000000000207008/version/20240201,http://snomed.info/sct/900000000000207008/version/20240801,http://snomed.info/sct/900000000000207008/version/20250201,http://snomed.info/xsct/900000000000207008/version/20250814</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[1].system (l511/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION_NONE"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' version '1.5.4' could not be found, so the code cannot be validated. No versions of this code system are known</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[2].system (l511/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION_NONE"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/bfarm/atc' version '2022' could not be found, so the code cannot be validated. No versions of this code system are known</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[3].system (l511/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[11].resource/*Observation/45e5778e-1c5e-4223-9dcd-81e755f8cf10*/ (l593/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body height profile (http://hl7.org/fhir/StructureDefinition/bodyheight) which is required by the FHIR specification because the LOINC code 8302-2 was found</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[12].resource/*Observation/fd68d6a2-3a2d-4bc8-b821-37095ba2830d*/ (l637/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body weight profile (http://hl7.org/fhir/StructureDefinition/bodyweight) which is required by the FHIR specification because the LOINC code 29463-7 was found</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[16].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l804/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[16].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l804/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://ihe-d.de/CodeSystems/IHEXDStypeCode#MEDI, https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#Signiertes_eRezept)</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[11].resource (l593/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body height profile (http://hl7.org/fhir/StructureDefinition/bodyheight) which is required by the FHIR specification because the LOINC code 8302-2 was found</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[12].resource (l637/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body weight profile (http://hl7.org/fhir/StructureDefinition/bodyweight) which is required by the FHIR specification because the LOINC code 29463-7 was found</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l28"> </a>
+<h2><a href="file:examples\example-ak7-aufruf-bundle-oberservations.xml">examples\example-ak7-aufruf-bundle-oberservations.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l70/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l135/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l143/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*Coverage/5caa1f52-b926-4331-9e66-6768e6f083e7*/.type (l300/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Coverage Type and Self-Pay Codes' (http://hl7.org/fhir/ValueSet/coverage-type|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[0].system (l499/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION"><b>A definition for CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000274103/version/20240515' could not be found, so the code cannot be validated. Valid versions: http://snomed.info/sct/11000146104/version/20240930,http://snomed.info/sct/11000172109/version/20231115,http://snomed.info/sct/2011000195101/version/20230607,http://snomed.info/sct/20611000087101/version/20220930,http://snomed.info/sct/32506021000036107/version/20230731,http://snomed.info/sct/45991000052106/version/20220531,http://snomed.info/sct/45991000052106/version/20231130,http://snomed.info/sct/554471000005108/version/20250331,http://snomed.info/sct/731000124108/version/20250301,http://snomed.info/sct/827022005/version/20241216,http://snomed.info/sct/83821000000107/version/20230412,http://snomed.info/sct/900000000000207008/version/20240201,http://snomed.info/sct/900000000000207008/version/20240801,http://snomed.info/sct/900000000000207008/version/20250201,http://snomed.info/xsct/900000000000207008/version/20250814</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[1].system (l499/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION_NONE"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' version '1.5.4' could not be found, so the code cannot be validated. No versions of this code system are known</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[2].system (l499/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION_NONE"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/bfarm/atc' version '2025' could not be found, so the code cannot be validated. No versions of this code system are known</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[3].system (l499/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[11].resource/*Observation/45e5778e-1c5e-4223-9dcd-81e755f8cf10*/ (l581/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body height profile (http://hl7.org/fhir/StructureDefinition/bodyheight) which is required by the FHIR specification because the LOINC code 8302-2 was found</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[12].resource/*Observation/fd68d6a2-3a2d-4bc8-b821-37095ba2830d*/ (l625/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body weight profile (http://hl7.org/fhir/StructureDefinition/bodyweight) which is required by the FHIR specification because the LOINC code 29463-7 was found</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[11].resource (l581/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body height profile (http://hl7.org/fhir/StructureDefinition/bodyheight) which is required by the FHIR specification because the LOINC code 8302-2 was found</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[12].resource (l625/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body weight profile (http://hl7.org/fhir/StructureDefinition/bodyweight) which is required by the FHIR specification because the LOINC code 29463-7 was found</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l29"> </a>
+<h2><a href="file:examples\example-ak7-speicher-bundle-eRezept-eMP.xml">examples\example-ak7-speicher-bundle-eRezept-eMP.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.type (l56/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.type (l56/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://ihe-d.de/CodeSystems/IHEXDStypeCode#MEDI, https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#Signiertes_eRezept)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.author[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:f2ea54b9-ab1a-43d9-8727-fa24c61c820d</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.custodian</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:8d9fc65d-7baa-4b44-be96-5874b94c6471</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.extension[2].value.ofType(CodeableConcept) (l124/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.requester</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:e120bfbc-604d-4f82-bd21-313aad02fa76</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.insurance[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:5caa1f52-b926-4331-9e66-6768e6f083e7</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[2].resource/*Medication/86688c42-e8e9-45d5-8a6e-f7288e9d62ce*/.code.coding[0].system (l244/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[2].resource/*Medication/86688c42-e8e9-45d5-8a6e-f7288e9d62ce*/.ingredient[0].item.ofType(CodeableConcept).coding[0].system (l269/c42)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[3].resource/*DocumentReference/d722c7c1-623d-49b3-9471-d0a62b736569*/.type (l304/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[3].resource/*DocumentReference/d722c7c1-623d-49b3-9471-d0a62b736569*/.type (l304/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#BMP)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[3].resource/*DocumentReference/d722c7c1-623d-49b3-9471-d0a62b736569*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[3].resource/*DocumentReference/d722c7c1-623d-49b3-9471-d0a62b736569*/.author[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:f2ea54b9-ab1a-43d9-8727-fa24c61c820d</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[3].resource/*DocumentReference/d722c7c1-623d-49b3-9471-d0a62b736569*/.custodian</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:8d9fc65d-7baa-4b44-be96-5874b94c6471</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l30"> </a>
+<h2><a href="file:examples\example-ak7-speicher-bundle-medicationService-Nachtrag-eML.xml">examples\example-ak7-speicher-bundle-medicationService-Nachtrag-eML.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/AnhangBeispielPDFeML*/.type (l47/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/AnhangBeispielPDFeML*/.type (l47/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://ihe-d.de/CodeSystems/IHEXDStypeCode#MEDI, https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#eMedikationsliste)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/AnhangBeispielPDFeML*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:4e23f1c7-9eb1-49a6-a888-b43682dbadb9</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/AnhangBeispielPDFeML*/.author[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:abeca725-3c75-4238-8dee-053d3fb9c1a8</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/AnhangBeispielPDFeML*/.custodian</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:d99638cc-5f3b-4a7d-a3d4-2bc6c814d411</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*Medication/2571d29b-e213-40ec-b817-a1490718a490*/.code.coding[0].system (l129/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[2].resource/*MedicationStatement/NachtragEmlMedicationStatement*/.status (l165/c42)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem http://hl7.org/fhir/CodeSystem/medication-statement-status|4.0.1</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l31"> </a>
+<h2><a href="file:examples\example-ak7-speicher-bundle-muster16-eMP.xml">examples\example-ak7-speicher-bundle-muster16-eMP.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.type (l48/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.type (l48/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://ihe-d.de/CodeSystems/IHEXDStypeCode#MEDI, https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#Rezept)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.author[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:f2ea54b9-ab1a-43d9-8727-fa24c61c820d</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.custodian</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:8d9fc65d-7baa-4b44-be96-5874b94c6471</b></td>
+   </tr>
+   <tr style="background-color: #ffcccc">
+     <td><b>Bundle.entry[0].resource/*DocumentReference/ea1b030d-bdc4-4052-ad03-26accc9f297e*/.context.related[0] (l93/c30)</b></td><td><b>error</b></td><td title="Reference_REF_CantResolveProfile"><b>Der Profilbezug 'https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle' konnte nicht aufgelöst werden.</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.extension[2].value.ofType(CodeableConcept) (l121/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.requester</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:e120bfbc-604d-4f82-bd21-313aad02fa76</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.insurance[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:5caa1f52-b926-4331-9e66-6768e6f083e7</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[2].resource/*Medication/86688c42-e8e9-45d5-8a6e-f7288e9d62ce*/.code.coding[0].system (l241/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[2].resource/*Medication/86688c42-e8e9-45d5-8a6e-f7288e9d62ce*/.ingredient[0].item.ofType(CodeableConcept).coding[0].system (l266/c42)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[3].resource/*DocumentReference/d722c7c1-623d-49b3-9471-d0a62b736569*/.type (l301/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[3].resource/*DocumentReference/d722c7c1-623d-49b3-9471-d0a62b736569*/.type (l301/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#BMP)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[3].resource/*DocumentReference/d722c7c1-623d-49b3-9471-d0a62b736569*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[3].resource/*DocumentReference/d722c7c1-623d-49b3-9471-d0a62b736569*/.author[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:f2ea54b9-ab1a-43d9-8727-fa24c61c820d</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[3].resource/*DocumentReference/d722c7c1-623d-49b3-9471-d0a62b736569*/.custodian</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:8d9fc65d-7baa-4b44-be96-5874b94c6471</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l32"> </a>
+<h2><a href="file:examples\example-ak8-aufruf-bundle-oberservations-BMP.xml">examples\example-ak8-aufruf-bundle-oberservations-BMP.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l34/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l70/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[1].code (l102/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l146/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l154/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[5].resource/*Coverage/5caa1f52-b926-4331-9e66-6768e6f083e7*/.type (l311/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Coverage Type and Self-Pay Codes' (http://hl7.org/fhir/ValueSet/coverage-type|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = http://fhir.de/CodeSystem/versicherungsart-de-basis#GKV)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[0].system (l510/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION"><b>A definition for CodeSystem 'http://snomed.info/sct' version 'http://snomed.info/sct/11000274103/version/20240515' could not be found, so the code cannot be validated. Valid versions: http://snomed.info/sct/11000146104/version/20240930,http://snomed.info/sct/11000172109/version/20231115,http://snomed.info/sct/2011000195101/version/20230607,http://snomed.info/sct/20611000087101/version/20220930,http://snomed.info/sct/32506021000036107/version/20230731,http://snomed.info/sct/45991000052106/version/20220531,http://snomed.info/sct/45991000052106/version/20231130,http://snomed.info/sct/554471000005108/version/20250331,http://snomed.info/sct/731000124108/version/20250301,http://snomed.info/sct/827022005/version/20241216,http://snomed.info/sct/83821000000107/version/20230412,http://snomed.info/sct/900000000000207008/version/20240201,http://snomed.info/sct/900000000000207008/version/20240801,http://snomed.info/sct/900000000000207008/version/20250201,http://snomed.info/xsct/900000000000207008/version/20250814</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[1].system (l510/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION_NONE"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' version '1.5.4' could not be found, so the code cannot be validated. No versions of this code system are known</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[2].system (l510/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM_VERSION_NONE"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/bfarm/atc' version '2022' could not be found, so the code cannot be validated. No versions of this code system are known</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[9].resource/*AllergyIntolerance/30e62fd0-ce6a-4907-8da4-be10dbeae727*/.code.coding[3].system (l510/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[11].resource/*Observation/45e5778e-1c5e-4223-9dcd-81e755f8cf10*/ (l592/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body height profile (http://hl7.org/fhir/StructureDefinition/bodyheight) which is required by the FHIR specification because the LOINC code 8302-2 was found</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[12].resource/*Observation/fd68d6a2-3a2d-4bc8-b821-37095ba2830d*/ (l636/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body weight profile (http://hl7.org/fhir/StructureDefinition/bodyweight) which is required by the FHIR specification because the LOINC code 29463-7 was found</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[16].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l795/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[16].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l795/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#BMP)</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[11].resource (l592/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body height profile (http://hl7.org/fhir/StructureDefinition/bodyheight) which is required by the FHIR specification because the LOINC code 8302-2 was found</b></td>
+   </tr>
+   <tr style="background-color: #d6feff">
+     <td><b>Bundle.entry[12].resource (l636/c19)</b></td><td><b>Process Info</b></td><td title="VALIDATION_VAL_PROFILE_SIGNPOST_OBS"><b>Validate Observation against the Body weight profile (http://hl7.org/fhir/StructureDefinition/bodyweight) which is required by the FHIR specification because the LOINC code 29463-7 was found</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l33"> </a>
+<h2><a href="file:examples\example-ak8-speicher-bundle-BMP-muster16.xml">examples\example-ak8-speicher-bundle-BMP-muster16.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.extension[2].value.ofType(CodeableConcept) (l54/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.requester</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:e120bfbc-604d-4f82-bd21-313aad02fa76</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.insurance[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:5caa1f52-b926-4331-9e66-6768e6f083e7</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*Medication/86688c42-e8e9-45d5-8a6e-f7288e9d62ce*/.code.coding[0].system (l174/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*Medication/86688c42-e8e9-45d5-8a6e-f7288e9d62ce*/.ingredient[0].item.ofType(CodeableConcept).coding[0].system (l199/c42)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[2].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l234/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[2].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l234/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#BMP)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[2].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[2].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.author[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:f2ea54b9-ab1a-43d9-8727-fa24c61c820d</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[2].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.custodian</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:8d9fc65d-7baa-4b44-be96-5874b94c6471</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l34"> </a>
+<h2><a href="file:examples\example-ak9-aufruf-bundle-eMP.xml">examples\example-ak9-aufruf-bundle-eMP.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.extension[1].value.ofType(CodeableConcept) (l33/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*Composition/54ef329e-48a1-4733-a751-7f3a7bc193b7*/.section[0].code (l69/c27)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[0].code (l113/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type#00)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[1].resource/*Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d*/.qualification[1].code (l121/c27)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Practitioner Speciality' (https://fhir.kbv.de/ValueSet/KBV_VS_Base_Practitioner_Speciality|1.7.0), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung#Berufsbezeichnung)</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[6].resource/*DocumentReference/d722c7c1-623d-49b3-9471-d0a62b736569*/.type (l309/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[6].resource/*DocumentReference/d722c7c1-623d-49b3-9471-d0a62b736569*/.type (l309/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#BMP)</b></td>
+   </tr>
+</table>
+<hr/>
+<a name="l35"> </a>
+<h2><a href="file:examples\example-ak9-speicher-bundle-eMP-muster16.xml">examples\example-ak9-speicher-bundle-eMP-muster16.xml</a></h2>
+ <table class="grid">
+   <tr>
+     <td><b>Path</b></td><td><b>Severity</b></td><td><b>Message</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[0].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.extension[2].value.ofType(CodeableConcept) (l54/c43)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.requester</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:e120bfbc-604d-4f82-bd21-313aad02fa76</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[0].resource/*MedicationRequest/75683325-d26b-4e8d-b141-ff85c9010460*/.insurance[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:5caa1f52-b926-4331-9e66-6768e6f083e7</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*Medication/86688c42-e8e9-45d5-8a6e-f7288e9d62ce*/.code.coding[0].system (l174/c23)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ifa/pzn' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[1].resource/*Medication/86688c42-e8e9-45d5-8a6e-f7288e9d62ce*/.ingredient[0].item.ofType(CodeableConcept).coding[0].system (l199/c42)</b></td><td><b>warning</b></td><td title="UNKNOWN_CODESYSTEM"><b>A definition for CodeSystem 'http://fhir.de/CodeSystem/ask' could not be found, so the code cannot be validated</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[2].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l234/c23)</b></td><td><b>information</b></td><td title="MSG_DRAFT"><b>Reference to draft CodeSystem https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType|2.2.0</b></td>
+   </tr>
+   <tr style="background-color: #ffffe6">
+     <td><b>Bundle.entry[2].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.type (l234/c23)</b></td><td><b>information</b></td><td title="Terminology_TX_NoValid_3_CC"><b>Keiner der angegebenen Codes ist im Valueset 'Document Type Value Set' (http://hl7.org/fhir/ValueSet/c80-doc-typecodes|4.0.1), und es wird empfohlen, einen Code aus dieserm Valueset zu verwenden) (Codes = https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType#BMP)</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[2].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.subject</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:371cf692-89dd-4a19-a180-d78991a32950</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[2].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.author[0]</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:f2ea54b9-ab1a-43d9-8727-fa24c61c820d</b></td>
+   </tr>
+   <tr style="background-color: #ffebcc">
+     <td><b>Bundle.entry[2].resource/*DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7*/.custodian</b></td><td><b>warning</b></td><td title="Bundle_BUNDLE_Not_Local"><b>URN reference ist nicht lokal innerhalb des Bundles contained urn:uuid:8d9fc65d-7baa-4b44-be96-5874b94c6471</b></td>
+   </tr>
+</table>

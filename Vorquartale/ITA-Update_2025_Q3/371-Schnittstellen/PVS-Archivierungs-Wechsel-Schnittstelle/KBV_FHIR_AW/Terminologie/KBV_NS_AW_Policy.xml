@@ -1,0 +1,19 @@
+<NamingSystem xmlns="http://hl7.org/fhir">
+	<name value="KBV_NS_AW_Policy"/> 
+	<status value="active"/> 
+	<kind value="identifier"/> 
+	<date value="2020-02-06"/>
+	<publisher value="Kassenaerztliche Bundesvereinigung"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://www.kbv.de"/>
+		</telecom>
+	</contact>
+	<description value="Namensraum der Vorgaben zur Einhaltung der Sicherheit der exportierten Daten nach Anforderungskatalog (z.B. alle sicherheitstechnischen Vorgaben)"/> 
+	<uniqueId> 
+		<type value="uri"/> 
+		<value value="https://fhir.kbv.de/NamingSystem/KBV_NS_AW_Policy"/> 
+		<preferred value="true"/> 
+	</uniqueId> 
+</NamingSystem>

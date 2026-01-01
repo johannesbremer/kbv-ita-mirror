@@ -1,0 +1,778 @@
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <url value="https://simplifier.net/guide/leitfadenbasisde" />
+  <version value="0.2.1" />
+  <name value="Leitfaden Basis DE (STU3)" />
+  <status value="draft" />
+  <fhirVersion value="STU3" />
+  <page>
+    <title value="Leitfaden Basis DE (STU3)" />
+    <page>
+      <source value="Home.md" />
+      <title value="Home" />
+      <kind value="page" />
+      <format value="text/markdown" />
+    </page>
+    <page>
+      <source value="berdiesenLeitfaden.md" />
+      <title value="Über diesen Leitfaden" />
+      <kind value="page" />
+      <format value="text/markdown" />
+    </page>
+    <page>
+      <source value="Grundlagen.md" />
+      <title value="Grundlagen" />
+      <kind value="page" />
+      <format value="text/markdown" />
+    </page>
+    <page>
+      <source value="Anwendungshinweise.md" />
+      <title value="Anwendungshinweise" />
+      <kind value="page" />
+      <format value="text/markdown" />
+      <page>
+        <source value="ErgnzendeDateien.md" />
+        <title value="Ressourcen-Paket" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="AbleitungeigenerProfilevondenBasisprofilen.md" />
+        <title value="Ableitung eigener Profile von den Basisprofilen" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="NichtprofilierteRessourcenzuknftigeErweiterung.md" />
+        <title value="Nicht profilierte Ressourcen, zukünftige Erweiterung" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+    </page>
+    <page>
+      <title value="Profile" />
+      <kind value="page" />
+      <format value="text/markdown" />
+      <page>
+        <title value="Patient" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <source value="BasisprofilPatient.md" />
+          <title value="Basisprofil Patient" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="PatientimVersichertenstammdatenmanagementVSDM.md" />
+          <title value="Patient im Versichertenstammdatenmanagement (VSDM)" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+      <page>
+        <title value="Organisation" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <source value="BasisprofilOrganisation.md" />
+          <title value="Basisprofil Organisation" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+      <page>
+        <title value="Behandler" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <source value="BasisprofilBehandler.md" />
+          <title value="Basisprofil Behandler" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+      <page>
+        <source value="Behandlerrolle.md" />
+        <title value="Behandlerrolle" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <source value="BasisprofilBehandlerrolle.md" />
+          <title value="Basisprofil Behandlerrolle" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="ASV-Team-Mitgliedschaft.md" />
+          <title value="ASV-Team-Mitgliedschaft" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+      <page>
+        <title value="Versicherungsverhältnis" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <source value="BasisprofilVersicherungsverhltnis.md" />
+          <title value="Basisprofil Versicherungsverhältnis" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="VersicherungsverhltnisinderGKV.md" />
+          <title value="Versicherungsverhältnis in der GKV" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="VersicherungsverhltnisSelbstzahler.md" />
+          <title value="Versicherungsverhältnis Selbstzahler" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+      <page>
+        <source value="Abrechnung.md" />
+        <title value="Abrechnung" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <source value="Rechnungs-ElementChargeItem.md" />
+          <title value="EBM-Rechnungs-Element (ChargeItem)" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+      <page>
+        <source value="DiagnoseGesundheitszustand.md" />
+        <title value="Diagnose, Gesundheitszustand" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <source value="BasisprofileDiagnose.md" />
+          <title value="Basisprofil Diagnose" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+      <page>
+        <source value="AllergieUnvertrglichkeit.md" />
+        <title value="Allergie, Unverträglichkeit" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <source value="BasisprofilAllergieUnvertrglichkeit.md" />
+          <title value="Basisprofil Allergie, Unverträglichkeit" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+      <page>
+        <source value="ObservationBefund.md" />
+        <title value="Observation (Befund)" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <source value="BasisprofilObservation.md" />
+          <title value="Basisprofil Observation" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Krpergewicht.md" />
+          <title value="Körpergewicht" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Krpergre.md" />
+          <title value="Körpergröße" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Bauchumfang.md" />
+          <title value="Bauchumfang" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Hftumfang.md" />
+          <title value="Hüftumfang" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Krpertemperatur.md" />
+          <title value="Körpertemperatur" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Blutdruck.md" />
+          <title value="Blutdruck" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Puls.md" />
+          <title value="Puls" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Kreatinin.md" />
+          <title value="Kreatinin" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Schwangerschaft.md" />
+          <title value="Schwangerschaft" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Stillzeit.md" />
+          <title value="Stillzeit" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Raucherstatus-duplicate-3.md" />
+          <title value="Raucherstatus" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+      <page>
+        <source value="Prozedur.md" />
+        <title value="Prozedur" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <source value="BasisprofilProzedur.md" />
+          <title value="Basisprofil Prozedur" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+      <page>
+        <source value="MedikamentundMedikation.md" />
+        <title value="Medikament und Medikation" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <source value="BasisprofilMedikamentMedication.md" />
+          <title value="Basisprofil Medikament (Medication)" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="BasisprofilMedikationeinesPatientenMedicationStatement.md" />
+          <title value="Basisprofil Medikation eines Patienten (MedicationStatement)" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="BasisprofilMedikations-VerordnungMedicationRequest.md" />
+          <title value="Basisprofil Medikations-Verordnung (MedicationRequest)" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+      <page>
+        <title value="Infrastruktur" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <source value="Namensraum.md" />
+          <title value="Namensraum" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+    </page>
+    <page>
+      <title value="Datentypen" />
+      <kind value="page" />
+      <format value="text/markdown" />
+      <page>
+        <source value="Personenname.md" />
+        <title value="Personenname" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="Adresse.md" />
+        <title value="Adresse" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+    </page>
+    <page>
+      <title value="Extensions" />
+      <kind value="page" />
+      <format value="text/markdown" />
+      <page>
+        <source value="NamenszusatzfrdenFamiliennamen.md" />
+        <title value="Namenszusatz für den Familiennamen" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="BetriebsstttenHierarchie.md" />
+        <title value="Betriebsstätten_Hierarchie" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="GenerationdereGK.md" />
+        <title value="Generation der eGK" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="VersiondereGK.md" />
+        <title value="Version der eGK" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="OnlineprfungeGK.md" />
+        <title value="Onlineprüfung eGK" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="AllgemeineZusatzinformationenGKV.md" />
+        <title value="Allgemeine Zusatzinformationen VSDM" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="GeschtzteZusatzinformationenGKV.md" />
+        <title value="Geschützte Zusatzinformationen VSDM" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="SKT-Zusatzangabe.md" />
+        <title value="SKT-Zusatzangabe" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="EinlesedatumderVersichertenkarte-duplicate-3.md" />
+        <title value="Einlesedatum der Versichertenkarte" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="ICD-10-GMHaupt-Codebzw.Kreuz-Code.md" />
+        <title value="ICD-10-GM Haupt-Code bzw. Kreuz-Code" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="ICD-10-GMStern-Code.md" />
+        <title value="ICD-10-GM Stern-Code" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="ICD-10-GMAusrufezeichen-Code.md" />
+        <title value="ICD-10-GM Ausrufezeichen-Code" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="ICD-10-GMDiagnosesicherheit.md" />
+        <title value="ICD-10-GM Diagnosesicherheit" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="ZusatzinformationenfrRezepte.md" />
+        <title value="Zusatzinformationen für Rezepte" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="Freitext.md" />
+        <title value="Freitext" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="DokumentreferenzagentTEMPORR.md" />
+        <title value="Dokumentreferenz: agent (TEMPORÄR)" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="DifferenzierungdesadministrativenGeschlechtsother.md" />
+        <title value="Differenzierung des administrativen Geschlechts 'other'" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="Testing.md" />
+        <title value="Testing" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+    </page>
+    <page>
+      <title value="Terminologie" />
+      <kind value="page" />
+      <format value="text/markdown" />
+      <page>
+        <title value="Nomenklatur der Ressourcen" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="Codesystem-Versionen.md" />
+        <title value="Codesystem-Versionen" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <source value="Platzhalter-Codesysteme.md" />
+        <title value="Platzhalter-Codesysteme" />
+        <kind value="page" />
+        <format value="text/markdown" />
+      </page>
+      <page>
+        <title value="Value Sets" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <title value="Identifier_Typ" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Bundeslnder.md" />
+          <title value="Bundesländer" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <title value="Betriebsstätten_Hierarchie" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <title value="Seitenlokalisation" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="ArztFachgruppe-3.md" />
+          <title value="Arzt_Fachgruppe" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Versicherungsart-2.md" />
+          <title value="Versicherungsart" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="OrganisationsartenIKKlassifikation-2.md" />
+          <title value="Organisationsarten (IK Klassifikation)" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="VorsatzworteimNachnamennachDEVAnlage6.md" />
+          <title value="Vorsatzworte im Nachnamen nach DEÜV Anlage 6" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="NamenszusatzimNachnamennachDEVAnlage7.md" />
+          <title value="Namenszusatz im Nachnamen nach DEÜV Anlage 7" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="LnderkennzeichennachDEVAnlage8-9.md" />
+          <title value="ICD_10_GM" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="OPS.md" />
+          <title value="OPS (Operationen_ und Prozedurenschlüssel)" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="EBM.md" />
+          <title value="EBM (Einheitlicher Bewertungsmaßstab)" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Versichertenstatus-duplicate-3.md" />
+          <title value="Versichertenstatus" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Personengruppe-duplicate-2.md" />
+          <title value="Personengruppe" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="DMP-Kennzeichen-duplicate-2.md" />
+          <title value="DMP-Kennzeichen" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="KV-Bezirke-duplicate-2.md" />
+          <title value="KV-Bezirke" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Diagnosesicherheit.md" />
+          <title value="Diagnosesicherheit" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="DarreichungsformnachBMP-duplicate-2.md" />
+          <title value="Darreichungsform nach BMP" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="DosiereinheitnachBMP-duplicate-2.md" />
+          <title value="Dosiereinheit nach BMP" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="DarreichungsformnachEDQM.md" />
+          <title value="Darreichungsform nach EDQM" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Einnahmezeitpunkte.md" />
+          <title value="Einnahmezeitpunkte" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="PZNPharmazentralnummer.md" />
+          <title value="PZN (Pharmazentralnummer)" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Raucherstatus.md" />
+          <title value="Raucherstatus" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Fachgruppen-CodesnachWBO.md" />
+          <title value="Fachgruppen-Codes nach WBO" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="EinheitenfrKrpergewicht.md" />
+          <title value="Einheiten für Körpergewicht" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="EinheitenfrKrpergre.md" />
+          <title value="Einheiten für Körpergröße" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="DifferenzierungdesadministrativenGeschlechtsother-duplicate-2.md" />
+          <title value="Differenzierung des administrativen Geschlechts 'other'" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+      <page>
+        <source value="Codesysteme.md" />
+        <title value="Codesysteme" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <source value="Seitenlokalisation-duplicate-2.md" />
+          <title value="Seitenlokalisation" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <title value="Identifier_Typ (deutsche Erweiterung)" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="ArztFachgruppe.md" />
+          <title value="Arzt_Fachgruppe" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Versicherungsart.md" />
+          <title value="Versicherungsart" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="OrganisationsartenIKKlassifikation.md" />
+          <title value="Organisationsarten (IK Klassifikation)" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="VorsatzworteimNachnamen.md" />
+          <title value="Vorsatzworte im Nachnamen nach DEÜV Anlage 6" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="NamenszusatzimNachnamen.md" />
+          <title value="Namenszusatz im Nachnamen nach DEÜV Anlage 7" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="LnderkennzeichennachDEVAnlage8.md" />
+          <title value="Länderkennzeichen nach DEÜV Anlage 8" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="BundeslndernachISO3166-2.md" />
+          <title value="Bundesländer nach ISO 3166-2" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Versichertenstatus.md" />
+          <title value="Versichertenstatus" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Personengruppe.md" />
+          <title value="Personengruppe" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="DMP-Kennzeichen.md" />
+          <title value="DMP-Kennzeichen" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="KV-Bezirke.md" />
+          <title value="KV-Bezirke" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="DiagnosesicherheitICD-10-GM.md" />
+          <title value="Diagnosesicherheit ICD-10-GM" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="DarreichungsformnachBMP.md" />
+          <title value="Darreichungsform nach BMP" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="DosiereinheitnachBMP.md" />
+          <title value="Dosiereinheit nach BMP" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="DoseformEDQM.md" />
+          <title value="Darreichungsform nach EDQM" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Raucherstatus-duplicate-2.md" />
+          <title value="Raucherstatus" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="ICD-10-GM.md" />
+          <title value="ICD-10-GM" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="Newitem-duplicate-6.md" />
+          <title value="OPS" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="PZN.md" />
+          <title value="PZN" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="EBM-duplicate-2.md" />
+          <title value="EBM" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="renderBasisprofilDEpzn.md" />
+          <title value="Fachgruppen-Codes nach WBO" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <source value="DifferenzierungdesadministrativenGeschlechtsother-duplicate-3.md" />
+          <title value="Differenzierung des administrativen Geschlechts 'other'" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+      <page>
+        <title value="Namensräume" />
+        <kind value="page" />
+        <format value="text/markdown" />
+        <page>
+          <title value="lokale Namensräume" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+        <page>
+          <title value="nationale Namensräume" />
+          <kind value="page" />
+          <format value="text/markdown" />
+        </page>
+      </page>
+    </page>
+  </page>
+</ImplementationGuide>

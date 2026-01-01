@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Built-By: TIBCO Software Inc.
+Created-By: Apache Maven 3.3.3
+Build-Jdk: 1.8.0_241
+
+Name: net/sf/jasperreports/fonts/
+Implementation-Title: net.sf.jasperreports.fonts
+Implementation-Version: 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de
+ 3
+Specification-Vendor: TIBCO Software Inc.
+Specification-Title: JasperReports Font Extension
+Specification-Version: 6.12.2
+Implementation-Vendor: TIBCO Software Inc.
+

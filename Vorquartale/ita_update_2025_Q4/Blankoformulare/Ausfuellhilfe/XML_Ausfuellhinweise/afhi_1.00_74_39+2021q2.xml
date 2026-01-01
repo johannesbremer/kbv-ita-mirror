@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 ../Schema/afhi_root_V1.00.xsd">
+	<header>
+		<id EX="95a9c766-c8b6-4d42-96f5-403c0db4d29f" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2021-04-01.."/>
+		<origination_dttm V="2021-02-12"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat 4"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="ftp://ftp.kbv.de/ita-update"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen für der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2021, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="ftp://ftp.kbv.de/ita-update/"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="39" DN="Krebsfrüherkennung Zervix-Karzinom">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Alterskategorie"/>
+					<hinweistext V="Entsprechend den Vorgaben der Richtlinie wird im Screening bei Frauen unter 35 Jahren nur eine zytologische Untersuchung durchgeführt, bei Frauen ab 35 eine Kombinationsuntersuchung aus Zytologie und HPV-Test (Ko-Test). Im Rahmen der Abklärung auffälliger Befunde kann auch bei Frauen zwischen 30 und 34 Jahren ein Ko-Test erfolgen. Die Zuordnung zu einer Alterskategorie entscheidet über die primäre Screeninguntersuchung und darüber, nach welchem in der Richtlinie vorgegebenen Algorithmus auffällige Befunde bei der Patientin abgeklärt werden sollen. Die Alterskategorie bezieht sich auf das Geburtsdatum im Verhältnis zum Behandlungstag und erleichtert die Abläufe in der Zytologie."/>
+				</feld>
+				<feld>
+					<nummer V="2"/>
+					<name V="Auftrag"/>
+					<hinweistext V="Die Felder dienen der differenzierten Beauftragung von Leistungen des Primärscreenings oder der Abklärungsdiagnostik gemäß oKFE-RL. Sollte der HPV-Test im Rahmen einer Ko-Testung (HPV + Zytologie) selbst erbracht oder an Dritte überwiesen werden, so ist dies dem zur Durchführung der zytologischen Untersuchung beauftragten Zytologen/ Pathologen im Freitextfeld Nr. 9 anzuzeigen und diesem auch der Befund zugänglich zu machen. Der Pathologe/ Zytologe weist dann seinerseits im Freitextfeld 'Bemerkungen' durch eine Notiz darauf hin, dass seine Zusammenfassende Empfehlung einen externen HPV Befund berücksichtigt. Im oben dargestellten Fall einer Aufspaltung des Ko-Test wird, unter Berücksichtigung o.g. Empfehlungen, nur Zytologie angekreuzt."/>
+				</feld>
+				<feld>
+					<nummer V="3"/>
+					<name V="Anamnese"/>
+					<hinweistext V="Das Muster 39 ist für Untersuchungen im Rahmen des Primärscreenings und der Abklärungsdiagnostik vorgesehen. Die Befüllung dieses Feldes dient dazu, Angaben zu durchgeführten Krebsfrüherkennungsuntersuchungen, HPV-Impfung, HPV-HR-Testergebnis sowie zu Voroperationen, Strahlen- oder Chemotherapie  der Patientin zu geben. Bitte geben Sie den Befund mittels Münchener Nomenklatur III an (0 = unzureichendes Material | I = Unauffällige und unverdächtige Befunde | II-a = Unauffällige Befunde bei auffälliger Anamnese | II-p, II-g, II-e = Befunde mit eingeschränkt protektivem Wert | III-p, III-g, III-e, III-x = Unklare bzw. zweifelhafte Befunde | IIID1, IIID2 = Dysplasiebefunde mit größerer Regressionsneigung | IVa-p, IVa-g, IVb-p, IVb-g = Unmittelbare Vorstufen des Zervixkarzioms | V-p, V-g, V-e, V-x = Malignome | Die folgenden Werte der Münchener Nomenklatur II dürfen nur für Befunde bis zum 31.12.2014 verwendet werden: I/II, II, I-II, IIw, IIk, III, IIID, IVa, IVb, V)."/>
+				</feld>
+				<feld>
+					<nummer V="4"/>
+					<name V="Jetzt"/>
+					<hinweistext V="Machen Sie hier bitte Angaben zu aktuellen gynäkologischen Anamnese insbesondere Symptomen, Beschwerden oder Behandlungen, die die Qualität des Abstrichs und die Befundung beeinflussen oder beeinträchtigen können. Die Angaben zur Art der Hormonanwendung können als Freitext erfolgen. Weiterhin sind hier Angaben zu Klinischen Befunden einzutragen."/>
+				</feld>
+				<feld>
+					<nummer V="5"/>
+					<name V="Klinischer Befund"/>
+					<hinweistext V="Beim klinischen Befund wird eine Aussage darüber getroffen, ob die gynäkologische Untersuchung auffällig war."/>
+				</feld>
+				<feld>
+					<nummer V="6"/>
+					<name V="Erläuterungen"/>
+					<hinweistext V="In den Erläuterungen sollen Besonderheiten zu den Angaben in den vorhergehenden Feldern vermerkt und näher erläutert werden. Insbesondere auch besondere Beauftragungskonstellationen und ein möglicherweise extern erhobener HPV-Befund. Liegen keine Erläuterungen vor, kann das Feld freigelassen werden."/>
+				</feld>
+				<feld>
+					<nummer V="7"/>
+					<name V="Zytologischer Befund / Kombinationsbefund"/>
+					<hinweistext V="Entsprechend den Vorgaben der Richtlinie wird im Screening bei Frauen unter 35 Jahren nur eine zytologische Untersuchung durchgeführt, bei Frauen ab 35 eine Kombinationsuntersuchung aus Zytologie und HPV-Test (Ko-Test). Im Rahmen der Abklärung auffälliger Befunde kann auch bei Frauen zwischen 30 und 34 Jahren ein HPV-Test erfolgen. An dieser Stelle sind Angaben zu endozervikalen Zellen, zum Proliferationsgrad und zum Ergebnis des HPV-Tests zu machen. Bei einem positiven HPV-Test dienen die Dokumentationsanforderungen im Fragenkatalog zur organisierten Krebsfrüherkennung als Orientierung. Daneben ermöglicht das Freitextfeld 'Bemerkungen' die Angabe von Hinweisen und Besonderheiten für den behandelnden Gynäkologen. Der zytologische Befund wird anhand der München III-Klassifikation eingetragen."/>
+				</feld>
+				<feld>
+					<nummer V="8"/>
+					<name V="Zusammenfassende Empfehlung"/>
+					<hinweistext V="Hier erfolgt eine Angabe, wenn entsprechend den Vorgaben der Richtlinie Folgeuntersuchungen indiziert sind. Falls entsprechend dem Abklärungsalgorithmus eine Wiedervorstellung notwendig ist, geben Sie bitte hier eine Empfehlung ab. Bei unauffälligen Befunden können die Felder leer gelassen werden. Die Untersuchungsnummer des zytologischen Befundes ist im Bemerkungsfeld des Abschnittes 7 aufzuführen, sofern dem beauftragenden Arzt kein separater Befund zugeht, auf welchem diese Nummer ersichtlich ist."/>
+				</feld>
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

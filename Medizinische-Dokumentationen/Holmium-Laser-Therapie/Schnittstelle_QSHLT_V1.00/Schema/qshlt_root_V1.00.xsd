@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!--
+Projekt: 
+  Namespace: "urn:ehd/qshlt/001", Präfix: qshlt
+
+-->
+<xs:schema xmlns:ehd="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/001" xmlns:qshlt="urn:ehd/qshlt/001" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<!-- ======================================================================= 
+	Einbinden der ehd-Bibliotheken
+	======================================================================= -->
+	<!-- ======================================================================= 
+	Einbinden der qshlt-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="qshlt_header_V1.00.xsd"/>
+	<xs:import namespace="urn:ehd/qshlt/001" schemaLocation="qshlt_body_V1.00.xsd"/>
+	<!-- ======================================================================= 
+	EHD-root
+	hier ist des ehd-root-Element definiert, welches "header" und "body" sowie "keytabs"
+	Elemente enthält.
+	======================================================================= -->
+	<xs:element name="ehd" type="qshlt_root_typ">
+		<xs:annotation>
+			<xs:documentation>root element ehd "eHealthData"</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- ======================================================================= 
+	vom Basistyp: ehd_root_typ
+  abgeleiteter Typ: gsmg_root_typ
+	======================================================================= -->
+	<xs:complexType name="qshlt_root_typ">
+		<xs:sequence>
+			<xs:element name="header" type="ehd:qshlt_header_typ">
+				<xs:annotation>
+					<xs:documentation>alle Metainformationen zu den Daten</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="body" type="qshlt_body_typ">
+				<xs:annotation>
+					<xs:documentation>die eigentlichen Daten</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	vom Basistyp: ehd_body_typ
+  abgeleiteter Typ: gsmg_body_typ 
+	======================================================================= -->
+	<xs:complexType name="qshlt_body_typ">
+		<xs:sequence>
+			<xs:element ref="qshlt:qshlt_dokumentation"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

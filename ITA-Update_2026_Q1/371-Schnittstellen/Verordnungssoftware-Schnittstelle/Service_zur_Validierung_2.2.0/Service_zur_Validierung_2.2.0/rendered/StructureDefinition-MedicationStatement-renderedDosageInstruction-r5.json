@@ -1,0 +1,50 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "MedicationStatement-renderedDosageInstruction-r5",
+  "url": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationStatement.renderedDosageInstruction",
+  "version": "1.0.0",
+  "name": "MedicationStatementRenderedDosageInstructionR5",
+  "title": "MedicationStatement RenderedDosageInstruction R5 Backport",
+  "description": "FHIR R5 backport Extension für MedicationStatement.renderedDosageInstruction. Dies ist ein 1:1 Nachbau des FHIR Backport-Extension Mechanismus und dient als Hilfsmittel für Systeme, die den FHIR Backport-Extension Mechanismus nicht unterstützen. Nach dem finalen Release der Cross Version Extensions FHIR packages wird diese Extension obsolet sein.",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "MedicationStatement",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "MedicationStatement RenderedDosageInstruction R5 Backport",
+        "definition": "FHIR R5 backport Extension für MedicationStatement.renderedDosageInstruction. Dies ist ein 1:1 Nachbau des FHIR Backport-Extension Mechanismus und dient als Hilfsmittel für Systeme, die den FHIR Backport-Extension Mechanismus nicht unterstützen. Nach dem finalen Release der Cross Version Extensions FHIR packages wird diese Extension obsolet sein."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "http://hl7.org/fhir/5.0/StructureDefinition/extension-MedicationStatement.renderedDosageInstruction"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "type": [
+          {
+            "code": "markdown"
+          }
+        ]
+      }
+    ]
+  }
+}

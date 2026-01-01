@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  
+<keytabs xmlns="urn:ehd/001">
+  <keytab SV="1.00" SN="S_EBM_ABR_ARZTPRAXIS" S="1.2.276.0.76.5.246">
+    <key V="false" DN="nicht abrechnungsfähig in der Arztpraxis" S="1.2.276.0.76.5.246" SV="1.00"/>
+    <key V="true" DN="abrechnungsfähig in der Arztpraxis" S="1.2.276.0.76.5.246" SV="1.00"/>
+  </keytab>
+</keytabs>
+

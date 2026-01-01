@@ -1,0 +1,24 @@
+Beschreibung "Schnittstelle QS Hörgeräteversorgung Kinder" 
+Version 1.12, 11.09.2019
+**************************************************************************
+
+Alle Komponenten des Pakets sind separat versioniert. Es können keine 
+Schlussfolgerungen aus den Versionsnummern des Pakets und der Komponenten 
+untereinander gezogen werden. Die Versionsnummer der Schnittstelle muss 
+auch nicht identisch mit der Versionsnummer der Schnittstellenbeschreibung 
+sein.
+
+
+2. Dokumente und Software
+*************************
+
+- Schnittstellenbeschreibung QS Hörgeräteversorgung Kinder (Version 1.12, Stand: 12.04.2019)
+- Schnittstellenbeschreibung eHeader Version (2.12, Stand: 12.04.2019)
+- Schemata (Version 1.12 Stand: 12.04.2019)
+- BSP-Dateien (Stand: 10.09.2019)
+
+
+Änderungen zur Vorversion
+*********************************************
+- Anpassung der Version des Schemas
+- Anpassung der Beispieldateien

@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krebsfrueherkennung_Auftrag_Zusatzinformation_2020" />
+  <version value="1.2.0" />
+  <name value="KBV_EX_AW_Krebsfrueherkennung_Auftrag_Zusatzinformation_2020" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="ServiceRequest" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Auftrag Zusatzinformationen" />
+      <definition value="In diesem Element werden zusätzliche Informationen zum Auftrag der Krebsfrueherkennung dokumentiert. Siehe Formular/Muster 39 ab 01/2020" />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:untersuchungsnummer">
+      <path value="Extension.extension" />
+      <sliceName value="untersuchungsnummer" />
+      <short value="Untersuchungsnummer" />
+      <definition value="Angabe der Untersuchungsnummer" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:untersuchungsnummer.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="untersuchungsnummer" />
+    </element>
+    <element id="Extension.extension:untersuchungsnummer.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:untersuchungsnummer.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:wiederholungsuntersuchung">
+      <path value="Extension.extension" />
+      <sliceName value="wiederholungsuntersuchung" />
+      <short value="Wiederholungsuntersuchung" />
+      <definition value="War es eine Wiederholungsuntersuchung?&#xD;&#xA;0 = keine Wiederholungsuntersuchung&#xD;&#xA;1 = Wiederholungsuntersuchung" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:wiederholungsuntersuchung.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="wiederholungsuntersuchung" />
+    </element>
+    <element id="Extension.extension:wiederholungsuntersuchung.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:wiederholungsuntersuchung.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:jahr_der_letzten_Untersuchung">
+      <path value="Extension.extension" />
+      <sliceName value="jahr_der_letzten_Untersuchung" />
+      <short value="Jahr der letzten Untersuchung" />
+      <definition value="Angabe des Jahres der letzten Untersuchung" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:jahr_der_letzten_Untersuchung.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="jahr_der_letzten_Untersuchung" />
+    </element>
+    <element id="Extension.extension:jahr_der_letzten_Untersuchung.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="date" />
+      </type>
+    </element>
+    <element id="Extension.extension:jahr_der_letzten_Untersuchung.value[x]:valueDate">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueDate" />
+      <min value="1" />
+      <type>
+        <code value="date" />
+      </type>
+    </element>
+    <element id="Extension.extension:nummer_letzter_zytologischer_Befund">
+      <path value="Extension.extension" />
+      <sliceName value="nummer_letzter_zytologischer_Befund" />
+      <short value="Nummer des letzten zytologischen Befundes" />
+      <definition value="Angabe der Nummer des letzten zytologischen Befundes" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:nummer_letzter_zytologischer_Befund.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="nummer_letzter_zytologischer_Befund" />
+    </element>
+    <element id="Extension.extension:nummer_letzter_zytologischer_Befund.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:nummer_letzter_zytologischer_Befund.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:gruppe_des_letzten_Befundes">
+      <path value="Extension.extension" />
+      <sliceName value="gruppe_des_letzten_Befundes" />
+      <short value="Gruppe des letzten Befundes" />
+      <definition value="In diesem Element kann die Gruppe des letzten Befundes dokumentiert werden." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:gruppe_des_letzten_Befundes.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="gruppe_des_letzten_Befundes" />
+    </element>
+    <element id="Extension.extension:gruppe_des_letzten_Befundes.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:gruppe_des_letzten_Befundes.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:alterskategorie">
+      <path value="Extension.extension" />
+      <sliceName value="alterskategorie" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:alterskategorie.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="alterskategorie" />
+    </element>
+    <element id="Extension.extension:alterskategorie.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:alterskategorie.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <min value="1" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Krebsfrueherkennung_Frauen_Auftrag_Alterskategorie" />
+      </binding>
+    </element>
+    <element id="Extension.extension:alterskategorie.value[x]:valueCodeableConcept.coding">
+      <path value="Extension.extension.valueCodeableConcept.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:alterskategorie.value[x]:valueCodeableConcept.coding.system">
+      <path value="Extension.extension.valueCodeableConcept.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:alterskategorie.value[x]:valueCodeableConcept.coding.version">
+      <path value="Extension.extension.valueCodeableConcept.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:alterskategorie.value[x]:valueCodeableConcept.coding.code">
+      <path value="Extension.extension.valueCodeableConcept.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:alterskategorie.value[x]:valueCodeableConcept.coding.userSelected">
+      <path value="Extension.extension.valueCodeableConcept.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:alterskategorie.value[x]:valueCodeableConcept.text">
+      <path value="Extension.extension.valueCodeableConcept.text" />
+      <max value="0" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krebsfrueherkennung_Auftrag_Zusatzinformation_2020" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

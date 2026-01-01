@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Dauermedikation" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Dauermedikation" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="MedicationStatement" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/MedicationStatement" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="MedicationStatement.id">
+      <path value="MedicationStatement.id" />
+      <min value="1" />
+    </element>
+    <element id="MedicationStatement.meta">
+      <path value="MedicationStatement.meta" />
+      <min value="1" />
+    </element>
+    <element id="MedicationStatement.meta.versionId">
+      <path value="MedicationStatement.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="MedicationStatement.meta.lastUpdated">
+      <path value="MedicationStatement.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="MedicationStatement.meta.profile">
+      <path value="MedicationStatement.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+	  <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Dauermedikation|1.2.0" />
+    </element>
+    <element id="MedicationStatement.text">
+      <path value="MedicationStatement.text" />
+      <min value="1" />
+    </element>  
+    <element id="MedicationStatement.extension">
+      <path value="MedicationStatement.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="MedicationStatement.extension:beschreibung_der_Verordnung">
+      <path value="MedicationStatement.extension" />
+      <sliceName value="beschreibung_der_Verordnung" />
+      <short value="Beschreibung der Verordnung" />
+      <definition value="Diese Extension kann zur generellen Beschreibung der Verordnung genutzt werden." />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Additional_Comment" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationStatement.extension:beschreibung_der_Verordnung.value[x]">
+      <path value="MedicationStatement.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationStatement.identifier">
+      <path value="MedicationStatement.identifier" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.basedOn">
+      <path value="MedicationStatement.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.partOf">
+      <path value="MedicationStatement.partOf" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.status">
+      <path value="MedicationStatement.status" />
+      <short value="active | completed" />
+      <definition value="Der Status dieses Elementes kann mit active oder completed angegeben werden." />
+    </element>
+    <element id="MedicationStatement.statusReason">
+      <path value="MedicationStatement.statusReason" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.category">
+      <path value="MedicationStatement.category" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.medication[x]">
+      <path value="MedicationStatement.medication[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationReference">
+      <path value="MedicationStatement.medication[x]" />
+      <sliceName value="medicationReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Medikament|1.2.0" />
+      </type>
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationReference.reference">
+      <path value="MedicationStatement.medication[x].reference" />
+      <min value="1" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationReference.type">
+      <path value="MedicationStatement.medication[x].type" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationReference.identifier">
+      <path value="MedicationStatement.medication[x].identifier" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.medication[x]:medicationReference.display">
+      <path value="MedicationStatement.medication[x].display" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.subject">
+      <path value="MedicationStatement.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationStatement.subject.reference">
+      <path value="MedicationStatement.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="MedicationStatement.subject.type">
+      <path value="MedicationStatement.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.subject.identifier">
+      <path value="MedicationStatement.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.subject.display">
+      <path value="MedicationStatement.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.context">
+      <path value="MedicationStatement.context" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.effective[x]">
+      <path value="MedicationStatement.effective[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <type>
+        <code value="Period" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationStatement.effective[x]:effectivePeriod">
+      <path value="MedicationStatement.effective[x]" />
+      <sliceName value="effectivePeriod" />
+      <short value="Zeitraum der Dauermedikation" />
+      <definition value="In diesem Element ist der Zeitraum der Dauermedikation anzugeben." />
+      <type>
+        <code value="Period" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationStatement.effective[x]:effectivePeriod.start">
+      <path value="MedicationStatement.effective[x].start" />
+      <min value="1" />
+    </element>
+    <element id="MedicationStatement.informationSource">
+      <path value="MedicationStatement.informationSource" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.derivedFrom">
+      <path value="MedicationStatement.derivedFrom" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.reasonCode">
+      <path value="MedicationStatement.reasonCode" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.reasonReference">
+      <path value="MedicationStatement.reasonReference" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.note">
+      <path value="MedicationStatement.note" />
+      <short value="weitere Angaben zur Verordnung" />
+      <definition value="In diesem Element können weitere Angaben zur Verordnung eingetragen werden" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="MedicationStatement.note.author[x]">
+      <path value="MedicationStatement.note.author[x]" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.note.time">
+      <path value="MedicationStatement.note.time" />
+      <max value="0" />
+    </element>
+    <element id="MedicationStatement.dosage">
+      <path value="MedicationStatement.dosage" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krankenbefoerderung_Performer_Begruednung" />
+  <version value="1.2.0" />
+  <name value="KBV_EX_AW_Krankenbefoerderung_Performer_Begruednung" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="ServiceRequest.performer" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Begruendung der Wahl des Beförderungsmittels" />
+      <definition value="In diesem Element kann eine Begründung zur Wahl des Beförderungsmittels hinterlegt werden. Bevorzugt ist eine Referenz zur Ressource Diagnoe anzugeben. Sollte es nicht möglich sein diese zu befüllen, kann ein Freitext angegeben werden. Siehe Formular/Muster 4 Teil 2 Beförderungsmittel." />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:referenz">
+      <path value="Extension.extension" />
+      <sliceName value="referenz" />
+      <short value="Referenz als Begruendung" />
+      <definition value="Referenz als Begruendung" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:referenz.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="referenz" />
+    </element>
+    <element id="Extension.extension:referenz.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:referenz.value[x]:valueReference">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Diagnose" />
+      </type>
+    </element>
+    <element id="Extension.extension:referenz.value[x]:valueReference.reference">
+      <path value="Extension.extension.value[x].reference" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:referenz.value[x]:valueReference.type">
+      <path value="Extension.extension.value[x].type" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:referenz.value[x]:valueReference.identifier">
+      <path value="Extension.extension.value[x].identifier" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:referenz.value[x]:valueReference.display">
+      <path value="Extension.extension.value[x].display" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:freitext">
+      <path value="Extension.extension" />
+      <sliceName value="freitext" />
+      <short value="Freitext als Begruendung" />
+      <definition value="Es ist ein Freitext als Begruendung anzugeben." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:freitext.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="freitext" />
+    </element>
+    <element id="Extension.extension:freitext.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:freitext.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krankenbefoerderung_Performer_Begruednung" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,1537 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<!--
+		Basistypen
+	-->
+	<!-- Format: alnum, Feldlänge: var -->
+	<xsd:simpleType name="ALNUM_VAR">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="256"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Inhaltsregeln -->
+	<!-- 1, 2 -->
+	<xsd:simpleType name="E001">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 3, 5 -->
+	<xsd:simpleType name="E002">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="5"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 01-99 -->
+	<xsd:simpleType name="E003">
+		<xsd:restriction base="xsd:unsignedShort">
+			<xsd:pattern value="\d{3}"/>
+			<xsd:minInclusive value='002'/>
+			<xsd:maxInclusive value='999'/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 8220, 8221, 8230, 8231, 8205, 8215 -->
+	<xsd:simpleType name="E004">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="8220"/>
+			<xsd:enumeration value="8221"/>
+			<xsd:enumeration value="8230"/>
+			<xsd:enumeration value="8231"/>
+			<xsd:enumeration value="8205"/>
+			<xsd:enumeration value="8215"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Bei numerischen Werten: H, +, HH, ++, L, -, LL, - -, <, > -->
+	<!-- Bei nicht numerischen Werten: N, A, AA -->
+	<xsd:simpleType name="E005">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="H{1,2}|\+{1,2}|L{1,2}|\-{1,2}|N|A{1,2}|!H|!\+|!L|!-"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- E, T, V, A, N -->
+	<xsd:simpleType name="E006">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- B, K, F -->
+	<xsd:simpleType name="E007">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/>
+			<xsd:enumeration value="07"/>
+			<xsd:enumeration value="08"/>
+			<xsd:enumeration value="09"/>
+			<xsd:enumeration value="10"/>
+			<xsd:enumeration value="11"/>
+			<xsd:enumeration value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3, 4 -->
+	<xsd:simpleType name="E008">
+		<xsd:restriction base="xsd:unsignedShort">
+			<xsd:minInclusive value='0'/>
+			<xsd:maxInclusive value='4'/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 21, 23, 24, 27, 28 -->
+	<xsd:simpleType name="E009">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="21"/>
+			<xsd:enumeration value="23"/>
+			<xsd:enumeration value="24"/>
+			<xsd:enumeration value="27"/>
+			<xsd:enumeration value="28"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 00 -->
+	<xsd:simpleType name="E010">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="00"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1 -->
+	<xsd:simpleType name="E011">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- >0 -->
+	<xsd:simpleType name="E012">
+		<xsd:restriction base="xsd:unsignedShort">
+			<xsd:minInclusive value='1'/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 0, 1, 2, 3, 4, 5, 6 -->
+	<xsd:simpleType name="E013">
+		<xsd:restriction base="xsd:unsignedShort">
+			<xsd:minInclusive value='0'/>
+			<xsd:maxInclusive value='6'/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 01-03, 06-21, 24, 25, 27, 28, 31, 37-73, 78-81, 83, 85-88, 93-96, 98, 99 -->
+	<xsd:simpleType name="E014">
+		<xsd:restriction base="xsd:unsignedShort">
+			<!--xsd:pattern value="(?!(00)|(04)|(05)|(22)|(23)|(26)|(29)|(30)|(32)|(33)|(34)|(35)|(36)|(74)|(75)|(76)|(77)|(82)|(84)|(89)|(90)|(91)|(92)|(97))\d{2}"/-->
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 00, 01, 02, 03, 04, 05, 06, 07, 08, 09 -->
+	<xsd:simpleType name="E015">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="00"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/>
+			<xsd:enumeration value="07"/>
+			<xsd:enumeration value="08"/>
+			<xsd:enumeration value="09"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3 -->
+	<xsd:simpleType name="E017">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- M, W, X -->
+	<xsd:simpleType name="E018">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="W"/>
+			<xsd:enumeration value="X"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- M, W, U -->
+	<xsd:simpleType name="E019">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="M"/>
+			<xsd:enumeration value="W"/>
+			<xsd:enumeration value="D"/>
+			<xsd:enumeration value="X"/>
+			<xsd:enumeration value="U"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3, 4, 5, 6 -->
+	<xsd:simpleType name="E020">
+		<xsd:restriction base="xsd:string">
+<!-- 			<xsd:enumeration value="00"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/> -->
+			<!-- ab q4 18 nur zweistellig -->
+<!-- 			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="6"/> -->
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 4, 6, 7, 8 -->
+	<xsd:simpleType name="E021">
+		<xsd:restriction base="xsd:string">
+<!-- 			<xsd:enumeration value="00"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="06"/>
+			<xsd:enumeration value="07"/>
+			<xsd:enumeration value="08"/>
+			<xsd:enumeration value="09"/> -->
+			<!-- ab q4 18 nur zweistellig -->
+<!-- 			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="6"/>
+			<xsd:enumeration value="7"/>
+			<xsd:enumeration value="8"/>
+			<xsd:enumeration value="9"/> -->
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 00, 01, 02, 03, 17, 20 , 38 , 46, (47), (48), (49), (50), 51, 52, (55), (60), (61), (62), 71, 72, 73, 78, 83, 88, 93, 98 -->
+	<xsd:simpleType name="E022">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="00"/>
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="17"/>
+			<xsd:enumeration value="20"/>
+			<xsd:enumeration value="38"/>
+			<xsd:enumeration value="46"/>
+			<xsd:enumeration value="47"/>
+			<xsd:enumeration value="48"/>
+			<xsd:enumeration value="49"/>
+			<xsd:enumeration value="50"/>
+			<xsd:enumeration value="51"/>
+			<xsd:enumeration value="52"/>
+			<xsd:enumeration value="55"/>
+			<xsd:enumeration value="60"/>
+			<xsd:enumeration value="61"/>
+			<xsd:enumeration value="62"/>
+			<xsd:enumeration value="71"/>
+			<xsd:enumeration value="72"/>
+			<xsd:enumeration value="73"/>
+			<xsd:enumeration value="78"/>
+			<xsd:enumeration value="83"/>
+			<xsd:enumeration value="88"/>
+			<xsd:enumeration value="93"/>
+			<xsd:enumeration value="98"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, ... 8, 11, ... 17 -->
+	<xsd:simpleType name="E023">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/>
+			<xsd:enumeration value="07"/>
+			<xsd:enumeration value="08"/>
+			<xsd:enumeration value="11"/>
+			<xsd:enumeration value="12"/>
+			<xsd:enumeration value="14"/>
+			<xsd:enumeration value="15"/>
+			<xsd:enumeration value="16"/>
+			<xsd:enumeration value="17"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2 -->
+	<xsd:simpleType name="E024">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- s, i, r -->
+	<xsd:simpleType name="E025">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="S"/>
+			<xsd:enumeration value="I"/>
+			<xsd:enumeration value="R"/>
+			<xsd:enumeration value="N"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 0, 1, 2, 3, 4 -->
+	<xsd:simpleType name="E026">
+		<xsd:restriction base="xsd:unsignedShort">
+			<xsd:minInclusive value='0'/>
+			<xsd:maxInclusive value='4'/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 17 oder 18 -->
+	<xsd:simpleType name="E027">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/>
+			<xsd:enumeration value="07"/>
+			<xsd:enumeration value="08"/>
+			<xsd:enumeration value="09"/>
+			<xsd:enumeration value="10"/>
+			<xsd:enumeration value="11"/>
+			<xsd:enumeration value="12"/>
+			<xsd:enumeration value="14"/>
+			<xsd:enumeration value="16"/>
+			<xsd:enumeration value="17"/>
+			<xsd:enumeration value="18"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 0,0 - 8,4 -->
+	<xsd:simpleType name="E028">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-8],[0-4]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- PAP-Gruppe siehe Erläuterungen zur Regel E028, eigene Schema-Regel da 7414 die PAP-Gruppe überträgt -->
+	<xsd:simpleType name="E028FK7414">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="I"/>
+			<xsd:enumeration value="II"/>
+			<xsd:enumeration value="I/II, I-II"/>
+			<xsd:enumeration value="II-a"/>
+			<xsd:enumeration value="IIw bzw. IIk"/>
+			<xsd:enumeration value="II-p"/>
+			<xsd:enumeration value="II-g"/>
+			<xsd:enumeration value="II-e"/>
+			<xsd:enumeration value="IIID"/>
+			<xsd:enumeration value="IIID1"/>
+			<xsd:enumeration value="IIID2"/>
+			<xsd:enumeration value="III"/>
+			<xsd:enumeration value="III-p"/>
+			<xsd:enumeration value="III-g"/>
+			<xsd:enumeration value="III-e"/>
+			<xsd:enumeration value="III-x"/>
+			<xsd:enumeration value="IVa"/>
+			<xsd:enumeration value="IVa-p"/>
+			<xsd:enumeration value="IVa-g"/>
+			<xsd:enumeration value="IVb"/>
+			<xsd:enumeration value="IVb-p"/>
+			<xsd:enumeration value="IVb-g"/>
+			<xsd:enumeration value="V"/>
+			<xsd:enumeration value="V-p"/>
+			<xsd:enumeration value="V-g"/>
+			<xsd:enumeration value="V-e"/>
+			<xsd:enumeration value="V-x"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 2, 3, 4, 5, 6, 11, 12, 15, 16 oder 17 -->
+	<xsd:simpleType name="E029">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/>
+			<xsd:enumeration value="11"/>
+			<xsd:enumeration value="12"/>
+			<xsd:enumeration value="15"/>
+			<xsd:enumeration value="16"/>
+			<xsd:enumeration value="90"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 0, 1, 2, 3 oder 4 -->
+	<xsd:simpleType name="E030">
+		<xsd:restriction base="xsd:unsignedShort">
+			<xsd:minInclusive value='0'/>
+			<xsd:maxInclusive value='5'/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2 auch e171-->
+	<xsd:simpleType name="E031">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2 -->
+	<xsd:simpleType name="E032">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2 -->
+	<xsd:simpleType name="E033">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3 -->
+	<xsd:simpleType name="E034">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3, 4 -->
+	<xsd:simpleType name="E035">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Leerzeile -->
+	<xsd:simpleType name="E036">
+		<xsd:restriction base="xsd:string">
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- G, A, V, Z -->
+	<xsd:simpleType name="E037">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="G"/>
+			<xsd:enumeration value="A"/>
+			<xsd:enumeration value="V"/>
+			<xsd:enumeration value="Z"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- R, L, B -->
+	<xsd:simpleType name="E038">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="R"/>
+			<xsd:enumeration value="L"/>
+			<xsd:enumeration value="B"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3, 4, 5 -->
+	<xsd:simpleType name="E039">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 0, 1 -->
+	<xsd:simpleType name="E040_E176">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 0, 1, ,2 -->
+	<xsd:simpleType name="E041">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2 auch e174 -->
+	<xsd:simpleType name="E042">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2 -->
+	<xsd:simpleType name="E044">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3, 4, 5, 6 -->
+	<xsd:simpleType name="E046">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 2, 3, 4, 5, 6, 7, 9 -->
+	<xsd:simpleType name="E047">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="6"/>
+			<xsd:enumeration value="7"/>
+			<xsd:enumeration value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1 -->
+	<xsd:simpleType name="E048">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3, 4, 5 -->
+	<xsd:simpleType name="E049">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="6"/>
+			<xsd:enumeration value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 -->
+	<xsd:simpleType name="E050">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="6"/>
+			<xsd:enumeration value="7"/>
+			<xsd:enumeration value="8"/>
+			<xsd:enumeration value="9"/>
+			<xsd:enumeration value="10"/>
+			<xsd:enumeration value="11"/>
+			<xsd:enumeration value="12"/>
+			<xsd:enumeration value="13"/>
+			<xsd:enumeration value="14"/>
+			<xsd:enumeration value="15"/>
+			<xsd:enumeration value="16"/>
+			<xsd:enumeration value="17"/>
+			<xsd:enumeration value="99"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3 -->
+	<xsd:simpleType name="E051">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 10, 11, 12, 13, 20, 21, 22, 23, 24, 25, 26, 27, 28, 30 -->
+	<xsd:simpleType name="E052">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="10"/>
+			<xsd:enumeration value="11"/>
+			<xsd:enumeration value="12"/>
+			<xsd:enumeration value="13"/>
+			<xsd:enumeration value="20"/>
+			<xsd:enumeration value="21"/>
+			<xsd:enumeration value="22"/>
+			<xsd:enumeration value="23"/>
+			<xsd:enumeration value="24"/>
+			<xsd:enumeration value="25"/>
+			<xsd:enumeration value="26"/>
+			<xsd:enumeration value="27"/>
+			<xsd:enumeration value="28"/>
+			<xsd:enumeration value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="E053">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="006"/>
+			<xsd:enumeration value="010"/>
+			<xsd:enumeration value="10A"/>
+			<xsd:enumeration value="039"/>
+			<xsd:enumeration value="090"/>
+			<xsd:enumeration value="091"/>
+			<xsd:enumeration value="092"/>
+			<xsd:enumeration value="093"/>
+			<xsd:enumeration value="094"/>
+			<xsd:enumeration value="100"/>
+			<xsd:enumeration value="101"/>
+			<xsd:enumeration value="102"/>
+			<xsd:enumeration value="103"/>
+			<xsd:enumeration value="110"/>
+			<xsd:enumeration value="120"/>
+			<xsd:enumeration value="150"/>
+			<xsd:enumeration value="160"/>
+			<xsd:enumeration value="200"/>
+			<xsd:enumeration value="250"/>
+			<xsd:enumeration value="251"/>
+			<xsd:enumeration value="252"/>
+			<xsd:enumeration value="253"/>
+			<xsd:enumeration value="254"/>
+			<xsd:enumeration value="255"/>
+			<xsd:enumeration value="256"/>
+			<xsd:enumeration value="257"/>
+			<xsd:enumeration value="258"/>
+			<xsd:enumeration value="300"/>
+			<xsd:enumeration value="301"/>
+			<xsd:enumeration value="400"/>
+			<xsd:enumeration value="500"/>
+			<xsd:enumeration value="900"/>
+			<xsd:enumeration value="999"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3, 4, 5 -->
+	<xsd:simpleType name="E054">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- 0, 1, 2, 3, 4 -->
+	<xsd:simpleType name="E055">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 0, 1 -->
+	<xsd:simpleType name="E056">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3, 4 auch e173 -->
+	<xsd:simpleType name="E057">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2 -->
+	<xsd:simpleType name="E058">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/>
+			<xsd:enumeration value="07"/>
+			<xsd:enumeration value="08"/>
+			<xsd:enumeration value="99"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 0, 1, 2, 3, 4 -->
+	<xsd:simpleType name="E059">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2 -->
+	<xsd:simpleType name="E060">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3 -->
+	<xsd:simpleType name="E061">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3, 4 -->
+	<xsd:simpleType name="E062">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 0, 1, 2 -->
+	<xsd:simpleType name="E063">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 0, 1, 2 -->
+	<xsd:simpleType name="E064">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3 -->
+	<xsd:simpleType name="E065">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Obj_0001 - Obj_0040 -->
+	<xsd:simpleType name="E066">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Obj_0001"/>
+			<xsd:enumeration value="Obj_0002"/>
+			<xsd:enumeration value="Obj_0003"/>
+			<xsd:enumeration value="Obj_0004"/>
+			<xsd:enumeration value="Obj_0005"/>
+			<xsd:enumeration value="Obj_0006"/>
+			<xsd:enumeration value="Obj_0007"/>
+			<xsd:enumeration value="Obj_0008"/>
+			<xsd:enumeration value="Obj_0009"/>
+			<xsd:enumeration value="Obj_0010"/>
+			<xsd:enumeration value="Obj_0011"/>
+			<xsd:enumeration value="Obj_0013"/>
+			<xsd:enumeration value="Obj_0014"/>
+			<xsd:enumeration value="Obj_0017"/>
+			<xsd:enumeration value="Obj_0019"/>
+			<xsd:enumeration value="Obj_0022"/>
+			<xsd:enumeration value="Obj_0026"/>
+			<xsd:enumeration value="Obj_0027"/>
+			<xsd:enumeration value="Obj_0031"/>
+			<xsd:enumeration value="Obj_0032"/>
+			<xsd:enumeration value="Obj_0034"/>
+			<xsd:enumeration value="Obj_0035"/>
+			<xsd:enumeration value="Obj_0036"/>
+			<xsd:enumeration value="Obj_0037"/>
+			<xsd:enumeration value="Obj_0040"/>
+			<xsd:enumeration value="Obj_0041"/>
+			<xsd:enumeration value="Obj_0042"/>
+			<xsd:enumeration value="Obj_0043"/>
+			<xsd:enumeration value="Obj_0045"/>
+			<xsd:enumeration value="Obj_0047"/>
+			<xsd:enumeration value="Obj_0048"/>
+			<xsd:enumeration value="Obj_0050"/>
+			<xsd:enumeration value="Obj_0051"/>
+			<xsd:enumeration value="Obj_0053"/>
+			<xsd:enumeration value="Obj_0054"/>
+			<xsd:enumeration value="Obj_0055"/>
+			<xsd:enumeration value="Obj_0056"/>
+			<xsd:enumeration value="Obj_0058"/>
+			<xsd:enumeration value="Obj_0059"/>
+			<xsd:enumeration value="Obj_0060"/>
+			<xsd:enumeration value="Obj_0061"/>
+			<xsd:enumeration value="Obj_0062"/>
+			<xsd:enumeration value="Obj_0063"/>
+			<xsd:enumeration value="Obj_0068"/>
+			<xsd:enumeration value="Obj_0069"/>
+			<xsd:enumeration value="Obj_0070"/>
+			<xsd:enumeration value="Obj_0071"/>
+			<xsd:enumeration value="Obj_0072"/>
+			<xsd:enumeration value="Obj_0073"/>
+			<xsd:enumeration value="Obj_0100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3 -->
+	<xsd:simpleType name="E067">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2, 3 oder 4 -->
+	<xsd:simpleType name="E068">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 0 - 7 -->
+	<xsd:simpleType name="E069">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+			<xsd:enumeration value="5"/>
+			<xsd:enumeration value="6"/>
+			<xsd:enumeration value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 1, 2 -->
+	<xsd:simpleType name="E070">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11 -->
+	<xsd:simpleType name="E146">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/>
+			<xsd:enumeration value="07"/>
+			<xsd:enumeration value="08"/>
+			<xsd:enumeration value="09"/>
+			<xsd:enumeration value="10"/>
+			<xsd:enumeration value="11"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12 -->
+	<xsd:simpleType name="E147">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="01"/>
+			<xsd:enumeration value="02"/>
+			<xsd:enumeration value="03"/>
+			<xsd:enumeration value="04"/>
+			<xsd:enumeration value="05"/>
+			<xsd:enumeration value="06"/>
+			<xsd:enumeration value="07"/>
+			<xsd:enumeration value="08"/>
+			<xsd:enumeration value="09"/>
+			<xsd:enumeration value="10"/>
+			<xsd:enumeration value="11"/>
+			<xsd:enumeration value="12"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- 1, 2, 3, 4 -->
+	<xsd:simpleType name="E156">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="E163">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="UTC-12"/>
+			<xsd:enumeration value="UTC-11"/>
+			<xsd:enumeration value="UTC-10"/>
+			<xsd:enumeration value="UTC-9:30"/>
+			<xsd:enumeration value="UTC-9"/>
+			<xsd:enumeration value="UTC-8"/>
+			<xsd:enumeration value="UTC-7"/>
+			<xsd:enumeration value="UTC-6"/>
+			<xsd:enumeration value="UTC-5"/>
+			<xsd:enumeration value="UTC-4"/>
+			<xsd:enumeration value="UTC-3:30"/>
+			<xsd:enumeration value="UTC-3"/>
+			<xsd:enumeration value="UTC-2"/>
+			<xsd:enumeration value="UTC-1"/>
+			<xsd:enumeration value="UTC"/>
+			<xsd:enumeration value="UTC+1"/>
+			<xsd:enumeration value="UTC+2"/>
+			<xsd:enumeration value="UTC+3"/>
+			<xsd:enumeration value="UTC+3:30"/>
+			<xsd:enumeration value="UTC+4"/>
+			<xsd:enumeration value="UTC+4:30"/>
+			<xsd:enumeration value="UTC+5"/>
+			<xsd:enumeration value="UTC+5:30"/>
+			<xsd:enumeration value="UTC+5:45"/>
+			<xsd:enumeration value="UTC+6"/>
+			<xsd:enumeration value="UTC+6:30"/>
+			<xsd:enumeration value="UTC+7"/>
+			<xsd:enumeration value="UTC+8"/>
+			<xsd:enumeration value="UTC+8:30"/>
+			<xsd:enumeration value="UTC+9"/>
+			<xsd:enumeration value="UTC+9:30"/>
+			<xsd:enumeration value="UTC+10"/>
+			<xsd:enumeration value="UTC+10:30"/>
+			<xsd:enumeration value="UTC+11"/>
+			<xsd:enumeration value="UTC+12"/>
+			<xsd:enumeration value="UTC+12:45"/>
+			<xsd:enumeration value="UTC+13"/>
+			<xsd:enumeration value="UTC+13:45"/>
+			<xsd:enumeration value="UTC+14"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- 0 = Sonstige* 1 = Pathologie 2 = Humangenetik 3 = Molekulargenetik -->
+	<xsd:simpleType name="E164">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+		<!-- 0 = unbekannt 1 = weiblich 2 = männlich 3 = unbestimmt -->
+	<xsd:simpleType name="E165">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="0"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!--1 = kastriert 2 = sterilisiert -->
+	<xsd:simpleType name="E166">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- 1 = 20-29 Jahre 2 = 30-34 Jahre 3 = ab 35 Jahre -->
+	<xsd:simpleType name="E167">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- 1 = vollständig 2 = unvollständig 3 = keine 4 = unklar -->
+	<xsd:simpleType name="E168">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- 1 = positiv 2 = negativ 3 = nicht verwertbar -->
+	<xsd:simpleType name="E169">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Abrechnung_OEGD -->
+	<xsd:simpleType name="E170">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Abrechnung_OEGD"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- 1 = Ersttestung 2 = weitere Testung -->
+	<xsd:simpleType name="E171">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- PARAG RVO 1 - 6 -->
+	<xsd:simpleType name="E172">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- 1 = Medizinischen Einrichtungen 2 = Pflege- und anderen Wohneinrichtungen 3 = Gemeinschaftseinrichtungen 4 = Sonstigen Einrichtungen -->
+		<xsd:simpleType name="E173">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- 1 = Testung nach Meldung erhoehtes Risiko durch Corona-Warn-App 2 = Diagnostische Abklaerung -->
+		<xsd:simpleType name="E174">
+		<xsd:restriction base="xsd:string">
+
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="E175">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1" />
+			<xsd:enumeration value="2" />
+			<xsd:enumeration value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+
+	<xsd:simpleType name="E177">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="P" />
+			<xsd:enumeration value="A" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="E178">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Zyto" />
+			<xsd:enumeration value="HPV" />
+			<xsd:enumeration value="KoTest"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="E179">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="0" />
+			<xsd:enumeration value="1" />
+			<xsd:enumeration value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Format: float, Länge: var -->
+	<xsd:simpleType name="FLOAT_VAR">
+		<xsd:restriction base="xsd:float">
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Formatregeln -->
+	<!-- nnnnn -->
+	<xsd:simpleType name="F001">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d{5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Format Datum: JJJJMMTT -->
+	<xsd:simpleType name="F002">
+		<xsd:restriction base="xsd:unsignedInt">
+			<xsd:pattern value="(((((1[89](\d{2}))|([2-9](\d{3})))(((0[13578]|10|12)(0[1-9]|[12][0-9]|3[01]))|((0[469]|11)(0[1-9]|[12][0-9]|30))|((02)(0[1-9]|1[0-9]|2[0-8])))))|(((1[89]0[48])|(1[89][2468][048])|(1[89][13579][26])|([2468][048]00)|([2-9][0-9]0[48])|([2-9][0-9][2468][048])|([2-9][0-9][13579][26])|([3579][26]00))(02)(29)))"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Gültige Datumsangabe in der Form JJJJMMTT (TT=Tag, MM=Monat, JJJJ=Jahr) und
+	   - zusätzlich erlaubter Wertebereich: JJJJMM00, JJJJ0000, 00000000 -->
+	<xsd:simpleType name="F003">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[1-2][09][0-9][0-9][0-1][0-9][0-3][0-9]|[0]{8}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- ann, ann.n, ann.nn, ann.n- ann.- -->
+	<xsd:simpleType name="F004">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="([A-Z][0-9]{2})(\.((\d?\-)|(\d{1,2})))?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- WWT -->
+	<xsd:simpleType name="F005">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[0-5][0-9][0-6]"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- hhmm Wertebereich: hh = 00 - 99 mm = 00 - 59 -->
+	<xsd:simpleType name="F006">
+		<xsd:restriction base="xsd:unsignedShort">
+			<xsd:pattern value="[0-9][0-9][0-5][0-9]"/>
+			<xsd:maxInclusive value='9959'/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- n.n.n -->
+	<xsd:simpleType name="F007">
+		<!-- E001 & F007 -->
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="LDT((\d\.\d\.\d{1,4})|(\d\.\d\d\.\d{1,4}))"/>
+			<!-- xsd:enumeration value="LDT3.2.5"/-->
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- G-alpha[n[n[n[n]]][K-alpha[aerw]]][/Lkz] oder [G-alpha]n[n[n[n]]][K-alpha[aerw]][/Lkz] -->
+	<xsd:simpleType name="F008">
+		<xsd:restriction base="xsd:string">
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- nnnnn, nnnnn[G-alpha] -->
+	<xsd:simpleType name="F009">
+		<xsd:restriction base="xsd:string">
+			<!--xsd:pattern value="\d{5}[A-Z]{0,1}"/-->
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- kknnnnnmm -->
+	<xsd:simpleType name="F010">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d{9}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- nnnnnnmff -->
+	<xsd:simpleType name="F011">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d{9}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- a/nn/JJMM/MM/aaa -->
+	<xsd:simpleType name="F012">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[VXYZ]/\d{2}/\d{2}(0[1-9]|1[0-2])/\d{2}/[a-zA-Z0-9]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- annnnnnnnP -->
+	<xsd:simpleType name="F013">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[A-Z]\d{9}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- 00nnnnnnP -->
+	<xsd:simpleType name="F014">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="00\d{7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- nnn/nnn -->
+	<xsd:simpleType name="F015">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d{3}/\d{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- HHmmss(ms(000-999)) -->
+	<xsd:simpleType name="F016">
+		<xsd:restriction base="xsd:unsignedInt">
+			<xsd:pattern value="[0-2][0-9][0-5][0-9][0-5][0-9]{1,4}"/>
+			<xsd:maxInclusive value='235959999'/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- JJJJ -->
+	<xsd:simpleType name="F017">
+		<xsd:restriction base="xsd:unsignedInt">
+			<xsd:pattern value="[1-2][0-9]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- JJJJMMTT, JJJJMM00, JJJJ0000, da das Jahr im Prinzip 0000 sein kann, hier keine weiteren Einschränkungen -->
+	<xsd:simpleType name="F018">
+		<xsd:restriction base="xsd:unsignedInt">
+			<xsd:pattern value="[0-9]{8}"/>
+			<xsd:minExclusive value="0"></xsd:minExclusive>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="F022">
+			<xsd:restriction base="xsd:string">
+			<xsd:pattern value="555555\d{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="F023">
+			<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d{1,2}(-\d{1,2})?"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="F024">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(\w+)|(([\w]+:)?([\w]+)([/_][\w]+)*)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Gebührennummer -->
+	<xsd:simpleType name="GNR">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d{5}[A-Z]{0,1}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Leistungskennzeichen -->
+	<xsd:simpleType name="LEISTUNG_KZ">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(\d|[A-Z]|#|$|&lt;|&gt;|\*|k){1,3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+<!-- Nummerisches Feld 1 E180 E181-->
+	<xsd:simpleType name="NUMMER_1">
+		<xsd:restriction base="xsd:unsignedByte">
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld von 0 bis 1 -->
+	<xsd:simpleType name="NUMMER0_BIS_1">
+		<xsd:restriction base="xsd:unsignedByte">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld von 0 bis 2 -->
+	<xsd:simpleType name="NUMMER0_BIS_2">
+		<xsd:restriction base="xsd:unsignedByte">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld von 0 bis 3 -->
+	<xsd:simpleType name="NUMMER0_BIS_3">
+		<xsd:restriction base="xsd:unsignedByte">
+			<xsd:enumeration value="0"/>
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der Länge 1 -->
+	<xsd:simpleType name="NUMMER_LEN_1">
+		<xsd:restriction base="xsd:unsignedByte">
+			<xsd:totalDigits value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld von 1 bis 2 -->
+	<xsd:simpleType name="NUMMER1_BIS_2">
+		<xsd:restriction base="xsd:unsignedByte">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld von 1 bis 3 e169-->
+	<xsd:simpleType name="NUMMER1_BIS_3">
+		<xsd:restriction base="xsd:unsignedByte">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld von 1 bis 4, E168-->
+	<xsd:simpleType name="NUMMER1_BIS_4">
+		<xsd:restriction base="xsd:unsignedByte">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+			<xsd:enumeration value="3"/>
+			<xsd:enumeration value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der Länge 1 bis 2 -->
+	<xsd:simpleType name="NUMMER_LEN_1_BIS_2">
+		<xsd:restriction base="xsd:unsignedByte">
+			<xsd:totalDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der Länge 2 -->
+	<xsd:simpleType name="NUMMER2">
+		<xsd:restriction base="xsd:unsignedByte">
+			<xsd:pattern value="\d{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der Länge 3 -->
+	<xsd:simpleType name="NUMMER3">
+		<xsd:restriction base="xsd:unsignedShort">
+			<xsd:pattern value="\d{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der Länge 1 bis 2 -->
+	<xsd:simpleType name="NUMMER_LEN_BIS_2">
+		<xsd:restriction base="xsd:unsignedShort">
+			<xsd:totalDigits value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der Länge 1 bis 3 -->
+	<xsd:simpleType name="NUMMER_LEN_BIS_3">
+		<xsd:restriction base="xsd:unsignedShort">
+			<xsd:totalDigits value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der Länge 4 -->
+	<xsd:simpleType name="NUMMER4">
+		<xsd:restriction base="xsd:unsignedShort">
+			<xsd:pattern value="\d{4}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der Länge 5 -->
+	<xsd:simpleType name="NUMMER5">
+		<xsd:restriction base="xsd:unsignedInt">
+			<xsd:pattern value="\d{5}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der Länge 6 -->
+	<xsd:simpleType name="NUMMER6">
+		<xsd:restriction base="xsd:unsignedInt">
+			<xsd:pattern value="\d{6}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="NUMMER_LEN_BIS_6">
+		<xsd:restriction base="xsd:unsignedInt">
+			<xsd:totalDigits value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der Länge 7 -->
+	<xsd:simpleType name="NUMMER7">
+		<xsd:restriction base="xsd:unsignedInt">
+			<xsd:pattern value="\d{7}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der Länge 8 -->
+	<xsd:simpleType name="NUMMER8">
+		<xsd:restriction base="xsd:unsignedInt">
+			<xsd:pattern value="\d{8}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der maximalen Länge 8 -->
+	<xsd:simpleType name="NUMMER_LEN_BIS_8">
+		<xsd:restriction base="xsd:unsignedInt">
+			<xsd:totalDigits value="8"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der Länge 9 -->
+	<xsd:simpleType name="NUMMER9">
+		<xsd:restriction base="xsd:unsignedInt">
+			<xsd:pattern value="\d{9}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der maximalen Länge 9 -->
+	<xsd:simpleType name="NUMMER_LEN_BIS_9">
+		<xsd:restriction base="xsd:unsignedInt">
+			<xsd:totalDigits value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nummerisches Feld der maximalen Länge 9 -->
+	<xsd:simpleType name="NUMMER_LEN_BIS_10">
+		<xsd:restriction base="xsd:unsignedLong">
+			<xsd:totalDigits value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="NUMMER_BIS_9999999999">
+		<xsd:restriction base="xsd:unsignedLong">
+			<xsd:maxInclusive value="9999999999"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Nur 1 ist zugelassen -->
+	<xsd:simpleType name="NUR_1">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- PLZ -->
+	<xsd:simpleType name="PLZ">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Pseudo Gebührennummer -->
+	<xsd:simpleType name="PSEUDO_GNR">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Quartalsangaben in der Form QJJJJ -->
+	<xsd:simpleType name="QUARTAL">
+		<xsd:restriction base="xsd:int">
+			<xsd:pattern value="[1-4][1-2][0-9]{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der Länge 1 -->
+	<xsd:simpleType name="TEXT1">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="1"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der Länge 2 -->
+	<xsd:simpleType name="TEXT2">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der Länge 3 -->
+	<xsd:simpleType name="TEXT3">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der Länge 40 -->
+	<xsd:simpleType name="TEXT40">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 3 -->
+	<xsd:simpleType name="TEXT_BIS_3">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 5 -->
+	<xsd:simpleType name="TEXT_BIS_5">
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1"/>
+			<xsd:maxLength value="5"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 6 -->
+	<xsd:simpleType name="TEXT_BIS_6">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 7 -->
+	<xsd:simpleType name="TEXT_BIS_7">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="7"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 8 -->
+	<xsd:simpleType name="TEXT_BIS_8">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="8"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 9 -->
+	<xsd:simpleType name="TEXT_BIS_9">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Alphanummerisches Feld der maximalen Länge 10 -->
+	<xsd:simpleType name="TEXT_BIS_10">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="10"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 15 -->
+	<xsd:simpleType name="TEXT_BIS_15">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 20 -->
+	<xsd:simpleType name="TEXT_BIS_20">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 22 -->
+	<xsd:simpleType name="TEXT_BIS_22">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="22"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 28 -->
+	<xsd:simpleType name="TEXT_BIS_28">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="28"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 30 -->
+	<xsd:simpleType name="TEXT_BIS_30">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 40 -->
+	<xsd:simpleType name="TEXT_BIS_40">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="40"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der Länge 43 -->
+	<xsd:simpleType name="TEXT_43">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="43"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der Länge 44 -->
+	<xsd:simpleType name="TEXT_44">
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="44"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Alphanummerisches Feld der maximalen Länge 45 -->
+	<xsd:simpleType name="TEXT_BIS_45">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="45"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 46 -->
+	<xsd:simpleType name="TEXT_BIS_46">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="46"/>
+		</xsd:restriction>
+
+	</xsd:simpleType>
+	<!-- Alphanummerisches Feld der maximalen Länge 60 -->
+	<xsd:simpleType name="TEXT_BIS_60">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="60"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 120 -->
+	<xsd:simpleType name="TEXT_BIS_120">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="120"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Alphanummerisches Feld der maximalen Länge 990 -->
+	<xsd:simpleType name="TEXT_BIS_990">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="990"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Versichertennummer 6-12-stellig -->
+	<xsd:simpleType name="VERS_NUMMER">
+		<xsd:restriction base="xsd:long">
+			<xsd:pattern value="\d{6,12}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>

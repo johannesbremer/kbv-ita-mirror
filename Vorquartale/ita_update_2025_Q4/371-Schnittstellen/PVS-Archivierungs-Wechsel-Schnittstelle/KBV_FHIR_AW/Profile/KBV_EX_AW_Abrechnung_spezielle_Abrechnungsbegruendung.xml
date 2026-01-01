@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Abrechnung_spezielle_Abrechnungsbegruendung" />
+  <version value="1.2.0" />
+  <name value="KBV_EX_AW_Abrechnung_spezielle_Abrechnungsbegruendung" />
+  <title value="KBV_EX_AW_Abrechnung_spezielle_Abrechnungsbegruendung" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Claim.item" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:art_der_Untersuchung">
+      <path value="Extension.extension" />
+      <sliceName value="art_der_Untersuchung" />
+      <short value="Art der Untersuchung" />
+      <definition value="Art der Untersuchung z.B. Esterasereaktion" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:art_der_Untersuchung.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="art_der_Untersuchung" />
+    </element>
+    <element id="Extension.extension:art_der_Untersuchung.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:art_der_Untersuchung.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:name_des_Arztes">
+      <path value="Extension.extension" />
+      <sliceName value="name_des_Arztes" />
+      <short value="Name der Arztes" />
+      <definition value="KVDT FK 5016" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:name_des_Arztes.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="name_des_Arztes" />
+    </element>
+    <element id="Extension.extension:name_des_Arztes.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:name_des_Arztes.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:poststationaer_erbrachte_Leistung">
+      <path value="Extension.extension" />
+      <sliceName value="poststationaer_erbrachte_Leistung" />
+      <short value="Post-Stationär erbrachte Leistung" />
+      <definition value="Post-Stationär erbrachte Leistung&#xD;&#xA;0 = poststationaer erbrachte Leistung&#xD;&#xA;1 = Nicht poststationaer erbrachte Leistung" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:poststationaer_erbrachte_Leistung.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="poststationaer_erbrachte_Leistung" />
+    </element>
+    <element id="Extension.extension:poststationaer_erbrachte_Leistung.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:poststationaer_erbrachte_Leistung.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:freie_Begruendung">
+      <path value="Extension.extension" />
+      <sliceName value="freie_Begruendung" />
+      <short value="Freie Begründung" />
+      <definition value="Freie Begründung" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:freie_Begruendung.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="freie_Begruendung" />
+    </element>
+    <element id="Extension.extension:freie_Begruendung.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:freie_Begruendung.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:prozent_der_Leistung">
+      <path value="Extension.extension" />
+      <sliceName value="prozent_der_Leistung" />
+      <short value="Prozent der Leistung" />
+      <definition value="Prozent der Leistung" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:prozent_der_Leistung.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="prozent_der_Leistung" />
+    </element>
+    <element id="Extension.extension:prozent_der_Leistung.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Quantity" />
+      </type>
+    </element>
+    <element id="Extension.extension:prozent_der_Leistung.value[x]:valueQuantity">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueQuantity" />
+      <min value="1" />
+      <type>
+        <code value="Quantity" />
+      </type>
+    </element>
+    <element id="Extension.extension:prozent_der_Leistung.value[x]:valueQuantity.value">
+      <path value="Extension.extension.value[x].value" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:prozent_der_Leistung.value[x]:valueQuantity.unit">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].unit" />
+      <min value="1" />
+      <fixedString value="Prozent" />
+    </element>
+    <element id="Extension.extension:prozent_der_Leistung.value[x]:valueQuantity.system">
+      <path value="Extension.extension.value[x].system" />
+      <min value="1" />
+      <fixedUri value="http://unitsofmeasure.org" />
+    </element>
+    <element id="Extension.extension:prozent_der_Leistung.value[x]:valueQuantity.code">
+      <path value="Extension.extension.value[x].code" />
+      <min value="1" />
+      <fixedCode value="%" />
+    </element>
+    <element id="Extension.extension:gop_fuer_bezugsperson">
+      <path value="Extension.extension" />
+      <sliceName value="gop_fuer_bezugsperson" />
+      <short value="Gebuehrenordnungsposition fuer Bezugsperson" />
+      <definition value="0 = Gebuehrenordnungsposition fuer Bezugsperson&#xD;&#xA;1 = Keine Gebuehrenordnungsposition fuer Bezugsperson" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:gop_fuer_bezugsperson.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="gop_fuer_bezugsperson" />
+    </element>
+    <element id="Extension.extension:gop_fuer_bezugsperson.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:gop_fuer_bezugsperson.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:wiederholungsuntersuchung">
+      <path value="Extension.extension" />
+      <sliceName value="wiederholungsuntersuchung" />
+      <short value="Wiederholungsuntersuchung" />
+      <definition value="0 = Keine Wiederholungsuntersuchung&#xD;&#xA;1 = Wiederholungsuntersuchung" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:wiederholungsuntersuchung.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="wiederholungsuntersuchung" />
+    </element>
+    <element id="Extension.extension:wiederholungsuntersuchung.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:wiederholungsuntersuchung.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:jahr_der_letzten_Krebsfrueherkennung">
+      <path value="Extension.extension" />
+      <sliceName value="jahr_der_letzten_Krebsfrueherkennung" />
+      <short value="Jahr der letzten Krebsfrueherkennung" />
+      <definition value="Jahr der letzten Krebsfrueherkennung" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:jahr_der_letzten_Krebsfrueherkennung.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="jahr_der_letzten_Krebsfrueherkennung" />
+    </element>
+    <element id="Extension.extension:jahr_der_letzten_Krebsfrueherkennung.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:jahr_der_letzten_Krebsfrueherkennung.value[x]:valueDate">
+      <path value="Extension.extension.valueDate" />
+      <sliceName value="valueDate" />
+      <type>
+        <code value="date" />
+      </type>
+    </element>
+    <element id="Extension.extension:betreffendes_Organ">
+      <path value="Extension.extension" />
+      <sliceName value="betreffendes_Organ" />
+      <short value="Organbezug" />
+      <definition value="Betreffendes Organ" />
+    </element>
+    <element id="Extension.extension:betreffendes_Organ.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="betreffendes_Organ" />
+    </element>
+    <element id="Extension.extension:betreffendes_Organ.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:betreffendes_Organ.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:gop_Zusatz">
+      <path value="Extension.extension" />
+      <sliceName value="gop_Zusatz" />
+      <short value="Zusatz zur GOP" />
+      <definition value="Zusatz zur GOP" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:gop_Zusatz.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="gop_Zusatz" />
+    </element>
+    <element id="Extension.extension:gop_Zusatz.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:gop_Zusatz.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:patientennummer_EDV_des_FEK-Bogens">
+      <path value="Extension.extension" />
+      <sliceName value="patientennummer_EDV_des_FEK-Bogens" />
+      <short value="EDV Patientennummer des FEK-Bogens" />
+      <definition value="EDV Patientennummer des FEK-Bogens" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:patientennummer_EDV_des_FEK-Bogens.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="patientennummer_EDV_des_FEK-Bogens" />
+    </element>
+    <element id="Extension.extension:patientennummer_EDV_des_FEK-Bogens.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:patientennummer_EDV_des_FEK-Bogens.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:asv-Teamnr">
+      <path value="Extension.extension" />
+      <sliceName value="asv-Teamnr" />
+      <short value="ASV-Teamnummer" />
+      <definition value="Die ASV-Teamnr, die zur Abrechnung dieser Position genutzt werden soll." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:asv-Teamnr.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="asv-Teamnr" />
+    </element>
+    <element id="Extension.extension:asv-Teamnr.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Identifier" />
+      </type>
+    </element>
+    <element id="Extension.extension:asv-Teamnr.value[x]:valueIdentifier">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueIdentifier" />
+      <type>
+        <code value="Identifier" />
+      </type>
+    </element>
+    <element id="Extension.extension:asv-Teamnr.value[x]:valueIdentifier.use">
+      <path value="Extension.extension.value[x].use" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:asv-Teamnr.value[x]:valueIdentifier.type">
+      <path value="Extension.extension.value[x].type" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:asv-Teamnr.value[x]:valueIdentifier.system">
+      <path value="Extension.extension.value[x].system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/NamingSystem/asv/teamnummer" />
+    </element>
+    <element id="Extension.extension:asv-Teamnr.value[x]:valueIdentifier.value">
+      <path value="Extension.extension.value[x].value" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:asv-Teamnr.value[x]:valueIdentifier.period">
+      <path value="Extension.extension.value[x].period" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:asv-Teamnr.value[x]:valueIdentifier.assigner">
+      <path value="Extension.extension.value[x].assigner" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:kontrast_Arzneimittel">
+      <path value="Extension.extension" />
+      <sliceName value="kontrast_Arzneimittel" />
+      <short value="Kontrastmittel" />
+      <definition value="Kontrastmittel" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:kontrast_Arzneimittel.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="kontrast_Arzneimittel" />
+    </element>
+    <element id="Extension.extension:kontrast_Arzneimittel.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:kontrast_Arzneimittel.value[x]:valueQuantity">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueQuantity" />
+      <type>
+        <code value="Quantity" />
+      </type>
+    </element>
+    <element id="Extension.extension:kontrast_Arzneimittel.value[x]:valueQuantity.value">
+      <path value="Extension.extension.value[x].value" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:kontrast_Arzneimittel.value[x]:valueQuantity.comparator">
+      <path value="Extension.extension.value[x].comparator" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:kontrast_Arzneimittel.value[x]:valueQuantity.unit">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].unit" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:kontrast_Arzneimittel.value[x]:valueQuantity.system">
+      <path value="Extension.extension.value[x].system" />
+      <min value="1" />
+      <fixedUri value="http://unitsofmeasure.org" />
+    </element>
+    <element id="Extension.extension:kontrast_Arzneimittel.value[x]:valueQuantity.code">
+      <path value="Extension.extension.value[x].code" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:tsvg_Vermittlungsart">
+      <path value="Extension.extension" />
+      <sliceName value="tsvg_Vermittlungsart" />
+      <short value="TSVG Vermittlungs-/Kontaktart" />
+      <definition value="TSVG Vermittlungs-/Kontaktart:&#xD;&#xA;1 = TSS-Terminfall&#xD;&#xA;2 = TSS-Akutfall&#xD;&#xA;3 = HA-Vermittlungsfall&#xD;&#xA;4 = Offene Sprechstunde nach Anw. der Begrenzungsregelung&#xD;&#xA;5 = Neupatient" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:tsvg_Vermittlungsart.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="tsvg_Vermittlungsart" />
+    </element>
+    <element id="Extension.extension:tsvg_Vermittlungsart.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.extension:tsvg_Vermittlungsart.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.valueCodeableConcept" />
+      <sliceName value="valueCodeableConcept" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_TSVG_Vermittlungsart" />
+      </binding>
+    </element>
+    <element id="Extension.extension:tsvg_Vermittlungsart.value[x]:valueCodeableConcept.coding">
+      <path value="Extension.extension.valueCodeableConcept.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:tsvg_Vermittlungsart.value[x]:valueCodeableConcept.coding.system">
+      <path value="Extension.extension.valueCodeableConcept.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:tsvg_Vermittlungsart.value[x]:valueCodeableConcept.coding.code">
+      <path value="Extension.extension.valueCodeableConcept.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:tsvg_Vermittlungsart.value[x]:valueCodeableConcept.coding.userSelected">
+      <path value="Extension.extension.valueCodeableConcept.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:tsvg_Vermittlungsart.value[x]:valueCodeableConcept.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.valueCodeableConcept.text" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:tsvg_Kontaktaufnahme">
+      <path value="Extension.extension" />
+      <sliceName value="tsvg_Kontaktaufnahme" />
+      <short value="TSVG Datum Kontaktaufnahme" />
+      <definition value="Datum der Kontaktaufnahme bei TSS in Abhängigkeit von der Angabe im Feld TSVG-Vermittlungs-/Kontakt-Art." />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:tsvg_Kontaktaufnahme.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="tsvg_Kontaktaufnahme" />
+    </element>
+    <element id="Extension.extension:tsvg_Kontaktaufnahme.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="date" />
+      </type>
+    </element>
+    <element id="Extension.extension:tsvg_Kontaktaufnahme.value[x]:valueDate">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueDate" />
+      <min value="1" />
+      <type>
+        <code value="date" />
+      </type>
+    </element>
+    <element id="Extension.extension:tsvg_Vermittler_FA">
+      <path value="Extension.extension" />
+      <sliceName value="tsvg_Vermittler_FA" />
+      <short value="TSVG (N)BSNR vermittelnder FA" />
+      <definition value="(N)BSNR des vermittelnden Facharzt in TSVG" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:tsvg_Vermittler_FA.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="tsvg_Vermittler_FA" />
+    </element>
+    <element id="Extension.extension:tsvg_Vermittler_FA.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:tsvg_Vermittler_FA.value[x]:valueReference">
+      <path value="Extension.extension.valueReference" />
+      <sliceName value="valueReference" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette|1.2.0" />
+      </type>
+    </element>
+    <element id="Extension.extension:tsvg_Vermittler_FA.value[x]:valueReference.type">
+      <path value="Extension.extension.valueReference.type" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:tsvg_Vermittler_FA.value[x]:valueReference.identifier.system">
+      <path value="Extension.extension.valueReference.identifier.system" />
+      <comment value="see http://en.wikipedia.org/wiki/Uniform_resource_identifier" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR" />
+    </element>
+    <element id="Extension.extension:tsvg_Vermittler_FA.value[x]:valueReference.identifier.value">
+      <path value="Extension.extension.valueReference.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:tsvg_Vermittler_FA.value[x]:valueReference.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.valueReference.display" />
+      <max value="0" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Abrechnung_spezielle_Abrechnungsbegruendung" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

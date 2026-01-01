@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Dies ist ein Beispiel-XML-Datei.
+Der Inhalt und die Schlüsseltabellenwerte wurden frei erfunden, weil diese zur Zeit des erstellens noch nicht
+zur Verfügung standen. Die Version der Schlüsseltabellen lagen auch noch nicht vor. Einzig die OIDs der
+Schlüsseltabellen waren bekannt.
+-->
+<ehd xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  ehd_version="1.40">
+	<header>
+		<id EX="343-23-53-2-34-1" RT="1.2.276.0.76"/>
+		<document_type_cd V="TMP" DN="Test-Daten" S="1.2.276.0.76.5.100" SN="Dokumenttypen" SV="1.00"/>
+		<origination_dttm V="2004-08-08"/>
+		<provider>
+			<provider.type_cd V="VERT" DN="Verteiler" S="1.2.276.0.76.5.104" SN="Datensendertypen" SV="1.00"/>
+			<organization>
+				<id RT="1.2.276.0.76"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:(030)4005-0"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="TMP" RT="1.2.276.0.76.5.109" RTV="1.00"/>
+			<interface.nm V="TMP"/>
+			<version V="1.00"/>
+		</interface>
+	</header>
+	<body>
+		<tmp>
+			<tmp_data>
+				<!--hier weitere Testelemente -->
+			</tmp_data>
+		</tmp>
+	</body>
+	<keytabs>
+		<keytab S="TESTT" SN="Testtabelle" SV="1.00">
+			<key V="TESTW" S="TESTT" SV="1.00" DN="TEST-Wert"/>
+		</keytab>
+	</keytabs>
+</ehd>

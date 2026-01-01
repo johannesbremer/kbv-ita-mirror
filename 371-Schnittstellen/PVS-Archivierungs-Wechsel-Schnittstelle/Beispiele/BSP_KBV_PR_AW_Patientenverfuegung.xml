@@ -1,0 +1,36 @@
+<Consent xmlns="http://hl7.org/fhir">
+	<id value="3266"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-21T13:50:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patientenverfuegung|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<status value="active"/>
+	<scope>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
+			<code value="adr"/>
+		</coding>
+	</scope>
+	<category>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/consentcategorycodes"/>
+			<code value="acd"/>
+		</coding>
+	</category>
+	<patient>
+		<reference value="Patient/3181"/>
+	</patient>
+	<sourceReference>
+		<reference value="DocumentReference/3221"/>
+	</sourceReference>
+	<policy>
+		<uri value="https://fhir.kbv.de/NamingSystem/KBV_NS_AW_Policy"/>
+	</policy>
+</Consent>

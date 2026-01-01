@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  
+<keytabs xmlns="urn:ehd/001">
+  <keytab S="1.2.276.0.76.5.374" SN="S_EBM_OW_VERSORGUNGSGEBIET" SV="1.00">
+    <key V="1" DN="Regelfall" S="1.2.276.0.76.5.374" SV="1.00"/>
+    <key V="2" DN="Preis für unterversorgtes Gebiet" S="1.2.276.0.76.5.374" SV="1.00"/>
+    <key V="3" DN="Preis für überversorgtes Gebiet" S="1.2.276.0.76.5.374" SV="1.00"/>
+  </keytab>
+</keytabs>
+

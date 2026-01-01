@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  
+<keytabs xmlns="urn:ehd/001">
+  <keytab S="1.2.276.0.76.3.1.1.5.1.19" SN="S_VDX_SCHEINUNTERGRUPPE" SV="1.01">
+    <key V="00" DN="Ambulante Behandlung (Defaultwert)" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="20" DN="Selbstausstellung" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="21" DN="Auftragsleistungen (Defaultwert bei Einsendepraxen)" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="23" DN="Konsiliaruntersuchung" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="24" DN="Mit-/Weiterbehandlung (Defaultwert; außer bei Einsendepraxen)" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="26" DN="Stationäre Mitbehandlung, Vergütung nach ambulanten Grundsätzen" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="27" DN="Überweisungs-/Abrechnungsschein für Laboratoriumsuntersuchungen als Auftragsleistung" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="28" DN="Anforderungschein für Laboratoriumsuntersuchungen bei Laborgemeinschaften" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="30" DN="Belegärztliche Behandlung (Defaultwert)" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="31" DN="Belegärztliche Mitbehandlung" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="32" DN="Urlaubs- bzw. Krankheitsvertretung bei belegärztlicher Behandlung" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="41" DN="Ärztlicher Notfalldienst (Defaultwert)" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="42" DN="Urlaubs-/bzw. Krankheitsvertretung" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="43" DN="Notfall" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="44" DN="Notfalldienst mit Taxi" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="45" DN="Notarzt-/Rettungswagen (Rettungsdienst)" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+    <key V="46" DN="Zentraler Notfalldienst" S="1.2.276.0.76.3.1.1.5.1.19" SV="1.01"/>
+  </keytab>
+</keytabs>
+

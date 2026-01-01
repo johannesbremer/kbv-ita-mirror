@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- Mit XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) von Hr. Börner (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<xs:schema xmlns="urn:ehd/krw/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:krw="urn:ehd/krw/001" targetNamespace="urn:ehd/krw/001">
+	<xs:annotation>
+		<xs:documentation>krw_body.xsd: Bodydefinition der Kodierregelwerksstammdatei (SDKRW) - Version 1.20 - Stand: 06.07.2010</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Typendefinitionen</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="operator_typ">
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="AND"/>
+					<xs:enumeration value="OR"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="kodierregel_liste_typ">
+		<xs:sequence>
+			<xs:element ref="kodierregel" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="kodierregel_typ">
+		<xs:sequence>
+			<xs:element ref="id">
+				<xs:annotation>
+					<xs:documentation>Kodierregel-ID</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="service_tmr">
+				<xs:annotation>
+					<xs:documentation>Gültigkeit im Format JJJJ-MM-TT..JJJJ-MM-TT</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="beschreibung">
+				<xs:annotation>
+					<xs:documentation>Beschreibungstext für eine Kodierregel</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="regelkategorie">
+				<xs:annotation>
+					<xs:documentation>Kodierregel für Regelkategorie</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="regelquelle_liste">
+				<xs:annotation>
+					<xs:documentation>Strukturelement für Regelquelle</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="regelanwendung">
+				<xs:annotation>
+					<xs:documentation>Kodierregel für Regelanwendung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="bezugsraum"/>
+			<xs:element ref="echtzeitpruefung_liste">
+				<xs:annotation>
+					<xs:documentation>Strukturelement für  Echtzeitpruefung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="pruefgrundlage_liste">
+				<xs:annotation>
+					<xs:documentation>Strukturelement für  Pruefgrundlage</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="bedingung">
+				<xs:annotation>
+					<xs:documentation>Generische Struktur für Bedingungen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="pruefung" minOccurs="0"/>
+			<xs:element ref="fehlerbehandlung">
+				<xs:annotation>
+					<xs:documentation>Strukturelement für Fehlerbehandlung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="kurz_beschreibung"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="fehlerbehandlung_typ">
+		<xs:sequence>
+			<xs:element ref="hinweis"/>
+			<xs:element ref="vorschlag"/>
+			<xs:element ref="korrektur">
+				<xs:annotation>
+					<xs:documentation>Strukturelement für Korrekturmaßnahme</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="value_liste_typ">
+		<xs:sequence>
+			<xs:element ref="value" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Codierter Wert</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="value_typ">
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="id_typ">
+		<xs:attribute name="V" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="bedingung_typ"/>
+	<xs:simpleType name="zeitraum_typ">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1]))\.\.[1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1])))|([1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1])))|(\.\.[1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1])))|([1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1]))\.\.)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="bezugsraum_typ">
+		<xs:sequence>
+			<xs:element ref="anzahl_quartale" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Kodierregel für die Anzahl der Quartale</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="V" type="xs:string" use="required"/>
+		<xs:attribute name="DN" type="xs:string" use="required"/>
+		<xs:attribute name="S" type="xs:string" use="optional" fixed="1.2.276.0.76.3.1.1.5.2.18"/>
+	</xs:complexType>
+	<xs:complexType name="echtzeitpruefung_liste_typ">
+		<xs:sequence>
+			<xs:element ref="echtzeitpruefung" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Kodierregel für  Echtzeitprüfung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="pruefgrundlage_liste_typ">
+		<xs:sequence>
+			<xs:element ref="pruefgrundlage" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Kodierregel für  Pruefgrundlage</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="korrektur_typ"/>
+	<xs:complexType name="regelquelle_liste_typ">
+		<xs:sequence>
+			<xs:element ref="regelquelle" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Kodierregel für Regelquelle</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="echtzeitpruefung_typ">
+		<xs:annotation>
+			<xs:documentation>Kodierregel für Echtzeitprüfung geeignet</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="V" type="xs:string" use="required"/>
+		<xs:attribute name="DN" type="xs:string" use="required"/>
+		<xs:attribute name="S" type="xs:string" use="optional" fixed="1.2.276.0.76.3.1.1.5.2.54"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>Elementdefinitionen</xs:documentation>
+	</xs:annotation>
+	<xs:element name="kodierregel_liste" type="kodierregel_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für n-fache Kodierregeln</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="kodierregel">
+		<xs:annotation>
+			<xs:documentation>Generische Struktur einer Kodierregel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="kodierregel_typ">
+					<xs:attribute name="VT" type="vt_typ" use="required"/>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="service_tmr">
+		<xs:annotation>
+			<xs:documentation>Gültigkeit im Format JJJJ-MM-TT..JJJJ-MM-TT</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="zeitraum_typ" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="id">
+		<xs:annotation>
+			<xs:documentation>Kodierregel-ID, systematischer Einordnung gemäß Kodierrichtlinien</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="id_typ"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="text">
+		<xs:annotation>
+			<xs:documentation>Titel der Kodierregel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="beschreibung">
+		<xs:annotation>
+			<xs:documentation>Beschreibungstext für eine Kodierregel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="kurz_beschreibung">
+		<xs:annotation>
+			<xs:documentation>Kurzer Beschreibungstext für eine Kodierregel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="bezugsraum">
+		<xs:annotation>
+			<xs:documentation>Zeitlicher Bezugsraum einer Kodierregel</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="bezugsraum_typ"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="echtzeitpruefung" type="echtzeitpruefung_typ">
+		<xs:annotation>
+			<xs:documentation>Kodierregel für Echtzeitprüfung geeignet</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="bedingung">
+		<xs:annotation>
+			<xs:documentation>Generische Struktur für Bedingungen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="bedingung_typ">
+					<xs:sequence>
+						<xs:element ref="parameter">
+							<xs:annotation>
+								<xs:documentation>Definiert den Parameter-Typ der Value-Elemente</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="operator" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Logische Verknüpfung bei mehreren 'values' (AND, OR)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="existenz">
+							<xs:annotation>
+								<xs:documentation>Logischer Operator für Existenzprüfung oder Negation (TRUE/FALSE)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="value_liste">
+							<xs:annotation>
+								<xs:documentation>Strukturelement für codierte Elemente</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="subbedingung" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Kodierregel für weitere Subbedingungen </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="pruefung">
+		<xs:annotation>
+			<xs:documentation>Generische Struktur für Prüfungen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="bedingung_typ">
+					<xs:sequence>
+						<xs:element ref="parameter">
+							<xs:annotation>
+								<xs:documentation>Definiert den Parameter-Typ der Value-Elemente</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="operator" minOccurs="0"/>
+						<xs:element ref="pruefung_existenz">
+							<xs:annotation>
+								<xs:documentation>Logischer Operator für Existenzprüfung oder Negation (TRUE/FALSE)</xs:documentation>
+							</xs:annotation>
+							<!-- Änderung in der Schnittstellenbeschreibung notwendig -->
+						</xs:element>
+						<xs:element ref="value_liste"/>
+						<xs:element ref="subpruefung" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Kodierregel für Subpruefungen</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="operator" type="operator_typ">
+		<xs:annotation>
+			<xs:documentation>Logische Verknüpfung der definierten Parameter (AND, OR)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="parameter">
+		<xs:annotation>
+			<xs:documentation>Gibt den Parameter-Typ der Value-Elemente gemäß Schlüsseltabelle an</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+			<xs:attribute name="S" type="xs:string" use="optional" fixed="1.2.276.0.76.3.1.1.5.2.16"/>
+			<xs:attribute name="DN" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="value_liste">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für codierte Elemente</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="value_liste_typ"/>
+			</xs:complexContent>
+		</xs:complexType>
+		<xs:unique name="oneValue">
+			<xs:selector xpath="krw:value"/>
+			<xs:field xpath="@V"/>
+		</xs:unique>
+	</xs:element>
+	<xs:element name="value" type="value_typ">
+		<xs:annotation>
+			<xs:documentation>Codierter Wert (ICD)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="fehlerbehandlung" type="fehlerbehandlung_typ">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für die Fehlerbehandlung</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="korrektur">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für eine Korrekturmaßnahme</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="korrektur_typ">
+					<xs:sequence>
+						<xs:element ref="parameter">
+							<xs:annotation>
+								<xs:documentation>Definiert den Parameter-Typ der Value-Elemente</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="regel">
+							<xs:annotation>
+								<xs:documentation>Empfohlene Maßnahme für die Korrektur (löschen, ersetzen oder ergänzen)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="value_liste" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Strukturelement für codierte Elemente</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="subkorrektur" minOccurs="0"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="hinweis">
+		<xs:annotation>
+			<xs:documentation>Hinweis zum Korrekturvorschlag</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="regel">
+		<xs:annotation>
+			<xs:documentation>Maßnahme für die Korrektur (ergänzen, löschen oder ersetzen)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="ADD"/>
+						<xs:enumeration value="DELETE"/>
+						<xs:enumeration value="REPLACE"/>
+						<xs:enumeration value="[leer]"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="vt_typ">
+		<xs:annotation>
+			<xs:documentation>Beinhaltet ein Pattern, welches das Zeitstempel-Format des VT-Attributes beschreibt</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1]))"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="regelquelle">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für die Regelquelle</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="regelthema_liste"/>
+			</xs:sequence>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+			<xs:attribute name="DN" type="xs:string" use="required"/>
+			<xs:attribute name="S" type="xs:string" use="optional" fixed="1.2.276.0.76.3.1.1.5.2.51"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="regelthema">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für das Regelthema</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+			<xs:attribute name="DN" type="xs:string" use="required"/>
+			<xs:attribute name="S" type="xs:string" use="optional" fixed="1.2.276.0.76.3.1.1.5.2.55"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="regelbeschreibung">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für die Regelbeschreibung</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="regelkategorie">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für die Regelkategorie</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string"/>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="DN" type="xs:string" use="required"/>
+			<xs:attribute name="S" type="xs:string" use="optional" fixed="1.2.276.0.76.3.1.1.5.2.50"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="regelanwendung">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für die Regelanwendung</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+			<xs:attribute name="DN" type="xs:string" use="required"/>
+			<xs:attribute name="S" type="xs:string" use="optional" fixed="1.2.276.0.76.3.1.1.5.2.52"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="pruefgrundlage">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für die Pruefmenge</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+			<xs:attribute name="DN" type="xs:string" use="required"/>
+			<xs:attribute name="S" type="xs:string" use="optional" fixed="1.2.276.0.76.3.1.1.5.2.53"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="vorschlag">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für Vorschläge</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="vorschlag_korrektur">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für eine Korrekturvorschlagsliste</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="anzahl_quartale">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für die Anzahl der Quartale</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:int" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="subbedingung">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für Subbedingungen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="bedingung_typ">
+					<xs:sequence>
+						<xs:element ref="parameter">
+							<xs:annotation>
+								<xs:documentation>Definiert den Parameter-Typ der Value-Elemente</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="operator" minOccurs="0"/>
+						<xs:element ref="existenz">
+							<xs:annotation>
+								<xs:documentation>Logischer Operator für Existenzprüfung oder Negation (TRUE/FALSE)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element ref="value_liste"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="subpruefung">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für Subpruefungen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="parameter">
+					<xs:annotation>
+						<xs:documentation>Definiert den Parameter-Typ der Value-Elemente</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="operator" minOccurs="0"/>
+				<xs:element ref="existenz">
+					<xs:annotation>
+						<xs:documentation>Logischer Operator für Existenzprüfung oder Negation (TRUE/FALSE)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="value_liste"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="subkorrektur">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für Subkorrektur</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="parameter">
+					<xs:annotation>
+						<xs:documentation>Definiert den Parameter-Typ der Value-Elemente</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="value_liste">
+					<xs:annotation>
+						<xs:documentation>Strukturelement für codierte Elemente</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="regelquelle_liste" type="regelquelle_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für Regelquelle</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="echtzeitpruefung_liste">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für  Echtzeitpruefung</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="echtzeitpruefung_liste_typ"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="regelthema_liste">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="regelthema" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Kodierregel für Regelthema</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="pruefgrundlage_liste">
+		<xs:annotation>
+			<xs:documentation>Strukturelement für  Pruefgrundlage</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="pruefgrundlage_liste_typ"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="existenz">
+		<xs:annotation>
+			<xs:documentation>Logischer Operator für Existenzprüfung oder Negation (TRUE/FALSE)</xs:documentation>
+		</xs:annotation>
+		<!-- Schnittstelle anpassen -->
+		<xs:complexType>
+			<xs:attribute name="V" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="TRUE"/>
+						<xs:enumeration value="FALSE"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="pruefung_existenz">
+		<xs:annotation>
+			<xs:documentation>Logischer Operator für Existenzprüfung oder Negation (TRUE/FALSE)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="TRUE"/>
+						<xs:enumeration value="FALSE"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

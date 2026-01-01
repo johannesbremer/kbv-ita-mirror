@@ -1,0 +1,1019 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krankenbefoerderung_42019" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Krankenbefoerderung_42019" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="quick" />
+    <uri value="http://siframework.org/cqf" />
+    <name value="Quality Improvement and Clinical Knowledge (QUICK)" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="ServiceRequest" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ServiceRequest" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="ServiceRequest">
+      <path value="ServiceRequest" />
+      <short value="Krankenbeföderung_42019" />
+      <definition value="Diese Ressource dient der Dokumentation eines Auftages zur Krankenbeföderung. Siehe KBV Formular/Muster 4, sowie die Erläuterungen zu diesem Muster. Diese ist ab 04/2019 gültig." />
+    </element>
+    <element id="ServiceRequest.id">
+      <path value="ServiceRequest.id" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.meta">
+      <path value="ServiceRequest.meta" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.meta.versionId">
+      <path value="ServiceRequest.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.meta.lastUpdated">
+      <path value="ServiceRequest.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.meta.profile">
+      <path value="ServiceRequest.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krankenbefoerderung_42019|1.2.0" />
+    </element>
+    <element id="ServiceRequest.text">
+      <path value="ServiceRequest.text" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.identifier">
+      <path value="ServiceRequest.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.instantiatesCanonical">
+      <path value="ServiceRequest.instantiatesCanonical" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.instantiatesUri">
+      <path value="ServiceRequest.instantiatesUri" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.basedOn">
+      <path value="ServiceRequest.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.replaces">
+      <path value="ServiceRequest.replaces" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requisition">
+      <path value="ServiceRequest.requisition" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.status">
+      <path value="ServiceRequest.status" />
+      <short value="Status" />
+      <definition value="Der Status dieser Ressource ist immer completed" />
+      <fixedCode value="completed" />
+    </element>
+    <element id="ServiceRequest.intent">
+      <path value="ServiceRequest.intent" />
+      <definition value="Die Absicht in der diese Ressource erstellt wurde ist immer ein Auftrag(order)." />
+      <fixedCode value="order" />
+    </element>
+    <element id="ServiceRequest.category">
+      <path value="ServiceRequest.category" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.priority">
+      <path value="ServiceRequest.priority" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.doNotPerform">
+      <path value="ServiceRequest.doNotPerform" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.code">
+      <path value="ServiceRequest.code" />
+      <short value="Krankenbeförderung" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieser Ressource verwendet." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.code.coding">
+      <path value="ServiceRequest.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.code.coding.system">
+      <path value="ServiceRequest.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.code.coding.version">
+      <path value="ServiceRequest.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.code.coding.code">
+      <path value="ServiceRequest.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Krankenbefoerderung_42019" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.code.coding.display">
+      <path value="ServiceRequest.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.code.coding.userSelected">
+      <path value="ServiceRequest.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.code.text">
+      <path value="ServiceRequest.code.text" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.orderDetail">
+      <path value="ServiceRequest.orderDetail" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.quantity[x]">
+      <path value="ServiceRequest.quantity[x]" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.subject">
+      <path value="ServiceRequest.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.subject.reference">
+      <path value="ServiceRequest.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.subject.type">
+      <path value="ServiceRequest.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.subject.identifier">
+      <path value="ServiceRequest.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.subject.display">
+      <path value="ServiceRequest.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.encounter">
+      <path value="ServiceRequest.encounter" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Begegnung|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.encounter.reference">
+      <path value="ServiceRequest.encounter.reference" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.encounter.type">
+      <path value="ServiceRequest.encounter.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.encounter.identifier">
+      <path value="ServiceRequest.encounter.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.encounter.display">
+      <path value="ServiceRequest.encounter.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]">
+      <path value="ServiceRequest.occurrence[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming">
+      <path value="ServiceRequest.occurrenceTiming" />
+      <sliceName value="occurrenceTiming" />
+      <short value="Behandlungstag/Behandlungsfrequenz" />
+      <definition value="In diesem Element ist der Behandlungstag oder die Behandlungsfrequenz anzugeben. Siehe Muster 4 Ausfüllhilfe Nummer 10" />
+      <type>
+        <code value="Timing" />
+      </type>
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Krankenbefoerderung: Hauptleistung: ambulante Operation: Operationsdatum" />
+      </mapping>
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.event">
+      <path value="ServiceRequest.occurrenceTiming.event" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.bounds[x]">
+      <path value="ServiceRequest.occurrenceTiming.repeat.bounds[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.bounds[x]:boundsPeriod">
+      <path value="ServiceRequest.occurrenceTiming.repeat.boundsPeriod" />
+      <sliceName value="boundsPeriod" />
+      <type>
+        <code value="Period" />
+      </type>
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.bounds[x]:boundsPeriod.start">
+      <path value="ServiceRequest.occurrenceTiming.repeat.boundsPeriod.start" />
+      <short value="Starttag-/periode" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.count">
+      <path value="ServiceRequest.occurrenceTiming.repeat.count" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.countMax">
+      <path value="ServiceRequest.occurrenceTiming.repeat.countMax" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.duration">
+      <path value="ServiceRequest.occurrenceTiming.repeat.duration" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.durationMax">
+      <path value="ServiceRequest.occurrenceTiming.repeat.durationMax" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.durationUnit">
+      <path value="ServiceRequest.occurrenceTiming.repeat.durationUnit" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.frequency">
+      <path value="ServiceRequest.occurrenceTiming.repeat.frequency" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.frequencyMax">
+      <path value="ServiceRequest.occurrenceTiming.repeat.frequencyMax" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.period">
+      <path value="ServiceRequest.occurrenceTiming.repeat.period" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.periodMax">
+      <path value="ServiceRequest.occurrenceTiming.repeat.periodMax" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.periodUnit">
+      <path value="ServiceRequest.occurrenceTiming.repeat.periodUnit" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.dayOfWeek">
+      <path value="ServiceRequest.occurrenceTiming.repeat.dayOfWeek" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.timeOfDay">
+      <path value="ServiceRequest.occurrenceTiming.repeat.timeOfDay" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.when">
+      <path value="ServiceRequest.occurrenceTiming.repeat.when" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.offset">
+      <path value="ServiceRequest.occurrenceTiming.repeat.offset" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.code">
+      <path value="ServiceRequest.occurrenceTiming.code" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.asNeeded[x]">
+      <path value="ServiceRequest.asNeeded[x]" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.authoredOn">
+      <path value="ServiceRequest.authoredOn" />
+      <short value="Austellungsdatum" />
+      <definition value="Datum an dem die Verordnung ausgestellt wurde." />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.requester">
+      <path value="ServiceRequest.requester" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.performerType">
+      <path value="ServiceRequest.performerType" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.performer">
+      <path value="ServiceRequest.performer" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krankenbefoerderung_Befoerderungsmittel|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.performer.extension">
+      <path value="ServiceRequest.performer.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="ServiceRequest.performer.extension:optionen">
+      <path value="ServiceRequest.performer.extension" />
+      <sliceName value="optionen" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krankenbefoerderung_Befoerderungsmittel_Optionen_42019" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.performer.reference">
+      <path value="ServiceRequest.performer.reference" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.performer.type">
+      <path value="ServiceRequest.performer.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.performer.identifier">
+      <path value="ServiceRequest.performer.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.performer.display">
+      <path value="ServiceRequest.performer.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.locationCode">
+      <path value="ServiceRequest.locationCode" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.locationReference">
+      <path value="ServiceRequest.locationReference" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode">
+      <path value="ServiceRequest.reasonCode" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.code" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <comment value="Es ist die Ursachen dieser Krankenbefoerderung anzugeben." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:unfall_Unfallfolge">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="unfall_Unfallfolge" />
+      <short value="Ursache der Verordnung" />
+      <definition value="In diesem Element ist die Ursache der Verordnung anzugeben." />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:unfall_Unfallfolge.coding">
+      <path value="ServiceRequest.reasonCode.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:unfall_Unfallfolge.coding.system">
+      <path value="ServiceRequest.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoerderung_Kategorie_42019" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:unfall_Unfallfolge.coding.version">
+      <path value="ServiceRequest.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:unfall_Unfallfolge.coding.code">
+      <path value="ServiceRequest.reasonCode.coding.code" />
+      <min value="1" />
+      <fixedCode value="Unfall_Unfallfolge" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:unfall_Unfallfolge.coding.display">
+      <path value="ServiceRequest.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:unfall_Unfallfolge.coding.userSelected">
+      <path value="ServiceRequest.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:unfall_Unfallfolge.text">
+      <path value="ServiceRequest.reasonCode.text" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:arbeitsunfall_Berufskrankheit">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="arbeitsunfall_Berufskrankheit" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:arbeitsunfall_Berufskrankheit.coding">
+      <path value="ServiceRequest.reasonCode.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:arbeitsunfall_Berufskrankheit.coding.system">
+      <path value="ServiceRequest.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoerderung_Kategorie_42019" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:arbeitsunfall_Berufskrankheit.coding.version">
+      <path value="ServiceRequest.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:arbeitsunfall_Berufskrankheit.coding.code">
+      <path value="ServiceRequest.reasonCode.coding.code" />
+      <min value="1" />
+      <fixedCode value="Arbeitsunfall_Berufskrankheit" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:arbeitsunfall_Berufskrankheit.coding.display">
+      <path value="ServiceRequest.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:arbeitsunfall_Berufskrankheit.coding.userSelected">
+      <path value="ServiceRequest.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:arbeitsunfall_Berufskrankheit.text">
+      <path value="ServiceRequest.reasonCode.text" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:versorgungsleiden">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="versorgungsleiden" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:versorgungsleiden.coding">
+      <path value="ServiceRequest.reasonCode.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:versorgungsleiden.coding.system">
+      <path value="ServiceRequest.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoerderung_Kategorie_42019" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:versorgungsleiden.coding.version">
+      <path value="ServiceRequest.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:versorgungsleiden.coding.code">
+      <path value="ServiceRequest.reasonCode.coding.code" />
+      <min value="1" />
+      <fixedCode value="Versorgungsleiden" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:versorgungsleiden.coding.display">
+      <path value="ServiceRequest.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:versorgungsleiden.coding.userSelected">
+      <path value="ServiceRequest.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:versorgungsleiden.text">
+      <path value="ServiceRequest.reasonCode.text" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_voll_oder_teilstationaer">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="gFrei_krankenhaus_voll_oder_teilstationaer" />
+      <short value="Einweisung ins Krankenhaus" />
+      <definition value="Ist eine Einweisung in ein Krankenhaus notwendig, so ist diese Attribut auszuwählen. Siehe Muster 4 Ausfüllhilfe Nummer 4" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Krankenbefoerderung: Hauptleistung: krankenhaus_voll_oder_teilstationaer" />
+      </mapping>
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_voll_oder_teilstationaer.coding">
+      <path value="ServiceRequest.reasonCode.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_voll_oder_teilstationaer.coding.system">
+      <path value="ServiceRequest.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoerderung_Hauptleistung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_voll_oder_teilstationaer.coding.version">
+      <path value="ServiceRequest.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_voll_oder_teilstationaer.coding.code">
+      <path value="ServiceRequest.reasonCode.coding.code" />
+      <min value="1" />
+      <fixedCode value="Krankenhaus_voll_oder_teilstationaer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_voll_oder_teilstationaer.coding.display">
+      <path value="ServiceRequest.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_voll_oder_teilstationaer.coding.userSelected">
+      <path value="ServiceRequest.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_voll_oder_teilstationaer.text">
+      <path value="ServiceRequest.reasonCode.text" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_vor_oder_nachstationaer">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="gFrei_krankenhaus_vor_oder_nachstationaer" />
+      <short value="Krankenhausaufenthalt" />
+      <definition value="Ist ein Aufenthalt im Krankenhaus notwendig, so ist dieser hier anzugeben. Zusätzlich können sonstige Behandlungsdaten angegeben werden. Siehe Muster 4 Ausfüllhilfe Nummer 4" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Krankenbefoerderung: Hauptleistung: krankenhaus_vor_oder_nachstationaer" />
+      </mapping>
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_vor_oder_nachstationaer.coding">
+      <path value="ServiceRequest.reasonCode.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_vor_oder_nachstationaer.coding.system">
+      <path value="ServiceRequest.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoerderung_Hauptleistung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_vor_oder_nachstationaer.coding.version">
+      <path value="ServiceRequest.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_vor_oder_nachstationaer.coding.code">
+      <path value="ServiceRequest.reasonCode.coding.code" />
+      <min value="1" />
+      <fixedCode value="Krankenhaus_vor_oder_nachstationaer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_vor_oder_nachstationaer.coding.display">
+      <path value="ServiceRequest.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_vor_oder_nachstationaer.coding.userSelected">
+      <path value="ServiceRequest.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_krankenhaus_vor_oder_nachstationaer.text">
+      <path value="ServiceRequest.reasonCode.text" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_anderer_Grund">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="gFrei_anderer_Grund" />
+      <short value="anderer Grund" />
+      <definition value="In diesem Element sind andere genehmigungsfreie Fahrten zu deklarieren. z.B.  Siehe Muster 4 Ausfüllhilfe Nummer 5." />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_anderer_Grund.coding">
+      <path value="ServiceRequest.reasonCode.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_anderer_Grund.coding.system">
+      <path value="ServiceRequest.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoerderung_Hauptleistung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_anderer_Grund.coding.version">
+      <path value="ServiceRequest.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_anderer_Grund.coding.code">
+      <path value="ServiceRequest.reasonCode.coding.code" />
+      <min value="1" />
+      <fixedCode value="Anderer_Grund" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_anderer_Grund.coding.display">
+      <path value="ServiceRequest.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_anderer_Grund.coding.userSelected">
+      <path value="ServiceRequest.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gFrei_anderer_Grund.text">
+      <path value="ServiceRequest.reasonCode.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_dialyse_Chemo_Strahlentherapie">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="gPflicht_HF_dialyse_Chemo_Strahlentherapie" />
+      <short value="gPflicht_HF_dialyse_Chemo_Strahlentherapie" />
+      <definition value="Genehmigungspflichtige(gPflicht) Fahrten zu hochfrequenten(HF) Behandlung: Dialyse, onkologischer Chemo- oder Strahlentherapie. Siehe Muster 4 Ausfüllhinweise Nummer 6" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Krankenbefoerderung: Hauptleistung: ambulante Operation: ambulante_Operation_gem_115_b_SGB_V" />
+      </mapping>
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_dialyse_Chemo_Strahlentherapie.coding">
+      <path value="ServiceRequest.reasonCode.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_dialyse_Chemo_Strahlentherapie.coding.system">
+      <path value="ServiceRequest.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoerderung_Hauptleistung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_dialyse_Chemo_Strahlentherapie.coding.version">
+      <path value="ServiceRequest.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_dialyse_Chemo_Strahlentherapie.coding.code">
+      <path value="ServiceRequest.reasonCode.coding.code" />
+      <min value="1" />
+      <fixedCode value="Dialyse_Chemo_Strahlentherapie" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_dialyse_Chemo_Strahlentherapie.coding.display">
+      <path value="ServiceRequest.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_dialyse_Chemo_Strahlentherapie.coding.userSelected">
+      <path value="ServiceRequest.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_dialyse_Chemo_Strahlentherapie.text">
+      <path value="ServiceRequest.reasonCode.text" />
+      <short value="Behandlungsdaten" />
+      <definition value="Im Falle mehrerer Behandlungstermine sind diese in dieseem Element zu transportieren." />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Krankenbefoerderung: Hauptleistung: ambulante Operation: Behandlungsdaten" />
+      </mapping>
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_vergleichbarer_Ausnahmefall">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="gPflicht_HF_vergleichbarer_Ausnahmefall" />
+      <short value="vergleichbarer Ausnahmefall" />
+      <definition value="Genehmigungspflichtige(gPflicht) Fahrten zu hochfrequenten(HF) Behandlung: Durchführung einer Krankenbefoerderung in einem vergleichbaren Ausnahmefall. Siehe Muster 4 Ausfüllhilfe Nummer 6" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Krankenbefoerderung: Hauptleistung: Ambulante Operation: Vor-Nach-Behandlung" />
+      </mapping>
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_vergleichbarer_Ausnahmefall.extension">
+      <path value="ServiceRequest.reasonCode.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_vergleichbarer_Ausnahmefall.extension:icd-10">
+      <path value="ServiceRequest.reasonCode.extension" />
+      <sliceName value="icd-10" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krankenbefoerderung_ICD10_42019" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_vergleichbarer_Ausnahmefall.coding">
+      <path value="ServiceRequest.reasonCode.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_vergleichbarer_Ausnahmefall.coding.system">
+      <path value="ServiceRequest.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoerderung_Hauptleistung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_vergleichbarer_Ausnahmefall.coding.version">
+      <path value="ServiceRequest.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_vergleichbarer_Ausnahmefall.coding.code">
+      <path value="ServiceRequest.reasonCode.coding.code" />
+      <min value="1" />
+      <fixedCode value="Vergleichbarer_Ausnahmefall" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_vergleichbarer_Ausnahmefall.coding.display">
+      <path value="ServiceRequest.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_vergleichbarer_Ausnahmefall.coding.userSelected">
+      <path value="ServiceRequest.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_HF_vergleichbarer_Ausnahmefall.text">
+      <path value="ServiceRequest.reasonCode.text" />
+      <short value="Behandlungsdaten" />
+      <definition value="Im Falle mehrerer Behandlungstermine sind diese in dieseem Element zu transportieren." />
+      <min value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="ambulante_Operation_gem_115_b_SGB_V" />
+      </mapping>
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_Merkzeichen_aG_BI_H">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="gPflicht_DM_Merkzeichen_aG_BI_H" />
+      <short value="Merkzeichen_aG_BI_H" />
+      <definition value="Genehmigungspflichtige(gPflicht) Fahrten mit dauerhafter Mobilitätsbeeinträchtigung(DM): Für Patienten mit Merkzeichen aG, BI,H. Siehe Muster 4 Ausfüllhilfe Nummer 7" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Krankenbefoerderung: Hauptleistung:" />
+      </mapping>
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_Merkzeichen_aG_BI_H.coding">
+      <path value="ServiceRequest.reasonCode.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_Merkzeichen_aG_BI_H.coding.system">
+      <path value="ServiceRequest.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoerderung_Hauptleistung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_Merkzeichen_aG_BI_H.coding.version">
+      <path value="ServiceRequest.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_Merkzeichen_aG_BI_H.coding.code">
+      <path value="ServiceRequest.reasonCode.coding.code" />
+      <min value="1" />
+      <fixedCode value="Merkzeichen_aG_BI_H" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_Merkzeichen_aG_BI_H.coding.display">
+      <path value="ServiceRequest.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_Merkzeichen_aG_BI_H.coding.userSelected">
+      <path value="ServiceRequest.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_vergleichbare_Mobilitaetseinschraenkung">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="gPflicht_DM_vergleichbare_Mobilitaetseinschraenkung" />
+      <short value="Vergleichbare Mobilitaetseinschraenkung" />
+      <definition value="Genehmigungspflichtige(gPflicht) Fahrten mit dauerhafter Mobilitätsbeeinträchtigung(DM): Für Patienten mit vergleichbarer Mobilitätsbeeinträchtigung. Siehe Muster 4 Ausfüllhilfe Nummer 7" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Krankenbefoerderung: Hauptleistung:" />
+      </mapping>
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_vergleichbare_Mobilitaetseinschraenkung.extension">
+      <path value="ServiceRequest.reasonCode.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_vergleichbare_Mobilitaetseinschraenkung.extension:icd-10">
+      <path value="ServiceRequest.reasonCode.extension" />
+      <sliceName value="icd-10" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krankenbefoerderung_ICD10_42019" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_vergleichbare_Mobilitaetseinschraenkung.coding">
+      <path value="ServiceRequest.reasonCode.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_vergleichbare_Mobilitaetseinschraenkung.coding.system">
+      <path value="ServiceRequest.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoerderung_Hauptleistung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_vergleichbare_Mobilitaetseinschraenkung.coding.version">
+      <path value="ServiceRequest.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_vergleichbare_Mobilitaetseinschraenkung.coding.code">
+      <path value="ServiceRequest.reasonCode.coding.code" />
+      <min value="1" />
+      <fixedCode value="vergleichbare_Mobilitaetseinschraenkung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_vergleichbare_Mobilitaetseinschraenkung.coding.display">
+      <path value="ServiceRequest.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_vergleichbare_Mobilitaetseinschraenkung.coding.userSelected">
+      <path value="ServiceRequest.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_DM_vergleichbare_Mobilitaetseinschraenkung.text">
+      <path value="ServiceRequest.reasonCode.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_anderer_Grund">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="gPflicht_anderer_Grund" />
+      <short value="Anderer Grund" />
+      <definition value="Genehmigungspflichtige(gPflicht) Fahrten aus anderem Grund. Siehe Muster 4 Ausfüllhilfe Nummer 9" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Krankenbefoerderung: Hauptleistung:" />
+      </mapping>
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_anderer_Grund.coding">
+      <path value="ServiceRequest.reasonCode.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_anderer_Grund.coding.system">
+      <path value="ServiceRequest.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoerderung_Hauptleistung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_anderer_Grund.coding.version">
+      <path value="ServiceRequest.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_anderer_Grund.coding.code">
+      <path value="ServiceRequest.reasonCode.coding.code" />
+      <min value="1" />
+      <fixedCode value="GPflicht_Anderer_Grund" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_anderer_Grund.coding.display">
+      <path value="ServiceRequest.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_anderer_Grund.coding.userSelected">
+      <path value="ServiceRequest.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode:gPflicht_anderer_Grund.text">
+      <path value="ServiceRequest.reasonCode.text" />
+      <short value="Sonstige" />
+      <definition value="In diesem Element ist die Sonstige-Behandlung näher zu spezifizieren." />
+      <min value="1" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Krankenbefoerderung: Hauptleistung: ambulante Behandlung: vorraussichtliche Behandlungsfrequenz" />
+      </mapping>
+    </element>
+    <element id="ServiceRequest.reasonReference">
+      <path value="ServiceRequest.reasonReference" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.insurance">
+      <path value="ServiceRequest.insurance" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo">
+      <path value="ServiceRequest.supportingInfo" />
+      <short value="Angabe einer Behandlungsstätte" />
+      <definition value="In diesem Element kann eine Behandlungsstätte angeben werden. Siehe Muster 4 Ausfüllhilfe Nummer 10" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.supportingInfo.reference">
+      <path value="ServiceRequest.supportingInfo.reference" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.supportingInfo.type">
+      <path value="ServiceRequest.supportingInfo.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo.identifier">
+      <path value="ServiceRequest.supportingInfo.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.specimen">
+      <path value="ServiceRequest.specimen" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.bodySite">
+      <path value="ServiceRequest.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.note">
+      <path value="ServiceRequest.note" />
+      <short value="Sonstiges" />
+      <definition value="Freitextfeld für nähere Erläuterungen zur Verordnung. Siehe Muster 4 Ausfüllhilfe Nummer 16" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.note.author[x]">
+      <path value="ServiceRequest.note.author[x]" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.note.time">
+      <path value="ServiceRequest.note.time" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.patientInstruction">
+      <path value="ServiceRequest.patientInstruction" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.relevantHistory">
+      <path value="ServiceRequest.relevantHistory" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

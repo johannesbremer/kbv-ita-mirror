@@ -1,0 +1,52 @@
+<Appointment xmlns="http://hl7.org/fhir">
+	<id value="3270"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-11T16:03:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Termin|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Termin für Patient zum Gesundsheits-Checkup am 20.01.2021 um 10:30 Uhr
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Termin_Terminserie">
+		<valueTiming>
+		<repeat>
+			<count value="3"/>
+		</repeat>
+		</valueTiming>
+	</extension>	
+	<status value="booked"/>
+	<serviceType>
+		<text value="Gesundheits-Checkup"/>
+	</serviceType>
+	<start value="2021-01-20T10:30:00+01:00"/>
+	<end value="2021-01-20T10:50:00+01:00"/>
+	<comment value="incl. großem Blutbild"/>
+	<participant>
+		<actor>
+			<reference value="Practitioner/3153"/>
+		</actor>
+		<status value="accepted"/>
+	</participant>
+	<participant>
+		<actor>
+			<reference value="Patient/3181"/>
+		</actor>
+		<status value="accepted"/>
+	</participant>
+	<participant>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+				<code value="PPRF"/>
+			</coding>
+		</type>
+		<actor>
+			<reference value="Location/3171"/>
+		</actor>
+		<status value="accepted"/>
+	</participant>
+</Appointment>

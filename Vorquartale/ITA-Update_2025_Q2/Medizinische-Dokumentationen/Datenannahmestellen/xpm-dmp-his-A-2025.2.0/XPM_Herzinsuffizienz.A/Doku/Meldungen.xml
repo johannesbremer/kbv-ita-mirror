@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Diese Datei beschreibt die Meldungen eines Prueflaufs. -->
+<meldungen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Common/Schema/meldungen.xsd">
+
+	<meldung>
+		<nummer>DMP-002</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s' ist ein Pflichtfeld.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-004</nummer>
+		<typ>Fehler</typ>
+        <text>Inkonsistente Angaben bzgl. Id's im Bereich '/clinical_document_header/'. Mindestens zwei unterschiedliche Angaben '%s' und '%s' wurden hierzu gemacht.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-005</nummer>
+		<typ>Fehler</typ>
+		<text>Das %s liegt in der Zukunft.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-006</nummer>
+		<typ>Fehler</typ>
+		<text>Der Wert für '%s' muss 9stellig sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-007</nummer>
+		<typ>Fehler</typ>
+		<text>Typ '%s' zu Parameter '%s' nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-008</nummer>
+		<typ>Fehler</typ>
+		<text>Der Kostenträgerabrechnungsbereich (KTAB) '%s' passt nicht zu dem angegebenen IK '%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-010</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s'. Hier wird statt '%s' eine Fliesskommazahl mit Punkt als Dezimaltrenner erwartet.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-011</nummer>
+		<typ>Warnung</typ>
+		<text>Das IK '%s' ist für dieses Abrechnungsquartal ungültig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-012</nummer>
+		<typ>Fehler</typ>
+		<text>Nur eine Angabe zu Feld '%s' zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-013</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s'. Hier wird statt '%s' eine Integer-Zahl erwartet.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-014</nummer>
+		<typ>Fehler</typ>
+		<text>Der systolische Blutdruckwert muss zwischen 50 und 300 liegen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-016</nummer>
+		<typ>Fehler</typ>
+		<text>Der systolische Blutdruckwert muss grösser als der diastolische Blutdruckwert sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-017</nummer>
+		<typ>Fehler</typ>
+		<text>Der diastolische Blutdruckwert muss zwischen 30 und 180 liegen.</text>
+	</meldung>
+    <meldung>
+        <nummer>DMP-020</nummer>
+        <typ>Fehler</typ>
+        <text>Der Name der XML-Schemadatei '%s' im Dokument entspricht nicht dem Namen der XML-Schemadatei aus der Konfigurationsdatei '%s'.</text>
+    </meldung>
+	<meldung>
+		<nummer>DMP-021</nummer>
+		<typ>Fehler</typ>
+		<text>Die 'Körpergrösse' muss zwischen 0 und 250 cm liegen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-023</nummer>
+		<typ>Fehler</typ>
+		<text>Das 'Körpergewicht' muss zwischen 0 und 300 kg liegen.</text>
+	</meldung>
+
+    <meldung>
+        <nummer>DMP-039</nummer>
+        <typ>Warnung</typ>
+        <text>IK '%s' in Stammdatei nicht gefunden.</text>
+    </meldung>
+	<meldung>
+		<nummer>DMP-041</nummer>
+		<typ>Fehler</typ>
+		<text>Das Geburtsjahr darf nicht vor 1900 liegen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-043</nummer>
+		<typ>Fehler</typ>
+		<text>'%s' ist keine gültige Einheit für Feld '%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-045</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe nur eines Blutdruckswerts, systolisch oder diastolisch, ist nicht zulässig.</text>
+	</meldung>
+   	<meldung>
+		<nummer>DMP-047</nummer>
+		<typ>Fehler</typ>
+		<text>Das Geburtsdatum muss vor dem Unterschriftsdatum liegen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-057</nummer>
+		<typ>Fehler</typ>
+		<text>Die Versichertennummer darf ab dem zweiten Zeichen nur Ziffern beinhalten.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-059</nummer>
+		<typ>Fehler</typ>
+		<text>Der erste Bestandteil des Dateinamens (bis zum Unterstrich) muss 9-stellig sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-060</nummer>
+		<typ>Fehler</typ>
+		<text>LANR und BSNR müssen gemeinsam genannt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-061</nummer>
+		<typ>Fehler</typ>
+		<text>Weder LANR/BSNR noch Krankenhaus-IK sind genannt.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-062</nummer>
+		<typ>Fehler</typ>
+		<text>'Modul-Teilnahme Chronische Herzinsuffizienz' darf momentan nur den Wert 'Nein' erhalten.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-063</nummer>
+		<typ>Fehler</typ>
+		<text>Die Kombination '%s' und '%s' bei 'Einschreibung wegen' ist nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-064</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe 'Chronische Herzinsuffizienz' ist im Feld 'Einschreibung wegen' erforderlich.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-065</nummer>
+		<typ>Fehler</typ>
+		<text>Die Datei '%s' entspricht nicht der Dateinamenskonvention gemäß '%s' mit AAAAAAAAA: 9-stellige Angabe, BBBBBBB: DMP-Fallnummer und JJJJMMTT: Dokumentationsdatum (origination_dttm). Erwartet wird folgender Dateiname: '%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-067</nummer>
+		<typ>Fehler</typ>
+		<text>Der Indikationstyp muss als Einschreibegrund genannt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-068</nummer>
+		<typ>Fehler</typ>
+		<text>BSNR oder Krankenhaus-IK muss identisch mit patient/person/id/@rt und id/@rt sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-071</nummer>
+		<typ>Fehler</typ>
+		<text>Die Einschreibung wegen DMP Asthma bronchiale ist für Patienten unter 1 Jahr nicht möglich.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-073</nummer>
+		<typ>Info</typ>
+		<text>Wenn im Feld 'lebenslange Arztnummer (LANR)' und im Feld 'Betriebsstätten-Nummer' eine Angabe erfolgte, ist im Feld 'Krankenhaus-IK' keine Angabe notwendig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-074</nummer>
+		<typ>Info</typ>
+		<text>Wenn im Feld 'lebenslange Arztnummer (LANR)' und im Feld 'Betriebsstätten-Nummer' eine Angabe erfolgte, ist im Feld 'Krankenhaus-IK' keine Angabe notwendig.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-077</nummer>
+		<typ>Warnung</typ>
+		<text>Das Versicherungsschutzende darf nicht vor dem Einlesedatum liegen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-078</nummer>
+		<typ>Fehler</typ>
+		<text>Die Krankenversichertenkarte ist seit dem 01.01.2015 ungültig und darf zur Abrechnung nicht verwendet werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-082</nummer>
+		<typ>Fehler</typ>
+		<text>Die Wertangabe im Feld '%s' muss zweistellig sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-083</nummer>
+		<typ>Fehler</typ>
+		<text>Die Wertangabe im Feld '%s' muss ein- oder zweistellig sein, und darf nur aus Ziffern bestehen.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-090</nummer>
+		<typ>Fehler</typ>
+		<text>Der Schema-Dokument-Typ '%s' passt nicht zu einer %s. Erwartet wird '%s'</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-100</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe '%s' im Feld '%s' ist nicht zulässig.</text>
+	</meldung>
+	<meldung>
+    	<nummer>DMP-102</nummer>
+		<typ>Fehler</typ>
+		<text>Die Wertangabe zum Feld '%s' muss dreistellig sein und darf nur Ziffern enthalten.</text>
+	</meldung>
+	<meldung>
+    	<nummer>DMP-102b</nummer>
+		<typ>Fehler</typ>
+		<text>Die Wertangabe zum Feld '%s' muss zwei- oder dreistellig sein und darf nur Ziffern enthalten.</text>
+	</meldung>
+	<meldung>
+    	<nummer>DMP-103</nummer>
+		<typ>Fehler</typ>
+		<text>Die Wertangabe zum Feld '%s' muss das Format [0-9].[0-9][0-9] aufweisen.</text>
+	</meldung>
+	<meldung>
+	    <nummer>DMP-110</nummer>
+    	<typ>Fehler</typ>
+	    <text>Bei einem Lebensalter &lt; 60 Jahre und dem Geschlecht "Männlich" ist eine Einschreibung wegen "Osteoporose" nicht möglich.</text>
+    </meldung>
+	<meldung>
+	    <nummer>DMP-111</nummer>
+    	<typ>Fehler</typ>
+	    <text>Bei einem Lebensalter &lt; 50 Jahre und dem Geschlecht "Weiblich", "Unbestimmt" oder "Divers" ist eine Einschreibung wegen "Osteoporose" nicht möglich.</text>
+    </meldung>
+	<meldung>
+		<nummer>DMP-112</nummer>
+		<typ>Fehler</typ>
+		<text>Das für eine Einschreibung wegen COPD erforderliche Mindestalter des Patienten ist 18 Jahre.</text>
+	</meldung>
+	<meldung>
+		<nummer>DMP-113</nummer>
+		<typ>Fehler</typ>
+		<text>Das für eine Einschreibung wegen "rheumatoide Arthritis" erforderliche Mindestalter des Patienten ist 18 Jahre.</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-001</nummer>
+		<typ>Fehler</typ>
+		<text>Es darf zum Feld '%s' nur eine Option angekreuzt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-017</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn Wert '%s' zu Feld '%s' angekreuzt wurde, darf keine weitere Ausprägung angekreuzt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-018</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s': Die Angaben 'Titrationsphase' und 'Max. tolerierte Dosis erreicht' dürfen nicht gleichzeitig angekreuzt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-020</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s': Wenn die Angabe 'Ja' erfolgt ist, kann nicht gleichzeitig die Angabe 'Nein' erfolgen.</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-022</nummer>
+		<typ>Fehler</typ>
+		<text>Im Feld '%s' darf nicht gleichzeitig  '%s' und '%s' angekreuzt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-029</nummer>
+		<typ>Fehler</typ>
+		<text>Nicht zulässiger Wert '%s' zu Parameter '%s'</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-039</nummer>
+		<typ>Warnung</typ>
+		<text>Gepackte Dokumentationen müssen im Ordner '%s' abgelegt werden.</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-040</nummer>
+		<typ>Fehler</typ>
+		<text>Ungültiges Element '%s' in Abschnitt '%s'.</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-043</nummer>
+		<typ>Fehler</typ>
+		<text>Eine Angabe zu Feld '%s' ist im Rahmen einer %s nicht zulässig.</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-044</nummer>
+		<typ>Fehler</typ>
+		<text>Feld '%s': Ungültiges Datumsformat</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-046</nummer>
+		<typ>Warnung</typ>
+		<text>Das %s liegt in der Zukunft.</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-047</nummer>
+		<typ>Warnung</typ>
+		<text>Das Einlesedatum liegt in Bezug zu der Angabe im Feld 'Datum der Erstellung' (service_tmr) in der Zukunft.</text>
+	</meldung>
+    <meldung>
+        <nummer>HIS-061</nummer>
+        <typ>Fehler</typ>
+        <text>Ung³ltiges Geburtsdatum.</text>
+    </meldung>
+    <meldung>    
+        <nummer>HIS-067</nummer>
+        <typ>Fehler</typ>
+        <text>Zwei verschachtelte Beobachtung-Elemente weisen den gleichen Parameter '%s' auf.</text>
+    </meldung>
+	<meldung>
+		<nummer>HIS-071</nummer>
+		<typ>Warnung</typ>
+		<text>Das Versicherungsschutz Ende '%s' liegt vor dem Erstellungsdatum.</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-072</nummer>
+		<typ>Fehler</typ>
+		<text>Das Versicherungsschutz Ende '%s' liegt mehr als 4 Monate vor dem Erstellungsdatum.</text>
+	</meldung>
+   	<meldung>
+		<nummer>HIS-079F</nummer>
+		<typ>Fehler</typ>
+		<text>Das Zip-Archiv muss auf %s enden.</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-079W</nummer>
+		<typ>Warnung</typ>
+		<text>Das Zip-Archiv sollte auf %s enden.</text>
+	</meldung>
+	<meldung>
+    	<nummer>HIS-085</nummer>
+		<typ>Fehler</typ>
+		<text>Eine Angabe in Feld '%s' ist nicht zulässig.</text>
+	</meldung>
+	<meldung>
+    	<nummer>HIS-086</nummer>
+		<typ>Fehler</typ>
+		<text>Zul„ässige Werte für Feld '%': 0-99</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-087</nummer>
+		<typ>Fehler</typ>
+		<text>Das Geburtsdatum '%s' des Versicherten muss kleiner dem Datum der Erstellung der Dokumentation sein.</text>
+	</meldung>
+	<meldung>
+		<nummer>HIS-PAR</nummer>
+		<typ>Fehler</typ>
+		<text>Zu dem Parameter '%s' wurde im Datensatz kein Wert angegeben.</text>
+	</meldung>
+	<meldung>
+		<nummer>XPM-JAVA-VER</nummer>
+		<typ>Info</typ>
+		<text>Auf Ihrem System ist eine Java Version kleiner 17 installiert. In der nächsten Version des Prüfmoduls wird diese Version nicht mehr unterstützt und das Prüfmodul wird dann nicht mehr starten.</text>
+	</meldung>
+
+</meldungen>

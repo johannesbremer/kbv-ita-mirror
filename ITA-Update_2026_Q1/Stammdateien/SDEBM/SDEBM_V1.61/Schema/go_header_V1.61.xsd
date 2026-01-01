@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2012 rel. 2 sp1 (http://www.altova.com) von User (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<!-- edited with XMLSpy v2008 rel. 2 sp1 (http://www.altova.com) by USER (Kassenärztliche Bundesvereinigung) -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by RSP (KBV) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/001" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<xs:include schemaLocation="ehd_header_V1.40.xsd"/>
+	<!-- Schema -->
+	<xs:complexType name="go_header_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_header_typ">
+				<xs:sequence>
+					<xs:element name="id">
+						<xs:annotation>
+							<xs:documentation>enthält eindeutige Instanz-ID, ist für jede XML-Datei einmalig (GUID)</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="id_typ">
+									<xs:attribute name="RT" use="required" fixed="1.2.276.0.76.3.1.1">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="1.2.276.0.76.3.1.1"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element ref="set_id" minOccurs="0"/>
+					<xs:element ref="version_nbr" minOccurs="0"/>
+					<xs:element name="document_type_cd" type="go_document_type_cd_typ"/>
+					<xs:element ref="service_tmr" minOccurs="0"/>
+					<xs:element ref="origination_dttm"/>
+					<xs:element ref="intended_recipient" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="provider" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="provider_typ">
+									<xs:sequence>
+										<xs:element name="provider.type_cd" type="provider.type_cd_typ" minOccurs="0"/>
+										<xs:element ref="function_cd" minOccurs="0"/>
+										<xs:element ref="participation_tmr" minOccurs="0"/>
+										<xs:element name="person" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:complexContent>
+													<xs:restriction base="person_typ">
+														<xs:sequence>
+															<xs:element ref="id" minOccurs="0"/>
+															<xs:element ref="person_name" minOccurs="0"/>
+															<xs:element name="organization.nm" type="v_string_typ" minOccurs="0" maxOccurs="unbounded"/>
+															<xs:element ref="addr" minOccurs="0" maxOccurs="unbounded"/>
+															<xs:element ref="telecom" maxOccurs="unbounded"/>
+															<xs:element ref="local_header" minOccurs="0" maxOccurs="unbounded"/>
+														</xs:sequence>
+													</xs:restriction>
+												</xs:complexContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="organization" type="go_organization_typ" maxOccurs="unbounded"/>
+										<xs:element ref="local_header" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element ref="scope" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="state" minOccurs="0"/>
+					<xs:element name="interface" type="go_interface_typ"/>
+					<xs:element ref="local_header" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ************************ go_document_type_cd_typ ********************************* -->
+	<xs:complexType name="go_document_type_cd_typ">
+		<xs:complexContent>
+			<xs:restriction base="document_type_cd_typ">
+				<xs:attribute name="V" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="850"/>
+							<xs:enumeration value="851"/>
+							<xs:enumeration value="852"/>
+							<xs:enumeration value="853"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ************************ go_interface_typ ********************************* -->
+	<xs:complexType name="go_interface_typ">
+		<xs:complexContent>
+			<xs:restriction base="interface_typ">
+				<xs:sequence>
+					<xs:element name="id">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_id_typ">
+									<xs:attribute name="EX" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="SDEBM"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="interface.nm">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_nm_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string"/>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="version">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_version_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="01.61"/>
+												<xs:enumeration value="01.60"/>
+												<xs:enumeration value="01.50"/>
+												<xs:enumeration value="01.40"/>
+												<xs:enumeration value="01.30"/>
+												<xs:enumeration value="01.20"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>************************ go_organization_typ **********************</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="go_organization_typ">
+		<xs:complexContent>
+			<xs:restriction base="organization_typ">
+				<xs:sequence>
+					<xs:element name="id">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="id_typ">
+									<xs:attribute name="EX" type="xs:string" use="required"/>
+									<xs:attribute name="RT" type="xs:string" use="required" fixed="1.2.276.0.76.5.233"/>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="organization.nm" type="v_string_typ" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="addr" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="telecom" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="local_header" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

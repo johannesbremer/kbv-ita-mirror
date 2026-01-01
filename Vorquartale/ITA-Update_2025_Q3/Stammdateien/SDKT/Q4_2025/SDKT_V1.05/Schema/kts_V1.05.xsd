@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- History
+* 23.10.2006 version 1.00
+* 21.06.2007 Version 1.01
+* 					 Element bedruckungsname als Kind-Element von kt_abrechnungsbereich definiert (früher Kind-Element von bezeichnung)
+* 18.12.2007 Version 1.02
+* 					 Anzahl der WOP-Felder reduziert sich von 21 auf 18 aufgrund der KV-Fusion in Baden-Württemberg
+* 11.03.2025 Version 1.05
+* 					 neue DAV-Typen ergänzt und entsprechende Anpassungen des Elementes dav vorgenommen. 
+*					 Korrektur der Constraints nur_ein_versicherte_typ und nur_ein_abrechnungs_ik
+*					 Umbenennung des complexType addr_typ in kts_addr_typ
+*					 Umbenennung des Constraints nur_ein_addr_typ in nur_ein_kts_addr_typ
+*					 Verschiebung des Elemente ebs von kostentraeger_liste/kostentraeger nach kostentraeger_liste/kostentraeger/dav_liste/dav. Das Element ebs ist jetzt ein optionales Kindelement von dav
+*
+* -->
+<xs:schema xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:ehd="urn:ehd/001" xmlns="urn:ehd/kts/001" xmlns:kts="urn:ehd/kts/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ehd/kts/001" elementFormDefault="qualified">
+	<xs:import namespace="urn:ehd/001" schemaLocation="datentypen_V1.40.xsd"/>
+	<!-- Schema -->
+	<!-- =======================================================================
+	kts-Schnittstelle
+	======================================================================= -->
+	<xs:element name="kostentraeger_liste">
+		<xs:annotation>
+			<xs:documentation>Liste der Kostenträger</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="kostentraeger" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="kostentraeger">
+		<xs:annotation>
+			<xs:documentation>Kostenträger</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gueltigkeit">
+					<xs:annotation>
+						<xs:documentation>Gültigkeit des Kostenträgers (V=KK-OFF-DATUM-Z8 .. KK-REWI-DATUM-X8)</xs:documentation>
+						<xs:documentation>Format: 'YYYY-MM-DD..YYYY-MM-DD'</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="letzte_aenderung">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="wirksamkeitsdatum" type="ehd:v_zeitraum_typ">
+								<xs:annotation>
+									<xs:documentation>Wirksamkeit der letzten Änderung (V=KK-AEN-DATUM-Z8)</xs:documentation>
+									<xs:documentation>Format: 'YYYY-MM-DD..YYYY-MM-DD'</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="erfassungsdatum" type="ehd:v_zeitraum_typ">
+								<xs:annotation>
+									<xs:documentation>Maschinendatum der letzten Durchführung - Stammsatzeröffnung oder Änderung (V=KK-MASCH-DATUM-Z8)</xs:documentation>
+									<xs:documentation>Format: 'YYYY-MM-DD..YYYY-MM-DD'</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="vertrags_kv">
+					<xs:annotation>
+						<xs:documentation>Vertragsschließende KV (VERT-KV-X3)</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="V" type="kvnr_typ" use="required">
+							<xs:annotation>
+								<xs:documentation>VERT-KV-CODE</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="S" use="optional">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="1.2.276.0.76.5.233"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="abrechnungsstelle">
+					<xs:complexType>
+						<xs:attribute name="V" type="kvnr_typ" use="required">
+							<xs:annotation>
+								<xs:documentation>für die Aufteilung der Gesamtvergütung zuständige KV-Abrechnungsstelle (V=NR-GES-VERG-KVA-Z2)</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="S" use="optional">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="1.2.276.0.76.5.230"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="referenzkasse" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Referenzkasse (REF-KKA-Z6)</xs:documentation>
+						<xs:documentation>Referenzkasse</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="V" type="vknr_typ" use="required">
+							<xs:annotation>
+								<xs:documentation>REF-KKA-VKNR</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="bezeichnung">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name">
+								<xs:complexType>
+									<xs:attribute name="V" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>KK-NAME-X39</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="sortierungsname">
+								<xs:complexType>
+									<xs:attribute name="V" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>KN-SORT-X3</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="kurzname">
+								<xs:complexType>
+									<xs:attribute name="V" type="xs:string" use="required">
+										<xs:annotation>
+											<xs:documentation>KK-KURZ-NAME-X18</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="suchname">
+								<xs:complexType>
+									<xs:attribute name="V" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="kostentraegergruppe">
+					<xs:annotation>
+						<xs:documentation>Kostenträgergruppe - Verschlüsselung siehe AST-Schl. Verz. Kap. 4.2</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:string" use="required">
+							<xs:annotation>
+								<xs:documentation>KT-ART-GRU-K2</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="S" use="optional">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="1.2.276.0.76.5.240"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ik_liste">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element ref="ik" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Institutionskennzeichen (V=KK-INST-KZ-Z9)</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="nur_ein_abrechnungs_ik">
+						<xs:selector xpath="./kts:ik"/>
+						<xs:field xpath="@R"/>
+					</xs:unique>
+				</xs:element>
+				<xs:element name="existenzbeendigung" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Art der Existenzbeendigung</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="letztes_quartal" type="quartal_typ">
+								<xs:annotation>
+									<xs:documentation>Letztes Quartal der maschinellen Abrechnungsfähigkeit im FKZ (V=ABR-QRT)</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="aufnehmender_kostentraeger" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Aufnehmende Kasse (AUFN-KK-X6)</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:attribute name="V" type="vknr_typ" use="required">
+										<xs:annotation>
+											<xs:documentation>AUFN-KK-VKNR</xs:documentation>
+											<xs:documentation>TODO: bei FU: VKNR der aufnehmenden Kasse; bei FX: VKNR der aufnehmenden mitgliederstärksten Kasse</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="V" use="required">
+							<xs:annotation>
+								<xs:documentation>KK-ART-X2</xs:documentation>
+								<xs:documentation>F = Fusion, A = Auflösung</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="F"/>
+									<xs:enumeration value="A"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="adresse_liste">
+					<xs:annotation>
+						<xs:documentation>Anschriften</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="adresse" type="kts_addr_typ" maxOccurs="2">
+								<xs:annotation>
+									<xs:documentation>CTY = ORT-X30; STR = STR-X30; PLZ = PLZ_ORT (Hausanschrift)</xs:documentation>
+									<xs:documentation>CTY = Ort-Postfach; PBO = POSTFACH; PLZ = PLZ_Postfach (Postfachanschrift)</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="nur_ein_kts_addr_typ">
+						<xs:selector xpath="./kts:adresse"/>
+						<xs:field xpath="@R"/>
+					</xs:unique>
+				</xs:element>
+				<xs:element name="praxisnetz" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="basiskasse">
+								<xs:complexType>
+									<xs:attribute name="V" type="vknr_typ" use="required">
+										<xs:annotation>
+											<xs:documentation>BASISKASSE-VKNR</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="V" type="xs:string" use="required">
+							<xs:annotation>
+								<xs:documentation>PRAXISNETZ-KZ</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="dav_liste" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Liste der Datenannahme- und -verteilstellen</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="dav" maxOccurs="7">
+								<xs:annotation>
+									<xs:documentation>Datenannahmestelle für die definierten DAV-Typen </xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="ik">
+											<xs:annotation>
+												<xs:documentation>Institutionskennzeichen (IK)</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="ebs" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>EBS - Enschlüsselungsberechtigte Stelle</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element ref="ik">
+														<xs:annotation>
+															<xs:documentation>Institutionskennzeichen (V=EBS-IK)</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="V" type="xs:string" use="optional">
+													<xs:annotation>
+														<xs:documentation>EBS-Kürzel</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+												<xs:attribute name="DN" type="xs:string" use="optional">
+													<xs:annotation>
+														<xs:documentation>EBS-Bezeichnung</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="V" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>DAV-Kürzel</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="DN" type="xs:string" use="optional">
+										<xs:annotation>
+											<xs:documentation>DAV-Bezeichnung</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="R" use="required">
+										<xs:annotation>
+											<xs:documentation>ASV, EFN, FB3-Bund, FB3-Land, FB3-Kasse, NVI, HDRG (DAV-Typ)</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="ASV"/>
+												<xs:enumeration value="EFN"/>
+												<xs:enumeration value="FB3-Bund"/>
+												<xs:enumeration value="FB3-Land"/>
+												<xs:enumeration value="FB3-Kasse"/>
+												<xs:enumeration value="NVI"/>
+												<xs:enumeration value="HDRG"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="nur_ein_dav_typ">
+						<xs:selector xpath="./kts:dav"/>
+						<xs:field xpath="@R"/>
+					</xs:unique>
+				</xs:element>
+				<xs:element name="versicherte_liste" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Mitgliederzahlen</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="versicherte" minOccurs="3" maxOccurs="3">
+								<xs:complexType>
+									<xs:attribute name="V" type="xs:int" use="required">
+										<xs:annotation>
+											<xs:documentation>ALLG-VS-MG-Z7, ALLG-VS-FA-Z7, ALLG-VS-RV-Z7</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+									<xs:attribute name="R" use="required">
+										<xs:annotation>
+											<xs:documentation>M (Mitglieder), F (Familienversicherte), R (Rentner)</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="M"/>
+												<xs:enumeration value="F"/>
+												<xs:enumeration value="R"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="nur_ein_versicherte_typ">
+						<xs:selector xpath="./kts:versicherte"/>
+						<xs:field xpath="@R"/>
+					</xs:unique>
+				</xs:element>
+				<xs:element name="wop">
+					<xs:annotation>
+						<xs:documentation>WOP - Wohnortprinzip</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="wop_kv_liste" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Liste der WOP-Zuordnungen</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="wop_kv" minOccurs="18" maxOccurs="18">
+											<xs:annotation>
+												<xs:documentation>KV_BEZ_WOP_01, KV_BEZ_WOP_02 ... KV_BEZ_WOP_98</xs:documentation>
+												<xs:documentation>WOP-Zuordnung KV-Landesstelle</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="bezirksstelle" minOccurs="0">
+														<xs:complexType>
+															<xs:attribute name="V" type="kvnr_typ" use="required"/>
+															<xs:attribute name="S" use="optional">
+																<xs:simpleType>
+																	<xs:restriction base="xs:string">
+																		<xs:enumeration value="1.2.276.0.76.5.230"/>
+																	</xs:restriction>
+																</xs:simpleType>
+															</xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="V" type="kvnr_typ" use="required"/>
+												<xs:attribute name="S" use="optional">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="1.2.276.0.76.5.233"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+								<xs:unique name="nur_eine_wop_kv">
+									<xs:selector xpath="./kts:wop_kv"/>
+									<xs:field xpath="@V"/>
+								</xs:unique>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="V" type="xs:string" use="required">
+							<xs:annotation>
+								<xs:documentation>KZ_WOP</xs:documentation>
+								<xs:documentation>WOP-Kennzeichen</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+						<xs:attribute name="S" use="optional">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="1.2.276.0.76.5.326"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="bewertungsfeld_liste" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Liste der Bewerungsfelder</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="bewertungsfeld" maxOccurs="50">
+								<xs:annotation>
+									<xs:documentation>1-BEW-S9, 2-BEW-S9 ... 50-BEW-S9</xs:documentation>
+									<xs:documentation>Bewertungsfeld</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="bewertungskriterium" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="V" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="128"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="V" use="required">
+										<xs:annotation>
+											<xs:documentation>1-BEW-S8, 2-BEW-S8 ... 50-BEW-S8 inklusive dem Vorzeichen</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:pattern value="[\-]{0,1}[1-9][0-9]{0,8}|0"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="RT" use="required">
+										<xs:annotation>
+											<xs:documentation>Bewertungsfeldnummer (1-50)</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:positiveInteger">
+												<xs:maxInclusive value="50"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="DN" use="optional">
+										<xs:annotation>
+											<xs:documentation>Anzahl der Nachkommastellen</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="5"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="U" use="required">
+										<xs:annotation>
+											<xs:documentation>1 - Punktwert, 2 - Quote</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="1"/>
+												<xs:enumeration value="2"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="nur_ein_bewertungsfeld">
+						<xs:selector xpath="./kts:bewertungsfeld"/>
+						<xs:field xpath="@RT"/>
+					</xs:unique>
+				</xs:element>
+				<xs:element name="ortssuchname_liste">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ortssuchname" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="V" type="xs:string" use="required"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="nur_ein_ortssuchname">
+						<xs:selector xpath="./kts:ortssuchname"/>
+						<xs:field xpath="@V"/>
+					</xs:unique>
+				</xs:element>
+				<xs:element name="gebuehrenordnung">
+					<xs:complexType>
+						<xs:attribute name="V" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:length value="1"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+						<xs:attribute name="S" use="optional">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="1.2.276.0.76.5.231"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="kt_abrechnungsbereich_liste">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="kt_abrechnungsbereich" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="bedruckungsname">
+											<xs:complexType>
+												<xs:attribute name="V" use="required">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:maxLength value="24"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+										<xs:element ref="gueltigkeit" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Gültigkeit des Kostenträger-Abrechnungsbereichs (V=Anfang..Ende)</xs:documentation>
+												<xs:documentation>Format: 'YYYY-MM-DD..YYYY-MM-DD'</xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="V" type="xs:string" use="required"/>
+									<xs:attribute name="S" use="optional">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="1.2.276.0.76.5.239"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="nur_ein_kt_abrechnungsbereich">
+						<xs:selector xpath="./kts:kt_abrechnungsbereich"/>
+						<xs:field xpath="@V"/>
+					</xs:unique>
+				</xs:element>
+				<xs:element name="unz_kv_geltungsbereich_liste" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="unz_kv_geltungsbereich" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:attribute name="V" type="kvnr_typ" use="required"/>
+									<xs:attribute name="S" use="optional">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="1.2.276.0.76.5.233"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="nur_ein_unz_kv_geltungsbereich">
+						<xs:selector xpath="./kts:unz_kv_geltungsbereich"/>
+						<xs:field xpath="@V"/>
+					</xs:unique>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="V" type="vknr_typ" use="required">
+				<xs:annotation>
+					<xs:documentation>KV-KK-NR: KV-Kassen-Nummer - KV-Verarbeitungsnummer (derzeitige KV-Interne Kassen-Nr. laut KBV-Schlüssel); a) Kostenträger-Nummer (KV-Abrechnungsstelle - 2 Zeichen, Seriennummer - 3 Zeichen); b) Pflichtkassen-Nummer (KV-Abrechnungsstelle - 2 Zeichen, Kassengruppe - 1 Zeichen, lfd. Nummer - 2 Zeichen); c) Ersatzkassen-Nummer (KV-Abrechnungsstelle - 2 Zeichen, Kassengruppe - 2 Zeichen, lfd. Nummer - 1 Zeichen); d) Besondere Kostenträger-Nummer (KV-Abrechnungsstelle - 2 Zeichen, Kassengruppe - 2 Zeichen, lfd. Nummer - 1 Zeichen)</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<!-- ****************************** globale Elemente ****************************** -->
+	<xs:element name="gueltigkeit" type="ehd:v_zeitraum_typ"/>
+	<xs:element name="ik">
+		<xs:annotation>
+			<xs:documentation>Institutionskennzeichen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="gueltigkeit" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="V" type="iknummer_typ" use="required">
+				<xs:annotation>
+					<xs:documentation>IK-Nummer</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="R" use="optional">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="abrechnungs_ik"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<!-- ****************************** globale Typen ****************************** -->
+	<xs:simpleType name="vknr_typ">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{5}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="kvnr_typ">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="iknummer_typ">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{9}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="kts_addr_typ">
+		<xs:sequence minOccurs="0">
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="STR">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="HNR">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="POB">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ZIP">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CTY">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="STA">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="CNT">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:string" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+		<xs:attribute name="R" use="required">
+			<xs:annotation>
+				<xs:documentation>Art der Adresse</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="anschrift"/>
+					<xs:enumeration value="postfach"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="quartal_typ">
+		<xs:attribute name="V" use="required">
+			<xs:annotation>
+				<xs:documentation>Quartal (Format: YYYYQ)</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="[1][9][0-9]{2}[1-4]|[2][0-9]{3}[1-4]"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

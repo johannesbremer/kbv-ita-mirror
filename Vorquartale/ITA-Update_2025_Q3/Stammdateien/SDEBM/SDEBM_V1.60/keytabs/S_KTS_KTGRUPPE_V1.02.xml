@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  
+<keytabs xmlns="urn:ehd/001">
+  <keytab SV="1.02" SN="S_KTS_KTGRUPPE" S="1.2.276.0.76.5.240">
+    <key V="01" DN="Primärkasse(AOK" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="02" DN="Primärkasse LKK" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="03" DN="Primärkasse IKK" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="04" DN="Primärkasse BKK" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="05" DN="Primärkasse KBS" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="06" DN="Primärkasse ehem. SEE" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="11" DN="Ersatzkasse VdEK" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="12" DN="Ersatzkasse ehem. AEV" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="30" DN="Sonstige Kostenträger BVF" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="35" DN="Sonstige Kostenträger AUS" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="59" DN="Sonstige Kostenträger SHT" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="71" DN="Sonstige Kostenträger BGS" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="72" DN="Sonstige Kostenträger ZIV" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="73" DN="Sonstige Kostenträger PFJ" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="75" DN="Sonstige Kostenträger BW" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="76" DN="Sonstige Kostenträger GSA" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="77" DN="Sonstige Kostenträger MDK" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="81" DN="Sonstige Kostenträger PBA" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="82" DN="Sonstige Kostenträger PBD" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="84" DN="Sonstige Kostenträger DBM" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="85" DN="Sonstige Kostenträger DBD" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="86" DN="Sonstige Kostenträger JAS" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="87" DN="Sonstige Kostenträger EA" S="1.2.276.0.76.5.240" SV="1.02"/>
+    <key V="88" DN="Sonstige Kostenträger UV" S="1.2.276.0.76.5.240" SV="1.02"/>
+  </keytab>
+</keytabs>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<einlieferung xsi:schemaLocation="http://www.kv-telematik.de/1-Click/Meldung_Einlieferung/1.0.0 ../Schema/KVTA_Einlieferung_eDoku_2_0_0.xsd" xmlns="http://www.kv-telematik.de/1-Click/Meldung_Einlieferung/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<version V="1"/>
+	<guid V=" 936DA01F-9ABD-4D9D-80C7-02AF85C822A8"/>
+	<bsnr V="987654321"/>
+	<testdaten V="true"/>
+	<lieferungs_zeitpunkt V="2018-10-16T11:49:59Z"/>
+	<dokumenten_typ V="QSHGV"/>
+	<quartal V="2018-4"/>
+	<anhang V="987654321_20181016115200_1_QSHGV.zip.xkm"/>	
+</einlieferung>

@@ -1,0 +1,74 @@
+<Patient xmlns="http://hl7.org/fhir">
+  <id value="100" />
+  <meta>
+	<versionId value="1"/>
+	<lastUpdated value="2022-09-05T13:24:00Z"/>
+    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Patient|2.1.0" />
+  </meta>
+  <identifier>
+	<type>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+			<code value="MR"/>
+		</coding>
+	</type>
+    <system value="http://kbv-testpraxis.de/patient-identifier" />
+    <value value="P0042" />
+  </identifier>
+  <identifier>
+	<use value="official"/>
+	<type>
+		<coding>
+			<system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+			<code value="GKV"/>
+		</coding>
+	</type>
+    <system value="http://fhir.de/sid/gkv/kvid-10" />
+    <value value="F150156148" />
+  </identifier>
+  <name>
+    <use value="official" />
+    <text value="Klaus Freiherr von und zu Freiberg" />
+    <family value="Freiherr von und zu Freiberg" >
+		<extension url="http://fhir.de/StructureDefinition/humanname-namenszusatz">
+			<valueString value="Freiherr" />
+		</extension>
+		<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+			<valueString value="Freiberg" />
+		</extension>
+		<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+			<valueString value="von und zu" />
+		</extension>
+    </family>
+    <given value="Klaus" />
+  </name>
+  <gender value="other">
+	<extension url="http://fhir.de/StructureDefinition/gender-amtlich-de">
+		<valueCoding>
+			<system value="http://fhir.de/CodeSystem/gender-amtlich-de" />
+			<code value="D" />
+			<display value="divers" />
+		</valueCoding>
+	</extension>
+	</gender>
+  <birthDate value="1956-01-15" />
+  <address>
+    <type value="both" />
+    <line value="Herbert-Lewin-Platz 578">
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+        <valueString value="Herbert-Lewin-Platz" />
+      </extension>
+	  <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+        <valueString value="578" />
+      </extension>
+    </line>
+	<line value="2. OG">
+	  <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+        <valueString value="2. OG" />
+      </extension>
+	</line>
+    <city value="Berlin" />
+    <postalCode value="10623" />
+    <country value="D" />
+  </address>
+</Patient>

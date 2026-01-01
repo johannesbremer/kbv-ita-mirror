@@ -1,0 +1,765 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "KBV-PR-VoS-MedicationStatement-MP",
+  "url": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_MedicationStatement_MP",
+  "version": "2.2.0",
+  "name": "KBV_PR_VoS_MedicationStatement_MP",
+  "title": "KBV_PR_VoS_MedicationStatement_MP",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "description": "Profil für die Übertragung weiterer Informationen (strukturierte Dosierung, Hinweis, Grund, Kennzeichnung als Dauermedikation) für ein Medikament auf einem Medikationsplan.",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "MedicationStatement",
+  "baseDefinition": "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_MedicationStatement|1.7.0",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "MedicationStatement",
+        "path": "MedicationStatement",
+        "definition": "Hier werden Angaben dazu gemacht, wie ein bestimmtes Arzneimittel eingenommen bzw. verabreicht wird oder werden soll.\r\nDieses Profil wird für die Übertragung von strukturierten Dosierungen, der Kennzeichnung einer Dauermedikation und den Feldern Hinweis und Grund auf dem Medikationsplan verwendet. Diese Angaben werden ausschließlich für den Medikationsplan und nicht für Dosierungsangaben auf Rezepten verwendet."
+      },
+      {
+        "id": "MedicationStatement.id",
+        "path": "MedicationStatement.id",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.meta",
+        "path": "MedicationStatement.meta",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.meta.source",
+        "path": "MedicationStatement.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.meta.profile",
+        "path": "MedicationStatement.meta.profile",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.meta.profile:vosProfile",
+        "path": "MedicationStatement.meta.profile",
+        "sliceName": "vosProfile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_MedicationStatement_MP|2.2.0",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.meta.security",
+        "path": "MedicationStatement.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.meta.tag",
+        "path": "MedicationStatement.meta.tag",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.implicitRules",
+        "path": "MedicationStatement.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.language",
+        "path": "MedicationStatement.language",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.contained",
+        "path": "MedicationStatement.contained",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.extension",
+        "path": "MedicationStatement.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "closed"
+        },
+        "min": 1
+      },
+      {
+        "id": "MedicationStatement.extension:behandlungsziel",
+        "path": "MedicationStatement.extension",
+        "sliceName": "behandlungsziel",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.extension:Dauermedikation",
+        "path": "MedicationStatement.extension",
+        "sliceName": "Dauermedikation",
+        "short": "Dauermedikationskennzeichnung",
+        "definition": "Kennzeichnung, ob es sich um eine Dauermedikation handelt.",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "Extension",
+            "profile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_isPermanent"
+            ]
+          }
+        ],
+        "mustSupport": true,
+        "isModifier": false
+      },
+      {
+        "id": "MedicationStatement.extension:Dauermedikation.value[x]",
+        "path": "MedicationStatement.extension.value[x]",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.extension:Dauermedikation.value[x]:valueBoolean",
+        "path": "MedicationStatement.extension.value[x]",
+        "sliceName": "valueBoolean",
+        "short": "Dauermedikation",
+        "definition": "Angabe, ob die Medikation eine Dauermedikation ist. true = Dauermedikation, false = keine Dauermedikation",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.identifier",
+        "path": "MedicationStatement.identifier",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.basedOn",
+        "path": "MedicationStatement.basedOn",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.partOf",
+        "path": "MedicationStatement.partOf",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.status",
+        "path": "MedicationStatement.status",
+        "fixedCode": "active",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.statusReason",
+        "path": "MedicationStatement.statusReason",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.category",
+        "path": "MedicationStatement.category",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.medication[x]",
+        "path": "MedicationStatement.medication[x]",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Medication"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationReference",
+        "path": "MedicationStatement.medication[x]",
+        "sliceName": "medicationReference",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_Compounding|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_FreeText|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_Ingredient|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_PZN|2.2.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Compounding",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_FreeText",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_Ingredient",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Medication_PZN"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationReference.reference",
+        "path": "MedicationStatement.medication[x].reference",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationReference.type",
+        "path": "MedicationStatement.medication[x].type",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationReference.identifier",
+        "path": "MedicationStatement.medication[x].identifier",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.medication[x]:medicationReference.display",
+        "path": "MedicationStatement.medication[x].display",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.subject",
+        "path": "MedicationStatement.subject",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Patient|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.subject.reference",
+        "path": "MedicationStatement.subject.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.subject.type",
+        "path": "MedicationStatement.subject.type",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.subject.identifier",
+        "path": "MedicationStatement.subject.identifier",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.subject.display",
+        "path": "MedicationStatement.subject.display",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.context",
+        "path": "MedicationStatement.context",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.effective[x]",
+        "path": "MedicationStatement.effective[x]",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.effective[x]:effectiveDateTime",
+        "path": "MedicationStatement.effective[x]",
+        "sliceName": "effectiveDateTime",
+        "max": "0",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.effective[x]:effectivePeriod",
+        "path": "MedicationStatement.effective[x]",
+        "sliceName": "effectivePeriod",
+        "max": "0",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dateAsserted",
+        "path": "MedicationStatement.dateAsserted",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.informationSource",
+        "path": "MedicationStatement.informationSource",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.derivedFrom",
+        "path": "MedicationStatement.derivedFrom",
+        "short": "Verweis auf signiertes E-Rezept",
+        "definition": "Verweis auf eine DocumentReference mit einem E-Rezept-Bundle, zu dessen Verordnung eine strukturierte Dosierung übertragen wird.",
+        "max": "1",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_DocumentReference|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.derivedFrom.reference",
+        "path": "MedicationStatement.derivedFrom.reference",
+        "min": 1,
+        "constraint": [
+          {
+            "key": "-vos-statement-derivedFrom",
+            "human": "Die referenzierte DocumentReference muss vom Typ 'Signiertes_eRezept' sein",
+            "source": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_MedicationStatement_MP",
+            "severity": "error",
+            "expression": "resolve().type.coding.code='Signiertes_eRezept'"
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.derivedFrom.type",
+        "path": "MedicationStatement.derivedFrom.type",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.derivedFrom.identifier",
+        "path": "MedicationStatement.derivedFrom.identifier",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.derivedFrom.display",
+        "path": "MedicationStatement.derivedFrom.display",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.reasonCode",
+        "path": "MedicationStatement.reasonCode",
+        "definition": "Feld \"Grund\" auf einem Medikationsplan zu einer Medikation.",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.reasonCode.coding",
+        "path": "MedicationStatement.reasonCode.coding",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.reasonCode.text",
+        "path": "MedicationStatement.reasonCode.text",
+        "definition": "Feld \"Grund\" auf einem Medikationsplan zu einer Medikation.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.reasonReference",
+        "path": "MedicationStatement.reasonReference",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.note",
+        "path": "MedicationStatement.note",
+        "short": "Hinweis",
+        "definition": "Feld \"Hinweis\" auf einem Medikationsplan zu einer Medikation.",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.note.author[x]",
+        "path": "MedicationStatement.note.author[x]",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.note.author[x]:authorReference",
+        "path": "MedicationStatement.note.author[x]",
+        "sliceName": "authorReference",
+        "max": "0",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Practitioner",
+              "http://hl7.org/fhir/StructureDefinition/Patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "http://hl7.org/fhir/StructureDefinition/Organization",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner|1.7.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient|1.7.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_RelatedPerson|1.7.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization|1.7.0"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.note.author[x]:authorString",
+        "path": "MedicationStatement.note.author[x]",
+        "sliceName": "authorString",
+        "max": "0",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.note.time",
+        "path": "MedicationStatement.note.time",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.note.text",
+        "path": "MedicationStatement.note.text",
+        "definition": "Feld \"Hinweis\" auf einem Medikationsplan zu einer Medikation.",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage",
+        "path": "MedicationStatement.dosage",
+        "max": "4",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.sequence",
+        "path": "MedicationStatement.dosage.sequence",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.text",
+        "path": "MedicationStatement.dosage.text",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.additionalInstruction",
+        "path": "MedicationStatement.dosage.additionalInstruction",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.patientInstruction",
+        "path": "MedicationStatement.dosage.patientInstruction",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing",
+        "path": "MedicationStatement.dosage.timing",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.event",
+        "path": "MedicationStatement.dosage.timing.event",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat",
+        "path": "MedicationStatement.dosage.timing.repeat",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.id",
+        "path": "MedicationStatement.dosage.timing.repeat.id",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.bounds[x]",
+        "path": "MedicationStatement.dosage.timing.repeat.bounds[x]",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.bounds[x]:boundsPeriod",
+        "path": "MedicationStatement.dosage.timing.repeat.bounds[x]",
+        "sliceName": "boundsPeriod",
+        "max": "0",
+        "type": [
+          {
+            "code": "Period"
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.bounds[x]:boundsDuration",
+        "path": "MedicationStatement.dosage.timing.repeat.bounds[x]",
+        "sliceName": "boundsDuration",
+        "max": "0",
+        "type": [
+          {
+            "code": "Duration"
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.bounds[x]:boundsRange",
+        "path": "MedicationStatement.dosage.timing.repeat.bounds[x]",
+        "sliceName": "boundsRange",
+        "max": "0",
+        "type": [
+          {
+            "code": "Range"
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.count",
+        "path": "MedicationStatement.dosage.timing.repeat.count",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.countMax",
+        "path": "MedicationStatement.dosage.timing.repeat.countMax",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.duration",
+        "path": "MedicationStatement.dosage.timing.repeat.duration",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.durationMax",
+        "path": "MedicationStatement.dosage.timing.repeat.durationMax",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.durationUnit",
+        "path": "MedicationStatement.dosage.timing.repeat.durationUnit",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.frequency",
+        "path": "MedicationStatement.dosage.timing.repeat.frequency",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.frequencyMax",
+        "path": "MedicationStatement.dosage.timing.repeat.frequencyMax",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.period",
+        "path": "MedicationStatement.dosage.timing.repeat.period",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.periodMax",
+        "path": "MedicationStatement.dosage.timing.repeat.periodMax",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.periodUnit",
+        "path": "MedicationStatement.dosage.timing.repeat.periodUnit",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.dayOfWeek",
+        "path": "MedicationStatement.dosage.timing.repeat.dayOfWeek",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.timeOfDay",
+        "path": "MedicationStatement.dosage.timing.repeat.timeOfDay",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.when",
+        "path": "MedicationStatement.dosage.timing.repeat.when",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.when:Tageszeit",
+        "path": "MedicationStatement.dosage.timing.repeat.when",
+        "sliceName": "Tageszeit",
+        "definition": "Hier werden Tageszeiten angegeben, zu denen das Arzneimittel verabreicht/eingenommen wird.",
+        "min": 1,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.when:Mahlzeiten-Schlafzeiten",
+        "path": "MedicationStatement.dosage.timing.repeat.when",
+        "sliceName": "Mahlzeiten-Schlafzeiten",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.repeat.offset",
+        "path": "MedicationStatement.dosage.timing.repeat.offset",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.timing.code",
+        "path": "MedicationStatement.dosage.timing.code",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.asNeeded[x]",
+        "path": "MedicationStatement.dosage.asNeeded[x]",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.asNeeded[x]:asNeededBoolean",
+        "path": "MedicationStatement.dosage.asNeeded[x]",
+        "sliceName": "asNeededBoolean",
+        "max": "0",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dosage.asNeeded[x]:asNeededCodeableConcept",
+        "path": "MedicationStatement.dosage.asNeeded[x]",
+        "sliceName": "asNeededCodeableConcept",
+        "max": "0",
+        "type": [
+          {
+            "code": "CodeableConcept"
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dosage.site",
+        "path": "MedicationStatement.dosage.site",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.route",
+        "path": "MedicationStatement.dosage.route",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.method",
+        "path": "MedicationStatement.dosage.method",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate",
+        "path": "MedicationStatement.dosage.doseAndRate",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.type",
+        "path": "MedicationStatement.dosage.doseAndRate.type",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Quantity",
+            "profile": [
+              "http://hl7.org/fhir/StructureDefinition/SimpleQuantity"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]:doseQuantity",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x]",
+        "sliceName": "doseQuantity",
+        "definition": "Hier wird die Dosiermenge mittels einer definierten Menge angegeben.\r\nDabei muss das ValueSet KBV_VS_SFHIR_BMP_DOSIEREINHEIT verwendet werden.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]:doseQuantity.value",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x].value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]:doseQuantity.comparator",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x].comparator",
+        "mustSupport": false
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]:doseQuantity.unit",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x].unit",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]:doseQuantity.system",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x].system",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.dose[x]:doseQuantity.code",
+        "path": "MedicationStatement.dosage.doseAndRate.dose[x].code",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.rate[x]",
+        "path": "MedicationStatement.dosage.doseAndRate.rate[x]",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.doseAndRate.rate[x]:rateRatio",
+        "path": "MedicationStatement.dosage.doseAndRate.rate[x]",
+        "sliceName": "rateRatio",
+        "max": "0",
+        "type": [
+          {
+            "code": "Ratio"
+          }
+        ]
+      },
+      {
+        "id": "MedicationStatement.dosage.maxDosePerPeriod",
+        "path": "MedicationStatement.dosage.maxDosePerPeriod",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.maxDosePerAdministration",
+        "path": "MedicationStatement.dosage.maxDosePerAdministration",
+        "max": "0"
+      },
+      {
+        "id": "MedicationStatement.dosage.maxDosePerLifetime",
+        "path": "MedicationStatement.dosage.maxDosePerLifetime",
+        "max": "0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,805 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2009 sp1 (http://www.altova.com) von RSP (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<!--
+Template für ehd_header:
+Projekt: eSE
+Namespace: "urn:ehd/eSE/001", Präfix: eSE
+
+Namespace, Präfix und Typebezeichnungen sind mit tatsächlichen Projektspezifischen zu ersetzen.
+Verzeichnispfade überprüfen und gegebenfalls anpassen.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/ese/001" xmlns:sciphox="urn::sciphox-org/sciphox" targetNamespace="urn:ehd/ese/001" elementFormDefault="qualified">
+	<xs:import namespace="urn::sciphox-org/sciphox" schemaLocation="software_ssu_typelib.xsd"/>
+	<!-- ================================================================       Schnittstelle (eSE_data)      ====================================================================-->
+	<xs:annotation>
+		<xs:documentation>Version 1.21, Stand: 02.06.2014</xs:documentation>
+		<xs:documentation>Version 1.20, Stand: 11.11.2010</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>root-Element</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>==============================================================================</xs:documentation>
+	</xs:annotation>
+	<xs:element name="ese_data" type="ese_body_typ">
+		<xs:annotation>
+			<xs:documentation>root-Element im Body-Bereich</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ese_body_typ">
+		<xs:annotation>
+			<xs:documentation>lokaler Body-Typ</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="fall_statistik" type="fall_statistik_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Statistik zu den abgerechneten Behandlungsfällen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vertretungszeit_liste" type="vertretungszeiten_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Angabe von Vertetungszeiten innerhalb der eigenen Praxis oder bei Bedarf auch in Fremdpraxen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="angestellter_arzt_liste" type="angestellter_arzt_typ" minOccurs="0">  <!-- neu ab 01.04.2014 -->
+				<xs:annotation>
+					<xs:documentation>Angabe zu angestellten Ärzten innerhalb der eigenen Praxis</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+
+			<xs:element name="schliesszeit_liste" type="schliesszeiten_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Schließzeiten inklusive des Grundes</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="org_notdienstzeit_liste" type="org_notdienstzeiten_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Teilnahme am organisierten Notfalldienst</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="assistent_liste" type="assistenten_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Anstellung von Assistenzärzten</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="praxisgemeinschaft_liste" type="praxisgemeinschaften_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Angabe von Praxisgemeinschaften</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="bestaetigungen" type="bestaetigungen_typ" minOccurs="0">  <!-- minOccurs geändert am 01.04.2014 -->
+				<xs:annotation>
+					<xs:documentation>KV-übergreifend relevante rechtsverbindliche Erklärungen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ankreuzfeld_liste" type="ankreuzfeld_liste_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Generische Struktur zur Abfrage einfacher Sachverhalte mittels Metainformation (ohne Bewegungsdaten)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="xslt_hash" type="xslt_hash_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>MD5-Hashwert des verwendeten  Stylesheets zur Anzeige im Trusted Viewer</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>==============================================================================</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>verwendete ehd_Typen im body mit lokalen Einschränkungen</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>==============================================================================</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="pnxp_string_typ">
+		<xs:attribute name="V" type="xs:string" use="required"/>
+		<xs:attribute name="QUAL" type="xs:NMTOKENS" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="person_name_nm_typ">
+		<xs:annotation>
+			<xs:documentation>lokaler Namens-Typ</xs:documentation>
+		</xs:annotation>
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element name="GIV" type="pnxp_string_typ">
+				<xs:annotation>
+					<xs:documentation>Vorname</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="MID" type="pnxp_string_typ">
+				<xs:annotation>
+					<xs:documentation>Zusatzname</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="FAM" type="pnxp_string_typ">
+				<xs:annotation>
+					<xs:documentation>Nachname</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="PFX" type="pnxp_string_typ">
+				<xs:annotation>
+					<xs:documentation>Titel (Dr.)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SFX" type="pnxp_string_typ">
+				<xs:annotation>
+					<xs:documentation>Namenzusatz</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="DEL" type="pnxp_string_typ">
+				<xs:annotation>
+					<xs:documentation>Trennzeichen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="person" type="person_typ">
+		<xs:annotation>
+			<xs:documentation>Person-Struktur</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="person_typ">
+		<xs:annotation>
+			<xs:documentation>lokaler Person-Typ</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="id" type="id_lanr_typ">
+				<xs:annotation>
+					<xs:documentation>Arztnummer</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="person_name"/>
+			<xs:element ref="organization.nm" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="person_name" type="person_name_typ">
+		<xs:annotation>
+			<xs:documentation>Struktur für Namensbestandteile einer Person</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="person_name_typ">
+		<xs:annotation>
+			<xs:documentation>lokaler Person_Name-Typ</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="nm" type="person_name_nm_typ"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="id_typ">
+		<xs:annotation>
+			<xs:documentation>lokaler ID-Typ</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="EX" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>LANR</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="RT" use="optional">
+			<xs:annotation>
+				<xs:documentation>OID für Bedeutung des EX-Attributes</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string"/>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="RTV" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Version der Schlüsseltabelle</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="id_lanr_typ">
+		<xs:annotation>
+			<xs:documentation>lokaler ID-Typ (speziell: Arztnummer)</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="EX" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>LANR</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="RT" use="optional" fixed="1.2.276.0.76.4.16">
+			<xs:annotation>
+				<xs:documentation>OID für Bedeutung des EX-Attributes</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1.2.276.0.76.4.16"/>
+					<xs:enumeration value="1.2.276.0.76.4.17"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="RTV" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Version der Schlüsseltabelle</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="id_bsnr_typ">
+		<xs:annotation>
+			<xs:documentation>lokaler ID-Typ (speziell: Betriebsstättennummer)</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="EX" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>LANR</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="RT" use="optional" fixed="1.2.276.0.76.4.17">
+			<xs:annotation>
+				<xs:documentation>OID für Bedeutung des EX-Attributes</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1.2.276.0.76.4.16"/>
+					<xs:enumeration value="1.2.276.0.76.4.17"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="RTV" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Version der Schlüsseltabelle</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="id_prf_typ">
+		<xs:annotation>
+			<xs:documentation>lokaler ID-Typ (speziell: KBV-Prüfnummer)</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="EX" type="xs:string" use="optional" fixed="KBV-Prüfnummer">
+			<xs:annotation>
+				<xs:documentation>LANR</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="RT" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>OID für Bedeutung des EX-Attributes</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="RTV" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Version der Schlüsseltabelle</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="v_string_typ">
+		<xs:annotation>
+			<xs:documentation>String-Typ</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="V" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="v_s_string_typ">
+		<xs:annotation>
+			<xs:documentation>String-Typ mit zusätzlichen Attributen bei Referenzierung auf eine Schlüsseltabelle</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="V" type="xs:string" use="required"/>
+		<xs:attribute name="DN" type="xs:string" use="optional"/>
+		<xs:attribute name="S" type="xs:string" use="optional"/>
+		<xs:attribute name="SN" type="xs:string" use="optional"/>
+		<xs:attribute name="SV" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:simpleType name="zeitraum_typ">
+		<xs:annotation>
+			<xs:documentation>lokaler Zeitraum-Typ: datum..datum</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(([1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1]))\.\.[1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1])))|([1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1])))|(\.\.[1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1])))|([1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1]))\.\.))|((([1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1]))\+[0-2][0-9]:[0-5][0-9]\.\.[1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1])))\+[0-2][0-9]:[0-5][0-9]))"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="v_zeitraum_typ">
+		<xs:annotation>
+			<xs:documentation>lokaler Zeitraum-Typ: datum..datum</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="V" type="zeitraum_typ" use="required"/>
+	</xs:complexType>
+	<xs:element name="organization" type="organization_typ">
+		<xs:annotation>
+			<xs:documentation>Organisations-Daten</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="organization_typ">
+		<xs:sequence>
+			<xs:element name="id" type="id_bsnr_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Betriebsstättennummer</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="organization.nm" type="v_string_typ" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Name der Einrichtung, Praxisbezeichnung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- ************************ provider_typ ********************************** -->
+	<xs:element name="provider" type="provider_typ">
+		<xs:annotation>
+			<xs:documentation>Sender, Lieferant des Dokuments (kann gleichzeitig der Urheber sein)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="provider_typ">
+		<xs:annotation>
+			<xs:documentation>Eingeschränkte Variante des ehd-Providertyps</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="function_cd" minOccurs="0"/>
+			<xs:element ref="person" minOccurs="0"/>
+			<xs:element ref="organization" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="provider.type_cd_typ">
+		<xs:complexContent>
+			<xs:restriction base="v_s_string_typ">
+				<xs:attribute name="S" type="xs:string" use="optional" fixed="1.2.276.0.76.5.104"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="function_cd" type="function_cd_typ">
+		<xs:annotation>
+			<xs:documentation>Funktion/Rolle der Person/Organisation</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="function_cd_typ">
+		<xs:complexContent>
+			<xs:restriction base="v_s_string_typ">
+				<xs:attribute name="S" type="xs:string" use="optional" fixed="1.2.276.0.76.5.105"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="participation_tmr" type="v_zeitraum_typ">
+		<xs:annotation>
+			<xs:documentation>Zeitraum/Zeitpunkt der Teilnahme</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>==============================================================================</xs:documentation>
+	</xs:annotation>
+	<!--Globale eSE-Typendefinitionen-->
+	<xs:annotation>
+		<xs:documentation>==============================================================================</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="fall_statistik_typ">
+		<xs:annotation>
+			<xs:documentation>Typ zur Abbildung der Gesamtaufstellung nach abgerechneten Behandlungsfällen</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="titel" minOccurs="0"/>
+			<xs:element ref="text_liste" minOccurs="0"/>
+			<xs:element ref="anzahl_gkv" minOccurs="0"/>
+			<xs:element ref="anzahl_skt" minOccurs="0"/>
+			<xs:element ref="anzahl_kov" minOccurs="0"/>
+			<xs:element ref="anzahl_gesamt"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="anzahl_gkv">
+		<xs:annotation>
+			<xs:documentation>Anzahl Behandlungsfälle Ersatz- und Primärkassen</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:double" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="anzahl_skt">
+		<xs:annotation>
+			<xs:documentation>Anzahl Behandlungsfälle von Sonstigen Kostenträgern</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:double" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="anzahl_kov">
+		<xs:annotation>
+			<xs:documentation>Anzahl Behandlungsfälle KOV-Bundesbehandlung</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:double" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="anzahl_gesamt">
+		<xs:annotation>
+			<xs:documentation>Summe aller Behandlungsfälle</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:double" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>--------------------------------------------------------------------------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="vertretungszeiten_typ">
+		<xs:annotation>
+			<xs:documentation>Typ zur Bestätigung und Angabe von Vertretungszeiten in der Eigen- und Fremdpraxen</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="titel"/>
+			<xs:element ref="text_liste" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Struktur für integrierte Textbausteine</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="bool_komplex"/>
+		</xs:sequence>
+	</xs:complexType>
+		<xs:annotation>
+		<xs:documentation>--------------------------------------------------------------------------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="angestellter_arzt_typ">
+		<xs:annotation>
+			<xs:documentation>Typ zur Bestätigung und Angabe von angestellten Ärzten in der Eigenpraxis</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="titel"/>
+			<xs:element ref="text_liste" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Struktur für integrierte Textbausteine</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="bool_komplex"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>--------------------------------------------------------------------------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="schliesszeiten_typ">
+		<xs:annotation>
+			<xs:documentation>Typ zur Bestätigung und Angabe von Schließzeiten der Praxis</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="titel"/>
+			<xs:element ref="text_liste" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Struktur für integrierte Textbausteine</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="bool_komplex"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>--------------------------------------------------------------------------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="org_notdienstzeiten_typ">
+		<xs:annotation>
+			<xs:documentation>Typ zur Bestätigung der Teilnahme am Organisierten Notfalldienst und Angabe der Notdienstzeiten</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="titel"/>
+			<xs:element ref="text_liste" minOccurs="0"/>
+			<xs:element ref="bool_komplex"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>--------------------------------------------------------------------------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="assistenten_typ">
+		<xs:annotation>
+			<xs:documentation>Typ zur Bestätigung und Angabe von Assistententätigkeiten</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="titel"/>
+			<xs:element ref="text_liste" minOccurs="0"/>
+			<xs:element ref="bool_komplex"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>--------------------------------------------------------------------------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="praxisgemeinschaften_typ">
+		<xs:annotation>
+			<xs:documentation>Typ zur Bestätigung und Angabe evtl. Praxisgemeinschaften</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="titel"/>
+			<xs:element ref="text_liste" minOccurs="0"/>
+			<xs:element ref="bool_komplex"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>==============================================================================</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="bestaetigungen_typ">
+		<xs:annotation>
+			<xs:documentation>Struktur mit KV-weit fest definierten Sachverhalten mit Integration von Bewegungsdaten</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="abrechnung_erklaerung" type="abrechnung_erklaerung_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Erklärung zur Abrechnung</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ueberweisungsscheine" type="ueberweisungsscheine_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Erklärung zur Abrechnung von Überweisungsscheinen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="abrechnung_edv" type="abrechnung_edv_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Erklärung zum Einsatz einer Abrechnungssoftware</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="abrechnung_allgemeinlabor" type="abrechnung_allgemeinlabor_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Erklärung zur Abrechnung von Leistungen des Allgemeinlabors</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="avwg_erklaerung" type="avwg_erklaerung_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Erklärung zum Einsatz AVWG-zertifizierter Arzneimittelverordnungssoftware (AVS)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>==============================================================================</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="abrechnung_erklaerung_typ">
+		<xs:annotation>
+			<xs:documentation>Typ zur Bestätigung zur Quartalsabrechnung allgemein</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="titel"/>
+			<xs:element ref="text_liste" minOccurs="0"/>
+			<xs:element ref="bool_einfach">
+				<xs:annotation>
+					<xs:documentation>Bestätigung eines generischen Sachverhalts ohne Zusatzinformationen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>--------------------------------------------------------------------------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="ueberweisungsscheine_typ">
+		<xs:annotation>
+			<xs:documentation>Typ zur Bestätigung der Abrechnung korrekter Überweisungsscheine unter Einhaltung des jeweiligen Zielauftrages</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="titel"/>
+			<xs:element ref="text_liste" minOccurs="0"/>
+			<xs:element ref="bool_einfach">
+				<xs:annotation>
+					<xs:documentation>Bestätigung eines generischen Sachverhalts ohne Zusatzinformationen</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>--------------------------------------------------------------------------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="abrechnung_edv_typ">
+		<xs:annotation>
+			<xs:documentation>Typ für die Abbildung der Erklärung zum EDV-Einsatz in der Abrechnung</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="titel"/>
+			<xs:element ref="text_liste" minOccurs="0"/>
+			<xs:element ref="bool_software">
+				<xs:annotation>
+					<xs:documentation>Bestätigung des Einsatzes einer Software und Beschreibung der Software mittels bekannter sciphox-ssu</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>--------------------------------------------------------------------------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="abrechnung_allgemeinlabor_typ">
+		<xs:annotation>
+			<xs:documentation>Struktur für die Bestätigung bei Abrechnung von Leistungen des Allgemeinlabors</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="titel"/>
+			<xs:element ref="text_liste" minOccurs="0"/>
+			<xs:element ref="bool_labor">
+				<xs:annotation>
+					<xs:documentation>Bestätigung der Mitgliedschaft an einer Laborgemeinschaft und/oder Qualifikation zur Erbringung von Leistungen des Allgemeinlabors</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="labor_provider_typ">
+		<xs:annotation>
+			<xs:documentation>Providertyp - Labor</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="organization" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>--------------------------------------------------------------------------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="avwg_erklaerung_typ">
+		<xs:annotation>
+			<xs:documentation>Typ für die Abbildung der AVWG-Erklärung</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="titel"/>
+			<xs:element ref="text_liste" minOccurs="0"/>
+			<xs:element ref="bool_software">
+				<xs:annotation>
+					<xs:documentation>Bestätigung des Einsatzes einer Software und Beschreibung der Software mittels bekannter sciphox-ssu</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>--------------------------------------------------------------------------------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="ankreuzfeld_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Generische Struktur zur Abbildung einfacher Ankreuzfelder bzw. Bestätigungen</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ankreuzfeld" type="ankreuzfeld_typ" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ankreuzfeld_typ">
+		<xs:annotation>
+			<xs:documentation>Ankreuzfeld-Typ</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="titel"/>
+			<xs:element ref="text_liste" minOccurs="0"/>
+			<xs:element ref="bool_komplex"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>==============================================================================</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Innerhalb des Body referenzierte Elemente/Typen:</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>==============================================================================</xs:documentation>
+	</xs:annotation>
+	<xs:element name="bool_komplex" type="bool_komplex_typ">
+		<xs:annotation>
+			<xs:documentation>Bestätigung eines generischen Sachverhalts mit Zusatzinformationen</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="bool_komplex_typ">
+		<xs:choice>
+			<xs:element name="false"/>
+			<xs:element name="true">
+				<xs:complexType>
+					<xs:sequence minOccurs="0">
+						<xs:element name="komplex" type="zeitraum_mit_arztbezug_typ" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="bool_einfach" type="bool_einfach_typ">
+		<xs:annotation>
+			<xs:documentation>Bestätigung eines generischen Sachverhalts ohne Zusatzinformationen</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="bool_einfach_typ">
+		<xs:choice>
+			<xs:element name="false"/>
+			<xs:element name="true">
+				<xs:complexType/>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="bool_software" type="bool_software_typ">
+		<xs:annotation>
+			<xs:documentation>Bestätigung  des Einsatzes einer Software und Angabe derselben mittels bekannter sciphox-ssu</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="bool_software_typ">
+		<xs:choice>
+			<xs:element name="false"/>
+			<xs:element name="true">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="sciphox:sciphox-ssu" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="bool_labor" type="bool_labor_typ">
+		<xs:annotation>
+			<xs:documentation>Bestätigung zur Abrechnung von leistungen des Allgemeinlabors mit Zusatzinformationen</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="bool_labor_typ">
+		<xs:choice>
+			<xs:element name="false"/>
+			<xs:element name="true">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="provider" type="labor_provider_typ" minOccurs="0"/>
+						<xs:element name="qualifikation_labor" minOccurs="0">
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:boolean" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="text_liste" type="text_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Struktur für integrierte Textbausteine</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="text_liste_typ">
+		<xs:sequence>
+			<xs:element ref="text" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Textbaustein</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="text" type="text_typ">
+		<xs:annotation>
+			<xs:documentation>Textbaustein ohne Formatierungsinformationen</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="text_typ">
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string"/>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="titel" type="text_typ">
+		<xs:annotation>
+			<xs:documentation>Titel, Überschrift</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="zeitraum_tmr" type="v_zeitraum_typ">
+		<xs:annotation>
+			<xs:documentation>Angabe eines Datums oder Zeitraumes (datum..datum oder datum zeit..datum zeit)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="organization.nm">
+		<xs:annotation>
+			<xs:documentation>Name der Einrichtung, Praxisbezeichnung</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:restriction base="v_string_typ"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="grund">
+		<xs:annotation>
+			<xs:documentation>Grund bei Vertretung oder Abwesenheit</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="Krankheit"/>
+						<xs:enumeration value="Urlaub"/>
+						<xs:enumeration value="Fortbildung"/>
+						<xs:enumeration value="Schwangerschaft"/>
+						<xs:enumeration value="Entbindung"/>
+						<xs:enumeration value="Elternzeit"/>
+						<xs:enumeration value="Wehrübung"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="xslt_hash_typ">
+		<xs:annotation>
+			<xs:documentation>MD5-Hashwert-Typ</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="V" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="zeitraum_mit_arztbezug_typ">
+		<xs:annotation>
+			<xs:documentation>Struktur, die einen Zeitraum definiert, mit Arztbezug (Provider)</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element ref="grund" minOccurs="0"/>
+			<xs:element ref="zeitraum_tmr" minOccurs="0"/>
+			<xs:element ref="provider" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

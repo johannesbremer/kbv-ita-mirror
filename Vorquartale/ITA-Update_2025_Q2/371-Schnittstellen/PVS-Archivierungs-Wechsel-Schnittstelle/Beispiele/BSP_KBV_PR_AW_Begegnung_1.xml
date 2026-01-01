@@ -1,0 +1,64 @@
+<Encounter xmlns="http://hl7.org/fhir">
+	<id value="3188"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-12T16:50:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Begegnung|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Begegnung_Spezielle_Begegnungsinformationen">
+		<extension url="typ">
+			<valueCodeableConcept>
+				<text value="patient-war-puenktlich"/>
+			</valueCodeableConcept>
+		</extension>
+		<extension url="inhalt">
+			<valueString value="ja"/>
+		</extension>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Begegnung_Spezielle_Begegnungsinformationen">
+		<extension url="typ">
+			<valueCodeableConcept>
+				<text value="ausgehaendigte-broschuere"/>
+			</valueCodeableConcept>
+		</extension>
+		<extension url="inhalt">
+			<valueString value="Ernährungsberatung für Senioren"/>
+		</extension>
+	</extension>
+	<status value="finished"/>
+	<class>
+		<system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+		<code value="AMB"/>
+	</class>
+	<subject>
+		<reference value="Patient/3181"/>
+	</subject>
+	<basedOn>
+		<reference value="ServiceRequest/3187"/>
+	</basedOn>
+	<participant>
+		<individual>
+			<reference value="Practitioner/3153"/>
+			<identifier>
+				<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"/>
+				<value value="123456701"/>
+			</identifier>
+		</individual>
+	</participant>
+	<period>
+		<start value="2021-02-01"/>
+		<end value="2021-02-01"/>
+	</period>
+	<serviceProvider>
+		<reference value="Organization/3156"/>
+	</serviceProvider>
+	<partOf>
+		<reference value="Encounter/3200"/>
+	</partOf>
+</Encounter>

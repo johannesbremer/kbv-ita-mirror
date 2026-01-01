@@ -1,0 +1,81 @@
+<AuditEvent xmlns="http://hl7.org/fhir">
+	<id value="5000"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-27T16:23:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Report_Export|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+		Software:
+			Softwarehaus Mustersoftware
+			Test-Software
+			V1.23
+		</div>
+	</text>		
+	<contained>
+		<Device xmlns="http://hl7.org/fhir">
+			<id value="3500"/>
+			<meta>
+				<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Hersteller_Software|1.2.0"/>
+			</meta>
+			<text>
+				<status value="extensions"/>
+				<div xmlns="http://www.w3.org/1999/xhtml">
+					Softwarehaus Mustersoftware
+					Test-Software
+					V1.23
+				</div>
+			</text>				
+			<manufacturer value="Softwarehaus Mustersoftware"/>
+			<deviceName>
+				<name value="Test-Software"/>
+				<type value="model-name"/>
+			</deviceName>
+			<version>
+				<value value="1.23"/>
+			</version>
+		</Device>
+	</contained>
+	<type>
+		<system value="http://terminology.hl7.org/CodeSystem/iso-21089-lifecycle"/>
+		<code value="extract"/>
+	</type>
+	<recorded value="2020-08-27T16:22:01+00:00"/>
+	<purposeOfEvent>
+		<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+				<code value="HTEST"/>
+		</coding>
+	</purposeOfEvent>
+	<agent>
+		<who>
+			<reference value="#3500"/>
+		</who>
+		<requestor value="true"/>
+	</agent>
+	<agent>
+		<name value="Dr. Max Mustermann"/>
+		<requestor value="true"/>
+	</agent>
+	<source>
+		<observer>
+			<identifier>
+				<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer"/>
+				<value value="DUMMY"/>
+			</identifier>
+		</observer>
+	</source>
+	<entity>
+		<name value="Vollstaendig"/>
+		<detail>
+			<type value="Datenbereich_Einschraenkung"/>
+			<valueString value="Betriebsstaette"/>
+		</detail>
+		<detail>
+			<type value="Einschraenkung_erlaeuterung"/>
+			<valueString value="Der Export wurde über die Betriebsstätte mit der BSNR 1234556676 eingeschränkt"/>
+		</detail>		
+	</entity>
+</AuditEvent>

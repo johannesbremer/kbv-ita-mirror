@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoerderung_Kategorie_42019"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Krankenbefoerderung_Kategorie_42019"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Hintergrund der verordneten Krankenbefoerderung"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="Unfall_Unfallfolge"/>
+<display value="Unfall oder Unfallfolge"/>
+</concept>
+<concept>
+<code value="Arbeitsunfall_Berufskrankheit"/>
+<display value="Arbeitsunfall oder Berufskrankheit"/>
+</concept>
+<concept>
+<code value="Versorgungsleiden"/>
+<display value="Versorgungsleiden(z.B. BVG)"/>
+</concept>
+</CodeSystem>

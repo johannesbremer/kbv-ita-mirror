@@ -1,0 +1,31 @@
+<Provenance xmlns="http://hl7.org/fhir">
+  <id value="1000" />
+  <meta>
+    <versionId value="1"/>
+	<lastUpdated value="2022-09-08T09:48:00Z"/>
+    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Provenance_ePrescription|2.1.0" />
+  </meta>
+  <target>
+	<reference value="Bundle/c44ddc5b-21f5-4ce3-995d-ab5ca2633154"/>
+	<type value="Bundle"/>
+  </target>
+  <target>
+	<reference value="DocumentReference/2510"/>
+	<type value="DocumentReference"/>
+  </target>
+  <recorded value="2022-09-08T09:48:00Z"/>
+  <activity>
+	<coding>
+		<system value="http://terminology.hl7.org/CodeSystem/v3-DataOperation"/>
+		<code value="DELETE"/>
+	</coding>
+  </activity>
+  <agent>
+	<who>
+		<reference value="Practitioner/200"/>
+	</who>
+	<onBehalfOf>
+		<reference value="Organization/250"/>
+	</onBehalfOf>
+  </agent>
+</Provenance>

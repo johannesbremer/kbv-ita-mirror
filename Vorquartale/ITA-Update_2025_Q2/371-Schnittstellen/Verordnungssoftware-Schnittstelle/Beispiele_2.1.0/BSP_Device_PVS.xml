@@ -1,0 +1,32 @@
+<Device xmlns="http://hl7.org/fhir">
+	<id value="20000"/>
+	<meta>
+		<versionId value="1"/>
+		<lastUpdated value="2022-09-07T15:14:00Z"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Device_PVS|2.1.0"/>
+	</meta>
+	<identifier>
+		<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer"/>
+		<value value="Y/70/2207/36/ID"/>
+	</identifier>
+	<deviceName>
+		<name value="KBV-PVS"/>
+		<type value="manufacturer-name"/>
+	</deviceName>
+	<type>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<version value="http://snomed.info/sct/900000000000207008/version/20220331"/>
+			<code value="463916008"/>
+			<display value="Physician-practice-management information system application software (physical object)"/>
+		</coding>
+	</type>
+	<contact>
+		<system value="phone"/>
+		<value value="030/4005-0"/>
+	</contact>
+	<contact>
+		<system value="email"/>
+		<value value="ita@kbv.de"/>
+	</contact>
+</Device>

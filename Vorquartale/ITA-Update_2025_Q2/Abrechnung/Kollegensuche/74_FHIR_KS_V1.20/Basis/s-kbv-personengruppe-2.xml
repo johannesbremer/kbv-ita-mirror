@@ -1,0 +1,65 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset" />
+  </meta>
+  <url value="http://fhir.de/ValueSet/kbv/s-kbv-personengruppe" />
+  <version value="0.2.3" />
+  <name value="kbv-s-kbv-personengruppe" />
+  <status value="draft" />
+  <experimental value="true" />
+  <date value="2018-01-07" />
+  <publisher value="HL7 Deutschland e.V. (Technisches Komitee FHIR)" />
+  <contact>
+    <telecom>
+      <system value="other" />
+      <value value="http://hl7.de/technische-komitees/fhir/" />
+    </telecom>
+  </contact>
+  <description value="Der Personengruppenschlüssel  gibt an, welcher Personengruppe ein Versicherter angehört. Auf der KVK ist diese Angabe Teil des Feldes VERSICHERTENSTATUS." />
+  <compose>
+    <include>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-personengruppe" />
+    </include>
+  </compose>
+  <expansion>
+    <identifier value="70eba75b-6f4f-44f2-48fd-9de9943c8e14" />
+    <timestamp value="2018-07-01" />
+    <total value="6" />
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-personengruppe" />
+      <version value="1.02" />
+      <code value="00" />
+      <display value="nicht gesetzt" />
+    </contains>
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-personengruppe" />
+      <version value="1.02" />
+      <code value="04" />
+      <display value="SOZ" />
+    </contains>
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-personengruppe" />
+      <version value="1.02" />
+      <code value="06" />
+      <display value="BVG" />
+    </contains>
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-personengruppe" />
+      <version value="1.02" />
+      <code value="07" />
+      <display value="SVA1" />
+    </contains>
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-personengruppe" />
+      <version value="1.02" />
+      <code value="08" />
+      <display value="SVA2" />
+    </contains>
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-personengruppe" />
+      <version value="1.02" />
+      <code value="09" />
+      <display value="ASY" />
+    </contains>
+  </expansion>
+</ValueSet>

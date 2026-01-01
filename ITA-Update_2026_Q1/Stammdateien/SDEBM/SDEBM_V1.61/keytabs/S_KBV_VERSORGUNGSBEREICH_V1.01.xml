@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<keytabs xmlns="urn:ehd/001">
+  <keytab S="1.2.276.0.76.5.237" SN="S_KBV_VERSORGUNGSBEREICH" SV="1.01">
+    <key V="0" DN="Unbekannt" S="1.2.276.0.76.5.237" SV="1.01"/>
+    <key V="1" DN="Hausarzt" S="1.2.276.0.76.5.237" SV="1.01"/>
+    <key V="2" DN="Facharzt" S="1.2.276.0.76.5.237" SV="1.01"/>
+    <key V="3" DN="HausFacharzt" S="1.2.276.0.76.5.237" SV="1.01"/>
+    <key V="9" DN="Ermächtigter Arzt" S="1.2.276.0.76.5.237" SV="1.01"/>
+  </keytab>
+</keytabs>

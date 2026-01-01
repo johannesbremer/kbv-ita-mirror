@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Dieses FHIR-Bundle steht im Speicherkontext 12 und bildet ein Storno eines eRezeptes ab.
+Nach dem Stornieren wird die durchgeführte Aktivität "LÖSCHEN / DELETE" an das PVS übertragen.
+-->
+<Bundle xmlns="http://hl7.org/fhir">
+    <id value="example-ak12-speicher-bundle-eRezept"/>
+    <meta>
+        <lastUpdated value="2025-10-16T12:30:02+00:00"/>
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_VoS_PVS|2.2.0"/>
+    </meta>
+    <identifier>
+        <system value="https://fhir.kbv.de/NamingSystem/KBV_NS_VoS_BundleID"/>
+        <value value="Test_ID_VoS"/>
+    </identifier>
+    <type value="transaction"/>
+    <timestamp value="2025-10-16T12:30:02+00:00"/>
+    <link>
+        <extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_User_Device">
+            <extension url="KBV-Pruefnummer">
+                <valueIdentifier>
+                    <system value="https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer"/>
+                    <value value="Y/70/2207/36/ID"/>
+                </valueIdentifier>
+            </extension>
+            <extension url="Anwender">
+                <valueString value="754236701"/>
+            </extension>
+            <extension url="systemID">
+                <valueIdentifier>
+                    <value value="Installation PC-3"/>
+                </valueIdentifier>
+            </extension>
+        </extension>
+        <relation value="related"/>
+        <url value="http://pvs.praxis-testaerztin.local/fhir/Bundle/example-vos-pvs-bundle-muster16-eMP-save"/>
+    </link>
+    <entry>
+        <fullUrl value="urn:uuid:77b5dfb5-3954-45ea-83a4-7a5c46953c1f" />
+        <resource>
+        <Provenance xmlns="http://hl7.org/fhir">
+            <id value="77b5dfb5-3954-45ea-83a4-7a5c46953c1f" />
+            <meta>
+            <versionId value="1" />
+            <lastUpdated value="2025-10-07T13:35:03Z" />
+            <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Provenance_ePrescription|2.2.0" />
+            </meta>
+            <target>
+            <reference value="Bundle/example-ak12-aufruf-bundle-eRezept" />
+            <type value="Bundle" />
+            </target>
+            <target>
+            <reference value="DocumentReference/c6f73ab6-ccbd-402d-a7de-3041bbed0da7" />
+            <type value="DocumentReference" />
+            </target>
+            <recorded value="2025-10-07T13:35:03Z" />
+            <activity>
+            <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/v3-DataOperation" />
+                <code value="DELETE" />
+            </coding>
+            </activity>
+            <agent>
+            <who>
+                <reference value="Practitioner/f2ea54b9-ab1a-43d9-8727-fa24c61c820d" />
+            </who>
+            <onBehalfOf>
+                <reference value="Organization/8d9fc65d-7baa-4b44-be96-5874b94c6471" />
+            </onBehalfOf>
+            </agent>
+        </Provenance>
+        </resource>
+        <request>
+        <method value="POST" />
+        <url value="Provenance" />
+        </request>
+    </entry>    
+</Bundle>
+

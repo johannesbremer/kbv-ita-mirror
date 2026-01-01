@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-EX-VoS-T-Prescription-Marks" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_T_Prescription_Marks" />
+  <version value="2.1.0" />
+  <name value="KBV_EX_VoS_T_Prescription_Marks" />
+  <title value="KBV_EX_VoS_T_Prescription_Marks" />
+  <status value="active" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <description value="Spiegelt die Ankreuzfelder auf einem T-Rezept wider." />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="MedicationRequest" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Ankreuzfelder T-Rezept" />
+      <definition value="Diese Extension ermöglicht die Übertragung der Ausprägung der Ankreuzfelder auf einem T-Rezept." />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="4" />
+	  <max value="4" />
+    </element>
+    <element id="Extension.extension:Sicherheitsbestimmungen">
+      <path value="Extension.extension" />
+      <sliceName value="Sicherheitsbestimmungen" />
+      <short value="Sicherheitsbestimmungen" />
+      <definition value="Übertragung der Ausprägung des ersten Ankreuzfeldes, dass alle Sicherheitsbestimmungen eingehalten wurden." />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:Sicherheitsbestimmungen.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="Sicherheitsbestimmungen" />
+    </element>
+    <element id="Extension.extension:Sicherheitsbestimmungen.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:Sicherheitsbestimmungen.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <definition value="Angabe, ob das Ankreuzfeld auf der Rezept angekreuzt ist. true = Kreuz ist gesetzt, false = Kreuz ist nicht gesetzt." />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:Informationsmaterial">
+      <path value="Extension.extension" />
+      <sliceName value="Informationsmaterial" />
+      <short value="Informationsmaterial" />
+      <definition value="Übertragung der Ausprägung des zweiten Ankreuzfeldes, dass Informationsmaterial ausgehändigt wurde." />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:Informationsmaterial.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="Informationsmaterial" />
+    </element>
+    <element id="Extension.extension:Informationsmaterial.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:Informationsmaterial.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <definition value="Angabe, ob das Ankreuzfeld auf der Rezept angekreuzt ist. true = Kreuz ist gesetzt, false = Kreuz ist nicht gesetzt." />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:In-Label">
+      <path value="Extension.extension" />
+      <sliceName value="In-Label" />
+      <short value="In-Label" />
+      <definition value="Übertragung der Ausprägung des dritten Ankreuzfeldes, dass die Behandlung innerhalb der zugelassenen Anwendungsgebiete erfolgt." />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:In-Label.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="In-Label" />
+    </element>
+    <element id="Extension.extension:In-Label.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:In-Label.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <definition value="Angabe, ob das Ankreuzfeld auf der Rezept angekreuzt ist. true = Kreuz ist gesetzt, false = Kreuz ist nicht gesetzt." />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:Off-Label">
+      <path value="Extension.extension" />
+      <sliceName value="Off-Label" />
+      <short value="Off-Label" />
+      <definition value="Übertragung der Ausprägung des vierten Ankreuzfeldes, dass die Behandlung außerhalb der zugelassenen Anwendungsgebiete erfolgt." />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:Off-Label.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="Off-Label" />
+    </element>
+    <element id="Extension.extension:Off-Label.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:Off-Label.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <definition value="Angabe, ob das Ankreuzfeld auf der Rezept angekreuzt ist. true = Kreuz ist gesetzt, false = Kreuz ist nicht gesetzt." />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_T_Prescription_Marks" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

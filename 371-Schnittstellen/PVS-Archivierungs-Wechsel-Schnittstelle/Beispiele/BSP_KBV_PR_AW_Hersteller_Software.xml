@@ -1,0 +1,20 @@
+<Device xmlns="http://hl7.org/fhir">
+	<id value="3500"/>
+	<meta>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Hersteller_Software|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<manufacturer value="Softwarehaus Mustersoftware"/>
+	<deviceName>
+		<name value="Test-Software"/>
+		<type value="model-name"/>
+	</deviceName>
+	<version>
+		<value value="1.23"/>
+	</version>
+</Device>

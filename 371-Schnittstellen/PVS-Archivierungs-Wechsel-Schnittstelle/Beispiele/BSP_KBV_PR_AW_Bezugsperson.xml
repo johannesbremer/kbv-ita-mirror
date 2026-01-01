@@ -1,0 +1,44 @@
+<RelatedPerson xmlns="http://hl7.org/fhir">
+	<id value="3183"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-14T15:57:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Bezugsperson|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Bezugsperson Heinz Mustermann
+			Erreichbar unter der Nummer 077553/443322
+		</div>
+	</text>
+	<patient>
+		<reference value="Patient/3181"/>
+	</patient>
+	<relationship>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+			<code value="UNCLE"/>
+		</coding>	
+	</relationship>
+	<name>
+		<family value="Mustermann"/>
+		<given value="Heinz"/>
+	</name>
+	<telecom>
+		<system value="phone"/>
+		<value value="077553/443322"/>
+		<use value="home"/>
+	</telecom>
+	<telecom>
+		<system value="phone"/>
+		<value value="0179/9999999"/>
+		<use value="mobile"/>
+	</telecom>
+	<gender value="male"/>
+	<address>
+		<line value="Musterstraße 23b"/>
+		<city value="Berlin"/>
+		<postalCode value="12209"/>
+	</address>
+</RelatedPerson>

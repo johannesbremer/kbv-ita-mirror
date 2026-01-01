@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 ..\Schema\afhi_root_V1.00.xsd">
+	<header>
+		<id EX="63a5fc03-b025-4b81-ae23-e810e431466f" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2025-04-01.."/>
+		<origination_dttm V="2024-11-14"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat Digitalisierung und IT"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="https://update.kbv.de/ita-update"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen für der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2024, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="https://update.kbv.de/ita-update/"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="52" DN="Bericht für die Krankenkasse bei Fortbestehen der Arbeitsunfähigkeit">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Wegen welcher Diagnose(n) (ICD-10) besteht die Arbeitsunfähigkeit?"/>
+					<hinweistext V="Hier sind alle die aktuelle Arbeitsunfähigkeit begründenden Diagnosen im Format ICD-10 anzugeben. Sich daraus ergebende Funktionseinschränkungen können im Freitext angegeben werden."/>
+				</feld>
+				<feld>
+					<nummer V="2"/>
+					<name V="Welche Tätigkeiten übte die/der Versicherte bis zum Beginn der Arbeitsunfähigkeit aus?"/>
+					<hinweistext V="Differenziert nach Versicherten, die erwerbstätig sind oder Arbeitslosengeld empfangen, sind Angaben zur Art und zum Umfang der zuletzt ausgeübten Beschäftigung zu tätigen. Empfangen Versicherte Arbeitslosengeld, ist der zeitliche Umfang, für den sie sich bei der Agentur für Arbeit zur Verfügung gestellt haben, sowie die Angabe, ob in diesem Umfang leichte Tätigkeiten ausgeübt werden können, relevant."/>
+				</feld>
+				<feld>
+					<nummer V="3"/>
+					<name V="Welche diagnostischen/therapeutischen/rehabilitativen Maßnahmen sind in Bezug auf die Arbeitsunfähigkeit auslösende(n) Diagnose(n) vorgesehen?"/>
+					<hinweistext V="Hier ist anzugeben, welche Maßnahmen geplant sind oder bereits eingeleitet wurden."/>
+				</feld>
+				<feld>
+					<nummer V="4"/>
+					<name V="Erfolgte eine Überweisung zur fachärztlichen Mitbehandlung?"/>
+					<hinweistext V="Hier sind Angaben zu Überweisungen zu weiteren behandelnden Ärztinnen bzw. Ärzten zu machen."/>
+				</feld>
+				<feld>
+					<nummer V="5"/>
+					<name V="Besteht oder droht eine Erwerbsminderung?"/>
+					<hinweistext V="Hier ist anzugeben, ob Hinweise auf eine bestehende oder drohende Erwerbsminderung vorliegen."/>
+				</feld>
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/ValueSet/KBV_VS_AW_Report_Export_Purpose"/>
+<version value="1.2.0" />
+<name value="KBV_VS_AW_Report_Export_Purpose"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Vorhabenauswahl Report Export"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<compose>
+<include>
+	<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+	<concept>
+		<code value="RECORDMGT"/>
+		<display value="records management"/>
+	</concept>
+	<concept>
+		<code value="HTEST"/>
+		<display value="test health data"/>
+	</concept>	
+</include>
+</compose>
+</ValueSet>

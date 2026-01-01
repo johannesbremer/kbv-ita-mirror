@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns="urn::sciphox-org/sciphox" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="AdministrativeDaten">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Einschreibung wegen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Anamnese">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Körpergröße"/>
+			<xs:enumeration value="Körpergewicht"/>
+			<xs:enumeration value="Blutdruck systolisch"/>
+			<xs:enumeration value="Blutdruck diastolisch"/>
+			<xs:enumeration value="Raucher"/>
+			<xs:enumeration value="Begleiterkrankungen"/>
+			<xs:enumeration value="HbA1c"/>
+			<xs:enumeration value="Pathologische Albumin-Kreatinin-Ratio"/>
+			<xs:enumeration value="Pulsstatus"/>
+			<xs:enumeration value="Sensibilitätsprüfung"/>
+			<xs:enumeration value="eGFR"/>
+			<xs:enumeration value="Weiteres Risiko für Ulcus"/>
+			<xs:enumeration value="Ulkus"/>
+			<xs:enumeration value="(Wund)Infektion"/>
+			<xs:enumeration value="Injektionsstellen (bei Insulintherapie)"/>
+			<xs:enumeration value="Intervall für künftige Fußinspektionen (bei Patientinnen und Patienten ab dem vollendeten 18. Lebensjahr)"/>
+			<xs:enumeration value="Spätfolgen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="relevanteEreignisse">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Relevante Ereignisse"/>
+			<xs:enumeration value="Schwere Hypoglykämien seit der letzten Dokumentation"/>
+	<xs:enumeration value="Stationäre notfallmäßige Behandlung wegen Diabetes mellitus seit der letzten Dokumentation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Medikamente">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Thrombozytenaggregationshemmer"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Schulung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Schulung empfohlen (bei aktueller Dokumentation)"/>
+			<xs:enumeration value="Empfohlene Schulung(en) wahrgenommen"/>
+			<xs:enumeration value="Schulung schon vor Einschreibung ins DMP bereits wahrgenommen"/>
+			<xs:enumeration value="Diabetes-Schulung"/>
+			<xs:enumeration value="Hypertonie-Schulung"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Behandlungsplanung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Vom Patienten gewünschte Informationsangebote der Krankenkasse"/>
+			<xs:enumeration value="Dokumentationsintervall"/>
+			<xs:enumeration value="HbA1c-Zielwert"/>
+			<xs:enumeration value="Ophthalmologische Netzhautuntersuchung seit letzter Dokumentation"/>
+			<xs:enumeration value="Behandlung/Mitbehandlung in einer für das Diabetische Fußsyndrom qualifizierten Einrichtung"/>
+			<xs:enumeration value="Diabetesbezogene stationäre Einweisung"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

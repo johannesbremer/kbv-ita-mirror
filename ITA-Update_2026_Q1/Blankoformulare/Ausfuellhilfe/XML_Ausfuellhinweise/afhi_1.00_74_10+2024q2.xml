@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 ../Schema/afhi_root_V1.00.xsd">
+	<header>
+		<id EX="7c8b4e47-1298-4b1e-9638-5679b7a71332" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2024-04-01.."/>
+		<origination_dttm V="2024-02-12"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat Digitalisierung und IT"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="https://update.kbv.de/ita-update"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen für der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2024, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="https://update.kbv.de/ita-update/"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="10" DN="Überweisungsschein für in-vitro-diagnostische Auftragsleistungen">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Leistungsart (kurativ, präventiv, bei belegärztlicher Behandlung, Empfängnisregelung/Sterilisation/Schwangerschaftsabbruch)"/>
+					<hinweistext V="Hier ist zu kennzeichnen, ob der Auftrag im Rahmen der kurativen Versorgung, der Prävention, der Empfängnisregelung/Sterilisation/Schwangerschaftsabbruch oder bei belegärztlicher Behandlung erfolgt."/>
+				</feld>				
+				<feld>
+					<nummer V="2"/>
+					<name V="Unfall, Unfallfolgen"/>
+					<hinweistext V="Wenn die Behandlung aufgrund oder als Folge eines Unfalles erforderlich wird, kann die Krankenkassen ggf. Kosten gegenüber Dritten geltend machen."/>
+				</feld>				
+				<feld>
+					<nummer V="3"/>
+					<name V="SSW"/>
+					<hinweistext V="Bei einer vorliegenden Schwangerschaft ist die Schwangerschaftswoche in diesem Feld zu übermitteln."/>
+				</feld>				
+				<feld>
+					<nummer V="4"/>
+					<name V="Auftragsnummer des Labors"/>
+					<hinweistext V="Dieses Feld kann fakultativ von dem im Auftrag tätig gewordenen Arzt für eigene Zwecke genutzt werden."/>
+				</feld>				
+				<feld>
+					<nummer V="5"/>
+					<name V="Knappschaftskennziffer"/>
+					<hinweistext V="Knappschaftsärzte tragen für die Veranlassung von Laboratoriumsuntersuchungen bei Knappschaftsversicherten die Ziffer 87777 ein."/>
+				</feld>				
+				<feld>
+					<nummer V="6"/>
+					<name V="Quartal"/>
+					<hinweistext V="Das Quartal der Ausstellung der Überweisung ist in der Form 'QJJ' in das betreffende Feld einzutragen."/>
+				</feld>				
+				<feld>
+					<nummer V="7"/>
+					<name V="Geschlecht"/>
+					<hinweistext V="Das Geschlecht des Patienten wird durch einen Buchstaben angegeben (D = divers, M = männlich, W = weiblich, X = unbestimmt)."/>
+				</feld>				
+				<feld>
+					<nummer V="8"/>
+					<name V="Kontrolluntersuchung einer bekannten Infektion"/>
+					<hinweistext V="Hier werden direkte oder indirekte Nachweise von Krankheitserregern im Rahmen einer Kontrolluntersuchung bei einer bereits bekannten Infektion beauftragt. Im Freitextfeld 'Befund/Medikation' ist zudem der Sachverhalt zu erläutern. Erkrankungen mit Meldepflicht sind § 7 Infektionsschutzgesetz zu entnehmen."/>
+				</feld>	
+				<feld>
+					<nummer V="9"/>
+					<name V="SER"/>
+					<hinweistext V="Leistungsanspruch nach SGB XIV ist hier zu kennzeichnen."/>
+				</feld>				
+				<feld>
+					<nummer V="10"/>
+					<name V="Eingeschränkter Leistungsanspruch gemäß § 16 Absatz 3a SGB V"/>
+					<hinweistext V="Sollte durch den Versicherten ein Muster 85 (Nachweis der Anspruchsberechtigung bei Ruhen des Anspruchs gemäß § 16 Absatz 3a SGB V) vorgelegt werden, so sind durch den überweisenden Arzt nur Überweisungen im Rahmen akuter Erkrankungen und Schmerzzuständen sowie bei Schwangerschaft und Mutterschaft zu tätigen. Der überweisende Vertragsarzt kennzeichnet dies entsprechend durch Ankreuzen des Feldes 'eingeschränkter Leistungsanspruch gemäß § 16 Absatz 3a SGB V'."/>
+				</feld>				
+				<feld>
+					<nummer V="11"/>
+					<name V="Abnahmedatum"/>
+					<hinweistext V="Das Abnahmedatum ist hier einzutragen."/>
+				</feld>				
+				<feld>
+					<nummer V="12"/>
+					<name V="Abnahmezeit"/>
+					<hinweistext V="Die Abnahmezeit ist hier einzutragen."/>
+				</feld>				
+				<feld>
+					<nummer V="13"/>
+					<name V="Weiterüberweisung"/>
+					<hinweistext V="Der eine Auftragsleistung ausführende Arzt ist berechtigt, Teile dieses Auftrages, die er selbst nicht erbringen kann, von einem anderen Arzt als Auftragsleistung erbringen zu lassen (Weiterüberweisung). Er stellt in diesem Fall ebenfalls einen Überweisungsschein nach dem Muster 10 aus und macht die betreffenden Angaben, insbesondere sind die Angaben des Erstveranlassers zu übernehmen und dessen Arzt- und Betriebsstättennummer im betreffenden fett umrandeten Feld anzugeben."/>
+				</feld>				
+				<feld>
+					<nummer V="14"/>
+					<name V="Eilige Befundübermittlung"/>
+					<hinweistext V="Der überweisende Vertragsarzt kann bei einer eiligen Befundübermittlung diese als solche kennzeichnen und angeben, ob der Befund per Telefon oder FAX übermittelt werden soll und an welche Telefon- bzw. Faxnummer der Befund nachrichtlich zu übermitteln ist."/>
+				</feld>				
+				<feld>
+					<nummer V="15"/>
+					<name V="Diagnose/Verdachtsdiagnose - Befund/Medikation - Auftrag"/>
+					<hinweistext V="Hier sind nach Nennung der Diagnose/Verdachtsdiagnose, möglichst als ICD-Code, des Befundes bzw. der Medikation die Auftragsleistungen im Auftragsfeld nach Art und Umfang konkret zu bezeichnen (Angabe der Gebührenordnungsposition oder der präzisen Leistungsbezeichnung). Es dürfen nur die Untersuchungen durchgeführt werden, die im Auftragsfeld angegeben sind. Eine Erweiterung des Auftrages nach Art oder Umfang bedarf der Zustimmung des überweisenden Vertragsarztes; sie ist auf dem Vordruck zu vermerken. Die Veranlassung von Leistungen der Mutterschaftsvorsorge gemäß den Mutterschafts-Richtlinien des Gemeinsamen Bundesausschusses bei Vertretung, im Notfall oder bei Mit- bzw. Weiterbehandlung nach den kurativen Gebührenordnungspositionen muss entweder durch Angabe der Kennnummer 32007 oder durch Angabe im Feld 'Auftrag' kenntlich gemacht werden."/>
+				</feld>				
+				<feld>
+					<nummer V="16"/>
+					<name V="Barcode bei Blankoformularbedruckung"/>
+					<hinweistext V="Bei Einsatz des Verfahrens zur Blankoformularbedruckung wird mittels Laserdrucker ein zweidimensionaler Barcode PDF 417 aufgedruckt. Dieser enthält sämtliche Informationen des Formulars und kann von dem im Auftrag tätig werdenden Arzt automatisch ausgewertet werden."/>
+				</feld>				
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

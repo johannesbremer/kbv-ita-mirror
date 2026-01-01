@@ -1,0 +1,569 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "KBV-PR-VoS-AllergyIntolerance",
+  "url": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_AllergyIntolerance",
+  "version": "2.2.0",
+  "name": "KBV_PR_VoS_AllergyIntolerance",
+  "title": "KBV_PR_VoS_AllergyIntolerance",
+  "status": "draft",
+  "date": "2025-10-01",
+  "description": "Übergabe von Allergie-Informationen aus dem PVS an die VoS",
+  "fhirVersion": "4.0.1",
+  "kind": "resource",
+  "abstract": false,
+  "type": "AllergyIntolerance",
+  "baseDefinition": "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_AllergyIntolerance|1.7.0",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "AllergyIntolerance.id",
+        "path": "AllergyIntolerance.id",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.meta",
+        "path": "AllergyIntolerance.meta",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.meta.source",
+        "path": "AllergyIntolerance.meta.source",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.meta.profile",
+        "path": "AllergyIntolerance.meta.profile",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "open"
+        },
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.meta.profile:vosProfile",
+        "path": "AllergyIntolerance.meta.profile",
+        "sliceName": "vosProfile",
+        "min": 1,
+        "max": "1",
+        "fixedCanonical": "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_AllergyIntolerance|2.2.0",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.meta.security",
+        "path": "AllergyIntolerance.meta.security",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.meta.tag",
+        "path": "AllergyIntolerance.meta.tag",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.implicitRules",
+        "path": "AllergyIntolerance.implicitRules",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.language",
+        "path": "AllergyIntolerance.language",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.contained",
+        "path": "AllergyIntolerance.contained",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.extension",
+        "path": "AllergyIntolerance.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "closed"
+        }
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement",
+        "path": "AllergyIntolerance.extension",
+        "sliceName": "abatement",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.extension:abatement-lebensphase-bis",
+        "path": "AllergyIntolerance.extension",
+        "sliceName": "abatement-lebensphase-bis",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.identifier",
+        "path": "AllergyIntolerance.identifier",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.clinicalStatus",
+        "path": "AllergyIntolerance.clinicalStatus",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.clinicalStatus.coding",
+        "path": "AllergyIntolerance.clinicalStatus.coding",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.clinicalStatus.coding.system",
+        "path": "AllergyIntolerance.clinicalStatus.coding.system",
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.clinicalStatus.coding.version",
+        "path": "AllergyIntolerance.clinicalStatus.coding.version",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.clinicalStatus.coding.code",
+        "path": "AllergyIntolerance.clinicalStatus.coding.code",
+        "fixedCode": "active",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.clinicalStatus.coding.display",
+        "path": "AllergyIntolerance.clinicalStatus.coding.display",
+        "fixedString": "Active",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.clinicalStatus.coding.userSelected",
+        "path": "AllergyIntolerance.clinicalStatus.coding.userSelected",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.clinicalStatus.text",
+        "path": "AllergyIntolerance.clinicalStatus.text",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.verificationStatus",
+        "path": "AllergyIntolerance.verificationStatus",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.verificationStatus.coding",
+        "path": "AllergyIntolerance.verificationStatus.coding",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.verificationStatus.coding.system",
+        "path": "AllergyIntolerance.verificationStatus.coding.system",
+        "fixedUri": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.verificationStatus.coding.version",
+        "path": "AllergyIntolerance.verificationStatus.coding.version",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.verificationStatus.coding.code",
+        "path": "AllergyIntolerance.verificationStatus.coding.code",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.verificationStatus.coding.display",
+        "path": "AllergyIntolerance.verificationStatus.coding.display",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.verificationStatus.coding.userSelected",
+        "path": "AllergyIntolerance.verificationStatus.coding.userSelected",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.verificationStatus.text",
+        "path": "AllergyIntolerance.verificationStatus.text",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.type",
+        "path": "AllergyIntolerance.type",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.category",
+        "path": "AllergyIntolerance.category",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.criticality",
+        "path": "AllergyIntolerance.criticality",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.code",
+        "path": "AllergyIntolerance.code",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding",
+        "path": "AllergyIntolerance.code.coding",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        }
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:snomed",
+        "path": "AllergyIntolerance.code.coding",
+        "sliceName": "snomed",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:snomed.system",
+        "path": "AllergyIntolerance.code.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:snomed.version",
+        "path": "AllergyIntolerance.code.coding.version",
+        "fixedString": "http://snomed.info/sct/11000274103/version/20240515",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:snomed.code",
+        "path": "AllergyIntolerance.code.coding.code",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:snomed.display",
+        "path": "AllergyIntolerance.code.coding.display",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:ask",
+        "path": "AllergyIntolerance.code.coding",
+        "sliceName": "ask",
+        "definition": "Hier soll der Code für die Substanz als ASK-Nummer eingetragen werden.",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:ask.system",
+        "path": "AllergyIntolerance.code.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:ask.version",
+        "path": "AllergyIntolerance.code.coding.version",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:ask.code",
+        "path": "AllergyIntolerance.code.coding.code",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:ask.display",
+        "path": "AllergyIntolerance.code.coding.display",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:atc",
+        "path": "AllergyIntolerance.code.coding",
+        "sliceName": "atc",
+        "definition": "Hier soll der Code für die Substanz als ATC-Code eingetragen werden.",
+        "min": 0,
+        "max": "*",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "http://fhir.de/StructureDefinition/CodingATC"
+            ]
+          }
+        ],
+        "patternCoding": {
+          "system": "http://fhir.de/CodeSystem/bfarm/atc"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:atc.system",
+        "path": "AllergyIntolerance.code.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:atc.version",
+        "path": "AllergyIntolerance.code.coding.version",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:atc.code",
+        "path": "AllergyIntolerance.code.coding.code",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:pzn",
+        "path": "AllergyIntolerance.code.coding",
+        "sliceName": "pzn",
+        "definition": "Hier soll der Code für ein Medikament als PZN eingetragen werden.",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Coding",
+            "profile": [
+              "http://fhir.de/StructureDefinition/CodingPZN"
+            ]
+          }
+        ],
+        "patternCoding": {
+          "system": "http://fhir.de/CodeSystem/ifa/pzn"
+        },
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:pzn.system",
+        "path": "AllergyIntolerance.code.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.coding:pzn.code",
+        "path": "AllergyIntolerance.code.coding.code",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.code.text",
+        "path": "AllergyIntolerance.code.text",
+        "definition": "Hier muss die Bezeichnung der Substanz bzw. der Allergie oder Unverträglichkeit als Freitext eingetragen werden.",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.patient",
+        "path": "AllergyIntolerance.patient",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Patient|2.2.0"
+            ]
+          }
+        ],
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.patient.reference",
+        "path": "AllergyIntolerance.patient.reference",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.patient.type",
+        "path": "AllergyIntolerance.patient.type",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.patient.identifier",
+        "path": "AllergyIntolerance.patient.identifier",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.patient.display",
+        "path": "AllergyIntolerance.patient.display",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.encounter",
+        "path": "AllergyIntolerance.encounter",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.onset[x]",
+        "path": "AllergyIntolerance.onset[x]",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.onset[x]:onsetDateTime",
+        "path": "AllergyIntolerance.onset[x]",
+        "sliceName": "onsetDateTime",
+        "max": "0",
+        "type": [
+          {
+            "code": "dateTime"
+          }
+        ]
+      },
+      {
+        "id": "AllergyIntolerance.onset[x]:onsetAge",
+        "path": "AllergyIntolerance.onset[x]",
+        "sliceName": "onsetAge",
+        "max": "0",
+        "type": [
+          {
+            "code": "Age"
+          }
+        ]
+      },
+      {
+        "id": "AllergyIntolerance.recordedDate",
+        "path": "AllergyIntolerance.recordedDate",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.recorder",
+        "path": "AllergyIntolerance.recorder",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.asserter",
+        "path": "AllergyIntolerance.asserter",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.lastOccurrence",
+        "path": "AllergyIntolerance.lastOccurrence",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.note",
+        "path": "AllergyIntolerance.note",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.note.author[x]",
+        "path": "AllergyIntolerance.note.author[x]",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.note.author[x]:authorReference",
+        "path": "AllergyIntolerance.note.author[x]",
+        "sliceName": "authorReference",
+        "max": "0",
+        "type": [
+          {
+            "code": "Reference",
+            "targetProfile": [
+              "http://hl7.org/fhir/StructureDefinition/Practitioner",
+              "http://hl7.org/fhir/StructureDefinition/Patient",
+              "http://hl7.org/fhir/StructureDefinition/RelatedPerson",
+              "http://hl7.org/fhir/StructureDefinition/Organization",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Patient|1.7.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Practitioner|1.7.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_RelatedPerson|1.7.0",
+              "https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Organization|1.7.0"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "AllergyIntolerance.note.author[x]:authorString",
+        "path": "AllergyIntolerance.note.author[x]",
+        "sliceName": "authorString",
+        "max": "0",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "AllergyIntolerance.note.time",
+        "path": "AllergyIntolerance.note.time",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.note.text",
+        "path": "AllergyIntolerance.note.text",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.reaction",
+        "path": "AllergyIntolerance.reaction",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.reaction.substance",
+        "path": "AllergyIntolerance.reaction.substance",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.reaction.manifestation",
+        "path": "AllergyIntolerance.reaction.manifestation",
+        "short": "Allergische Reaktion",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.reaction.manifestation.coding",
+        "path": "AllergyIntolerance.reaction.manifestation.coding",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.reaction.manifestation.coding:snomed",
+        "path": "AllergyIntolerance.reaction.manifestation.coding",
+        "sliceName": "snomed",
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.reaction.manifestation.coding:snomed.system",
+        "path": "AllergyIntolerance.reaction.manifestation.coding.system",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.reaction.manifestation.coding:snomed.version",
+        "path": "AllergyIntolerance.reaction.manifestation.coding.version",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.reaction.manifestation.coding:snomed.code",
+        "path": "AllergyIntolerance.reaction.manifestation.coding.code",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.reaction.manifestation.coding:snomed.display",
+        "path": "AllergyIntolerance.reaction.manifestation.coding.display",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.reaction.manifestation.text",
+        "path": "AllergyIntolerance.reaction.manifestation.text",
+        "short": "Allergische Reaktion",
+        "mustSupport": true
+      },
+      {
+        "id": "AllergyIntolerance.reaction.description",
+        "path": "AllergyIntolerance.reaction.description",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.reaction.onset",
+        "path": "AllergyIntolerance.reaction.onset",
+        "max": "0"
+      },
+      {
+        "id": "AllergyIntolerance.reaction.severity",
+        "path": "AllergyIntolerance.reaction.severity",
+        "mustSupport": true
+      }
+    ]
+  }
+}

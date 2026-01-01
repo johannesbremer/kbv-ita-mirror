@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<VSD:UC_PersoenlicheVersichertendatenXML CDM_VERSION="5.2.0" xmlns:VSD="http://ws.gematik.de/fa/vsdm/vsd/v5.2"> 
+	<VSD:Versicherter>
+		<VSD:Versicherten_ID>K070990552</VSD:Versicherten_ID>
+		<VSD:Person>
+			<VSD:Geburtsdatum>19900907</VSD:Geburtsdatum>
+			<VSD:Vorname>Monika</VSD:Vorname>
+			<VSD:Nachname>Kleinjung</VSD:Nachname>
+			<VSD:Geschlecht>W</VSD:Geschlecht>
+			<VSD:StrassenAdresse>
+				<VSD:Postleitzahl>65520</VSD:Postleitzahl>
+				<VSD:Ort>Bad Camberg</VSD:Ort>
+				<VSD:Land>
+					<VSD:Wohnsitzlaendercode>D</VSD:Wohnsitzlaendercode>
+				</VSD:Land>
+				<VSD:Strasse>Florastraße</VSD:Strasse>
+				<VSD:Hausnummer>15</VSD:Hausnummer>
+			</VSD:StrassenAdresse>
+		</VSD:Person>
+	</VSD:Versicherter>
+</VSD:UC_PersoenlicheVersichertendatenXML>

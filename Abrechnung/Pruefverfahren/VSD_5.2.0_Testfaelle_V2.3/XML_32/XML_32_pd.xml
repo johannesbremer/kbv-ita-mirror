@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<VSD:UC_PersoenlicheVersichertendatenXML CDM_VERSION="5.2.0" xmlns:VSD="http://ws.gematik.de/fa/vsdm/vsd/v5.2">
+	<VSD:Versicherter>
+		<VSD:Versicherten_ID>G231082448</VSD:Versicherten_ID>
+		<VSD:Person>
+			<VSD:Geburtsdatum>19821023</VSD:Geburtsdatum>
+			<VSD:Vorname>Martin</VSD:Vorname>
+			<VSD:Nachname>Gruber</VSD:Nachname>
+			<VSD:Geschlecht>M</VSD:Geschlecht>
+			<VSD:PostfachAdresse>
+				<VSD:Postleitzahl>10117</VSD:Postleitzahl>
+				<VSD:Ort>Berlin</VSD:Ort>
+				<VSD:Postfach>120264</VSD:Postfach>
+				<VSD:Land>
+					<VSD:Wohnsitzlaendercode>D</VSD:Wohnsitzlaendercode>
+				</VSD:Land>
+			</VSD:PostfachAdresse>
+			<VSD:StrassenAdresse>
+				<VSD:Postleitzahl>14197</VSD:Postleitzahl>
+				<VSD:Ort>Berlin</VSD:Ort>
+				<VSD:Land>
+					<VSD:Wohnsitzlaendercode>D</VSD:Wohnsitzlaendercode>
+				</VSD:Land>
+				<VSD:Strasse>Anneliese- und Georg-von-Groscurth-Plaetzchen</VSD:Strasse>
+				<VSD:Hausnummer>100 B</VSD:Hausnummer>
+			</VSD:StrassenAdresse>
+		</VSD:Person>
+	</VSD:Versicherter>
+</VSD:UC_PersoenlicheVersichertendatenXML>

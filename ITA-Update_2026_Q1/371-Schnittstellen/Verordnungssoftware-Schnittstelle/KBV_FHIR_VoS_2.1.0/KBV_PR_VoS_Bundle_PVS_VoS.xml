@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-PR-VoS-Bundle-PVS-VoS" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS" />
+  <version value="2.1.0" />
+  <name value="KBV_PR_VoS_Bundle_PVS_VoS" />
+  <title value="KBV_PR_VoS_Bundle_PVS_VoS" />
+  <status value="active" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <description value="Bundle zum Aufruf der Verordnungssoftware, enthält die Composition mit dem Profil KBV_PR_VoS_Composition und alle darin referenzierten Ressourcen." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="cda" />
+    <uri value="http://hl7.org/v3/cda" />
+    <name value="CDA (R2)" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Bundle" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Bundle">
+      <path value="Bundle" />
+      <short value="Aufruf-Bundle" />
+      <definition value="Bundle mit kID und den Ressourcen, die für den Aufruf der VoS nötig sind" />
+      <constraint>
+        <key value="compositionPflicht" />
+        <severity value="error" />
+        <human value="Die Ressource vom Typ Composition muss genau einmal vorhanden sein" />
+        <expression value="entry.where(resource is Composition).count()=1" />
+      </constraint>
+      <constraint>
+        <key value="versionComposition" />
+        <severity value="error" />
+        <human value="Die Instanz der Composition muss vom Profil KBV_PR_VoS_Composition|2.1.0 sein" />
+        <expression value="entry.where(resource is Composition).resource.meta.profile = 'https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Composition|2.1.0'" />
+      </constraint>
+      <constraint>
+        <key value="practitionerPflicht" />
+        <severity value="error" />
+        <human value="Die Übergabe einer Instanz zur behandelnden Person (KBV_PR_VoS_Practitioner|2.1.0) ist Pflicht." />
+        <expression value="entry.where(resource.meta.profile = 'https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Practitioner|2.1.0').exists()" />
+      </constraint>
+      <constraint>
+        <key value="ASV-Teamnummer" />
+        <severity value="error" />
+        <human value="Die ASV-Teamnummer muss in der PractitionerRole genau dann vorliegen, wenn die VoS im Rahmen eines ASV-Falls (Statuskennzeichen 01 oder 11) aufgerufen wird." />
+        <expression value="entry.where(resource is Composition).resource.author.where(type='PractitionerRole').reference.resolve().organization.identifier.exists() xor (entry.where(resource is Composition).resource.extension('https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis').value as Coding).code.endsWith('1').not()" />
+      </constraint>
+    </element>
+    <element id="Bundle.id">
+      <path value="Bundle.id" />
+      <short value="BundleID" />
+      <definition value="Die ID des Bundles wird als kID beim Aufruf der VoS übertragen" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.meta">
+      <path value="Bundle.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.meta.source">
+      <path value="Bundle.meta.source" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.meta.profile">
+      <path value="Bundle.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS|2.1.0" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.meta.security">
+      <path value="Bundle.meta.security" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.meta.tag">
+      <path value="Bundle.meta.tag" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.implicitRules">
+      <path value="Bundle.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.language">
+      <path value="Bundle.language" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.identifier">
+      <path value="Bundle.identifier" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.identifier.use">
+      <path value="Bundle.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.identifier.type">
+      <path value="Bundle.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.identifier.system">
+      <path value="Bundle.identifier.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/NamingSystem/KBV_NS_VoS_BundleID" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.identifier.value">
+      <path value="Bundle.identifier.value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.identifier.period">
+      <path value="Bundle.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.identifier.assigner">
+      <path value="Bundle.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.type">
+      <path value="Bundle.type" />
+      <fixedCode value="document" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.timestamp">
+      <path value="Bundle.timestamp" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.total">
+      <path value="Bundle.total" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.link">
+      <path value="Bundle.link" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry">
+      <path value="Bundle.entry" />
+      <short value="Ressourcen" />
+      <definition value="Ressourcen, die für den Aufruf der VoS benötigt werden, inklusive der mandatorischen Composition-Ressource" />
+      <min value="1" />
+      <constraint>
+        <key value="erlaubteRessourcen" />
+        <severity value="error" />
+        <human value="Es dürfen nur Ressourcen aus der VoS-SST und E-Rezept-Bundles übertragen werden." />
+        <expression value="resource.meta.profile.startsWith('https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS') or resource.meta.profile.startsWith('https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle')" />
+      </constraint>
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry.link">
+      <path value="Bundle.entry.link" />
+      <max value="0" />
+      <contentReference value="http://hl7.org/fhir/StructureDefinition/Bundle#Bundle.link" />
+    </element>
+    <element id="Bundle.entry.fullUrl">
+      <path value="Bundle.entry.fullUrl" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry.search">
+      <path value="Bundle.entry.search" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry.request">
+      <path value="Bundle.entry.request" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry.response">
+      <path value="Bundle.entry.response" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.signature">
+      <path value="Bundle.signature" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

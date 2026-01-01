@@ -1,0 +1,1317 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="yes"?>
+<!-- ================================================================
+                     DIES IST EINE BEISPIELDATEI ZUR VERANSCHAULICHUNG - KEINE ECHTDATEN
+===================================================================-->
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<header xsi:type="arv_header_typ" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		<id EX="ARV_223" RT="1.2.276.0.76.3.1.35"/>
+		<version_nbr V="1"/>
+		<document_type_cd V="ARV" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2019-04-01..2019-06-30"/>
+		<origination_dttm V="2016-07-12"/>
+		<provider>
+			<organization>
+				<id EX="17" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KV Niedersachsen"/>
+				<addr>
+					<CNT V="Deutschland"/>
+					<CTY V="Hannover"/>
+					<HNR V="22"/>
+					<ZIP V="30175"/>
+					<STR V="Berliner Allee"/>
+				</addr>
+				<telecom V="tel:030/40052077"/>
+				<telecom V="tel:030/40052077"/>
+				<telecom V="mailto:ita@kvn.de"/>
+			</organization>
+		</provider>
+		<state V="RELEASE" S="1.2.276.0.76.5.108"/>
+		<interface>
+			<id EX="ARV" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ARV"/>
+			<version V="4.02"/>
+		</interface>
+	</header>
+	<body xsi:type="arv_body_typ">
+		<geltungsbereich_kv S="1.2.276.0.76.5.233" V="17" xmlns="urn:ehd/arv/001" xmlns:geltungsbereich_kv="urn:ehd/arv/001">
+			<arzneimittelvereinbarungen>
+				<leitsubstanzquotenr_liste prioritaet="2">
+					<leitsubstanzquotenregelung>
+						<wirkstoffgruppe V="Beta-Adrenozeptor-Antagonisten, selektiv"/>
+						<leitsubstanz>
+							<wirkstoff V="Metoprolol"/>
+							<wirkstoff V="Bisoprolol"/>
+							<fachgruppenquote>
+								<quote_leitsubstanz_bruttoumsatz V="70.0"/>
+								<warnhinweis_ersetzung V="Sie haben einen Beta-Blocker ausgewählt. In Ihrem
+					KV-Bereich existiert für diese Wirkstoffgruppe eine
+					Leitsubstanzquotenregelung.Leitsubstanzen sind Metoprolol und
+					Bisoprolol. Ziel ist es, den Anteil der Leitsubstanzen im
+					KV-Bereich auf 70% zu erhöhen"/>
+								<hinweis_verordnung_identisch V="Sie haben bereits eine Leitsubstanz gewählt
+					aus der Gruppe der Betablocker gewählt. Der Anteil der
+					Leitsubstanzen bei der Gruppe der Betablocker soll in Ihrem
+					KV-Bereich 70% betragen"/>
+							</fachgruppenquote>
+						</leitsubstanz>
+					</leitsubstanzquotenregelung>
+					<leitsubstanzquotenregelung>
+						<wirkstoff V="Metformin"/>
+						<wirkstoff V="Glibenclamid"/>
+						<wirkstoff V="Glimepirid"/>
+						<wirkstoff V="Rosiglitazon"/>
+						<wirkstoff V="Pioglitazon"/>
+						<wirkstoff V="Sitagliptin"/>
+						<wirkstoff V="Vildagliptin"/>
+						<wirkstoff V="Repaglinid"/>
+						<wirkstoff V="Nateglinid"/>
+						<leitsubstanz>
+							<wirkstoff V="Metformin"/>
+							<wirkstoff V="Glibenclamid"/>
+							<fachgruppenquote>
+								<quote_leitsubstanz_bruttoumsatz V="60.0"/>
+							</fachgruppenquote>
+						</leitsubstanz>
+						<leitsubstanz>
+							<wirkstoff V="Glimepirid"/>
+							<fachgruppenquote>
+								<quote_leitsubstanz_bruttoumsatz V="35.0"/>
+								<warnhinweis_ersetzung V="Sie haben ein orales Antidiabetikum ausgewählt.
+					Hierzu existiert auf der Landesebene eine
+					Leitsubstanzquotenregelung. Leitsubstanzen sind Metformin,
+					Glibenclamid und Glimepirid."/>
+							</fachgruppenquote>
+						</leitsubstanz>
+					</leitsubstanzquotenregelung>
+					<leitsubstanzquotenregelung>
+						<standardaggregat V="Fosavance *"/>
+						<atc5 V="M05BA01"/>
+						<atc5 V="M05BA04"/>
+						<atc5 V="M05BA06">
+							<darreichungsform V="ILO" S="1.2.276.0.76.3.1.1.5.2.15" einschluss="false"/>
+							<darreichungsform V="IFA" S="1.2.276.0.76.3.1.1.5.2.15" einschluss="false"/>
+							<darreichungsform V="IFF" S="1.2.276.0.76.3.1.1.5.2.15" einschluss="false"/>
+							<darreichungsform V="IFK" S="1.2.276.0.76.3.1.1.5.2.15" einschluss="false"/>
+							<darreichungsform V="INF" S="1.2.276.0.76.3.1.1.5.2.15" einschluss="false"/>
+							<darreichungsform V="IFL" S="1.2.276.0.76.3.1.1.5.2.15" einschluss="false"/>
+							<darreichungsform V="INI" S="1.2.276.0.76.3.1.1.5.2.15" einschluss="false"/>
+							<darreichungsform V="DFL" S="1.2.276.0.76.3.1.1.5.2.15" einschluss="false"/>
+						</atc5>
+						<atc5 V="M05BA07"/>
+						<atc5 V="M05BA08"/>
+						<standardaggregat V="Zometa *" einschluss="false"/>
+						<leitsubstanz>
+							<atc5 V="M05BA04"/>
+							<fachgruppenquote>
+								<fachgruppenintervall intervall_start="23" intervall_stop="33"/>
+								<quote_leitsubstanz_ddd V="81.3"/>
+								<warnhinweis_ersetzung V="Sie haben ein Bisphosphonat gewählt. Hierzu existiert auf Landesebene eine Leitsubstanzquotenregelung. Leitsubstanz ist Alendronsäure."/>
+							</fachgruppenquote>
+							<fachgruppenquote>
+								<fachgruppenintervall intervall_start="1" intervall_stop="3"/>
+								<quote_leitsubstanz_ddd V="83.0"/>
+								<warnhinweis_ersetzung V="Sie haben ein Bisphosphonat gewählt. Hierzu existiert auf Landesebene eine Leitsubstanzquotenregelung. Leitsubstanz ist Alendronsäure."/>
+							</fachgruppenquote>
+							<fachgruppenquote>
+								<fachgruppenintervall intervall_start="4" intervall_stop="22"/>
+								<fachgruppenintervall intervall_start="34" intervall_stop="99"/>
+								<warnhinweis_ersetzung V="Sie haben ein Bisphosphonat gewählt. Hierzu existiert auf Landesebene eine Leitsubstanzquotenregelung. Leitsubstanz ist Alendronsäure."/>
+							</fachgruppenquote>
+						</leitsubstanz>
+					</leitsubstanzquotenregelung>
+				</leitsubstanzquotenr_liste>
+				<zielpreisr_liste prioritaet="2">
+					<zielpreisregelung>
+						<pzn V="00113879"/>
+						<pzn V="07121540"/>
+						<pzn V="02067994"/>
+						<pzn V="03572257"/>
+						<zielpreis V="28.00"/>
+						<kategorie_zielpreisregelung hinweis="Sie haben ein Präparat gewählt, für das ein Zielpreis von der Landesebene festgelegt wurde. Mit Hilfe von Zielpreisen können Wirtschaftlichkeitsreserven erschlossen werden. Dieses Präparat liegt sogar unter dem vereinbarten Zielpreis">
+							<intervall_stop V="100.0" inklusion_intervallgrenze="true"/>
+						</kategorie_zielpreisregelung>
+						<kategorie_zielpreisregelung hinweis="Sie haben ein Präparat gewählt, für das ein Zielpreis von der Landesebene festgelegt wurde. Mit Hilfe von Zielpreisen können Wirtschaftlichkeitsreserven erschlossen werden. Dieses Präparat liegt über dem Zielpreis. Es existieren wirtschaftlichere Alternativen.">
+							<intervall_start V="100.0" inklusion_intervallgrenze="false"/>
+							<intervall_stop V="110.0" inklusion_intervallgrenze="true"/>
+						</kategorie_zielpreisregelung>
+						<kategorie_zielpreisregelung hinweis="Sie haben ein Präparat gewählt, für das ein Zielpreis von der Landesebene festgelegt wurde. Mit Hilfe von Zielpreisen können Wirtschaftlichkeitsreserven erschlossen werden. Dieses Präparat liegt deutlich über dem Zielpreis. Es existieren wirtschaftlichere Alternativen.">
+							<intervall_start V="110.0" inklusion_intervallgrenze="false"/>
+						</kategorie_zielpreisregelung>
+					</zielpreisregelung>
+				</zielpreisr_liste>
+				<!--	<me_too_liste prioritaet="1">
+					<me_too_regelung>
+						<me_too>
+							<pzn V="07699374">
+								<ddd_je_packung V="200.0"/>
+							</pzn>
+							<pzn V="00323140">
+								<ddd_je_packung V="400.0"/>
+							</pzn>
+							<pzn V="07699345">
+								<ddd_je_packung V="100.0"/>
+							</pzn>
+							<pzn V="04000126">
+								<ddd_je_packung V="800.0"/>
+							</pzn>
+							<pzn V="07699368">
+								<ddd_je_packung V="100.0"/>
+							</pzn>
+							<pzn V="00323134">
+								<ddd_je_packung V="200.0"/>
+							</pzn>
+							<pzn V="07699339">
+								<ddd_je_packung V="50.0"/>
+							</pzn>
+							<pzn V="04000095">
+								<ddd_je_packung V="400.0"/>
+							</pzn>
+							<pzn V="07699351">
+								<ddd_je_packung V="60.0"/>
+							</pzn>
+							<pzn V="00323128">
+								<ddd_je_packung V="120.0"/>
+							</pzn>
+							<pzn V="07699322">
+								<ddd_je_packung V="30.0"/>
+							</pzn>
+							<pzn V="04000089">
+								<ddd_je_packung V="240.0"/>
+							</pzn>
+							<verordnungsalternative>
+								<wirkstoff V="Simvastatin"/>
+							</verordnungsalternative>
+						</me_too>
+						<fachgruppenquote>
+							<fachgruppenintervall intervall_start="1" intervall_stop="3"/>
+							<quote_me_too_bruttoumsatz V="5.0"/>
+							<warnhinweis_ersetzung V="Sie haben ein Präparat gewählt, das sich auf der von der Landesebene festgelegten Me-too-Liste befindet. Für diese Präparate existieren Verordnungsalternativen."/>
+						</fachgruppenquote>
+					</me_too_regelung>
+				</me_too_liste>-->
+				<kostenvergleich_ddd_liste>
+					<kostenvergleich_ddd>
+						<atc5 V="N02AA01">
+							<darreichungsform V="BTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FDA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="LTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="KAP" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="RET" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="REK" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="PUL" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="GRA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="TRO" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FLU" S="1.2.276.0.76.3.1.1.5.2.15"/>
+						</atc5>
+						<atc5 V="N02AA03">
+							<darreichungsform V="BTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FDA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="LTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="KAP" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="RET" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="REK" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="PUL" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="GRA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="TRO" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FLU" S="1.2.276.0.76.3.1.1.5.2.15"/>
+						</atc5>
+						<atc5 V="N02AA05">
+							<darreichungsform V="FDA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="LTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="KAP" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="RET" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="REK" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="PUL" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="GRA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="TRO" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FLU" S="1.2.276.0.76.3.1.1.5.2.15"/>
+						</atc5>
+						<atc5 V="N02AA55">
+							<darreichungsform V="FDA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="LTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="KAP" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="RET" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="REK" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="PUL" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="GRA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="TRO" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FLU" S="1.2.276.0.76.3.1.1.5.2.15"/>
+						</atc5>
+						<atc5 V="N02AB02">
+							<darreichungsform V="FDA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="LTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="KAP" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="RET" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="REK" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="PUL" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="GRA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="TRO" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FLU" S="1.2.276.0.76.3.1.1.5.2.15"/>
+						</atc5>
+						<atc5 V="N02AB03">
+							<darreichungsform V="FDA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="LTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="KAP" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="RET" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="REK" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="PUL" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="GRA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="TRO" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FLU" S="1.2.276.0.76.3.1.1.5.2.15"/>
+						</atc5>
+						<atc5 V="N02AE01">
+							<darreichungsform V="FDA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="LTA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="KAP" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="RET" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="REK" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="PUL" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="GRA" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="TRO" S="1.2.276.0.76.3.1.1.5.2.15"/>
+							<darreichungsform V="FLU" S="1.2.276.0.76.3.1.1.5.2.15"/>
+						</atc5>
+						<zielkosten_je_ddd V="5.45"/>
+						<fachgruppenquote>
+							<quote_kostenvergleich_ddd V="71.5"/>
+							<kategorie_ddd_kosten_vergleich hinweis="Sie haben ein Präparat gewählt, dessen Tagestherapiekosten (DDD-Kosten) um mehr als fünf Prozent über dem Zielwert liegt, der von der Landesebene für stark wirksame Analgetika festgelegt wurde. Es existieren günstigere Verordnungsalternativen. Von der Landesebene wurde festgelegt, dass mindestens 71,5% der verordneten DDD für stark wirksame Analgetika unter dem Zielpreis von 5,45 Euro pro DDD liegen sollten ">
+								<intervall_start V="105" inklusion_intervallgrenze="true"/>
+								<intervall_stop V="115" inklusion_intervallgrenze="false"/>
+							</kategorie_ddd_kosten_vergleich>
+							<kategorie_ddd_kosten_vergleich hinweis="Sie haben ein Präparat gewählt, dessen Tagestherapiekosten (DDD-Kosten) um mehr als fünfzehn Prozent über dem Zielwert liegt, der von der Landesebene für stark wirksame Analgetika festgelegt wurde. Es existieren günstigere Verordnungsalternativen. Von der Landesebene wurde festgelegt, dass mindestens 71,5% der verordneten DDD für stark wirksame Analgetika unter dem Zielpreis von 5,45 Euro pro DDD liegen sollten ">
+								<intervall_start V="115.0" inklusion_intervallgrenze="true"/>
+							</kategorie_ddd_kosten_vergleich>
+						</fachgruppenquote>
+					</kostenvergleich_ddd>
+				</kostenvergleich_ddd_liste>
+				<generikaquotenr_liste>
+					<generikaquotenregelung>
+						<standardaggregat_original V="Aerocef"/>
+						<standardaggregat_original V="Cephoral"/>
+						<standardaggregat_original V="Elobact"/>
+						<standardaggregat_original V="Orelox"/>
+						<standardaggregat_original V="Panoral"/>
+						<standardaggregat_original V="Podomexef"/>
+						<standardaggregat_original V="Suprax"/>
+						<standardaggregat_original V="Zinnat"/>
+						<standardaggregat_original V="Rocephin"/>
+						<standardaggregat_original V="Fortum"/>
+						<standardaggregat_original V="Claforan"/>
+						<standardaggregat_original V="Rocephine"/>
+						<standardaggregat_original V="Solvetan"/>
+						<standardaggregat_original V="Uro Cephoral"/>
+						<standardaggregat_original V="Ceftoral"/>
+						<standardaggregat_original V="Zinacef"/>
+						<fachgruppenquote>
+							<fachgruppenintervall intervall_start="1" intervall_stop="3"/>
+							<quote_generika_bruttoumsatz V="95.0">
+								<atc4 V="J01DC"/>
+								<atc4 V="J01DD"/>
+							</quote_generika_bruttoumsatz>
+							<warnhinweis_ersetzung V="Sie haben ein Originalpräparat gewählt. In der Gruppe der oralen Cephalosporine existieren generische Alternativen. Für die Gruppe der oralen Cephalosporine wurde von der Landesebene eine Generikaquote von 95% auf Basis des Bruttoumsatzes festgelegt."/>
+						</fachgruppenquote>
+					</generikaquotenregelung>
+				</generikaquotenr_liste>
+				<hoechstquotenr_liste>
+					<hoechstquotenregelung>
+						<standardaggregat V="Ezeterol *"/>
+						<standardaggregat V="Inegy *"/>
+						<verordnungsalternative>
+							<atc5 V=" C10AA01"/>
+						</verordnungsalternative>
+						<fachgruppenquote>
+							<hoechstquote_verordnungen V="3.5">
+								<atc4 V="C10AA"/>
+								<atc5 V="C10AX09"/>
+								<atc5 V="C10BA02"/>
+							</hoechstquote_verordnungen>
+							<warnhinweis_ersetzung V="Ezetrol® und Inegy® unterliegen der Höchstquotenregelung und sollten nach Möglichkeit durch die Alternative Simvastatin ersetzt werden."/>
+						</fachgruppenquote>
+					</hoechstquotenregelung>
+				</hoechstquotenr_liste>
+				<biosimilarquotenr_liste prioritaet="3">
+					<biosimilarquotenregelung>
+						<atc4 V="B03XA"/>
+						<biosimilar>
+							<standardaggregat V="Epoetin alfa Hexal"/>
+							<standardaggregat V="Abseamed"/>
+							<standardaggregat V="Eprex"/>
+							<standardaggregat V="Binocrit"/>
+							<standardaggregat V="Silapo"/>
+							<standardaggregat V="Retacrit"/>
+							<fachgruppenquote>
+								<fachgruppenintervall intervall_start="1" intervall_stop="3"/>
+								<quote_biosimilar_ddd V="25.0"/>
+								<warnhinweis_ersetzung V="Sie haben ein Präparat aus einer Gruppe gewählt, in der Biosimilars verfügbar sind. Auf Landesebene wurde ein Biosimilar-Anteil von 25% auf Basis der verordneten Tagesdosen (DDD) festgelegt."/>
+							</fachgruppenquote>
+						</biosimilar>
+					</biosimilarquotenregelung>
+				</biosimilarquotenr_liste>
+				<infomassnahmen_liste>
+					<infomassnahmenregelung>
+						<handelsname V="Pradaxa"/>
+						<warnhinweis_pvs V="Sie haben ein Präparat mit dem Wirkstoff Dabigatran gewählt. Aufgrund fehlender Langzeitdaten sowie der hohen Kosten ist bei der Verordnung von Dabigatran kritische Zurückhaltung angebracht. Bitte beachten Sie die Information Ihrer Kassenärztlichen Vereinigung zu diesem Wirkstoff."/>
+						<verweis_dokument V="InfoMassnahmePradaxa.pdf"/>
+					</infomassnahmenregelung>
+					<infomassnahmenregelung>
+						<pzn V="03002985"/>
+						<pzn V="02258197"/>
+						<pzn V="02258180"/>
+						<warnhinweis_pvs V="Sie haben ein Präparat mit dem Wirkstoff Indometacin gewählt. Es handelt sich hierbei um einen potenziell inadäquaten Wirkstoff für ältere Menschen. Der Wirkstoff ist in der Priscus-Liste aufgeführt."/>
+						<bedingungs_liste>
+							<bedingung>
+								<altersgrenze>
+									<von V="65"/>
+									<unit V="J"/>
+								</altersgrenze>
+							</bedingung>
+						</bedingungs_liste>
+					</infomassnahmenregelung>
+				</infomassnahmen_liste>
+				<!--	<qualitaetssicherungsr_liste>
+					<qualitaetssicherungsregelung>
+						<atc4 V="N06DA"/>
+						<atc4 V="N06DH"/>
+						<atc4 V="N06DP"/>
+						<atc4 V="N06DX"/>
+						<warnhinweis_pvs V="Achtung Qualitätssicherung! Die von Ihnen gewählte Verordnung sollte unter qualitätssichernden Bedingungen erfolgen. Bitte beachten Sie die Informationen auf der hinterlegten Seite _Antidementiva_."/>
+						<verweis_dokument V="Antidementiva.pdf"/>
+					</qualitaetssicherungsregelung>
+				</qualitaetssicherungsr_liste>
+				<studienregelung_liste>
+					<studienregelung>
+						<handelsname V="Inegy"/>
+						<warnhinweis_pvs V="Wichtige Studienergebnisse! Bitte beachten Sie die zusammenfassende Bewertung zur ENHANCE-Studie im hinterlegten Dokument _Ezetimib_."/>
+						<verweis_dokument V="Ezetimib.pdf"/>
+					</studienregelung>
+				</studienregelung_liste>-->
+				<behandlungsalternativen_liste>
+					<behandlungsalternativenregelung>
+						<handelsname V="Zypadhera"/>
+						<warnhinweis_pvs V="Vorteile einer Injektionsbehandlung mit _Zypadhera_ gegenüber der oralen Behandlung mit Olanzapin wurden in den Zulassungsunterlagen nicht dargestellt."/>
+						<verweis_dokument V="Zulassung_Zypadhera.pdf"/>
+					</behandlungsalternativenregelung>
+				</behandlungsalternativen_liste>
+				<iww_liste prioritaet="1">
+					<iwwliste>
+						<verordnungen>
+							<atc5 V="N06DA02" bezeichnung="Donepezil" iww_kategorie="1">
+								<iww_anmerkung V="Donepezil: Standard bei leichter bis mittelschwerer Alzheimer-Demenz."/>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06DA04" bezeichnung="Galantamin" iww_kategorie="1">
+								<iww_anmerkung V="Galantamin: Standard bei leichter bis mittelschwerer Alzheimer-Demenz."/>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06DA03" bezeichnung="Rivastigmin (oral)" iww_kategorie="1">
+								<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="false"/>
+								<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="false"/>
+								<iww_anmerkung V="Rivastigmin (oral): Standard bei leichter bis mittelschwerer Alzheimer-Demenz."/>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06DX01" bezeichnung="Memantin" iww_kategorie="2">
+								<iww_anmerkung V="Memantin: Reserve bei Unverträglichkeit&#xD;&#xA;oder Unwirksamkeit von Cholinesterase-&#xD;&#xA;Hemmern sowie Standard zur&#xD;&#xA;Behandlung der schweren Alzheimer&#xD;&#xA;Demenz. Standard bei leichter bis mittelschwerer Alzheimer-Demenz: =>Donepezil, =>Galantamin oder =>[Rivastigmin (oral)].">
+									<link atc="N06DA02" beschreibung="Donepezil"/>
+									<link atc="N06DA04" beschreibung="Galantamin"/>
+									<link atc="N06DA03" beschreibung="Rivastigmin (oral)">
+										<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="false"/>
+										<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="false"/>
+									</link>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06DA03" bezeichnung="Rivastigmin (transdermal)" iww_kategorie="2">
+								<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="true"/>
+								<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="true"/>
+								<iww_anmerkung V="Rivastigmin (transdermal): Reserve für Patienten mit Schluckstörungen oder mit unerwünschter Wirkung unter oraler Gabe. Standard: =>[Rivastigmin (oral)].">
+									<link atc="N06DA03" beschreibung="Rivastigmin (oral)">
+										<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="true"/>
+										<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="true"/>
+									</link>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06DX07" bezeichnung="Dihydroergotoxin" iww_kategorie="3">
+								<iww_anmerkung V="Dihydroergotoxin: kein Standard bei Alzheimer-Demenz. Standard: =>Donepezil, =>Galantamin oder =>[Rivastigmin (oral)].">
+									<link atc="N06DA02" beschreibung="Donepezil"/>
+									<link atc="N06DA04" beschreibung="Galantamin"/>
+									<link atc="N06DA03" beschreibung="Rivastigmin (oral)">
+										<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="false"/>
+										<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="false"/>
+									</link>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06DP01" bezeichnung="Ginkgo biloba" iww_kategorie="3">
+								<iww_anmerkung V="Ginkgo biloba: kein Standard bei Alzheimer-Demenz. Standard: =>Donepezil, =>Galantamin oder =>[Rivastigmin (oral)].">
+									<link atc="N06DA02" beschreibung="Donepezil"/>
+									<link atc="N06DA04" beschreibung="Galantamin"/>
+									<link atc="N06DA03" beschreibung="Rivastigmin (oral)">
+										<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="false"/>
+										<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="false"/>
+									</link>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06DX13" bezeichnung="Nicergolin" iww_kategorie="3">
+								<iww_anmerkung V="Nicergolin: kein Standard bei Alzheimer-Demenz. Standard: =>Donepezil, =>Galantamin oder =>[Rivastigmin (oral)].">
+									<link atc="N06DA02" beschreibung="Donepezil"/>
+									<link atc="N06DA04" beschreibung="Galantamin"/>
+									<link atc="N06DA03" beschreibung="Rivastigmin (oral)">
+										<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="false"/>
+										<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="false"/>
+									</link>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06DX18" bezeichnung="Nimodipin" iww_kategorie="3">
+								<iww_anmerkung V="Nimodipin: kein Standard bei Alzheimer-Demenz. Standard: =>Donepezil, =>Galantamin oder =>[Rivastigmin (oral)].">
+									<link atc="N06DA02" beschreibung="Donepezil"/>
+									<link atc="N06DA04" beschreibung="Galantamin"/>
+									<link atc="N06DA03" beschreibung="Rivastigmin (oral)">
+										<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="false"/>
+										<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="false"/>
+									</link>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06BX03" bezeichnung="Piracetam" iww_kategorie="3">
+								<iww_anmerkung V="Piracetam: kein Standard bei Alzheimer-Demenz. Standard: =>Donepezil, =>Galantamin oder =>[Rivastigmin (oral)].">
+									<link atc="N06DA02" beschreibung="Donepezil"/>
+									<link atc="N06DA04" beschreibung="Galantamin"/>
+									<link atc="N06DA03" beschreibung="Rivastigmin (oral)">
+										<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="false"/>
+										<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="false"/>
+									</link>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<bedingungs_liste>
+							<bedingung>
+								<iww_indikationen>
+									<indikation>Alzheimer-Demenz</indikation>
+								</iww_indikationen>
+							</bedingung>
+						</bedingungs_liste>
+					</iwwliste>
+					<iwwliste>
+						<verordnungen>
+							<atc5 V="N05AN01" bezeichnung="Lithium" iww_kategorie="1">
+								<iww_anmerkung V="Lithium: Standard zur Phasenprophylaxe bei bipolarer Störung."/>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N05AH04" bezeichnung="Quetiapin" iww_kategorie="1">
+								<iww_anmerkung V="Quetiapin: Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung."/>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AB03" bezeichnung="Fluoxetin" iww_kategorie="2">
+								<iww_anmerkung V="Fluoxetin: Reserve zur Akutbehandlung der depressiven Phase bei bipolarer Störung. Standard: =>Quetiapin. &#xD;&#xA;">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N03AX09" bezeichnung="Lamotrigin" iww_kategorie="2">
+								<iww_anmerkung V="Lamotrigin: Reserve zur Phasenprophylaxe bei bipolarer Störung. Standard: =>Lithium.">
+									<link atc="N05AN01" beschreibung="Lithium"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AA09" bezeichnung="Amitriptylin" iww_kategorie="3">
+								<iww_anmerkung V="Amitriptylin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AA25" bezeichnung="Amitriptylinoxid" iww_kategorie="3">
+								<iww_anmerkung V="Amitriptylinoxid: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N03AF01" bezeichnung="Carbamazepin" iww_kategorie="3">
+								<iww_anmerkung V="Carbamazepin: kein Standard zur Phasenprophylaxe bei bipolarer Störung. Standard: =>Lithium.">
+									<link atc="N05AN01" beschreibung="Lithium"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AB04" bezeichnung="Citalopram" iww_kategorie="3">
+								<iww_anmerkung V="Citalopram: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AA04" bezeichnung="Clomipramin" iww_kategorie="3">
+								<iww_anmerkung V="Clomipramin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AA16" bezeichnung="Dosulepin" iww_kategorie="3">
+								<iww_anmerkung V="Dosulepin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AA12" bezeichnung="Doxepin" iww_kategorie="3">
+								<iww_anmerkung V="Doxepin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AA02" bezeichnung="Imipramin" iww_kategorie="3">
+								<iww_anmerkung V="Imipramin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AA21" bezeichnung="Maprotilin" iww_kategorie="3">
+								<iww_anmerkung V="Maprotilin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AX03" bezeichnung="Mianserin" iww_kategorie="3">
+								<iww_anmerkung V="Mianserin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AA10" bezeichnung="Nortriptylin" iww_kategorie="3">
+								<iww_anmerkung V="Nortriptylin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AX14" bezeichnung="Tianeptin" iww_kategorie="3">
+								<iww_anmerkung V="Tianeptin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AF04" bezeichnung="Tranylcypromin" iww_kategorie="3">
+								<iww_anmerkung V="Tranylcypromin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AX05" bezeichnung="Trazodon" iww_kategorie="3">
+								<iww_anmerkung V="Trazodon: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<verordnungen>
+							<atc5 V="N06AA06" bezeichnung="Trimipramin" iww_kategorie="3">
+								<iww_anmerkung V="Trimipramin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+									<link atc="N05AH04" beschreibung="Quetiapin"/>
+								</iww_anmerkung>
+							</atc5>
+						</verordnungen>
+						<bedingungs_liste>
+							<bedingung>
+								<iww_indikationen>
+									<indikation>Depression (bei bipolarer Störung)</indikation>
+								</iww_indikationen>
+							</bedingung>
+						</bedingungs_liste>
+					</iwwliste>
+				</iww_liste>
+			</arzneimittelvereinbarungen>
+			<iww_indikationsbaum>
+				<kapitel>
+					<text>neuropsychiatrische Störungen</text>
+					<kapitel>
+						<text>Alzheimer-Demenz</text>
+						<wirkstoff bezeichnung="Donepezil" iww_kategorie="1">
+							<iww_anmerkung V="Donepezil: Standard bei leichter bis mittelschwerer Alzheimer-Demenz."/>
+							<atc V="N06DA02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Galantamin" iww_kategorie="1">
+							<iww_anmerkung V="Galantamin: Standard bei leichter bis mittelschwerer Alzheimer-Demenz."/>
+							<atc V="N06DA04"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Rivastigmin (oral)" iww_kategorie="1">
+							<iww_anmerkung V="Rivastigmin (oral): Standard bei leichter bis mittelschwerer Alzheimer-Demenz."/>
+							<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="false"/>
+							<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="false"/>
+							<atc V="N06DA03"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Memantin" iww_kategorie="2">
+							<iww_anmerkung V="Memantin: Reserve bei Unverträglichkeit&#xD;&#xA;oder Unwirksamkeit von Cholinesterase-&#xD;&#xA;Hemmern sowie Standard zur&#xD;&#xA;Behandlung der schweren Alzheimer&#xD;&#xA;Demenz. Standard bei leichter bis mittelschwerer Alzheimer-Demenz: =>Donepezil, =>Galantamin oder =>[Rivastigmin (oral)].">
+								<link atc="N06DA02" beschreibung="Donepezil"/>
+								<link atc="N06DA04" beschreibung="Galantamin"/>
+								<link atc="N06DA03" beschreibung="Rivastigmin (oral)">
+									<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="false"/>
+									<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="false"/>
+								</link>
+							</iww_anmerkung>
+							<atc V="N06DX01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Rivastigmin (transdermal)" iww_kategorie="2">
+							<iww_anmerkung V="Rivastigmin (transdermal): Reserve für Patienten mit Schluckstörungen oder mit unerwünschter Wirkung unter oraler Gabe. Standard: =>[Rivastigmin (oral)].">
+								<link atc="N06DA03" beschreibung="Rivastigmin (oral)">
+									<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="true"/>
+									<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="true"/>
+								</link>
+							</iww_anmerkung>
+							<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="true"/>
+							<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="true"/>
+							<atc V="N06DA03"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Dihydroergotoxin" iww_kategorie="3">
+							<iww_anmerkung V="Dihydroergotoxin: kein Standard bei Alzheimer-Demenz. Standard: =>Donepezil, =>Galantamin oder =>[Rivastigmin (oral)].">
+								<link atc="N06DA02" beschreibung="Donepezil"/>
+								<link atc="N06DA04" beschreibung="Galantamin"/>
+								<link atc="N06DA03" beschreibung="Rivastigmin (oral)">
+									<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="false"/>
+									<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="false"/>
+								</link>
+							</iww_anmerkung>
+							<atc V="N06DX07"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Ginkgo biloba" iww_kategorie="3">
+							<iww_anmerkung V="Ginkgo biloba: kein Standard bei Alzheimer-Demenz. Standard: =>Donepezil, =>Galantamin oder =>[Rivastigmin (oral)].">
+								<link atc="N06DA02" beschreibung="Donepezil"/>
+								<link atc="N06DA04" beschreibung="Galantamin"/>
+								<link atc="N06DA03" beschreibung="Rivastigmin (oral)">
+									<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="false"/>
+									<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="false"/>
+								</link>
+							</iww_anmerkung>
+							<atc V="N06DP01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Nicergolin" iww_kategorie="3">
+							<iww_anmerkung V="Nicergolin: kein Standard bei Alzheimer-Demenz. Standard: =>Donepezil, =>Galantamin oder =>[Rivastigmin (oral)].">
+								<link atc="N06DA02" beschreibung="Donepezil"/>
+								<link atc="N06DA04" beschreibung="Galantamin"/>
+								<link atc="N06DA03" beschreibung="Rivastigmin (oral)">
+									<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="false"/>
+									<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="false"/>
+								</link>
+							</iww_anmerkung>
+							<atc V="N06DX13"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Nimodipin" iww_kategorie="3">
+							<iww_anmerkung V="Nimodipin: kein Standard bei Alzheimer-Demenz. Standard: =>Donepezil, =>Galantamin oder =>[Rivastigmin (oral)].">
+								<link atc="N06DA02" beschreibung="Donepezil"/>
+								<link atc="N06DA04" beschreibung="Galantamin"/>
+								<link atc="N06DA03" beschreibung="Rivastigmin (oral)">
+									<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="false"/>
+									<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="false"/>
+								</link>
+							</iww_anmerkung>
+							<atc V="N06DX18"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Piracetam" iww_kategorie="3">
+							<iww_anmerkung V="Piracetam: kein Standard bei Alzheimer-Demenz. Standard: =>Donepezil, =>Galantamin oder =>[Rivastigmin (oral)].">
+								<link atc="N06DA02" beschreibung="Donepezil"/>
+								<link atc="N06DA04" beschreibung="Galantamin"/>
+								<link atc="N06DA03" beschreibung="Rivastigmin (oral)">
+									<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFL" einschluss="false"/>
+									<darreichungsform S="1.2.276.0.76.3.1.1.5.2.15" V="PFT" einschluss="false"/>
+								</link>
+							</iww_anmerkung>
+							<atc V="N06BX03"/>
+						</wirkstoff>
+					</kapitel>
+					<kapitel>
+						<text>Depression (bei bipolarer Störung)</text>
+						<wirkstoff bezeichnung="Lithium" iww_kategorie="1">
+							<iww_anmerkung V="Lithium: Standard zur Phasenprophylaxe bei bipolarer Störung."/>
+							<atc V="N05AN01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Quetiapin" iww_kategorie="1">
+							<iww_anmerkung V="Quetiapin: Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung."/>
+							<atc V="N05AH04"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Fluoxetin" iww_kategorie="2">
+							<iww_anmerkung V="Fluoxetin: Reserve zur Akutbehandlung der depressiven Phase bei bipolarer Störung. Standard: =>Quetiapin. &#xD;&#xA;">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AB03"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Lamotrigin" iww_kategorie="2">
+							<iww_anmerkung V="Lamotrigin: Reserve zur Phasenprophylaxe bei bipolarer Störung. Standard: =>Lithium.">
+								<link atc="N05AN01" beschreibung="Lithium"/>
+							</iww_anmerkung>
+							<atc V="N03AX09"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Amitriptylin" iww_kategorie="3">
+							<iww_anmerkung V="Amitriptylin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AA09"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Amitriptylinoxid" iww_kategorie="3">
+							<iww_anmerkung V="Amitriptylinoxid: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AA25"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Carbamazepin" iww_kategorie="3">
+							<iww_anmerkung V="Carbamazepin: kein Standard zur Phasenprophylaxe bei bipolarer Störung. Standard: =>Lithium.">
+								<link atc="N05AN01" beschreibung="Lithium"/>
+							</iww_anmerkung>
+							<atc V="N03AF01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Citalopram" iww_kategorie="3">
+							<iww_anmerkung V="Citalopram: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AB04"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Clomipramin" iww_kategorie="3">
+							<iww_anmerkung V="Clomipramin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AA04"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Dosulepin" iww_kategorie="3">
+							<iww_anmerkung V="Dosulepin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AA16"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Doxepin" iww_kategorie="3">
+							<iww_anmerkung V="Doxepin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AA12"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Imipramin" iww_kategorie="3">
+							<iww_anmerkung V="Imipramin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AA02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Maprotilin" iww_kategorie="3">
+							<iww_anmerkung V="Maprotilin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AA21"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Mianserin" iww_kategorie="3">
+							<iww_anmerkung V="Mianserin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AX03"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Nortriptylin" iww_kategorie="3">
+							<iww_anmerkung V="Nortriptylin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AA10"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Tianeptin" iww_kategorie="3">
+							<iww_anmerkung V="Tianeptin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AX14"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Tranylcypromin" iww_kategorie="3">
+							<iww_anmerkung V="Tranylcypromin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AF04"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Trazodon" iww_kategorie="3">
+							<iww_anmerkung V="Trazodon: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AX05"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Trimipramin" iww_kategorie="3">
+							<iww_anmerkung V="Trimipramin: kein Standard bei bipolarer Störung. Standard zur Akutbehandlung der depressiven Phase bei bipolarer Störung: =>Quetiapin.">
+								<link atc="N05AH04" beschreibung="Quetiapin"/>
+							</iww_anmerkung>
+							<atc V="N06AA06"/>
+						</wirkstoff>
+					</kapitel>
+					<kapitel>
+						<text>Depression (unipolar)</text>
+						<wirkstoff bezeichnung="Amitriptylin" iww_kategorie="1">
+							<iww_anmerkung V="Amitriptylin: Standard bei unipolarer Depression."/>
+							<atc V="N06AA09"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Citalopram" iww_kategorie="1">
+							<iww_anmerkung V="Citalopram: Standard bei unipolarer Depression."/>
+							<atc V="N06AB04"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Doxepin" iww_kategorie="1">
+							<iww_anmerkung V="Doxepin: Standard bei unipolarer Depression."/>
+							<atc V="N06AA12"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Sertralin" iww_kategorie="1">
+							<iww_anmerkung V="Sertralin: Standard bei unipolarer Depression."/>
+							<atc V="N06AB06"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Amitriptylinoxid" iww_kategorie="2">
+							<iww_anmerkung V="Amitriptylinoxid: Reserve bei unipolarer Depression. Standard: =>Amitriptylin oder =>Doxepin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+							</iww_anmerkung>
+							<atc V="N06AA25"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Clomipramin" iww_kategorie="2">
+							<iww_anmerkung V="Clomipramin: Reserve bei unipolarer Depression. Standard: =>Amitriptylin oder =>Doxepin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+							</iww_anmerkung>
+							<atc V="N06AA04"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Escitalopram" iww_kategorie="2">
+							<iww_anmerkung V="Escitalopram: Reserve bei unipolarer Depression. Standard: =>Citalopram oder =>Sertralin.">
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+							</iww_anmerkung>
+							<atc V="N06AB10"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Fluoxetin" iww_kategorie="2">
+							<iww_anmerkung V="Fluoxetin: Reserve bei unipolarer Depression. Standard: =>Citalopram oder =>Sertralin. &#xD;&#xA;">
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+							</iww_anmerkung>
+							<atc V="N06AB03"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Imipramin" iww_kategorie="2">
+							<iww_anmerkung V="Imipramin: Reserve bei unipolarer Depression. Standard: =>Amitriptylin oder =>Doxepin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+							</iww_anmerkung>
+							<atc V="N06AA02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Lithium" iww_kategorie="2">
+							<iww_anmerkung V="Lithium: Reserve  bei unipolarer Depression. "/>
+							<atc V="N05AN01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Mirtazapin" iww_kategorie="2">
+							<iww_anmerkung V="Mirtazapin: Reserve bei unipolarer Depression. Standard: =>Amitriptylin, =>Doxepin, =>Citalopram oder =>Sertralin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+							</iww_anmerkung>
+							<atc V="N06AX11"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Moclobemid" iww_kategorie="2">
+							<iww_anmerkung V="Moclobemid: Reserve bei therapierefraktärer, atypischer Depression. Standard: =>Amitriptylin, =>Doxepin, =>Citalopram oder =>Sertralin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+							</iww_anmerkung>
+							<atc V="N06AG02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Nortriptylin" iww_kategorie="2">
+							<iww_anmerkung V="Nortriptylin: Reserve bei Patienten mit unipolarer Depression."/>
+							<atc V="N06AA10"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Trimipramin" iww_kategorie="2">
+							<iww_anmerkung V="Trimipramin: Reserve bei unipolarer Depression. Standard: =>Amitriptylin oder =>Doxepin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+							</iww_anmerkung>
+							<atc V="N06AA06"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Venlafaxin" iww_kategorie="2">
+							<iww_anmerkung V="Venlafaxin: Reserve bei unipolarer Depression. Standard: =>Amitriptylin, =>Doxepin, =>Citalopram oder =>Sertralin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+							</iww_anmerkung>
+							<atc V="N06AX16"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Agomelatin" iww_kategorie="3">
+							<iww_anmerkung V="Agomelatin: kein Standard bei unipolarer Depression. Standard: =>Amitriptylin, =>Doxepin, =>Citalopram oder =>Sertralin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+							</iww_anmerkung>
+							<atc V="N06AX22"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Bupropion" iww_kategorie="3">
+							<iww_anmerkung V="Bupropion: kein Standard bei unipolarer Depression. Standard: =>Amitriptylin, =>Doxepin, =>Citalopram oder =>Sertralin. ">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+							</iww_anmerkung>
+							<atc V="N06AX12"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Dosulepin" iww_kategorie="3">
+							<iww_anmerkung V="Dosulepin: kein Standard bei unipolarer Depression. Standard: =>Amitriptylin oder =>Doxepin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+							</iww_anmerkung>
+							<atc V="N06AA16"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Duloxetin" iww_kategorie="3">
+							<iww_anmerkung V="Duloxetin: kein Standard bei unipolarer Depression. Standard: =>Amitriptylin, =>Doxepin, =>Citalopram oder =>Sertralin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+							</iww_anmerkung>
+							<atc V="N06AX21"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Fluvoxamin" iww_kategorie="3">
+							<iww_anmerkung V="Fluvoxamin: kein Standard bei unipolarer Depression. Standard: =>Citalopram oder =>Sertralin.">
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+							</iww_anmerkung>
+							<atc V="N06AB08"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Johanniskraut" iww_kategorie="3">
+							<iww_anmerkung V="Johanniskraut: kein Standard bei unipolarer Depression. Standard: =>Amitriptylin, =>Doxepin, =>Citalopram oder =>Sertralin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+							</iww_anmerkung>
+							<atc V="N06AP01" verschreibungspflicht="true"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Maprotilin" iww_kategorie="3">
+							<iww_anmerkung V="Maprotilin: kein Standard bei unipolarer Depression. Standard: =>Amitriptylin oder =>Doxepin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+							</iww_anmerkung>
+							<atc V="N06AA21"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Mianserin" iww_kategorie="3">
+							<iww_anmerkung V="Mianserin: kein Standard bei unipolarer Depression. Standard: =>Amitriptylin, =>Doxepin, =>Citalopram oder =>Sertralin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+							</iww_anmerkung>
+							<atc V="N06AX03"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Paroxetin" iww_kategorie="3">
+							<iww_anmerkung V="Paroxetin: kein Standard bei unipolarer Depression. Standard: =>Citalopram oder =>Sertralin. ">
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+							</iww_anmerkung>
+							<atc V="N06AB05"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Tianeptin" iww_kategorie="3">
+							<iww_anmerkung V="Tianeptin: kein Standard bei unipolarer Depression. Standard: =>Amitriptylin, =>Doxepin, =>Citalopram oder =>Sertralin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+							</iww_anmerkung>
+							<atc V="N06AX14"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Tranylcypromin" iww_kategorie="3">
+							<iww_anmerkung V="Tranylcypromin: kein Standard bei unipolarer Depression. Standard: =>Amitriptylin, =>Doxepin, =>Citalopram oder =>Sertralin. Bessere Wirksamkeit gegebenenfalls bei therapierefraktärer, atypischer Depression, jedoch nachrangig zu =>Moclobemid.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+								<link atc="N06AG02" beschreibung="Moclobemid"/>
+							</iww_anmerkung>
+							<atc V="N06AF04"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Trazodon" iww_kategorie="3">
+							<iww_anmerkung V="Trazodon: kein Standard bei unipolarer Depression. Standard: =>Amitriptylin, =>Doxepin, =>Citalopram oder =>Sertralin.">
+								<link atc="N06AA09" beschreibung="Amitriptylin"/>
+								<link atc="N06AA12" beschreibung="Doxepin"/>
+								<link atc="N06AB04" beschreibung="Citalopram"/>
+								<link atc="N06AB06" beschreibung="Sertralin"/>
+							</iww_anmerkung>
+							<atc V="N06AX05"/>
+						</wirkstoff>
+					</kapitel>
+				</kapitel>
+				<kapitel>
+					<text>Antibiotikatherapie</text>
+					<kapitel>
+						<text>Obere Atemwege: Akute Otitis media</text>
+						<wirkstoff bezeichnung="Doxycyclin" iww_kategorie="3">
+							<iww_anmerkung V="Doxycyclin: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01AA02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Tetracyclin" iww_kategorie="3">
+							<iww_anmerkung V="Tetracyclin: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01AA07"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Minocyclin" iww_kategorie="3">
+							<iww_anmerkung V="Minocyclin: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01AA08"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Ampicillin" iww_kategorie="3">
+							<iww_anmerkung V="Ampicillin: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01CA01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Phenoxymethylpenicillin (Penicillin V)" iww_kategorie="3">
+							<iww_anmerkung V="Phenoxymethylpenicillin (Penicillin V): Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01CE02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Phenoxymethylpenicillin-Benzathin (Penicillin V)" iww_kategorie="3">
+							<iww_anmerkung V="Phenoxymethylpenicillin-Benzathin &#xD;&#xA;(Penicillin V): Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01CE10"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Flucloxacillin" iww_kategorie="3">
+							<iww_anmerkung V="Flucloxacillin: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01CF05"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Sultamicillin" iww_kategorie="3">
+							<iww_anmerkung V="Sultamicillin: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01CR04"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Amoxicillin und Flucloxacillin" iww_kategorie="3">
+							<iww_anmerkung V="Amoxicillin und Flucloxacillin: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01CR50"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Cefalexin" iww_kategorie="3">
+							<iww_anmerkung V="Cefalexin: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01DB01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Cefadroxil" iww_kategorie="3">
+							<iww_anmerkung V="Cefadroxil: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01DB05"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Cefixim" iww_kategorie="3">
+							<iww_anmerkung V="Cefixim: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01DD08"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Cefpodoxim" iww_kategorie="3">
+							<iww_anmerkung V="Cefpodoxim: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01DD13"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Ceftibuten" iww_kategorie="3">
+							<iww_anmerkung V="Ceftibuten: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01DD14"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Sulfamethoxazol und Trimethoprim" iww_kategorie="3">
+							<iww_anmerkung V="Sulfamethoxazol und Trimethoprim: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01EE01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Spiramycin" iww_kategorie="3">
+							<iww_anmerkung V="Spiramycin: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01FA02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Telithromycin" iww_kategorie="3">
+							<iww_anmerkung V="Telithromycin: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01FA15"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Clindamycin" iww_kategorie="3">
+							<iww_anmerkung V="Clindamycin: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01FF01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Ofloxacin" iww_kategorie="3">
+							<iww_anmerkung V="Ofloxacin: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01MA01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Ciprofloxacin" iww_kategorie="3">
+							<iww_anmerkung V="Ciprofloxacin: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01MA02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Enoxacin" iww_kategorie="3">
+							<iww_anmerkung V="Enoxacin: Kein Standard bzw. nicht empfohlen bei akuter Otitis media."/>
+							<atc V="J01MA04"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Amoxicillin und Clavulansäure" iww_kategorie="2">
+							<iww_anmerkung V="Amoxicillin und Clavulansäure: Reserve bei akuter Otitis media."/>
+							<atc V="J01CR02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Cefuroxim" iww_kategorie="2">
+							<iww_anmerkung V="Cefuroximaxetil: Reserve bei akuter Otitis media."/>
+							<atc V="J01DC02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Cefaclor" iww_kategorie="2">
+							<iww_anmerkung V="Cefaclor: Reserve bei akuter Otitis media."/>
+							<atc V="J01DC04"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Erythromycin" iww_kategorie="2">
+							<iww_anmerkung V="Erythromycin: Reserve bei akuter Otitis media."/>
+							<atc V="J01FA01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Roxithromycin" iww_kategorie="2">
+							<iww_anmerkung V="Roxithromycin: Reserve bei akuter Otitis media."/>
+							<atc V="J01FA06"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Clarithromycin" iww_kategorie="2">
+							<iww_anmerkung V="Clarithromycin: Reserve bei akuter Otitis media."/>
+							<atc V="J01FA09"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Azithromycin" iww_kategorie="2">
+							<iww_anmerkung V="Azithromycin: Reserve bei akuter Otitis media."/>
+							<atc V="J01FA10"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Amoxicillin" iww_kategorie="1">
+							<iww_anmerkung V="Amoxicillin: Standard bei akuter Otitis media."/>
+							<atc V="J01CA04"/>
+						</wirkstoff>
+					</kapitel>
+					<kapitel>
+						<text>Obere Atemwege: Akute Rhinosinusitis</text>
+						<wirkstoff bezeichnung="Tetracyclin" iww_kategorie="3">
+							<iww_anmerkung V="Tetracyclin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01AA07"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Minocyclin" iww_kategorie="3">
+							<iww_anmerkung V="Minocyclin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01AA08"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Ampicillin" iww_kategorie="3">
+							<iww_anmerkung V="Ampicillin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01CA01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Phenoxymethylpenicillin (Penicillin V)" iww_kategorie="3">
+							<iww_anmerkung V="Phenoxymethylpenicillin (Penicillin V): Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01CE02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Phenoxymethylpenicillin-Benzathin (Penicillin V)" iww_kategorie="3">
+							<iww_anmerkung V="Phenoxymethylpenicillin-Benzathin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01CE10"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Flucloxacillin" iww_kategorie="3">
+							<iww_anmerkung V="Flucloxacillin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01CF05"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Sultamicillin" iww_kategorie="3">
+							<iww_anmerkung V="Sultamicillin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01CR04"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Amoxicillin und Flucloxacillin" iww_kategorie="3">
+							<iww_anmerkung V="Amoxicillin und Flucloxacillin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01CR50"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Cefalexin" iww_kategorie="3">
+							<iww_anmerkung V="Cefalexin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01DB01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Cefadroxil" iww_kategorie="3">
+							<iww_anmerkung V="Cefadroxil: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01DB05"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Cefixim" iww_kategorie="3">
+							<iww_anmerkung V="Cefixim: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01DD08"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Cefpodoxim" iww_kategorie="3">
+							<iww_anmerkung V="Cefpodoxim: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01DD13"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Ceftibuten" iww_kategorie="3">
+							<iww_anmerkung V="Ceftibuten: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01DD14"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Sulfamethoxazol und Trimethoprim" iww_kategorie="3">
+							<iww_anmerkung V="Sulfamethoxazol und Trimethoprim: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01EE01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Spiramycin" iww_kategorie="3">
+							<iww_anmerkung V="Spiramycin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01FA02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Telithromycin" iww_kategorie="3">
+							<iww_anmerkung V="Telithromycin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01FA15"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Clindamycin" iww_kategorie="3">
+							<iww_anmerkung V="Clindamycin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01FF01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Ofloxacin" iww_kategorie="3">
+							<iww_anmerkung V="Ofloxacin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01MA01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Ciprofloxacin" iww_kategorie="3">
+							<iww_anmerkung V="Ciprofloxacin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01MA02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Enoxacin" iww_kategorie="3">
+							<iww_anmerkung V="Enoxacin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01MA04"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Levofloxacin" iww_kategorie="3">
+							<iww_anmerkung V="Levofloxacin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01MA12"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Moxifloxacin" iww_kategorie="3">
+							<iww_anmerkung V="Moxifloxacin: Kein Standard bzw. nicht empfohlen bei akuter Rhinosinusitis."/>
+							<atc V="J01MA14"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Doxycyclin" iww_kategorie="2">
+							<iww_anmerkung V="Doxycyclin: Reserve bei akuter Rhinosinusitis."/>
+							<atc V="J01AA02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Amoxicillin und Clavulansäure" iww_kategorie="2">
+							<iww_anmerkung V="Amoxicillin und Clavulansäure: Reserve bei akuter Rhinosinusitis."/>
+							<atc V="J01CR02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Cefuroxim" iww_kategorie="2">
+							<iww_anmerkung V="Cefuroximaxetil: Reserve bei akuter Rhinosinusitis."/>
+							<atc V="J01DC02"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Cefaclor" iww_kategorie="2">
+							<iww_anmerkung V="Cefaclor: Reserve bei akuter Rhinosinusitis."/>
+							<atc V="J01DC04"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Erythromycin" iww_kategorie="2">
+							<iww_anmerkung V="Erythromycin: Reserve bei akuter Rhinosinusitis."/>
+							<atc V="J01FA01"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Roxithromycin" iww_kategorie="2">
+							<iww_anmerkung V="Roxithromycin: Reserve bei akuter Rhinosinusitis."/>
+							<atc V="J01FA06"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Clarithromycin" iww_kategorie="2">
+							<iww_anmerkung V="Clarithromycin: Reserve bei akuter Rhinosinusitis."/>
+							<atc V="J01FA09"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Azithromycin" iww_kategorie="2">
+							<iww_anmerkung V="Azithromycin: Reserve bei akuter Rhinosinusitis."/>
+							<atc V="J01FA10"/>
+						</wirkstoff>
+						<wirkstoff bezeichnung="Amoxicillin" iww_kategorie="1">
+							<iww_anmerkung V="Amoxicillin: Standard bei akuter Rhinosinusitis."/>
+							<atc V="J01CA04"/>
+						</wirkstoff>
+					</kapitel>
+				</kapitel>
+			</iww_indikationsbaum>
+			<iww_kategorien>
+				<kategorie V="1" beschreibung="Standard" color="Green"/>
+				<kategorie V="2" beschreibung="Reserve" color="Orange"/>
+				<kategorie V="3" beschreibung="nachrangig zu verordnen, ggf. nicht empfohlen" color="Red"/>
+			</iww_kategorien>
+		</geltungsbereich_kv>
+	</body>
+</ehd>

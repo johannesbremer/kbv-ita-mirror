@@ -1,0 +1,18 @@
+<PractitionerRole xmlns="http://hl7.org/fhir">
+  <id value="210" />
+  <meta>
+  	<versionId value="1"/>
+	<lastUpdated value="2022-09-06T14:01:00Z"/>
+    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_PractitionerRole|2.1.0" />
+  </meta>
+  <practitioner>
+    <reference value="Practitioner/200" />
+  </practitioner>
+  <organization>
+	<reference value="Organization/250" />
+	<identifier>
+		<system value="http://fhir.de/NamingSystem/asv/teamnummer"/>
+		<value value="003456789"/>
+	</identifier>
+  </organization>
+</PractitionerRole>

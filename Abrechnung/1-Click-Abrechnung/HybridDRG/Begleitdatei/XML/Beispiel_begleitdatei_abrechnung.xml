@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<einlieferung xsi:schemaLocation="http://www.kv-telematik.de/1-Click/Meldung_Einlieferung/2.0.0 ../Schema/KVTA_Einliefung_Abrechnung_2_0_0.xsd" xmlns="http://www.kv-telematik.de/1-Click/Meldung_Einlieferung/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<version V="1"/>
+	<guid V="f3d61ee2-1c3d-4416-9489-03c51d42ccf7"/>
+	<bsnr V="935100898"/>
+	<testdaten V="true"/>
+	<lieferungs_zeitpunkt V="2024-09-19T13:10:17+02:00"/>
+	<dokumenten_typ V="ABRECHNUNG"/>
+	<quartal V="2024-3"/>
+	<vollstaendig V="true"/>
+	<anhang V="Z01935100898_18.09.2024_13.10.con.XKM"/>
+</einlieferung>

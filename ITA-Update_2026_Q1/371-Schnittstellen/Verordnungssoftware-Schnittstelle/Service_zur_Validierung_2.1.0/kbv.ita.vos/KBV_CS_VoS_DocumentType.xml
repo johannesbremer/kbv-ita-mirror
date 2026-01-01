@@ -1,0 +1,49 @@
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="KBV-CS-VoS-DocumentType" />
+  <url value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType" />
+  <version value="2.1.0" />
+  <name value="KBV_CS_VoS_DocumentType" />
+  <status value="active" />
+  <experimental value="false" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <contact>
+    <telecom>
+      <system value="other" />
+      <value value="http://www.kbv.de" />
+    </telecom>
+  </contact>
+  <description value="Dokumententypen, die über die Verordnungssoftwareschnittstelle übertragen werden können." />
+  <copyright value="Copyright © [2022], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <caseSensitive value="true" />
+  <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_VoS_DocumentType" />
+  <content value="complete" />
+  <concept>
+    <code value="BMP-PDF" />
+    <display value="Patientenausdruck des Bundeseinheitlichen Medikationsplans" />
+  </concept>
+  <concept>
+    <code value="BMP-XML" />
+    <display value="Inhalt des Barcodes des Bundeseinheitlichen Medikationsplans" />
+  </concept>
+  <concept>
+    <code value="EMP" />
+    <display value="Elektronischer Medikationsplan" />
+  </concept>
+  <concept>
+    <code value="Medikationsplan" />
+    <display value="Medikationsplan" />
+  </concept>
+  <concept>
+    <code value="Rezept" />
+    <display value="Rezept" />
+  </concept>
+  <concept>
+    <code value="Signiertes_eRezept" />
+    <display value="Signiertes_eRezept" />
+  </concept>
+  <concept>
+    <code value="Patientenausdruck_eRezept" />
+    <display value="Patientenausdruck_eRezept" />
+  </concept>
+</CodeSystem>

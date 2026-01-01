@@ -1,0 +1,852 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-PR-VoS-Composition" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Composition" />
+  <version value="2.1.0" />
+  <name value="KBV_PR_VoS_Composition" />
+  <title value="KBV_PR_VoS_Composition" />
+  <status value="active" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <description value="Über diese Composition werden beim Aufruf der Verordnungssoftware der Aufrufkontext sowie die für die entsprechende Verordnungsfunktion notwendigen Ressourcen als Referenzen übergeben" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="cda" />
+    <uri value="http://hl7.org/v3/cda" />
+    <name value="CDA (R2)" />
+  </mapping>
+  <mapping>
+    <identity value="fhirdocumentreference" />
+    <uri value="http://hl7.org/fhir/documentreference" />
+    <name value="FHIR DocumentReference" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Composition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Composition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Composition">
+      <path value="Composition" />
+      <short value="Aufrufkontext und Ressourcen" />
+      <definition value="Aufrufkontext und Zusammenstellung der Referenzen auf die zum Aufruf der Verordnungsfunktion notwendigen Ressourcen" />
+    </element>
+    <element id="Composition.id">
+      <path value="Composition.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.meta">
+      <path value="Composition.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.meta.source">
+      <path value="Composition.meta.source" />
+      <max value="0" />
+    </element>
+    <element id="Composition.meta.profile">
+      <path value="Composition.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Composition|2.1.0" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.meta.security">
+      <path value="Composition.meta.security" />
+      <max value="0" />
+    </element>
+    <element id="Composition.meta.tag">
+      <path value="Composition.meta.tag" />
+      <max value="0" />
+    </element>
+    <element id="Composition.implicitRules">
+      <path value="Composition.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="Composition.language">
+      <path value="Composition.language" />
+      <max value="0" />
+    </element>
+    <element id="Composition.contained">
+      <path value="Composition.contained" />
+      <max value="0" />
+    </element>
+    <element id="Composition.extension">
+      <path value="Composition.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="2" />
+	  <max value="4" />
+    </element>
+    <element id="Composition.extension:PKV-Tarif">
+      <path value="Composition.extension" />
+      <sliceName value="PKV-Tarif" />
+      <min value="0" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_PKV_Tariff|1.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:PKV-Tarif.value[x]">
+      <path value="Composition.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:PKV-Tarif.value[x]:valueCoding">
+      <path value="Composition.extension.value[x]" />
+      <sliceName value="valueCoding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:PKV-Tarif.value[x]:valueCoding.system">
+      <path value="Composition.extension.value[x].system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:PKV-Tarif.value[x]:valueCoding.code">
+      <path value="Composition.extension.value[x].code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:rechtsgrundlage">
+      <path value="Composition.extension" />
+      <sliceName value="rechtsgrundlage" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis|1.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:rechtsgrundlage.value[x]">
+      <path value="Composition.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:rechtsgrundlage.value[x]:valueCoding">
+      <path value="Composition.extension.value[x]" />
+      <sliceName value="valueCoding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Aufrufkontext">
+      <path value="Composition.extension" />
+      <sliceName value="Aufrufkontext" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_StartUp_Context|2.1.0" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.extension:Aufrufkontext.value[x]">
+      <path value="Composition.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Aufrufkontext.value[x]:valueCodeableConcept">
+      <path value="Composition.extension.value[x]" />
+      <sliceName value="valueCodeableConcept" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Aufrufkontext.value[x]:valueCodeableConcept.coding">
+      <path value="Composition.extension.value[x].coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Aufrufkontext.value[x]:valueCodeableConcept.coding.system">
+      <path value="Composition.extension.value[x].coding.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Aufrufkontext.value[x]:valueCodeableConcept.coding.code">
+      <path value="Composition.extension.value[x].coding.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Aufrufkontext.value[x]:valueCodeableConcept.coding.userSelected">
+      <path value="Composition.extension.value[x].coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.extension:Unfallinformationen">
+      <path value="Composition.extension" />
+      <sliceName value="Unfallinformationen" />
+      <definition value="Übergabe von Informationen zu einem (Arbeits-)Unfall vom PVS an die VoS." />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Accident|1.1.0" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Composition.extension:Unfallinformationen.extension">
+      <path value="Composition.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Composition.extension:Unfallinformationen.extension:Unfallkennzeichen">
+      <path value="Composition.extension.extension" />
+      <sliceName value="Unfallkennzeichen" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Unfallinformationen.extension:Unfallkennzeichen.value[x]">
+      <path value="Composition.extension.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Unfallinformationen.extension:Unfallkennzeichen.value[x]:valueCoding">
+      <path value="Composition.extension.extension.value[x]" />
+      <sliceName value="valueCoding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Unfallinformationen.extension:Unfallkennzeichen.value[x]:valueCoding.system">
+      <path value="Composition.extension.extension.value[x].system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Unfallinformationen.extension:Unfallkennzeichen.value[x]:valueCoding.code">
+      <path value="Composition.extension.extension.value[x].code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Unfallinformationen.extension:Unfallbetrieb">
+      <path value="Composition.extension.extension" />
+      <sliceName value="Unfallbetrieb" />
+      <min value="0" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Unfallinformationen.extension:Unfallbetrieb.value[x]">
+      <path value="Composition.extension.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Unfallinformationen.extension:Unfallbetrieb.value[x]:valueString">
+      <path value="Composition.extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Unfallinformationen.extension:Unfalltag">
+      <path value="Composition.extension.extension" />
+      <sliceName value="Unfalltag" />
+      <min value="0" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Unfallinformationen.extension:Unfalltag.value[x]">
+      <path value="Composition.extension.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.extension:Unfallinformationen.extension:Unfalltag.value[x]:valueDate">
+      <path value="Composition.extension.extension.value[x]" />
+      <sliceName value="valueDate" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.identifier">
+      <path value="Composition.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.status">
+      <path value="Composition.status" />
+      <fixedCode value="final" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.type">
+      <path value="Composition.type" />
+      <patternCodeableConcept>
+        <coding>
+          <system value="http://loinc.org" />
+          <code value="11503-0" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.type.coding">
+      <path value="Composition.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.type.coding.system">
+      <path value="Composition.type.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.type.coding.code">
+      <path value="Composition.type.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.category">
+      <path value="Composition.category" />
+      <max value="0" />
+    </element>
+    <element id="Composition.subject">
+      <path value="Composition.subject" />
+      <short value="Behandelte Person" />
+      <definition value="Referenz auf die behandelte Person, wenn diese im Aufruf übertragen wird." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Patient|2.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.subject.reference">
+      <path value="Composition.subject.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.subject.type">
+      <path value="Composition.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.subject.identifier">
+      <path value="Composition.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.subject.display">
+      <path value="Composition.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.encounter">
+      <path value="Composition.encounter" />
+      <max value="0" />
+    </element>
+    <element id="Composition.date">
+      <path value="Composition.date" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.author">
+      <path value="Composition.author" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <short value="Anwender und Pruefnummer des PVS" />
+      <definition value="Welcher Anwender ruft die VoS mit welchem PVS auf" />
+      <min value="3" />
+      <max value="3" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.author:Anwender">
+      <path value="Composition.author" />
+      <sliceName value="Anwender" />
+      <short value="PVS-Anwender" />
+      <definition value="Anwendende Person (BenutzerID), welche aus dem PVS die VoS aufruft." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_User|2.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.author:Anwender.reference">
+      <path value="Composition.author.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.author:Anwender.type">
+      <path value="Composition.author.type" />
+      <min value="1" />
+      <fixedUri value="Practitioner" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.author:Anwender.identifier">
+      <path value="Composition.author.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.author:Anwender.display">
+      <path value="Composition.author.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.author:PVS">
+      <path value="Composition.author" />
+      <sliceName value="PVS" />
+      <short value="System" />
+      <definition value="Identifikation des PVS mit KBV-Prüfnummer und optionalen Kontaktdaten des Herstellers, welches die VoS aufruft." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Device_PVS|2.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.author:PVS.reference">
+      <path value="Composition.author.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.author:PVS.type">
+      <path value="Composition.author.type" />
+      <min value="1" />
+      <fixedUri value="Device" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.author:PVS.identifier">
+      <path value="Composition.author.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.author:PVS.display">
+      <path value="Composition.author.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.author:PractitionerRole">
+      <path value="Composition.author" />
+      <sliceName value="PractitionerRole" />
+      <definition value="Verknüpfung von behandelnder Person mit Betriebsstätte, optional ASV-Teamnummer" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_PractitionerRole|2.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.author:PractitionerRole.reference">
+      <path value="Composition.author.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.author:PractitionerRole.type">
+      <path value="Composition.author.type" />
+      <min value="1" />
+      <fixedUri value="PractitionerRole" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.author:PractitionerRole.identifier">
+      <path value="Composition.author.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.author:PractitionerRole.display">
+      <path value="Composition.author.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.title">
+      <path value="Composition.title" />
+      <fixedString value="Aufruf der VoS" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.confidentiality">
+      <path value="Composition.confidentiality" />
+      <max value="0" />
+    </element>
+    <element id="Composition.attester">
+      <path value="Composition.attester" />
+      <max value="0" />
+    </element>
+    <element id="Composition.custodian">
+      <path value="Composition.custodian" />
+      <short value="Betriebsstätte" />
+      <definition value="Betriebsstätte" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Organization|2.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.custodian.reference">
+      <path value="Composition.custodian.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.custodian.type">
+      <path value="Composition.custodian.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.custodian.identifier">
+      <path value="Composition.custodian.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.custodian.display">
+      <path value="Composition.custodian.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.relatesTo">
+      <path value="Composition.relatesTo" />
+      <max value="0" />
+    </element>
+    <element id="Composition.event">
+      <path value="Composition.event" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section">
+      <path value="Composition.section" />
+      <slicing>
+        <discriminator>
+          <type value="pattern" />
+          <path value="code.coding" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <max value="3" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen">
+      <path value="Composition.section" />
+      <sliceName value="Patientenzusatzinformationen" />
+      <definition value="Zusatzinformationen zur behandelten Person, wie Allergien, Diagnosen und Messwerte" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.title">
+      <path value="Composition.section.title" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.code">
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="CompositionSectionType" />
+        </extension>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_VoS_SectionType" />
+      </binding>
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <patternCoding>
+        <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType" />
+        <code value="Additional patient information" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.code.coding.version">
+      <path value="Composition.section.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.code.coding.userSelected">
+      <path value="Composition.section.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.code.text">
+      <path value="Composition.section.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.author">
+      <path value="Composition.section.author" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.text">
+      <path value="Composition.section.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.mode">
+      <path value="Composition.section.mode" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.orderedBy">
+      <path value="Composition.section.orderedBy" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.entry">
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_AllergyIntolerance|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Provenance_AllergyIntolerance|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Coverage|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Condition|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Body_Weight|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Body_Height|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Creatinine_Level|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Pregnancy_Status|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Breastfeeding_Status|2.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.entry.type">
+      <path value="Composition.section.entry.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.entry.identifier">
+      <path value="Composition.section.entry.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.entry.display">
+      <path value="Composition.section.entry.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.emptyReason">
+      <path value="Composition.section.emptyReason" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Patientenzusatzinformationen.section">
+      <path value="Composition.section.section" />
+      <max value="0" />
+      <contentReference value="http://hl7.org/fhir/StructureDefinition/Composition#Composition.section" />
+    </element>
+    <element id="Composition.section:Medikamente">
+      <path value="Composition.section" />
+      <sliceName value="Medikamente" />
+      <definition value="Medikamente bspw. aus der Verordnungshistorie" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Medikamente.title">
+      <path value="Composition.section.title" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Medikamente.code">
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="CompositionSectionType" />
+        </extension>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_VoS_SectionType" />
+      </binding>
+    </element>
+    <element id="Composition.section:Medikamente.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <patternCoding>
+        <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType" />
+        <code value="Medications" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Medikamente.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Medikamente.code.coding.version">
+      <path value="Composition.section.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Medikamente.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Medikamente.code.coding.userSelected">
+      <path value="Composition.section.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Medikamente.code.text">
+      <path value="Composition.section.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Medikamente.author">
+      <path value="Composition.section.author" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Medikamente.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Medikamente.text">
+      <path value="Composition.section.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Medikamente.mode">
+      <path value="Composition.section.mode" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Medikamente.orderedBy">
+      <path value="Composition.section.orderedBy" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Medikamente.entry">
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_Compounding|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_FreeText|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_Ingredient|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_PZN|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Prescription|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_MedicationStatement_MP|2.1.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_ERP_Bundle" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Medikamente.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Medikamente.entry.type">
+      <path value="Composition.section.entry.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Medikamente.entry.identifier">
+      <path value="Composition.section.entry.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Medikamente.entry.display">
+      <path value="Composition.section.entry.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Medikamente.emptyReason">
+      <path value="Composition.section.emptyReason" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Medikamente.section">
+      <path value="Composition.section.section" />
+      <max value="0" />
+      <contentReference value="http://hl7.org/fhir/StructureDefinition/Composition#Composition.section" />
+    </element>
+    <element id="Composition.section:Dokumente">
+      <path value="Composition.section" />
+      <sliceName value="Dokumente" />
+      <definition value="Dokumente, wie BMP und (E-)Rezepte" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Dokumente.title">
+      <path value="Composition.section.title" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Dokumente.code">
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="CompositionSectionType" />
+        </extension>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_VoS_SectionType" />
+      </binding>
+    </element>
+    <element id="Composition.section:Dokumente.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <patternCoding>
+        <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType" />
+        <code value="Documents" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Dokumente.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Dokumente.code.coding.version">
+      <path value="Composition.section.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Dokumente.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Dokumente.code.coding.userSelected">
+      <path value="Composition.section.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Dokumente.code.text">
+      <path value="Composition.section.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Dokumente.author">
+      <path value="Composition.section.author" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Dokumente.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Dokumente.text">
+      <path value="Composition.section.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Dokumente.mode">
+      <path value="Composition.section.mode" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Dokumente.orderedBy">
+      <path value="Composition.section.orderedBy" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Dokumente.entry">
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_DocumentReference|2.1.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Dokumente.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Dokumente.entry.type">
+      <path value="Composition.section.entry.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Dokumente.entry.identifier">
+      <path value="Composition.section.entry.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Dokumente.entry.display">
+      <path value="Composition.section.entry.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Dokumente.emptyReason">
+      <path value="Composition.section.emptyReason" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:Dokumente.section">
+      <path value="Composition.section.section" />
+      <max value="0" />
+      <contentReference value="http://hl7.org/fhir/StructureDefinition/Composition#Composition.section" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,67 @@
+SDHMA Schnittstellen-Paket (Version 2.10, Stand Mai 2024)
+************************************************************************
+
+Dieses Paket beschreibt die Datenstruktur zur Stammdatei SDHM.
+
+Alle Komponenten des Pakets sind separat versioniert. Es können keine 
+Schlussfolgerungen aus den Versionsnummern des Pakets und der Komponenten 
+untereinander gezogen werden. Die Versionsnummer der Schnittstelle muss auch 
+nicht identisch mit der Versionsnummer der Schnittstellenbeschreibung sein.
+
+
+1. Inhaltsverzeichnis
+2. Änderungshistorie
+   - Inhaltliche Änderungen
+   - Schnittstellenänderungen
+
+1. Inhaltsverzeichnis
+###########################################################################
+
+./
+liesmich.txt                                                    (diese Datei)
+
+./Dokumentation:
+KBV_ITA_VGEX_Schnittstelle_SDHM.pdf (Version 2.10)              (Schnittstellenbeschreibung SDHM)
+
+./Schema:
+datentypen_V1.40.xsd                                            (Definition der Elemente für Datentypen EHD)
+ehd_header_V1.40.xsd                                            (Definition der Elemente für Kopfdaten EHD)
+ehd_root_V1.40.xsd                                              (referenziertes Schema EHD - eHealthData, Version 1.40)
+sdhm_body_V2.10.xsd                                             (Definition der Elemente für die SDHM)
+sdhm_header_V2.10.xsd                                           (Definition der Elemente für Kopfdaten SDHM)
+sdhm_root_V2.10.xsd                                             (Root-Schema der SDHM)
+keytabs_V1.40.xsd                                               (Platzhalter für Definition der Elemente für Schlüsseltabellen)
+
+./XML:
+sdhm_2.10_74_tf+2024q4.xml                                      (rein technische Beispieldatei ohne fachlichen Bezug)
+
+2. Änderungshistorie
+###########################################################################
+
+Änderung in der Version 2.10 im Vergleich zur Vorversion 2.04
+	- Aufnahme der ICD-Code Liste <erforderliche_diagnosen> unterhalb des Elements <vorrangiges_heilmittel>
+	- Anpassung des Patterns für zulässige ICD-10-GM-Codes (keine Notationskennzeichen, kein Code UUU)
+
+Änderung in der Version 2.04 im Vergleich zur Vorversion 2.03
+	- Aufnahme der ICD-Code Liste <erforderliche_diagnosen> unterhalb des Elements <diagnosegruppe>
+
+Änderung in der Version 2.03 im Vergleich zur Vorversion 2.02
+	- Korrektur der Kardinalität der ICD-Code Liste <icd_code_liste> 
+	- Korrektur der Kardinalität der ICD-Code Elemente <icd_code>
+
+Änderung in der Version 2.02 im Vergleich zur Vorversion 2.01
+	- Anpassungen an Version 2.0 des Anforderungskatalogs nach § 73 SGB V für die Verordnung von Heilmittel 
+
+Änderung in der Version 2.01 im Vergleich zur Vorversion 2.00
+	- Aufnahme der Positionsnummern zu den Heilmitteln
+
+Änderung in der Version 2.00 im Vergleich zur Vorversion 1.02
+	- Anpassung der Verordnungsmenge
+
+Änderung in der Version 1.02 im Vergleich zur Vorversion 1.01
+	- Aktualisierung der Beispiel XML-Datei
+
+Änderung in der Version 1.01 im Vergleich zur Vorversion 1.00 
+	- Aktualisierung der Schnittstellenbeschreibung
+	- Korrektur des XSD-Schemas bzgl. des XML-Elementes <frequenzempfehlung>
+	- Aktualisierung der Beispiel XML-Datei

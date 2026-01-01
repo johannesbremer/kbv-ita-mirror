@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<keytabs xmlns="urn:ehd/001">
+<keytab SV="1.11" SN="S_EBM_BEZUGSRAUM" S="1.2.276.0.76.5.226">
+    <key V="0" DN="unbekannt" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="1" DN="in derselben Sitzung" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="10" DN="im Zeitraum von 3 Tagen nach Erbringung einer Leistung des Abschnitts 36.2" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="11" DN="im Arztfall" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="12" DN="im Kalenderjahr" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="14" DN="Ausnahmeregelung 1" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="15" DN="je Leistung" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="16" DN="je Behandlungsfall im Quartal, gemäß Präambel 3.1 Nr.10" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="17" DN="im Behandlungsfall für dasselbe Zielvolumen" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="18" DN="je Schein" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="19" DN="je Kalenderwoche" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="2" DN="am Behandlungstag" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="20" DN="im Arztgruppenfall" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="21" DN="in zwei Kalenderjahren" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="22" DN="in der Schwangerschaft" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="3" DN="im Zeitraum von 3 Tagen nach Erbringung einer Leistung des Abschnitts 31.2" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="4" DN="je Behandlungswoche" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="5" DN="im Zeitraum von 21 Tagen nach Erbringung einer Leistung des Abschnitts 31.2" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="6" DN="im Zyklusfall" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="7" DN="im Behandlungsfall" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="8" DN="im Krankheitsfall" S="1.2.276.0.76.5.226" SV="1.11"/>
+    <key V="9" DN="im Reproduktionsfall" S="1.2.276.0.76.5.226" SV="1.11"/>
+</keytab>
+</keytabs>

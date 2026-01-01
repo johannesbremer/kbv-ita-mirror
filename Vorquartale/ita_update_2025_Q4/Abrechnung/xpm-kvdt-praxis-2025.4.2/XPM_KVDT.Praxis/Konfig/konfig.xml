@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<konfiguration>
+    <grundeinstellung>
+		<!-- Installationsverzeichnis -->
+		<pruefpfad>./</pruefpfad>
+		<!-- Verzeichnis mit Pruefdatei(en) -->
+		<pruefdaten>Daten/</pruefdaten>
+		<!-- Temporäres Verzeichnis -->
+		<tempdaten>Temp/</tempdaten>
+		<!-- Protokolldatei -->
+		<log_datei>Listen/XPM_Logfile.log</log_datei>
+		<!-- Datensatzbeschreibung in XML-Schema-Form -->
+		<pruefschema>Schema/xdtdata.xsd</pruefschema>
+		<!-- Schalter Informationsmeldungen mit protokollieren.
+		   - Mögliche Werte: ja, nein -->
+		<info>ja</info>
+		<!-- Schalter Warnungen mit protokollieren.
+		   - Mögliche Werte: ja, nein -->
+		<warnungen>ja</warnungen>
+		<!-- Schalter Fehlerausgabe aller Fehlermeldungen auf einen vorgegebenen
+		   - maximalen Wert begrenzen: ja/nein -->
+		<fehler_begrenzen>nein</fehler_begrenzen>
+    </grundeinstellung>
+	<!-- Steuertabellen und Stammdateien -->
+	<eingabedateien>
+		<!-- Pfad zu KBV Steuertabelle -->
+		<kbv_tabelle>Kbvtab/kbv_tabelle.bin</kbv_tabelle>
+		<!-- Pfad zu Anbieter Stammdatei -->
+		<AnbieterStamm>Kbvtab/AnbieterStamm.bin</AnbieterStamm>
+		<!-- Pfad zu GO-Stammdatei
+		   - Das Attribut Einlesen steuert die Handhabung über folgende Werte:
+		   - ja:   Die GOS wird wie angegeben direkt eingelesen
+		   - nein: Die GOS wird NICHT eingelesen und keine Existenzprüfung durchgeführt
+		   -       Der angegebene Pfad wird ignoriert
+		   - auto: Es wird versucht die GOS für den jeweiligen KV-Bereich
+		   -       GOStamm_KV%KV%.bin einzulesen, wird keine GOS gefunden, dann
+		   -       wird versucht die GOS GOStamm_KV74.bin einzulesen, wird diese
+		   -       auch nicht gefunden, dann wird die Meldung KBVDT-RGOS gemeldet.
+		   -->
+		<GOStamm Einlesen="auto">Kbvtab/GOStamm_KV74.bin</GOStamm>
+		<!-- Pfad zu ICD-Stammdatei für 2024 -->
+		<ICDStamm2024>Kbvtab/ICDStamm2024.bin</ICDStamm2024>
+		<!-- Pfad zu ICD-Stammdatei für 2025 -->
+		<ICDStamm2025>Kbvtab/ICDStamm2025.bin</ICDStamm2025>
+		<!-- Pfad zu KT-Stammdatei -->
+		<KTStamm>Kbvtab/KTStamm.bin</KTStamm>
+		<!-- Pfad zu PLZ-Stammdatei -->
+		<PLZStamm>Kbvtab/PLZStamm.bin</PLZStamm>
+		<!-- Pfad zu OPS-Stammdatei -->
+		<OPSStamm>Kbvtab/OPSStamm.bin</OPSStamm>
+		<HDRGStamm>Kbvtab/HDRGStamm.bin</HDRGStamm>
+		<HGNCStamm>Kbvtab/HGNCStamm.bin</HGNCStamm>
+	</eingabedateien>
+	<!-- Ausgabedateien des Prüfmoduls -->
+	<ausgabedateien>
+		<!-- Fehlerprotokoll -->
+		<FehlerListe Format="PDF">Listen/Pruefprotokoll.pdf</FehlerListe>
+		<!-- Fehlerstatistik -->
+		<StatistikListe Format="PDF">Listen/FehlerStatistik.pdf</StatistikListe>
+		<!-- Abgabe der Dokumentationsbögen (z.Bsp. Früherkennung),
+		   - wie sie in der KV-Spezifikadatei gefordert wird -->
+		<DokuAbgabeListe Format="PDF">Listen/DokuAbgabeListe.pdf</DokuAbgabeListe>
+		<!-- Fallstatistikliste -->
+		<FallListe Format="PDF">Listen/FallStatistik.pdf</FallListe>
+		<!-- GNR Statistikliste -->
+		<GNRListe Format="PDF">Listen/GNRListe.pdf</GNRListe>
+		<!-- Kurärztliche Fallstatistikliste -->
+		<KDT_FallListe Format="PDF">Listen/KDT_FallStatistik.pdf</KDT_FallListe>
+		<!-- Kurärztliche GNR Statistikliste -->
+		<KDT_GNRListe Format="PDF">Listen/KDT_GNRListe.pdf</KDT_GNRListe>
+		<!-- Kurärtliche Sortierliste -->
+		<KDT_SortierListe Format="PDF">Listen/KDT_Sortiert.pdf</KDT_SortierListe>
+		<!-- Klammerliste -->
+		<KlammerListe Format="PDF">Listen/KlammerListe.pdf</KlammerListe>
+		<!-- Kommunikationssatz für das Kryptomodul -->
+		<KommunikationsSatz>Listen/Komusatz.txt</KommunikationsSatz>
+		<!-- PDTListe: Fehlerprotokoll im XDT-Format -->
+		<PDTListe>Listen/PDTListe.pdt</PDTListe>
+		<!-- SADT Fallstatistikliste -->
+		<SADT_FallListe Format="PDF">Listen/SADT_FallStatistik.pdf</SADT_FallListe>
+		<!-- SADT GNR Statistikliste -->
+		<SADT_GNRListe Format="PDF">Listen/SADT_GNRListe.pdf</SADT_GNRListe>
+		<!-- Scheinabgabe (ohne Dokumentationsbögen), wie sie in der
+		   - KV-Spezifikadatei gefordert wird -->
+		<ScheinAbgabeListe Format="PDF">Listen/ScheinAbgabeListe.pdf</ScheinAbgabeListe>
+		<!-- Sortierliste -->
+		<SortierListe Format="PDF">Listen/Sortiert.pdf</SortierListe>
+		<!-- UeScheinAbgabeListe: Liste mit allen Ueberweisungsscheinen einer Abrechnung
+		   - Die Liste wird nur ausgegeben, wenn dies in der KV-Spezifika
+		   - gefordert wird (Satzart "kvx5") -->
+		<UeScheinAbgabeListe Format="PDF">Listen/UeScheinAbgabeListe.pdf</UeScheinAbgabeListe>
+		<!-- UeScheinPlusAbgabeListe: Liste aller Ueberweisungsscheine + aller
+		   -  Scheine wie unter ScheinAbgabeListe definiert
+		   - Die Liste wird nur ausgegeben, wenn dies in der KV-Spezifika
+		   - gefordert wird (Satzart "kvx5") -->
+		<UeScheinPlusAbgabeListe Format="PDF">Listen/UeScheinPlusAbgabeListe.pdf</UeScheinPlusAbgabeListe>
+	</ausgabedateien>
+	<!-- Schalter zur Programmsteuerung -->
+	<schalter>
+		<!-- Wird der Konfigurationsschalter "adt_interne_patientennummer" = ja gesetzt,
+		   - werden in den beiden Dokumenten, die zu den Schaltern "ScheinAbgabeListe" und
+		   - "DokuAbgabeListe" angegeben sind, statt des Patientennamen und Vornamen
+		   - die systeminterne Patientennummer (Feldkennung 3000) ausgegeben.
+		   - Diese Option ist für Laborpraxen interessant.
+		   - Mögliche Werte: ja, nein -->
+		<adt_interne_patientennummer>nein</adt_interne_patientennummer>
+		<!-- ICD Codes werden zusätzlich gegen die Stammdatei geprüft (Kannprüfungen).
+		   - Altersbegrenzung
+		   - Gechlecht
+		   - exotische Krankheiten
+		   - Mögliche Werte: ja, nein -->
+		<icd_zusatz_pruefung>nein</icd_zusatz_pruefung>
+		<!-- Das XPM prüft nur Dateien mit bestimmten Datenpaketen
+                   - Mögliche Werte:
+                   - alle (es werden alle Datenpakete geprüft)
+                   - hdrg (nur das Datenpaket Hybrid-DRG ist erlaubt)
+                   - adt (nur die Datenpakete adt, kadt und sadt sind erlaubt) -->
+		<datenpakete>alle</datenpakete>
+		<!-- Die Änderung der Konfigurationsparameter über die GUI verhindern.
+		   - Mögliche Werte: ja, nein -->
+		<gui_optionen>ja</gui_optionen>
+		<!-- Die Änderung der Prüfdatei über die GUI verhindern.
+		   - Mögliche Werte: ja, nein -->
+		<gui_selektion>ja</gui_selektion>
+		<!-- Aktiviert die Ausgabe der VSDM-Anzahl Standardmäßig, auch bei 0 gefundenen VSDM. Default: nein -->
+		<vsdmAnzahlAusgabe>nein</vsdmAnzahlAusgabe>
+		<!-- Schalter Konnektor-Informationsmeldungen protokollieren
+   			- Mögliche Werte: ja, nein -->
+		<konnektorinfo>ja</konnektorinfo>
+		<!-- Zusätzlich zu einer Fehlerliste im PDF Format eine Fehlerliste im XML Format generieren
+			 Schalter ist nur aktiv wenn eine Fehlerliste im PDF Format konfiguriert ist
+   			- Mögliche Werte: ja, nein -->
+		<xmlfehlerliste>nein</xmlfehlerliste>
+		<pfad_lizenz>Doku/Lizenzvereinbarung.pdf</pfad_lizenz>
+	</schalter>
+</konfiguration>

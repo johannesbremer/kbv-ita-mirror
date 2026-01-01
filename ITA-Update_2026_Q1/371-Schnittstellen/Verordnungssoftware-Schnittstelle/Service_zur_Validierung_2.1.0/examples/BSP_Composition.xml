@@ -1,0 +1,116 @@
+<Composition xmlns="http://hl7.org/fhir">
+	<id value="1500"/>
+	<meta>
+		<versionId value="1"/>
+		<lastUpdated value="2022-09-09T12:51:00Z"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Composition|2.1.0"/>
+	</meta>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis">
+		<valueCoding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN"/>
+			<code value="01"/>
+		</valueCoding>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_StartUp_Context">
+			<valueCodeableConcept>
+				<coding>
+					<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context"/>
+					<code value="1"/>
+					<display value="Ohne Aufrufkontext"/>
+				</coding>
+			</valueCodeableConcept>
+	</extension>
+	<status value="final"/>
+	<type>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="11503-0"/>
+		</coding>
+	</type>
+	<subject>
+		<reference value="Patient/100"/>
+	</subject>
+	<date value="2022-09-09T12:51:00Z"/>
+	<author>
+		<reference value="Practitioner/2"/>
+		<type value="Practitioner"/>
+	</author>
+	<author>
+		<reference value="Device/20000"/>
+		<type value="Device"/>
+	</author>
+	<author>
+		<reference value="PractitionerRole/210"/>
+		<type value="PractitionerRole"/>
+	</author>
+	<title value="Aufruf der VoS"/>
+	<custodian>
+		<reference value="Organization/250"/>
+	</custodian>
+	<section>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType"/>
+				<code value="Additional patient information"/>
+			</coding>
+		</code>
+		<entry>
+			<reference value="Provenance/10000"/>
+		</entry>
+		<entry>
+			<reference value="Provenance/10001"/>
+		</entry>
+		<entry>
+			<reference value="AllergyIntolerance/3"/>
+		</entry>
+		<entry>
+			<reference value="AllergyIntolerance/4"/>
+		</entry>
+		<entry>
+			<reference value="Observation/500"/>
+		</entry>
+		<entry>
+			<reference value="Observation/510"/>
+		</entry>
+		<entry>
+			<reference value="Observation/520"/>
+		</entry>
+		<entry>
+			<reference value="Observation/530"/>
+		</entry>
+		<entry>
+			<reference value="Observation/540"/>
+		</entry>
+		<entry>
+			<reference value="Condition/50"/>
+		</entry>
+		<entry>
+			<reference value="Coverage/600"/>
+		</entry>
+	</section>
+	<section>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType"/>
+				<code value="Documents"/>
+			</coding>
+		</code>
+		<entry>
+			<reference value="DocumentReference/2500"/>
+		</entry>
+	</section>
+	<section>	
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType"/>
+				<code value="Medications"/>
+			</coding>
+		</code>
+		<entry>
+			<reference value="Medication/710"/>
+		</entry>
+		<entry>
+			<reference value="MedicationStatement/720"/>
+		</entry>
+	</section>
+</Composition>

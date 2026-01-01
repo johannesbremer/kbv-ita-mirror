@@ -1,0 +1,373 @@
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="200000"/>
+	<meta>
+		<versionId value="1"/>
+		<lastUpdated value="2022-10-07T13:35:03Z"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Bundle_PVS_VoS|2.1.0"/>
+	</meta>
+	<identifier>
+		<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_VoS_BundleID"/>
+		<value value="Test-ID-PVS"/>
+	</identifier>
+	<type value="document"/>
+	<timestamp value="2022-10-07T13:35:03Z"/>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Composition/85100"/>
+		<resource>
+			<Composition xmlns="http://hl7.org/fhir">
+				<id value="85100"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-10-07T13:35:03Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Composition|2.1.0"/>
+				</meta>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis">
+					<valueCoding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN"/>
+						<code value="00"/>
+					</valueCoding>
+				</extension>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_StartUp_Context">
+					<valueCodeableConcept>
+						<coding>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context"/>
+							<code value="2"/>
+							<display value="Erstverordnung"/>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+				<status value="final"/>
+				<type>
+					<coding>
+						<system value="http://loinc.org"/>
+						<code value="11503-0"/>
+					</coding>
+				</type>
+				<subject>
+					<reference value="Patient/91000"/>
+				</subject>
+				<date value="2022-10-07T13:35:03Z"/>
+				<author>
+					<reference value="Practitioner/5600"/>
+					<type value="Practitioner"/>
+				</author>
+				<author>
+					<reference value="Device/20000"/>
+					<type value="Device"/>
+				</author>
+				<author>
+					<reference value="PractitionerRole/90002"/>
+					<type value="PractitionerRole"/>
+				</author>
+				<title value="Aufruf der VoS"/>
+				<custodian>
+					<reference value="Organization/90001"/>
+				</custodian>
+				<section>
+					<code>
+						<coding>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType"/>
+							<code value="Additional patient information"/>
+						</coding>
+					</code>
+					<entry>
+						<reference value="Coverage/91001"/>
+					</entry>
+				</section>
+			</Composition>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Practitioner/5600"/>
+		<resource>
+			<Practitioner xmlns="http://hl7.org/fhir">
+				<id value="5600"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-05T14:14:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_User|2.1.0"/>
+				</meta>
+				<identifier>
+					<value value="mfa"/>
+				</identifier>
+				<name>
+					<text value="MFA Empfang"/>
+				</name>
+			</Practitioner>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Organization/90001"/>
+		<resource>
+			<Organization xmlns="http://hl7.org/fhir">
+				<id value="90001"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-10-07T13:40:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Organization|2.1.0"/>
+				</meta>
+				<identifier>
+					<use value="official"/>
+					<type>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+							<code value="BSNR"/>
+						</coding>
+					</type>
+					<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"/>
+					<value value="724444400"/>
+				</identifier>
+				<name value="Hausarztpraxis"/>
+				<telecom>
+					<system value="phone"/>
+					<value value="030321654987"/>
+				</telecom>
+				<telecom>
+					<system value="email"/>
+					<value value="hausarztpraxis@e-mail.de"/>
+				</telecom>
+				<address>
+					<type value="both"/>
+					<line value="Herbert-Lewin-Platz 2">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+							<valueString value="2"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+							<valueString value="Herbert-Lewin-Platz"/>
+						</extension>
+					</line>
+					<line value="Erdgeschoss">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+							<valueString value="Erdgeschoss"/>
+						</extension>
+					</line>
+					<city value="Berlin"/>
+					<postalCode value="10623"/>
+					<country value="D"/>
+				</address>
+			</Organization>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Device/20000"/>
+		<resource>
+			<Device xmlns="http://hl7.org/fhir">
+				<id value="20000"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-09-07T15:14:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Device_PVS|2.1.0"/>
+				</meta>
+				<identifier>
+					<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer"/>
+					<value value="Y/70/2207/36/ID"/>
+				</identifier>
+				<deviceName>
+					<name value="KBV-PVS"/>
+					<type value="manufacturer-name"/>
+				</deviceName>
+				<type>
+					<coding>
+						<system value="http://snomed.info/sct"/>
+						<version value="http://snomed.info/sct/900000000000207008/version/20220331"/>
+						<code value="463916008"/>
+						<display value="Physician-practice-management information system application software (physical object)"/>
+					</coding>
+				</type>
+				<contact>
+					<system value="phone"/>
+					<value value="030/4005-0"/>
+				</contact>
+				<contact>
+					<system value="email"/>
+					<value value="ita@kbv.de"/>
+				</contact>
+			</Device>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/PractitionerRole/90002"/>
+		<resource>
+			<PractitionerRole xmlns="http://hl7.org/fhir">
+				<id value="90002"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-10-07T13:40:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_PractitionerRole|2.1.0"/>
+				</meta>
+				<practitioner>
+					<reference value="Practitioner/90000"/>
+				</practitioner>
+				<organization>
+					<reference value="Organization/90001"/>
+				</organization>
+			</PractitionerRole>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Coverage/91001"/>
+		<resource>
+			<Coverage xmlns="http://hl7.org/fhir">
+				<id value="91001"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-10-07T13:40:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Coverage|2.1.0"/>
+				</meta>
+				<extension url="http://fhir.de/StructureDefinition/gkv/einlesedatum-karte">
+					<valueDateTime value="2022-10-01"/>
+				</extension>
+				<extension url="http://fhir.de/StructureDefinition/gkv/besondere-personengruppe">
+					<valueCoding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE"/>
+						<code value="00"/>
+					</valueCoding>
+				</extension>
+				<extension url="http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen">
+					<valueCoding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DMP"/>
+						<code value="00"/>
+					</valueCoding>
+				</extension>
+				<extension url="http://fhir.de/StructureDefinition/gkv/wop">
+					<valueCoding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP"/>
+						<code value="01"/>
+					</valueCoding>
+				</extension>
+				<extension url="http://fhir.de/StructureDefinition/gkv/versichertenart">
+					<valueCoding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS"/>
+						<code value="1"/>
+					</valueCoding>
+				</extension>
+				<status value="active"/>
+				<type>
+					<coding>
+						<system value="http://fhir.de/CodeSystem/versicherungsart-de-basis"/>
+						<code value="GKV"/>
+					</coding>
+				</type>
+				<beneficiary>
+					<reference value="Patient/91000"/>
+				</beneficiary>
+				<payor>
+					<identifier>
+						<system value="http://fhir.de/sid/arge-ik/iknr"/>
+						<value value="108018347"/>
+					</identifier>
+					<display value="AOK Baden-Württemberg"/>
+				</payor>
+			</Coverage>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Practitioner/90000"/>
+		<resource>
+			<Practitioner xmlns="http://hl7.org/fhir">
+				<id value="90000"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-10-07T13:40:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Practitioner|2.1.0"/>
+				</meta>
+				<identifier>
+					<use value="official"/>
+					<type>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+							<code value="LANR"/>
+						</coding>
+					</type>
+					<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"/>
+					<value value="754236701"/>
+				</identifier>
+				<name>
+					<use value="official"/>
+					<family value="Schulz">
+						<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+							<valueString value="Schulz"/>
+						</extension>
+					</family>
+					<given value="Ben"/>
+				</name>
+				<qualification>
+					<code>
+						<coding>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type"/>
+							<code value="00"/>
+						</coding>
+					</code>
+				</qualification>
+				<qualification>
+					<code>
+						<coding>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung"/>
+							<code value="Berufsbezeichnung"/>
+						</coding>
+						<text value="Facharzt für Allgemeinmedizin"/>
+					</code>
+				</qualification>
+			</Practitioner>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://pvs.praxis-testaerztin.local/fhir/Patient/91000"/>
+		<resource>
+			<Patient xmlns="http://hl7.org/fhir">
+				<id value="91000"/>
+				<meta>
+					<versionId value="1"/>
+					<lastUpdated value="2022-10-07T13:40:00Z"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Patient|2.1.0"/>
+				</meta>
+				<identifier>
+					<type>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+							<code value="MR"/>
+						</coding>
+					</type>
+					<system value="http://kbv-testpraxis.de/patient-identifier"/>
+					<value value="P47-03"/>
+				</identifier>
+				<identifier>
+					<use value="official"/>
+					<type>
+						<coding>
+							<system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+							<code value="GKV"/>
+						</coding>
+					</type>
+					<system value="http://fhir.de/sid/gkv/kvid-10"/>
+					<value value="K220645122"/>
+				</identifier>
+				<name>
+					<use value="official"/>
+					<family value="Schuhmann">
+						<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+							<valueString value="Schuhmann"/>
+						</extension>
+					</family>
+					<given value="Sahra"/>
+				</name>
+				<gender value="female"/>
+				<birthDate value="1970-12-24"/>
+				<address>
+					<type value="both"/>
+					<line value="Berliner Straße 1">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+							<valueString value="1"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+							<valueString value="Berliner Straße"/>
+						</extension>
+					</line>
+					<city value="Husum"/>
+					<postalCode value="25813"/>
+					<country value="D"/>
+				</address>
+			</Patient>
+		</resource>
+	</entry>
+</Bundle>

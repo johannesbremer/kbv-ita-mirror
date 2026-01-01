@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<xs:schema xmlns="urn:ehd/qske/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ehd/qske/001" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="qske_dokumentation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="anzahl_erstuntersuchungen" type="anzahl_typ"/>
+				<xs:element name="anzahl_wiederholungsuntersuchungen" type="anzahl_typ"/>
+				<xs:element name="anzahl_nicht_zutreffend" type="anzahl_typ"/>
+				<xs:element name="anzahl_kapselendoskopien_mit_auslassung" type="anzahl_typ"/>
+				<xs:element name="anzahl_kapselendoskopien_ohne_auslassung" type="anzahl_typ"/>
+				<xs:element name="anzahl_auswertungen_selbst" type="anzahl_typ"/>
+				<xs:element name="anzahl_auswertungen_anderer_arzt" type="anzahl_typ"/>
+				<xs:element name="anzahl_untersuchungen_mit_nachweis_blutungsquelle" type="anzahl_typ"/>
+				<xs:element name="anzahl_untersuchungen_ohne_nachweis_blutungsquelle" type="anzahl_typ"/>
+				<xs:element name="anzahl_kapselendoskopien_bild_ohne_einschraenkung" type="anzahl_typ"/>
+				<xs:element name="anzahl_kapselendoskopien_bild_tech_probleme" type="anzahl_typ"/>
+				<xs:element name="anzahl_kapselendoskopien_bild_sichteinschraenkung" type="anzahl_typ"/>
+				<xs:element name="anzahl_vollstaendiger_untersuchungen" type="anzahl_typ"/>
+				<xs:element name="anzahl_unvollstaendiger_untersuchungen_retention1" type="anzahl_typ"/>
+				<xs:element name="anzahl_unvollstaendiger_untersuchungen_retention1_2" type="anzahl_typ"/>
+				<xs:element name="anzahl_unvollstaendiger_untersuchungen_retention2" type="anzahl_typ"/>
+				<xs:element name="anzahl_unvollstaendiger_untersuchungen_stenosen" type="anzahl_typ"/>
+				<xs:element name="anzahl_unvollstaendiger_untersuchungen_divertikel" type="anzahl_typ"/>
+				<xs:element name="anzahl_unvollstaendiger_untersuchungen_andere" type="anzahl_typ"/>
+				<xs:element name="anzahl_empfohlener_wiederholungsuntersuchung" type="anzahl_typ"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="anzahl_typ">
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:nonNegativeInteger">
+					<xs:minInclusive value="0"/>
+					<xs:maxInclusive value="99999"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

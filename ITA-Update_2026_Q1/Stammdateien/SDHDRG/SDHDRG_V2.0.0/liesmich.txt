@@ -1,0 +1,41 @@
+SDHDRG Schnittstellen-Paket (Version 2.0.0, Stand November 2025)
+************************************************************************
+
+Dieses Paket beschreibt die Datenstruktur zur Stammdatei SDHDRG.
+
+Alle Komponenten des Pakets sind separat versioniert. Es können keine 
+Schlussfolgerungen aus den Versionsnummern des Pakets und der Komponenten 
+untereinander gezogen werden. Die Versionsnummer der Schnittstelle muss auch 
+nicht identisch mit der Versionsnummer der Schnittstellenbeschreibung sein.
+
+
+1. Inhaltsverzeichnis
+2. Änderungshistorie
+   - Inhaltliche Änderungen
+   - Schnittstellenänderungen
+
+1. Inhaltsverzeichnis
+###########################################################################
+
+./
+liesmich.txt                                                    (diese Datei)
+
+./Dokumentation:
+KBV_ITA_VGEX_Schnittstelle_SDHDRG.pdf (Version 2.0.0)              (Schnittstellenbeschreibung SDHDRG)
+
+./Schema:
+datentypen_V1.40.xsd                                            (Definition der Elemente für Datentypen EHD)
+ehd_header_V1.40.xsd                                            (Definition der Elemente für Kopfdaten EHD)
+ehd_root_V1.40.xsd                                              (referenziertes Schema EHD - eHealthData, Version 1.40)
+sdhdrg_body_V2.0.0.xsd                                             (Definition der Elemente für die SDHDRG)
+sdhdrg_header_V2.0.0.xsd                                           (Definition der Elemente für Kopfdaten SDHDRG)
+sdhdrg_root_V2.0.0.xsd                                             (Root-Schema der SDHDRG)
+keytabs_V1.40.xsd                                               (Platzhalter für Definition der Elemente für Schlüsseltabellen)
+
+./XML:
+sdhdrg_02.0.0_74_tf+2026q1.xml                                      (rein technische Beispieldatei ohne fachlichen Bezug)
+
+2. Änderungshistorie
+###########################################################################
+./Schnittstellenänderung
+Das Element <sdhdrg_stammdaten> besitzt als verpflichtende Kindelemente die Elemente <leistungsbereich_liste> und <ops_liste>.

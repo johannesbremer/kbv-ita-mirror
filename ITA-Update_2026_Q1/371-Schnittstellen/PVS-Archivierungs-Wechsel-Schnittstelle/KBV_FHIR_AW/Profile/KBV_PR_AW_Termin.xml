@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Termin" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Termin" />
+  <status value="active" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="ical" />
+    <uri value="http://ietf.org/rfc/2445" />
+    <name value="iCalendar" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Appointment" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Appointment" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Appointment">
+      <path value="Appointment" />
+      <constraint>
+        <key value="AWS-1" />
+        <severity value="error" />
+        <human value="Der Status muss booked oder cancelled sein" />
+        <expression value="status='booked' or status='cancelled'" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Termin" />
+      </constraint>
+    </element>  
+    <element id="Appointment.id">
+      <path value="Appointment.id" />
+      <min value="1" />
+    </element>
+    <element id="Appointment.meta">
+      <path value="Appointment.meta" />
+      <min value="1" />
+    </element>
+    <element id="Appointment.meta.versionId">
+      <path value="Appointment.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Appointment.meta.lastUpdated">
+      <path value="Appointment.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Appointment.meta.profile">
+      <path value="Appointment.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Termin|1.2.0" />
+    </element>
+    <element id="Appointment.text">
+      <path value="Appointment.text" />
+      <min value="1" />
+    </element>	
+    <element id="Appointment.extension">
+      <path value="Appointment.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Appointment.extension:Terminserie">
+      <path value="Appointment.extension" />
+      <sliceName value="Terminserie" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Termin_Terminserie" />
+      </type>
+    </element>
+    <element id="Appointment.identifier">
+      <path value="Appointment.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.status">
+      <path value="Appointment.status" />
+      <short value="booked | cancelled" />
+      <definition value="Dieses Status dieser Ressource kann gebucht(booked) oder abgesagt(cancelled) sein." />
+    </element>
+    <element id="Appointment.cancelationReason">
+      <path value="Appointment.cancelationReason" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.serviceCategory">
+      <path value="Appointment.serviceCategory" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.serviceType">
+      <path value="Appointment.serviceType" />
+      <short value="Terminkategorie" />
+      <definition value="Dem Termin kann einer Kategorie zugeordnet werden. Die Kategorie wird vom exportierenden PVS vergeben. Termine der gleichen Art müssen die gleiche Kategorie haben. Z.B. Impftermine werden mit der Kategorie „Impf“ versehen." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Appointment.serviceType.coding">
+      <path value="Appointment.serviceType.coding" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.serviceType.text">
+      <path value="Appointment.serviceType.text" />
+      <short value="Terminkategorie" />
+      <definition value="Dem Termin kann eine Kategorie zugeordnet werden. Die Kategorie wird vom exportierenden PVS vergeben. Termine der gleichen Art müssen die gleiche Kategorie haben. Z.B. Impftermine werden mit der Kategorie „Impf“ versehen. Über die Kategorie können auch Räume abgebildet werden." />
+      <min value="1" />
+    </element>
+    <element id="Appointment.specialty">
+      <path value="Appointment.specialty" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.appointmentType">
+      <path value="Appointment.appointmentType" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.reasonCode">
+      <path value="Appointment.reasonCode" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.reasonReference">
+      <path value="Appointment.reasonReference" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.priority">
+      <path value="Appointment.priority" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.description">
+      <path value="Appointment.description" />
+      <short value="Überschrift" />
+      <definition value="Kurzbeschreibung des Termins" />
+    </element>
+    <element id="Appointment.supportingInformation">
+      <path value="Appointment.supportingInformation" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.start">
+      <path value="Appointment.start" />
+      <short value="Beginn" />
+      <definition value="Beginn des Termins mit Datum und Uhrzeit" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Appointment.end">
+      <path value="Appointment.end" />
+      <short value="Ende" />
+      <definition value="Ende des Termins mit Datum und Uhrzeit" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Appointment.minutesDuration">
+      <path value="Appointment.minutesDuration" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.slot">
+      <path value="Appointment.slot" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.created">
+      <path value="Appointment.created" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.comment">
+      <path value="Appointment.comment" />
+      <short value="Terminnotiz" />
+      <definition value="Die Beschreibung bzw. Notiz des Termins" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Appointment.patientInstruction">
+      <path value="Appointment.patientInstruction" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.basedOn">
+      <path value="Appointment.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.participant">
+      <path value="Appointment.participant" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Appointment.participant.type">
+      <path value="Appointment.participant.type" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+      </binding>
+    </element>
+    <element id="Appointment.participant.type.coding">
+      <path value="Appointment.participant.type.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Appointment.participant.type.coding.system">
+      <path value="Appointment.participant.type.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="Appointment.participant.type.coding.code">
+      <path value="Appointment.participant.type.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Appointment.participant.type.coding.display">
+      <path value="Appointment.participant.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.participant.type.coding.userSelected">
+      <path value="Appointment.participant.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.participant.type.text">
+      <path value="Appointment.participant.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.participant.actor">
+      <path value="Appointment.participant.actor" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandelnder|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette_Ort|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Appointment.participant.actor.reference">
+      <path value="Appointment.participant.actor.reference" />
+      <min value="1" />
+    </element>
+    <element id="Appointment.participant.actor.type">
+      <path value="Appointment.participant.actor.type" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.participant.actor.identifier.use">
+      <path value="Appointment.participant.actor.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.participant.actor.identifier.type">
+      <path value="Appointment.participant.actor.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.participant.actor.identifier.system">
+      <path value="Appointment.participant.actor.identifier.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR" />
+    </element>
+    <element id="Appointment.participant.actor.identifier.value">
+      <path value="Appointment.participant.actor.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="Appointment.participant.actor.identifier.period">
+      <path value="Appointment.participant.actor.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.participant.actor.identifier.assigner">
+      <path value="Appointment.participant.actor.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.participant.actor.display">
+      <path value="Appointment.participant.actor.display" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.participant.required">
+      <path value="Appointment.participant.required" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.participant.status">
+      <path value="Appointment.participant.status" />
+      <fixedCode value="accepted" />
+    </element>
+    <element id="Appointment.participant.period">
+      <path value="Appointment.participant.period" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.requestedPeriod">
+      <path value="Appointment.requestedPeriod" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

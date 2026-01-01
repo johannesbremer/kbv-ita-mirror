@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krankenbefoerderung_ReasonCode_Zusatz" />
+  <version value="1.2.0" />
+  <name value="KBV_EX_AW_Krankenbefoerderung_ReasonCode_Zusatz" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="ServiceRequest.reasonCode" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Zusatzinformationen zur Krankenbefoerderung" />
+      <definition value="Zusatzinformationen zur Krankenbefoerderung. Siehe Formular 4 vor 04 /2019" />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_pro_Woche">
+      <path value="Extension.extension" />
+      <sliceName value="ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_pro_Woche" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_pro_Woche.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_pro_Woche" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_pro_Woche.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Quantity" />
+      </type>
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_pro_Woche.value[x]:valueQuantity">
+      <path value="Extension.extension.valueQuantity" />
+      <sliceName value="valueQuantity" />
+      <min value="1" />
+      <type>
+        <code value="Quantity" />
+      </type>
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_pro_Woche.value[x]:valueQuantity.value">
+      <path value="Extension.extension.valueQuantity.value" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_pro_Woche.value[x]:valueQuantity.comparator">
+      <path value="Extension.extension.valueQuantity.comparator" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_pro_Woche.value[x]:valueQuantity.unit">
+      <path value="Extension.extension.valueQuantity.unit" />
+      <min value="1" />
+      <fixedString value="Anzahl/Woche" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_pro_Woche.value[x]:valueQuantity.system">
+      <path value="Extension.extension.valueQuantity.system" />
+      <min value="1" />
+      <fixedUri value="http://unitsofmeasure.org" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_pro_Woche.value[x]:valueQuantity.code">
+      <path value="Extension.extension.valueQuantity.code" />
+      <min value="1" />
+      <fixedCode value="/wk" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_Monate">
+      <path value="Extension.extension" />
+      <sliceName value="ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_Monate" />
+      <max value="1" />
+      <meaningWhenMissing value="d" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_Monate.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_Monate" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_Monate.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_Monate.value[x]:valueQuantity">
+      <path value="Extension.extension.valueQuantity" />
+      <sliceName value="valueQuantity" />
+      <min value="1" />
+      <type>
+        <code value="Quantity" />
+      </type>
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_Monate.value[x]:valueQuantity.value">
+      <path value="Extension.extension.valueQuantity.value" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_Monate.value[x]:valueQuantity.comparator">
+      <path value="Extension.extension.valueQuantity.comparator" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_Monate.value[x]:valueQuantity.unit">
+      <path value="Extension.extension.valueQuantity.unit" />
+      <min value="1" />
+      <fixedString value="Monat(e)" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_Monate.value[x]:valueQuantity.system">
+      <path value="Extension.extension.valueQuantity.system" />
+      <min value="1" />
+      <fixedUri value="http://unitsofmeasure.org" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsfrequenz_Anzahl_Monate.value[x]:valueQuantity.code">
+      <path value="Extension.extension.valueQuantity.code" />
+      <min value="1" />
+      <fixedCode value="mo" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsdauer">
+      <path value="Extension.extension" />
+      <sliceName value="ambulante_Behandlung_voraussichtliche_Behandlungsdauer" />
+      <short value="voraussichtlichen Behandlungsdauer poststationaer erbrachte Leistung" />
+      <definition value="voraussichtliche Behandlungsdauer von poststationaer erbrachten Leistungen" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsdauer.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="ambulante_Behandlung_voraussichtliche_Behandlungsdauer" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsdauer.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_voraussichtliche_Behandlungsdauer.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_Dauerhafte_Mobilitaetseinschraenkung_Schwerbehindertenausweis_mit_Merkzeichen">
+      <path value="Extension.extension" />
+      <sliceName value="ambulante_Behandlung_Dauerhafte_Mobilitaetseinschraenkung_Schwerbehindertenausweis_mit_Merkzeichen" />
+      <short value="Freie Begruendung" />
+      <definition value="Freie Begruendung&#xD;&#xA;0 = keine freie Begruendung&#xD;&#xA;1 = Freie Begruendung" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_Dauerhafte_Mobilitaetseinschraenkung_Schwerbehindertenausweis_mit_Merkzeichen.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="ambulante_Behandlung_Dauerhafte_Mobilitaetseinschraenkung_Schwerbehindertenausweis_mit_Merkzeichen" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_Dauerhafte_Mobilitaetseinschraenkung_Schwerbehindertenausweis_mit_Merkzeichen.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_Dauerhafte_Mobilitaetseinschraenkung_Schwerbehindertenausweis_mit_Merkzeichen.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_Dauerhafte_Mobilitaetseinschraenkung_sonstige">
+      <path value="Extension.extension" />
+      <sliceName value="ambulante_Behandlung_Dauerhafte_Mobilitaetseinschraenkung_sonstige" />
+      <short value="Freie Begruendung" />
+      <definition value="Freie Begruendung" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_Dauerhafte_Mobilitaetseinschraenkung_sonstige.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="ambulante_Behandlung_Dauerhafte_Mobilitaetseinschraenkung_sonstige" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_Dauerhafte_Mobilitaetseinschraenkung_sonstige.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_Dauerhafte_Mobilitaetseinschraenkung_sonstige.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_hochfrequente_Behandlung_vergleichbarer_Ausnahmefall">
+      <path value="Extension.extension" />
+      <sliceName value="ambulante_Behandlung_hochfrequente_Behandlung_vergleichbarer_Ausnahmefall" />
+      <short value="Freie Begruendung" />
+      <definition value="Freie Begruendung" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_hochfrequente_Behandlung_vergleichbarer_Ausnahmefall.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="ambulante_Behandlung_hochfrequente_Behandlung_vergleichbarer_Ausnahmefall" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_hochfrequente_Behandlung_vergleichbarer_Ausnahmefall.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_hochfrequente_Behandlung_vergleichbarer_Ausnahmefall.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_hochfrequente_Behandlung_gemaess_Anlage_2">
+      <path value="Extension.extension" />
+      <sliceName value="ambulante_Behandlung_hochfrequente_Behandlung_gemaess_Anlage_2" />
+      <short value="Freie Begruendung" />
+      <definition value="Freie Begruendung&#xD;&#xA;0 = keine freie Begruendung&#xD;&#xA;1 = Freie Begruendung" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_hochfrequente_Behandlung_gemaess_Anlage_2.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="ambulante_Behandlung_hochfrequente_Behandlung_gemaess_Anlage_2" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_hochfrequente_Behandlung_gemaess_Anlage_2.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:ambulante_Behandlung_hochfrequente_Behandlung_gemaess_Anlage_2.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krankenbefoerderung_ReasonCode_Zusatz" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Begegnung_Spezielle_Begegnungsinformationen" />
+  <version value="1.2.0" />
+  <name value="KBV_EX_AW_Begegnung_Spezielle_Begegnungsinformationen" />
+  <title value="KBV_EX_AW_Begegnung_Spezielle_Begegnungsinformationen" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Encounter" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Spezielle Begegnungsinformationen" />
+      <definition value="Spezielle Begegnungsinformationen" />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:typ">
+      <path value="Extension.extension" />
+      <sliceName value="typ" />
+      <short value="Typ" />
+      <definition value="Bezeichnung des Typs des Eintrags in der Begegnungsdokumentation. Teilweise auch bekannt als freie Kategorie" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:typ.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="typ" />
+    </element>
+    <element id="Extension.extension:typ.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.extension:typ.value[x]:valueCodeableConcept">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueCodeableConcept" />
+      <type>
+        <code value="CodeableConcept" />
+      </type>
+    </element>
+    <element id="Extension.extension:typ.value[x]:valueCodeableConcept.coding">
+      <path value="Extension.extension.value[x].coding" />
+      <max value="0" />
+    </element>
+    <element id="Extension.extension:typ.value[x]:valueCodeableConcept.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Extension.extension.value[x].text" />
+      <min value="1" />
+    </element>
+    <element id="Extension.extension:inhalt">
+      <path value="Extension.extension" />
+      <sliceName value="inhalt" />
+      <short value="Inhalt" />
+      <definition value="Inhalt des Eintrags in der Begegnungsdokumentation" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:inhalt.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="inhalt" />
+    </element>
+    <element id="Extension.extension:inhalt.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.extension:inhalt.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <short value="Inhalt" />
+      <definition value="Inhalt des Eintrags in der Begegnungsdokumentation" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Begegnung_Spezielle_Begegnungsinformationen" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,1641 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Diese Datei beschreibt die Meldungen eines Prueflaufs. -->
+<meldungen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Common/Schema/meldungen.xsd">
+	<meldung>
+		<nummer>KVDT-FDATE</nummer>
+		<typ>Fehler</typ>
+		<text>Formatfehler: Die Datumsangabe '%s' im Feld '%s' ist falsch.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-FEHL</nummer>
+		<typ>Fehler</typ>
+		<text>Zu der GNR '%s' wurde keine Angabe im Feld '%s' gemacht.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R-FK0132</nummer>
+		<typ>Warnung</typ>
+		<text>Die Feldkennung 0132 entspricht nicht dem erlaubten Format. Gefundener Wert: '%s'</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-FFK</nummer>
+		<typ>Fehler</typ>
+		<text>Die Feldkennung '%s' mit dem Wert '%s' darf höchstens einmal zu einer GNR angegeben werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-FFKW</nummer>
+		<typ>Warnung</typ>
+		<text>Die Feldkennung '%s' mit dem Wert '%s' darf höchstens einmal zu einer GNR angegeben werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-FK5001</nummer>
+		<typ>Fehler</typ>
+		<text>Die Feldkennung '%s' mit dem Wert '%s' darf erst hinter einer GNR angegeben werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-FK3674</nummer>
+		<typ>Info</typ>
+		<text>Bitte überprüfen Sie die Diagnosensicherheit '%s' für folgenden ICD-Code '%s'.</text>
+		<text>Als Dauerdiagnosen im Sinne der Abrechnung sind Diagnosen zu sehen, die gesichert sind oder einen Zustand nach einer gesicherten Diagnose beschreiben (Zusatzkennzeichen G oder Z).</text>
+		<text>In spezifischen Konstellationen oder Grenzfällen können ausnahmsweise auch Verdachts- oder Ausschlussdiagnosen (Zusatzkennzeichen V oder A) quartalsübergreifend vorkommen. Bitte prüfen Sie, ob die mit Kennzeichen V oder A kategorisierten Dauerdiagnosen im Sinne der Abrechnung sachgerecht sind.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-FSATZ</nummer>
+		<typ>Fehler</typ>
+		<text>Im %s-Datenpaket muss mindestens eins der folgenden Sätze angegeben werden: %s.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-FSORT</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angaben zum 'Leistungstag (FK 5000)' sind ab dem '%s' nicht aufsteigend sortiert.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-VSDM</nummer>
+		<typ>Info</typ>
+		<text>Die Abrechnungsdatei enthält '%s' VSDM-Prüfnachweis(e).</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-F0224a</nummer>
+		<typ>Info</typ>
+		<text>Für die Betriebsstätte '%s' wird in der Abrechnung %s übertragen. Die Kennzeichen folgender Fähigkeiten des Softwaremoduls in der Betriebsstätte werden übertragen:%s</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-F0224b</nummer>
+		<typ>Info</typ>
+		<text>Für das Krankenhaus-IK '%s' wird in der Abrechnung %s übertragen. Die Kennzeichen folgender Fähigkeiten des Softwaremoduls in dem Krankenhaus werden übertragen:%s</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R017</nummer>
+		<typ>Fehler</typ>
+		<text>Die ersten beiden Stellen der VKNR '%s' können keinem UKV/OKV-Bereich zugeordnet werden.</text>
+		<text>Die VKNR ist falsch. Bitte korrigieren.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R022</nummer>
+		<typ>Fehler</typ>
+		<text>Formatfehler:</text>
+		<text>Die Eingabe '%s' im Feld '%s' ist ungültig. Erlaubt ist ein Format gemäß ann, ann.n, ann.nn, ann.n-'.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R043</nummer>
+		<typ>Fehler</typ>
+		<text>Formatfehler:</text>
+		<text>Die Eingabe '%s' im Feld 'ICD-Code' (FK 6001) ist ungültig. Erlaubt ist ein Format gemäß ann, ann.n, ann.nn, ann.n-, aaa.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R048</nummer>
+		<typ>Fehler</typ>
+		<text>Formatfehler:</text>
+		<text>Die Kennziffer SA '%s' im Feld '3005' entspricht nicht dem Format: nddddddnnnnnnnnnnnnna[a][a][a][a][a][a].</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R048a</nummer>
+		<typ>Fehler</typ>
+		<text>Formatfehler:</text>
+		<text>Die Kennziffer SA '%s' im Feld '3005' ist ungültig. Die Stellen 2 bis 7 entsprechen nicht dem Format 'TTMMJJ'.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R050</nummer>
+		<typ>Fehler</typ>
+		<text>Die LANR '%s' im Feld '%s' ist falsch bzw. unplausibel.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R063</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn die LANR '%s' im Feld '%s' mit '555555' beginnt, muss sie dem Format 555555nff (n = 0...9, f = Fachgruppencode) entsprechen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R064</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn die LANR '%s' im Feld '%s' mit '555555' beginnt, muss sie dem Format 555555nff (n = 0...9, f = Fachgruppencode) entsprechen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R056</nummer>
+		<typ>Warnung</typ>
+		<text>Die LANR '%s' im Feld '%s' ist falsch bzw. unplausibel.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R059</nummer>
+		<typ>Info</typ>
+		<text>Die ASV-Teamnummer '%s' im Feld '%s' ist falsch bzw. unplausibel.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R062</nummer>
+		<typ>Fehler</typ>
+		<text>Die BSNR SAPV im Feld '%s' muss dem Format '74kknnn63' entsprechen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R108</nummer>
+		<typ>Fehler</typ>
+		<text>Der Wert im Feld '%s' muss dem Format '%s' entsprechen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R151</nummer>
+		<typ>Fehler</typ>
+		<text>Falsche(s) Zeichen '%s' in Statusergänzung/DMP-Kennzeichnung (FK 4113).</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R160</nummer>
+		<typ>Warnung</typ>
+		<text>Im Feld 'Empfänger (FK 9102)' ist die '%s' nicht mehr erlaubt.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R162</nummer>
+		<typ>Fehler</typ>
+		<text>Die ersten beiden Stellen der Arztnummer/BSNR '%s' können keinem UKV/OKV-Bereich zugeordnet werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R164</nummer>
+		<typ>Warnung</typ>
+		<text>Im Feld 'Empfänger (FK 9102)' ist die '%s' nicht mehr erlaubt.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R182</nummer>
+		<typ>Fehler</typ>
+		<text>Der verwendete Zeichensatz ist nicht der ISO-8859-15 Zeichensatz. Die Angabe im Feld 'Verwendeter Zeichensatz (FK 9106)' muss den Wert 4 beinhalten.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R201</nummer>
+		<typ>Info</typ>
+		<text>Kasse VKNR/KTAB '%s' ist nicht in der Stammdatei.</text>
+		<text>Falls es sich um einen temporär angelegten Kostenträger handelt, ignorieren Sie bitte diese Meldung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R202</nummer>
+		<typ>Info</typ>
+		<text>Das IK '%s' ist nicht in der Stammdatei.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R203</nummer>
+		<typ>Warnung</typ>
+		<text>Die GNR '%s' ist in der GO-Stammdatei nicht definiert.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R204</nummer>
+		<typ>Warnung</typ>
+		<text>Die Prüfnummer '%s' Ihrer Praxissoftware ist nicht gültig. Wahrscheinlich ist die Software nicht mehr zertifiziert. Bitte wenden Sie sich an Ihr Softwarehaus.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R210</nummer>
+		<typ>Warnung</typ>
+		<text>Gilt nur für Datensätze des aktuellen Abrechnungsquartals (FK 9204):</text>
+		<text>Die 'Gebührenordnung (FK 4121)' des Patientensatzes muss identisch sein mit der Gebührenordnung des Kostenträgers.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-FORM-R211</nummer>
+		<typ>Warnung</typ>
+		<text>Der Wert '%s' existiert nicht in der Schlüsseltabelle S_NVV_RV_Zertifikat.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R212</nummer>
+		<typ>Fehler</typ>
+		<text>Der Kostenträger mit der VKNR 74799 darf in der Abrechnung nicht an die KVen übermittelt werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R213</nummer>
+		<typ>Fehler</typ>
+		<text>Die Prüfnummer '%s' Ihrer Praxissoftware ist länger als 12 Monate nicht gültig. Wahrscheinlich ist die Software nicht mehr zertifiziert. Bitte wenden Sie sich an Ihr Softwarehaus.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R220G</nummer>
+		<typ>Fehler</typ>
+		<text>Der Wert '%s' ist kein gültiger OMIM-G-Kode.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R220P</nummer>
+		<typ>Fehler</typ>
+		<text>Der Wert '%s' ist kein gültiger OMIM-P-Kode.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R221</nummer>
+		<typ>Warnung</typ>
+		<text>Die Hybrid-DRG Leistung '%s' ist nicht in der Stammdatei für Hybrid-DRGs enthalten.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R304</nummer>
+		<typ>Fehler</typ>
+		<text>Das Datum im Feld '%s' muss im Zeitraum vor dem '%s' liegen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R307</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn die Felder 'Einlesedatum der Versichertenkarte' (FK 4109) und 'Versichertennummer eGK des Patienten' (FK 3119) vorhanden sind%s, dann muss auch die CDM Version (FK 3006) vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R308</nummer>
+		<typ>Warnung</typ>
+		<text>Die CDM Version (FK 3006) muss größer oder gleich dem Wert 5.2.0 sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R313</nummer>
+		<typ>Fehler</typ>
+		<text>'%s' muss kleiner oder gleich dem Leistungstag '%s' (FK 5000) sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R314</nummer>
+		<typ>Warnung</typ>
+		<text>Das Geburtsdatum (FK 3103) muss kleiner oder gleich dem OP-Datum (FK 5034) sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R315</nummer>
+		<typ>Warnung</typ>
+		<text>Der Leistungstag (FK 5000) muss kleiner oder gleich dem Versicherungsschutz Ende (FK 4110) sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R316</nummer>
+		<typ>Fehler</typ>
+		<text>Der Anreisetag (FK 4264) muss kleiner oder gleich dem Leistungstag '%s' (FK 5000) sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R317</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn FK 4272 nicht vorhanden sind, dann gilt:\nDer Wert von Abreisetag (FK 4265) muss größer oder gleich dem Leistungstag '%s' (FK 5000) sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R318</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn die FK 4272 nicht vorhanden ist und die FK 4266 vorhanden ist, dann gilt:\nLeistungstag '%s' (FK 5000) muss kleiner gleich Kurabbruch am (FK 4266) sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R319</nummer>
+		<typ>Fehler</typ>
+		<text>Die (N)BSNR des Erstveranlassers (FK 4217) darf nicht identisch zum Inhalt des Feldes '(N)BSNR des Überweisers' (FK 4218) sein. Gefundener Wert FK 4217: '%s' Gefundener Wert FK 4218: '%s'</text>
+		<text>Bitte überprüfen Sie Ihre Eintragungen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R320</nummer>
+		<typ>Fehler</typ>
+		<text>Bei Überweisungsscheinen (Satzart 0102) muss der Eintrag 'Überweisung an' (FK 4220) übertragen werden, wenn es keine Laboratoriumsuntersuchung (Scheinuntergruppe ungleich 27 oder 28) ist.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R321</nummer>
+		<typ>Warnung</typ>
+		<text>Falls FK 4110 vorhanden ist, dann gilt:</text>
+		<text>Das OP-Datum (FK 5034) muss kleiner gleich dem Versicherungsschutz Ende (FK 4110) sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R322</nummer>
+		<typ>Warnung</typ>
+		<text>Falls FK 4133 vorhanden ist, dann gilt:</text>
+		<text>Das OP-Datum (FK 5034) muss grösser gleich dem Versicherungsschutz Beginn (FK 4133) sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R324</nummer>
+		<typ>Fehler</typ>
+		<text>Der Leistungstag (FK 5000) muss im Quartalszeitraum (FK 4101) liegen.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R328</nummer>
+		<typ>Fehler</typ>
+		<text>Bei Überweisungsscheinen (Satzart 0102) muss entweder das Feld '(N)BSNR des Überweisers' (FK 4218) oder das Feld 'Überweisung von anderen Ärzten' (FK 4219) oder das Feld 'ASV-Teamnummer des Überweisers' (FK 4226)vorhanden sein. Nur eines der Felder 4218, 4219 und 4226 ist bei einem Überweisungsschein zulässig.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R331</nummer>
+		<typ>Fehler</typ>
+		<text>Bei einer Ambulanten Behandlung (Satzart0101) ist als Scheinuntergruppe (FK 4239) nur '00' erlaubt.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R354</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn die Scheinuntergruppe (FK 4239) den Wert 30 für Belegärztliche Behandlung hat, muss eine Information über den Zeitraum der stationären Behandlung (FK 4233) vorhanden sein.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R356</nummer>
+		<typ>Fehler</typ>
+		<text>Bei Überweisungsscheinen (Satzart 0102) ist als Scheinuntergruppe (FK 4239) nur 20 (Selbstausstellung), 21 (Auftragsleistungen), 23 (Konsiliaruntersuchung), 24 (Mit-/ Weiterbehandlung), 26 (Stationäre Mitbehandlung, Vergütung nach ambulanten Grundsätzen), 27 (Überweisungsschein für Laboratoriumsuntersuchungen als Auftragsleistung) oder 28 (Anforderungsschein für Laboratoriumsuntersuchungen bei Laborgemeinschaften) erlaubt.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R363</nummer>
+		<typ>Fehler</typ>
+		<text>Der Leistungstag (FK 5000) muss im angegebenen Gültigkeitszeitraum (FK 4125) liegen.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R364</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn das Feld 4125 vorhanden ist, dann muss das Datum des Feldes 5034 (OP-Datum) in dem Zeitraum liegen, welcher durch die Angabe in Feld 4125 (Gültigkeitszeitraum von ... bis ...) definiert ist.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R365</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn das Feld 4125 vorhanden ist, dann muss das Datum des Feldes 5028 (Datum Beginn der Leistung) in dem Zeitraum liegen, welcher durch die Angabe in Feld 4125 (Gültigkeitszeitraum von ... bis ...) definiert ist.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R366</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn das Feld 4125 vorhanden ist, dann muss das Datum des Feldes 5029 (Datum Ende der Leistung) in dem Zeitraum liegen, welcher durch die Angabe in Feld 4125 (Gültigkeitszeitraum von ... bis ...) definiert ist.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R382</nummer>
+		<typ>Fehler</typ>
+		<text>Das Feld 'Durchführung als Kompaktkur' (FK 4262) oder das Feld 'Durchführung als Kompaktkur mit Refresher' (FK 4272) ist nur dann möglich, wenn die Kurart (FK 4261) folgende Werte annimmt:</text>
+		<text>  1 = Ambulante Vorsorgeleistung zur Krankheitsverhütung</text>
+		<text>  2 = Ambulante Vorsorgeleistung bei bestehenden Krankheiten</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R383</nummer>
+		<typ>Fehler</typ>
+		<text>Nur wenn das Feld 4262 oder das Feld 4272 vorhanden ist, darf das Feld 4271 vorhanden sein.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R390</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn das Alter des Versicherten kleiner gleich 1 Jahr (FK 5028 (Datum Beginn der Leistung) - FK 3103 (Geburtsdatum)) ist, muss das Feld 3111 (Aufnahmegewicht) vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R404</nummer>
+		<typ>Fehler</typ>
+		<text>Hat die Scheinuntergruppe (FK 4239) den Wert 27 (Laboratoriumsuntersuchungen als Auftragsleistung) oder 28 (Anforderungsschein für Laboratoriumsuntersuchungen bei Laborgemeinschaften), dann muss das Feld 'Kurativ/Präventiv/bei belegärztlicher Behandlung' (FK 4221) vorhanden sein.</text>
+		<text>Hat die Scheinuntergruppe (FK 4239) einen Wert ungleich 27 oder 28, dann darf das Feld 4221 nicht vorhanden sein.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R405</nummer>
+		<typ>Fehler</typ>
+		<text>Hat die Scheinuntergruppe (FK 4239) einen Wert gleich 27 oder 28, dann muss das Feld 4102 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R406</nummer>
+		<typ>Fehler</typ>
+		<text>Das Ausstellungsdatum (FK 4102), wenn vorhanden, muss kleinergleich dem Erstellungsdatum (FK 9103,SA con0) sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R426</nummer>
+		<typ>Fehler</typ>
+		<text>Bei einer Belegärztlichen Behandlung (Satzart 0103) ist als Scheinuntergruppe (FK 4239) nur 30 (Belegärztliche Behandlung), </text>
+		<text>31 (Belegärztliche Mitbehandlung) oder 32 (Urlaubs- bzw. Krankheitsvertretung bei belegärztlicher Behandlung)  erlaubt.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R427</nummer>
+		<typ>Fehler</typ>
+		<text>Bei einem Notfalldienst/Vertreter/Notfall (Satzart 0104), so sind in der Scheinuntergruppe (FK 4239) nur die Werte 41-46 erlaubt.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R428</nummer>
+		<typ>Fehler</typ>
+		<text>Die Kombination der Felder 2709 und 2711 muss eindeutig sein</text>
+		<maxcount>5</maxcount>
+	</meldung>
+
+	<meldung>
+		<nummer>KVDT-R431</nummer>
+		<typ>Fehler</typ>
+		<text>Nur wenn die Scheinuntergruppe (FK 4239) gleich 27 (Überweisungsschein für Laboratoriumsuntersuchungen als Auftragsleistung) ist, darf die (N)BSNR des Erstveranlassers (FK 4217) oder die ASV-Teamnummer des Erstveranlassers (FK 4225) vorhanden sein. In diesem Fall dürfen aber nicht beide Felder 4217 und 4225 gleichzeitig übertragen werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R432</nummer>
+		<typ>Fehler</typ>
+		<text>Nur wenn die Scheinuntergruppe (FK 4239) gleich 27 (Überweisungsschein für Laboratoriumsuntersuchungen als Auftragsleistung) oder 28 (Anforderungsschein für Laboratoriumsuntersuchungen bei Laborgemeinschaften) ist, darf das Feld 4229 (Ausnahmeindikation) vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R475</nummer>
+		<typ>Fehler</typ>
+		<text>Ist das Feld 'Hilfsmittelbezeichnung' (FK 0919) vorhanden, muss auch entweder das Feld 'Pharmazentralnummer Hilfsmittel' (FK 0922) oder das Feld 'Hilfsmittelnummer' (FK 0920) vorhanden sein.</text>
+		<text>Bitte setzen Sie sich gegebenenfalls mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R478</nummer>
+		<typ>Fehler</typ>
+		<text>Ungültige Patienten-Postleitzahl '%s'. Sollte es sich um einen im Ausland lebenden Patienten handeln, geben Sie bitte 99999 als Postleitzahl an.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R479</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angabe der PLZ (FK 3112) oder 'Postfach PLZ' (FK 3121) fehlt. Nur bei einen im Ausland lebenden Patienten (FK 3114 ungleich D bzw. FK 3124 ungleich D) gilt: Ist ein Einlesedatum der Versichertenkarte (FK 4109) vorhanden, dann darf die PLZ und 'Postfach PLZ' fehlen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R480</nummer>
+		<typ>Warnung</typ>
+		<text>Das Einlesedatum der Versichertenkarte (FK 4109) muss innerhalb des Quartals des Behandlungstages liegen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R482</nummer>
+		<typ>Inaktiv</typ>
+		<text>Bei von der KVK eingelesenen Patientenstammdaten mit Statusergänzung (FK 4113) 1=West, 4=Sozialhilfeempfänger, 9=Ost bzw. DMP-Kennzeichnung (M, X, A, C, K, L, E, N, D, F, S, P), ist als Kostenträger-Abrechnungsbereich nur Primärabrechnung (FK 4106 mit Inhalt 00) zulässig.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R484</nummer>
+		<typ>Fehler</typ>
+		<text>Für den ICD-Code '%s' (FK 6001) wurde keine Diagnosesicherheit (FK 6003) angegeben.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R484a</nummer>
+		<typ>Fehler</typ>
+		<text>Für die Dauerdiagnose (ICD-Code) '%s' (FK 3673) wurde keine Diagnosesicherheit Dauerdiagnose (FK 3674) angegeben.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R485</nummer>
+		<typ>Fehler</typ>
+		<text>Die Angaben der Patientenadressdaten (FK 3107 und Feld 3113) sind unvollständig. Bitte ergänzen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R486</nummer>
+		<typ>Fehler</typ>
+		<text>Mindestens eines der Felder ICD-Code (FK 6001) oder Dauerdiagnose (ICD-Code) (FK 3673) muss vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R817</nummer>
+		<typ>Warnung</typ>
+		<text>Bitte ICD-Kodierung überprüfen: '%s' gilt überwiegend nur für %s Patienten.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R489</nummer>
+		<typ>Warnung</typ>
+		<text>Bitte ICD-Kodierung überprüfen: '%s' gilt nur für Patienten %s.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R499</nummer>
+		<typ>Fehler</typ>
+		<text>Der ICD %s ist zum Abrechnungszeitraum nicht gültig.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R490</nummer>
+		<typ>Warnung</typ>
+		<text>Bitte ICD-Kodierung überprüfen: Diagnosen dieses Kodes '%s' sind in Mitteleuropa sehr selten.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R491</nummer>
+		<typ>Warnung</typ>
+		<text>Bitte ICD-Kodierung überprüfen: '%s' gilt nur für %s Patienten. Bitte Diagnosenausnahmetatbestand Feld 6008 bzw. 3677 eingeben.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R492</nummer>
+		<typ>Fehler</typ>
+		<text>Bitte ICD-Kodierung überprüfen: ICD Kode '%s' ist gegenwärtig ohne Inhalt und deshalb für die Verschlüsselung nicht zugelassen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R493</nummer>
+		<typ>Warnung</typ>
+		<text>Bitte ICD-Kodierung überprüfen: '%s' gilt nur für Patienten %s.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R494</nummer>
+		<typ>Warnung</typ>
+		<text>Bitte ICD-Kodierung überprüfen: Diagnosen dieses Kodes '%s' sind in Mitteleuropa sehr selten.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R496</nummer>
+		<typ>Fehler</typ>
+		<text>Formatfehler:</text>
+		<text>Die GNR '%s' im Feld '5001' ist ungültig. Erlaubt ist ein Format gemäß 'G-alpha[n[n[n[n]]][K-alpha[aerw]]][/Lkz]' oder '[G-alpha]n[n[n[n]]][K-alpha[aerw]][/Lkz]'.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R497</nummer>
+		<typ>Fehler</typ>
+		<text>Formatfehler:</text>
+		<text>Die GNR '%s' im Feld '5001' ist ungültig. Erlaubt ist ein Format gemäß 'nnnnn' oder 'nnnnn[G-alpha]'.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R498</nummer>
+		<typ>Fehler</typ>
+		<text>Bitte ICD-Kodierung überprüfen: ICD Kode '%s' ist gegenwärtig ohne Inhalt und deshalb für die Verschlüsselung nicht zugelassen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R521</nummer>
+		<typ>Fehler</typ>
+		<text>Ungültiges Kennzeichen '%s' für eine poststationäre Behandlung. Erlaubtes Kennzeichen: 'N'.</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+		<meldung>
+		<nummer>KVDT-R534</nummer>
+		<typ>Fehler</typ>
+		<text>Wert '%s' für Fk 4131 (BesonderePersonengruppe) nicht zulässig.</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R536</nummer>
+		<typ>Fehler</typ>
+		<text>Wert '%s' für Fk 4132 (DMP_Kennzeichnung) nicht zulässig.</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R537</nummer>
+		<typ>Fehler</typ>
+		<text>Für die Versicherten-ID T555558879 dürfen keine Leistungen abgerechnet werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R538</nummer>
+		<typ>Fehler</typ>
+		<text>Wert '%s' für Fk 3110 (Geschlecht) im Satz HDRG1 ist nicht zulässig.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R530</nummer>
+		<typ>Fehler</typ>
+		<text>Wert '%s' für Fk 4131 (BesonderePersonengruppe) im Satz 0109 (KADT) nicht zulässig.</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R700</nummer>
+		<typ>Warnung</typ>
+		<text>Der OPS im freien Begründungstext '%s' (FK 5009) ist als OP-Schlüssel im Feld 5035 zu dokumentieren.</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R701</nummer>
+		<typ>Warnung</typ>
+		<text>Die Abrechnung der GNR '%s' erfordert die Angabe des OP-Datums im Feld 5034.</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R702</nummer>
+		<typ>Warnung</typ>
+		<text>Die Abrechnung der GNR '%s' erfordert die Angabe von '%s'.</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R703</nummer>
+		<typ>Warnung</typ>
+		<text>Mindestens ein OP Schlüssel im Feld 5035 muss in der GO-Stammdatei bei der GNR '%s' definiert sein.</text>
+		<text>Die OP-Schlüssel im Feld 5035 sind im Rahmen des EBM's nicht zulässig.</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R704</nummer>
+		<typ>Warnung</typ>
+		<text>Für die Abrechnung der GNR '%s' muss eine GNR als Abrechnungsbegründung im Feld 5036 gemäß den Festlegungen des EBMs für die GNR '%s' übertragen werden.</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R705</nummer>
+		<typ>Warnung</typ>
+		<text>Der OP-Schlüssel '%s' erfordert die Angabe einer Seitenlokalisation (FK 5041).</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R707</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn das Feld Mengenangabe Kontrast- /Arzneimittel (FK 5042) existiert, darf kein Multiplikator (FK 5005) vorhanden sein.</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R709</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn die erste Stelle von Kennziffer SA (FK 3005) gleich '0' ist, dann ist keine Abrechnung über SADT möglich. Der Schein muss dann direkt mit dem Kostenträger abgerechnet werden.</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R710</nummer>
+		<typ>Warnung</typ>
+		<text>Der Inhalt '%s' von Sachkosten/Materialkosten (FK 5012) sollte kleiner als 10.000,- Euro sein.</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R711a</nummer>
+		<typ>Warnung</typ>
+		<text>Für Scheinquartal kleiner 1/2020 gilt: Wenn im Rahmen der ASV-Behandlung Sachkosten abgerechnet werden, dann sollen die Angaben "Name Hersteller/ Lieferant" im Feld 5074 und "Artikel-/ Modellnummer" im Feld 5075 zu den Sachkosten vom Arzt erfasst werden. Ausgenommen sind die Pseudo GNR 88500 bis 88699.</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+		<meldung>
+		<nummer>KVDT-R711b</nummer>
+		<typ>Warnung</typ>
+		<text>Für Scheinquartal größergleich 1/2020 gilt: Nur im Rahmen einer ASV-Behandlung dürfen die Angaben "Name Hersteller/ Lieferant" im Feld 5074 und "Artikel-/ Modellnummer" im Feld 5075 zu den Sachkosten vom Arzt erfasst werden.</text>
+		<maxcount>5</maxcount>
+		<zeilennr>Ja</zeilennr>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R715</nummer>
+		<typ>Fehler</typ>
+		<text>Unbekannte LANR: '%s'. Diese lebenslange Arztnummer (LANR) des Vertragsarztes/ Vertragspsychotherapeuten (FK 5099) wurde im Betriebsstättendaten-Satz nicht definiert.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R716</nummer>
+		<typ>Fehler</typ>
+		<text>Unbekannte BSNR: '%s'. Diese (N)BSNR des Ortes der Leistungserbringung (FK 5098) wurde im Betriebsstättendaten-Satz nicht definiert.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R720</nummer>
+		<typ>Fehler</typ>
+		<text>Hat die Scheinuntergruppe (FK 4239) den Wert 28 (Anforderungsschein für Laboratoriumsuntersuchungen bei Laborgemeinschaften), dann muss der Wert '%s' von '(N)BSNR des Überweisers' (FK 4218) mit dem Wert '%s' von '(N)BSNR des Ortes der Leistungserbringung' (FK 5098) identisch sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R720b</nummer>
+		<typ>Fehler</typ>
+		<text>Hat die Scheinuntergruppe (Feld 4239) den Wert 28 (Anforderungsschein für Laboratoriumsuntersuchungen bei Laborgemeinschaften), dann muss der Wert '%s' von '(N)BSNR des Überweisers' (Feld 4218) mit dem Wert '%s' von 'ASV Teamnummer' (Feld 5100) identisch sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R721</nummer>
+		<typ>Fehler</typ>
+		<text>Hat die Scheinuntergruppe (FK 4239) den Wert 28 (Anforderungsschein für Laboratoriumsuntersuchungen bei Laborgemeinschaften), dann muss der Wert '%s' von 'Lebenslange Arztnummer (LANR) des Überweisers' (FK 4242) mit dem Wert '%s' von 'Lebenslange Arztnummer (LANR) des Vertragsarztes/ Vertragspsychotherapeuten' (FK 5099) identisch sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R723</nummer>
+		<typ>Warnung</typ>
+		<text>Hat die Scheinuntergruppe (FK 4239) den Wert 28 (Anforderungsschein für Laboratoriumsuntersuchungen bei Laborgemeinschaften), dann muss der Wert '%s' von 'Lebenslange Arztnummer (LANR) des Vertragsarztes/ Vertragspsychotherapeuten' (FK 5099) mit einem der Werte aus dem Betriebsstättendaten-Satz übereinstimmen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R724</nummer>
+		<typ>Warnung</typ>
+		<text>Hat die Scheinuntergruppe (FK 4239) den Wert 28 (Anforderungsschein für Laboratoriumsuntersuchungen bei Laborgemeinschaften), dann muss der Wert '%s' von 'Lebenslange Arztnummer (LANR) des Vertragsarztes/ Vertragspsychotherapeuten' (FK 5098) mit einem der Werte aus dem Betriebsstättendaten-Satz übereinstimmen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R728</nummer>
+		<typ>Fehler</typ>
+		<text>Der ICD %s ist zum Abrechnungszeitraum nicht gültig.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R729</nummer>
+		<typ>Fehler</typ>
+		<text>Zu diesem Abrechnungsschein muss mindestens ein primärer ICD-Code angegeben werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R730</nummer>
+		<typ>Fehler</typ>
+		<text>Unbekannte BSNR: '%s'. Diese (N)BSNR des Ortes der Leistungserbringung (FK 5098) wurde im Betriebsstättendaten-Satz nicht definiert.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R731</nummer>
+		<typ>Warnung</typ>
+		<text>Unbekannte LANR: '%s'. Diese lebenslange Arztnummer (LANR) des Vertragsarztes/ Vertragspsychotherapeuten (FK 5099) wurde im Betriebsstättendaten-Satz nicht definiert.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R732</nummer>
+		<typ>Fehler</typ>
+		<text>Unbekannte BSNR: '%s'. Diese (N)BSNR des Ortes der Leistungserbringung (FK 5098) wurde im Betriebsstättendaten-Satz nicht definiert.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R733</nummer>
+		<typ>Fehler</typ>
+		<text>Unbekannte LANR: '%s'. Diese lebenslange Arztnummer (LANR) des Vertragsarztes/ Vertragspsychotherapeuten (FK 5099) wurde im Betriebsstättendaten-Satz nicht definiert.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R734</nummer>
+		<typ>Warnung</typ>
+		<text>Bei bundesweiten SKT Bundeswehr wird die Personenkennziffer erwartet. %s</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R735</nummer>
+		<typ>Fehler</typ>
+		<text>Zu diesem Abrechnungsschein muss mindestens ein primärer ICD-Code angegeben werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R737</nummer>
+		<typ>Warnung</typ>
+		<text>Bitte ICD-Kodierung überprüfen: '%s' gilt überwiegend nur für %s Patienten.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R738</nummer>
+		<typ>Fehler</typ>
+		<text>Der Inhalt '%s' im Feld 'Anzahl Teilabrechnungen' (FK 9261) muss kleiner oder gleich dem Inhalt '%s' von Feld 'Abrechnungsteil x von y' (FK 9260) sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R740</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn im Feld 'Abrechnung von Laborleistungen' (FK 0300) der Wert '1' (ja) angegeben wurde, dann muss das Feld 'pnSD/uu-Analysen' (FK 0301) und mindestens ein Feld 'Analyt-ID' (FK 0304) vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R741</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn im Feld 'pnSD/uu-Analysen' (FK 0301) der Wert '1' (ja - ausschließlich) oder '2' (ja - teilweise) angegeben wurde, dann muss das Feld 'Gerätetyp' (FK 0302) vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R743</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn im Feld 'enthaltene Datenpakete dieser Datei' (FK 9132) der Wert 1 angegeben wurde, dann muss der Satz 'Ringversuchszertifikate' (rvsa) vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R744</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn die Scheinuntergruppe (FK 4239) den Wert 21 für Auftragsleistungen hat, muss eine Angabe zum Auftrag (FK 4205) vorhanden sein.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R746</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn die Scheinuntergruppe (FK 4239) den Wert 31 für Belegärztliche Mitbehandlung hat, müssen Informationen über (N)BSNR des Überweisers (FK 4218) und Auftrag (FK 4205) oder Diagnose/Verdachtsdiagnose (FK 4207) oder Befund/Medikation (FK 4208) vorliegen.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R748</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn im Feld 'RV Zertifikat' (FK 0305) der Wert '2' (pnSD/uu-Analyse) angegeben wurde, dann muss mindestens ein Feld 'Gerätetyp' (FK 0302) vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R749</nummer>
+		<typ>Warnung</typ>
+		<text>Die zur Abrechnung angesetzte Gebührenordnungsposition '%s' erfordert möglicherweise ein oder mehrere Ringversuchs-Zertifikate. Bitte überprüfen Sie, ob die Gebührenordnungsposition evtl. in Verbindung mit den Materialien %s und auf Basis folgender Analyte %s erbracht wurde und ergänzen Sie ggf. ein entsprechendes RV-Zertifikat im RVSA-Datensatz.</text>
+		<text>Sie können diese Warnung ignorieren, sofern hiervon abweichende Materialien oder Analyte untersucht wurden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R750</nummer>
+		<typ>Warnung</typ>
+		<text>Die Betriebs- (BSNR) oder Nebenbetriebsstättennummer '%s' im Ringversuchszertifikate-Satz muss mit einem der Werte aus dem Betriebsstättendatensatz übereinstimmen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R754</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn die Scheinuntergruppe (FK 4239) den Wert 28 für Anforderungsschein für Laboratorium-suntersuchungen bei Laborgemeinschaften (Muster 10a) hat, dann sind als Inhalte von Kurativ/Präventiv/ESS/bei belegärztlicher Behandlung (FK 4221) nur 1, 2 und 4 erlaubt.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R755</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn die Scheinuntergruppe (FK 4239) den Wert 27 für Überweisungsschein für Laboratoriumsuntersuchungen als Auftragsleistung hat, dann muss eine Angabe zu Auftrag (FK 4205) vorhanden sein.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R756</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn die Scheinuntergruppe (FK 4239) den Wert 28 für 'Anforderungsschein für Laboratoriumsuntersuchungen bei Laborgemeinschaften (Muster 10a)' hat, dann kann eine Angabe zu 'Zusätzliche Angaben zu Untersuchungen' (FK 4209) vorhanden sein.</text>
+		<text>Ansonsten darf es nicht vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+
+	<meldung>
+		<nummer>KVDT-R761</nummer>
+		<typ>Warnung</typ>
+		<text>Bitte ICD-Kodierung überprüfen: '%s' gilt überwiegend nur für Patienten %s.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R762</nummer>
+		<typ>Fehler</typ>
+		<text>Der LANR-Ersatzwert '888888800' ist nicht mehr zulässig.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R763</nummer>
+		<typ>Warnung</typ>
+		<text>Nicht zulässiger KV-Geltungsbereich '%s' für VKNR '%s'!</text>
+		<text>Bitte korrigieren Sie den Kostenträger.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R764</nummer>
+		<typ>Fehler</typ>
+		<text>Der (Ersatz-)wert "888888800" ist obsolet und als Feldinhalt von 4242 und 5099 unzulässig.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R770</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn Feldinhalt von 5001 = 11511[G-alpha], 11512[G-alpha], 11516[G-alpha], 11517[G-alpha], 11518[G-alpha] oder 11521 [G-alpha], dann müssen die Felder 5070 und 5071 genau einmal vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R772</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn die Angabe im Feld 'OMIM-G-Kode des untersuchten Gens' (FK 5070) gleich 999999 ist, dann muss mindestens ein Feld 'Gen-Name' (FK 5072) vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R773</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn die Angabe im Feld 'OMIM-P-Kode (Art der Erkrankung)' (FK 5071) gleich 999999 ist, dann muss mindestens ein Feld 'Art der Erkrankung' (FK 5073) vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R774</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn die Angabe im Feld 'CDM Version' (FK 3006) größer oder gleich 5.2.0 ist, dann muss das Feld WOP (FK 3116) vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R789</nummer>
+		<typ>Warnung</typ>
+		<text>Unbekannte ASV Teamnummer: '%s'. Diese ASV Teamnummer (Feld 5100) wurde im Betriebsstättendaten-Satz nicht definiert.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R775</nummer>
+		<typ>Fehler</typ>
+		<text>Falls das Feld 'CDM Version' (FK 3006) und 'letzter Einlesetag der Versichertenkarte im Quartal' (FK 4109) und vorhanden ist, dann muss das Feld 'Versicherungsschutz Beginn' (FK 4133) vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R776a</nummer>
+		<typ>Fehler</typ>
+		<text>Falls FK 4109 vorhanden ist und der Inhalt der Stellen 3 - 5 des Feldes 4104 kleiner 800, dann muss das Feld 3119 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+		<meldung>
+		<nummer>KVDT-R776b</nummer>
+		<typ>Fehler</typ>
+			<text>Falls FK 4109 vorhanden ist und der Inhalt der Stellen 3 - 5 des Feldes 4104 größergleich 800, dann muss entweder das Feld 3119 oder das Feld 3105 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R777</nummer>
+		<typ>Fehler</typ>
+		<text>Falls das Feld 'Letzter Einlesetag der Versichertenkarte im Quartal' (FK 4109) vorhanden ist und die Scheinuntergruppe (FK 4239) ungleich 21, 27, 28 muss das Feld 'Kostenträgername' (FK 4134) vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R778</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn die Angabe zu 'Besondere Personengruppe' (FK 4131) gleich '07' oder '08' ist, dann muss der Kostenträger-Abrechnungsbereich (FK 4106) gleich '01' für Sozialversicherungsabkommen (SVA) oder '09' sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R779</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn die Angabe zu 'Besondere Personengruppe' (FK 4131) gleich '06' (SER), dann muss der Kostenträger-Abrechnungsbereich (FK 4106) gleich '02' für Bundesversorgungsgesetz (BVG) oder '09' sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R780</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn die Angabe zu 'Besondere Personengruppe' (FK 4131) gleich '04' (BSHG), dann muss der Kostenträger-Abrechnungsbereich (FK 4106) gleich '00' für Primärabrechnung oder '09' sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R827</nummer>
+		<typ>Warnung</typ>
+		<text>Falls ein Feld Einlesedatum (FK 4109) und keine Feld Angabe zu 'Besondere Personengruppe' (FK 4131) vorhanden ist, dann muss der Kostenträger-Abrechnungsbereich (FK 4106) gleich '00' für Primärabrechnung oder '09' sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R782</nummer>
+		<typ>Warnung</typ>
+        <text>Ab dem Quartal 4/2014 gilt: Wenn eine Angabe zu 'Versicherungsschutz Beginn' (FK 4133) vorhanden ist, dann muss das Leistungsdatum (FK 5000) größer oder gleich dem 'Versicherungsschutz Beginn' sein. Bitte prüfen Sie den Sachverhalt, ggf. wird dieses Problem durch eine fehlerhaft personalisierte eGK verursacht.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R783</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn der Kostenträger-Abrechnungsbereich (FK 4106) gleich '00' für Primärabrechnung und kein Einlesedatum (FK 4109) vorhanden ist, dann muss die 'Postfach PLZ' (FK 3121) in der PLZ-Stammdatei vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R784</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn eine Angabe zu 'CDM Version' (FK 3006) vorhanden ist, muss der Wohnsitzländercode (FK 3114) und/oder 'Postfach Wohnsitzländercode' (FK 3124) vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R790</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn der Einlesetag vorhanden ist (FK4109) und nicht FK3006 dann muss der Inhalt der Stellen 3-5 der VKNR (FK4104) größer-gleich 800 sein</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R791</nummer>
+		<typ>Fehler</typ>
+		<text>Falls FK 4109 vorhanden ist, dann müssen die Felder 3006, 3119, 4133 und 4134 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+
+	<meldung>
+		<nummer>KVDT-R813</nummer>
+		<typ>Warnung</typ>
+		<text>Die Version der ADT-Satzbeschreibung muss '%s' entsprechen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R814</nummer>
+		<typ>Warnung</typ>
+		<text>Die Version der KADT-Satzbeschreibung muss '%s' entsprechen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R815</nummer>
+		<typ>Warnung</typ>
+		<text>Die Version der SADT-Satzbeschreibung muss '%s' entsprechen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+    <meldung>
+	    <nummer>KVDT-R816</nummer>
+	    <typ>Fehler</typ>
+	    <text>Wenn die Gebührennummer gleich 11233[A-Z] ist, dann muss Feld 'OMIM-P-Kode (Art der Erkrankung)' (FK 5071) vorhanden sein, die Felder 'OMIM-G-Kode des untersuchten Gens' (FK 5070) und 'Gen-Name' (FK 5072) dürfen dagegen nicht vorhanden sein.Die Angabe [A-Z] bezeichnet einen optionalen Buchstaben von A bis Z.</text>
+	    <maxcount>5</maxcount>
+    </meldung>
+    <meldung>
+		<nummer>KVDT-R818</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn die Angabe zu 'Besondere Personengruppe' (FK 4131) gleich '09' (Empfänger von Gesundheitsleistungen nach den §§ 4 und 6 des Asylbewerberleistungsgesetzes (AsylbLG)), dann soll der Kostenträger-Abrechnungsbereich (FK 4106) gleich '00' für Primärabrechnung oder '09' sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R828</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn Feldinhalt des Feldes 5001 = 11302[G-alpha], 11303[G-alpha] oder 19402[G-alpha], dann muss mindestens ein Feld 6001 mit einem Inhalt ungleich "Z01.7" vorhanden sein. Die Feldkennungen 5070 und 5071 dürfen nicht übertragen werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R824</nummer>
+		<typ>Warnung</typ>
+		<text>Die Version der HDRG-Satzbeschreibung muss '%s' entsprechen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R829</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn Feldinhalt von Feld 5001 = 19421[G-alpha], 19424[G-alpha], 19425[G-alpha], 19451[G-alpha], 19452[G-alpha], </text>
+		<text>19453[G-alpha], 19454[G-alpha] oder 19456[G-alpha], dann muss das Feld 5070 genau einmal je GNR vorhanden sein</text>
+		<text> und es muss mindestens ein Feld 6001 mit einem Inhalt ungleich "Z01.7" vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R830</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn Feldinhalt von Feld 5001 = 19424[G-alpha], 19453[G-alpha] oder 19456[G-alpha],</text>
+		<text>dann muss das Feld FK 5070 mindestens einmal je Feld 5001 vorhanden sein </text>
+		<text>und es muss mindestens ein Feld 6001 mit einem Inhalt ungleich "Z01.7" vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+    <meldung>
+		<nummer>KVDT-R834</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn der Feldinhalt des Feldes 5001 = 11513[G-alpha] oder 11522 [G-alpha], müssen die Felder FK 5070 und FK 5071 mindestens einmal je Feld 5001 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R836</nummer>
+		<typ>Fehler</typ>
+		<text>Entweder mindestens ein Feld FK 0212 oder mindestens ein Feld FK 0223 muss vorhanden sein.</text>
+		<text>Es können auch beide Feldkennungen vorkommen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R837</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn der Inhalt des Feldes 8000 = 0101, 0102 oder 0104, dann gilt: Entweder das Feld 5099 oder das Feld 5101 muss vorhanden sein. </text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R838</nummer>
+		<typ>Info</typ>
+		<text>Wenn Feld 4239 = 28 und wenn Feld 4226 vorhanden ist, dann müssen die Inhalte der Felder 4226 und 5100 identisch sein. </text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R839</nummer>
+		<typ>Info</typ>
+		<text>Wenn Feld 5101 vorhanden ist, dann gilt: der Wert in Feld 5101 muss mit einem der Werte aus Feld 0223 (SA "besa") übereinstimmen, sofern kein Vorquartalsfall vorliegt (Inhalt von Feld 4101 = Feld 9204 (adt0)). </text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R840</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn das Feld 9102 mit 93, 94, 95 oder 96 befüllt ist, muss das Feld 0132 dem vorgegebenen regulären Ausdruck entsprechen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R841</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn ein Feld 4218 vorhanden ist, dann muss ein Feld 4242 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+		<meldung>
+		<nummer>KVDT-R842</nummer>
+		<typ>Info</typ>
+		<text>Wenn Feld 4239 = 28 und wenn Feld 4249 vorhanden ist, dann müssen die Inhalte der Felder 4249 und 5101 identisch sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R843</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn Feldinhalt des Feldes 5001 = 32901[G-alpha], 32902[G-alpha], 32904[G-alpha], 32906[G-alpha], 32908[G-alpha], 32910[G-alpha] oder 32911[G-alpha], dann muss mindestens ein Feld 6001 mit einem Inhalt ungleich "Z01.7" vorhanden sein. Die Feldkennungen 5070 und 5071 dürfen nicht übertragen werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R844</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn ein Feld 4225 vorhanden ist, dann muss entweder ein Feld 4241 oder ein Feld 4248 vorhanden sein. </text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R845</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn Feldinhalt von 4239 ungleich 28 und wenn ein Feld 4226 vorhanden ist, dann muss entweder ein Feld 4242 oder ein Feld 4249 vorhanden sein.</text>
+		<text>Wenn Feldinhalt von 4239 = 28 und wenn ein Feld 4226 vorhanden ist, dann muss ein Feld 4242 vorhanden sein. Das Feld 4249 darf nicht vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+		<meldung>
+		<nummer>KVDT-R847</nummer>
+		<typ>Info</typ>
+		<text>Wenn Feldinhalt von Feld 5001 = 19421[G-alpha], 19451[G-alpha] oder 19452[G-alpha], dann soll das Feld 5071 genau einmal je Feld 5001 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+		<meldung>
+		<nummer>KVDT-R848</nummer>
+		<typ>Info</typ>
+		<text>Wenn Feldinhalt von Feld 5001 = 19424[G-alpha], 19425[G-alpha], 19453[G-alpha], 19454[G-alpha] oder 19456[G-alpha], dann sollte das Feld 5071 mindestens einmal je Feld 5001 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R850</nummer>
+		<typ>Fehler</typ>
+		<text>Die Felder 4252 und 4253 dürfen nur gemeinsam übertragen werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R851</nummer>
+		<typ>Fehler</typ>
+		<text>Die Felder 4255 und 4256 dürfen nur gemeinsam übertragen werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R852</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn das Feld 4255 befüllt ist, muss auch das Feld 4252 befüllt sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R853</nummer>
+		<typ>Fehler</typ>
+		<text>In einem Psychotherapie-Informationsblock (FK 4235 ff.) darf eine GOP in den Feldern 4253 und 4256 nicht mehrfach übertragen werden. Gefundener doppelter Wert: '%s'.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R854</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn Feldinhalt des Feldes 5001 = 32915[G-alpha], 32916[G-alpha], 32917[G-alpha] oder 32918[G-alpha], dann muss mindestens ein Feld 6001 mit einem Inhalt ungleich "Z01.7" vorhanden sein. Die Feldkennungen 5070 und 5071 dürfen nicht übertragen werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R856</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn der Feldinhalt von FK 6001 =Z01.7, dann muss der Feldinhalt von FK 6003 = G sein. Gefundener ICD-Code: '%s'; Gefundene Diagnose-Sicherheit: '%s'</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R857</nummer>
+		<typ>Fehler</typ>
+		<text>Im Besa-Satz muss entweder das Feld 0201 oder 0213 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R858</nummer>
+		<typ>Fehler</typ>
+		<text>Im Feld 0225 (TI-Fachanwendung) muss jeder erlaubte Wert der FK 0225 gemäß der Regel 177 außer den Werten 0 (ePA Stufe 1), 2 (ePA Stufe 2) und 11 (ePA Stufe 3 bzw. ePA4all) genau einmal zu jeder (N)BSNR bzw. einem Krankenhaus-IK (FK0213) vorkommen. Zu der (N)BSNR/dem IK %s ist der Wert %s nicht oder mehrfach vorhanden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R859</nummer>
+		<typ>Fehler</typ>
+		<text>In den Satzarten 0101, 0102 und 0104 muss entweder das Feld 5098 oder 5102 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R860</nummer>
+		<typ>Warnung</typ>
+		<text>Der Inhalt des Feldes 3673 darf nicht "Z01.7" sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R862</nummer>
+		<typ>Fehler</typ>
+		<text>Im Feld 0225 (TI-Fachanwendung) darf jeder Wert maximal einmal zu der (N)BSNR bzw. dem Krankenhaus-IK %s vorkommen. %s</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R863</nummer>
+		<typ>Fehler</typ>
+		<text>Im Feld 0225 (TI-Fachanwendung) muss entweder der Wert '0' (ePA Stufe 1) oder '2' (ePA Stufe 2) oder '11' (ePA Stufe 3 bzw. ePA4all) genau einmal zu jeder (N)BSNR bzw. dem Krankenhaus-IK %s vorkommen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R864</nummer>
+		<typ>Warnung</typ>
+		<text>Der Inhalt des Feldes 3010 muss in dem umschriebenen Zeitraum liegen, welcher durch die Angabe des Quartals (4101) definiert ist.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R865</nummer>
+		<typ>Warnung</typ>
+		<text>Der Inhalt des Feldes 3010 muss größer-gleich dem Anreisetag (FK 4264) sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R866</nummer>
+		<typ>Warnung</typ>
+		<text>Der Inhalt des Feldes 3010 muss kleiner-gleich dem Abreisetag (FK %s) sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+
+	<meldung>
+		<nummer>KVDT-R867</nummer>
+		<typ>Warnung</typ>
+		<text>Die Feldkennung Datum und Uhrzeit der Onlineprüfung und -aktualisierung (Timestamp) (FK 3010) muss kleiner-gleich %s sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R868</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn für die GOP "%s" in der EBM-Stammdatei das XML-Element gnr_zusatzangaben/gnr_zusatzangaben_liste/gnr_zusatzangabe/@V=5010 vorhanden ist, dann muss das Feld 5010 einmal je Feld 5001 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R869</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn in einem Datensatz die FK 3010 vorhanden ist, dann muss für min. eine der unter FK 5098 angegebenen (N)BSNR im Besadatensatz das Feld 0224 (Produkttypversion des Konnektors) vorhanden sein. </text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R870</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn in einem Datensatz die FK 4103 vorhanden ist und den Wert 3 besitzt, muss der Inhalt des Feldes 8000 = 0102 sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R872</nummer>
+		<typ>Fehler</typ>
+		<text>Wenn das Feld 0224 übertragen wird, dann muss auch das Feld 0227 übertragen werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R873</nummer>
+		<typ>Fehler</typ>
+		<text>Das Feld 0226 (Systemunterstützung) muss den Wert '1' (ja) besitzen, falls das übergeordnete Feld 0225 (TI-Fachanwendung) den Wert '2' (ePA Stufe 2) oder '11' (ePA Stufe 3 bzw. ePA4all) aufweist.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R874</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn das Feld 0224 übertragen wird, dann muss auch das Feld 0228 übertragen werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R875</nummer>
+		<typ>Fehler</typ>
+		<text>Der Wert "%s" der LANR (FK 0212) darf nur einmal unter der (N)BSNR (FK 0201) mit dem Wert "%s" vorkommen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R876</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn die FK 3010 vorhanden ist, dann muss auch die FK 4109 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R877</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn der Feldinhalt von FK 4103 = 3, dann muss die FK 4115 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R878</nummer>
+		<typ>Warnung</typ>
+		<text>Eine BSNR darf nur einmal im Besa-Datensatz übertragen werden. Die BSNR "%s" wird mehrfach übertragen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R879</nummer>
+		<typ>Warnung</typ>
+		<text>Nur wenn das Feld 4272 vorhanden ist, dürfen die Felder 4276 und 4277 vorhanden sein</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R880</nummer>
+		<typ>Warnung</typ>
+		<text>Nur wenn Feld 4272 vorhanden ist, darf das Feld 4278 vorhanden sein</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R881</nummer>
+		<typ>Warnung</typ>
+		<text>Es darf entweder die FK 4262 oder die FK 4272 oder keine gesetzt sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R882</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn FK 4272 vorhanden ist und FK 4266 und FK 4278 nicht vorhanden sind, gilt: FK 5000 kann in folgenden Zeiträumen liegen:\n1. FK 5000 grösser gleich FK 4264 und kleiner gleich FK 4265\n2. FK 5000 grösser gleich FK 4276 und kleiner gleich FK 4277</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R883</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn FK 4272 und FK 4266 vorhanden sind und FK 4278 nicht vorhanden ist, gilt: FK 5000 kann in folgenden Zeiträumen liegen:\n1. FK 5000 grösser gleich FK 4264 und kleiner gleich FK 4265 und kleiner gleich FK 4266\n2. FK 5000 grösser gleich FK 4276 und kleiner gleich FK 4277</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R884</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn FK 4272 und FK 4278 vorhanden sind und FK 4266 nicht vorhanden ist, gilt: FK 5000 kann in folgenden Zeiträumen liegen:\n1. FK 5000 grösser gleich FK 4264 und kleiner gleich FK 4265\n2. FK 5000 grösser gleich FK 4276 und kleiner gleich FK 4277 und kleiner gleich FK 4278</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R885</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn FK 4272 und FK 4266 und FK 4278 vorhanden sind, gilt: FK 5000 kann in folgenden Zeiträumen liegen:\n1. FK 5000 grösser gleich FK 4264 und kleiner gleich FK 4265 und kleiner gleich 4266\n2. FK 5000 grösser gleich FK 4274 und kleiner gleich FK 4277 und kleiner gleich FK 4278</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R886</nummer>
+		<typ>Warnung</typ>
+		<text>Das Datum in FK 4115 darf nicht mehr als 60 Tage vor dem Datum in FK 5000 liegen. Hinweis: Wenn in der betroffenen Satzart mehr als eine FK 5000 enthalten ist, dann erfolgt die Prüfung gegen den ältesten Feldinhalt der FK 5000.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R887</nummer>
+		<typ>Warnung</typ>
+		<text>Das Datum im Feld FK 4115 darf nicht grösser als das Systemdatum sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R888</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn FK 4121 ungleich 3: Wenn für die GOP '%s' in Feld FK 5001 in der EBM-Stammdatei das XML-Element ../gnr_zusatzangabe/@V=5050 vorhanden ist, muss das Feld FK 5050 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R889</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn FK 4121 ungleich 3: Wenn für die GOP '%s' in Feld FK 5001 in der EBM-Stammdatei das XML-Element ../gnr_zusatzangabe/@V=5051 vorhanden ist, muss das Feld FK 5051 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R890</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn FK 4121 ungleich 3: Wenn für die GOP '%s' in Feld FK 5001 in der EBM-Stammdatei das XML-Element ../gnr_zusatzangabe/@V=5052 vorhanden ist, muss das Feld FK 5052 vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R894</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn die FK 5050 und die FK 5005 vorhanden sind, dann muss die Anzahl der vorhanden FK 5050 gleich dem Wert der FK 5005 entsprechen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-R895</nummer>
+		<typ>Warnung</typ>
+		<text>Wenn die FK 4112 vorhanden ist, dann dürfen die FK 4109 und FK 3010 %sund FK 3006 nicht vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-RABG</nummer>
+		<typ>Fehler</typ>
+		<text>Unbekanntes Abrechnungsgebiet: '%s'</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-RAV</nummer>
+		<typ>Warnung</typ>
+		<text>Die BSNR '%s' ist nicht in der Arztverzeichnis-Stammdatei (SDAV).</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-RDP1</nummer>
+		<typ>Fehler</typ>
+		<text>Das Datenpaket '%s' wurde nicht im Containersatz deklariert.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-RDP2</nummer>
+		<typ>Fehler</typ>
+		<text>Das Datenpaket '%s' wurde im Containersatz deklariert, ist aber in der Abrechnungsdatei nicht vorhanden.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-RGOS</nummer>
+		<typ>Fehler</typ>
+		<text>Die GOS-Datei '%s' existiert nicht.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-RKAB</nummer>
+		<typ>Fehler</typ>
+		<text>Unbekannter Kostenträger-Abrechnungsbereich: '%s'</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-RQL1</nummer>
+		<typ>Fehler</typ>
+		<text>Dieser Behandlungsfall kann erst im nächsten Quartal abgerechnet werden.</text>
+		<text>Bitte setzen Sie sich mit Ihrem Systemhaus in Verbindung.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-RQL2</nummer>
+		<typ>Warnung</typ>
+		<text>Die Kasse VKNR/KTUG '%s' ist zum Abrechnungszeitpunkt '%s' ungültig.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-RQL3</nummer>
+		<typ>Warnung</typ>
+		<text>Das Scheinquartal '%s' weicht um mehr als 8 Quartale vom Abrechnungsquartal '%s' ab.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-RQL4</nummer>
+		<typ>Warnung</typ>
+		<text>Dieses Prüfmodul ist für das Quartal '%s' bestimmt. Die Abrechnung ist aus dem Quartal '%s'. Bitte setzen Sie das aktuelle Prüfmodul ein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-RSU</nummer>
+		<typ>Fehler</typ>
+		<text>Unbekannte Scheinuntergruppe: '%s'</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-SKT1</nummer>
+		<typ>Info</typ>
+		<text>Zusätzlich erforderliche zulässige Werte in Feld '4123' (Personenkreis/Untersuchungskategorie) beinhalten nicht diesen Wert: '%s'</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-SKT2</nummer>
+		<typ>Info</typ>
+		<text>Erforderliche Zusatzangabe in Feld '4124' (SKT-Zusatzangaben) sind nicht vorhanden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-SKT3</nummer>
+		<typ>Info</typ>
+		<text>Zusätzlich erforderliche Abrechnungsinformationen SKT in Feld '4125' sind nicht vorhanden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-SKT4</nummer>
+		<typ>Info</typ>
+		<text>Für diesen sonstigen Kostenträger ist diese Satzart: '%s' unzulässig.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-SKT5</nummer>
+		<typ>Info</typ>
+		<text>Für diesen sonstigen Kostenträger ist diese Versichertenart MFR (FK 3108): '%s' unzulässig.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-STSM</nummer>
+		<typ>Info</typ>
+		<text>Dies ist keine Fehlermeldung, sondern eine statistische Auswertung.</text>
+		<text>In der geprüften Abrechnungsdatei summieren sich die Werte der von Ihnen als EURO/Cent-Wert erfassten Sach- und Materialkosten auf EUR %s und wurden insgesamt auf %s Abrechnungsschein(en) im laufenden Quartal zum Ansatz gebracht.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-STSM-D</nummer>
+		<typ>Info</typ>
+		<text>Dies ist keine Fehlermeldung, sondern eine statistische Auswertung.</text>
+		<text>In der geprüften Abrechnungsdatei summieren sich die Werte der von Ihnen als EURO/Cent-Wert erfassten Sach- und Materialkosten auf einen Betrag zwischen EUR '%s' und EUR '%s' abhängig davon, ob die von Ihnen erfassten Multiplikatoren (FK 5005) bei der Ermittlung des Gesamtbetrages mit berücksichtigt werden.</text>
+		<text>Sie wurden insgesamt auf '%s' Abrechnungsschein(en) im laufenden Quartal zum Ansatz gebracht.</text>
+		<text>Ob ein Multiplikator Berücksichtigung im Rahmen der Sach- und Materialkostenübermittlung findet, wird von der zuständigen Kassenärztlichen Vereinigung individuell je Gebührenordnungsposition festgelegt.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-STSMNS</nummer>
+		<typ>Info</typ>
+		<text>Dies ist keine Fehlermeldung, sondern eine statistische Auswertung.</text>
+		<text>Bezogen auf die Gesamtsumme der Sach- und Materialkosten entfällt auf Nachzüglerscheine folgender Betrag: EUR %s - Ansatz bei %s Abrechnungsschein(en).</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-STSMNS-D</nummer>
+		<typ>Info</typ>
+		<text>Dies ist keine Fehlermeldung, sondern eine statistische Auswertung.</text>
+		<text>Bezogen auf die Gesamtsumme der Sach- und Materialkosten entfällt auf Nachzüglerscheine ein Betrag zwischen EUR '%s' und EUR '%s' abhängig davon, ob die von Ihnen erfassten Multiplikatoren (FK 5005) bei der Ermittlung des Gesamtbetrages mit berücksichtigt werden - Ansatz bei '%s' Abrechnungsschein(en).</text>
+		<text>Ob ein Multiplikator Berücksichtigung im Rahmen der Sach- und Materialkostenübermittlung findet, wird von der zuständigen Kassenärztlichen Vereinigung individuell je Gebührenordnungsposition festgelegt</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-STSU27</nummer>
+		<typ>Info</typ>
+		<text>Dies ist keine Fehlermeldung, sondern eine statistische Auswertung für Laboratoriumsuntersuchung als Auftragsleistung (Scheinuntergruppe 27).</text>
+		<text>Überweisung von Vertragsärzten (FK 4218): %s %.</text>
+		<text>Überweisung von anderen Ärzten (FK 4219): %s %.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-STUE</nummer>
+		<typ>Info</typ>
+		<text>Dies ist keine Fehlermeldung, sondern eine statistische Auswertung für Überweisungsscheine.</text>
+		<text>Überweisung von Vertragsärzten (FK 4218): %s %.</text>
+		<text>Überweisung von anderen Ärzten (FK 4219): %s %.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-ST4242</nummer>
+		<typ>Info</typ>
+		<text>Die lebenslange Arztnummer des Überweisers wurde %s Mal auf korrekte Prüfziffer geprüft. In %s % der Fälle war die Arztnummer jedoch fehlerhaft.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-DK01</nummer>
+		<typ>Fehler</typ>
+		<text>Ist das Datum der Behandlung kleiner Q3 2017, dann sind für das Feld DMP_Kennzeichen ( FK 4132) die folgenden Werte 1, 2, 3, 4, 5 und 6 zulässig.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-BP01</nummer>
+		<typ>Fehler</typ>
+		<text>Ist das Datum der Behandlung kleiner Q3 2017,  dann sind für das Feld BesonderePersonengruppe (FK 4131) nur die Werte 04, 06, 07, 08 und 09 zulässig.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-DK02</nummer>
+		<typ>Warnung</typ>
+		<text>Ist das Datum der Behandlung größer gleich Q3 2017 und kleiner gleich Q4 2017, dann sollen die Werte für das Feld 'DMP-Kennzeichen' mit führender Null übertragen werden. Wenn kein DMP-Kennzeichen vorhanden ist, soll 00 übertragen werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-BP02</nummer>
+		<typ>Warnung</typ>
+		<text>Ist das Datum der Behandlung größer gleich Q3 2017 und kleiner gleich Q4 2017, dann sollen die Werte für das Feld 'Besondere Personengruppe' mit führender Null übertragen werden. Wenn keine besondere Personengruppe vorhanden ist, soll 00 übertragen werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-DK03</nummer>
+		<typ>Fehler</typ>
+		<text>Ist das Datum der Behandlung größer Q4 2017 dann sind für das Feld DMP_Kennzeichen (FK 4132) die Werte 00, 01, 02, 03, 04, 05 und 06 zulässig, das Feld muss immer vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-BP03</nummer>
+		<typ>Fehler</typ>
+		<text>Ist das Datum der Behandlung größer Q4 2017 dann sind für das Feld BesonderePersonengruppe (FK 4132) die Werte 00, 01, 02, 03, 04, 05 und 06 zulässig, das Feld muss immer vorhanden sein.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-PRFNW-VK</nummer>
+		<typ>Warnung</typ>
+		<text>Der Prüfnachweis soll nach den Vorgaben der KVDT-Datensatzbeschreibung nur einmal übertragen werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-DATLEN</nummer>
+		<typ>Fehler</typ>
+		<text>Für das Datumsfeld %s wird eine Länge von 8 erwartet.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-TIMLEN</nummer>
+		<typ>Fehler</typ>
+		<text>Für das Datums- und Uhrzeitfeld %s wird eine Länge von 14 erwartet.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-JAVAVERSION</nummer>
+		<typ>Info</typ>
+		<text>Auf Ihrem System ist eine Java Version kleiner 17 installiert.</text>
+		<text>In der nächsten Version des Prüfmoduls wird diese Version nicht mehr unterstützt und das Prüfmodul wird dann nicht mehr starten.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-SATZBESAHDRG</nummer>
+		<typ>Fehler</typ>
+		<text>Die Satzarten BESA oder RVSA dürfen nicht gleichzeitig mit der Satzart HDRG0 in einer Datei übertragen werden.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-SATZ</nummer>
+		<typ>Fehler</typ>
+		<text>Die Datei entspricht nicht der KVDT-Datensatzbeschreibung.%s</text>
+		<maxcount>5</maxcount>
+	</meldung>
+	<meldung>
+		<nummer>KVDT-FILEHDRG</nummer>
+		<typ>Warnung</typ>
+		<text>Der Dateiname einer Hybrid-DRG-Datei muss mit "Z30" beginnen.</text>
+		<maxcount>5</maxcount>
+	</meldung>
+</meldungen>

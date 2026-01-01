@@ -1,0 +1,14 @@
+<Practitioner xmlns="http://hl7.org/fhir">
+  <id value="5600" />
+  <meta>
+	<versionId value="1"/>
+	<lastUpdated value="2022-09-05T14:14:00Z"/>
+    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_User|2.1.0" />
+  </meta>
+  <identifier>
+    <value value="mfa" />
+  </identifier>
+  <name>
+	<text value="MFA Empfang"/>
+</name>
+</Practitioner>

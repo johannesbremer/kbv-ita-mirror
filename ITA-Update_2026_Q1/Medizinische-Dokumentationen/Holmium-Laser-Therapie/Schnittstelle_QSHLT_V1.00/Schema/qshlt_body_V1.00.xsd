@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<xs:schema xmlns="urn:ehd/qshlt/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ehd/qshlt/001" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="qshlt_dokumentation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="anzahl_ersteingriffe" type="anzahl_typ"/>
+				<xs:element name="anzahl_folgeeingriffe" type="anzahl_typ"/>
+				<xs:element name="anzahl_eingriffe_mit_absoluter_op_indikation" type="anzahl_typ"/>
+				<xs:element name="anzahl_eingriffe_mit_relativer_op_indikation" type="anzahl_typ"/>
+				<xs:element name="anzahl_prostatavolumen_0_24" type="anzahl_typ"/>
+				<xs:element name="anzahl_prostatavolumen_25_49" type="anzahl_typ"/>
+				<xs:element name="anzahl_prostatavolumen_50_69" type="anzahl_typ"/>
+				<xs:element name="anzahl_prostatavolumen_70" type="anzahl_typ"/>
+				<xs:element name="anzahl_harnstrahlmessung_0" type="anzahl_typ"/>
+				<xs:element name="anzahl_harnstrahlmessung_0_9" type="anzahl_typ"/>
+				<xs:element name="anzahl_harnstrahlmessung_10_15" type="anzahl_typ"/>
+				<xs:element name="anzahl_harnstrahlmessung_15" type="anzahl_typ"/>
+				<xs:element name="anzahl_blasenverletzungen" type="anzahl_typ"/>
+				<xs:element name="anzahl_verletzung_harnleiterostien" type="anzahl_typ"/>
+				<xs:element name="anzahl_einschwemmung" type="anzahl_typ"/>
+				<xs:element name="anzahl_andere_intraoperative_komplikationen" type="anzahl_typ"/>
+				<xs:element name="anzahl_umstiege_turp" type="anzahl_typ"/>
+				<xs:element name="anzahl_umstiege_konventionelle_op" type="anzahl_typ"/>
+				<xs:element name="anzahl_interventionspflichtige_nachblutungen_ohne_transfusion" type="anzahl_typ"/>
+				<xs:element name="anzahl_interventionspflichtige_nachblutungen_mit_transfusion" type="anzahl_typ"/>
+				<xs:element name="anzahl_andere_interventionspflichtige_fruehkomplikationen" type="anzahl_typ"/>
+				<xs:element name="anzahl_operationszeit_0_59" type="anzahl_typ"/>
+				<xs:element name="anzahl_operationszeit_60_89" type="anzahl_typ"/>
+				<xs:element name="anzahl_operationszeit_90" type="anzahl_typ"/>
+				<xs:element name="anzahl_resektionsgewicht_0" type="anzahl_typ"/>
+				<xs:element name="anzahl_resektionsgewicht_0_9" type="anzahl_typ"/>
+				<xs:element name="anzahl_resektionsgewicht_10_19" type="anzahl_typ"/>
+				<xs:element name="anzahl_resektionsgewicht_20_39" type="anzahl_typ"/>
+				<xs:element name="anzahl_resektionsgewicht_40" type="anzahl_typ"/>
+				<xs:element name="anzahl_spontanmiktion" type="anzahl_typ"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="anzahl_typ">
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:nonNegativeInteger">
+					<xs:minInclusive value="0"/>
+					<xs:maxInclusive value="99999"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+</xs:schema>

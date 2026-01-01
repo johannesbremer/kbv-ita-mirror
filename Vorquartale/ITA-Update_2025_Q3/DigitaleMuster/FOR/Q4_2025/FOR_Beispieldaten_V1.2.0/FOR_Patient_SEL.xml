@@ -1,0 +1,29 @@
+<Patient xmlns="http://hl7.org/fhir">
+	<id value="for-patient-selbstzahler"/>
+	<meta>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Patient|1.2"/>
+	</meta>
+	<name>
+		<use value="official"/>
+		<family value="Ludger Königsstein">
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+				<valueString value="Königsstein"/>
+			</extension>
+		</family>
+		<given value="Ludger"/>
+	</name>
+	<birthDate value="1935-06-22"/>
+	<address>
+		<type value="both"/>
+		<line value="Musterstr. 1">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="1"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Musterstr."/>
+			</extension>
+		</line>
+		<city value="Berlin"/>
+		<postalCode value="10623"/>
+	</address>
+</Patient>

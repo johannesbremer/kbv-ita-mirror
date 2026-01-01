@@ -1,0 +1,421 @@
+<html>
+<head>
+<title>KBV-Pr&uuml;fmodul f&uuml;r EDMP XPM_Herzinsuffizienz Prüfung Version 2025.4.0 4/2025</title>
+<style type='text/css'>
+<!--
+h2 {
+	background-color: #aaaaaa;
+}
+
+h3 {
+	background-color: #cccccc;
+}
+
+h4 {
+	background-color: #efefef;
+}
+
+h5.hot {
+	color: #dd0000;
+}
+
+BODY {
+	COLOR: #000000;
+	FONT-FAMILY: arial, helvetica;
+	FONT-SIZE: 10pt;
+	background-color: White;
+}
+
+td {
+	FONT-FAMILY: arial, helvetica;
+	FONT-SIZE: 10pt;
+}
+-->
+</style>
+</head>
+
+<body>
+	<h2>KBV-Pr&uuml;fmodul f&uuml;r EDMP XPM_Herzinsuffizienz Prüfung Version 2025.4.0 4/2025</title>
+	</h2>
+	<h3>Inhalt</h3>
+	<ul>
+		<li><a href="#requirement">Systemvoraussetzungen</a></li>
+		<li><a href="#changes">&Auml;nderungen zur Vorversion</a></li>
+		<li><a href="#knownbugs">Bekannte Fehler</a></li>
+		<li><a href="#installation">Hinweis zur Installation</a></li>
+		<li><a href="#dokumentation">Dokumentation</a></li>
+		<li><a href="#hinweise_allgemein">Allgemeine Hinweise</a></li>
+		<li><a href="#hinweise_recht">Rechtliche Hinweise</a></li>
+		<li><a href="#license">Lizenzvertragliche Regelungen</a></li>
+	</ul>
+
+	<h3>
+		<a name="requirement">Systemvoraussetzungen</a>
+	</h3>
+	<ul>
+		<li>Alle Meldungen dieses XPM-Paketes sind in der <a href="XPM_Herzinsuffizienz.Voll/Doku/Meldungen.xml">Meldungsliste</a> dokumentiert.
+		</li>
+		<li>Ben&ouml;tigt wird ein beliebiges Computersystem
+			leistungsm&auml;&szlig;ig vergleichbar mit einem IBM-kompatiblen PC
+			mit Pentium 500 MHz Prozessor oder h&ouml;her.</li>
+		<li>Das XPM verwendet die plattformunabh&auml;ngige Java
+			Technologie. Dies erm&ouml;glicht den Einsatz dieser Applikation auf
+			verschiedenen Betriebssystemen, f&uuml;r die die Java
+			Laufzeitumgebung verf&uuml;gbar ist.</li>
+		<li>Java Laufzeitumgebung 17 oder h&ouml;her</li>
+		<li>Arbeitsspeicher mindestens 128 MB RAM</li>
+	</ul>
+
+	<h3>
+		<a name="changes">&Auml;nderungen</a>
+	</h3>
+
+<h4>Version 2025.4.0 4/2025</h4>
+<ul>
+    <li>Update der KT-Stamm</li>
+    <li>Neuer XPM-Kernel</li>
+    <li>Pr&uuml;fung von numerischen Werten verbessert</li>
+    <li>Version XPM-Kernel: XPM 4.2.37</li>
+    <li>Version Steuerdatei: Herzinsuffizienz/42025/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.05/42025/74/2025-08-04+02:00</li>
+    <li>Version XML-Schema: 1.03</li>
+</ul>
+
+<h4>Version 2025.3.0 3/2025</h4>
+<ul>
+	<li>Update der KT-Stamm</li>
+	<li>Neuer XPM-Kernel</li>
+	<li>Version XPM-Kernel: XPM 4.2.33</li>
+	<li>Version Steuerdatei: Herzinsuffizienz/32025/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/32025/74/2025-05-05+02:00</li>
+	<li>Version XML-Schema: 1.03</li>
+</ul>
+
+<h4>Version 2025.2.0 2/2025</h4>
+<ul>
+    <li>Update der KT-Stamm</li>
+   	<li>&Auml;nderung bez&uuml;glich der Beendigung der Ausf&uuml;hrung der JVM nach Beendigung des Pr&uuml;fmoduls</li>
+    <li>Version XPM-Kernel: XPM 4.2.28</li>
+    <li>Version Steuerdatei: Herzinsuffizienz/22025/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/22025/74/2025-02-04+01:00</li>
+    <li>Version XML-Schema: 1.03</li>
+</ul>
+
+<h4>Version 2025.1.0 1/2025</h4>
+<ul>
+    <li>Update der KT-Stamm</li>
+    <li>Neue Schnittstelle 1.03</li>
+    <li>Version XPM-Kernel: XPM 4.2.27</li>
+    <li>Version Steuerdatei: Herzinsuffizienz/12025/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/12025/74/2024-11-13+01:00</li>
+    <li>Version XML-Schema: 1.03</li>
+</ul>
+
+<h4>Version 2024.4.0 4/2024</h4>
+<ul>
+    <li>Update der KT-Stamm</li>
+    <li>Erweiterung der erlaubten DMP-Kennzeichen</li>
+    <li>Version XPM-Kernel: XPM 4.2.27</li>
+    <li>Version Steuerdatei: Herzinsuffizienz/42024/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/32024/74/2024-08-01+02:00</li>
+    <li>Version XML-Schema: 1.02</li>
+</ul>
+
+<h4>Version 2024.3.0 3/2024</h4>
+<ul>
+    <li>Update der KT-Stamm</li>
+    <li>Version XPM-Kernel: XPM 4.2.27</li>
+    <li>Version Steuerdatei: Herzinsuffizienz/32024/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/32024/74/2024-05-02+02:00</li>
+    <li>Version XML-Schema: 1.02</li>
+</ul>
+
+<h4>Version 2024.2.0 2/2024</h4>
+<ul>
+    <li>Update der KT-Stamm</li>
+    <li>Version XPM-Kernel: XPM 4.2.25</li>
+    <li>Version Steuerdatei: Herzinsuffizienz/22024/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/22024/74/2024-02-01+01:00</li>
+    <li>Version XML-Schema: 1.02</li>
+</ul>
+
+<h4>Version 2024.1.0 1/2024</h4>
+<ul>
+    <li>XPM-Kernel aktualisiert</li>
+    <li>Update der KT-Stamm</li>
+    <li>Version XPM-Kernel: XPM 4.2.25</li>
+    <li>Version Steuerdatei: Herzinsuffizienz/12024/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/12024/74/2023-11-01+01:00</li>
+    <li>Version XML-Schema: 1.02</li>
+</ul>
+
+<h4>Version 2023.4.0 4/2023</h4>
+<ul>
+    <li>Update der KT-Stamm</li>
+    <li>Minimale Java-Version ist Java 17</li>
+    <li>Version XPM-Kernel: XPM 4.2.17</li>
+    <li>Version Steuerdatei: Herzinsuffizienz/42023/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/42023/74/2023-08-01+02:00</li>
+    <li>Version XML-Schema: 1.02</li>
+</ul>
+
+<h4>Version 2023.3.0 3/2023</h4>
+<ul>
+    <li>Update der KT-Stamm</li>
+    <li>Version XPM-Kernel: XPM 4.2.17</li>
+    <li>Version Steuerdatei: Herzinsuffizienz/32023/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/32023/74/2023-05-02+02:00</li>
+    <li>Version XML-Schema: 1.02</li>
+</ul>
+
+<h4>Version 2023.2.0 2/2023</h4>
+<ul>
+    <li>Neue Einschreibungsursache "rheumatoide Arthritis" hinzugef&uuml;gt</li>
+    <li>Update der KT-Stamm</li>
+    <li>Version XPM-Kernel: XPM 4.2.17</li>
+    <li>Version Steuerdatei: Herzinsuffizienz/22023/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/22023/74/2023-02-01+01:00</li>
+    <li>Version XML-Schema: 1.02</li>
+</ul>
+
+<h4>Version 2023.1.0 1/2023</h4>
+<ul>
+    <li>Aktualisierung der KT-Stammdatei</li>
+    <li>Version XPM-Kernel: XPM 4.2.17</li>
+    <li>Version Steuerdatei: Herzinsuffizienz/12023/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/12023/74/2022-11-01+01:00</li>
+    <li>Version XML-Schema: 1.01</li>
+</ul>
+
+<h4>Version 2022.4.0 4/2022</h4>
+<ul>
+    <li>Aktualisierung der KT-Stammdatei</li>
+    <li>Version XPM-Kernel: XPM 4.2.17</li>
+    <li>Version Steuerdatei: Herzinsuffizienz/42022/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/32022/74/2022-08-03+02:00</li>
+    <li>Version XML-Schema: 1.01</li>
+</ul>
+
+<h4>Version 2022.3.0 3/2022</h4>
+<ul>
+	<li>Aktualisierung der KT-Stammdatei</li>
+    <li>Version XPM-Kernel: XPM 4.2.17</li>
+	<li>Version Steuerdatei: Herzinsuffizienz/32022/74/01</li>
+    <li>Version KT-Stammdatei: KTS1.02/32022/74/2022-05-02+02:00</li>
+	<li>Version XML-Schema: 1.01</li>
+</ul>
+
+<h4>Version 2022.2.1 2/2022</h4>
+<ul>
+	<li>BUGFIX im XPM-Core: Bei der Ermittlung des XML-Encodings von XML-Eingabedateien kam es zu einem Fehler.</li>
+	<li>Version XPM-Kernel: XPM 4.2.17</li>
+	<li>Version Steuerdatei: Herzinsuffizienz/22022/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/22022/74/2022-02-07+01:00</li>
+	<li>Version XML-Schema: 1.01</li>
+</ul>
+
+
+<h4>Version 2022.2.0 2/2022</h4>
+<ul>
+	<li>Aktualisierung der KT-Stammdatei</li>
+	<li>Zeichenkodierungspr&uuml;fung erweitert</li>
+	<li>Handbuch des Pr&uuml;fmoduls &uuml;berarbeitet</li>
+	<li>jasperreports-dependency aktualisiert</li>
+	<li>Korrektur der PDF-Protokollausgabe</li>
+	<li>Version XPM-Kernel: XPM 4.2.16</li>
+	<li>Version Steuerdatei: Herzinsuffizienz/22022/74/01</li>
+	<li>Version KT-Stammdatei: KTS1.02/22022/74/2022-02-07+01:00</li>
+	<li>Version XML-Schema: 1.01</li>
+</ul>
+
+    <h4>Version 2022.1.2 1/2022</h4>
+	<ul>
+        <li>Aktualisierung der log4j-Bibliothek auf Version 2.17.1</li>
+        <li>Version XPM-Kernel: XPM 4.2.11</li>
+    	<li>Version Steuerdatei: Herzinsuffizienz/12022/74/01</li>
+    	<li>Version KT-Stammdatei: KTS1.02/12022/74/2021-11-03+01:00</li>	
+    	<li>Version XML-Schema: 1.01</li>
+    </ul>
+
+    <h4>Version 2022.1.1 1/2022</h4>
+	<ul>
+        <li>Update des Cores wegen einer Sicherheitslücke in der log4j-Bibliothek</li>
+        <li>Version XPM-Kernel: XPM 4.2.10</li>
+    	<li>Version Steuerdatei: Herzinsuffizienz/12022/74/01</li>
+    	<li>Version KT-Stammdatei: KTS1.02/12022/74/2021-11-03+01:00</li>	
+    	<li>Version XML-Schema: 1.01</li>
+    </ul>
+
+    <h4>Version 2022.1.0 1/2022</h4>
+	<ul>
+        <li>Neue KT-Stamm</li>
+        <li>Version XPM-Kernel: XPM 4.2.4</li>
+    	<li>Version Steuerdatei: Herzinsuffizienz/12022/74/01</li>
+    	<li>Version KT-Stammdatei: KTS1.02/12022/74/2021-11-03+01:00</li>	
+    	<li>Version XML-Schema: 1.01</li>
+    </ul>
+
+    <h4>Version 2021.4.0 4/2021</h4>
+	<ul>
+        <li>Neue KT-Stamm</li>
+    	<li>Formatprüfung diverser numerischer Felder (z.Bsp. Blutdruck) überarbeitet</li>
+        <li>Version XPM-Kernel: XPM 4.2.4</li>
+    	<li>Version Steuerdatei: Herzinsuffizienz/42021/74/01</li>
+        <li>Version KT-Stammdatei: KTS1.02/42021/74/2021-08-02+02:00</li>
+    	<li>Version XML-Schema: 1.01</li>
+    </ul>
+
+    <h4>Version 2021.3.0 3/2021</h4>
+	<ul>
+        <li>Neue KT-Stamm</li>
+       	<li>Erweiterung der erlaubten DMP-Kennzeichen um die Werte 10 (für Rheuma) und 11 (für Osteoporose)</li>
+        <li>Version XPM-Kernel: XPM 4.2.4</li>
+    	<li>Version Steuerdatei: Herzinsuffizienz/32021/74/01</li>
+        <li>Version KT-Stammdatei: KTS1.02/32021/74/2021-05-03+01:00</li>
+    	<li>Version XML-Schema: 1.01</li>
+    </ul>
+    
+    <h4>Version 2021.2.0 2/2021</h4>
+	<ul>
+    	<li>Anpassung an die Plausibilitätsrichtlinie Version 5.0 des indikationsübergreifenden, allgemeinen Datensatzes</li>
+        <li>Neue Schnittstelle 1.01</li>
+        <li>Version XPM-Kernel: XPM 4.2.4</li>
+    	<li>Version Steuerdatei: Herzinsuffizienz/22021/74/01</li>
+	    <li>Version KT-Stammdatei: KTS1.02/12021/74/2020-11-02+01:00</li>
+    	<li>Version XML-Schema: 1.01</li>
+    </ul>
+
+    <h4>Version 2021.1.0 1/2021</h4>
+	<ul>
+    	<li>KT-Stamm-Update</li>
+        <li>Version XPM-Kernel: 4.2.4</li>
+    	<li>Version Steuerdatei: Herzinsuffizienz/42021/74/01</li>
+	    <li>Version KT-Stammdatei: KTS1.02/12021/74/2020-11-02+01:00</li>
+    	<li>Version XML-Schema: 1.00</li>
+    </ul>
+
+    <h4>Version 2020.4.0 4/2020</h4>
+	<ul>
+    	<li>KT-Stamm-Update</li>
+    	<li>Minimale Java-Version ist Java 11 OpenJDK</li>
+        <li>Version XPM-Kernel: 4.2.2</li>
+    	<li>Version Steuerdatei: Herzinsuffizienz/42020/74/01</li>
+	    <li>Version KT-Stammdatei: KTS1.02/42020/74/2020-08-03+02:00</li>
+    	<li>Version XML-Schema: 1.00</li>
+    </ul>
+
+    <h4>Version 2020.3.1 3/2020</h4>
+	<ul>
+ 	   <li>Fix der Warnmeldung zu Reflection.getCallerClass</li>
+       <li>Version XPM-Kernel: XPM 4.2.2</li>
+       <li>Version Steuerdatei: Herzinsuffizienz/32020/74/01</li>
+       <li>Version KT-Stammdatei: KTS1.02/32020/74/2020-05-05+02:00</li>
+   	   <li>Version XML-Schema: 1.00</li>
+    </ul>
+
+    <h4>Version 2020.3.0</h4>
+	<ul>
+    	<li>KT-Stamm-Update</li>
+    	<li>Minimale Java-Version ist Java 11</li>
+        <li>Version XPM-Kernel: XPM 4.2.0</li>
+    	<li>Version Steuerdatei: Herzinsuffizienz/32020/74/01</li>
+	    <li>Version KT-Stammdatei: KTS1.02/32020/74/2020-05-05+02:00</li>
+    	<li>Version XML-Schema: 1.00</li>
+    </ul>
+
+    <h4>Version 2020.2.0 2/2020</h4>
+	<ul>
+    	<li>KT-Stamm-Update</li>
+    	<li>Schriftart bei PDF-Ausgabe in DejaVu-Sans ge&auml;ndert</li>
+        <li>Version XPM-Kernel: XPM 4.1.14</li>
+    	<li>Version Steuerdatei: Herzinsuffizienz/22020/74/01</li>
+	    <li>Version KT-Stammdatei: KTS1.02/22020/74/2020-02-05+01:00</li>
+    	<li>Version XML-Schema: 1.00</li>
+    </ul>
+
+    <h4>Version 2020.1.0 1/2020</h4>
+	    <ul>
+    	<li>KT-Stamm-Update</li>
+        <li>Version XPM-Kernel: XPM 4.1.9 20.02.2018</li>
+    	<li>Version Steuerdatei: Herzinsuffizienz/12020/74/01</li>
+	    <li>Version KT-Stammdatei: KTS1.02/12020/74/2019-11-12+01:00</li>
+    	<li>Version XML-Schema: 1.00</li>
+    </ul>
+
+    <h4>Version 2019.4.0 4/2019</h4>
+	    <ul>
+    	<li>KT-Stamm-Update</li>
+        <li>Version XPM-Kernel: XPM 4.0.20 20.02.2018</li>
+    	<li>Version Steuerdatei: Asthma/42019/74/01</li>
+	    <li>Version KT-Stammdatei: KTS1.02/42019/74/2019-08-01+02:00</li>
+    	<li>Version XML-Schema: 1.00</li>
+    </ul>
+
+	<h4>Version 2019.3.0 3/2019</h4>
+	<ul>
+        <li>Erste veröffentlichte Version</li>
+		<li>Version XPM-Kernel: XPM 4.0.20</li>
+		<li>Version Steuerdatei: Herzinsuffizienz/2019.3.0</li>
+		<li>Version KT-Stammdatei: KTS1.02/32019/74/2019-05-06+02:00</li>
+		<li>Version XML-Schema: 1.00</li>
+	</ul>
+	<h3>
+		<a name="knownbugs">Bekannte Fehler</a>
+	</h3>
+	<ul>
+		<li>Die Verwendung von Umlauten in Verzeichnisnamen kann zum Abbruch einer Pr&uuml;fung f&uuml;hren.</li>
+	</ul>
+
+	<h3>
+		<a name="installation">Hinweis zur Installation</a>
+	</h3>
+	<ul>
+		<li>Zip-Datei XPM-Paket_Asthma_V?.??.zip in Zielordner z.B.
+			"C:\Programme\KBV\Asthma" entpacken.</li>
+		<li>Bitte lesen Sie die <a href="Installation.txt">Hinweise
+				zur Installation</a>.
+		</li>
+		<li>Bitte lesen Sie die <a href="Readme.txt">Hinweise zur
+				angelegten Ordnerstruktur</a>.
+		</li>
+	</ul>
+
+	<h3>
+		<a name="dokumentation">Dokumentation</a>
+	</h3>
+	<ul>
+		<li>N&auml;here Hinweise und Informationen siehe <a
+			href="XPM_Herzinsuffizienz.Voll/Doku/KBV_ITA_AHEX_Handbuch_Pruefmodul.pdf">XPM
+				Anwenderhandbuch</a>. (falls Adobe Reader nicht vorhanden, Download und
+			Installation unter <a
+			href="http://www.adobe.de/products/acrobat/readermain.html">www.adobe.de/products/acrobat/readermain.html</a>).
+		</li>
+	</ul>
+
+	<h3>
+		<a name="hinweise_allgemein">Allgemeine Hinweise</a>
+	</h3>
+	<ul>
+		<li>Bei dem Ausgabeformat TEXT wird empfohlen die Seitenbreite
+			auf 120 Zeichen einzustellen, z.B: &lt;FehlerListe Format="TEXT"
+			Seitenbreite="120"&gt;Listen/FehlerListe.txt&lt;/FehlerListe&gt;.</li>
+	</ul>
+
+	<h3>
+		<a name="hinweise_recht">Rechtliche Hinweise</a>
+	</h3>
+	<ul>
+		<li>keine</li>
+	</ul>
+
+	<h3>
+		<a name="license">Lizenzvertragliche Regelungen</a>
+	</h3>
+	<ul>
+		<li>Bitte beachten Sie die Lizenzvereinbarungen im Ordner <a
+			href="XPM_Asthma.Voll/Bin/license">license</a>.
+		</li>
+	</ul>
+
+</body>
+</html>

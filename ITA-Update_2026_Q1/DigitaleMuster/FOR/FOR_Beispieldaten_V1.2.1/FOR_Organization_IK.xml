@@ -1,0 +1,34 @@
+<Organization xmlns="http://hl7.org/fhir">
+	<id value="for-organization-ik"/>
+	<meta>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Organization|1.2"/>
+	</meta>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+				<code value="XX"/>
+			</coding>
+		</type>
+		<system value="http://fhir.de/sid/arge-ik/iknr"/>
+		<value value="261300619"/>
+	</identifier>
+	<name value="Belegarztpraxis Dr. Topp-Glücklich"/>
+	<telecom>
+		<system value="phone"/>
+		<value value="03873587235"/>
+	</telecom>
+	<address>
+		<type value="both"/>
+		<line value="Quetziner Str. 88">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="88"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Quetziner Str."/>
+			</extension>
+		</line>
+		<city value="Plau am See"/>
+		<postalCode value="19395"/>
+	</address>
+</Organization>

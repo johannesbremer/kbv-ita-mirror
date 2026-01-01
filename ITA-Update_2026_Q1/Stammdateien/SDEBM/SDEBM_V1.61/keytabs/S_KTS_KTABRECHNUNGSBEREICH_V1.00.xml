@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<keytabs xmlns="urn:ehd/001">
+  <keytab S="1.2.276.0.76.5.239" SN="S_KTS_KTABRECHNUNGSBEREICH" SV="1.00">
+    <key V="00" DN="Primärabrechnung" S="1.2.276.0.76.5.239" SV="1.00"/>
+    <key V="01" DN="Sozialversicherungsabkommen" S="1.2.276.0.76.5.239" SV="1.00"/>
+    <key V="02" DN="Bundesversorgungsgesetz" S="1.2.276.0.76.5.239" SV="1.00"/>
+    <key V="03" DN="Bundesentschädigungsgesetz" S="1.2.276.0.76.5.239" SV="1.00"/>
+    <key V="04" DN="Grenzgänger" S="1.2.276.0.76.5.239" SV="1.00"/>
+    <key V="05" DN="Rheinschiffer" S="1.2.276.0.76.5.239" SV="1.00"/>
+    <key V="06" DN="Sozialhilfeträger" S="1.2.276.0.76.5.239" SV="1.00"/>
+    <key V="07" DN="Bundesvertriebenengesetz" S="1.2.276.0.76.5.239" SV="1.00"/>
+    <key V="08" DN="Asylstelle" S="1.2.276.0.76.5.239" SV="1.00"/>
+    <key V="09" DN="Schwangerschaftsabbruch" S="1.2.276.0.76.5.239" SV="1.00"/>
+    <key V="11" DN="Wohnausländer" S="1.2.276.0.76.5.239" SV="1.00"/>
+  </keytab>
+</keytabs>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns="urn::sciphox-org/sciphox" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="Einschreibungwegen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="KHK"/>
+			<xs:enumeration value="Diabetes mellitus Typ 1"/>
+			<xs:enumeration value="Diabetes mellitus Typ 2"/>
+			<xs:enumeration value="Asthma bronchiale"/>
+			<xs:enumeration value="COPD"/>
+			<xs:enumeration value="Chronische Herzinsuffizienz"/>
+			<xs:enumeration value="Depression"/>
+			<xs:enumeration value="chronischer Rückenschmerz"/>
+			<xs:enumeration value="Osteoporose"/>	
+			<xs:enumeration value="rheumatoide Arthritis"/>	
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Begleiterkrankungen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Keine der genannten Erkrankungen"/>
+			<xs:enumeration value="Arterielle Hypertonie"/>
+			<xs:enumeration value="Fettstoffwechselstörung"/>
+			<xs:enumeration value="Diabetes mellitus"/>
+			<xs:enumeration value="KHK"/>
+			<xs:enumeration value="AVK"/>
+			<xs:enumeration value="Chronische Herzinsuffizienz"/>
+			<xs:enumeration value="Asthma bronchiale"/>
+			<xs:enumeration value="COPD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Raucher">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Symptomatik">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NYHA I"/>
+			<xs:enumeration value="NYHA II"/>
+			<xs:enumeration value="NYHA III"/>
+			<xs:enumeration value="NYHA IV"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SerumelektrolyteundeGFR">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ACEHemmer">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Kontraindikation"/>
+			<xs:enumeration value="ARB"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EvidenzbasierteZieldosisACE-HemmeroderARB">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Erreicht"/>
+			<xs:enumeration value="Nicht erreicht"/>
+			<xs:enumeration value="Titrationsphase"/>
+			<xs:enumeration value="Max. tolerierte Dosis erreicht"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Betablocker">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Kontraindikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EvidenzbasierteZieldosisBetablocker">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Erreicht"/>
+			<xs:enumeration value="Nicht erreicht"/>
+			<xs:enumeration value="Titrationsphase"/>
+			<xs:enumeration value="Max. tolerierte Dosis erreicht"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Mineralokortikoid-RezeptorAntagonistMRA">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Kontraindikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EvidenzbasierteZieldosisMRA">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Erreicht"/>
+			<xs:enumeration value="Nicht erreicht"/>
+			<xs:enumeration value="Titrationsphase"/>
+			<xs:enumeration value="Max. tolerierte Dosis erreicht"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SGLT2-Inhibitor">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Kontraindikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HerzinsuffizienzspezifischeSchulungempfohlenbeiaktuellerDokumentation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EmpfohleneHerzinsuffizienzspezifischeSchulungen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="War aktuell nicht möglich"/>
+			<xs:enumeration value="Bei letzter Dokumentation keine Schulung empfohlen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BereitsvorEinschreibungindasDMPaneinerHerzinsuffizienzspezifischenSchulungteilgenommen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Ja"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VomPatientgewuenschteInfo">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Tabakverzicht"/>
+			<xs:enumeration value="Ernährungsberatung"/>
+			<xs:enumeration value="Körperliches Training"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Dokumentationsintervall">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Quartalsweise"/>
+			<xs:enumeration value="Jedes zweite Quartal"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RegelmaessigeskoerperlichesTraining">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Nicht möglich"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FuehrenGewichtsprotokoll">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Nicht erforderlich"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

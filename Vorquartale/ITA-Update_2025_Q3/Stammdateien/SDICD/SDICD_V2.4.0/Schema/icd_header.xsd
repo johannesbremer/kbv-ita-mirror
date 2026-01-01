@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<xs:schema xmlns="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<!-- ======================================================================= 
+  Einbinden der ehd-Bibliotheken
+  ======================================================================= -->
+	<xs:include schemaLocation="ehd_header_V1.40.xsd"/>
+	<!-- ======================================================================= 
+  angepasster ehd_header: icd_header (mini-header, besteht aus nur wenigen Elementen)
+  ======================================================================= -->
+	<xs:complexType name="icd_header_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_header_typ">
+				<xs:annotation>
+					<xs:documentation>service_tmr enthält das Gültigkeitsquartal, 
+            origination_dttm enthält das Erstellungsdatum</xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element ref="id"/>
+					<xs:element name="document_type_cd" type="icd_document_type_cd_typ"/>
+					<xs:element ref="service_tmr"/>
+					<xs:element ref="origination_dttm"/>
+					<xs:element ref="provider" maxOccurs="unbounded"/>
+					<xs:element name="interface" type="icd_interface_typ"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+  angepasster icd_document_type_cd_typ  für das Projekt: icd
+  ======================================================================= -->
+	<xs:complexType name="icd_document_type_cd_typ">
+		<xs:complexContent>
+			<xs:restriction base="document_type_cd_typ">
+				<xs:attribute name="V" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="icd"/>
+							<xs:enumeration value="ICD"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+  angepasster icd_interface_typ für das Projekt: icd
+  ======================================================================= -->
+	<xs:complexType name="icd_interface_typ">
+		<xs:complexContent>
+			<xs:restriction base="interface_typ">
+				<xs:annotation>
+					<xs:documentation>
+               id:
+                 'ICD' ist eindeutiger Schlüssel für die ICD-Stammdatei
+               interface.nm:
+                 Grundlage der ICD-10-GM-Stammdatei der KBV; Fassung (Quelle), die dieser Stammdatei zugrunde liegt
+               version: Version der Datensatzbeschreibung für die ICD-Stammdatei
+            </xs:documentation>
+				</xs:annotation>
+				<xs:sequence>
+					<xs:element name="id">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_id_typ">
+									<xs:attribute name="EX" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="SDICD"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="interface.nm">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_nm_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="ICD-10-GM Stammdatei"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="version">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_version_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="1.2"/>
+												<xs:enumeration value="1.3"/>
+												<xs:enumeration value="1.4"/>
+												<xs:enumeration value="2.0"/>
+												<xs:enumeration value="2.1"/>
+												<xs:enumeration value="2.2"/>
+												<xs:enumeration value="2.3"/>
+												<xs:enumeration value="2.4"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="description">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="description_typ">
+									<xs:attribute name="V" type="xs:string" use="required"/>
+									<xs:attribute name="URL" type="xs:anyURI" use="optional"/>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

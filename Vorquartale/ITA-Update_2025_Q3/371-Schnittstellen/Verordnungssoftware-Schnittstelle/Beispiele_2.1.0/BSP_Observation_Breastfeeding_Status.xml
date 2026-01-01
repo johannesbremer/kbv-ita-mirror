@@ -1,0 +1,26 @@
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="540" />
+  <meta>
+    <versionId value="1"/>
+	<lastUpdated value="2022-09-05T18:47:00Z"/>
+    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Breastfeeding_Status|2.1.0" />
+  </meta>
+  <status value="final" />
+  <code>
+    <coding>
+      <system value="http://loinc.org" />
+      <code value="63895-7" />
+	  <display value="Breastfeeding status"/>
+    </coding>
+    <coding>
+      <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_VitalSigns" />
+      <code value="Stillend" />
+	  <display value="Stillend"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/100" />
+  </subject>
+  <effectiveDateTime value="2022-09-05"/>
+  <valueBoolean value="false" />
+</Observation>

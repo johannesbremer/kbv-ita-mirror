@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+	<id value="KBV-CS-EAU-WeitereSchritte-Type" />
+	<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_EAU_WeitereSchritte_Type"/>
+	<version value="1.2.1" />
+	<name value="KBV_CS_EAU_WeitereSchritte_Type"/>
+	<status value="active"/>
+	<date value="2025-11-20" />
+	<publisher value="Kassenärztliche Bundesvereinigung" />
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://www.kbv.de"/>
+		</telecom>
+	</contact>
+	<description value="Dieses Codesystem dient der Definition von weiteren Schritten in der Behandlung des Patienten"/>
+	<copyright value="Kassenaerztliche Bundesvereinigung"/>
+	<caseSensitive value="true"/>
+	<content value="complete"/>
+	<concept>
+		<code value="d_arzt"/>
+		<display value="D-Arzt zugewiesen"/>
+	</concept>
+	<concept>
+		<code value="reha"/>
+		<display value="Leistungen Reha"/>
+	</concept>
+	<concept>
+		<code value="wiedereingliederung"/>
+		<display value="Wiedereingliederung"/>
+	</concept>
+	<concept>
+		<code value="sonstige"/>
+		<display value="Sonstige"/>
+	</concept>
+	<concept>
+		<code value="stationaere_heilbehandlung"/>
+		<display value="Stationäre Heilbehandlung"/>
+	</concept>
+</CodeSystem>

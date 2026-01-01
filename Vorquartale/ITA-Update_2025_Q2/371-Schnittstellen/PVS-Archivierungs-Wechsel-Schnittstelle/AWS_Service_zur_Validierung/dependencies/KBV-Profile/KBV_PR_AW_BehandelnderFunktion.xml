@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_BehandelnderFunktion" />
+  <status value="active" />
+  <date value="2019-03-19" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <description value="Zuordnung des Behandelnden zu einer oder mehreren Betriebsstätten bzw. ASV-Teams" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="PractitionerRole" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/PractitionerRole" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="PractitionerRole">
+      <path value="PractitionerRole" />
+      <short value="BehandelnderFunktion" />
+      <definition value="In dieser Ressource wird die Funktion eines Behandelnden abgebildet. Dieser kann in verschiedenen Betriebsstaetten oder Krankenhäusern arbeiten, aber auch einem ASV-Team angehören." />
+      <constraint>
+        <key value="AWS-1" />
+        <severity value="error" />
+		<human value="Es darf nur eine Referenz oder einen Identifier geben"/>
+        <expression value="organization.reference.exists() xor organization.identifier.exists()" />
+		<source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion"/>
+      </constraint>
+    </element>
+    <element id="PractitionerRole.id">
+      <path value="PractitionerRole.id" />
+      <min value="1" />
+    </element>
+    <element id="PractitionerRole.meta">
+      <path value="PractitionerRole.meta" />
+      <min value="1" />
+    </element>
+    <element id="PractitionerRole.meta.versionId">
+      <path value="PractitionerRole.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="PractitionerRole.meta.lastUpdated">
+      <path value="PractitionerRole.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="PractitionerRole.meta.profile">
+      <path value="PractitionerRole.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0" />
+    </element>
+    <element id="PractitionerRole.text">
+      <path value="PractitionerRole.text" />
+      <min value="1" />
+    </element>
+    <element id="PractitionerRole.text.status">
+      <path value="PractitionerRole.text.status" />
+      <short value="extensions" />
+      <fixedCode value="extensions" />
+    </element>
+    <element id="PractitionerRole.identifier">
+      <path value="PractitionerRole.identifier" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.active">
+      <path value="PractitionerRole.active" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.period">
+      <path value="PractitionerRole.period" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.practitioner">
+      <path value="PractitionerRole.practitioner" />
+      <short value="Practitioner that is able to provide the defined services for the organisation" />
+      <definition value="Practitioner that is able to provide the defined services for the organisation." />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandelnder|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.practitioner.reference">
+      <path value="PractitionerRole.practitioner.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.practitioner.type">
+      <path value="PractitionerRole.practitioner.type" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.practitioner.identifier">
+      <path value="PractitionerRole.practitioner.identifier" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.practitioner.display">
+      <path value="PractitionerRole.practitioner.display" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.organization">
+      <path value="PractitionerRole.organization" />
+      <short value="Betriebsstaette" />
+      <definition value="logische Referenz zur Betriebsstaette" />
+      <comment value="Der Arzt kann zwei Rollen verkörpern. Zum einen ist er in einer Betriebsstaette/Krankenhaus tätig . Zum anderen ist er Teil eines ASV-teams." />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.organization.type">
+      <path value="PractitionerRole.organization.type" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.organization.identifier">
+      <path value="PractitionerRole.organization.identifier" />
+		<mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.organization.identifier.use">
+      <path value="PractitionerRole.organization.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.organization.identifier.type">
+      <path value="PractitionerRole.organization.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.organization.identifier.system">
+      <path value="PractitionerRole.organization.identifier.system" />
+      <min value="1" />
+	  <fixedUri value="http://fhir.de/NamingSystem/asv/teamnummer" />
+	  <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.organization.identifier.value">
+      <path value="PractitionerRole.organization.identifier.value" />
+      <min value="1" />
+	  <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.organization.identifier.period">
+      <path value="PractitionerRole.organization.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.organization.identifier.assigner">
+      <path value="PractitionerRole.organization.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.organization.display">
+      <path value="PractitionerRole.organization.display" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.code">
+      <path value="PractitionerRole.code" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.specialty">
+      <path value="PractitionerRole.specialty" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.location">
+      <path value="PractitionerRole.location" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.healthcareService">
+      <path value="PractitionerRole.healthcareService" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.telecom">
+      <path value="PractitionerRole.telecom" />
+      <short value="Kommunikation" />
+      <definition value="Kommunikation" />
+      <comment value="Moeglicherweise eine Handynummer z.B. als Hausarzt, neben den Anderen" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.availableTime">
+      <path value="PractitionerRole.availableTime" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.notAvailable">
+      <path value="PractitionerRole.notAvailable" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.availabilityExceptions">
+      <path value="PractitionerRole.availabilityExceptions" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.endpoint">
+      <path value="PractitionerRole.endpoint" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

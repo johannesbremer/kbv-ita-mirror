@@ -1,0 +1,58 @@
+<Composition xmlns="http://hl7.org/fhir">
+	<id value="85200"/>
+	<meta>
+		<versionId value="1"/>
+		<lastUpdated value="2022-10-07T13:35:03Z"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Composition|2.1.0"/>
+	</meta>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_FOR_Legal_basis">
+		<valueCoding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_STATUSKENNZEICHEN"/>
+			<code value="00"/>
+		</valueCoding>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_StartUp_Context">
+		<valueCodeableConcept>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context"/>
+				<code value="12"/>
+				<display value="Storno eRezept"/>
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+	<status value="final"/>
+	<type>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="11503-0"/>
+		</coding>
+	</type>
+	<date value="2022-10-07T13:35:03Z"/>
+	<author>
+		<reference value="Practitioner/5600"/>
+		<type value="Practitioner"/>
+	</author>
+	<author>
+		<reference value="Device/20000"/>
+		<type value="Device"/>
+	</author>
+	<author>
+		<reference value="PractitionerRole/90002"/>
+		<type value="PractitionerRole"/>
+	</author>
+	<title value="Aufruf der VoS"/>
+	<custodian>
+		<reference value="Organization/90001"/>
+	</custodian>
+	<section>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType"/>
+				<code value="Documents"/>
+			</coding>
+		</code>
+		<entry>
+			<reference value="DocumentReference/85201"/>
+		</entry>
+	</section>
+</Composition>

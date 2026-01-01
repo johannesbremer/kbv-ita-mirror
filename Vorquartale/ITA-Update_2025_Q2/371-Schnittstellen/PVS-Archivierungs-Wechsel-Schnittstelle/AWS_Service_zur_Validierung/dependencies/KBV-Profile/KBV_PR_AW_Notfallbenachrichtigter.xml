@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Notfallbenachrichtigter" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Notfallbenachrichtigter" />
+  <status value="active" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Consent" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Consent" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Consent">
+      <path value="Consent" />
+      <short value="Notfallbenachrichtigter" />
+      <definition value="Information über eine Person, die im Notfall zu benachrichtigen ist." />
+    </element>
+    <element id="Consent.id">
+      <path value="Consent.id" />
+      <min value="1" />
+    </element>
+    <element id="Consent.meta">
+      <path value="Consent.meta" />
+      <min value="1" />
+    </element>
+    <element id="Consent.meta.versionId">
+      <path value="Consent.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Consent.meta.lastUpdated">
+      <path value="Consent.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Consent.meta.profile">
+      <path value="Consent.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Notfallbenachrichtigter|1.2.0" />
+    </element>
+    <element id="Consent.text">
+      <path value="Consent.text" />
+      <min value="1" />
+    </element>
+    <element id="Consent.identifier">
+      <path value="Consent.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Consent.status">
+      <path value="Consent.status" />
+      <definition value="Der Status dieser Ressource ist immer aktiv (active)." />
+      <fixedCode value="active" />
+    </element>
+    <element id="Consent.scope.coding">
+      <path value="Consent.scope.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Consent.scope.coding.system">
+      <path value="Consent.scope.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/consentscope" />
+    </element>
+    <element id="Consent.scope.coding.version">
+      <path value="Consent.scope.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Consent.scope.coding.code">
+      <path value="Consent.scope.coding.code" />
+      <min value="1" />
+      <fixedCode value="adr" />
+    </element>
+    <element id="Consent.scope.coding.display">
+      <path value="Consent.scope.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Consent.scope.coding.userSelected">
+      <path value="Consent.scope.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Consent.scope.text">
+      <path value="Consent.scope.text" />
+      <max value="0" />
+      <fixedString value="Notfallberechtigter" />
+    </element>
+    <element id="Consent.category">
+      <path value="Consent.category" />
+      <short value="Klassifizierung der Ressource" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieser Ressource verwendet." />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Consent.category.coding">
+      <path value="Consent.category.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Consent.category.coding.system">
+      <path value="Consent.category.coding.system" />
+      <definition value="Hcd = Patientenverfügung???" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp" />
+    </element>
+    <element id="Consent.category.coding.version">
+      <path value="Consent.category.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Consent.category.coding.code">
+      <path value="Consent.category.coding.code" />
+      <min value="1" />
+      <fixedCode value="Notfallberechtigter" />
+    </element>
+    <element id="Consent.category.coding.display">
+      <path value="Consent.category.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Consent.category.coding.userSelected">
+      <path value="Consent.category.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Consent.category.text">
+      <path value="Consent.category.text" />
+      <max value="0" />
+    </element>
+    <element id="Consent.patient">
+      <path value="Consent.patient" />
+      <short value="Patientenbezug" />
+      <definition value="Siehe Reason for inclusion and constrainment" />
+      <requirements value="Diese Referenz wurde aus technischen Gründen erzeugt, um dieser patientenbezogenen Ressource zu genügen. Aus informationstechnischer Sicht ist Diese jedoch nicht notwendig, da der Zusammenhang bereits über das Attribut related hergestellt worden ist." />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Consent.patient.reference">
+      <path value="Consent.patient.reference" />
+      <min value="1" />
+    </element>
+    <element id="Consent.patient.type">
+      <path value="Consent.patient.type" />
+      <max value="0" />
+    </element>
+    <element id="Consent.patient.identifier">
+      <path value="Consent.patient.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Consent.patient.display">
+      <path value="Consent.patient.display" />
+      <max value="0" />
+    </element>
+    <element id="Consent.dateTime">
+      <path value="Consent.dateTime" />
+      <max value="0" />
+    </element>
+    <element id="Consent.performer">
+      <path value="Consent.performer" />
+      <max value="0" />
+    </element>
+    <element id="Consent.organization">
+      <path value="Consent.organization" />
+      <max value="0" />
+    </element>
+    <element id="Consent.source[x]">
+      <path value="Consent.source[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <short value="Anlage" />
+      <definition value="Anlage des Dokuments" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Consent.source[x]:sourceReference">
+      <path value="Consent.source[x]" />
+      <sliceName value="sourceReference" />
+      <type>
+        <code value="Reference" />
+      </type>
+    </element>
+    <element id="Consent.source[x]:sourceReference.reference">
+      <path value="Consent.source[x].reference" />
+      <min value="1" />
+    </element>
+    <element id="Consent.source[x]:sourceReference.type">
+      <path value="Consent.source[x].type" />
+      <max value="0" />
+    </element>
+    <element id="Consent.source[x]:sourceReference.identifier">
+      <path value="Consent.source[x].identifier" />
+      <max value="0" />
+    </element>
+    <element id="Consent.source[x]:sourceReference.display">
+      <path value="Consent.source[x].display" />
+      <max value="0" />
+    </element>
+    <element id="Consent.policy">
+      <path value="Consent.policy" />
+      <definition value="Eine Angabe einer Police im Element policy oder im Element policyRule wird notwendig, da ein Constraint das Vorhandensein eins der beiden Elemente überprüft." />
+      <comment value="Die Angabe im Element policy wird der Angabe im Element policyRule vorgezogen, da die policyRule im technischen Format erfolgen sollte." />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Consent.policy.authority">
+      <path value="Consent.policy.authority" />
+      <max value="0" />
+    </element>
+    <element id="Consent.policy.uri">
+      <path value="Consent.policy.uri" />
+      <short value="Namensraum auf die spezifische Anforderung" />
+      <definition value="Namensraum verweist auf die Vorgaben zur Einhaltung der Sicherheit der exportierten Daten im Anforderungskatalog." />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/NamingSystem/KBV_NS_AW_Policy" />
+    </element>
+    <element id="Consent.policyRule">
+      <path value="Consent.policyRule" />
+      <max value="0" />
+    </element>
+    <element id="Consent.verification">
+      <path value="Consent.verification" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision">
+      <path value="Consent.provision" />
+      <definition value="An exception policy of to the base this consent. An exception can be an addition or removal of access permissions." />
+      <min value="1" />
+    </element>
+    <element id="Consent.provision.type">
+      <path value="Consent.provision.type" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.period">
+      <path value="Consent.provision.period" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.actor">
+      <path value="Consent.provision.actor" />
+      <min value="1" />
+    </element>
+    <element id="Consent.provision.actor.role.coding">
+      <path value="Consent.provision.actor.role.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Consent.provision.actor.role.coding.system">
+      <path value="Consent.provision.actor.role.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-RoleClass" />
+    </element>
+    <element id="Consent.provision.actor.role.coding.version">
+      <path value="Consent.provision.actor.role.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.actor.role.coding.code">
+      <path value="Consent.provision.actor.role.coding.code" />
+      <min value="1" />
+      <fixedCode value="ECON" />
+    </element>
+    <element id="Consent.provision.actor.role.coding.display">
+      <path value="Consent.provision.actor.role.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.actor.role.coding.userSelected">
+      <path value="Consent.provision.actor.role.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.actor.reference">
+      <path value="Consent.provision.actor.reference" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Bezugsperson" />
+      </type>
+    </element>
+    <element id="Consent.provision.actor.reference.reference">
+      <path value="Consent.provision.actor.reference.reference" />
+      <min value="1" />
+    </element>
+    <element id="Consent.provision.actor.reference.type">
+      <path value="Consent.provision.actor.reference.type" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.actor.reference.identifier">
+      <path value="Consent.provision.actor.reference.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.actor.reference.display">
+      <path value="Consent.provision.actor.reference.display" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.action">
+      <path value="Consent.provision.action" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.securityLabel">
+      <path value="Consent.provision.securityLabel" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.purpose">
+      <path value="Consent.provision.purpose" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.class">
+      <path value="Consent.provision.class" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.code">
+      <path value="Consent.provision.code" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.dataPeriod">
+      <path value="Consent.provision.dataPeriod" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.data">
+      <path value="Consent.provision.data" />
+      <max value="0" />
+    </element>
+    <element id="Consent.provision.provision">
+      <path value="Consent.provision.provision" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

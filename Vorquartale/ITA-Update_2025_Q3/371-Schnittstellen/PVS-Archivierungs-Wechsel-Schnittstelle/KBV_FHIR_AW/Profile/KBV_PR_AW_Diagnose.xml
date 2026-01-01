@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Diagnose" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Diagnose" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="sct-concept" />
+    <uri value="http://snomed.info/conceptdomain" />
+    <name value="SNOMED CT Concept Domain Binding" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="sct-attr" />
+    <uri value="http://snomed.org/attributebinding" />
+    <name value="SNOMED CT Attribute Binding" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Condition" />
+  <baseDefinition value="https://fhir.kbv.de/StructureDefinition/KBV_PR_Base_Diagnosis|1.1.0" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Condition">
+      <path value="Condition" />
+      <short value="Diagnose" />
+      <constraint>
+        <key value="activeOrInactive" />
+        <severity value="error" />
+        <human value="Es ist nur aktiv (active) oder nicht aktiv erlaubt." />
+        <expression value="clinicalStatus.coding.code='active' xor clinicalStatus.coding.code='inactive'" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Diagnose" />
+      </constraint>
+      <constraint>
+        <key value="ConfirmedOrRefuted" />
+        <severity value="error" />
+        <human value="Es ist nur bestätigt (confirmed) oder widerlegt (refuted) erlaubt." />
+        <expression value="verificationStatus.coding.code='confirmed' xor verificationStatus.coding.code='refuted'" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Diagnose" />
+      </constraint>
+    </element>
+    <element id="Condition.id">
+      <path value="Condition.id" />
+      <min value="1" />
+    </element>
+    <element id="Condition.meta">
+      <path value="Condition.meta" />
+      <min value="1" />
+    </element>
+    <element id="Condition.meta.versionId">
+      <path value="Condition.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Condition.meta.lastUpdated">
+      <path value="Condition.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Condition.meta.profile">
+      <path value="Condition.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Diagnose|1.2.0" />
+    </element>
+    <element id="Condition.text">
+      <path value="Condition.text" />
+      <min value="1" />
+    </element>	
+    <element id="Condition.extension">
+      <path value="Condition.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.extension:diagnoseausnahmetatbestand">
+      <path value="Condition.extension" />
+      <sliceName value="diagnoseausnahmetatbestand" />
+      <short value="Diagnoseausnahmetatbestand" />
+      <definition value="In diesem Element kann ein Ausnahmetatbestand zur Diagnose dokumentiert werden." />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Additional_Comment" />
+      </type>
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Diagnose: Diagnoseausnahmetatbestand" />
+      </mapping>
+    </element>
+    <element id="Condition.extension:istDauerdiagnose">
+      <path value="Condition.extension" />
+      <sliceName value="istDauerdiagnose" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Diagnose_istDauerdiagnose" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:istAbrechnungsrelevant">
+      <path value="Condition.extension" />
+      <sliceName value="istAbrechnungsrelevant" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_istAbrechnungsrelevant" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.identifier">
+      <path value="Condition.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Condition.clinicalStatus.text">
+      <path value="Condition.clinicalStatus.text" />
+      <max value="0" />
+    </element>
+    <element id="Condition.verificationStatus.text">
+      <path value="Condition.verificationStatus.text" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category">
+      <path value="Condition.category" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <short value="Diagnosekategorie" />
+      <definition value="Diagnosekategorie" />
+      <comment value="In diesem Element wird die Kategorie angegeben, entweder Diagnosekategorie oder Diagnoseart." />
+      <max value="2" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.category:diagnosekategorie">
+      <path value="Condition.category" />
+      <sliceName value="diagnosekategorie" />
+      <short value="Diagnosekategorie" />
+      <definition value="Die Diagnosekategorie hat folgende Auswahlmöglichkeiten: Eigendiagnose, Fremddiagnose" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Diagnosekategorie" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Diagnosekategorie" />
+      </binding>
+    </element>
+    <element id="Condition.category:diagnosekategorie.coding">
+      <path value="Condition.category.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Condition.category:diagnosekategorie.coding.system">
+      <path value="Condition.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Diagnosekategorie" />
+    </element>
+    <element id="Condition.category:diagnosekategorie.coding.version">
+      <path value="Condition.category.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category:diagnosekategorie.coding.code">
+      <path value="Condition.category.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Condition.category:diagnosekategorie.coding.display">
+      <path value="Condition.category.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category:diagnosekategorie.coding.userSelected">
+      <path value="Condition.category.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category:diagnosekategorie.text">
+      <path value="Condition.category.text" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category:diagnoseart">
+      <path value="Condition.category" />
+      <sliceName value="diagnoseart" />
+      <short value="Diagnoseart" />
+      <definition value="Die Diagnoseart kann folgende Auswahlmöglichkeiten haben: Behandlungsdiagnose, anamnestische_Diagnose" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Diagnoseart" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Diagnoseart" />
+      </binding>
+    </element>
+    <element id="Condition.category:diagnoseart.coding">
+      <path value="Condition.category.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Condition.category:diagnoseart.coding.system">
+      <path value="Condition.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Diagnoseart" />
+    </element>
+    <element id="Condition.category:diagnoseart.coding.version">
+      <path value="Condition.category.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category:diagnoseart.coding.code">
+      <path value="Condition.category.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Condition.category:diagnoseart.coding.display">
+      <path value="Condition.category.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category:diagnoseart.coding.userSelected">
+      <path value="Condition.category.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category:diagnoseart.text">
+      <path value="Condition.category.text" />
+      <max value="0" />
+    </element>
+    <element id="Condition.severity">
+      <path value="Condition.severity" />
+      <max value="0" />
+    </element>
+    <element id="Condition.code">
+      <path value="Condition.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding">
+      <path value="Condition.code.coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM">
+      <path value="Condition.code.coding" />
+      <sliceName value="ICD-10-GM" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension">
+      <path value="Condition.code.coding.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Diagnosesicherheit">
+      <path value="Condition.code.coding.extension" />
+      <sliceName value="Diagnosesicherheit" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Diagnose: Diagnosesicherheit" />
+      </mapping>
+    </element>
+    <element id="Condition.code.coding:alpha-id">
+      <path value="Condition.code.coding" />
+      <sliceName value="alpha-id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:snomed-ct">
+      <path value="Condition.code.coding" />
+      <sliceName value="snomed-ct" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:orphanet">
+      <path value="Condition.code.coding" />
+      <sliceName value="orphanet" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.text">
+      <path value="Condition.code.text" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.bodySite">
+      <path value="Condition.bodySite" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.subject">
+      <path value="Condition.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.subject.reference">
+      <path value="Condition.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="Condition.subject.type">
+      <path value="Condition.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="Condition.subject.identifier">
+      <path value="Condition.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Condition.subject.display">
+      <path value="Condition.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Condition.encounter">
+      <path value="Condition.encounter" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Begegnung|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.encounter.reference">
+      <path value="Condition.encounter.reference" />
+      <min value="1" />
+    </element>
+    <element id="Condition.encounter.type">
+      <path value="Condition.encounter.type" />
+      <max value="0" />
+    </element>
+    <element id="Condition.encounter.identifier">
+      <path value="Condition.encounter.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Condition.encounter.display">
+      <path value="Condition.encounter.display" />
+      <max value="0" />
+    </element>
+    <element id="Condition.onset[x]">
+      <path value="Condition.onset[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.onset[x]:onsetPeriod">
+      <path value="Condition.onset[x]" />
+      <sliceName value="onsetPeriod" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.onset[x]:onsetDateTime">
+      <path value="Condition.onset[x]" />
+      <sliceName value="onsetDateTime" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.abatement[x]">
+      <path value="Condition.abatement[x]" />
+      <max value="0" />
+    </element>
+    <element id="Condition.recordedDate">
+      <path value="Condition.recordedDate" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.recorder">
+      <path value="Condition.recorder" />
+      <max value="0" />
+    </element>
+    <element id="Condition.asserter">
+      <path value="Condition.asserter" />
+      <max value="0" />
+    </element>
+    <element id="Condition.stage">
+      <path value="Condition.stage" />
+      <max value="0" />
+    </element>
+    <element id="Condition.evidence">
+      <path value="Condition.evidence" />
+      <max value="0" />
+    </element>
+    <element id="Condition.note">
+      <path value="Condition.note" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

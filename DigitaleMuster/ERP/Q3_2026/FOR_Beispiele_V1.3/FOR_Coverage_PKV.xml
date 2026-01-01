@@ -1,0 +1,42 @@
+<Coverage xmlns="http://hl7.org/fhir">
+	<id value="for-coverage-pkv"/>
+	<meta>
+		<versionId value="1"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Coverage|1.3"/>
+	</meta>
+	<extension url="http://fhir.de/StructureDefinition/gkv/besondere-personengruppe">
+		<valueCoding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_PERSONENGRUPPE"/>
+			<code value="00"/>
+		</valueCoding>
+	</extension>
+	<extension url="http://fhir.de/StructureDefinition/gkv/dmp-kennzeichen">
+		<valueCoding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DMP"/>
+			<code value="00"/>
+		</valueCoding>
+	</extension>
+	<extension url="http://fhir.de/StructureDefinition/gkv/versichertenart">
+		<valueCoding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS"/>
+			<code value="1"/>
+		</valueCoding>
+	</extension>
+	<status value="active"/>
+	<type>
+		<coding>
+			<system value="http://fhir.de/CodeSystem/versicherungsart-de-basis"/>
+			<code value="PKV"/>
+		</coding>
+	</type>
+	<beneficiary>
+		<reference value="Patient/0821422d-1697-4435-a306-565c1d7fe147"/>
+	</beneficiary>
+	<payor>
+		<identifier>
+			<system value="http://fhir.de/sid/arge-ik/iknr"/>
+			<value value="168141461"/>
+		</identifier>
+		<display value="ottonova Krankenversicherung"/>
+	</payor>
+</Coverage>

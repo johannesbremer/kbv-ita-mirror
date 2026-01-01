@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<keytabs xmlns="urn:ehd/001">
+  <keytab S="1.2.276.0.76.5.235" SN="S_KBV_SCHEINART" SV="1.02">
+    <key V="00" DN="ambulante Behandlung" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="0101" DN="ambulante Behandlung" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="0102" DN="Überweisung" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="0103" DN="Belegärztliche Behandlung" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="0104" DN="Notfall/Vertretung" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="20" DN="Selbstausstellung" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="21" DN="Auftragsleistungen" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="23" DN="Konsiliaruntersuchung" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="24" DN="Mit-/Weiterbehandlung" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="26" DN="Stationäre Mitbehandlung, Vergütung nach ambulanten Grundsätzen" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="27" DN="Überweisungs-/Abrechnungsschein für Laboratoriumsuntersuchungen als Auftragsleistung" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="28" DN="Anforderungsschein für Laboratoriumsuntersuchungen bei Laborgemeinschaften" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="30" DN="Belegärztliche Behandlung" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="31" DN="Belegärztliche Mitbehandlung" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="32" DN="Urlaubs-/Krankheitsvertretung bei belegärztlicher Behandlung" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="41" DN="Ärztlicher Notfalldienst" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="42" DN="Urlaubs-/Krankheitsvertretung" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="43" DN="Notfall" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="44" DN="Notfalldienst mit Taxi" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="45" DN="Notarzt-/Rettungswagen" S="1.2.276.0.76.5.235" SV="1.02"/>
+    <key V="46" DN="Zentraler Notfalldienst" S="1.2.276.0.76.5.235" SV="1.02"/>
+  </keytab>
+</keytabs>

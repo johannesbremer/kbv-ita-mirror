@@ -1,0 +1,156 @@
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="2172f14c-1699-4752-95b8-e185df0e10d7"/>
+	<meta>
+		<profile value="https://fhir.kbv.de/StructureDefinition/74_PR_ETS_Bundle"/>
+	</meta>
+	<type value="message"/>
+	<entry>
+		<fullUrl value="urn:uuid:c68a1341-a2a5-461a-b912-048759322c18"/>
+		<resource>
+			<MessageHeader xmlns="http://hl7.org/fhir">
+				<id value="c68a1341-a2a5-461a-b912-048759322c18"/>
+				<meta>
+					<profile value="https://fhir.kbv.de/StructureDefinition/74_PR_ETS_MH_Daten_Response"/>
+				</meta>
+				<eventCoding>
+					<system value="https://fhir.kbv.de/CodeSystem/74_CS_ETS_Events"/>
+					<code value="daten"/>
+				</eventCoding>
+				<source>
+					<endpoint value="mailto:eTerminservice.test@kv-safenet.de"/>
+				</source>
+				<response>
+					<identifier value="e3ddbded-31d3-4505-805a-03b0d941621e"/>
+					<code value="ok"/>
+				</response>
+				<focus>
+					<reference value="urn:uuid:35a2f83c-abdd-4573-a9a8-1b8a5343a855"/>
+				</focus>
+			</MessageHeader>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:35a2f83c-abdd-4573-a9a8-1b8a5343a855"/>
+		<resource>
+			<Bundle xmlns="http://hl7.org/fhir">
+				<id value="35a2f83c-abdd-4573-a9a8-1b8a5343a855"/>
+				<meta>
+					<profile value="https://fhir.kbv.de/StructureDefinition/74_PR_ETS_Bundle_Data"/>
+				</meta>
+				<type value="searchset"/>
+				<total value="3"/>
+				<entry>
+					<fullUrl value="urn:uuid:6b8f5c1f-6dc6-4a9d-8f9b-ab24e4fac3d9"/>
+					<resource>
+						<Patient xmlns="http://hl7.org/fhir">
+							<id value="6b8f5c1f-6dc6-4a9d-8f9b-ab24e4fac3d9"/>
+							<meta>
+								<profile value="https://fhir.kbv.de/StructureDefinition/74_PR_ETS_Patient"/>
+							</meta>
+							<name>
+								<family value="Eichendorf"/>
+								<given value="Maria"/>
+							</name>
+							<gender value="female"/>
+							<birthDate value="1961-09-07"/>
+							<address>
+								<line value="Rosenweg 15"/>
+								<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+									<valueString value="Rosenweg"/>
+								</extension>
+								<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+									<valueString value="15"/>
+								</extension>
+								<city value="Berlin"/>
+								<postalCode value="14197"/>
+							</address>
+						</Patient>
+					</resource>
+				</entry>
+				<entry>
+					<fullUrl value="urn:uuid:6ed91e85-9aa0-4a2c-8411-5c13ebb2a377"/>
+					<resource>
+						<PractitionerRole xmlns="http://hl7.org/fhir">
+							<id value="6ed91e85-9aa0-4a2c-8411-5c13ebb2a377"/>
+							<meta>
+								<profile value="https://fhir.kbv.de/StructureDefinition/74_PR_ETS_PractitionerRole"/>
+							</meta>
+							<organization>
+								<identifier>
+									<system value="http://fhir.de/NamingSystem/kbv/bsnr"/>
+									<value value="241234601"/>
+								</identifier>
+							</organization>
+						</PractitionerRole>
+					</resource>
+				</entry>
+				<entry>
+					<fullUrl value="urn:uuid:04630318-1404-4f7d-956d-57031bc07986"/>
+					<resource>
+						<Appointment xmlns="http://hl7.org/fhir">
+							<id value="04630318-1404-4f7d-956d-57031bc07986"/>
+							<meta>
+								<profile value="https://fhir.kbv.de/StructureDefinition/74_PR_ETS_Appointment"/>
+							</meta>
+							<extension url="https://fhir.kbv.de/StructureDefinition/74_EX_ETS_ErsterVermittlungsversuch">
+								<valueDate value="2023-09-12"/>
+							</extension>
+							<extension url="https://fhir.kbv.de/StructureDefinition/74_EX_ETS_AppointmentPriority">
+								<valueCoding>
+									<system value="http://hl7.org/fhir/request-priority"/>
+									<code value="urgent"/>
+								</valueCoding>
+							</extension>
+							<extension url="https://fhir.kbv.de/StructureDefinition/74_EX_ETS_AppointmentBuchungsherkunft">
+								<valueCoding>
+									<system value="https://fhir.kbv.de/CodeSystem/74_CS_ETS_Role"/>
+									<code value="tss"/>
+								</valueCoding>
+							</extension>
+							<status value="booked"/>
+							<appointmentType>
+								<coding>
+									<system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+									<code value="AMB"/>
+								</coding>
+							</appointmentType>
+							<start value="2023-09-17T15:40:00.000+02:00"/>
+							<end value="2023-09-17T16:00:00.000+02:00"/>
+							<created value="2023-09-13T10:30:00+02:00"/>
+							<basedOn>
+								<identifier>
+									<system value="https://fhir.kbv.de/identifierer/74_ID_ETS_Vermittlungscode"/>
+									<value value="NAQTYUFGSJU6"/>
+								</identifier>
+							</basedOn>
+							<participant>
+								<type>
+									<coding>
+										<system value="http://hl7.org/fhir/v3/ParticipationType"/>
+										<code value="PART"/>
+									</coding>
+								</type>
+								<actor>
+									<reference value="urn:uuid:6b8f5c1f-6dc6-4a9d-8f9b-ab24e4fac3d9"/>
+								</actor>
+								<status value="accepted"/>
+							</participant>
+							<participant>
+								<type>
+									<coding>
+										<system value="http://hl7.org/fhir/v3/ParticipationType"/>
+										<code value="PPRF"/>
+									</coding>
+								</type>
+								<actor>
+									<reference value="urn:uuid:6ed91e85-9aa0-4a2c-8411-5c13ebb2a377"/>
+								</actor>
+								<status value="accepted"/>
+							</participant>
+						</Appointment>
+					</resource>
+				</entry>
+			</Bundle>
+		</resource>
+	</entry>
+</Bundle>

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<keytabs xmlns="urn:ehd/001">
+<keytab SV="1.10" SN="S_KBV_BEZIRKSSTELLE" S="1.2.276.0.76.5.230">
+    <key V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="02" DN="Hamburg" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="03" DN="Bremen" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="03" DN="Bremen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="06" DN="Aurich" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="17" DN="Niedersachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="07" DN="Braunschweig" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="17" DN="Niedersachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="08" DN="Göttingen" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="17" DN="Niedersachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="09" DN="Hannover" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="17" DN="Niedersachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="10" DN="Hildesheim" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="17" DN="Niedersachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="11" DN="Lüneburg" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="17" DN="Niedersachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="12" DN="Oldenburg" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="17" DN="Niedersachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="13" DN="Osnabrück" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="17" DN="Niedersachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="14" DN="Stade" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="17" DN="Niedersachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="15" DN="Verden" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="17" DN="Niedersachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="16" DN="Wilhelmshaven" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="17" DN="Niedersachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="17" DN="Niedersachsen" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="17" DN="Niedersachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="18" DN="Dortmund" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="19" DN="Münster" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="21" DN="Aachen" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="24" DN="Düsseldorf" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="25" DN="Duisburg" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="27" DN="Köln" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="28" DN="Linker Niederrhein" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="31" DN="Ruhr" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="37" DN="Bergisch-Land" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="38" DN="Nordrhein" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="39" DN="Darmstadt" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="46" DN="Hessen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="40" DN="Frankfurt" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="46" DN="Hessen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="41" DN="Gießen" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="46" DN="Hessen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="42" DN="Kassel" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="46" DN="Hessen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="43" DN="Limburg" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="46" DN="Hessen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="44" DN="Marburg" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="46" DN="Hessen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="45" DN="Wiesbaden" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="46" DN="Hessen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="46" DN="Hessen" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="46" DN="Hessen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="47" DN="RLP RZ Koblenz" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="48" DN="RLP RZ Rheinhessen" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="49" DN="RLP RZ Pfalz" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="50" DN="RLP RZ Trier" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="52" DN="Baden-Württemberg" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="52" DN="Baden-Württemberg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="53" DN="Mannheim" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="52" DN="Baden-Württemberg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="54" DN="Pforzheim" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="52" DN="Baden-Württemberg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="55" DN="BW BD Karlsruhe" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="52" DN="Baden-Württemberg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="56" DN="Baden-Baden" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="52" DN="Baden-Württemberg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="57" DN="BW BD Freiburg" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="52" DN="Baden-Württemberg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="58" DN="BW RB Konstanz" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="52" DN="Baden-Württemberg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="59" DN="BW RB Offenburg" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="52" DN="Baden-Württemberg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="60" DN="BW BD Freiburg" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="52" DN="Baden-Württemberg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="61" DN="BW BD Stuttgart" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="52" DN="Baden-Württemberg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="62" DN="BW BD Reutlingen" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="52" DN="Baden-Württemberg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="63" DN="München Stadt und Land" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="64" DN="Oberbayern" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="65" DN="Oberfranken" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="66" DN="Mittelfranken" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="67" DN="Unterfranken" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="68" DN="Oberpfalz" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="69" DN="Niederbayern" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="70" DN="Schwaben" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="71" DN="Bayerns" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="72" DN="Berlin" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="72" DN="Berlin" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="73" DN="Saarland" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="73" DN="Saarland" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="74" DN="KBV" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="74" DN="KBV" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="78" DN="Mecklenburg-Vorpommern" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="78" DN="Mecklenburg-Vorpommern" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="79" DN="Potsdam" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="83" DN="Brandenburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="80" DN="Cottbus" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="83" DN="Brandenburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="81" DN="Frankfurt-Oder" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="83" DN="Brandenburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="83" DN="Brandenburg" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="83" DN="Brandenburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="85" DN="Magdeburg" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="86" DN="Halle" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="87" DN="Dessau" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="89" DN="Erfurt" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="90" DN="Gera" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="91" DN="Suhl" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="93" DN="Thüringen" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="94" DN="Chemnitz" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="98" DN="Sachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="95" DN="Dresden" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="98" DN="Sachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="96" DN="Leipzig" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="98" DN="Sachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+    <key V="98" DN="Sachsen" S="1.2.276.0.76.5.230" SV="1.10">
+        <fkey V="98" DN="Sachsen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/>
+    </key>
+</keytab>
+</keytabs>

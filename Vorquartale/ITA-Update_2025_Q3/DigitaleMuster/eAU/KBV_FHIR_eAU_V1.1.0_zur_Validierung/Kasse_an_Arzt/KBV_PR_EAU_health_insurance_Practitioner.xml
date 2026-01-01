@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="KBV-PR-EAU-health-insurance-Practitioner" />
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_health_insurance_Practitioner" />
+  <version value="1.1.0" />
+  <name value="KBV_PR_EAU_health_insurance_Practitioner" />
+  <status value="active" />
+  <date value="2022-09-30" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="OperationOutcome" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/OperationOutcome" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="OperationOutcome.id">
+      <path value="OperationOutcome.id" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.meta">
+      <path value="OperationOutcome.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.meta.versionId">
+      <path value="OperationOutcome.meta.versionId" />
+      <max value="0" />
+    </element>
+    <element id="OperationOutcome.meta.lastUpdated">
+      <path value="OperationOutcome.meta.lastUpdated" />
+      <max value="0" />
+    </element>
+    <element id="OperationOutcome.meta.source">
+      <path value="OperationOutcome.meta.source" />
+      <max value="0" />
+    </element>
+    <element id="OperationOutcome.meta.profile">
+      <path value="OperationOutcome.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_health_insurance_Practitioner|1.1.0" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.meta.security">
+      <path value="OperationOutcome.meta.security" />
+      <max value="0" />
+    </element>
+    <element id="OperationOutcome.meta.tag">
+      <path value="OperationOutcome.meta.tag" />
+      <max value="0" />
+    </element>
+    <element id="OperationOutcome.implicitRules">
+      <path value="OperationOutcome.implicitRules" />
+      <max value="0" />
+    </element>
+    <element id="OperationOutcome.language">
+      <path value="OperationOutcome.language" />
+      <max value="0" />
+    </element>
+    <element id="OperationOutcome.text">
+      <path value="OperationOutcome.text" />
+      <max value="0" />
+    </element>
+    <element id="OperationOutcome.contained">
+      <path value="OperationOutcome.contained" />
+      <max value="0" />
+    </element>
+    <element id="OperationOutcome.issue">
+      <path value="OperationOutcome.issue" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.extension">
+      <path value="OperationOutcome.issue.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="OperationOutcome.issue.extension:Identifier">
+      <path value="OperationOutcome.issue.extension" />
+      <sliceName value="Identifier" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_health_insurance_Practitioner_Identifier" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.extension:Identifier.extension">
+      <path value="OperationOutcome.issue.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="0" />
+    </element>
+	<element id="OperationOutcome.issue.extension:Identifier.extension:Bundle-Identifier">
+      <path value="OperationOutcome.issue.extension.extension" />
+      <sliceName value="Bundle-Identifier" />
+	  <min value="0" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.extension:Identifier.extension:Bundle-Identifier.value[x]">
+      <path value="OperationOutcome.issue.extension.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.extension:Identifier.extension:Bundle-Identifier.value[x]:valueIdentifier">
+      <path value="OperationOutcome.issue.extension.extension.value[x]" />
+      <sliceName value="valueIdentifier" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.extension:Identifier.extension:Bundle-Identifier.value[x]:valueIdentifier.system">
+      <path value="OperationOutcome.issue.extension.extension.value[x].system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.extension:Identifier.extension:Bundle-Identifier.value[x]:valueIdentifier.value">
+      <path value="OperationOutcome.issue.extension.extension.value[x].value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.extension:Identifier.extension:Message-ID">
+      <path value="OperationOutcome.issue.extension.extension" />
+      <sliceName value="Message-ID" />
+      <min value="0" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.extension:Identifier.extension:Message-ID.value[x]">
+      <path value="OperationOutcome.issue.extension.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.extension:Identifier.extension:Message-ID.value[x]:valueIdentifier">
+      <path value="OperationOutcome.issue.extension.extension.value[x]" />
+      <sliceName value="valueIdentifier" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.extension:Identifier.extension:Message-ID.value[x]:valueIdentifier.system">
+      <path value="OperationOutcome.issue.extension.extension.value[x].system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.extension:Identifier.extension:Message-ID.value[x]:valueIdentifier.value">
+      <path value="OperationOutcome.issue.extension.extension.value[x].value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.severity">
+      <path value="OperationOutcome.issue.severity" />
+      <definition value="Angabe der Fehlerkategorie" />
+	  <fixedCode value="fatal" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.code">
+      <path value="OperationOutcome.issue.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.details">
+      <path value="OperationOutcome.issue.details" />
+      <definition value="nähere Beschreibung des Fehlers" />
+	  <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.details.coding">
+      <path value="OperationOutcome.issue.details.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_SFHIR_EAU_AU_ERROR_KASSE" />
+      </binding>
+    </element>
+    <element id="OperationOutcome.issue.details.coding.system">
+      <path value="OperationOutcome.issue.details.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.details.coding.version">
+      <path value="OperationOutcome.issue.details.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="OperationOutcome.issue.details.coding.code">
+      <path value="OperationOutcome.issue.details.coding.code" />
+      <short value="Errorcode" />
+      <definition value="Errorcode" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.details.coding.display">
+      <path value="OperationOutcome.issue.details.coding.display" />
+      <short value="Errortext" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="OperationOutcome.issue.details.coding.userSelected">
+      <path value="OperationOutcome.issue.details.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="OperationOutcome.issue.details.text">
+      <path value="OperationOutcome.issue.details.text" />
+      <max value="0" />
+    </element>
+    <element id="OperationOutcome.issue.diagnostics">
+      <path value="OperationOutcome.issue.diagnostics" />
+      <max value="0" />
+    </element>
+    <element id="OperationOutcome.issue.location">
+      <path value="OperationOutcome.issue.location" />
+      <max value="0" />
+    </element>
+    <element id="OperationOutcome.issue.expression">
+      <path value="OperationOutcome.issue.expression" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

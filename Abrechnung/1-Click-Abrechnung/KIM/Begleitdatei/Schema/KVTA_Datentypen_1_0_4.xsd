@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="Einlieferung_typ" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="Com_typ"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:simpleType name="Abstrakt_dokumententyp_typ">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ABRECHNUNG"/>
+			<xs:enumeration value="ABRECHNUNG HZV"/>
+			<xs:enumeration value="SAMMELERKLÄRUNG"/>
+			<xs:enumeration value="ABRECHNUNG+SAMMELERKLÄRUNG"/>
+			<xs:enumeration value="DMP"/>
+			<xs:enumeration value="EHKS"/>
+			<xs:enumeration value="QSMG"/>
+			<xs:enumeration value="QSHGV"/>
+			<xs:enumeration value="QSHGVK"/>
+			<xs:enumeration value="QSHLT"/>
+			<xs:enumeration value="QSKE"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="status_typ">
+		<xs:annotation>
+			<xs:documentation>Ein Status innerhalb eines dokumentenbezogenen Workflows.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="ID" use="required">
+			<xs:annotation>
+				<xs:documentation>Gemeinsam vereinbarter Status bezogen auf den Dokumententyp.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="SENDEN"/>
+					<xs:enumeration value="SENDE_FEHLER"/>
+					<xs:enumeration value="SENDE_FEHLER_P"/>
+					<xs:enumeration value="SENDE_FEHLER_A"/>
+					<xs:enumeration value="NEU"/>
+					<xs:enumeration value="ABRECHNUNGS_BEREIT"/>
+					<xs:enumeration value="PRUEFUNG_FEHLER"/>
+					<xs:enumeration value="HONORAR_BEREIT"/>
+					<xs:enumeration value="ABRECHNUNGS_FEHLER"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="TYP" default="STANDARD">
+			<xs:annotation>
+				<xs:documentation>Gibt an ob es sich um einen Status handelt der den Beginn, das Ende oder einen Standardzustand innerhalb des Workflows handelt.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="START"/>
+					<xs:enumeration value="ENDE"/>
+					<xs:enumeration value="STANDARD"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="KV_DETAIL" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Hier können KV spezifische Ergänzungen zu einem allgemeinen Status abgelegt werden.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="Meldung_typ" abstract="true">
+		<xs:complexContent>
+			<xs:extension base="Com_typ"/>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="Guid_typ">
+		<xs:attribute name="V" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Version_typ">
+		<xs:attribute name="V" type="xs:integer" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Com_typ" abstract="true">
+		<xs:sequence>
+			<xs:element name="version" type="Version_typ">
+				<xs:annotation>
+					<xs:documentation>Fortlaufende Nummer um Ergänzungen d.h. Neue Daten von Ersetzenden zu unterscheiden. Zusammen mit der guid wird ein Dokument und seine Version gebildet.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="guid" type="Guid_typ">
+				<xs:annotation>
+					<xs:documentation>Global eindeuitige ID. Kennzeichent ein Dokument eindeutig. Muss gemäß GUID Definition (Siehe Anforderungskatalog) gefüllt werden.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<ehd:ehd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:qske="urn:ehd/qske/001" xmlns="urn:ehd/qske/001">
+	<ehd:header>
+		<ehd:id RT="555333222" EX="fb8277f1-fc63-4d1b-ac43-d278a1fd3f84"/>
+		<ehd:document_type_cd V="QSKE"/>
+		<ehd:origination_dttm V="2014-08-13"/>
+		<ehd:document_relationship>
+			<ehd:document_relationship.type_cd V="RPLC"/>
+			<ehd:related_document>
+				<ehd:id EX="a66889f1-fc63-4d1b-ac43-d278a1fdabcd" RT="555333222"/>
+			</ehd:related_document>
+		</ehd:document_relationship>
+		<ehd:provider>
+			<ehd:person>
+				<ehd:id EX="555333222" RT="1.2.276.0.76.4.16"/>
+			</ehd:person>
+			<ehd:organization>
+				<ehd:id EX="123456789" RT="1.2.276.0.76.4.17"/>
+			</ehd:organization>
+		</ehd:provider>
+		<ehd:interface>
+			<ehd:id EX="QSKE" RT="1.2.276.0.76.5.109"/>
+			<ehd:interface.nm V="QS Kapselendoskopie"/>
+			<ehd:version V="1.00"/>
+		</ehd:interface>
+		<ehd:local_header>
+			<sciphox:sciphox-ssu xmlns:sciphox="urn::sciphox-org/sciphox" country="de" version="v1">
+				<sciphox:Software>
+					<sciphox:id EX="X/60/0801/36/103" RT="KBV-Prüfnummer"/>
+				</sciphox:Software>
+			</sciphox:sciphox-ssu>
+		</ehd:local_header>
+	</ehd:header>
+	<ehd:body>
+		<qske:qske_dokumentation>
+			<anzahl_erstuntersuchungen V="10"/>
+			<anzahl_wiederholungsuntersuchungen V="10"/>
+			<anzahl_nicht_zutreffend V="5"/>
+			<anzahl_kapselendoskopien_mit_auslassung V="15"/>
+			<anzahl_kapselendoskopien_ohne_auslassung V="2"/>
+			<anzahl_auswertungen_selbst V="3"/>
+			<anzahl_auswertungen_anderer_arzt V="15"/>
+			<anzahl_untersuchungen_mit_nachweis_blutungsquelle V="0"/>
+			<anzahl_untersuchungen_ohne_nachweis_blutungsquelle V="0"/>
+			<anzahl_kapselendoskopien_bild_ohne_einschraenkung V="3"/>
+			<anzahl_kapselendoskopien_bild_tech_probleme V="2"/>
+			<anzahl_kapselendoskopien_bild_sichteinschraenkung V="15"/>
+			<anzahl_vollstaendiger_untersuchungen V="5"/>
+			<anzahl_unvollstaendiger_untersuchungen_retention1 V="3"/>
+			<anzahl_unvollstaendiger_untersuchungen_retention1_2 V="2"/>
+			<anzahl_unvollstaendiger_untersuchungen_retention2 V="1"/>
+			<anzahl_unvollstaendiger_untersuchungen_stenosen V="3"/>
+			<anzahl_unvollstaendiger_untersuchungen_divertikel V="5"/>
+			<anzahl_unvollstaendiger_untersuchungen_andere V="1"/>
+			<anzahl_empfohlener_wiederholungsuntersuchung V="2"/>
+		</qske:qske_dokumentation>
+	</ehd:body>
+</ehd:ehd>

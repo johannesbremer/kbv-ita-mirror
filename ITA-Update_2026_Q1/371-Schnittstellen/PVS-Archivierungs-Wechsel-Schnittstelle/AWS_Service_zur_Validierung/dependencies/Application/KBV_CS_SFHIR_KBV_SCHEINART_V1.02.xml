@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:ns2="http://www.w3.org/1999/xhtml">
+    <url value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_SCHEINART"/>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:1.2.276.0.76.5.235"/>
+    </identifier>
+    <version value="1.02"/>
+    <name value="KBV_CS_SFHIR_KBV_SCHEINART"/>
+    <status value="active"/>
+    <date value="2008-10-01"/>
+    <publisher value="Kassenärztliche Bundesvereinigung"/>
+    <contact>
+        <telecom>
+            <system value="url"/>
+            <value value="http://www.kbv.de"/>
+        </telecom>
+    </contact>
+    <description value="Codierung der Ausprägung von Abrechnungsscheinen in der ambulanten Versorgung."/>
+    <copyright value="Kassenärztliche Bundesvereinigung"/>
+    <caseSensitive value="true"/>
+    <content value="complete"/>
+    <concept>
+        <code value="00"/>
+        <display value="ambulante Behandlung"/>
+    </concept>
+    <concept>
+        <code value="0101"/>
+        <display value="ambulante Behandlung"/>
+    </concept>
+    <concept>
+        <code value="0102"/>
+        <display value="Überweisung"/>
+    </concept>
+    <concept>
+        <code value="0103"/>
+        <display value="Belegärztliche Behandlung"/>
+    </concept>
+    <concept>
+        <code value="0104"/>
+        <display value="Notfall/Vertretung"/>
+    </concept>
+    <concept>
+        <code value="20"/>
+        <display value="Selbstausstellung"/>
+    </concept>
+    <concept>
+        <code value="21"/>
+        <display value="Auftragsleistungen"/>
+    </concept>
+    <concept>
+        <code value="23"/>
+        <display value="Konsiliaruntersuchung"/>
+    </concept>
+    <concept>
+        <code value="24"/>
+        <display value="Mit-/Weiterbehandlung"/>
+    </concept>
+    <concept>
+        <code value="26"/>
+        <display value="Stationäre Mitbehandlung, Vergütung nach ambulanten Grundsätzen"/>
+    </concept>
+    <concept>
+        <code value="27"/>
+        <display value="Überweisungs-/Abrechnungsschein für Laboratoriumsuntersuchungen als Auftragsleistung"/>
+    </concept>
+    <concept>
+        <code value="28"/>
+        <display value="Anforderungschein für Laboratoriumsuntersuchungen bei Laborgemeinschaften"/>
+    </concept>
+    <concept>
+        <code value="30"/>
+        <display value="Belegärztliche Behandlung"/>
+    </concept>
+    <concept>
+        <code value="31"/>
+        <display value="Belegärztliche Mitbehandlung"/>
+    </concept>
+    <concept>
+        <code value="32"/>
+        <display value="Urlaubs-/Krankheitsvertretung bei belegärztlicher Behandlung"/>
+    </concept>
+    <concept>
+        <code value="41"/>
+        <display value="Ärztlicher Notfalldienst"/>
+    </concept>
+    <concept>
+        <code value="42"/>
+        <display value="Urlaubs-/Krankheitsvertretung"/>
+    </concept>
+    <concept>
+        <code value="43"/>
+        <display value="Notfall"/>
+    </concept>
+    <concept>
+        <code value="44"/>
+        <display value="Notfalldienst mit Taxi"/>
+    </concept>
+    <concept>
+        <code value="45"/>
+        <display value="Notarzt-/Rettungswagen"/>
+    </concept>
+    <concept>
+        <code value="46"/>
+        <display value="Zentraler Notfalldienst"/>
+    </concept>
+</CodeSystem>

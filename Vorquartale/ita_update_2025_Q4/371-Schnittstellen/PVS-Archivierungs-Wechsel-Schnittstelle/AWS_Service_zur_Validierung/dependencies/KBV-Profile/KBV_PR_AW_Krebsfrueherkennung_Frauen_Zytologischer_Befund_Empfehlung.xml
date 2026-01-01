@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Empfehlung" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Empfehlung" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="quick" />
+    <uri value="http://siframework.org/cqf" />
+    <name value="Quality Improvement and Clinical Knowledge (QUICK)" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="ServiceRequest" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ServiceRequest" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="ServiceRequest.id">
+      <path value="ServiceRequest.id" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.meta">
+      <path value="ServiceRequest.meta" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.meta.versionId">
+      <path value="ServiceRequest.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.meta.lastUpdated">
+      <path value="ServiceRequest.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.meta.profile">
+      <path value="ServiceRequest.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Empfehlung|1.2.0" />
+    </element>
+    <element id="ServiceRequest.text">
+      <path value="ServiceRequest.text" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.identifier">
+      <path value="ServiceRequest.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.instantiatesCanonical">
+      <path value="ServiceRequest.instantiatesCanonical" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.instantiatesUri">
+      <path value="ServiceRequest.instantiatesUri" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.basedOn">
+      <path value="ServiceRequest.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.replaces">
+      <path value="ServiceRequest.replaces" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requisition">
+      <path value="ServiceRequest.requisition" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.status">
+      <path value="ServiceRequest.status" />
+      <fixedCode value="completed" />
+    </element>
+    <element id="ServiceRequest.intent">
+      <path value="ServiceRequest.intent" />
+      <fixedCode value="proposal" />
+    </element>
+    <element id="ServiceRequest.category">
+      <path value="ServiceRequest.category" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.priority">
+      <path value="ServiceRequest.priority" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.doNotPerform">
+      <path value="ServiceRequest.doNotPerform" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.code">
+      <path value="ServiceRequest.code" />
+      <short value="Empfehlung" />
+      <definition value="Welche Empfehlung wird ausgesprochen." />
+      <min value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Zytologische Behandlung Empfehlungen" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Empfehlung_2020" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.code.coding">
+      <path value="ServiceRequest.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.code.coding.system">
+      <path value="ServiceRequest.code.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.code.coding.version">
+      <path value="ServiceRequest.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.code.coding.code">
+      <path value="ServiceRequest.code.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.code.text">
+      <path value="ServiceRequest.code.text" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.orderDetail">
+      <path value="ServiceRequest.orderDetail" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.quantity[x]">
+      <path value="ServiceRequest.quantity[x]" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.subject">
+      <path value="ServiceRequest.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.subject.reference">
+      <path value="ServiceRequest.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="ServiceRequest.subject.type">
+      <path value="ServiceRequest.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.subject.identifier">
+      <path value="ServiceRequest.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.subject.display">
+      <path value="ServiceRequest.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.encounter">
+      <path value="ServiceRequest.encounter" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]">
+      <path value="ServiceRequest.occurrence[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <short value="Zeitraum Empfehlung" />
+      <definition value="Anzugeben ist der Zeitraum, in der die Empfehlung umgesetzt werden soll." />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming">
+      <path value="ServiceRequest.occurrenceTiming" />
+      <sliceName value="occurrenceTiming" />
+      <min value="1" />
+      <type>
+        <code value="Timing" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.event">
+      <path value="ServiceRequest.occurrenceTiming.event" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat">
+      <path value="ServiceRequest.occurrenceTiming.repeat" />
+      <short value="Angabe in Monaten" />
+      <definition value="Angabe in Monaten, wann die Empfehlung umzusetzen ist." />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.bounds[x]">
+      <path value="ServiceRequest.occurrenceTiming.repeat.bounds[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.bounds[x]:boundsRange">
+      <path value="ServiceRequest.occurrenceTiming.repeat.boundsRange" />
+      <sliceName value="boundsRange" />
+      <min value="1" />
+      <type>
+        <code value="Range" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.bounds[x]:boundsRange.low">
+      <path value="ServiceRequest.occurrenceTiming.repeat.boundsRange.low" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.bounds[x]:boundsRange.high">
+      <path value="ServiceRequest.occurrenceTiming.repeat.boundsRange.high" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.bounds[x]:boundsRange.high.value">
+      <path value="ServiceRequest.occurrenceTiming.repeat.boundsRange.high.value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.bounds[x]:boundsRange.high.unit">
+      <path value="ServiceRequest.occurrenceTiming.repeat.boundsRange.high.unit" />
+      <min value="1" />
+      <fixedString value="Monat(e)" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.bounds[x]:boundsRange.high.system">
+      <path value="ServiceRequest.occurrenceTiming.repeat.boundsRange.high.system" />
+      <min value="1" />
+      <fixedUri value="http://unitsofmeasure.org" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.bounds[x]:boundsRange.high.code">
+      <path value="ServiceRequest.occurrenceTiming.repeat.boundsRange.high.code" />
+      <min value="1" />
+      <fixedCode value="mo" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.count">
+      <path value="ServiceRequest.occurrenceTiming.repeat.count" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.countMax">
+      <path value="ServiceRequest.occurrenceTiming.repeat.countMax" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.duration">
+      <path value="ServiceRequest.occurrenceTiming.repeat.duration" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.durationMax">
+      <path value="ServiceRequest.occurrenceTiming.repeat.durationMax" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.durationUnit">
+      <path value="ServiceRequest.occurrenceTiming.repeat.durationUnit" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.frequency">
+      <path value="ServiceRequest.occurrenceTiming.repeat.frequency" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.frequencyMax">
+      <path value="ServiceRequest.occurrenceTiming.repeat.frequencyMax" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.period">
+      <path value="ServiceRequest.occurrenceTiming.repeat.period" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.periodMax">
+      <path value="ServiceRequest.occurrenceTiming.repeat.periodMax" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.periodUnit">
+      <path value="ServiceRequest.occurrenceTiming.repeat.periodUnit" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.dayOfWeek">
+      <path value="ServiceRequest.occurrenceTiming.repeat.dayOfWeek" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.timeOfDay">
+      <path value="ServiceRequest.occurrenceTiming.repeat.timeOfDay" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.when">
+      <path value="ServiceRequest.occurrenceTiming.repeat.when" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.repeat.offset">
+      <path value="ServiceRequest.occurrenceTiming.repeat.offset" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.code">
+      <path value="ServiceRequest.occurrenceTiming.code" />
+      <short value="Sofort umsetzen" />
+      <definition value="Anagabe, dass die Empfehlung sofort umzusetzen ist." />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.code.coding">
+      <path value="ServiceRequest.occurrenceTiming.code.coding" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.occurrence[x]:occurrenceTiming.code.text">
+      <path value="ServiceRequest.occurrenceTiming.code.text" />
+      <min value="1" />
+      <fixedString value="sofort" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ServiceRequest.asNeeded[x]">
+      <path value="ServiceRequest.asNeeded[x]" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.authoredOn">
+      <path value="ServiceRequest.authoredOn" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requester">
+      <path value="ServiceRequest.requester" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.performerType">
+      <path value="ServiceRequest.performerType" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.performer">
+      <path value="ServiceRequest.performer" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.locationCode">
+      <path value="ServiceRequest.locationCode" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.locationReference">
+      <path value="ServiceRequest.locationReference" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonCode">
+      <path value="ServiceRequest.reasonCode" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.reasonReference">
+      <path value="ServiceRequest.reasonReference" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.insurance">
+      <path value="ServiceRequest.insurance" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.supportingInfo">
+      <path value="ServiceRequest.supportingInfo" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.specimen">
+      <path value="ServiceRequest.specimen" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.bodySite">
+      <path value="ServiceRequest.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.note">
+      <path value="ServiceRequest.note" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.patientInstruction">
+      <path value="ServiceRequest.patientInstruction" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.relevantHistory">
+      <path value="ServiceRequest.relevantHistory" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

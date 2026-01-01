@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Allergie" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Allergie" />
+  <title value="KBV_PR_AW_Allergie" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <description value="Allergieinformationen" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="AllergyIntolerance" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/AllergyIntolerance" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="AllergyIntolerance.id">
+      <path value="AllergyIntolerance.id" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.meta">
+      <path value="AllergyIntolerance.meta" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.meta.versionId">
+      <path value="AllergyIntolerance.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.meta.lastUpdated">
+      <path value="AllergyIntolerance.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.meta.profile">
+      <path value="AllergyIntolerance.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Allergie|1.2.0" />
+    </element>
+    <element id="AllergyIntolerance.text">
+      <path value="AllergyIntolerance.text" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.identifier">
+      <path value="AllergyIntolerance.identifier" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.clinicalStatus">
+      <path value="AllergyIntolerance.clinicalStatus" />
+      <definition value="Angabe des klinischen Status." />
+    </element>
+    <element id="AllergyIntolerance.verificationStatus">
+      <path value="AllergyIntolerance.verificationStatus" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.type">
+      <path value="AllergyIntolerance.type" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.category">
+      <path value="AllergyIntolerance.category" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.criticality">
+      <path value="AllergyIntolerance.criticality" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.code">
+      <path value="AllergyIntolerance.code" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.patient">
+      <path value="AllergyIntolerance.patient" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.patient.reference">
+      <path value="AllergyIntolerance.patient.reference" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.patient.type">
+      <path value="AllergyIntolerance.patient.type" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.patient.identifier">
+      <path value="AllergyIntolerance.patient.identifier" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.patient.display">
+      <path value="AllergyIntolerance.patient.display" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.encounter">
+      <path value="AllergyIntolerance.encounter" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Begegnung|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.encounter.reference">
+      <path value="AllergyIntolerance.encounter.reference" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.encounter.type">
+      <path value="AllergyIntolerance.encounter.type" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.encounter.identifier">
+      <path value="AllergyIntolerance.encounter.identifier" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.encounter.display">
+      <path value="AllergyIntolerance.encounter.display" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.onset[x]">
+      <path value="AllergyIntolerance.onset[x]" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.recorder">
+      <path value="AllergyIntolerance.recorder" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.asserter">
+      <path value="AllergyIntolerance.asserter" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.asserter.extension">
+      <path value="AllergyIntolerance.asserter.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="AllergyIntolerance.asserter.extension:befund_Erfasserart">
+      <path value="AllergyIntolerance.asserter.extension" />
+      <sliceName value="befund_Erfasserart" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Allergie_Erfasser_Befund" />
+      </type>
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Allergie: ENUM_Befundart" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.asserter.extension:befund_Erfasserart.value[x]">
+      <path value="AllergyIntolerance.asserter.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.asserter.extension:befund_Erfasserart.value[x]:valueCodeableConcept">
+      <path value="AllergyIntolerance.asserter.extension.value[x]" />
+      <sliceName value="valueCodeableConcept" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.asserter.reference">
+      <path value="AllergyIntolerance.asserter.reference" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.asserter.type">
+      <path value="AllergyIntolerance.asserter.type" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.asserter.identifier">
+      <path value="AllergyIntolerance.asserter.identifier" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.asserter.display">
+      <path value="AllergyIntolerance.asserter.display" />
+      <min value="1" />
+      <fixedString value="Erfasserart" />
+    </element>
+    <element id="AllergyIntolerance.lastOccurrence">
+      <path value="AllergyIntolerance.lastOccurrence" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.note">
+      <path value="AllergyIntolerance.note" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction">
+      <path value="AllergyIntolerance.reaction" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance">
+      <path value="AllergyIntolerance.reaction.substance" />
+      <mustSupport value="true" />
+      <mapping>
+        <identity value="KBV" />
+        <map value="Allergie: Substanz/Substanzgruppe" />
+      </mapping>
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding">
+      <path value="AllergyIntolerance.reaction.substance.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:atc">
+      <path value="AllergyIntolerance.reaction.substance.coding" />
+      <sliceName value="atc" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:atc.system">
+      <path value="AllergyIntolerance.reaction.substance.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/CodeSystem/dimdi/atc" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:atc.code">
+      <path value="AllergyIntolerance.reaction.substance.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:atc.userSelected">
+      <path value="AllergyIntolerance.reaction.substance.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:edqm">
+      <path value="AllergyIntolerance.reaction.substance.coding" />
+      <sliceName value="edqm" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:edqm.system">
+      <path value="AllergyIntolerance.reaction.substance.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/CodeSystem/edqm/dose-form" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:edqm.code">
+      <path value="AllergyIntolerance.reaction.substance.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:edqm.userSelected">
+      <path value="AllergyIntolerance.reaction.substance.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:pzn">
+      <path value="AllergyIntolerance.reaction.substance.coding" />
+      <sliceName value="pzn" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:pzn.system">
+      <path value="AllergyIntolerance.reaction.substance.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/CodeSystem/ifa/pzn" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:pzn.version">
+      <path value="AllergyIntolerance.reaction.substance.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:pzn.code">
+      <path value="AllergyIntolerance.reaction.substance.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:pzn.display">
+      <path value="AllergyIntolerance.reaction.substance.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.coding:pzn.userSelected">
+      <path value="AllergyIntolerance.reaction.substance.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.substance.text">
+      <path value="AllergyIntolerance.reaction.substance.text" />
+      <short value="Substanz/Substanzgruppe" />
+      <definition value="Angabe der Substanz oder Substanzgruppe mit der die Reaktion hervorgerufen wurde." />
+      <comment value="Substanz/Substanzgruppe" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation">
+      <path value="AllergyIntolerance.reaction.manifestation" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation.coding">
+      <path value="AllergyIntolerance.reaction.manifestation.coding" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.manifestation.text">
+      <path value="AllergyIntolerance.reaction.manifestation.text" />
+      <short value="Reaktion" />
+      <definition value="In diesem Feld kann die Reaktion auf die Substanz beschrieben werden." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="AllergyIntolerance.reaction.description">
+      <path value="AllergyIntolerance.reaction.description" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.onset">
+      <path value="AllergyIntolerance.reaction.onset" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.severity">
+      <path value="AllergyIntolerance.reaction.severity" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.exposureRoute">
+      <path value="AllergyIntolerance.reaction.exposureRoute" />
+      <max value="0" />
+    </element>
+    <element id="AllergyIntolerance.reaction.note">
+      <path value="AllergyIntolerance.reaction.note" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

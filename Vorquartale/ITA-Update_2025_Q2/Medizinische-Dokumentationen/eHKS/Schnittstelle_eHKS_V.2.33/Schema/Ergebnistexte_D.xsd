@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn::sciphox-org/sciphox" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="PatientkommtaufÜberweisungimRahmendesHautkrebsScreenings">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ÜberweisenderArzthatHKSdurchgeführt">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AngabeüberdieVerdachtsdiagnoseliegtvor">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MalignesMelanom">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Basalzellkarzinom">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpinozelluläresKarzinom">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BiopsiezuVerdachtsdiagnoseentnommenoderExzisiondurchgeführt">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MalignesMelanomKlassifikation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Melanoma in situ"/>
+			<xs:enumeration value="Invasives Melanom"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MalignesMelanomTumordickeBreslow">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="&lt;= 1 mm"/>
+			<xs:enumeration value="1,01-2 mm"/>
+			<xs:enumeration value="2,01-4 mm"/>
+			<xs:enumeration value="&gt; 4 mm"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpinozelluläresKarzinomKlassifikation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Karzinoma in situ"/>
+			<xs:enumeration value="Invasives Karzinom"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SpinozelluläresKarzinomGrading">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Gx"/>
+			<xs:enumeration value="G1"/>
+			<xs:enumeration value="G2"/>
+			<xs:enumeration value="G3"/>
+			<xs:enumeration value="G4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="andererHautkrebs">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="atypischerNävuszellnävus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="junktionalercompounddermaleratypischerNävuszellnävus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AktinischeKeratose">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AnderehiernichtrelevanteHautveränderung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="sonstigermitBiopsieabklärungsbedürftigerBefund">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Verdachtsdiagnose">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+<!--	<xs:simpleType name="AnzahlBiopsienExzisionen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>-->
+	<xs:simpleType name="anderweitigeTherapieoderDiagnostikvorgenommeneingeleitet">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="keineweitereTherapieDiagnostik">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

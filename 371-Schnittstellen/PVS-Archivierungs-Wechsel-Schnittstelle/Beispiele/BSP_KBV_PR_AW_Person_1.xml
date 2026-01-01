@@ -1,0 +1,71 @@
+<Person xmlns="http://hl7.org/fhir">
+	<id value="3184"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-22T12:54:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Person|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Adressbuch_Anrede">
+		<valueString value="Sehr geehrte Frau von Mustermann"/>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Adressbuch_Schlusssatz">
+		<valueString value="Mit freundlichen Grüßen"/>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Adressbuchzuordnung">
+		<valueReference>
+			<reference value="Practitioner/3153"/>
+		</valueReference>
+	</extension>
+	<name>
+		<family value="Freifrau von Mustermann">
+			<extension url="http://fhir.de/StructureDefinition/humanname-namenszusatz">
+				<valueString value="Freifrau"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+				<valueString value="von"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+				<valueString value="Mustermann"/>
+			</extension>
+		</family>
+		<given value="Martina"/>
+	</name>
+	<telecom>
+		<system value="phone"/>
+		<value value="077553/32211"/>
+	</telecom>
+	<telecom>
+		<system value="email"/>
+		<value value="m.mustermann@mustermann.de"/>
+	</telecom>
+	<gender value="female"/>
+	<birthDate value="1972-03-04"/>
+	<address>
+		<type value="physical"/>
+		<line value="Musterweg 42">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Musterweg"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="42"/>
+			</extension>
+		</line>
+		<line value="Hinterhof 3. Etage">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+				<valueString value="Hinterhof 3. Etage"/>
+			</extension>
+		</line>
+		<city value="Berlin"/>
+		<postalCode value="10787"/>
+		<country value="DE"/>
+	</address>
+	<managingOrganization>
+		<reference value="Organization/3157"/>
+	</managingOrganization>
+</Person>

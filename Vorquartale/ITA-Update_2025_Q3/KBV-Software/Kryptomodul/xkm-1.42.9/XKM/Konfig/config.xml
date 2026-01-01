@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- automatisch erstellte Konfigurationsdatei -->
+<Konfiguration>
+
+ <quelle>Quelle</quelle>
+ <ausschuss>Ausschuss/</ausschuss>
+ <entschluesselt>Entschluesselt/</entschluesselt>
+ <verschluesselt>Verschluesselt/</verschluesselt>
+ <arbeitsmodus>Abrechnungs_Verschluesselung</arbeitsmodus>
+ <!-- <bearbeitetentschluesselt/>-->
+ <!-- <bearbeitetverschluesselt/>-->
+ <!-- <temp/>-->
+ <protokolldatei>Listen/protokoll</protokolldatei>
+ <system>System/</system>
+ <schluesselpfad>Schluessel/</schluesselpfad>
+ <!-- <schluesseldatei/>-->
+ <protokollformat>PDF</protokollformat>
+ <paketgroesse>unbegrenzt</paketgroesse>
+ <!-- <pruefinfo/>-->
+ <!-- <konfigdialog/>-->
+ <abrechnungskomprimierung>ja</abrechnungskomprimierung>
+
+</Konfiguration>

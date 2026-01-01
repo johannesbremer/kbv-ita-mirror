@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- History
+* 23.10.2006 version 1.00
+* 21.06.2007 Version 1.01
+* 					 Element bedruckungsname als Kind-Element von kt_abrechnungsbereich definiert (früher Kind-Element von bezeichnung)
+* 18.12.2007 Version 1.02
+* 					 Anzahl der WOP-Felder reduziert sich von 21 auf 18 aufgrund der KV-Fusion in Baden-Württemberg
+*
+* -->
+<xs:schema xmlns:kts="urn:ehd/kts/001" xmlns="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ehd="urn:ehd/001" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<!-- =======================================================================
+	Einbinden der ehd-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="ehd_root_V1.40.xsd"/>
+	<!-- =======================================================================
+	Einbinden der kts-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="kts_header_V1.02.xsd"/>
+	<xs:import namespace="urn:ehd/kts/001" schemaLocation="kts_V1.02.xsd"/>
+	<!-- =======================================================================
+	EHD-root
+	hier ist des EHD-root-Element definiert, welches das "header" und "body" sowie "keytabs"
+	Elemente enthält.
+	======================================================================= -->
+	<xs:element name="ehd" type="kts_root_typ">
+		<xs:annotation>
+			<xs:documentation>root element ehd "eHealthData"</xs:documentation>
+		</xs:annotation>
+		<!-- =======================================================================
+	die vknr muss eindeutig sein
+	======================================================================= -->
+		<xs:unique name="nur_eine_vknr">
+			<xs:selector xpath=".//kts:kostentraeger"/>
+			<xs:field xpath="@V"/>
+		</xs:unique>
+		<!-- =======================================================================
+	jedes ik muss eindeutig sein
+	======================================================================= -->
+		<xs:unique name="nur_eine_ik">
+			<xs:selector xpath=".//kts:ik_liste/kts:ik"/>
+			<xs:field xpath="@V"/>
+		</xs:unique>
+		<!-- =======================================================================
+	scd: Speziellen Key der in den nachfolgenden keyrefs referenziert wird.
+	======================================================================= -->
+		<xs:key name="key_kostentraeger_V">
+			<xs:selector xpath=".//kts:kostentraeger"/>
+			<xs:field xpath="@V"/>
+		</xs:key>
+		<xs:keyref name="kref_referenzkasse_V" refer="key_kostentraeger_V">
+			<xs:selector xpath=".//kts:referenzkasse"/>
+			<xs:field xpath="@V"/>
+		</xs:keyref>
+		<xs:keyref name="kref_aufnehmender_kostentraeger_V" refer="key_kostentraeger_V">
+			<xs:selector xpath=".//kts:aufnehmender_kostentraeger"/>
+			<xs:field xpath="@V"/>
+		</xs:keyref>
+		<xs:keyref name="kref_basiskasse_V" refer="key_kostentraeger_V">
+			<xs:selector xpath=".//kts:basiskasse"/>
+			<xs:field xpath="@V"/>
+		</xs:keyref>
+		<!-- =======================================================================
+	scd: Allgemeinen Key der in den nachfolgenden keyrefs referenziert wird.
+	======================================================================= -->
+		<xs:key name="k_keytab_V_S">
+			<xs:selector xpath="ehd:keytabs/ehd:keytab/ehd:key"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:key>
+		<!-- =======================================================================
+	scd: Prüfung vertrags_kv gegen die relevante Schlüsseltabelle
+    - .// im xpath bedeutet irgendwo unterhalb dieses Elements (hier ehd)
+     ======================================================================= -->
+		<xs:keyref name="kref_vertrags_kv" refer="k_keytab_V_S">
+			<xs:selector xpath=".//kts:vertrags_kv"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:keyref>
+		<!-- =======================================================================
+	scd: Prüfung kv gegen die relevante Schlüsseltabelle
+    - .// im xpath bedeutet irgendwo unterhalb dieses Elements (hier ehd)
+     ======================================================================= -->
+		<xs:keyref name="kref_kv" refer="k_keytab_V_S">
+			<xs:selector xpath=".//kts:kv"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:keyref>
+		<!-- =======================================================================
+	scd: Prüfung abrechnungsstelle gegen die relevante Schlüsseltabelle
+    - .// im xpath bedeutet irgendwo unterhalb dieses Elements (hier ehd)
+     ======================================================================= -->
+		<xs:keyref name="kref_abrechnungsstelle" refer="k_keytab_V_S">
+			<xs:selector xpath=".//kts:abrechnungsstelle"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:keyref>
+		<!-- =======================================================================
+	scd: Prüfung kostentraegergruppe gegen die relevante Schlüsseltabelle
+    - .// im xpath bedeutet irgendwo unterhalb dieses Elements (hier ehd)
+     ======================================================================= -->
+		<xs:keyref name="kref_kostentraegergruppe" refer="k_keytab_V_S">
+			<xs:selector xpath=".//kts:kostentraegergruppe"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:keyref>
+		<!-- =======================================================================
+	scd: Prüfung wop gegen die relevante Schlüsseltabelle
+    - .// im xpath bedeutet irgendwo unterhalb dieses Elements (hier ehd)
+     ======================================================================= -->
+		<xs:keyref name="kref_wop" refer="k_keytab_V_S">
+			<xs:selector xpath=".//kts:wop"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:keyref>
+		<!-- =======================================================================
+	scd: Prüfung wop_kv gegen die relevante Schlüsseltabelle
+    - .// im xpath bedeutet irgendwo unterhalb dieses Elements (hier ehd)
+     ======================================================================= -->
+		<xs:keyref name="kref_wop_kv" refer="k_keytab_V_S">
+			<xs:selector xpath=".//kts:wop_kv"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:keyref>
+		<!-- =======================================================================
+	scd: Prüfung bezirksstelle gegen die relevante Schlüsseltabelle
+    - .// im xpath bedeutet irgendwo unterhalb dieses Elements (hier ehd)
+     ======================================================================= -->
+		<xs:keyref name="kref_bezirksstelle" refer="k_keytab_V_S">
+			<xs:selector xpath=".//kts:bezirksstelle"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:keyref>
+		<!-- =======================================================================
+	scd: Prüfung gebuehrenordnung gegen die relevante Schlüsseltabelle
+    - .// im xpath bedeutet irgendwo unterhalb dieses Elements (hier ehd)
+     ======================================================================= -->
+		<xs:keyref name="kref_gebuehrenordnung" refer="k_keytab_V_S">
+			<xs:selector xpath=".//kts:gebuehrenordnung"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:keyref>
+		<!-- =======================================================================
+	scd: Prüfung kt_abrechnungsbereich gegen die relevante Schlüsseltabelle
+    - .// im xpath bedeutet irgendwo unterhalb dieses Elements (hier ehd)
+     ======================================================================= -->
+		<xs:keyref name="kref_kt_abrechnungsbereich" refer="k_keytab_V_S">
+			<xs:selector xpath=".//kts:kt_abrechnungsbereich"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:keyref>
+		<!-- =======================================================================
+	scd: Prüfung unz_kv_geltungsbereich gegen die relevante Schlüsseltabelle
+    - .// im xpath bedeutet irgendwo unterhalb dieses Elements (hier ehd)
+     ======================================================================= -->
+		<xs:keyref name="kref_unz_kv_geltungsbereich" refer="k_keytab_V_S">
+			<xs:selector xpath=".//kts:unz_kv_geltungsbereich"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:keyref>
+	</xs:element>
+	<!-- =======================================================================
+	kts_root_typ
+	das abgeleitete kts_root_typ des Basistyps: ehd_root_typ
+	======================================================================= -->
+	<xs:complexType name="kts_root_typ">
+		<xs:sequence>
+			<xs:element ref="header"/>
+			<xs:element name="body" type="kts_body_typ">
+				<xs:annotation>
+					<xs:documentation>die eigentlichen Daten</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="keytabs"/>
+		</xs:sequence>
+		<xs:attribute name="ehd_version" type="ehd_version_typ" use="required"/>
+	</xs:complexType>
+	<!-- =======================================================================
+	kts_body_typ
+	das abgeleitete kts_body_typ des Basistyps: ehd_body_typ
+	======================================================================= -->
+	<xs:complexType name="kts_body_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_body_typ">
+				<xs:sequence>
+					<xs:element ref="kts:kostentraeger_liste"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="header" type="kts_header_typ">
+		<xs:annotation>
+			<xs:documentation>Informationen zur Datei</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

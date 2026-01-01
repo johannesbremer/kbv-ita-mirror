@@ -1,0 +1,25 @@
+<OperationOutcome xmlns="http://hl7.org/fhir">
+	<id value="ba5db8b9-1c2d-4fe8-a5aa-f521b27fddfd" />
+	<meta>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_EAU_health_insurance_Practitioner|1.2" />
+	</meta>
+	<issue>
+		<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_EAU_health_insurance_Practitioner_Identifier">
+			<extension url="Bundle-Identifier">
+				<valueIdentifier>
+					<system value="urn:ietf:rfc:3986" />
+					<value value="urn:uuid:6413570d-d8ce-4afa-9f6e-0950111a4cb8" />
+				</valueIdentifier> 
+			</extension>
+		</extension>
+		<severity value="fatal" />
+		<code value="processing" />
+		<details>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_EAU_AU_ERROR_KASSE" />
+				<code value="404" />
+				<display value="Page not found" />
+			</coding>
+		</details>
+	</issue>
+</OperationOutcome>

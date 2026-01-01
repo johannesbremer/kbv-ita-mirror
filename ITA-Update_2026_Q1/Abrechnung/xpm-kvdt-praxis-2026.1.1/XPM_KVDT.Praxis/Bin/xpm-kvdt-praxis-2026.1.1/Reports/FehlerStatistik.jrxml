@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FehlerListe" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="540" columnSpacing="15" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="7de218cf-9936-4805-813d-68b155dd78d9">
+	<style name="DejavuSans_Normal" isDefault="true" fontName="DejaVu Sans" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="DejavuSans_Bold" fontName="DejaVu Sans" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="DejavuSans_Italic" fontName="DejaVu Sans" isBold="false" isItalic="true" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Oblique" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<parameter name="ABBRUCH" class="java.lang.String"/>
+	<parameter name="DATUM" class="java.lang.String"/>
+	<parameter name="DATEIEN" class="java.lang.String"/>
+	<parameter name="FEHLER" class="java.lang.String"/>
+	<parameter name="INFOS" class="java.lang.String"/>
+	<parameter name="KBV_TAB_VERSION" class="java.lang.String"/>
+	<parameter name="STATUS" class="java.lang.String"/>
+	<parameter name="TITEL" class="java.lang.String"/>
+	<parameter name="WARNUNGEN" class="java.lang.String"/>
+	<parameter name="XPM_VERSION" class="java.lang.String"/>
+	<parameter name="ZEIT" class="java.lang.String"/>
+	<field name="GRUPPE" class="java.lang.Object"/>
+	<field name="FEHLER_NR" class="java.lang.String"/>
+	<field name="ANZAHL" class="java.lang.String"/>
+	<field name="FEHLER_TEXT" class="java.lang.String"/>
+	<group name="Group" minHeightToStartNewPage="40">
+		<groupExpression><![CDATA[$F{GRUPPE}.toString()]]></groupExpression>
+		<groupHeader>
+			<band height="18" splitType="Stretch">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement style="DejavuSans_Bold" mode="Opaque" x="0" y="3" width="555" height="14" backcolor="#C0C0C0" uuid="14b82d86-4e1e-4882-823d-cf44d4c784d5"/>
+					<textFieldExpression><![CDATA[$F{GRUPPE}.toString()]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<title>
+		<band height="123" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="555" height="30" uuid="7700eaac-52e5-4769-8b90-be0dc7b458e4"/>
+				<textElement textAlignment="Center">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TITEL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="30" width="100" height="15" uuid="b6f118cd-24f3-46bb-8104-0e55ed71e559"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prüfdateien:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="30" width="200" height="15" uuid="296069bd-dc05-4d85-bc6f-0f43bf268371"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DATEIEN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="30" width="110" height="15" uuid="0d67efd9-db6a-43ce-8ac3-ea7cc171af13"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prüfdatum:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="410" y="30" width="145" height="15" uuid="6df70569-2da6-4455-8d32-974700f315bc"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DATUM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="45" width="100" height="15" uuid="82250d24-af8e-4774-849c-1d499297903c"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status Ok/W/F/A:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="45" width="200" height="15" uuid="e928b557-afe4-46aa-8cdc-bf3c3ff9850d"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{STATUS}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="45" width="110" height="15" uuid="c3b8bfb4-d175-484e-8786-f6fab5b2f24b"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Prüfzeit:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="410" y="45" width="145" height="15" uuid="1b9d14c7-71e4-4e68-b557-7ec998766271"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ZEIT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="60" width="100" height="15" uuid="620a6dab-2789-4573-9ed0-db520e343d21"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Abbruchfehler:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="60" width="200" height="15" uuid="f04de441-276f-4ef2-83ac-81cb3e8cd4b2"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ABBRUCH}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="60" width="110" height="15" uuid="02194290-4bfa-4eb5-8bcb-b41aad2c388b"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Version Prüfmodul:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="410" y="60" width="145" height="15" uuid="a4887f6a-5cd8-40fd-97d1-6ab650165c57"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{XPM_VERSION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="75" width="100" height="15" uuid="3fb79bd8-1715-4893-b72c-b7dd9939887b"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fehler:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="75" width="200" height="15" uuid="4c833b5a-3d0a-48d0-bd00-d2c547af4244"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{FEHLER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="300" y="75" width="110" height="15" uuid="77a4b054-3e48-4af1-9b08-a19faa32539e"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Version Steuerdatei:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="410" y="75" width="145" height="15" uuid="1a2a9c23-93d3-4b36-b105-3b7733b4f6af"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{KBV_TAB_VERSION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="90" width="100" height="15" uuid="096ec967-4de3-4ced-9689-4678d7db22b4"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Warnungen:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="90" width="200" height="15" uuid="6cd6db80-131c-441e-8513-7e42058858d2"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{WARNUNGEN}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="105" width="100" height="15" uuid="dc7a6ea4-90fd-426f-b033-b15601322040"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Infos:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="105" width="200" height="15" uuid="11796512-63b6-49d6-8a7a-ed6d41810ec8"/>
+				<textElement>
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{INFOS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="5" width="555" height="15" forecolor="#333333" backcolor="#333333" uuid="c1f9f1fd-1a4d-4f52-ae2a-ae57c633b93c"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" mode="Opaque" x="0" y="5" width="100" height="15" forecolor="#FFFFFF" backcolor="#333333" uuid="0edd08e0-8cf1-4bd6-8fc4-237474344d0b"/>
+				<text><![CDATA[Meldungsnr.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" mode="Opaque" x="100" y="5" width="70" height="15" forecolor="#FFFFFF" backcolor="#333333" uuid="0519ee52-f05f-4222-ad3d-878b1f5f3b2e"/>
+				<text><![CDATA[Anzahl]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" mode="Opaque" x="170" y="5" width="385" height="15" forecolor="#FFFFFF" backcolor="#333333" uuid="78a2f18c-6c3d-4a64-92a4-53b8c45593cc"/>
+				<text><![CDATA[Fehlertext]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="0" y="0" width="100" height="15" uuid="b8bcd2bd-5af7-47bf-9104-333474c4612e"/>
+				<textFieldExpression><![CDATA[$F{FEHLER_NR}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="100" y="0" width="70" height="15" uuid="92f7be18-c3a3-4d68-85fa-6c9461d233c8"/>
+				<textFieldExpression><![CDATA[$F{ANZAHL}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement x="170" y="0" width="385" height="15" uuid="ed057873-514b-42a1-a773-8947cbf40249"/>
+				<textFieldExpression><![CDATA[$F{FEHLER_TEXT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="40" height="20" uuid="9befbe31-d21f-4c2c-8f2e-13419266747d"/>
+				<text><![CDATA[Seite:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="40" y="0" width="100" height="20" uuid="4f684d21-9668-49e8-8384-61f0d0b1c546"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,261 @@
+RELEASE NOTES KBV-Prüfmodul für DMP Brustkrebs Prüfung Version 2025.4.0 4/2025
+
+1. Systemvoraussetzungen
+- ein beliebiges Computersystem leistungsmäßig vergleichbar mit einem IBM-kompatiblen PC
+  mit Pentium 500 Prozessor  oder höher,
+- Alle Betriebssysteme, für die die Java Laufzeitumgebung verfügbar ist.
+- Java Laufzeitumgebung 17 oder höher
+- mindestens 128 MB RAM.
+
+2. Änderungshistorie
+
+Änderungen in Version 2025.4.0 4/2025
+    - Aktualisierung der KT-Stammdatei
+    - Neuer XPM-Kernel
+    - Prüfung von numerischen Werten verbessert
+
+Änderungen in Version 2025.3.0 3/2025
+    - Aktualisierung der KT-Stammdatei
+    - Neuer XPM-Kernel
+
+Änderungen in Version 2025.2.0 2/2025
+    - Aktualisierung der KT-Stammdatei
+    - Änderung bezüglich der Beendigung der Ausführung der JVM nach Beendigung des Prüfmoduls
+
+Änderungen in Version 2025.1.0 1/2025
+    - Aktualisierung der KT-Stammdatei
+
+Änderungen in Version 2024.4.0 4/2024
+    - Neue Schnittstelle 4.25
+    - KT-Stamm aktualisiert
+    - Erweiterung der erlaubten DMP-Kennzeichen
+
+Änderungen in Version 2024.3.0 3/2024
+    - Aktualisierung der KT-Stammdatei
+
+Änderungen in Version 2024.2.0 2/2024
+    - Aktualisierung der KT-Stammdatei
+
+Änderungen in Version 2024.1.0 1/2024
+    - XPM-Kernel aktualisiert
+	- Aktualisierung der KT-Stammdatei
+
+Änderungen in Version 2023.4.0 4/2023
+	- Aktualisierung der KT-Stammdatei
+	- Minimale Java-Version ist Java 17
+
+Änderungen in Version 2023.3.0 3/2023
+	- Aktualisierung der KT-Stammdatei
+
+Änderungen in Version 2023.2.0 2/2023
+	- Aktualisierung der KT-Stammdatei
+
+Änderungen in Version 2023.1.0 1/2023
+	- Aktualisierung der KT-Stammdatei
+
+Änderungen in Version 2022.4.0 4/2022
+	- Aktualisierung der KT-Stammdatei
+
+Änderungen in Version 2022.3.0 3/2022
+	- Aktualisierung der KT-Stammdatei
+
+Änderungen in Version 2022.2.1 2/2022
+	BUGFIX im XPM-Core: Bei der Ermittlung des XML-Encodings von XML-Eingabedateien kam es zu einem Fehler.
+
+Änderungen in Version 2022.2.0 2/2022
+	- Aktualisierung der KT-Stammdatei
+	- Erweiterung der Zeichenkodierungsprüfung
+	- Aktualisierung der jasperreports-dependency
+	- Aktualisierung des Prüfmodul-Handbuchs
+
+Änderungen in Version 2022.1.2 1/2022
+	- Aktualisierung der log4j-Bibliothek auf Version 2.17.1
+	
+Änderungen in Version 2022.1.1 1/2022
+	- Core Update wegen Sicherheitslücke in log4j-Bibliothek
+
+Änderungen in Version 2021.4.1 4/2021
+	- Core Update wegen Sicherheitslücke in log4j-Bibliothek
+
+Änderungen in Version 2022.1.0 1/2022
+	- KT-Stammdatei aktualisiert
+
+Änderungen in Version 2021.4.0 4/2021
+	- KT-Stammdatei aktualisiert
+
+Änderungen in Version 2021.3.0 3/2021
+	- KT-Stammdatei aktualisiert
+	- Erweiterung der erlaubten DMP-Kennzeichen um die Werte 10 (für Rheuma) und 11 (für Osteoporose)
+
+Änderungen in Version 2021.2.0 2/2021
+	- KT-Stammdatei aktualisiert
+
+Änderungen in Version 2021.1.0 1/2021
+	- KT-Stammdatei aktualisiert
+		
+Änderungen in Version 2020.4.0 4/2020
+	- KT-Stammdatei aktualisiert
+
+Änderungen in Version 2020.3.0 3/2020
+	- KT-Stammdatei aktualisiert
+	- Minimale Java-Version ist Java 11 OpenJDK
+
+Änderungen in Version 2020.2.0 2/2020
+	- KT-Stammdatei aktualisiert
+    - Schriftart bei PDF-Ausgabe in DejaVu-Sans geändert
+        
+Änderungen in Version 2020.1.0 1/2020
+	- KT-Stammdatei aktualisiert
+
+Änderungen in Version 2019.4.0 4/2019
+	- KT-Stammdatei aktualisiert
+
+Änderungen in Version 2019.3.0 3/2019
+	- KT-Stammdatei aktualisiert
+
+Änderungen in Version 5.1.0 2/2019
+	- KT-Stammdatei aktualisiert
+
+Änderungen in Version 5.0.2 1/2019
+  - Lauffähigkeit unter Java 11 (OpenJDK und Oracle JDK) sichergestellt.
+  - KT-Stammdatei aktualisiert
+
+
+Änderungen in Version 5.0.1 (auf Basis von V4.30)
+	
+	- Bugfix PNP Doku Gewicht und Größe
+	- KT-Stammdatei aktualisiert
+
+Änderungen in Version 5.0.0
+	- Core Update
+	- Kompatibilität zu JAVA 10 sichergestellt
+	
+Änderungen in Version 4.29
+- KT-Stammdatei aktualisiert
+
+Änderungen in Version 4.28
+- Neue Schnittstellenversion 4.23
+
+Änderungen in Version 4.27
+- xpmJavaVersionCheck-0.0.3.jar ausgetauscht
+
+Änderungen in Version 4.26
+	- KT-Stammdatei aktualisiert
+
+Änderungen in Version 4.25
+    [XPMBRKR-36] - Anpassung bzgl. der Archivnamen
+    [XPMBRKR-37] - Einbindung der neuen Schnittstelle
+    [XPMBRKR-38] - Neue Werte für die Besondere Personengruppe
+    [XPMBRKR-39] - Neue Werte für DMP-Kennzeichen
+    [XPMBRKR-40] - Besondere Personengruppe und DMP-Kennzeichen verpflichtend
+
+Änderungen in Version 4.22
+- KT-Stammdatei aktualisiert
+- Lauffähigkeit unter Java 9 sichergestellt
+
+
+Änderungen in Version 4.21
+- Plausibilität für eine gültige Einschreibung angepasst auf 10 Jahre
+
+Änderungen in Version 4.20
+- KT-Stammdatei aktualisiert
+
+Änderungen in Version 4.19
+- KT-Stammdatei aktualisiert
+- Prüfung der zeitlichen Abfolge von service_tmr und origination_dttm wurde gestrichen
+
+Änderungen in Version 4.18
+- KT-Stammdatei aktualisiert
+
+Änderungen in Version 4.17
+- KT-Stammdatei aktualisiert
+
+Änderungen in Version 4.16
+- KT-Stammdatei aktualisiert
+
+Änderungen in Version 4.15
+- Geschlecht 'unbestimmt' für Teilnahme an DMP Brustkrebs nicht zugelassen
+- KT-Stammdatei aktualisiert
+
+Änderungen in Version 4.14
+- KT-Stammdatei aktualisiert
+
+Änderungen in Version 4.12
+- KT-Stammdatei aktualisiert
+- DMP-Modul setzt Java 1.8 oder höher voraus
+- Anpassung an Personenstandsgesetz
+- Bitte beachten: Das Prüfmodul wird nun mit Java 7 compiliert.
+  Die Meldung:  "Unsupported major.minor version" deutet auf eine Java-Version kleiner 7 hin.
+
+Änderungen in Version 4.12
+- KT-Stammdatei aktualisiert
+
+Änderungen in Version 4.11
+- KT-Stammdatei aktualisiert
+- Das Handbuch 'KBV_ITA_AHEX_Handbuch_Pruefmodul.pdf' liegt in einer neuen Version vor.
+- Warnmeldung bei Verwendung von Java 6 geändert, da die Funktionsähigkeit nicht mehr sichergestellt ist
+- Warnmeldung bei Verwendung von Java 7 wieder hinzugefügt
+
+Änderungen in Version 4.10
+- Warnung bei Verwendung von Java 7 entfernt
+
+Änderungen in Version 4.09
+- KT-Stammdatei aktualisiert
+- Prüfung des Dateinamens aktualisiert (Übergangsregelung ausgelaufen)
+
+Änderungen in Version 4.08
+- KT-Stammdatei aktualisiert
+- Prüfung von Einlesedatum gegen Versicherungsbeginn entfernt.
+
+Änderungen in Version 4.07
+- Prüfung zu P2-101 eingebaut
+
+Änderungen in Version 4.06
+- Prüfung vom Einlesedatum gegen Versicherungsschutzende und gegen Versicherungsschutzbeginn
+
+Änderungen in Version 4.05
+- S_KBV_KV Schlüsseltabelle mit Version 1.01 eingebunden
+
+Änderungen in Version 4.04
+- KT-Stammdatei aktualisiert
+
+Änderungen in Version 4.03
+- KT-Stammdatei aktualisiert
+
+Änderungen in Version 4.02
+- Schema aktualisiert auf V4.20
+
+Änderungen in Version 4.01
+- VersicherungsschutzEnde Element ist Optional
+- Abgelaufene IKs welche einen aufnehmenden KT enthalten erzeugen keine Warnung mehr
+- Schema bugfix bzgl. Adressen
+
+Änderungen in Version 4.00
+- KT-Stammdatei aktualisiert
+- Neue Version 1.15 des PDF-Viewers
+- Neue Schnittstellenversion 4.00
+
+Änderungen in Version 3.03
+- KT-Stammdatei aktualisiert
+- Neue Prüfung BKA-070
+
+Änderungen in Version 3.02
+- Handbuch aktualisiert
+
+Änderungen in Version 3.01
+- Schema bugfix
+
+Es gibt keine weiteren Vorversionen, weil der Brustkrebs-Bogen mit der Version 3.00
+vollkommen überarbeitet wurde und die Versionen 2.xx auf dem alten Bogen basieren
+
+3. Bekannte Fehler
+Keine
+
+4. Hinweis zur Installation
+Bitte lesen Sie die Datei 'Installation.txt'.
+
+5. Rechtliche Hinweise
+Keine.
+
+6. Lizenzvertragliche Regelungen
+Bitte beachten Sie die Lizenzvereinbarungen im Ordner 'Bin/licence'.

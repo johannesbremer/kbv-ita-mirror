@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 ../Schema/afhi_root_V1.00.xsd">
+	<header>
+		<id EX="9fa97dc0-24b8-4122-bd02-87d225ad1c2e" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2022-10-01.."/>
+		<origination_dttm V="2022-07-25"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat 4"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="https://update.kbv.de/ita-update"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen für der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2022, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="https://update.kbv.de/ita-update/"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="13" DN="Heilmittelverordnung">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Auswahl des Heilmittelbereichs"/>
+					<hinweistext V="Bitte geben Sie hier den Heilmittelbereich an."/>
+				</feld>				
+				<feld>
+					<nummer V="2"/>
+					<name V="Behandlungsrelevante Diagnose(n)"/>
+					<hinweistext V="Bitte geben Sie den therapierelevanten ICD-10-GM-Code an. Die Angabe eines weiteren ICD-10-GM-Codes ist nur notwendig, wenn ein besonderer Verordnungsbedarf geltend gemacht werden soll."/>
+				</feld>				
+				<feld>
+					<nummer V="3"/>
+					<name V="Diagnosegruppe"/>
+					<hinweistext V="Bitte geben Sie eine Diagnosegruppe nach Maßgabe des Heilmittelkataloges an."/>
+				</feld>				
+				<feld>
+					<nummer V="4"/>
+					<name V="Leitsymptomatik gemäß Heilmittelkatalog"/>
+					<hinweistext V="Bitte geben Sie eine oder mehrere buchstabencodierte verordnungsbegründende Leitsymptomatik/en nach Maßgabe des Heilmittelkataloges an. Alternativ kann eine patientenindividuelle Leitsymptomatik als Freitext angegeben werden."/>
+				</feld>				
+				<feld>
+					<nummer V="5"/>
+					<name V="Heilmittel nach Maßgabe des Kataloges"/>
+					<hinweistext V="Bitte geben Sie Heilmittel nach Maßgabe des Heilmittelkataloges an. Es können auch mehrere (bis zu drei) vorrangige Heilmittel verordnet werden. Soweit medizinisch erforderlich, kann zu vorrangigen Heilmitteln maximal ein im Heilmittelkatalog genanntes ergänzendes Heilmittel verordnet werden."/>
+				</feld>				
+				<feld>
+					<nummer V="6"/>
+					<name V="Behandlungseinheiten"/>
+					<hinweistext V="Bei Angabe der Verordnungsmenge darf der Wert der Höchstmenge je Verordnung gemäß Heilmittel-Richtlinie nicht überschritten werden. Nur bei Verordnungen aufgrund eines 'besonderer Verordnungsbedarfs' oder 'langfristigen Heilmittelbedarfs' kann die Bemessung der Behandlungseinheiten je Verordnung auf 12 Wochen erfolgen. Bei Verordnung mehrerer vorrangiger Heilmittel sind die Behandlungseinheiten aufzuteilen. Die maximale Verordnungsmenge für ergänzende Heilmittel richtet sich nach dem vorrangigen Heilmittel bzw. der Summe der verordneten Behandlungseinheiten der vorrangigen Heilmittel."/>
+				</feld>				
+				<feld>
+					<nummer V="7"/>
+					<name V="Therapiefrequenz"/>
+					<hinweistext V="Bitte geben Sie hier eine Therapiefrequenz oder eine Frequenzspanne an. Die Frequenzempfehlungen gemäß Heilmittelkatalog ist bereits voreingestellt. Für die Ernährungstherapie und Nagelspangenbehandlung (Podologie) ist die Angabe nicht zwingend erforderlich."/>
+				</feld>				
+				<feld>
+					<nummer V="8"/>
+					<name V="Therapiebericht"/>
+					<hinweistext V="Auf Wunsch kann ein Therapiebericht angefordert werden."/>
+				</feld>	
+				<feld>
+					<nummer V="9"/>
+					<name V="Hausbesuch ja/nein"/>
+					<hinweistext V="Ein Hausbesuch kann verordnet werden, wenn der Patient aus medizinischen Gründen den Therapeuten nicht aufsuchen kann oder dies aus medizinischen Gründen zwingend notwendig ist."/>
+				</feld>				
+				<feld>
+					<nummer V="10"/>
+					<name V="Dringlicher Behandlungsbedarf innerhalb von 14 Tagen"/>
+					<hinweistext V="Dieses Feld ist anzukreuzen, wenn die Behandlung aus medizinischen Gründen spätestens innerhalb von 14 Kalendertagen beginnen muss."/>
+				</feld>				
+				<feld>
+					<nummer V="11"/>
+					<name V="ggf. Therapieziele / weitere med. Befunde und Hinweise"/>
+					<hinweistext V="Dieses Feld kann ausgefüllt werden, um das Therapieziel zu spezifizieren oder weitere therapierelevante Befundergebnisse anzugeben."/>
+				</feld>				
+				<feld>
+					<nummer V="12"/>
+					<name V="IK des Leistungserbringers"/>
+					<hinweistext V="Dieses Feld ist ausschließlich für Heilmittelerbringer vorgesehen und ist nicht durch die verordnende Vertragsärztin oder den verordnenden Vertragsarzt zu befüllen."/>
+				</feld>				
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

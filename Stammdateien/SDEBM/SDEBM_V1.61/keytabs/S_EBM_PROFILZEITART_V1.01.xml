@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  
+<keytabs xmlns="urn:ehd/001">
+  <keytab SV="1.01" SN="S_EBM_PROFILZEITART" S="1.2.276.0.76.5.228">
+    <key V="1" DN="Keine Eignung" S="1.2.276.0.76.5.228" SV="1.01"/>
+    <key V="2" DN="Nur Quartalsprofil" S="1.2.276.0.76.5.228" SV="1.01"/>
+    <key V="3" DN="Tages- und Quartalsprofil" S="1.2.276.0.76.5.228" SV="1.01"/>
+    <key V="4" DN="nicht ermittelt" S="1.2.276.0.76.5.228" SV="1.01"/>
+    <key V="5" DN="nicht im Anhang 3" S="1.2.276.0.76.5.228" SV="1.01"/>
+  </keytab>
+</keytabs>
+

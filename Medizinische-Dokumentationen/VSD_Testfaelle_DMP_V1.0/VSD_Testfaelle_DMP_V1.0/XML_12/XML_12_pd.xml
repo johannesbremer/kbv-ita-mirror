@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<VSD:UC_PersoenlicheVersichertendatenXML CDM_VERSION="5.2.0" xmlns:VSD="http://ws.gematik.de/fa/vsdm/vsd/v5.2"> 
+	<VSD:Versicherter>
+	<VSD:Versicherten_ID>M010477997</VSD:Versicherten_ID>
+		<VSD:Person>
+			<VSD:Geburtsdatum>19770401</VSD:Geburtsdatum>
+			<VSD:Vorname>Katarina</VSD:Vorname>
+			<VSD:Nachname>Maier</VSD:Nachname>
+			<VSD:Geschlecht>W</VSD:Geschlecht>
+			<VSD:StrassenAdresse>
+				<VSD:Postleitzahl>39120</VSD:Postleitzahl>
+				<VSD:Ort>Magdeburg</VSD:Ort>
+				<VSD:Land>
+					<VSD:Wohnsitzlaendercode>D</VSD:Wohnsitzlaendercode>
+				</VSD:Land>
+				<VSD:Strasse>Rosenweg</VSD:Strasse>
+				<VSD:Hausnummer>12</VSD:Hausnummer>
+			</VSD:StrassenAdresse>
+		</VSD:Person>
+	</VSD:Versicherter>
+</VSD:UC_PersoenlicheVersichertendatenXML>

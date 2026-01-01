@@ -1,0 +1,22 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="KBV-VS-VoS-StartUp-Context" />
+  <url value="https://fhir.kbv.de/ValueSet/KBV_VS_VoS_StartUp_Context" />
+  <version value="2.1.0" />
+  <name value="KBV_VS_VoS_StartUp_Context" />
+  <status value="active" />
+  <experimental value="false" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <contact>
+    <telecom>
+      <system value="other" />
+      <value value="http://www.kbv.de" />
+    </telecom>
+  </contact>
+  <description value="Aufgerufene Funktionen." />
+  <compose>
+    <include>
+      <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context" />
+    </include>
+  </compose>
+</ValueSet>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<xs:include schemaLocation="ehd_header_V1.40.xsd"/>
+	<xs:import namespace="urn::sciphox-org/sciphox" schemaLocation="software_ssu_typelib.xsd"/>
+	<!-- Schema -->
+	<xs:complexType name="qszervixzyto_header_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_header_typ">
+				<xs:sequence>
+					<xs:element ref="id"/>
+					<xs:element ref="set_id" minOccurs="0"/>
+					<xs:element ref="version_nbr" minOccurs="0"/>
+					<xs:element name="document_type_cd" type="qszervixzyto_document_type_cd_typ"/>
+					<xs:element ref="service_tmr"/>
+					<xs:element ref="origination_dttm"/>
+					<xs:element ref="document_relationship" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="intended_recipient" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="originator" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="provider" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="provider_typ">
+									<xs:sequence>
+										<xs:element name="provider.type_cd" type="provider.type_cd_typ" minOccurs="0"/>
+										<xs:element ref="function_cd" minOccurs="0"/>
+										<xs:element ref="participation_tmr" minOccurs="0"/>
+										<xs:element name="person" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:complexContent>
+													<xs:restriction base="person_typ">
+														<xs:sequence>
+															<xs:element ref="id"/>
+															<xs:element ref="person_name"/>
+															<xs:element name="organization.nm" type="v_string_typ" minOccurs="0" maxOccurs="unbounded"/>
+															<xs:element ref="addr" maxOccurs="unbounded"/>
+															<xs:element ref="telecom" maxOccurs="unbounded"/>
+															<xs:element ref="local_header" minOccurs="0" maxOccurs="unbounded"/>
+														</xs:sequence>
+													</xs:restriction>
+												</xs:complexContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element ref="organization" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element ref="local_header" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element ref="scope" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="state" minOccurs="0"/>
+					<xs:element name="interface" type="qszervixzyto_interface_typ"/>
+					<xs:element name="local_header">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="local_header-cont.model">
+									<xs:sequence>
+										<xs:element ref="sciphox:sciphox-ssu"/>
+									</xs:sequence>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ************************ qszervixzyto_document_type_cd_typ ********************************* -->
+	<xs:complexType name="qszervixzyto_document_type_cd_typ">
+		<xs:complexContent>
+			<xs:restriction base="document_type_cd_typ">
+				<xs:attribute name="V" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:pattern value="QSZERVIXZYTO"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ************************ qszervixzyto_interface_typ ********************************* -->
+	<xs:complexType name="qszervixzyto_interface_typ">
+		<xs:complexContent>
+			<xs:restriction base="interface_typ">
+				<xs:sequence>
+					<xs:element name="id">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_id_typ">
+									<xs:attribute name="EX" type="xs:string" use="required" fixed="QSZERVIXZYTO"/>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="interface.nm">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_nm_typ">
+									<xs:attribute name="V" type="xs:string" use="required" fixed="QSZervixZyto Bericht an KV"/>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="version">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_version_typ">
+									<xs:attribute name="V" type="xs:string" use="required" fixed="2.00"/>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:zz="urn:ehd/qszervixzyto/001" xmlns="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ehd="urn:ehd/001" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<!-- ======================================================================= 
+	Einbinden der ehd-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="ehd_root_V1.40.xsd"/>
+	<!-- ======================================================================= 
+	Einbinden der qszervixzyto-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="qszervixzyto_header.xsd"/>
+	<xs:import namespace="urn:ehd/qszervixzyto/001" schemaLocation="qszervixzyto_body.xsd"/>
+	<!-- ======================================================================= 
+	EHD-root
+	hier ist des EHD-root-Element definiert, welches das "header" und "body" sowie "keytabs"
+	Elemnte enthält.
+	======================================================================= -->
+	<xs:element name="ehd" type="qszervixzyto_root_typ">
+		<xs:annotation>
+			<xs:documentation>root element ehd "eHealthData"</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- ======================================================================= 
+	qszervixzyto_root_typ
+	das abgeleitete qszervixzyto_root_typ des Basistyps: ehd_root_typ
+	======================================================================= -->
+	<xs:complexType name="qszervixzyto_root_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_root_typ">
+				<xs:sequence>
+					<xs:element ref="header"/>
+					<xs:element name="body" type="qszervixzyto_body_typ">
+						<xs:annotation>
+							<xs:documentation>die eigentlichen Daten</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	qszervixzyto_body_typ
+	das abgeleitete qszervixzyto_body_typ des Basistyps: ehd_body_typ
+	======================================================================= -->
+	<xs:complexType name="qszervixzyto_body_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_body_typ">
+				<xs:sequence>
+					<xs:element ref="zz:qszervixzyto_bericht"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="header" type="qszervixzyto_header_typ">
+		<xs:annotation>
+			<xs:documentation>Informationen zur Datei</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>

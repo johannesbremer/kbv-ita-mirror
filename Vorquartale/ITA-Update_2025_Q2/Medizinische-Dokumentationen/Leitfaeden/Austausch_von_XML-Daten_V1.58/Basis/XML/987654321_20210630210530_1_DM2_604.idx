@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<bgl:begleitdatei xmlns:bgl="http://www.kbv.de/ns/meta/2003-05-15" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kbv.de/ns/meta/2003-05-15 ..\Schema\begleitdatei.xsd" Version="1.17">
+	<bgl:erstellungsdatum-datei V="2021-06-30"/>
+	<bgl:empfaenger>
+		<bgl:ukv EX="02" RT="UKV-Nummer"/>
+	</bgl:empfaenger>
+	<bgl:absender>
+		<bgl:krankenhaus EX="987654321" RT="Krankenhaus-IK"/>
+	</bgl:absender>
+	<bgl:komprimierungssoftware>
+		<bgl:software-name V="Info-ZIP"/>
+		<bgl:software-version V="2.3"/>
+		<bgl:software-hersteller V="Info-ZIP group"/>
+		<bgl:software-link V="http://www.info-zip.org"/>
+	</bgl:komprimierungssoftware>
+	<bgl:verschluesselungssoftware>
+		<bgl:software-name V="XKM"/>
+		<bgl:software-version V="1.30"/>
+		<bgl:software-hersteller V="KBV"/>
+	</bgl:verschluesselungssoftware>
+	<bgl:archive>
+		<bgl:archiv>
+			<bgl:name V="987654321_20210630210530_1_DM2_604.zip.XKM"/>
+			<bgl:verzeichnis>
+				<bgl:pfad V="Diabetes_Mellitus_Typ_2/Dokumentation"/>
+				<bgl:zeitraum>
+					<bgl:von V="2021-04-01"/>
+					<bgl:bis V="2021-06-30"/>
+				</bgl:zeitraum>
+			</bgl:verzeichnis>
+		</bgl:archiv>
+	</bgl:archive>
+</bgl:begleitdatei>

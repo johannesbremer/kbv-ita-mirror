@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_Diagnose" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Behandlungsbaustein_Diagnose" />
+  <status value="active" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="objimpl" />
+    <uri value="http://hl7.org/fhir/object-implementation" />
+    <name value="Object Implementation Information" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="ActivityDefinition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ActivityDefinition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="ActivityDefinition.id">
+      <path value="ActivityDefinition.id" />
+      <min value="1" />
+    </element>
+    <element id="ActivityDefinition.meta">
+      <path value="ActivityDefinition.meta" />
+      <min value="1" />
+    </element>
+    <element id="ActivityDefinition.meta.versionId">
+      <path value="ActivityDefinition.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="ActivityDefinition.meta.lastUpdated">
+      <path value="ActivityDefinition.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="ActivityDefinition.meta.profile">
+      <path value="ActivityDefinition.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlungsbaustein_Diagnose|1.2.0" />
+    </element>
+    <element id="ActivityDefinition.text">
+      <path value="ActivityDefinition.text" />
+      <min value="1" />
+    </element>  
+  <element id="ActivityDefinition.extension">
+      <path value="ActivityDefinition.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="ActivityDefinition.extension:contributor">
+      <path value="ActivityDefinition.extension" />
+      <sliceName value="contributor" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Behandlungsbaustein_Contributor" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.extension:contributor.value[x]">
+      <path value="ActivityDefinition.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.extension:contributor.value[x]:valueReference">
+      <path value="ActivityDefinition.extension.value[x]" />
+      <sliceName value="valueReference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.extension:contributor.value[x]:valueReference.reference">
+      <path value="ActivityDefinition.extension.value[x].reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.extension:contributor.value[x]:valueReference.identifier">
+      <path value="ActivityDefinition.extension.value[x].identifier" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.url">
+      <path value="ActivityDefinition.url" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.identifier">
+      <path value="ActivityDefinition.identifier" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.version">
+      <path value="ActivityDefinition.version" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.name">
+      <path value="ActivityDefinition.name" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.title">
+      <path value="ActivityDefinition.title" />
+      <short value="Bezeichnung" />
+      <definition value="In diesem Element wird eine Bezeichnung des Behandlungsbausteins eingetragen, redundant zur Bezeichnung des jeweiligen Slices aus dem Profil KBV_PR_AW_Behandlungsbaustein_Definition." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.subtitle">
+      <path value="ActivityDefinition.subtitle" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.status">
+      <path value="ActivityDefinition.status" />
+      <short value="active" />
+      <definition value="Diese Ressource hat immer den Status active." />
+      <fixedCode value="active" />
+    </element>
+    <element id="ActivityDefinition.experimental">
+      <path value="ActivityDefinition.experimental" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.subject[x]">
+      <path value="ActivityDefinition.subject[x]" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.date">
+      <path value="ActivityDefinition.date" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.publisher">
+      <path value="ActivityDefinition.publisher" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.contact">
+      <path value="ActivityDefinition.contact" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.description">
+      <path value="ActivityDefinition.description" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.useContext">
+      <path value="ActivityDefinition.useContext" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.jurisdiction">
+      <path value="ActivityDefinition.jurisdiction" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.purpose">
+      <path value="ActivityDefinition.purpose" />
+      <short value="Klassifizierung der Ressource" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieser Ressource verwendet." />
+      <min value="1" />
+      <fixedMarkdown value="Diagnose" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.usage">
+      <path value="ActivityDefinition.usage" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.copyright">
+      <path value="ActivityDefinition.copyright" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.approvalDate">
+      <path value="ActivityDefinition.approvalDate" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.lastReviewDate">
+      <path value="ActivityDefinition.lastReviewDate" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.effectivePeriod">
+      <path value="ActivityDefinition.effectivePeriod" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.topic">
+      <path value="ActivityDefinition.topic" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.author">
+      <path value="ActivityDefinition.author" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.editor">
+      <path value="ActivityDefinition.editor" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.reviewer">
+      <path value="ActivityDefinition.reviewer" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.endorser">
+      <path value="ActivityDefinition.endorser" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.relatedArtifact">
+      <path value="ActivityDefinition.relatedArtifact" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.library">
+      <path value="ActivityDefinition.library" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.kind">
+      <path value="ActivityDefinition.kind" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.profile">
+      <path value="ActivityDefinition.profile" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.code">
+      <path value="ActivityDefinition.code" />
+      <short value="ICD-10" />
+      <definition value="Dieses Element dient zur Übertragung eines ICD-10-Codes" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.code.coding">
+      <path value="ActivityDefinition.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.code.coding.system">
+      <path value="ActivityDefinition.code.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.code.coding.code">
+      <path value="ActivityDefinition.code.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.code.coding.display">
+      <path value="ActivityDefinition.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.code.coding.userSelected">
+      <path value="ActivityDefinition.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.code.text">
+      <path value="ActivityDefinition.code.text" />
+      <short value="Diagnosetext" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.intent">
+      <path value="ActivityDefinition.intent" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.priority">
+      <path value="ActivityDefinition.priority" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.doNotPerform">
+      <path value="ActivityDefinition.doNotPerform" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.timing[x]">
+      <path value="ActivityDefinition.timing[x]" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.location">
+      <path value="ActivityDefinition.location" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.participant">
+      <path value="ActivityDefinition.participant" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.product[x]">
+      <path value="ActivityDefinition.product[x]" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.quantity">
+      <path value="ActivityDefinition.quantity" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.dosage">
+      <path value="ActivityDefinition.dosage" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.bodySite">
+      <path value="ActivityDefinition.bodySite" />
+      <short value="Seitenlokalisation" />
+      <definition value="Anzugeben ist die Seitenlokalisation" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.bodySite.coding">
+      <path value="ActivityDefinition.bodySite.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="icd_seitenlokalisation" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_SFHIR_ICD_SEITENLOKALISATION" />
+      </binding>
+    </element>
+    <element id="ActivityDefinition.bodySite.coding.system">
+      <path value="ActivityDefinition.bodySite.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.bodySite.coding.code">
+      <path value="ActivityDefinition.bodySite.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="ActivityDefinition.bodySite.coding.display">
+      <path value="ActivityDefinition.bodySite.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.bodySite.coding.userSelected">
+      <path value="ActivityDefinition.bodySite.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.bodySite.text">
+      <path value="ActivityDefinition.bodySite.text" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.specimenRequirement">
+      <path value="ActivityDefinition.specimenRequirement" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.observationRequirement">
+      <path value="ActivityDefinition.observationRequirement" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.observationResultRequirement">
+      <path value="ActivityDefinition.observationResultRequirement" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.transform">
+      <path value="ActivityDefinition.transform" />
+      <max value="0" />
+    </element>
+    <element id="ActivityDefinition.dynamicValue">
+      <path value="ActivityDefinition.dynamicValue" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

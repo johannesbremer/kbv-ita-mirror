@@ -1,0 +1,49 @@
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="KBV-CS-VoS-PrescriptionType" />
+  <url value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_PrescriptionType" />
+  <version value="2.1.0" />
+  <name value="KBV_CS_VoS_PrescriptionType" />
+  <status value="active" />
+  <experimental value="false" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung" />
+  <contact>
+    <telecom>
+      <system value="other" />
+      <value value="http://www.kbv.de" />
+    </telecom>
+  </contact>
+  <description value="Alle Rezepttypen, die gemäß Anforderungskatalog EXT_ITA_VGEX_Anforderungskatalog_AVWG vorkommen können." />
+  <copyright value="Copyright © [2021], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <caseSensitive value="true" />
+  <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_VoS_PrescriptionType" />
+  <content value="complete" />
+  <concept>
+    <code value="M16" />
+    <display value="Muster 16" />
+  </concept>
+  <concept>
+    <code value="BTM-RP" />
+    <display value="BTM-Rezept" />
+  </concept>
+  <concept>
+    <code value="T-RP" />
+    <display value="T-Rezept" />
+  </concept>
+  <concept>
+    <code value="PKV-RP-blau" />
+    <display value="Privat Rezept (blauer Vordruck)" />
+  </concept>
+  <concept>
+    <code value="PKV-RP-individuell" />
+    <display value="Privat Rezept frei gestaltet" />
+  </concept>
+  <concept>
+    <code value="RP-gruen" />
+    <display value="grüner Vordruck" />
+  </concept>
+  <concept>
+    <code value="Sonstiges-Rezept" />
+    <display value="Sonstiges Rezept" />
+  </concept>
+</CodeSystem>

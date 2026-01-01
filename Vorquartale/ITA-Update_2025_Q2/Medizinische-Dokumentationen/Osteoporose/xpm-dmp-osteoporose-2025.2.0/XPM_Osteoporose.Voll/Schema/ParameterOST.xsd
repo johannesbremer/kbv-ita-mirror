@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) von Kassenärztliche Bundesvereinigung (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn::sciphox-org/sciphox" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="AdministrativeDaten">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Einschreibung wegen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Anamnese">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Körpergröße"/>
+			<xs:enumeration value="Körpergewicht"/>
+			<xs:enumeration value="Blutdruck systolisch"/>
+			<xs:enumeration value="Blutdruck diastolisch"/>
+			<xs:enumeration value="Raucher"/>
+			<xs:enumeration value="Begleiterkrankungen"/>
+			<xs:enumeration value="Osteoporosebedingte Fraktur in den letzten 12 Monaten"/>
+			<xs:enumeration value="Neu aufgetretene osteoporosebedingte Fraktur seit der letzten Dokumentation"/>
+			<xs:enumeration value="Lokalisation der osteoporosebedingten Fraktur"/>
+			<xs:enumeration value="Stürze in den letzten 6 Monaten"/>
+			<xs:enumeration value="Stürze seit der letzten Dokumentation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SonstigeBefundeundnichtmedikamentoeseBehandlung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Teilnehmerinnen und Teilnehmer ab 70 Jahre: erhöhtes Sturzrisiko"/>
+			<xs:enumeration value="Bei Teilnehmerinnen und Teilnehmern mit erhöhtem Sturzrisiko oder Stürzen: Sturzprophylaxemaßnahme empfohlen"/>
+			<xs:enumeration value="Regelmäßiges körperliches Training"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MedikamentoeseBehandlung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Aktuelle osteoporosespezifische Medikation"/>
+			<xs:enumeration value="Dauer der osteoporosespezifischen Medikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Schulungen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Schulung bereits vor Einschreibung in das DMP wahrgenommen"/>
+			<xs:enumeration value="Schulung empfohlen (bei aktueller Dokumentation)"/>
+			<xs:enumeration value="Empfohlene Schulung wahrgenommen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Behandlungsplanung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Vom Patienten gewünschte Informationsangebote der Krankenkasse"/>
+			<xs:enumeration value="Dokumentationsintervall"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

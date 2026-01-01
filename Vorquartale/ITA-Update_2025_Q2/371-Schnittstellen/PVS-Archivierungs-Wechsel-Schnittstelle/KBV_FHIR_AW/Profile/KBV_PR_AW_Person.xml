@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Person" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Person" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Person" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Person" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Person.id">
+      <path value="Person.id" />
+      <min value="1" />
+    </element>
+    <element id="Person.meta">
+      <path value="Person.meta" />
+      <min value="1" />
+    </element>
+    <element id="Person.meta.versionId">
+      <path value="Person.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Person.meta.lastUpdated">
+      <path value="Person.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Person.meta.profile">
+      <path value="Person.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Person|1.2.0" />
+    </element>
+    <element id="Person.text">
+      <path value="Person.text" />
+      <min value="1" />
+    </element>  
+    <element id="Person.extension">
+      <path value="Person.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Person.extension:anrede">
+      <path value="Person.extension" />
+      <sliceName value="anrede" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Adressbuch_Anrede" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Person.extension:anrede.value[x]">
+      <path value="Person.extension.value[x]" />
+      <min value="1" />
+    </element>
+    <element id="Person.extension:anrede.value[x]:valueString">
+      <path value="Person.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+    </element>
+    <element id="Person.extension:schlusssatz">
+      <path value="Person.extension" />
+      <sliceName value="schlusssatz" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Adressbuch_Schlusssatz" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Person.extension:schlusssatz.value[x]">
+      <path value="Person.extension.value[x]" />
+      <min value="1" />
+    </element>
+    <element id="Person.extension:schlusssatz.value[x]:valueString">
+      <path value="Person.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+    </element>
+    <element id="Person.extension:addressbuchzuordnung">
+      <path value="Person.extension" />
+      <sliceName value="addressbuchzuordnung" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Adressbuchzuordnung" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Person.identifier">
+      <path value="Person.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Person.name">
+      <path value="Person.name" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://fhir.de/StructureDefinition/humanname-de-basis" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Person.telecom">
+      <path value="Person.telecom" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Person.telecom.system">
+      <path value="Person.telecom.system" />
+      <min value="1" />
+    </element>
+    <element id="Person.telecom.value">
+      <path value="Person.telecom.value" />
+      <min value="1" />
+    </element>
+    <element id="Person.telecom.period">
+      <path value="Person.telecom.period" />
+      <max value="0" />
+    </element>
+    <element id="Person.gender">
+      <path value="Person.gender" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Person.gender.extension">
+      <path value="Person.gender.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Person.gender.extension:gender-amtlich">
+      <path value="Person.gender.extension" />
+      <sliceName value="gender-amtlich" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/gender-amtlich-de" />
+      </type>
+    </element>
+    <element id="Person.birthDate">
+      <path value="Person.birthDate" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Person.address">
+      <path value="Person.address" />
+      <max value="1" />
+      <type>
+        <code value="Address" />
+        <profile value="http://fhir.de/StructureDefinition/address-de-basis" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Person.photo">
+      <path value="Person.photo" />
+      <max value="0" />
+    </element>
+    <element id="Person.managingOrganization">
+      <path value="Person.managingOrganization" />
+      <short value="Organisationszugehörigkeit" />
+      <definition value="Organisationszugehörigkeit" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Person.managingOrganization.reference">
+      <path value="Person.managingOrganization.reference" />
+      <min value="1" />
+    </element>
+    <element id="Person.managingOrganization.type">
+      <path value="Person.managingOrganization.type" />
+      <max value="0" />
+    </element>
+    <element id="Person.managingOrganization.identifier">
+      <path value="Person.managingOrganization.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Person.managingOrganization.display">
+      <path value="Person.managingOrganization.display" />
+      <max value="0" />
+    </element>
+    <element id="Person.active">
+      <path value="Person.active" />
+      <max value="0" />
+    </element>
+    <element id="Person.link">
+      <path value="Person.link" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

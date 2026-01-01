@@ -1,0 +1,29 @@
+<NamingSystem xmlns="http://hl7.org/fhir">
+<id value="Message-ID-KIM" />
+  <meta>
+    <profile value="http://fhir.de/StructureDefinition/namingsystem-de-basis" />
+  </meta>
+  <name value="Message_ID_KIM" />
+  <status value="active" />
+  <kind value="identifier" />
+  <date value="2025-11-20" />
+  <publisher value="Kassenaerztliche Bundesvereinigung" />
+  <contact>
+    <telecom>
+      <system value="url" />
+      <value value="http://www.kbv.de" />
+    </telecom>
+  </contact>
+  <type>
+	<coding>
+      <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_EAU_Identifier_types" />
+      <code value="KIM_Message_ID" />
+    </coding>
+  </type>
+  <description value="Message-ID der KIM-Nachricht" />
+  <uniqueId>
+    <type value="uri" />
+    <value value="https://fhir.kbv.de/NamingSystem/KBV_NS_EAU_Message_ID_KIM" />
+    <preferred value="true" />
+  </uniqueId>
+</NamingSystem>

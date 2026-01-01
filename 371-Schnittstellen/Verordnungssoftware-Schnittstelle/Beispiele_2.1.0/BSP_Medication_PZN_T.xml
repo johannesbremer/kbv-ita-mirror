@@ -1,0 +1,72 @@
+<Medication xmlns="http://hl7.org/fhir">
+	<id value="100110"/>
+	<meta>
+		<versionId value="1"/>
+		<lastUpdated value="2022-10-07T13:40:00Z"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Medication_PZN|2.1.0"/>
+	</meta>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Medication_Type">
+		<valueCodeableConcept>
+			<coding>
+				<system value="http://snomed.info/sct"/>
+				<version value="http://snomed.info/sct/900000000000207008/version/20220331"/>
+				<code value="763158003"/>
+				<display value="Medicinal product (product)"/>
+			</coding>
+		</valueCodeableConcept>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_Vaccine">
+		<valueBoolean value="false"/>
+	</extension>
+	<extension url="http://fhir.de/StructureDefinition/normgroesse">
+		<valueCode value="N1"/>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_Category">
+		<valueCoding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_ERP_Medication_Category"/>
+			<code value="02"/>
+		</valueCoding>
+	</extension>
+	<code>
+		<coding>
+			<system value="http://fhir.de/CodeSystem/ifa/pzn"/>
+			<code value="17281279"/>
+		</coding>
+		<text value="Lenalidomid AL 7,5 mg 21 Hartkapseln N1"/>
+	</code>
+	<form>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_DARREICHUNGSFORM"/>
+			<code value="HKP"/>
+		</coding>
+	</form>
+	<amount>
+		<numerator>
+			<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_ERP_Medication_PackagingSize">
+				<valueString value="21"/>
+			</extension>
+			<unit value="Stück"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="{Stueck}"/>
+		</numerator>
+		<denominator>
+			<value value="1"/>
+		</denominator>
+	</amount>
+	<ingredient>
+		<itemCodeableConcept>
+			<text value="Lenalidomid"/>
+		</itemCodeableConcept>
+		<strength>
+			<numerator>
+				<value value="7.5"/>
+				<unit value="mg"/>
+				<system value="http://unitsofmeasure.org"/>
+				<code value="mg"/>
+			</numerator>
+			<denominator>
+				<value value="1"/>
+			</denominator>
+		</strength>
+	</ingredient>
+</Medication>

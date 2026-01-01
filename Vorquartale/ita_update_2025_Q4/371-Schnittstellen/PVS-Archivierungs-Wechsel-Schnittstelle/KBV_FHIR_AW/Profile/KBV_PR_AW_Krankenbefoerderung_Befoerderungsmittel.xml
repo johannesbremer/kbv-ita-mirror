@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krankenbefoerderung_Befoerderungsmittel" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Krankenbefoerderung_Befoerderungsmittel" />
+  <status value="active" />
+  <date value="2019-03-19" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/w5" />
+    <name value="W5 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="udi" />
+    <uri value="http://www.fda.gov/MedicalDevices/DeviceRegulationandGuidance/UniqueDeviceIdentification/default.htm" />
+    <name value="UDI Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Device" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Device" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Device">
+      <path value="Device" />
+      <short value="Beförderungsmittel" />
+      <definition value="In dieser Ressource wird das Beförderungsmittel der Krankenbeförderung spezifiziert." />
+      <constraint>
+        <key value="SonstigerText" />
+        <severity value="error" />
+        <human value="Wenn Sonstige ausgewählt wird ist text zu füllen." />
+        <expression value="type.coding.code='Sonstige' implies type.text.exists()" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krankenbefoerderung_Befoerderungsmittel" />
+      </constraint>
+    </element>
+    <element id="Device.id">
+      <path value="Device.id" />
+      <min value="1" />
+    </element>
+    <element id="Device.meta">
+      <path value="Device.meta" />
+      <min value="1" />
+    </element>
+    <element id="Device.meta.versionId">
+      <path value="Device.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Device.meta.lastUpdated">
+      <path value="Device.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Device.meta.profile">
+      <path value="Device.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krankenbefoerderung_Befoerderungsmittel|1.2.0" />
+    </element>
+    <element id="Device.text">
+      <path value="Device.text" />
+      <min value="1" />
+    </element>
+    <element id="Device.text.status">
+      <path value="Device.text.status" />
+      <short value="extensions" />
+      <fixedCode value="extensions" />
+    </element>
+    <element id="Device.identifier">
+      <path value="Device.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Device.definition">
+      <path value="Device.definition" />
+      <max value="0" />
+    </element>
+    <element id="Device.udiCarrier">
+      <path value="Device.udiCarrier" />
+      <max value="0" />
+    </element>
+    <element id="Device.status">
+      <path value="Device.status" />
+      <max value="0" />
+    </element>
+    <element id="Device.statusReason">
+      <path value="Device.statusReason" />
+      <max value="0" />
+    </element>
+    <element id="Device.distinctIdentifier">
+      <path value="Device.distinctIdentifier" />
+      <max value="0" />
+    </element>
+    <element id="Device.manufacturer">
+      <path value="Device.manufacturer" />
+      <max value="0" />
+    </element>
+    <element id="Device.manufactureDate">
+      <path value="Device.manufactureDate" />
+      <max value="0" />
+    </element>
+    <element id="Device.expirationDate">
+      <path value="Device.expirationDate" />
+      <max value="0" />
+    </element>
+    <element id="Device.lotNumber">
+      <path value="Device.lotNumber" />
+      <max value="0" />
+    </element>
+    <element id="Device.serialNumber">
+      <path value="Device.serialNumber" />
+      <max value="0" />
+    </element>
+    <element id="Device.deviceName">
+      <path value="Device.deviceName" />
+      <max value="0" />
+    </element>
+    <element id="Device.modelNumber">
+      <path value="Device.modelNumber" />
+      <max value="0" />
+    </element>
+    <element id="Device.partNumber">
+      <path value="Device.partNumber" />
+      <max value="0" />
+    </element>
+    <element id="Device.type">
+      <path value="Device.type" />
+      <short value="Beförderungsmitteltyp" />
+      <definition value="Dieses Element dient zur Angabe des Beförderungsmitteltyps z.B. Krankentransport. Beim Typ: Sonstiger ist das Attribut text zu füllen." />
+      <min value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Befoerderungsmitteltyp" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Krankenbefoerderung_Befoerderungsmitteltyp" />
+      </binding>
+      <mapping>
+        <identity value="KBV" />
+        <map value="Krankenbefoerderung: Taxi/Krankenwagen/Rettungstransport/Notarztwagen" />
+      </mapping>
+    </element>
+    <element id="Device.type.coding">
+      <path value="Device.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.type.coding.system">
+      <path value="Device.type.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="Device.type.coding.version">
+      <path value="Device.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Device.type.coding.code">
+      <path value="Device.type.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Device.type.coding.display">
+      <path value="Device.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Device.type.coding.userSelected">
+      <path value="Device.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Device.type.text">
+      <path value="Device.type.text" />
+      <short value="Sonstiger Beförderungsmitteltyp" />
+      <definition value="Spezifizierung eines sonstigen Beförderungsmitteltyps" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.specialization">
+      <path value="Device.specialization" />
+      <max value="0" />
+    </element>
+    <element id="Device.version">
+      <path value="Device.version" />
+      <max value="0" />
+    </element>
+    <element id="Device.property">
+      <path value="Device.property" />
+      <max value="0" />
+    </element>
+    <element id="Device.patient">
+      <path value="Device.patient" />
+      <max value="0" />
+    </element>
+    <element id="Device.owner">
+      <path value="Device.owner" />
+      <max value="0" />
+    </element>
+    <element id="Device.contact">
+      <path value="Device.contact" />
+      <max value="0" />
+    </element>
+    <element id="Device.location:andere">
+      <path value="Device.location" />
+      <sliceName value="andere" />
+      <short value="Startort" />
+      <definition value="Startort" />
+      <max value="0" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krankenbefoederung_Befoerderungsmittel_Lokation" />
+      </type>
+    </element>
+    <element id="Device.location:andere.reference">
+      <path value="Device.location.reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.location:andere.identifier">
+      <path value="Device.location.identifier" />
+      <min value="1" />
+    </element>
+    <element id="Device.location:andere.identifier.use">
+      <path value="Device.location.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Device.location:andere.identifier.type:typ_in_der_Transportkette">
+      <path value="Device.location.identifier.type" />
+      <sliceName value="typ_in_der_Transportkette" />
+      <short value="Typ in der Transportkette" />
+      <definition value="z.B. Typisierung als Start oder Zielort" />
+      <min value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="Von_Nach" />
+      </binding>
+    </element>
+    <element id="Device.location:andere.identifier.type:typ_in_der_Transportkette.coding">
+      <path value="Device.location.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Device.location:andere.identifier.type:typ_in_der_Transportkette.coding.system">
+      <path value="Device.location.identifier.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krankenbefoederung_Befoerderungsmittel_Benennung_Lokation" />
+    </element>
+    <element id="Device.location:andere.identifier.type:typ_in_der_Transportkette.coding.version">
+      <path value="Device.location.identifier.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Device.location:andere.identifier.type:typ_in_der_Transportkette.coding.code">
+      <path value="Device.location.identifier.type.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Device.location:andere.identifier.type:typ_in_der_Transportkette.coding.display">
+      <path value="Device.location.identifier.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Device.location:andere.identifier.type:typ_in_der_Transportkette.coding.userSelected">
+      <path value="Device.location.identifier.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Device.location:andere.identifier.type:typ_in_der_Transportkette.text">
+      <path value="Device.location.identifier.type.text" />
+      <short value="Andere" />
+      <definition value="Bei anderen Lokationen ist hier die Bezeichung einzutragen" />
+      <max value="0" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.location:andere.identifier.system">
+      <path value="Device.location.identifier.system" />
+      <max value="0" />
+    </element>
+    <element id="Device.location:andere.identifier.value">
+      <path value="Device.location.identifier.value" />
+      <max value="0" />
+      <fixedString value="Andere" />
+    </element>
+    <element id="Device.location:andere.identifier.period">
+      <path value="Device.location.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Device.location:andere.identifier.assigner">
+      <path value="Device.location.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Device.location:andere.display">
+      <path value="Device.location.display" />
+      <max value="0" />
+    </element>
+    <element id="Device.url">
+      <path value="Device.url" />
+      <max value="0" />
+    </element>
+    <element id="Device.note">
+      <path value="Device.note" />
+      <max value="0" />
+    </element>
+    <element id="Device.safety">
+      <path value="Device.safety" />
+      <max value="0" />
+    </element>
+    <element id="Device.parent">
+      <path value="Device.parent" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

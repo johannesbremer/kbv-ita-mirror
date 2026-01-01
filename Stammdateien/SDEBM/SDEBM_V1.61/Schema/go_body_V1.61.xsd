@@ -1,0 +1,1886 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:ehd="urn:ehd/001" xmlns:go="urn:ehd/go/001" xmlns="urn:ehd/go/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ehd/go/001" elementFormDefault="qualified">
+	<!-- ===================================================	SCHEMASPEZIFIKATION DER SA 850-853 ================ VERSION 1.61 =====================================================================================-->
+	<xs:include schemaLocation="go_datentypen_V1.61.xsd"/>
+	<xs:annotation>
+		<xs:documentation>DEFINITIONEN</xs:documentation>
+	</xs:annotation>
+	<xs:element name="gnr_liste" type="gnr_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Klammerelement füe die GNR-Schlüsselelemente</xs:documentation>
+		</xs:annotation>
+		<xs:unique name="u_gnr_V">
+			<xs:selector xpath="go:gnr"/>
+			<xs:field xpath="@V"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="gnr_liste_typ">
+		<xs:sequence>
+			<xs:element ref="go:gnr" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="gnr" type="go:gnr_typ">
+		<xs:annotation>
+			<xs:documentation>Schlüsselelement im Body-Bereich</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="gnr_typ">
+		<xs:sequence>
+			<xs:element ref="go:allgemein"/>
+			<xs:element ref="go:bedingung" minOccurs="0"/>
+			<xs:element ref="go:regel" minOccurs="0"/>
+			<xs:element ref="go:kv" minOccurs="0"/>
+			<xs:element ref="go:vdx" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="\d{5}|\d{5}\p{Lu}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="USE" type="xs:string" use="required"/>
+		<xs:attribute name="USE-DOMAIN" use="required" fixed="1.2.276.0.76.5.233">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1.2.276.0.76.5.233"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="VT" type="vt_typ" use="required"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>SEKTIONEN</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="allgemein" type="go:allgemein_typ">
+		<xs:annotation>
+			<xs:documentation>Sektion mit allgemeingültigen Informationen zur GOP</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="allgemein_typ">
+		<xs:sequence>
+			<xs:element ref="gueltigkeit"/>
+			<xs:element ref="legende"/>
+			<xs:element ref="anmerkungen_liste" minOccurs="0"/>
+			<xs:element ref="leistungsinhalt_obligat" minOccurs="0"/>
+			<xs:element ref="leistungsinhalt_fakultativ" minOccurs="0"/>
+			<xs:element ref="bewertung_liste" minOccurs="0"/>
+			<xs:element ref="zeitbedarf_liste" minOccurs="0"/>
+			<xs:element ref="pruefzeit" minOccurs="0"/>
+			<xs:element ref="leistungsgruppe" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="bedingung" type="go:bedingung_typ">
+		<xs:annotation>
+			<xs:documentation>Sektion mit Informationen zu Bedingungen, die als Voraussetzung zur Abrechnung erfüllt sein müssen</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="bedingung_typ">
+		<xs:sequence>
+			<xs:element ref="fachgruppe_liste" minOccurs="0"/>
+			<xs:element name="berichtspflicht" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Dokumentiert, ob ggf. ein Arztbrief erstellt werden muss.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="genehmigungspflicht" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Dokumentiert, ob ggf. erst eine besondere Genehmigungspflicht durch die KV zur Abrechnung der Leistung berechtigt.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="go:aop_115b" minOccurs="0"/>
+			<xs:element ref="gnr_zusatzangaben" minOccurs="0"/>
+			<xs:element ref="begruendungen_liste" minOccurs="0"/>
+			<xs:element name="administrative_gender_cd" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Stellt einen Geschlechtsbezug der Leistung her.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.232">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.232"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="altersbedingung_liste" minOccurs="0"/>
+			<xs:element ref="anzahlbedingung_liste" minOccurs="0"/>
+			<xs:element ref="scheinarten_liste" minOccurs="0"/>
+			<xs:element name="abr_best" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Abrechnungsbestimmung als Fliestext</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="regel" type="go:regel_typ">
+		<xs:annotation>
+			<xs:documentation>Sektion mit Informationen zur Beregelung</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="regel_typ">
+		<xs:sequence>
+			<xs:element ref="ausschluss_liste" minOccurs="0"/>
+			<xs:element ref="go:grundleistungen_liste" minOccurs="0"/>
+			<xs:element ref="go:sub_gop_liste" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Verweis auf Sub-GOP, die als Spezialisierung von Pauschalen oder in Form von Strukturzuschlägen zugesetzt werden.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="go:pfg_ausschluss" minOccurs="0"/>
+			<xs:element ref="ersetzungs_liste" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="kv" type="go:kv_typ">
+		<xs:annotation>
+			<xs:documentation>Sektion mit Informationen über regionale Besonderheiten /Abweichungen</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="kv_typ">
+		<xs:sequence>
+			<xs:element ref="kennzeichen"/>
+			<xs:element ref="kv_gruppierungsfeld_liste" minOccurs="0"/>
+			<xs:element ref="kv_bewertung_liste" minOccurs="0"/>
+			<xs:element ref="ktgruppen_liste" minOccurs="0"/>
+			<xs:element ref="kt_liste" minOccurs="0"/>
+			<xs:element ref="ktab_liste" minOccurs="0"/>
+			<xs:element ref="abrechnungsstelle_liste" minOccurs="0"/>
+			<xs:element ref="as_ktgruppen_liste" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="V" type="xs:string" use="required"/>
+		<xs:attribute name="S" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1.2.276.0.76.5.233"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="vdx" type="go:vdx_typ">
+		<xs:annotation>
+			<xs:documentation>Sektion mit relevante Daten zum Vertragsdatensatz (VDX)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="vdx_typ">
+		<xs:sequence>
+			<xs:element name="vertragsart" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.257">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.257"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="gkv_kontenart_liste" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="gkv_kontenart" maxOccurs="unbounded">
+							<!-- *************************************************************Element gkv_konto************* -->
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:string" use="required"/>
+								<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.258">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="1.2.276.0.76.5.258"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+				<xs:unique name="u_kontenart_V">
+					<xs:selector xpath="go:gkv_kontenart"/>
+					<xs:field xpath="@V"/>
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>ELEMENTE UND TYPEN</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="gueltigkeit" type="go:gueltigkeit_typ">
+		<xs:annotation>
+			<xs:documentation>Abbildung der fachlichen und technischen Gültigkeit einer GOP</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="gueltigkeit_typ">
+		<xs:sequence>
+			<xs:element name="service_tmr">
+				<xs:annotation>
+					<xs:documentation>Die fachliche Gültigkeit gibt an, seit wann eine Ziffer mit einem bestimmten Leistungsinhalt existiert und abrechenbar ist oder war.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="zeitraum_typ" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="effective_tmr" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Dieses Element definiert den technischen Gültigkeitsbeginn oder -zeitraum einer Leistung in der aktuellen Ausprägung.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="zeitraum_typ" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="legende" type="go:legende_typ">
+		<xs:annotation>
+			<xs:documentation>Klammerelement für hierarchische und systematische Zuordnung einer GOP</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="legende_typ">
+		<xs:sequence>
+			<xs:element name="kap_bez" type="kapiteldetails_typ">
+				<xs:annotation>
+					<xs:documentation>Kapitelpfad</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="kurztext">
+				<xs:annotation>
+					<xs:documentation>Überschrift</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="255"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="langtext" type="go:ebm_text_absatz" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Beschreibungstext der GNR, bei Katalogleistungen Beschreibungstext des Kataloges</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="langtext_continued" type="go:ebm_text_absatz" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Beschreibungstext bei abgeleiteten Leistungen, Text der Katalogleistung bei Katalogleistungen, ansonsten nicht gefüllt</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="quittungstext" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Verständliche Kurzfassung für die Patientenquittung.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="kapiteldetails_typ">
+		<xs:annotation>
+			<xs:documentation>Klammerelement für die Abbildung der Kapitelhierarchie</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="bereich">
+				<xs:annotation>
+					<xs:documentation>Systematische Einordnung im Rahmen des EBM.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="DN" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="255"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="kapitel">
+				<xs:annotation>
+					<xs:documentation>Beinhaltet die Kapitelangabe.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="DN" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="255"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="abschnitt" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Zweite Hierarchieebene unterhalb des Kapitels. Wird im Rahmen des EBM als Abschnitt bezeichnet.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="DN" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="255"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="uabschnitt" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Dritte Hierarchieebene unterhalb des Kapitels. Wird im Rahmen des EBM als Unterabschnitt bezeichnet.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="DN" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="255"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="block" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Vierte Hierarchieebene unterhalb des Kapitels. Wird im Rahmen des EBM als Block bezeichnet.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="DN" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:maxLength value="255"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="V" type="xs:string" use="required"/>
+		<xs:attribute name="DN" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="anmerkungen_liste" type="go:anmerkungen_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Klammerlement für sonstige Informationen im Fließtext</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="anmerkungen_liste_typ">
+		<xs:sequence>
+			<xs:element name="anmerkung" type="go:ebm_text_absatz" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Ausformulierte Regeln oder Abrechnungshinweise des EBM2000plus. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="leistungsinhalt_obligat" type="go:ebm_text_absatz">
+		<xs:annotation>
+			<xs:documentation>obligater Leistungsinhalt des GNR-Textes</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="leistungsinhalt_fakultativ" type="go:ebm_text_absatz">
+		<xs:annotation>
+			<xs:documentation>fakultativer Leistungsinhalt des GNR-Textes</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="bewertung_liste" type="go:bewertung_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Klammerelement für eine Liste von Bewertungen</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="bewertung_liste_typ">
+		<xs:sequence>
+			<xs:element ref="bewertung" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="bewertung" type="bewertung_typ">
+		<xs:annotation>
+			<xs:documentation>Abbildung von EBM-Bewertungen mit differenzierten Kriterien</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="bewertung_typ">
+		<xs:sequence>
+			<xs:element name="leistungserbringerart" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Einschränkende Zuordnung des ambulanten bzw. stationären Sektors.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.234">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.234"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="leistung_typ" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Leistungsart der zugrundeliegenden Bewertung AL, TL, GL</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="AL"/>
+								<xs:enumeration value="TL"/>
+								<xs:enumeration value="GL"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="versorgungsgebiet" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="-{0,1}\d*|-{0,1}\d*\.\d{1,2}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="U" type="xs:string" use="required"/>
+		<xs:attribute name="U-DOMAIN" use="required" fixed="1.2.276.0.76.5.236">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1.2.276.0.76.5.236"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="zeitbedarf_liste" type="go:zeitbedarf_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Abbildung der Kalkulationszeit (betriebswirtschaftliche Grundlage)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="zeitbedarf_liste_typ">
+		<xs:sequence>
+			<xs:element name="zeit" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Zeitangabe mit Einheit.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="leistung_typ" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Leistungsart der zugrundeliegenden Kalkulation (Ärztliche Leistung, Technische Leistung, Gesamtleistung). Wird derzeit ausschließlich für die Gesamtleistung angegeben und kann daher auch entfallen.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="AL"/>
+											<xs:enumeration value="TL"/>
+											<xs:enumeration value="GL"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="\d*|\d*.\d{1,2}"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="U" type="xs:string" use="required"/>
+					<xs:attribute name="U-DOMAIN" use="required" fixed="1.2.276.0.76.5.238">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.238"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="pruefzeit" type="go:pruefzeit_typ">
+		<xs:annotation>
+			<xs:documentation>Abbildung der Prüfzeit zum Zwecke von Plausibilitätenprüfungen</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="pruefzeit_typ">
+		<xs:sequence>
+			<xs:element name="zeitprofilart">
+				<xs:annotation>
+					<xs:documentation>Gibt die Eignung einer Plausizeit zu einem Zeitprofil Tag und/oder Quartal wieder.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.228">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.228"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="\d*|\d*.\d{1,2}"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="U" type="xs:string" use="required"/>
+		<xs:attribute name="U-DOMAIN" use="required" fixed="1.2.276.0.76.5.238">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1.2.276.0.76.5.238"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="leistungsgruppe" type="go:leistungsgruppe_typ">
+		<xs:annotation>
+			<xs:documentation>Abbildung der Leistungsgruppe im Rahmen der Wirtschaftlichkeitsprüfung</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="leistungsgruppe_typ">
+		<xs:attribute name="V" type="xs:string" use="required"/>
+		<xs:attribute name="S" use="optional" fixed="1.2.276.0.76.5.227">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1.2.276.0.76.5.227"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="fachgruppe_liste" type="go:fachgruppe_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Abbildung zulässiger Versorgungsbereiche und Fachgruppen, die zur Abrechnung berechtigt sind </xs:documentation>
+		</xs:annotation>
+		<xs:unique name="u_versbereich_V">
+			<xs:selector xpath="go:versorgungsbereich"/>
+			<xs:field xpath="@V"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="fachgruppe_liste_typ">
+		<xs:sequence>
+			<xs:element name="versorgungsbereich" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Zuordnung der Fachgruppe zu einem Versorgungsbereich.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="fachgruppe" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Codierung der Fachgruppe nach dem Bundesarztregister.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:string" use="required"/>
+								<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.114">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="1.2.276.0.76.5.114"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.237">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.237"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+				<xs:unique name="u_fachgruppe_V">
+					<xs:selector xpath="go:fachgruppe"/>
+					<xs:field xpath="@V"/>
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="V" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="aop_115b" type="go:aop_115b_typ">
+		<xs:annotation>
+			<xs:documentation>Trigger für die Abrechnungsbesonderheit nach §115b Abschnitt 3, Anlage 1</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="aop_115b_typ">
+		<xs:attribute name="V" type="xs:boolean" use="required" fixed="true"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="gnr_zusatzangaben" type="go:gnr_zusatzangaben_typ">
+		<xs:annotation>
+			<xs:documentation>Definition notwendiger Zusatzangaben zur Abrechnung, Prüfung und Auswahl gemäß der definierten Begründungen-Liste</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="gnr_zusatzangaben_typ">
+		<xs:sequence>
+			<xs:element name="gnr_zusatzangaben_liste" maxOccurs="2">
+				<xs:annotation>
+					<xs:documentation>Beinhaltet die auswahl- oder sequenzgesteuerte Auflistung von abrechnungsbegründenden Zusatzangaben.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="gnr_zusatzangabe" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Zusatzangabe gemäß KVDT-Codierung (50xx).</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="zusatzbedingung" minOccurs="0">
+										<xs:annotation>
+											<xs:documentation>Optionale Erweiterung für zukünftige Anforderungen</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:attribute name="V" type="xs:string" use="required"/>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								<xs:attribute name="V" type="xs:string" use="required"/>
+								<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.229">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="1.2.276.0.76.5.229"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="AUSWAHL"/>
+								<xs:enumeration value="SEQUENZ"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+				<xs:unique name="u_gnr_zusatzangabe_V">
+					<xs:selector xpath="go:gnr_zusatzangabe"/>
+					<xs:field xpath="@V"/>
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="begruendungen_liste" type="go:begruendungen_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Abbildung von Verknüpfungen einer GOP zu ICD, OPS und/oder GNR, die idR als Begründung in der Abrechnung anzugeben sind</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="begruendungen_liste_typ">
+		<xs:sequence>
+			<xs:element name="ops_liste" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Beinhaltet die mit der Leistung verknüpften OP-Schlüssel im Rahmen des ambulanten Operierens. Wird zusätzlich für abrechnungsbegründende Zwecke verwendet.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="kategorie" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Hier ist die OP-Kategorie inklusive der kalkulatorischen Schnitt-Naht-Zeit enthalten. Diese bleibt leer, wenn die OPS-Verknüpfung im Rahmen von §115 b und außerhalb von Anhang 2 erfolgt.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="ops" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>OP-Schlüssel, mit ggf. Abrechnungsbesonderheit nach §115b Abschnitte 1,2 Anlage 1</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:sequence>
+												<xs:element name="seite" minOccurs="0">
+													<xs:annotation>
+														<xs:documentation>Seitenlokalisierung zum OPS, falls diese nur teilweise im EBM zulässig ist bzw. eine andere Kategorie-/GNR-Zuordnung erzwingt.</xs:documentation>
+													</xs:annotation>
+													<xs:complexType>
+														<xs:attribute name="V" use="required">
+															<xs:simpleType>
+																<xs:restriction base="xs:string">
+																	<xs:enumeration value="P"/>
+																	<xs:enumeration value="L"/>
+																	<xs:enumeration value="R"/>
+																</xs:restriction>
+															</xs:simpleType>
+														</xs:attribute>
+													</xs:complexType>
+												</xs:element>
+											</xs:sequence>
+											<xs:attribute name="V" type="xs:string" use="required"/>
+											<xs:attribute name="R" use="optional">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="115b"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:attribute>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								<xs:attribute name="V" type="xs:string" use="optional"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="V" type="xs:boolean" use="required"/>
+				</xs:complexType>
+				<xs:unique name="u_kategorie_V">
+					<xs:selector xpath="go:kategorie"/>
+					<xs:field xpath="@V"/>
+				</xs:unique>
+			</xs:element>
+			<xs:element name="icd_liste" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Beinhaltet die mit der Leistung verknüpften ICD-Codes, welche die Abrechnung der Leistung legitimieren. </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="icd" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Codierung nach ICD-10</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="V" type="xs:boolean" use="required"/>
+				</xs:complexType>
+				<xs:unique name="u_icd_V">
+					<xs:selector xpath="go:icd"/>
+					<xs:field xpath="@V"/>
+				</xs:unique>
+			</xs:element>
+			<xs:element name="gnr_liste" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Beinhaltet Leistungen der Kleinchirurgie, die im Rahmen des ambulanten Operierens abrechnungsbegründend verwendet werden können, falls kein OPS vorliegt.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="gnr" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>GNR-Elemente</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" type="go:gnr_format_typ" use="required"/>
+								<xs:attribute name="DN" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+				<xs:unique name="u_begr_gnr_V">
+					<xs:selector xpath="go:gnr"/>
+					<xs:field xpath="@V"/>
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="altersbedingung_liste" type="go:altersbedingung_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Definiert ein Mindest- und/oder Höchstalter für die Abrechnugsfähigkeit einer GOP</xs:documentation>
+		</xs:annotation>
+		<xs:unique name="u_alter_V_rt">
+			<xs:selector xpath="go:alter"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="go:range_typ/@V"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="altersbedingung_liste_typ">
+		<xs:sequence>
+			<xs:element name="alter" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Beinhaltet Altersangabe und Einheit</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="range_typ">
+							<xs:annotation>
+								<xs:documentation>Kennzeichnet das Alter als Minimum, Maximum.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="MIN"/>
+											<xs:enumeration value="MAX"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="V" type="xs:integer" use="required"/>
+					<xs:attribute name="U" type="xs:string" use="required"/>
+					<xs:attribute name="U-DOMAIN" use="required" fixed="1.2.276.0.76.5.238">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.238"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="anzahlbedingung_liste" type="go:anzahlbedingung_typ">
+		<xs:annotation>
+			<xs:documentation>Definiert eine maximal zulässige Anzahl an Ansetzungen für einen Bezugsraum</xs:documentation>
+		</xs:annotation>
+		<xs:unique name="u_anz_bezugsraum_V">
+			<xs:selector xpath="go:bezugsraum"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@U"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="anzahlbedingung_typ">
+		<xs:sequence>
+			<xs:element name="bezugsraum" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Bezugs(zeit-)raum für die Gültigkeit der Bedingung</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="anzahl">
+							<xs:annotation>
+								<xs:documentation>Maximal zulässige Anzahl von Ansetzungen</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="aussetzungsgrund_liste" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Liste von Aussetzungsgründen, die eine Überschreitung der zulässigen Höchstanzahl tolerieren.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="gnr_zusatzangabe" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>Zu dokumentierende Zusatzangabe gemäß KVDT-Codierung zur Aussetzung der maximal zulässigen Anzahl</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:attribute name="V" type="xs:string" use="required"/>
+											<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.229">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="1.2.276.0.76.5.229"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:attribute>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+							<xs:unique name="u_anz_gnr_zusatzangabe_V">
+								<xs:selector xpath="go:gnr_zusatzangabe"/>
+								<xs:field xpath="@V"/>
+							</xs:unique>
+						</xs:element>
+						<xs:element name="altersbedingung_liste" type="go:altersbedingung_liste_typ" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Liste der Altersbeschränkungen</xs:documentation>
+							</xs:annotation>
+							<xs:unique name="u_anz_alter_V_rt">
+								<xs:selector xpath="go:alter"/>
+								<xs:field xpath="@V"/>
+								<xs:field xpath="go:range_typ/@V"/>
+							</xs:unique>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="U" type="xs:string" use="required"/>
+					<xs:attribute name="U-DOMAIN" use="required" fixed="1.2.276.0.76.5.226">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.226"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>Facharzt-EBM // Kennzeichen für Ausschlusskriterium der Grundpauschale Fachärztliche Grundversorgung ###########################################</xs:documentation>
+	</xs:annotation>
+	<xs:element name="pfg_ausschluss">
+		<xs:annotation>
+			<xs:documentation>Dient zur Kennzeichnung von Leistungen, deren Abrechnung zum Ausschluss der Grundpauschale zur fachärztlichen Grundversorgung führen würde.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:boolean" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="scheinarten_liste" type="go:scheinarten_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Abbildung einschränkender Schein-/Satzarten</xs:documentation>
+		</xs:annotation>
+		<xs:unique name="u_scheinart_V">
+			<xs:selector xpath="go:scheinart"/>
+			<xs:field xpath="@V"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="scheinarten_liste_typ">
+		<xs:sequence>
+			<xs:element name="scheinart" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Angabe der Scheinart</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="scheinuntergruppen_liste" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Sammelelement für die Scheinuntergrupp(en) und Definition von Ein- oder Ausschluss derselben.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="scheinuntergruppe" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>Angabe der Scheinunterguppe.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:attribute name="V" type="xs:string" use="required"/>
+											<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.235">
+												<xs:simpleType>
+													<xs:restriction base="xs:string">
+														<xs:enumeration value="1.2.276.0.76.5.235"/>
+													</xs:restriction>
+												</xs:simpleType>
+											</xs:attribute>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								<xs:attribute name="V" type="xs:boolean" use="required"/>
+							</xs:complexType>
+							<xs:unique name="u_scheinuntergruppe_V">
+								<xs:selector xpath="go:scheinuntergruppe"/>
+								<xs:field xpath="@V"/>
+							</xs:unique>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.235">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.235"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="V" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+		<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="ausschluss_liste" type="go:ausschluss_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Abbildung von kapitel- und leistungsbezogenen Ausschlüssen</xs:documentation>
+		</xs:annotation>
+		<xs:unique name="u_aus_bezugsraum_V">
+			<xs:selector xpath="go:bezugsraum"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@U"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="ausschluss_liste_typ">
+		<xs:sequence>
+			<xs:element name="bezugsraum" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Definiert den Bezugszeitraum, auf den der Ausschluss gelten soll.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="gnr_liste" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Sammelelement für Auflistung von GNR und Definition von Ein- bzw. Ausschluss.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="gnr" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>GNR-Element.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:attribute name="V" type="go:gnr_format_typ" use="required"/>
+											<xs:attribute name="DN" type="xs:string" use="required"/>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								<xs:attribute name="V" type="xs:boolean" use="required"/>
+							</xs:complexType>
+							<xs:unique name="u_aus_gnr_V">
+								<xs:selector xpath="go:gnr"/>
+								<xs:field xpath="@V"/>
+							</xs:unique>
+						</xs:element>
+						<xs:element name="kap_liste" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Sammelelement für Kapitelangaben und Definition von Ein- bzw. Ausschluss.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="kap_bez" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>Kapitelpfad</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:attribute name="V" type="xs:string" use="required"/>
+											<xs:attribute name="DN" type="xs:string" use="required"/>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								<xs:attribute name="V" type="xs:boolean" use="required"/>
+							</xs:complexType>
+							<xs:unique name="u_aus_kap_bez_V">
+								<xs:selector xpath="go:kap_bez"/>
+								<xs:field xpath="@V"/>
+							</xs:unique>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="U" type="xs:string" use="required"/>
+					<xs:attribute name="U-DOMAIN" use="required" fixed="1.2.276.0.76.5.226">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.226"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>HA-EBM // kann entfallen, da unter 'grundleistbedingung_liste' zusammengefasst und erweitert</xs:documentation>
+	</xs:annotation>
+	<xs:element name="grundleistungen_liste" type="go:grundleistungen_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Abbildung erforderlicher Grundleistungen bei sogenannten Zuschlagleistungen</xs:documentation>
+		</xs:annotation>
+		<xs:unique name="u_grundleistung_bezugsraum">
+			<xs:selector xpath="go:bezugsraum"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@U"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="grundleistungen_liste_typ">
+		<xs:sequence>
+			<xs:element name="bezugsraum" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Bezugszeitraum, innerhalb dessen die Basisleistung vorhanden sein muss</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="gnr" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Angabe von erforderlichen Basisleistung(en)</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" type="go:gnr_format_typ" use="required"/>
+								<xs:attribute name="DN" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="U" type="xs:string" use="required"/>
+					<xs:attribute name="U-DOMAIN" use="required" fixed="1.2.276.0.76.5.226">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.226"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+				<xs:unique name="u_grundleistung_gnr">
+					<xs:selector xpath="go:gnr"/>
+					<xs:field xpath="@V"/>
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>HA-EBM // Verweis auf Unter-GOP (Strukturzuschläge, altersklassenabhängige Bewertung, krankheitsgruppenabhängige Bewertung) #######################</xs:documentation>
+	</xs:annotation>
+	<xs:element name="sub_gop_liste" type="go:sub_gop_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Verweis auf weitere GOP</xs:documentation>
+		</xs:annotation>
+		<xs:unique name="u_supgop_bezugsraum">
+			<xs:selector xpath="go:bezugsraum"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@U"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="sub_gop_liste_typ">
+		<xs:sequence>
+			<xs:element name="bezugsraum" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Definiert den Bezugsraum, auf den sich die Regel bezieht</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="gnr" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Sub-GOP, ggf. an Zusatzbedingung gekoppelt (falls vorhanden)</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence minOccurs="0">
+									<xs:element ref="go:altersbedingung_liste">
+										<xs:annotation>
+											<xs:documentation>GOP ist abhängig vom Alter</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+								<xs:attribute name="V" type="go:gnr_format_typ" use="required"/>
+								<xs:attribute name="DN" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="U" type="xs:string" use="required"/>
+					<xs:attribute name="U-DOMAIN" use="required" fixed="1.2.276.0.76.5.226">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.226"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+				<xs:unique name="u_subgop_gnr">
+					<xs:selector xpath="go:gnr"/>
+					<xs:field xpath="@V"/>
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="ersetzungs_liste" type="go:ersetzungs_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Abbildung von GOP, deren gemeinsame Abrechnung zur Ersetzung durch eine Höchstwertziffer führt</xs:documentation>
+		</xs:annotation>
+		<xs:unique name="u_ers_ersetzung_V">
+			<xs:selector xpath="go:ersetzung"/>
+			<xs:field xpath="@V"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="ersetzungs_liste_typ">
+		<xs:sequence>
+			<xs:element name="ersetzung" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Verweis auf die Höchstwertziffer, welche zur Ersetzung der untergeordneten Ziffern herangezogen wird.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="gnr_liste">
+							<xs:annotation>
+								<xs:documentation>Sammelelement für die Aufzählung der folgenden Ziffern.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="gnr" maxOccurs="unbounded">
+										<xs:annotation>
+											<xs:documentation>Hier sind die zu ersetzenden Ziffern hinterlegt.</xs:documentation>
+										</xs:annotation>
+										<xs:complexType>
+											<xs:attribute name="V" type="go:gnr_format_typ" use="required"/>
+											<xs:attribute name="DN" type="xs:string" use="required"/>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+							<xs:unique name="u_ers_gnr_V">
+								<xs:selector xpath="go:gnr"/>
+								<xs:field xpath="@V"/>
+							</xs:unique>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="V" type="go:gnr_format_typ" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:annotation>
+		<xs:documentation>HA-EBM // GOP-Art mit Verweis auf Schlüsseltabelle anstatt Enumeration  ########################################################################</xs:documentation>
+	</xs:annotation>
+	<xs:element name="kennzeichen" type="go:kennzeichen_typ">
+		<xs:annotation>
+			<xs:documentation>Eigenschaften und Kategorisierung der GOP für KV-interne Abrechnungsverarbeitung</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="kennzeichen_typ">
+		<xs:sequence>
+			<xs:element name="arztpraxis">
+				<xs:annotation>
+					<xs:documentation>Information zur Abrechnungsfähigkeit in der Arztpraxis</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" type="xs:string" use="required" fixed="1.2.276.0.76.5.246"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="fkz" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Boolescher Wert, welcher die Zulässigkeit der Ziffer im Rahmen des FKZ kennzeichnet.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="gnr_type_cd" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Spezifiziert die GOP-Art und daran gekoppelte Eigenschaften und Plausibilitäten</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="gnr" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Falls es sich um eine modifizierte Ziffer handelt, wird hier die Ursprungsziffer im Rahmen des EBM angegeben.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" type="go:gnr_format_typ" use="required"/>
+								<xs:attribute name="DN" type="xs:string" use="required"/>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string"/>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="S" type="xs:string" use="required" fixed="1.2.276.0.76.5.245"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="begleit_115b" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Zulässige Begleitleistung im 115b-Fall.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="op_typ" minOccurs="0" maxOccurs="3">
+							<xs:annotation>
+								<xs:documentation>Systematische Einordnung der Begleitleistung.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="prae"/>
+											<xs:enumeration value="intra"/>
+											<xs:enumeration value="post"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="go:ktgruppen_liste" minOccurs="0"/>
+						<xs:element ref="go:kt_liste" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="V" type="xs:boolean" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="mengensteuerung_liste" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="kv_gruppierungsfeld_liste" type="go:kv_gruppierungsfeld_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Informationen zur Initialisierung der Bewertungssteuerungsdatei im Vertragsdatensatz (VDX)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="kv_gruppierungsfeld_liste_typ">
+		<xs:sequence>
+			<xs:element name="kv_gruppierungsfeld" maxOccurs="3">
+				<xs:annotation>
+					<xs:documentation>kv-spezifische Informationen zur Initialisierung der Bewertungssteuerungsdatei (VDX)</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:minLength value="1"/>
+								<xs:maxLength value="6"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="U" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1"/>
+								<xs:enumeration value="2"/>
+								<xs:enumeration value="3"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="kv_bewertung_liste" type="go:kv_bewertung_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Regionale Bewertung, ersetzt regional die allgemeine EBM-Bewertung.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="kv_bewertung_liste_typ">
+		<xs:sequence>
+			<xs:element name="kv_bewertung" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Hier sind die kv-spezifische Bewertungen enthalten. Man beachte die Abhängigkeiten /Einschränkungen im Folgenden.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="gebuehrenordnung" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Beschränkt die Bewertung auf eine Gebührenordnung.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:string" use="required"/>
+								<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.231">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="1.2.276.0.76.5.231"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="leistungserbringerart" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Beschränkt die Bewertung auf den ambulanten oder stationären Sektor</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:string" use="required"/>
+								<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.234">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="1.2.276.0.76.5.234"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+						<xs:element name="leistung_typ" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Die Bewertung kann auf die ärztliche, technische oder die gesamte Leistung bezogen sein. Standardmäßig wird derzeit ausschließlich die Gesamtleistung bewertet, sodass die Angabe dieses Elements entfallen kann.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" use="required">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="AL"/>
+											<xs:enumeration value="TL"/>
+											<xs:enumeration value="GL"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+						<xs:element ref="fachgruppe_liste" minOccurs="0"/>
+						<xs:element ref="ktgruppen_liste" minOccurs="0"/>
+						<xs:element ref="kt_liste" minOccurs="0"/>
+						<xs:element ref="versorgungsgebiet" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="-{0,1}\d*|-{0,1}\d*\.\d{1,2}"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="U" type="xs:string" use="required"/>
+					<xs:attribute name="U-DOMAIN" use="required" fixed="1.2.276.0.76.5.236">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.236"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="ktgruppen_liste" type="go:ktgruppen_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Regionale Einschränkung der Abrechnungsfähigkeit auf Ebene der Kostenträgergruppen</xs:documentation>
+		</xs:annotation>
+		<xs:unique name="u_ktgruppe_kennz_V">
+			<xs:selector xpath="go:ktgruppe"/>
+			<xs:field xpath="@V"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="ktgruppen_liste_typ">
+		<xs:sequence>
+			<xs:element name="ktgruppe" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Beinhaltet den jeweiligen Code der Kostenträgergruppe.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.240">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.240"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="V" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="kt_liste" type="go:kt_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Regionale Einschränkung der Abrechnungsfähigkeit auf der Ebene Kostenträger</xs:documentation>
+		</xs:annotation>
+		<xs:unique name="u_kt_kennz_V">
+			<xs:selector xpath="go:kt"/>
+			<xs:field xpath="@V"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="kt_liste_typ">
+		<xs:sequence>
+			<xs:element name="kt" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Beinhaltet die VKNR des jeweiligen Kostenträgers.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="vknr_typ" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="V" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="ktab_liste" type="go:ktab_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Regionale Einschränkung der Abrechnungsfähigkeit auf Ebene der Kostenträgerabrechnungsbereiche (KTAB)</xs:documentation>
+		</xs:annotation>
+		<xs:unique name="u_ktab_V">
+			<xs:selector xpath="go:ktab"/>
+			<xs:field xpath="@V"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="ktab_liste_typ">
+		<xs:sequence>
+			<xs:element name="ktab" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Beinhaltet den Code für den jeweiligen KTAB.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.239">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.239"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="V" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="abrechnungsstelle_liste" type="go:abrechnungsstelle_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Regionale Einschränkung der Abrechnungsfähigkeit auf Ebene der regionalen Abrechnungsstellen</xs:documentation>
+		</xs:annotation>
+		<xs:unique name="u_abrechnungsstelle_V">
+			<xs:selector xpath="go:abrechnungsstelle"/>
+			<xs:field xpath="@V"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="abrechnungsstelle_liste_typ">
+		<xs:sequence>
+			<xs:element name="abrechnungsstelle" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Beinhaltet den Code der jeweiligen Bezirksstelle.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.230">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.230"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="V" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="as_ktgruppen_liste" type="go:as_ktgruppen_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Regionale Definition kostenträgergruppenbezogener Abrechnungsstellen</xs:documentation>
+		</xs:annotation>
+		<xs:unique name="u_as_abrechnungsstelle_V">
+			<xs:selector xpath="go:abrechnungsstelle"/>
+			<xs:field xpath="@V"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="as_ktgruppen_liste_typ">
+		<xs:sequence>
+			<xs:element name="abrechnungsstelle" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Beinhaltet den Code der jeweiligen Bezirksstelle und Sammelelement der durch Einschluss zulässigen oder der durch Ausschluss unzulässigen Kostenträgergruppen.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ktgruppe" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation>Beinhaltet den Code der jeweiligen Kostenträgergruppe.</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:attribute name="V" type="xs:string" use="required"/>
+								<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.240">
+									<xs:simpleType>
+										<xs:restriction base="xs:string">
+											<xs:enumeration value="1.2.276.0.76.5.240"/>
+										</xs:restriction>
+									</xs:simpleType>
+								</xs:attribute>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.230">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="1.2.276.0.76.5.230"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+				<xs:unique name="u_as_ktgruppe_V">
+					<xs:selector xpath="go:ktgruppe"/>
+					<xs:field xpath="@V"/>
+				</xs:unique>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="V" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>-----------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="versorgungsgebiet" type="versorgungsgebiet_typ">
+		<xs:annotation>
+			<xs:documentation>Orientierungswerte differenziert nach Versorgungsgebiet (EBM 2008, derzeit nicht verwendet)</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="versorgungsgebiet_typ">
+		<xs:attribute name="V" type="xs:string" use="required"/>
+		<xs:attribute name="S" use="required" fixed="1.2.276.0.76.5.374">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1.2.276.0.76.5.374"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="mengensteuerung_liste" type="go:mengensteuerung_liste_typ">
+		<xs:annotation>
+			<xs:documentation>Wenn dieses Element vorhanden ist, gibt es eine Mengensteuerung.</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="mengensteuerung_liste_typ">
+		<xs:sequence>
+			<xs:element name="mengensteuerung" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ms_versorgungsbereich_liste" minOccurs="0"/>
+						<xs:element ref="ms_arztgruppe_liste" minOccurs="0"/>
+						<xs:element ref="ms_scheinuntergruppe_liste" minOccurs="0"/>
+						<xs:element ref="ms_leistungsuntergruppe_liste" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="DN" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>interner beschreibender Text  zur Erläuterung</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="ms_versorgungsbereich_liste" type="go:ms_versorgungsbereich_liste_typ">
+		<xs:unique name="v_ms_versorgungsbereich_s">
+			<xs:selector xpath="go:ms_versorgungsbereich"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="ms_versorgungsbereich_liste_typ">
+		<xs:sequence>
+			<xs:element name="ms_versorgungsbereich" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Aus S_GOS_KV_MS_VBEREICH</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" use="required" fixed="1.2.276.0.76.3.1.1.5.2.31">
+						<xs:simpleType>
+							<xs:restriction base="xs:string"/>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="ms_arztgruppe_liste" type="go:ms_arztgruppe_liste_typ">
+		<xs:unique name="v_ms_arztgruppe_s">
+			<xs:selector xpath="go:ms_arztgruppe"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="ms_arztgruppe_liste_typ">
+		<xs:sequence>
+			<xs:element name="ms_arztgruppe" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Aus S_GOS_KV_MS_ARZTGRUPPE</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" use="required" fixed="1.2.276.0.76.3.1.1.5.2.32">
+						<xs:simpleType>
+							<xs:restriction base="xs:string"/>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="ms_scheinuntergruppe_liste" type="go:ms_scheinuntergruppe_liste_typ">
+		<xs:unique name="v_ms_scheinuntergruppe_s">
+			<xs:selector xpath="go:ms_scheinuntergruppe"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="ms_scheinuntergruppe_liste_typ">
+		<xs:sequence>
+			<xs:element name="ms_scheinuntergruppe" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Aus S_VDX_SCHEINUNTERGRUPPE</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" use="required" fixed="1.2.276.0.76.3.1.1.5.1.19">
+						<xs:simpleType>
+							<xs:restriction base="xs:string"/>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:element name="ms_leistungsuntergruppe_liste" type="go:ms_leistungsuntergruppe_liste_typ">
+		<xs:unique name="v_ms_leistungsuntergruppe_s">
+			<xs:selector xpath="go:ms_leistungsuntergruppe"/>
+			<xs:field xpath="@V"/>
+			<xs:field xpath="@S"/>
+		</xs:unique>
+	</xs:element>
+	<xs:complexType name="ms_leistungsuntergruppe_liste_typ">
+		<xs:sequence>
+			<xs:element name="ms_leistungsuntergruppe" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Aus S_GOS_KV_MS_LUGRUPPE</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="S" use="required" fixed="1.2.276.0.76.3.1.1.5.2.33">
+						<xs:simpleType>
+							<xs:restriction base="xs:string"/>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+	<xs:simpleType name="gnr_format_typ">
+		<xs:annotation>
+			<xs:documentation>Pattern zur Beschreibung des zulässigen GNR-Formats</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="\d{5}|\d{5}\p{Lu}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="vknr_typ">
+		<xs:annotation>
+			<xs:documentation>Pattern zur Beschreibung des zulässigen VKNR-Formats</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{5}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="vt_typ">
+		<xs:annotation>
+			<xs:documentation>Pattern zur Beschreibung des zulässigen Zeitstempel-Formats im VT-Attribut des Schlüsselelements</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1]))"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="zeitraum_typ">
+		<xs:annotation>
+			<xs:documentation>Pattern zur Beschreibung des zulässigen Formats von Gültigkeitszeiträumen</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="([1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1]))\.\.[1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1])))|([1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1])))|(\.\.[1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1])))|([1,2][0-9]{3}-[0-1][0-9]-(([0-2][0-9])|([3][0-1]))\.\.)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="range_typ">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="min"/>
+			<xs:enumeration value="max"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:annotation>
+		<xs:documentation>------------------------------------------</xs:documentation>
+	</xs:annotation>
+</xs:schema>

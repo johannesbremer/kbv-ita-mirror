@@ -1,0 +1,77 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "KBV-EX-VoS-Medication-isOverTheCounter",
+  "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_isOverTheCounter",
+  "version": "2.2.0",
+  "name": "KBV_EX_VoS_Medication_isOverTheCounter",
+  "title": "KBV_EX_VoS_Medication_isOverTheCounter",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "description": "Angabe, ob eine Medikament nicht der Verschreibungspflicht unterliegt (overTheCounter-Abgabe möglich).",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "Medication",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "OTC",
+        "definition": "Mit diesem Element kann angegeben werden, ob ein Medikament nicht der Verschreibungspflicht unterliegt (overTheCounter-Abgabe möglich)."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_Medication_isOverTheCounter"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      },
+      {
+        "id": "Extension.value[x]:valueBoolean",
+        "path": "Extension.value[x]",
+        "sliceName": "valueBoolean",
+        "short": "Dauerdiagnose",
+        "definition": "Angabe, ob das Medikament nicht der Verschreibungspflicht unterliegt (overTheCounter-Abgabe möglich). true = OTC-Abgabe möglich, false = verschreibungspflichtg",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "boolean"
+          }
+        ]
+      }
+    ]
+  }
+}

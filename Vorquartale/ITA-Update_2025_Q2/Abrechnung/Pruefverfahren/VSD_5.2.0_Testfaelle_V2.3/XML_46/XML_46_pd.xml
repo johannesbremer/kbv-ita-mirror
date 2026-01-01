@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<vsd:UC_PersoenlicheVersichertendatenXML xmlns:vsd="http://ws.gematik.de/fa/vsdm/vsd/v5.2" CDM_VERSION="5.2.0">
+	<vsd:Versicherter>
+		<vsd:Versicherten_ID>H674984678</vsd:Versicherten_ID>
+		<vsd:Person>
+			<vsd:Geburtsdatum>19540101</vsd:Geburtsdatum>
+			<vsd:Vorname>Sophia</vsd:Vorname>
+			<vsd:Nachname>Müller</vsd:Nachname>
+			<vsd:Geschlecht>W</vsd:Geschlecht>
+			<vsd:StrassenAdresse>
+				<vsd:Postleitzahl>80639</vsd:Postleitzahl>
+				<vsd:Ort>München</vsd:Ort>
+				<vsd:Land>
+					<vsd:Wohnsitzlaendercode>D</vsd:Wohnsitzlaendercode>
+				</vsd:Land>
+				<vsd:Strasse>Schloßallee</vsd:Strasse>
+				<vsd:Hausnummer>125</vsd:Hausnummer>
+			</vsd:StrassenAdresse>
+		</vsd:Person>
+	</vsd:Versicherter>
+</vsd:UC_PersoenlicheVersichertendatenXML>

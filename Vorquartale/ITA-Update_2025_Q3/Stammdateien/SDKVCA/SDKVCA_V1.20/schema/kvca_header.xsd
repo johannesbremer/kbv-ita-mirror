@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--
+Template für ehd_header:
+	
+Namespace, Präfix und Typebezeichnungen sind mit tatsächlichen Projektspezifischen zu ersetzen.
+Verzeichnispfade überprüfen und gegebenfalls anpassen.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/001" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<!-- ======================================================================= 
+	Einbinden der ehd-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="ehd_header_V1.40.xsd"/>
+	<!-- ======================================================================= 
+	angepasster ehd_header: kvca_header (mini-header, besteht aus nur wenigen Elementen)
+	======================================================================= -->
+	<xs:complexType name="kvca_header_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_header_typ">
+				<xs:sequence>
+					<xs:element name="id" type="kvca_id_typ"/>
+					<xs:element name="version_nbr" type="kvca_version_nbr_typ"/>
+					<xs:element name="document_type_cd" type="kvca_document_type_cd_typ"/>
+					<xs:element ref="service_tmr"/>
+					<xs:element ref="origination_dttm"/>
+					<xs:element name="originator" type="kvca_originator_typ" minOccurs="0"/>
+					<xs:element name="provider" type="kvca_provider_typ"/>
+					<xs:element name="state" type="kvca_state_typ" minOccurs="0"/>
+					<xs:element name="interface" type="kvca_interface_typ"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster kvca_id_typ für das Projekt: kvca
+	======================================================================= -->
+	<xs:complexType name="kvca_id_typ">
+		<xs:complexContent>
+			<xs:restriction base="id_typ">
+				<xs:attribute name="EX" type="xs:string" use="required"/>
+				<xs:attribute name="RT" type="xs:string" use="required"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster kvca_document_type_cd_typ für das Projekt: kvca
+	======================================================================= -->
+	<xs:complexType name="kvca_document_type_cd_typ">
+		<xs:complexContent>
+			<xs:restriction base="document_type_cd_typ">
+				<xs:attribute name="V" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="kvca">
+								<xs:annotation>
+									<xs:documentation xml:lang="de">KV-Connect - Adressenliste der Anwendungen</xs:documentation>
+								</xs:annotation>
+							</xs:enumeration>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster kvca_originator_typ für das Projekt: kvca
+	======================================================================= -->
+	<xs:complexType name="kvca_originator_typ">
+		<xs:complexContent>
+			<xs:restriction base="originator_typ">
+				<xs:sequence>
+					<xs:element name="organization" type="kvca_organization_typ"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster kvca_provider_typ für das Projekt: kvca
+	======================================================================= -->
+	<xs:complexType name="kvca_provider_typ">
+		<xs:complexContent>
+			<xs:restriction base="provider_typ">
+				<xs:sequence>
+					<xs:element name="organization" type="kvca_organization_typ"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster kvca_organization_typ für das Projekt:kvca
+	======================================================================= -->
+	<xs:complexType name="kvca_organization_typ">
+		<xs:complexContent>
+			<xs:restriction base="organization_typ">
+				<xs:sequence>
+					<xs:element ref="id" minOccurs="0"/>
+					<xs:element name="organization.nm" type="v_string_typ" maxOccurs="unbounded"/>
+					<xs:element ref="addr" maxOccurs="unbounded"/>
+					<xs:element ref="telecom" minOccurs="2" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster kvca_state_typ für das Projekt: kvca
+	======================================================================= -->
+	<xs:complexType name="kvca_state_typ">
+		<xs:complexContent>
+			<xs:restriction base="state_typ">
+				<xs:attribute name="V" type="xs:string" use="required"/>
+				<xs:attribute name="DN" type="xs:string" use="optional"/>
+				<xs:attribute name="S" type="xs:string" use="required" fixed=" 1.2.276.0.76.5.108"/>
+				<xs:attribute name="SN" type="xs:string" use="optional"/>
+				<xs:attribute name="SV" type="xs:string" use="optional"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster kvca_version_nbr_typ für das Projekt: kvca
+	======================================================================= -->
+	<xs:complexType name="kvca_version_nbr_typ">
+		<xs:complexContent>
+			<xs:restriction base="version_nbr_typ">
+				<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster kvca_interface_typ für das Projekt: kvca
+	======================================================================= -->
+	<xs:complexType name="kvca_interface_typ">
+		<xs:complexContent>
+			<xs:restriction base="interface_typ">
+				<xs:sequence>
+					<xs:element name="id">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_id_typ">
+									<xs:attribute name="EX" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="KVCA">
+													<xs:annotation>
+														<xs:documentation xml:lang="de">KV-Connect - Adressenliste der Anwendungen</xs:documentation>
+													</xs:annotation>
+												</xs:enumeration>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="interface.nm">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_nm_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="kvca"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="version">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_version_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="1.20"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

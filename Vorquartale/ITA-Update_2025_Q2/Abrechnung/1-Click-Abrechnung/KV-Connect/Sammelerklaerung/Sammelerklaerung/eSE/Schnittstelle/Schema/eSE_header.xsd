@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2009 sp1 (http://www.altova.com) von RSP (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<!--
+Template für ehd_header:
+Projekt: ese
+
+Namespace, Präfix und Typebezeichnungen sind mit tatsächlichen Projektspezifischen zu ersetzen.
+Verzeichnispfade überprüfen und gegebenfalls anpassen.
+-->
+<xs:schema xmlns="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<!-- ======================================================================= 
+	Einbinden der ehd-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="ehd_header_V1.40.xsd"/>
+	<!-- ======================================================================= 
+	angepasster ehd_header: ese_header (mini-header, besteht aus nur wenigen Elementen)
+	======================================================================= -->
+	<xs:complexType name="ese_header_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_header_typ">
+				<xs:sequence>
+					<xs:element name="id">
+						<xs:annotation>
+							<xs:documentation>Dokument-Nr. in Verbindung mit der LANR als eindeutige Dokument-ID</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="id_typ">
+									<xs:attribute name="RT" type="xs:string" use="required"/>
+									<xs:attribute name="EX" type="xs:string" use="required"/>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element ref="version_nbr"/>
+					<xs:element name="document_type_cd">
+						<xs:annotation>
+							<xs:documentation>Dokumententyp</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="ese_document_type_cd_typ"/>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element ref="service_tmr"/>
+					<xs:element ref="origination_dttm"/>
+					<xs:element name="intended_recipient" minOccurs="0">
+						<xs:annotation>
+							<xs:documentation>Zielgruppe /Empfänger, falls jeweils abweichende Sammelerklärung definiert</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="intended_recipient_typ">
+									<xs:sequence>
+										<xs:element name="organization" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Zielgruppe</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:complexContent>
+													<xs:restriction base="organization_typ">
+														<xs:sequence>
+															<xs:element name="organization.nm" minOccurs="0" maxOccurs="unbounded">
+																<xs:annotation>
+																	<xs:documentation>Name der Zielgruppe</xs:documentation>
+																</xs:annotation>
+																<xs:complexType>
+																	<xs:complexContent>
+																		<xs:restriction base="v_string_typ">
+																			<xs:attribute name="V" use="required">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:enumeration value="Arzt"/>
+																						<xs:enumeration value="Ermächtigt"/>
+																						<xs:enumeration value="Krankenhaus"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:attribute>
+																		</xs:restriction>
+																	</xs:complexContent>
+																</xs:complexType>
+															</xs:element>
+														</xs:sequence>
+													</xs:restriction>
+												</xs:complexContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="originator">
+						<xs:annotation>
+							<xs:documentation>Urheber des Dokuments</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="originator_typ">
+									<xs:sequence>
+										<xs:element name="organization" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>Organisations-Typ</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:complexContent>
+													<xs:restriction base="organization_typ">
+														<xs:sequence>
+															<xs:element name="id">
+																<xs:annotation>
+																	<xs:documentation>Identifikation der Urheber-KV</xs:documentation>
+																</xs:annotation>
+																<xs:complexType>
+																	<xs:complexContent>
+																		<xs:restriction base="id_typ">
+																			<xs:attribute name="RT" type="xs:string" use="required" fixed="1.2.276.0.76.5.233">
+																				<xs:annotation>
+																					<xs:documentation>OID, welche das EX-Atrribut als KV-Nummer kennzeichnet</xs:documentation>
+																				</xs:annotation>
+																			</xs:attribute>
+																			<xs:attribute name="EX" type="xs:string" use="required">
+																				<xs:annotation>
+																					<xs:documentation>KV-Nummer</xs:documentation>
+																				</xs:annotation>
+																			</xs:attribute>
+																		</xs:restriction>
+																	</xs:complexContent>
+																</xs:complexType>
+															</xs:element>
+															<xs:element name="organization.nm" type="v_string_typ" minOccurs="0" maxOccurs="unbounded">
+																<xs:annotation>
+																	<xs:documentation>Bezeichnung der KV</xs:documentation>
+																</xs:annotation>
+															</xs:element>
+															<xs:element ref="addr" minOccurs="0" maxOccurs="unbounded"/>
+															<xs:element ref="telecom" minOccurs="0" maxOccurs="unbounded"/>
+														</xs:sequence>
+													</xs:restriction>
+												</xs:complexContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="provider" type="ese_provider_typ" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Praxisinformationen des Daten-Senders</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="interface" type="ese_interface_typ">
+						<xs:annotation>
+							<xs:documentation>Informationen zur Schnittstellenversion</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster ese_document_type_cd_typ  für das Projekt: ese
+	======================================================================= -->
+	<xs:complexType name="ese_document_type_cd_typ">
+		<xs:complexContent>
+			<xs:restriction base="document_type_cd_typ">
+				<xs:attribute name="V" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="ese"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+				<xs:attribute name="S" use="optional" fixed="1.2.276.0.76.5.100">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="1.2.276.0.76.5.100"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	angepasster ese_interface_typ für das Projekt: ese
+	======================================================================= -->
+	<xs:complexType name="ese_interface_typ">
+		<xs:complexContent>
+			<xs:restriction base="interface_typ">
+				<xs:sequence>
+					<xs:element name="id" type="interface_id_typ"/>
+					<xs:element name="interface.nm">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_nm_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="Elektronische Sammelerklärung (ese)"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="version">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="interface_version_typ">
+									<xs:attribute name="V" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="1.20"/>
+												<xs:enumeration value="1.21"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ese_provider_typ">
+		<xs:complexContent>
+			<xs:restriction base="provider_typ">
+				<xs:sequence>
+					<xs:element name="person" type="ese_person_typ" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Arzt oder Ärzte innerhalb der Praxis</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="organization" type="ese_organization_typ" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Informationen zur Praxis /Betriebsstätten</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ese_person_typ">
+		<xs:complexContent>
+			<xs:restriction base="person_typ">
+				<xs:sequence>
+					<xs:element name="id">
+						<xs:annotation>
+							<xs:documentation>Eindeutige Kennzeichnung des Arztes mittels LANR</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="id_typ">
+									<xs:attribute name="EX" type="xs:string" use="required"/>
+									<xs:attribute name="RT" type="xs:string" use="required" fixed="1.2.276.0.76.4.16"/>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element ref="person_name"/>
+					<xs:element ref="addr" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="telecom" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="local_header" minOccurs="0" maxOccurs="unbounded">
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="local_header-cont.model">
+									<xs:choice maxOccurs="unbounded">
+										<xs:element name="fachgruppenbezeichnung">
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+									</xs:choice>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ese_organization_typ">
+		<xs:complexContent>
+			<xs:restriction base="organization_typ">
+				<xs:sequence>
+					<xs:element name="id">
+						<xs:annotation>
+							<xs:documentation>Eindeutige Kennzeichnung der Betriebsstätte mittels (N)BSNR</xs:documentation>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:complexContent>
+								<xs:restriction base="id_typ">
+									<xs:attribute name="RT" use="required" fixed="1.2.276.0.76.4.17">
+										<xs:simpleType>
+											<xs:restriction base="xs:string"/>
+										</xs:simpleType>
+									</xs:attribute>
+									<xs:attribute name="EX" use="required">
+										<xs:simpleType>
+											<xs:restriction base="xs:string"/>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:restriction>
+							</xs:complexContent>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="organization.nm" type="v_string_typ" maxOccurs="unbounded">
+						<xs:annotation>
+							<xs:documentation>Name/Bezeichnung der Praxis oder Betriebsstätte</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element ref="addr" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element ref="telecom" minOccurs="0" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

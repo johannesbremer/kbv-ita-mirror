@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns="urn::sciphox-org/sciphox" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="Einschreibungwegen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="KHK"/>
+			<xs:enumeration value="Diabetes mellitus Typ 1"/>
+			<xs:enumeration value="Diabetes mellitus Typ 2"/>
+			<xs:enumeration value="Asthma bronchiale"/>
+			<xs:enumeration value="COPD"/>
+			<xs:enumeration value="Chronische Herzinsuffizienz"/>
+			<xs:enumeration value="Depression"/>
+			<xs:enumeration value="chronischer Rückenschmerz"/>
+			<xs:enumeration value="Osteoporose"/>
+			<xs:enumeration value="rheumatoide Arthritis"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Begleiterkrankungen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Keine der genannten Erkrankungen"/>
+			<xs:enumeration value="Arterielle Hypertonie"/>
+			<xs:enumeration value="Fettstoffwechselstörung"/>
+			<xs:enumeration value="Diabetes mellitus"/>
+			<xs:enumeration value="KHK"/>
+			<xs:enumeration value="AVK"/>
+			<xs:enumeration value="Chronische Herzinsuffizienz"/>
+			<xs:enumeration value="Asthma bronchiale"/>
+			<xs:enumeration value="COPD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Raucher">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eGFR">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nicht bestimmt"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Sensibilitaetspruefung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nicht untersucht"/>
+			<xs:enumeration value="Auffällig"/>
+			<xs:enumeration value="Unauffällig"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Pulsstatus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nicht untersucht"/>
+			<xs:enumeration value="Auffällig"/>
+			<xs:enumeration value="Unauffällig"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WeiteresRisikoFuerUlcus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Fußdeformität"/>
+			<xs:enumeration value="Hyperkeratose mit Einblutung"/>
+			<xs:enumeration value="Z. n. Ulcus"/>
+			<xs:enumeration value="Z. n. Amputation"/>
+			<xs:enumeration value="ja"/>
+			<xs:enumeration value="nein"/>
+			<xs:enumeration value="nicht untersucht"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Ulkus">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="nicht untersucht"/>
+			<xs:enumeration value="oberflächlich"/>
+			<xs:enumeration value="tief"/>
+			<xs:enumeration value="nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="WundInfektion">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="nicht untersucht"/>
+			<xs:enumeration value="ja"/>
+			<xs:enumeration value="nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InjektionsstellenBeiInsulintherapie">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Auffällig"/>
+			<xs:enumeration value="Unauffällig"/>
+			<xs:enumeration value="Nicht untersucht"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IntervallfuerKuenftigeFussInspektionen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Jährlich"/>
+			<xs:enumeration value="alle 6 Monate"/>
+			<xs:enumeration value="alle 3 Monate oder häufiger"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Spätfolgen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Diabetische Nephropathie"/>
+			<xs:enumeration value="Diabetische Neuropathie"/>
+			<xs:enumeration value="Diabetische Retinopathie"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="relevanteEreignisse_txt">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nierenersatztherapie"/>
+			<xs:enumeration value="Erblindung"/>
+			<xs:enumeration value="Amputation"/>
+			<xs:enumeration value="Herzinfarkt"/>
+			<xs:enumeration value="Schlaganfall"/>
+			<xs:enumeration value="Keine der genannten Ereignisse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Medikamente -->
+	<xs:simpleType name="Insulin_InsulinAnaloga">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Ja"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- auch: Metformin, sonstige antidiab. Medikation -->
+	<xs:simpleType name="SGLT2-Inhibitor">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Kontraindikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="GLP-1-Rezeptoragonist">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Kontraindikation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Thrombozytenaggregationshemmer">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Kontraindikation"/>
+			<xs:enumeration value="orale Antikoagulation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SchulungempfohlenbeiaktuellerDokumentation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Diabetes-Schulung"/>
+			<xs:enumeration value="Hypertonie-Schulung"/>
+			<xs:enumeration value="Keine"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SchulungschonVorEinschreibunginsDMPBereitsWahrgenommen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Diabetes-Schulung"/>
+			<xs:enumeration value="Hypertonie-Schulung"/>
+			<xs:enumeration value="Keine"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EmpfohleneSchulungen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="War aktuell nicht möglich"/>
+			<xs:enumeration value="Bei letzter Dokumentation keine Schulung empfohlen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="HbA1c-Zielwert">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Zielwert erreicht"/>
+			<xs:enumeration value="Zielwert noch nicht erreicht"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OphthalmologischeNetzhautuntersuchung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Durchgeführt"/>
+			<xs:enumeration value="Nicht durchgeführt"/>
+			<xs:enumeration value="Veranlasst"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BehandlungInFürDiabetischesFußsyndromQualifizierterEinrichtung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Veranlasst"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DiabetesbezogeneStationäreEinweisung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Veranlasst"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Dokumentationsintervall">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Quartalsweise"/>
+			<xs:enumeration value="Jedes zweite Quartal"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VomPatientgewuenschteInfo">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Tabakverzicht"/>
+			<xs:enumeration value="Ernährungsberatung"/>
+			<xs:enumeration value="Körperliches Training"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="ISO-8859-1"?><fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format" font-family="Arial">
+<fo:layout-master-set>
+<fo:simple-page-master master-name="seite_1" page-height="29.7cm" page-width="21cm" margin-top="1.5cm" margin-bottom="1.5cm" margin-left="1.5cm" margin-right="1cm">
+<fo:region-body margin-top="1.0cm" margin-bottom="1.0cm"/>
+<fo:region-after extent="0.4cm"/>
+</fo:simple-page-master>
+<fo:simple-page-master master-name="seite_rest" page-height="29.7cm" page-width="21cm" margin-top="1.5cm" margin-bottom="1.5cm" margin-left="1.5cm" margin-right="1cm">
+<fo:region-body margin-top="2.5cm" margin-bottom="1.0cm"/>
+<fo:region-before extent="2.0cm"/>
+<fo:region-after extent="0.4cm"/>
+</fo:simple-page-master>
+<fo:simple-page-master master-name="seite_letzte" page-height="29.7cm" page-width="21cm" margin-top="1.5cm" margin-bottom="1.5cm" margin-left="1.0cm" margin-right="1cm">
+<fo:region-body margin-top="2.5cm" margin-bottom="1.0cm" margin-left="0.5cm"/>
+<fo:region-before extent="2.0cm"/>
+<fo:region-after extent="0.4cm"/>
+<fo:region-start extent="0.5cm" display-align="after"/>
+</fo:simple-page-master>
+<fo:page-sequence-master master-name="contents">
+<fo:repeatable-page-master-alternatives>
+<fo:conditional-page-master-reference master-reference="seite_1" page-position="first"/>
+<fo:conditional-page-master-reference master-reference="seite_rest" page-position="rest"/>
+<fo:conditional-page-master-reference master-reference="seite_letzte" page-position="last"/>
+</fo:repeatable-page-master-alternatives>
+</fo:page-sequence-master>
+</fo:layout-master-set>
+<fo:declarations>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions">
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<rdf:Description xmlns:xmp="http://ns.adobe.com/xap/1.0/" rdf:about=""/>
+<rdf:Description xmlns:pdf="http://ns.adobe.com/pdf/1.3/" rdf:about="">
+<pdf:Keywords>PDF FOP Apache XSL-FO</pdf:Keywords>
+</rdf:Description>
+<rdf:Description xmlns:dc="http://purl.org/dc/elements/1.1/" rdf:about="">
+<dc:title>
+<rdf:Alt>
+<rdf:li xml:lang="x-default">Sammelerklaerung im Format PDF/A-1b</rdf:li>
+</rdf:Alt>
+</dc:title>
+<dc:subject>
+<rdf:Bag>
+<rdf:li xml:lang="x-default">PDF/A-1b</rdf:li>
+</rdf:Bag>
+</dc:subject>
+<dc:creator>
+<rdf:Seq>
+<rdf:li xml:lang="x-default">KV Nordrhein</rdf:li>
+</rdf:Seq>
+</dc:creator>
+<dc:relation>
+<rdf:Bag>
+<rdf:li xml:lang="x-default">Formularversion 23.06.2022</rdf:li>
+</rdf:Bag>
+</dc:relation>
+</rdf:Description>
+</rdf:RDF>
+</x:xmpmeta>
+</fo:declarations>
+<fo:page-sequence master-reference="contents">
+<fo:static-content flow-name="xsl-region-before">
+<fo:block xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" xml:lang="de-DE" padding-top="-0.5cm" text-align="right">
+<fo:external-graphic fox:alt-text="KVNO Logo" content-height="45%" content-width="scale-to-fit" width="20%" src="./Stylesheet/KVNO_Logo_FIN_RGB_Claim.jpg"/>
+</fo:block>
+</fo:static-content>
+<fo:static-content flow-name="xsl-region-start">
+<fo:block-container xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" reference-orientation="90" border="0pt solid black" font-weight="normal" font-size="8pt" height="10pt" width="130pt">
+<fo:block xml:lang="de-DE">Formularversion 23.06.2022</fo:block>
+</fo:block-container>
+</fo:static-content>
+<fo:static-content flow-name="xsl-region-after">
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" table-layout="fixed" border="0pt solid black">
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell text-align="right" font-size="9pt" font-weight="bold" padding="0pt">
+<fo:block xml:lang="de-DE">
+<fo:page-number/>|<fo:page-number-citation ref-id="terminator"/>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+</fo:static-content>
+<fo:flow flow-name="xsl-region-body">
+<fo:block font-size="14pt" font-weight="bold" text-align="center" space-after.optimum="15pt">
+<fo:inline xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" text-decoration="underline"/>
+</fo:block>
+<fo:block xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" xml:lang="de-DE" padding-top="-1cm" text-align="right">
+<fo:external-graphic fox:alt-text="KVNO Logo" content-height="45%" content-width="scale-to-fit" width="20%" src="./Stylesheet/KVNO_Logo_FIN_RGB_Claim.jpg"/>
+</fo:block>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" table-layout="fixed" text-align="center" margin-top="0cm" space-before="20pt" font-size="9pt" font-weight="bold" color="black">
+<fo:table-column column-width="11cm"/>
+<fo:table-column column-width="7.5cm"/>
+<fo:table-body>
+<fo:table-row display-align="center" height="1.5cm" text-align="left">
+<fo:table-cell number-columns-spanned="2" padding="0pt" font-size="18pt" border-width="0" border-style="solid">
+<fo:block xml:lang="de-DE">Sammelerkl&#228;rung 3. Quartal 2015</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row display-align="auto" height="1.5cm" text-align="left">
+<fo:table-cell padding="0pt">
+<fo:block xml:lang="de-DE" font-size="10pt">Gemeinschaftspraxis Dres. Hans Test Fritz Sauber</fo:block>
+<fo:block xml:lang="de-DE">Dr. med.&#160;
+								Hans&#160;
+								Test<fo:block color="#808080">Facharzt f. Innere Medizin -Angiologie-</fo:block>
+</fo:block>
+<fo:block xml:lang="de-DE">Dr. med.&#160;
+								Fritz&#160;
+								Sauber<fo:block color="#808080">Facharzt f&#252;r Hals-Nasen-Ohrenheilkunde</fo:block>
+<fo:block color="#808080">Facharzt f&#252;r Phoniatrie u. P&#228;daudiologie</fo:block>
+</fo:block>
+<fo:block xml:lang="de-DE" color="#808080">Hahnenweg&#160;
+							4<fo:block/>51371&#160;
+								Leverkusen</fo:block>
+</fo:table-cell>
+<fo:table-cell padding="0pt" font-size="14pt" border-width="0" border-style="solid" font-weight="normal">
+<fo:block xml:lang="de-DE">BSNR: 274412400</fo:block>
+<fo:block padding-after="6pt"/>
+<fo:block xml:lang="de-DE">Fallzahl: 2453</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" font-size="10pt" space-before="20pt" table-layout="fixed" border="0pt solid black">
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell font-weight="bold" padding="0pt">
+<fo:block xml:lang="de-DE">Ich versichere/Wir versichern:</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" font-size="10pt" space-before="15pt" table-layout="fixed" border="0pt solid black">
+<fo:table-column column-width="1cm"/>
+<fo:table-column column-width="17.5cm"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell text-align="center" font-weight="normal" padding="0pt">
+<fo:block xml:lang="de-DE">1.</fo:block>
+</fo:table-cell>
+<fo:table-cell font-weight="'normal'" padding="0pt">
+<fo:block xml:lang="de-DE">Die Abrechnung ist vollst&#228;ndig; die ma&#223;geblichen Regelungen und Bestimmungen, besonders die des Sozialgesetzbuchs V, des Bundesmantelvertrages (BMV-&#196;), des Einheitlichen Bewertungsma&#223;stabs und des Honorarverteilungsma&#223;stabs, der IT-Richtlinien der KV Nordrhein sowie der Richtlinien des Gemeinsamen Bundesausschusses in der jeweils geltenden Fassung wurden beachtet.</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" font-size="10pt" space-before="15pt" table-layout="fixed" border="0pt solid black">
+<fo:table-column column-width="1cm"/>
+<fo:table-column column-width="17.5cm"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell text-align="center" font-weight="normal" padding="0pt">
+<fo:block xml:lang="de-DE">2.</fo:block>
+</fo:table-cell>
+<fo:table-cell font-weight="'normal'" padding="0pt">
+<fo:block xml:lang="de-DE">Die in Rechnung gestellten Leistungen habe(n) ich/wir selbst oder nicht&#228;rztliche Hilfskr&#228;fte unter meiner/unserer Aufsicht ausgef&#252;hrt oder sie wurden von einem Vertreter (vgl. &#167; 32 &#196;rzte-ZV) erbracht. Sofern &#228;rztliche Assistenten und/oder angestellte &#196;rzte Leistungen erbracht haben, sind diese &#196;rzte durch die KV Nordrhein genehmigt. Alle Leistungen wurden an f&#252;r alle beteiligten &#196;rzte genehmigten Standorten ausgef&#252;hrt. Haben Vertreter/innen qualifikationsgebundene Leistungen erbracht, habe ich mich davon &#252;berzeugt, dass die Qualifikationsvoraussetzungen in der Person des Vertreters/der Vertreterin erf&#252;llt waren.</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" table-layout="fixed" space-before="15pt">
+<fo:table-body font-size="10pt" text-align="left">
+<fo:table-row>
+<fo:table-cell border-bottom="1pt solid black">
+<fo:block xml:lang="de-DE">Bitte gegebenenfalls ausf&#252;llen:</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" table-layout="fixed" space-before="15pt" font-size="9pt" font-weight="normal">
+<fo:table-column column-width="9.5cm"/>
+<fo:table-column column-width="4.5cm"/>
+<fo:table-column column-width="4.5cm"/>
+<fo:table-body>
+<fo:table-row text-align="center">
+<fo:table-cell>
+<fo:block>&#160;</fo:block>
+</fo:table-cell>
+<fo:table-cell number-columns-spanned="2">
+<fo:block xml:lang="de-DE">T&#228;tigkeit in der Praxis</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row text-align="left">
+<fo:table-cell>
+<fo:block xml:lang="de-DE">&#160; Name des/der genehmigten Assistenten</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="center">
+<fo:block xml:lang="de-DE">von</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="center">
+<fo:block xml:lang="de-DE">bis</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row border="1pt solid black">
+<fo:table-cell padding="2pt">
+<fo:block xml:lang="de-DE">&#160;</fo:block>
+</fo:table-cell>
+<fo:table-cell border-right="1pt solid black" border-left="1pt solid black" padding="2pt">
+<fo:block xml:lang="de-DE">&#160;</fo:block>
+</fo:table-cell>
+<fo:table-cell padding="2pt">
+<fo:block xml:lang="de-DE">&#160;</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" table-layout="fixed" space-before="15pt" font-size="9pt" font-weight="normal">
+<fo:table-column column-width="9.5cm"/>
+<fo:table-column column-width="4.5cm"/>
+<fo:table-column column-width="4.5cm"/>
+<fo:table-body>
+<fo:table-row text-align="center">
+<fo:table-cell>
+<fo:block>&#160;</fo:block>
+</fo:table-cell>
+<fo:table-cell number-columns-spanned="2">
+<fo:block xml:lang="de-DE">T&#228;tigkeit in der Praxis</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row text-align="left">
+<fo:table-cell>
+<fo:block xml:lang="de-DE">&#160; Name des/der angestellten Arztes/&#196;rzte</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="center">
+<fo:block xml:lang="de-DE">von</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="center">
+<fo:block xml:lang="de-DE">bis</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row border="1pt solid black">
+<fo:table-cell padding="2pt">
+<fo:block xml:lang="de-DE">Dr. med.&#160;
+					Sabine&#160;
+					Hannah&#160;
+					Angestellte&#160;
+					</fo:block>
+</fo:table-cell>
+<fo:table-cell border-right="1pt solid black" border-left="1pt solid black" padding="2pt" text-align="center">
+<fo:block xml:lang="de-DE">
+<fo:inline font-weight="normal">01.07.2015</fo:inline>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell padding="2pt" text-align="center">
+<fo:block xml:lang="de-DE">
+<fo:inline font-weight="normal">15.07.2015</fo:inline>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row border="1pt solid black">
+<fo:table-cell padding="2pt">
+<fo:block xml:lang="de-DE">Dr. med.&#160;
+					Oskar&#160;
+					Angestellter&#160;
+					</fo:block>
+</fo:table-cell>
+<fo:table-cell border-right="1pt solid black" border-left="1pt solid black" padding="2pt" text-align="center">
+<fo:block xml:lang="de-DE">
+<fo:inline font-weight="normal">16.07.2015</fo:inline>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell padding="2pt" text-align="center">
+<fo:block xml:lang="de-DE">
+<fo:inline font-weight="normal">20.07.2015</fo:inline>
+</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" table-layout="fixed" space-before="15pt" font-size="9pt" font-weight="normal">
+<fo:table-column column-width="9.5cm"/>
+<fo:table-column column-width="4.5cm"/>
+<fo:table-column column-width="4.5cm"/>
+<fo:table-body>
+<fo:table-row text-align="center">
+<fo:table-cell>
+<fo:block>&#160;</fo:block>
+</fo:table-cell>
+<fo:table-cell number-columns-spanned="2">
+<fo:block xml:lang="de-DE">vertreten</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row text-align="left">
+<fo:table-cell>
+<fo:block xml:lang="de-DE">&#160; Name des/der Vertreters/Vertreter</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="center">
+<fo:block xml:lang="de-DE">von</fo:block>
+</fo:table-cell>
+<fo:table-cell text-align="center">
+<fo:block xml:lang="de-DE">bis</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row border="1pt solid black">
+<fo:table-cell padding="2pt">
+<fo:block xml:lang="de-DE">&#160;</fo:block>
+</fo:table-cell>
+<fo:table-cell border-right="1pt solid black" border-left="1pt solid black" padding="2pt">
+<fo:block xml:lang="de-DE">&#160;</fo:block>
+</fo:table-cell>
+<fo:table-cell padding="2pt">
+<fo:block xml:lang="de-DE">&#160;</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" font-size="10pt" space-before="15pt" table-layout="fixed" border="0pt solid black">
+<fo:table-column column-width="1cm"/>
+<fo:table-column column-width="17.5cm"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell text-align="center" font-weight="normal" padding="0pt">
+<fo:block xml:lang="de-DE">3.</fo:block>
+</fo:table-cell>
+<fo:table-cell font-weight="'normal'" padding="0pt">
+<fo:block xml:lang="de-DE">Die Abrechnungsvoraussetzungen sind erf&#252;llt bzw. ich/wir habe(n) mich/uns von deren Erf&#252;llung pers&#246;nlich &#252;berzeugt.</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" keep-with-next="always" width="100%" font-size="10pt" space-before="15pt" table-layout="fixed" border="0pt solid black">
+<fo:table-column column-width="1cm"/>
+<fo:table-column column-width="17.5cm"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell text-align="center" font-weight="normal" padding="0pt">
+<fo:block xml:lang="de-DE">4.</fo:block>
+</fo:table-cell>
+<fo:table-cell font-weight="'normal'" padding="0pt">
+<fo:block xml:lang="de-DE">
+							An folgenden Tagen war(en) ich/wir zum organisierten &#228;rztlichen Notfalldienst eingeteilt und habe(n)
+							die abgerechneten Leistungen pers&#246;nlich oder durch einen Vertreter in eigener Praxis bzw. in einer von
+							der KV Nordrhein und der &#196;rztekammer Nordrhein genehmigten Notfallpraxis erbracht:
+						</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" table-layout="fixed" font-size="9pt" font-weight="normal" space-after.optimum="15pt">
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell>
+<fo:block xml:lang="de-DE">&#160;</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+<fo:block xml:lang="de-DE">&#160;</fo:block>
+</fo:table-cell>
+<fo:table-cell>
+<fo:block xml:lang="de-DE">&#160;</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell>
+<fo:block xml:lang="de-DE">1.)  31.08.2015 </fo:block>
+</fo:table-cell>
+<fo:table-cell>
+<fo:block xml:lang="de-DE">2.)   </fo:block>
+</fo:table-cell>
+<fo:table-cell>
+<fo:block xml:lang="de-DE">3.)  </fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" font-size="10pt" space-before="40pt" table-layout="fixed" border="0pt solid black">
+<fo:table-column column-width="18.5cm"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell text-align="left" font-weight="bold" padding="0pt">
+<fo:block xml:lang="de-DE" break-before="page"/>
+<fo:block xml:lang="de-DE">Ferner best&#228;tige ich/best&#228;tigen wir:</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" font-size="10pt" space-before="15pt" table-layout="fixed" border="0pt solid black">
+<fo:table-column column-width="1cm"/>
+<fo:table-column column-width="17.5cm"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell text-align="center" font-weight="normal" padding="0pt">
+<fo:block xml:lang="de-DE">5.</fo:block>
+</fo:table-cell>
+<fo:table-cell font-weight="'normal'" padding="0pt">
+<fo:block xml:lang="de-DE">F&#252;r alle qualit&#228;tsgebundenen Leistungen liegen die erforderlichen Genehmigungen bzw. Nachweise im Rahmen der erfolgreichen Teilnahme an den Ringversuchen vor. Es wurden nur die Materialien (Serum und/oder Urin und/oder Liquor) abgerechnet, f&#252;r die ein g&#252;ltiger Nachweis einer erfolgreichen Ringversuchsteilnahme vorliegt.</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" font-size="10pt" space-before="15pt" table-layout="fixed" border="0pt solid black">
+<fo:table-column column-width="1cm"/>
+<fo:table-column column-width="17.5cm"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell text-align="center" font-weight="normal" padding="0pt">
+<fo:block xml:lang="de-DE">6.</fo:block>
+</fo:table-cell>
+<fo:table-cell font-weight="'normal'" padding="0pt">
+<fo:block xml:lang="de-DE">Die Befunderhebung f&#252;r Untersuchungen des Abschnitts 32.3 und entsprechende laboratoriumsmedizinische Leistungen der Abschnitte 1.7, 11.3 und 11.4 des EBM wurden durch mich pers&#246;nlich erbracht.</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" font-size="10pt" space-before="15pt" table-layout="fixed" border="0pt solid black">
+<fo:table-column column-width="1cm"/>
+<fo:table-column column-width="17.5cm"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell text-align="center" font-weight="normal" padding="0pt">
+<fo:block xml:lang="de-DE">7.</fo:block>
+</fo:table-cell>
+<fo:table-cell font-weight="'normal'" padding="0pt">
+<fo:block xml:lang="de-DE">In den F&#228;llen, in denen mehrere &#196;rzte bzw. Arztpraxen in demselben Arztfall die Leistung erbracht haben, besteht Einigkeit unter den beteiligten &#196;rzten/Praxen, dass nur ich allein/nur die unterzeichnende Arztpraxis die Leistungen abrechne(t) und/oder ich allein der behandlungsf&#252;hrende Arzt bin.</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" font-size="10pt" space-before="15pt" table-layout="fixed" border="0pt solid black">
+<fo:table-column column-width="1cm"/>
+<fo:table-column column-width="17.5cm"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell text-align="center" font-weight="normal" padding="0pt">
+<fo:block xml:lang="de-DE">8.</fo:block>
+</fo:table-cell>
+<fo:table-cell font-weight="'normal'" padding="0pt">
+<fo:block xml:lang="de-DE">Bei den Kosten f&#252;r Materialien, die gem&#228;&#223; Abschnitt I Punkt 7.3 der Allgemeinen Bestimmungen des EBM nicht in den berechnungsf&#228;higen Leistungen enthalten sind, sind die tats&#228;chlich realisierten Preise gegen&#252;ber der KV Nordrhein in Rechnung gestellt worden. R&#252;ckverg&#252;tungen, wie Preisnachl&#228;sse, Rabatte, Umsatzbeteiligung, Bonifikation und r&#252;ckverg&#252;tungsgleiche Gewinnbeteiligungen (mit Ausnahme von Barzahlungsrabatten) habe ich an die KV Nordrhein weitergegeben.</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" font-size="10pt" space-before="15pt" table-layout="fixed" border="0pt solid black">
+<fo:table-column column-width="1cm"/>
+<fo:table-column column-width="17.5cm"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell text-align="center" font-weight="normal" padding="0pt">
+<fo:block xml:lang="de-DE">9.</fo:block>
+</fo:table-cell>
+<fo:table-cell font-weight="'normal'" padding="0pt">
+<fo:block xml:lang="de-DE">Die Voraussetzungen zur Abrechnung der GOP 06225 EBM sind f&#252;r alle Behandlungsf&#228;lle erf&#252;llt.</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" font-size="10pt" space-before="15pt" table-layout="fixed" border="0pt solid black">
+<fo:table-column column-width="1cm"/>
+<fo:table-column column-width="17.5cm"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell text-align="center" font-weight="normal" padding="0pt">
+<fo:block xml:lang="de-DE">10.</fo:block>
+</fo:table-cell>
+<fo:table-cell font-weight="'normal'" padding="0pt">
+<fo:block xml:lang="de-DE">Die eingesetzte Software ist zertifiziert.</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" font-size="10pt" space-before="15pt" table-layout="fixed" border="0pt solid black">
+<fo:table-column column-width="0.6cm"/>
+<fo:table-column column-width="17.9cm"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell number-columns-spanned="2" font-weight="'normal'" padding="0pt">
+<fo:block xml:lang="de-DE">Mir/Uns ist bekannt, dass Honorarr&#252;ckforderungen seitens der KV Nordrhein entstehen,</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell text-align="center" font-weight="normal" padding="0pt">
+<fo:block xml:lang="de-DE" text-align="left">
+<fo:external-graphic fox:alt-text="Zeichen" content-height="100%" content-width="scale-to-fit" width="20%" src="./Stylesheet/aufzaehlung.JPG"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell font-weight="'normal'" padding="0pt">
+<fo:block xml:lang="de-DE">wenn die Abrechnung nicht den genannten Bestimmungen entspricht und/oder</fo:block>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell text-align="center" font-weight="normal" padding="0pt">
+<fo:block xml:lang="de-DE" text-align="left">
+<fo:external-graphic fox:alt-text="Zeichen" content-height="100%" content-width="scale-to-fit" width="20%" src="./Stylesheet/aufzaehlung.JPG"/>
+</fo:block>
+</fo:table-cell>
+<fo:table-cell font-weight="'normal'" padding="0pt">
+<fo:block xml:lang="de-DE">wenn durch die Besch&#228;ftigung eines nicht genehmigten Assistenten/Vertreters Leistungen abgerechnet wurden.</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" font-size="10pt" space-before="15pt" table-layout="fixed" border="0pt solid black">
+<fo:table-column column-width="18.5cm"/>
+<fo:table-body>
+<fo:table-row>
+<fo:table-cell font-weight="'normal'" padding="0pt">
+<fo:block xml:lang="de-DE">Eine Ver&#228;nderung des Erkl&#228;rungstextes f&#252;hrt zur Unwirksamkeit der Erkl&#228;rung mit der Folge, dass die KV Nordrhein die Abrechnung ablehnen kann.</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:table xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:kvno="urn:ehd/ese/001" xmlns:fox="http://xmlgraphics.apache.org/fop/extensions" width="100%" table-layout="fixed" space-before="50pt" font-size="10pt">
+<fo:table-column column-width="6cm"/>
+<fo:table-column column-width="0.5cm"/>
+<fo:table-column column-width="12cm"/>
+<fo:table-body>
+<fo:table-row keep-with-next="always">
+<fo:table-cell text-align="center" border-bottom="1pt solid black" padding="0pt">
+<fo:block xml:lang="de-DE">15.09.2015</fo:block>
+</fo:table-cell>
+<fo:table-cell padding="0pt">
+<fo:block xml:lang="de-DE"/>
+</fo:table-cell>
+<fo:table-cell text-align="center" border-bottom="1pt solid black" padding="0pt">
+<fo:block xml:lang="de-DE"/>
+</fo:table-cell>
+</fo:table-row>
+<fo:table-row>
+<fo:table-cell padding-top="0.25cm">
+<fo:block xml:lang="de-DE">Datum</fo:block>
+</fo:table-cell>
+<fo:table-cell padding="0pt">
+<fo:block xml:lang="de-DE"/>
+</fo:table-cell>
+<fo:table-cell text-align="justify" padding-top="0.25cm">
+<fo:block xml:lang="de-DE">Unterschrift des Vertragsarztes/Vertragspsychotherapeuten</fo:block>
+<fo:block xml:lang="de-DE"> (bei Berufsaus&#252;bungsgemeinschaften ggf. eines Partners - ansonsten auf gesondertem Blatt - bzw. f&#252;r ein Medizinisches Versorgungszentrum der &#228;rztliche Leiter bzw. f&#252;r Notfallpraxen der jeweils verantwortliche Arzt)</fo:block>
+</fo:table-cell>
+</fo:table-row>
+</fo:table-body>
+</fo:table>
+<fo:block id="terminator"/>
+</fo:flow>
+</fo:page-sequence>
+</fo:root>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 ..\Schema\afhi_root_V1.00.xsd">
+	<header>
+		<id EX="64c16918-a512-4a99-99bf-46dfbe9d2119" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2025-01-01.."/>
+		<origination_dttm V="2025-02-04"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat 4"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="http://update.kbv.de/ita-update"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2020, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="http://update.kbv.de/ita-update"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="PTV2" DN="Angaben Therapeut*in">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Chiffre Patient*in"/>
+					<hinweistext V="Geben Sie hier die Chiffre der Patientin oder des Patienten an, die die pseudonymisierte Weitergabe der Ausfertigung des Formblatts PTV2b für die Gutachterin oder den Gutachter gewährleistet. Die Chiffre besteht aus dem 1. Anfangsbuchstaben des Familien- bzw. Nachnamens der Patientin oder des Patienten sowie dem Geburtsdatum im Format TTMMJJ."/>
+				</feld>
+				<feld>
+					<nummer V="2"/>
+					<name V="Diagnose(n)"/>
+					<hinweistext V="Hier müssen die für die Begründung des Antrags der Patientin oder des Patienten maßgeblichen Diagnose(n) als ICD-10-GM-Codes angegeben werden. Im ggf. erforderlichen Bericht an die Gutachterin oder den Gutachter sollen alle gestellten Diagnosen angegeben werden. Die Angabe 'endständig' macht deutlich, dass die ICD-10-GM-Codes als terminale Schlüsselnummern anzugeben sind (Codes, die keine Subcodes mehr enthalten). Darüber hinaus ist die Diagnosesicherheit anzugeben. Für einen Antrag auf Psychotherapie ist mindestens eine gesicherte Diagnose erforderlich (z. B. 'F32.1 G'). Handelt es sich bei der Patientin oder dem Patienten um einen Erwachsenen mit Intelligenzminderung (Diagnose nach F70-F79 ICD-10-GM), muss dies ebenfalls angegeben werden, wenn die für diese Personengruppe vorgesehenen zusätzlichen Kontingente für den Einbezug von Bezugspersonen beantragt werden."/>
+				</feld>
+				<feld>
+					<nummer V="3"/>
+					<name V="Psychotherapie: Altersgruppe, Psychotherapieverfahren, Antragsart, Setting"/>
+					<hinweistext V="Spezifizieren Sie hier für den Antrag der Patientin oder des Patienten, um was für einen Antrag es sich handelt. Wird die Kombinationsbehandlung durch zwei Psychotherapeutinnen oder Psychotherapeuten durchgeführt, sind von beiden Psychotherapeutinnen oder Psychotherapeuten die gleichen Angaben zu Antragsart und Behandlungssetting anzugeben und es ist zusätzlich das Feld 'Kombinationsbehandlung durch zwei Therapeut*innen' anzukreuzen."/>
+				</feld>
+				<feld>
+					<nummer V="4"/>
+					<name V="Für die KZT1, KZT2 oder LZT in diesem Bewilligungsschritt werden beantragt"/>
+					<hinweistext V="Geben Sie hier die Gesamtanzahl der Therapieeinheiten für die Patientin oder den Patienten im jeweiligen Bewilligungsschritt an. Die Gesamtanzahl kann sich nur auf die Einzeltherapie, nur auf die Gruppentherapie oder auf eine Kombination aus Einzel- und Gruppentherapie beziehen. Die Gesamtanzahl der Therapieeinheiten darf die Grenzen des Bewilligungsschritts nach den Paragrafen 29 und 30 der Psychotherapie-Richtlinie nicht überschreiten (eine Unterschreitung ist möglich). Eine Therapieeinheit entspricht 50 Minuten in der Einzelbehandlung oder 100 Minuten in der Gruppenbehandlung. Im Therapieverlauf bereits durchgeführte Therapieeinheiten der Akutbehandlung, KZT1, KZT2 und LZT müssen abgezogen werden. Zusätzlich zur Gesamtanzahl geben Sie die entsprechenden GOPen des EBM an, auf die sich die beantragten Therapieeinheiten beziehen. Besonderheit bei Gruppentherapie: Geben Sie bei der Beantragung von Therapieeinheiten für die Gruppentherapie im Rahmen einer Gruppen- oder Kombinationsbehandlung die jeweilige GOP der Gruppentherapieleistung mit einem 'X' an fünfter Stelle an; die Gruppengröße muss bei Antragstellung nicht festgelegt werden. Wird die Kombinationsbehandlung durch zwei Psychotherapeutinnen oder Psychotherapeuten beantragt, gibt jede Psychotherapeutin oder jeder Psychotherapeut nur das von ihr oder ihm selbst durchzuführende Kontingent an (GOP entweder für Einzeltherapie oder für Gruppentherapie), wobei die Gesamtanzahl der Therapieeinheiten beider Therapeutinnen oder Therapeuten zusammengenommen die Grenzen des Bewilligungsschritts nach den Paragrafen 29 und 30 der Psychotherapie-Richtlinie nicht überschreiten darf. Die Vorgaben zur gemeinsamen Antragstellung bei zwei Psychotherapeutinnen oder Psychotherapeuten gemäß Paragraf 11 Absatz 8 Psychotherapie-Vereinbarung sind zu beachten. Besonderheiten bei Kassenwechsel: Wechselt eine Versicherte oder ein Versicherter die Krankenkasse während einer laufenden Psychotherapie muss dem Antrag auf Fortführung der Psychotherapie bei der neuen Krankenkasse zusätzlich der Genehmigungsbescheid der Vorkasse sowie die Anzahl der bereits zu Lasten der Vorkasse erbrachten Therapieeinheiten beigefügt werden. Der Antrag muss bei der neuen Krankenkasse innerhalb von vier Wochen nach Beginn des auf den Kassenwechsel folgenden Quartals eingehen oder spätestens zum Zeitpunkt der ersten Sitzung des auf den Kassenwechsel folgenden Quartals gestellt werden (siehe hierzu § 13 Abs. 6 Psychotherapie-Vereinbarung)."/>
+				</feld>
+				<feld>
+					<nummer V="5"/>
+					<name V="Für den Einbezug von Bezugspersonen in diesem Bewilligungsschritt werden beantragt"/>
+					<hinweistext V="Zusätzliche Therapieeinheiten für den Einbezug von Bezugspersonen können nur für Kinder und Jugendliche im Sinne des Paragrafen 1 Absatz 4 der Psychotherapie-Richtlinie sowie für Erwachsene mit Intelligenzminderung beantragt werden. Bei Erwachsenen mit Intelligenzminderung ist das Vorliegen einer Diagnose nach F70-79 ICD-10-GM Voraussetzung und muss bei den Diagnosen (siehe Punkt 2) angegeben werden. Geben Sie in dieser Zeile die Gesamtanzahl der Therapieeinheiten für Einbezug von Bezugspersonen im jeweiligen Bewilligungsschritt an. Der Einbezug von Bezugspersonen ist im Rahmen einer Richtlinientherapie sowohl in Einzel- als auch in Gruppenkontakten (der Bezugspersonen) möglich; die beantragten GOP für die Bezugspersonen in dieser Zeile müssen nicht zwangsläufig dem beantragten Setting der psychotherapeutischen Behandlung der Patientin oder des Patienten entsprechen (siehe hierzu § 18 Absätze 5 und 6 Psychotherapie-Vereinbarung). Eine Therapieeinheit entspricht 50 Minuten in der Einzelbehandlung oder 100 Minuten in der Gruppenbehandlung. Zusätzlich zur Gesamtanzahl geben Sie bitte die entsprechenden GOPen an, auf die sich die beantragten Therapieeinheiten beziehen."/>
+				</feld>
+				<feld>
+					<nummer V="6"/>
+					<name V="Bei Erstanträgen angeben / Bei Erst- und Umwandlungsanträge angeben"/>
+					<hinweistext V="Bei Erstanträgen geben Sie bitte an, ob innerhalb der letzten 2 Jahre bereits eine Kurzzeittherapie oder Langzeittherapie durchgeführt wurde. Ist dies der Fall, so wird der Antrag von der Krankenkasse einer Gutachterin oder einem Gutachter zur Prüfung vorgelegt (gutachtenpflichtiger Antrag). Bei Erst- und Umwandlungsanträgen sind die Daten der 1. und 2. verpflichtenden probatorischen Sitzungen im Format TTMMJJ anzugeben. Ein Antrag ist bereits nach der ersten durchgeführten probatorischen Sitzung möglich, wenn für die zweite probatorische Sitzung bereits ein Termin mit der Patientin oder dem Patienten vereinbart ist. Die Angabe des Datums der 2. Sitzung kann zum Zeitpunkt der Antragstellung in der Zukunft liegen. Vor Beginn der beantragten Psychotherapie müssen beide Sitzungen durchgeführt worden sein."/>
+				</feld>
+				<feld>
+					<nummer V="7"/>
+					<name V="Bei Anträgen auf LZT angeben"/>
+					<hinweistext V="Wird ein Erst-, Umwandlungs-, oder Fortführungsantrag auf Langzeittherapie gestellt, sind Angaben zur Durchführung einer Rezidivprophylaxe zu machen. Soll eine Rezidivprophylaxe durchgeführt werden (Angabe 'ja'), ist die voraussichtliche Anzahl der Therapieeinheiten anzugeben (siehe hierzu § 14 Psychotherapie-Richtlinie). Wird in gutachtenpflichtigen Anträgen 'noch nicht absehbar' angegeben, ist hierzu eine Begründung im Bericht an die Gutachterin oder den Gutachter erforderlich."/>
+				</feld>
+				<feld>
+					<nummer V="8"/>
+					<name V="Bisheriger Behandlungsumfang"/>
+					<hinweistext V="Geben Sie hier die zum Zeitpunkt der Antragstellung bereits mit der Patientin oder dem Patienten durchgeführten Therapieeinheiten an. Hierbei ist zwischen der Anzahl der Therapieeinheiten in der Einzelbehandlung einer Kurz- und/oder Langzeittherapie (in 50-Minuten-Schritten), in der Gruppenbehandlung einer Kurz- und/oder Langzeittherapie (in 100-Minuten-Schritten) und in der Akutbehandlung (in 50-Minuten-Schritten) zu trennen. Zusätzlich sind bei Kurz- oder Langzeittherapie die zugehörigen GOPen der bereits durchgeführten Therapieeinheiten anzugeben. Bitte geben Sie nur die mit der Patientin oder dem Patienten durchgeführten Therapieeinheiten an (Patientenkontingent). Die Hinzuzählung von zusätzlichen, nur für die Einbeziehung von Bezugspersonen beantragten und durchgeführten Therapieeinheiten (bei Kindern und Jugendlichen oder ggf. Erwachsenen mit Intelligenzminderung) ist für die Angabe des bisherigen Behandlungsumfangs nicht vorgesehen. Die zusätzliche Angabe eines 'B', wenn in diesem Patientenkontingent ggf. Bezugspersonen einbezogen waren, ist nicht erforderlich."/>
+				</feld>
+				<feld>
+					<nummer V="9"/>
+					<name V="Letztes Gutachten durch"/>
+					<hinweistext V="Hat vor dem Zeitpunkt der jetzigen Antragstellung bereits eine Gutachterin oder ein Gutachter zu der laufenden Behandlung Stellung genommen, so sind hier der Name der Gutachterin oder des Gutachters und das Datum der letzten Stellungnahme (Gutachten) anzugeben."/>
+				</feld>
+				<feld>
+					<nummer V="10"/>
+					<name V="Erklärung Therapeut*in"/>
+					<hinweistext V="Durch das Ankreuzen erklären Sie, dass Sie die beantragte Psychotherapie nach den jeweils geltenden Bestimmungen der vertragsärztlichen Versorgung (u. a. Psychotherapie-Richtlinie, Psychotherapie-Vereinbarung sowie weitere Bestimmungen im Bundesmantelvertrag - Ärzte) durchführen und von der zuständigen Kassenärztlichen Vereinigung die hierfür erforderlichen Genehmigungen zur Ausführung und Abrechnung erhalten haben. Bei Durchführung der Psychotherapie durch Teilnehmende einer Aus- oder Weiterbildung ist diese Erklärung ebenfalls durch die oder den Teilnehmende/n der Aus- und Weiterbildung zu bestätigen; in diesem Fall ist im Unterschriftenfeld der Stempel und die zusätzliche Unterschrift der Ambulanz gemäß Paragraf 117 Absätze 3 bis 3b SGB V bzw. der Person erforderlich, die die Genehmigungen zur Durchführung und Abrechnung hat (z. B. der Praxisinhaberin oder des Praxisinhabers mit einer bzw. einem genehmigten Weiterbildungsassistentin bzw. -assistenten). Aus den Antragsunterlagen und/oder im Bericht an die Gutachterin oder den Gutachter muss eindeutig hervorgehen, wer die Psychotherapie durchführt und wer die Fallverantwortung hat (z. B. zuständige*r Supervisor*in)."/>
+				</feld>
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

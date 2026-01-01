@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Hausbesuch" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Hausbesuch" />
+  <title value="KBV_PR_AW_Hausbesuch" />
+  <status value="active" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Encounter" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Encounter" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Encounter">
+      <path value="Encounter" />
+      <definition value="Der Hausbesuch ist als eine Begegnung zu verstehen, die nicht in der Praxis, sondern außerhalb der Praxis (z.B. bei dem Patienten zu Hause) stattfindet."/>
+    </element>  
+    <element id="Encounter.id">
+      <path value="Encounter.id" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.meta">
+      <path value="Encounter.meta" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.meta.versionId">
+      <path value="Encounter.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.meta.lastUpdated">
+      <path value="Encounter.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.meta.profile">
+      <path value="Encounter.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+        <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Hausbesuch|1.2.0" />
+    </element>
+    <element id="Encounter.text">
+      <path value="Encounter.text" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.identifier">
+      <path value="Encounter.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.status">
+      <path value="Encounter.status" />
+      <definition value="Der Status dieser Ressource ist immer ein Hausbesuch." />
+      <fixedCode value="finished" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.statusHistory">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="StatusHistory" />
+      </extension>
+      <path value="Encounter.statusHistory" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.class">
+      <path value="Encounter.class" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.class.system">
+      <path value="Encounter.class.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.class.code">
+      <path value="Encounter.class.code" />
+      <min value="1" />
+      <fixedCode value="HH" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.class.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Encounter.class.display" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.class.userSelected">
+      <path value="Encounter.class.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.classHistory">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="ClassHistory" />
+      </extension>
+      <path value="Encounter.classHistory" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.type">
+      <path value="Encounter.type" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.serviceType">
+      <path value="Encounter.serviceType" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.priority">
+      <path value="Encounter.priority" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.subject">
+      <path value="Encounter.subject" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.subject.reference">
+      <path value="Encounter.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.subject.type">
+      <path value="Encounter.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.subject.identifier">
+      <path value="Encounter.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.subject.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Encounter.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.episodeOfCare">
+      <path value="Encounter.episodeOfCare" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.basedOn">
+      <path value="Encounter.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.participant">
+      <path value="Encounter.participant" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.appointment">
+      <path value="Encounter.appointment" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.period">
+      <path value="Encounter.period" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.length">
+      <path value="Encounter.length" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.reasonCode">
+      <path value="Encounter.reasonCode" />
+      <short value="Grund des Hausbesuchs" />
+      <definition value="In diesem Element soll der Grund des Hausbesuches FK5019 (KVDT) erläutert werden." />
+      <max value="1" />
+    </element>
+    <element id="Encounter.reasonCode.coding">
+      <path value="Encounter.reasonCode.coding" />
+      <max value="1" />
+    </element>
+    <element id="Encounter.reasonCode.coding.system">
+      <path value="Encounter.reasonCode.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.reasonCode.coding.code">
+      <path value="Encounter.reasonCode.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.reasonReference">
+      <path value="Encounter.reasonReference" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.diagnosis">
+      <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name">
+        <valueString value="Diagnosis" />
+      </extension>
+      <path value="Encounter.diagnosis" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.account">
+      <path value="Encounter.account" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.hospitalization">
+      <path value="Encounter.hospitalization" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.location">
+      <path value="Encounter.location" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.extension">
+      <path value="Encounter.location.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Encounter.location.extension:entfernungsinformationen">
+      <path value="Encounter.location.extension" />
+      <sliceName value="entfernungsinformationen" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Hausbesuch_Entfernungsinformationen" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.extension:entfernungsinformationen.extension:einfache_Entfernung">
+      <path value="Encounter.location.extension.extension" />
+      <sliceName value="einfache_Entfernung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.extension:entfernungsinformationen.extension:einfache_Entfernung.value[x]">
+      <path value="Encounter.location.extension.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.extension:entfernungsinformationen.extension:einfache_Entfernung.value[x]:valueQuantity">
+      <path value="Encounter.location.extension.extension.value[x]" />
+      <sliceName value="valueQuantity" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.extension:entfernungsinformationen.extension:einfache_Entfernung.value[x]:valueQuantity.value">
+      <path value="Encounter.location.extension.extension.value[x].value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.extension:entfernungsinformationen.extension:einfache_Entfernung.value[x]:valueQuantity.unit">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Encounter.location.extension.extension.value[x].unit" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.extension:entfernungsinformationen.extension:einfache_Entfernung.value[x]:valueQuantity.system">
+      <path value="Encounter.location.extension.extension.value[x].system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.extension:entfernungsinformationen.extension:einfache_Entfernung.value[x]:valueQuantity.code">
+      <path value="Encounter.location.extension.extension.value[x].code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.extension:entfernungsinformationen.extension:zone_des_Besuchsortes">
+      <path value="Encounter.location.extension.extension" />
+      <sliceName value="zone_des_Besuchsortes" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.extension:entfernungsinformationen.extension:zone_des_Besuchsortes.value[x]:valueCodeableConcept">
+      <path value="Encounter.location.extension.extension.value[x]" />
+      <sliceName value="valueCodeableConcept" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.extension:entfernungsinformationen.extension:zone_des_Besuchsortes.value[x]:valueCodeableConcept.coding">
+      <path value="Encounter.location.extension.extension.value[x].coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.extension:entfernungsinformationen.extension:zone_des_Besuchsortes.value[x]:valueCodeableConcept.coding.system">
+      <path value="Encounter.location.extension.extension.value[x].coding.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.extension:entfernungsinformationen.extension:zone_des_Besuchsortes.value[x]:valueCodeableConcept.coding.code">
+      <path value="Encounter.location.extension.extension.value[x].coding.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.location">
+      <path value="Encounter.location.location" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Hausbesuch_Ort|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.location.location.reference">
+      <path value="Encounter.location.location.reference" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.location.location.type">
+      <path value="Encounter.location.location.type" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.location.location.identifier">
+      <path value="Encounter.location.location.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.location.location.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Encounter.location.location.display" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.location.status">
+      <path value="Encounter.location.status" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.location.physicalType">
+      <path value="Encounter.location.physicalType" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.location.period">
+      <path value="Encounter.location.period" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.serviceProvider">
+      <path value="Encounter.serviceProvider" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.partOf">
+      <path value="Encounter.partOf" />
+      <short value="Bezug zur Behandlung" />
+      <definition value="Dieser Hausbesuch findet im Rahmen einer Begegnung in der Betriebsstaette statt." />
+      <min value="1" />
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy">
+          <valueBoolean value="true" />
+        </extension>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Begegnung|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.partOf.reference">
+      <path value="Encounter.partOf.reference" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.partOf.type">
+      <path value="Encounter.partOf.type" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.partOf.identifier">
+      <path value="Encounter.partOf.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.partOf.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Encounter.partOf.display" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

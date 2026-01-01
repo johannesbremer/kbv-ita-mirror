@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<xs:schema xmlns="urn:ehd/qsmg/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ehd/qsmg/001" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="qsmg_dokumentation">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="behandlungsfall_anzahl">
+					<xs:complexType>
+						<xs:attribute name="V" use="required">
+							<xs:simpleType>
+								<xs:restriction base="xs:nonNegativeInteger">
+									<xs:minInclusive value="0"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="diagnostische_fragestellung" type="fragestellung_typ" minOccurs="0"/>
+				<xs:element name="praediktive_fragestellung" type="fragestellung_typ" minOccurs="0"/>
+				<xs:element name="vorgeburtliche_fragestellung" type="fragestellung_typ" minOccurs="0"/>
+				<xs:element name="leistung_liste" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="leistung" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="gop">
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="gop_anzahl">
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="pathologischer_befund_anzahl" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="unauffaelliger_befund_anzahl" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="nichtbeurteilbarer_befund_anzahl" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element ref="fachgruppe_einsender_liste" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="quotient_pathologisch" type="quotient_typ" minOccurs="0"/>
+				<xs:element name="quotient_unauffaellig" type="quotient_typ" minOccurs="0"/>
+				<xs:element name="quotient_nichtbeurteilbar" type="quotient_typ" minOccurs="0"/>
+				<xs:element name="unterauftrag_anzahl" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="einsender_lanr_anzahl" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="einsender_bsnr_anzahl" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element ref="fachgruppe_einsender_liste" minOccurs="0"/>
+				<xs:element name="produkt1_teilnahmehaufigkeit" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="produkt2_ringversuchszertifikat" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="fragestellung_typ">
+		<xs:sequence>
+			<xs:element name="behandlungsfall_anzahl">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="pathologischer_befund_anzahl" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="unauffaelliger_befund_anzahl" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="nichtbeurteilbarer_befund_anzahl" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="quotient_typ">
+		<xs:sequence>
+			<xs:element name="gop_anzahl">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="befund_anzahl">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="quotient">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:float" use="required"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="fachgruppe_einsender">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="fachgruppe_nummer">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="einsendungen_anzahl">
+					<xs:complexType>
+						<xs:attribute name="V" type="xs:nonNegativeInteger" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="fachgruppe_einsender_liste">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="fachgruppe_einsender" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

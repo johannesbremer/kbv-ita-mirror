@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Diverse_2020" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Diverse_2020" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="sct-concept" />
+    <uri value="http://snomed.info/conceptdomain" />
+    <name value="SNOMED CT Concept Domain Binding" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="sct-attr" />
+    <uri value="http://snomed.org/attributebinding" />
+    <name value="SNOMED CT Attribute Binding" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Observation" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Observation">
+      <path value="Observation" />
+      <short value="Zytologischer Befund Diverse" />
+      <definition value="In dieser Ressource können diverse zytologisch-bezogene Befunde dokumentiert werden. Siehe Formular/Muster 39" />
+    </element>
+    <element id="Observation.id">
+      <path value="Observation.id" />
+      <min value="1" />
+    </element>
+    <element id="Observation.meta">
+      <path value="Observation.meta" />
+      <min value="1" />
+    </element>
+    <element id="Observation.meta.versionId">
+      <path value="Observation.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Observation.meta.lastUpdated">
+      <path value="Observation.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Observation.meta.profile">
+      <path value="Observation.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+        <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Diverse_2020|1.2.0" />
+    </element>
+    <element id="Observation.text">
+      <path value="Observation.text" />
+      <min value="1" />
+    </element>
+    <element id="Observation.identifier">
+      <path value="Observation.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Observation.basedOn">
+      <path value="Observation.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="Observation.partOf">
+      <path value="Observation.partOf" />
+      <max value="0" />
+    </element>
+    <element id="Observation.status">
+      <path value="Observation.status" />
+      <definition value="Der Status ist immer abgeschlossen (final)." />
+      <fixedCode value="final" />
+    </element>
+    <element id="Observation.category">
+      <path value="Observation.category" />
+      <max value="0" />
+    </element>
+    <element id="Observation.code">
+      <path value="Observation.code" />
+      <short value="Typ des Befundes" />
+      <definition value="In diesem Element wird der Typ des Befundes definiert. Siehe https://fhir.kbv.de/ValueSet/KBV_CS_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Diverse&#xD;&#xA;&#xD;&#xA;Ist ein Loinc-Code zu dieser Bemerkung bekannt, so ist dieser im Attribut loinc_code zu dokumentieren" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.code.coding">
+      <path value="Observation.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <description value="kbv_code&#xD;&#xA;loinc_code" />
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <max value="2" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.code.coding:kbv_code">
+      <path value="Observation.code.coding" />
+      <sliceName value="kbv_code" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Diverse_2020" />
+      </binding>
+    </element>
+    <element id="Observation.code.coding:kbv_code.system">
+      <path value="Observation.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund" />
+    </element>
+    <element id="Observation.code.coding:kbv_code.version">
+      <path value="Observation.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Observation.code.coding:kbv_code.code">
+      <path value="Observation.code.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Observation.code.coding:kbv_code.display">
+      <path value="Observation.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Observation.code.coding:kbv_code.userSelected">
+      <path value="Observation.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Observation.code.coding:loinc_code">
+      <path value="Observation.code.coding" />
+      <sliceName value="loinc_code" />
+      <max value="1" />
+    </element>
+    <element id="Observation.code.coding:loinc_code.system">
+      <path value="Observation.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://loinc.org" />
+    </element>
+    <element id="Observation.code.coding:loinc_code.version">
+      <path value="Observation.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Observation.code.coding:loinc_code.code">
+      <path value="Observation.code.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Observation.code.coding:loinc_code.display">
+      <path value="Observation.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Observation.code.coding:loinc_code.userSelected">
+      <path value="Observation.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Observation.code.text">
+      <path value="Observation.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Observation.subject">
+      <path value="Observation.subject" />
+      <label value="TR01" />
+      <short value="Patientenbezug" />
+      <definition value="Siehe Reason for inclusion and constrainment" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.subject.reference">
+      <path value="Observation.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="Observation.subject.type">
+      <path value="Observation.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="Observation.subject.identifier">
+      <path value="Observation.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Observation.subject.display">
+      <path value="Observation.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Observation.focus">
+      <path value="Observation.focus" />
+      <max value="0" />
+    </element>
+    <element id="Observation.encounter">
+      <path value="Observation.encounter" />
+      <max value="0" />
+    </element>
+    <element id="Observation.effective[x]">
+      <path value="Observation.effective[x]" />
+      <max value="0" />
+    </element>
+    <element id="Observation.issued">
+      <path value="Observation.issued" />
+      <max value="0" />
+    </element>
+    <element id="Observation.performer">
+      <path value="Observation.performer" />
+      <max value="0" />
+    </element>
+    <element id="Observation.value[x]">
+      <path value="Observation.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.value[x]:valueBoolean">
+      <path value="Observation.value[x]" />
+      <sliceName value="valueBoolean" />
+      <short value="Befund Diverse" />
+      <definition value="Inhalt des Befundes" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+	  <mustSupport value="true" />
+    </element>
+    <element id="Observation.dataAbsentReason">
+      <path value="Observation.dataAbsentReason" />
+      <max value="0" />
+    </element>
+    <element id="Observation.interpretation">
+      <path value="Observation.interpretation" />
+      <max value="0" />
+    </element>
+    <element id="Observation.note">
+      <path value="Observation.note" />
+      <max value="0" />
+    </element>
+    <element id="Observation.bodySite">
+      <path value="Observation.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="Observation.method">
+      <path value="Observation.method" />
+      <max value="0" />
+    </element>
+    <element id="Observation.specimen">
+      <path value="Observation.specimen" />
+      <max value="0" />
+    </element>
+    <element id="Observation.device">
+      <path value="Observation.device" />
+      <max value="0" />
+    </element>
+    <element id="Observation.referenceRange">
+      <path value="Observation.referenceRange" />
+      <max value="0" />
+    </element>
+    <element id="Observation.hasMember">
+      <path value="Observation.hasMember" />
+      <max value="0" />
+    </element>
+    <element id="Observation.derivedFrom">
+      <path value="Observation.derivedFrom" />
+      <max value="0" />
+    </element>
+    <element id="Observation.component">
+      <path value="Observation.component" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_KostenuebernahmeIgeL" />
+  <version value="1.2.0" />
+  <name value="KBV_EX_AW_Patient_KostenuebernahmeIgeL" />
+  <title value="KBV_EX_AW_Patient_KostenuebernahmeIgeL" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Patient" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Kostenübernahme IGeL" />
+      <definition value="In dieser Ressource wird festgehalten, ob der Patient einer Kostenübernahme für IGeL zugestimmt hat.&#xD;&#xA;0 = Kostenübernahme für IGeL nicht zugestimmt &#xD;&#xA;1 = Kostenübernahme für IGeL zugestimmt" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_KostenuebernahmeIgeL" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.value[x]:valueBoolean">
+      <path value="Extension.valueBoolean" />
+      <sliceName value="valueBoolean" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

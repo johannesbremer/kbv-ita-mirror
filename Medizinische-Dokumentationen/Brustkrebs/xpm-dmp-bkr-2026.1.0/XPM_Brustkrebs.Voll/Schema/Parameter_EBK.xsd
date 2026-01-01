@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn::sciphox-org/sciphox" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!--***********************************************************************************************************************************************-->
+	<!--Parameter Erstdokumentation -->
+	<!--***********************************************************************************************************************************************-->
+	<!--************************************************************************************-->
+	<!--Einschreibung -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="Einschreibung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Primärtumor Datum der histologischen Sicherung"/>
+			<xs:enumeration value="Lokoregionäres Rezidiv Datum der histologischen Sicherung"/>
+			<xs:enumeration value="Kontralateraler Brustkrebs Datum der histologischen Sicherung"/>
+			<xs:enumeration value="Fernmetastasen Datum der diagnostischen Sicherung von Fernmetastasen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!--AnamneseundBehandlungsstatusdesPrimärtumorskontraleralenBrustkrebses -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="AnamneseundBehandlungsstatusdesPrimärtumorskontralateralenBrustkrebses">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Operative Therapie"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!--AktuellerBefundstatusdesPrimärtumorskontraleralenBrustkrebses -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="AktuellerBefundstatusdesPrimärtumorskontralateralenBrustkrebses">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="TNM-Klassifizierung"/>
+			<xs:enumeration value="T"/>
+			<xs:enumeration value="N"/>
+			<xs:enumeration value="M"/>
+			<xs:enumeration value="Hormonrezeptorstatus Östrogen und/oder Progesteron (gemäß Immunreaktiver Score [IRS])"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!--BehandlungdesPrimärtumorskontraleralenBrustkrebses -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="BehandlungdesPrimärtumorskontralateralenBrustkrebses">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Aktuelle adjuvante endokrine Therapie"/>
+			<xs:enumeration value="Nebenwirkungen der aktuellen adjuvanten endokrinen Therapie"/>
+			<xs:enumeration value="Fortführung der adjuvanten endokrinen Therapie"/>
+			<xs:enumeration value="Bei Patientinnen unter adjuvanter Therapie mit Aromataseinhibitoren, sofern die Absicht für eine spezifische medikamentöse Therapie einer Osteoporose besteht: DXA-Befund"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!--BefundeundTherapienvonFernmetastasen -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="BefundeundTherapienvonFernmetastasen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Lokalisation von Fernmetastasen"/>
+			<xs:enumeration value="Therapie bei Knochenmetastasen (Bisphosphonate)"/>
+			<xs:enumeration value="Therapie bei Knochenmetastasen (Denosumab)"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!--SonstigeBeratungundBehandlungED -->
+	<!--************************************************************************************-->
+	<xs:simpleType name="SonstigeBefunde">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Symptomatisches Lymphödem"/>
+			<xs:enumeration value="Empfehlung zu regelmäßigem körperlichen Training abgegeben"/>
+			<xs:enumeration value="Z. n. besonders kardiotoxischer Tumortherapie"/>
+			<xs:enumeration value="Körpergröße"/>
+			<xs:enumeration value="Körpergewicht"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--************************************************************************************-->
+	<!-- Behandlungsplanung -->
+	<!--************************************************************************************ -->
+	<xs:simpleType name="Behandlungsplanung">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Dokumentationsintervall"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

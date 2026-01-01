@@ -1,0 +1,3 @@
+Schlüsseldatei:		Oeffentlich_Testschluessel_V01.pub
+gültig ab:				01.01.2008
+Verwendung:				TEST-Verschlüsselung ACHTUNG: nur für Testzwecke

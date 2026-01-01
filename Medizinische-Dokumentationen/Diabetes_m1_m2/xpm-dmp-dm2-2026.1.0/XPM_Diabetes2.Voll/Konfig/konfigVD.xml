@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<konfiguration>
+	<grundeinstellung>
+		<!-- Installationsverzeichnis -->
+		<pruefpfad>./</pruefpfad>
+		<!-- Verzeichnis mit Pruefdateien -->
+		<pruefdaten>Daten/</pruefdaten>
+		<!-- Verzeichnis mit fehlerfrei geprüften Pruefdateien.
+		   - Nach einer Prüfung, die nicht abgelehnt wurde, werden die XML-Dateien
+		   - in dieses Verzeichnis verschoben -->
+		<okdaten>Geprueft/NichtAbgelehnt/</okdaten>
+		<!-- Verzeichnis mit abgelehnten Pruefdateien.
+		   - Nach einer Prüfung, die mit dem Status 'Abbruch' bzw. 'Abgelehnt' beendet wurde,
+		   - werden die XML-Dateien in dieses Verzeichnis verschoben -->
+		<fehlerdaten>Geprueft/Abgelehnt/</fehlerdaten>
+		<!-- Temporäres Verzeichnis -->
+		<tempdaten>Listen/</tempdaten>
+		<!-- Protokolldatei -->
+		<log_datei>Listen/XPM_Logfile.log</log_datei>
+		<!-- Dateifilter für die Menge der zu prüfenden Dateien -->
+		<datei_filter>*.EVD2</datei_filter>
+		<!-- Datensatzbeschreibung in XML-Schema-Form -->
+		<pruefschema>Schema/DMP_DiabetesMellitus2.xsd</pruefschema>
+		<!-- Schalter Warnungen mit protokollieren: ja/nein -->
+		<warnungen>ja</warnungen>
+		<!-- Schalter Fehlerausgabe aller Fehlermeldungen auf einen vorgegebenen
+		   - maximalen Wert begrenzen: ja/nein -->
+		<fehler_begrenzen>ja</fehler_begrenzen>
+		<lizenzvereinbarung_pfad>Doku/Lizenzvereinbarung.pdf</lizenzvereinbarung_pfad>
+	</grundeinstellung>
+	<!-- Steuertabellen und Stammdateien -->
+	<eingabedateien>
+		<!-- Pfad zu KBV Steuertabelle -->
+		<kbv_tabelle>Kbvtab/kbv_tabelle.bin</kbv_tabelle>
+		<!-- Pfad zu KT-Stammdatei -->
+		<KTStamm>Kbvtab/KTStamm.bin</KTStamm>
+	</eingabedateien>
+	<!-- Ausgabedateien des Prüfmoduls -->
+	<ausgabedateien>
+		<!-- Fehlerprotokoll -->
+		<FehlerListe Format="PDF">Listen/Protokoll.pdf</FehlerListe>
+		<!-- Fehlerstatistik -->
+		<StatistikListe Format="PDF">Listen/StatistikVD.pdf</StatistikListe>
+	</ausgabedateien>
+</konfiguration>

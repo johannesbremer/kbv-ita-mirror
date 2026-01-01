@@ -1,0 +1,29 @@
+{
+  "resourceType": "ValueSet",
+  "status": "draft",
+  "name": "KBV_VS_VoS_SectionType",
+  "id": "KBV-VS-VoS-SectionType",
+  "description": "Alle Abschnitte, die in der Composition enthalten sein können.",
+  "version": "2.2.0",
+  "url": "https://fhir.kbv.de/ValueSet/KBV_VS_VoS_SectionType",
+  "experimental": false,
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "other",
+          "value": "http://www.kbv.de"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_SectionType"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="530" />
+  <meta>
+	<versionId value="1"/>
+	<lastUpdated value="2022-09-05T18:53:00Z"/>
+    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Pregnancy_Status|2.1.0" />
+  </meta>
+  <status value="final" />
+  <code>
+    <coding>
+      <system value="http://loinc.org" />
+      <code value="11449-6" />
+	  <display value="Pregnancy status - Reported"/>
+    </coding>
+    <coding>
+      <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_VitalSigns" />
+      <code value="Schwangerschaft" />
+	  <display value="Schwangerschaft"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/100" />
+  </subject>
+  <effectiveDateTime value="2021-10-01"/>
+  <valueBoolean value="true" />
+</Observation>

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.9.0.final using JasperReports Library version 6.9.0-cb8f9004be492ccc537180b49c026951f4220bf3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SAFallListe" pageWidth="595" pageHeight="842" whenNoDataType="BlankPage" columnWidth="540" columnSpacing="15" leftMargin="20" rightMargin="20" topMargin="30" bottomMargin="30" uuid="d7a3f349-3019-4a06-bb9f-7e9c8aca030b">
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="ISO-8859-1"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<style name="DejavuSans_Normal" isDefault="true" fontName="DejaVu Sans" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="DejavuSans_Bold" fontName="DejaVu Sans" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="DejavuSans_Italic" fontName="DejaVu Sans" isBold="false" isItalic="true" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Oblique" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<parameter name="BSNR" class="java.lang.String"/>
+	<parameter name="BSNR_BEZ" class="java.lang.String"/>
+	<parameter name="DATEI" class="java.lang.String"/>
+	<parameter name="DATEI_DATUM" class="java.lang.String"/>
+	<parameter name="DATUM" class="java.lang.String"/>
+	<parameter name="PAKET" class="java.lang.String"/>
+	<parameter name="PRUEF_NR" class="java.lang.String"/>
+	<parameter name="QUARTAL" class="java.lang.String"/>
+	<parameter name="VERSION" class="java.lang.String"/>
+	<parameter name="ZEIT" class="java.lang.String"/>
+	<field name="VKNR" class="java.lang.String"/>
+	<field name="NAME" class="java.lang.String"/>
+	<field name="AMBULANT" class="java.lang.Integer"/>
+	<field name="STATIONAER" class="java.lang.Integer"/>
+	<field name="GESAMT" class="java.lang.Integer"/>
+	<field name="VORQUARTAL" class="java.lang.Integer"/>
+	<variable name="AMBULANT_SUMME" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{AMBULANT}]]></variableExpression>
+	</variable>
+	<variable name="STATIONAER_SUMME" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{STATIONAER}]]></variableExpression>
+	</variable>
+	<variable name="GESAMT_SUMME" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{GESAMT}]]></variableExpression>
+	</variable>
+	<variable name="VORQUARTAL_SUMME" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{VORQUARTAL}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="115" splitType="Stretch">
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Bold" x="0" y="0" width="555" height="30" uuid="0b8d2b28-e3d3-493f-904b-ced92d78c7fc"/>
+				<textElement textAlignment="Center">
+					<font size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA["KBV-Prüfmodul Fallstatistik (KVDT/SADT, " + $P{VERSION} + "-Version)"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="0" y="30" width="105" height="15" uuid="57f654b7-2d65-4404-8599-ae083652a855"/>
+				<text><![CDATA[Abrechnungsdatei:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="105" y="30" width="305" height="15" uuid="62fb811e-da02-4ad6-86a4-55d77ef3a6fa"/>
+				<textFieldExpression><![CDATA[$P{DATEI}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="410" y="30" width="70" height="15" uuid="520a5e48-0e15-44f2-a633-61db2da99860"/>
+				<text><![CDATA[Prüfdatum:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="480" y="30" width="75" height="15" uuid="b45eb17a-4b3e-48b9-a8bf-fbabb65b74c1"/>
+				<textFieldExpression><![CDATA[$P{DATUM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="0" y="45" width="105" height="15" uuid="97654f27-6cd2-434e-a53e-7a742bc850f0"/>
+				<text><![CDATA[Erstellungsdatum:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="105" y="45" width="305" height="15" uuid="a779e681-0ec3-48e6-b90c-84fdd6cae77e"/>
+				<textFieldExpression><![CDATA[$P{DATEI_DATUM}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="410" y="45" width="70" height="15" uuid="510b53c8-8e93-4a30-85c6-40dadf597dd9"/>
+				<text><![CDATA[Prüfzeit:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="480" y="45" width="75" height="15" uuid="831a3222-a7f9-4f65-9eea-4d690f02ba4a"/>
+				<textFieldExpression><![CDATA[$P{ZEIT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="0" y="60" width="105" height="15" uuid="86bcf6b9-c1bf-436f-89aa-4377415d1d44"/>
+				<text><![CDATA[Prüfnummer:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="105" y="60" width="305" height="15" uuid="20388754-b666-4bc1-9a89-2c20c7ded5a8"/>
+				<textFieldExpression><![CDATA[$P{PRUEF_NR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="410" y="60" width="70" height="15" uuid="15077e1e-d8a1-493c-945d-304d0bc797b3"/>
+				<text><![CDATA[Quartal:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="480" y="60" width="75" height="15" uuid="0acfe682-89d4-4eeb-b701-57dd78fc174e"/>
+				<textFieldExpression><![CDATA[$P{QUARTAL}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="0" y="75" width="105" height="15" uuid="8118ebdb-163b-44b6-b9ed-1d25930da2c5"/>
+				<text><![CDATA[BSNR-Bezeichnung:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="105" y="75" width="305" height="15" uuid="40e05b9c-f762-42a8-856e-7aa246405795"/>
+				<textFieldExpression><![CDATA[$P{BSNR_BEZ}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="410" y="75" width="70" height="15" uuid="92a8370a-7c2e-4d05-aa32-bd535f429b3a"/>
+				<text><![CDATA[BSNR:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement style="DejavuSans_Normal" x="480" y="75" width="75" height="15" uuid="310e773a-4b48-4626-b050-60d5ce84eb81"/>
+				<textFieldExpression><![CDATA[$P{BSNR}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement style="DejavuSans_Bold" mode="Opaque" x="0" y="0" width="70" height="15" backcolor="#C0C0C0" uuid="f10bb013-d89a-42e7-b38c-5d81d55c2d54"/>
+				<textElement>
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[VKNR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" mode="Opaque" x="70" y="0" width="230" height="15" backcolor="#C0C0C0" uuid="3db0c906-6a99-483e-9b4e-7cf55d9acef6"/>
+				<textElement>
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Name des Kostenträgers]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" mode="Opaque" x="300" y="0" width="65" height="15" backcolor="#C0C0C0" uuid="31d0a2c4-d854-4c69-9a7d-39996d48e5da"/>
+				<textElement textAlignment="Center">
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Ambulant]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" mode="Opaque" x="365" y="0" width="65" height="15" backcolor="#C0C0C0" uuid="ae42cfc5-f470-4cf0-8874-fd2dc47caf02"/>
+				<textElement textAlignment="Center">
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Stationär]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" mode="Opaque" x="430" y="0" width="65" height="15" backcolor="#C0C0C0" uuid="96e35010-2195-4fe5-9eff-1f79882ad0b7"/>
+				<textElement textAlignment="Right">
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Gesamt]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="DejavuSans_Bold" mode="Opaque" x="495" y="0" width="60" height="15" backcolor="#C0C0C0" uuid="1d178bd0-7f03-4676-8efa-ae97c14d898d"/>
+				<textElement textAlignment="Right">
+					<font isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[Vorquartal]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="0" y="0" width="70" height="15" uuid="95664ddf-1a18-4436-8988-2ccac997674c"/>
+				<textFieldExpression><![CDATA[$F{VKNR}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="70" y="0" width="230" height="15" uuid="a61bcd47-43ac-4cde-bb10-a7c904f75ec5"/>
+				<textFieldExpression><![CDATA[$F{NAME}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="300" y="0" width="65" height="15" uuid="104c5953-18ff-4917-94a1-e0d684bbbd06"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{AMBULANT}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="365" y="0" width="65" height="15" uuid="41501711-21dd-46e9-acef-3905d4c17dbc"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{STATIONAER}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="430" y="0" width="65" height="15" uuid="71aea478-51db-4c4d-8ce3-2152784dbcc5"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{GESAMT}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="495" y="0" width="60" height="15" uuid="d78f1318-4e8f-48e2-b1c2-9503ccce92d7"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{VORQUARTAL}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement style="DejavuSans_Normal" x="0" y="0" width="40" height="20" uuid="7b9a5ac0-a02c-4f9b-8192-a7bbbf2cab69"/>
+				<text><![CDATA[Seite:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement style="DejavuSans_Normal" x="40" y="0" width="100" height="20" uuid="fd919999-8ad9-4898-9892-2a8d50649ef3"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="30" splitType="Stretch">
+			<line>
+				<reportElement key="line" x="0" y="0" width="555" height="1" uuid="55ee8306-dead-4a29-a773-f2647bebf8f9"/>
+			</line>
+			<staticText>
+				<reportElement key="staticText" style="DejavuSans_Bold" x="0" y="0" width="70" height="15" uuid="9b3540db-836b-40e2-a975-19f081688b61"/>
+				<textElement textAlignment="Left">
+					<font isBold="false" pdfFontName="Helvetica"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Summe:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" style="DejavuSans_Bold" x="300" y="0" width="65" height="15" uuid="c12d71cc-27aa-4c1e-9564-7a4d3be15ddd"/>
+				<textElement textAlignment="Right">
+					<font isBold="false" pdfFontName="Helvetica"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{AMBULANT_SUMME}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" style="DejavuSans_Bold" x="365" y="0" width="65" height="15" uuid="2cfbde3c-078c-4ac3-a74c-29ba45318f1d"/>
+				<textElement textAlignment="Right">
+					<font isBold="false" pdfFontName="Helvetica"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{STATIONAER_SUMME}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" style="DejavuSans_Bold" x="430" y="0" width="65" height="15" uuid="3f09cecc-8b63-472f-a6c8-e5cda206aaf1"/>
+				<textElement textAlignment="Right">
+					<font isBold="false" pdfFontName="Helvetica"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{GESAMT_SUMME}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" style="DejavuSans_Bold" x="495" y="0" width="60" height="15" uuid="cb1f145f-2ff8-4581-8e7d-b089f66b16ca"/>
+				<textElement textAlignment="Right">
+					<font isBold="false" pdfFontName="Helvetica"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{VORQUARTAL_SUMME}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

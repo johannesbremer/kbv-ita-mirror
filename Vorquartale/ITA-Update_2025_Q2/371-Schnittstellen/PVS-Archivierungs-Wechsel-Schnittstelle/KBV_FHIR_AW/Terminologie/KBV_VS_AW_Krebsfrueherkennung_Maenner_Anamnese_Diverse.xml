@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/ValueSet/KBV_VS_AW_Krebsfrueherkennung_Maenner_Anamnese_Diverse"/>
+<version value="1.2.0" />
+<name value="KBV_VS_AW_Krebsfrueherkennung_Maenner_Anamnese_Diverse"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Krebsfrueherkennung Maenner Beobachtungen Anamnese"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<compose>
+<include>
+<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Maenner_Anamnese_Diverse"/>
+</include>
+</compose>
+</ValueSet>

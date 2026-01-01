@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Unfall_Ort" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Unfall_Ort" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Location" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Location" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Location">
+      <path value="Location" />
+      <short value="Unfallort" />
+      <definition value="Diese Ressource dient zur Beschreibung eines Unfallortes." />
+    </element>
+    <element id="Location.id">
+      <path value="Location.id" />
+      <min value="1" />
+    </element>
+    <element id="Location.meta">
+      <path value="Location.meta" />
+      <min value="1" />
+    </element>
+    <element id="Location.meta.versionId">
+      <path value="Location.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Location.meta.lastUpdated">
+      <path value="Location.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Location.meta.profile">
+      <path value="Location.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Unfall_Ort|1.2.0" />
+    </element>
+    <element id="Location.text">
+      <path value="Location.text" />
+      <min value="1" />
+    </element>
+    <element id="Location.identifier">
+      <path value="Location.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Location.status">
+      <path value="Location.status" />
+      <max value="0" />
+    </element>
+    <element id="Location.operationalStatus">
+      <path value="Location.operationalStatus" />
+      <max value="0" />
+    </element>
+    <element id="Location.name">
+      <path value="Location.name" />
+      <short value="Name des Ortes" />
+      <definition value="In diesem Element kann der Name des Ortes vermerkt werden." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Location.alias">
+      <path value="Location.alias" />
+      <max value="0" />
+    </element>
+    <element id="Location.description">
+      <path value="Location.description" />
+      <max value="0" />
+    </element>
+    <element id="Location.mode">
+      <path value="Location.mode" />
+      <max value="0" />
+    </element>
+    <element id="Location.type">
+      <path value="Location.type" />
+      <short value="Klassifizierung der Ressource" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieser Ressource verwendet." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+      </binding>
+    </element>
+    <element id="Location.type.coding">
+      <path value="Location.type.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Location.type.coding.system">
+      <path value="Location.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-RoleCode" />
+    </element>
+    <element id="Location.type.coding.version">
+      <path value="Location.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Location.type.coding.code">
+      <path value="Location.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="ACC" />
+    </element>
+    <element id="Location.type.coding.display">
+      <path value="Location.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Location.type.coding.userSelected">
+      <path value="Location.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Location.type.text">
+      <path value="Location.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Location.telecom">
+      <path value="Location.telecom" />
+      <max value="0" />
+    </element>
+    <element id="Location.address">
+      <path value="Location.address" />
+      <type>
+        <code value="Address" />
+        <profile value="http://fhir.de/StructureDefinition/address-de-basis" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Location.physicalType">
+      <path value="Location.physicalType" />
+      <max value="0" />
+    </element>
+    <element id="Location.position">
+      <path value="Location.position" />
+      <max value="0" />
+    </element>
+    <element id="Location.managingOrganization">
+      <path value="Location.managingOrganization" />
+      <max value="0" />
+    </element>
+    <element id="Location.partOf">
+      <path value="Location.partOf" />
+      <max value="0" />
+    </element>
+    <element id="Location.hoursOfOperation">
+      <path value="Location.hoursOfOperation" />
+      <max value="0" />
+    </element>
+    <element id="Location.availabilityExceptions">
+      <path value="Location.availabilityExceptions" />
+      <max value="0" />
+    </element>
+    <element id="Location.endpoint">
+      <path value="Location.endpoint" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

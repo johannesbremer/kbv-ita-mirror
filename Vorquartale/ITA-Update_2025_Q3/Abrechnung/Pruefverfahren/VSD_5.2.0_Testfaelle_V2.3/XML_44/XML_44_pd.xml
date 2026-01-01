@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<vsd:UC_PersoenlicheVersichertendatenXML xmlns:vsd="http://ws.gematik.de/fa/vsdm/vsd/v5.2" CDM_VERSION="5.2.0">
+	<vsd:Versicherter>
+		<vsd:Versicherten_ID>G123456744</vsd:Versicherten_ID>
+		<vsd:Person>
+			<vsd:Geburtsdatum>19631103</vsd:Geburtsdatum>
+			<vsd:Vorname>Rodrigo</vsd:Vorname>
+			<vsd:Nachname>Gonzales</vsd:Nachname>
+			<vsd:Geschlecht>D</vsd:Geschlecht>
+			<vsd:PostfachAdresse>
+				<vsd:Postleitzahl>81828</vsd:Postleitzahl>
+				<vsd:Ort>München</vsd:Ort>
+				<vsd:Postfach>80639</vsd:Postfach>
+				<vsd:Land>
+					<vsd:Wohnsitzlaendercode>D</vsd:Wohnsitzlaendercode>
+				</vsd:Land>
+			</vsd:PostfachAdresse>
+		</vsd:Person>
+	</vsd:Versicherter>
+</vsd:UC_PersoenlicheVersichertendatenXML>
+
+
+

@@ -1,0 +1,39 @@
+<Condition xmlns="http://hl7.org/fhir">
+  <meta>
+    <profile value="http://fhir.de/StructureDefinition/condition-de-basis/0.2" />
+  </meta>
+  <text>
+    <status value="generated" />
+    <div xmlns="http://www.w3.org/1999/xhtml">Schnittwunde am Unterarm, links, gesichert</div>
+  </text>
+  <extension url="http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit/0.2">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.de/CodeSystem/kbv/s-icd-diagnosesicherheit" />
+        <code value="G" />
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <clinicalStatus value="active" />
+  <verificationStatus value="confirmed" />
+  <code>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/dimdi/icd-10-gm" />
+      <version value="2017" />
+      <code value="S51.9" />
+      <display value="Schnittwunde am Unterarm" />
+    </coding>
+    <text value="Schnittwunde am Unterarm" />
+  </code>
+  <bodySite>
+    <coding>
+      <system value="http://fhir.de/CodeSystem/kbv/s_icd_seitenlokalisation" />
+      <code value="L" />
+      <display value="links" />
+    </coding>
+    <text value="links" />
+  </bodySite>
+  <subject>
+    <reference value="Patient/12345" />
+  </subject>
+</Condition>

@@ -1,0 +1,3 @@
+Schlüsseldatei:		Oeffentlich_QSHGVK_V07.pub
+gültig ab:				01.10.2025
+Verwendung:				QS Horgeraeteversorgung Kinder Verschluesselung

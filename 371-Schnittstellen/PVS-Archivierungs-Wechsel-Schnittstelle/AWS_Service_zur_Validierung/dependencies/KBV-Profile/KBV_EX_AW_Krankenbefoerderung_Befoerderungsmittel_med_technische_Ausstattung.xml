@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krankenbefoerderung_Befoerderungsmittel_med_technische_Ausstattung" />
+  <version value="1.2.0" />
+  <name value="KBV_EX_AW_Krankenbefoerderung_Befoerderungsmittel_med_technische_Ausstattung" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="ServiceRequest.performer" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="medizinisch technische Ausstattung" />
+      <definition value="Wenn eine medizinisch technische Ausstattung erforderlich ist, ist diese in diesem Element zu dokumentieren. Siehe Formular/Muster 4 Teil 2 Beförderungsmittel Medzinisch-technische Ausstattung." />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:ausstattung_notwendig">
+      <path value="Extension.extension" />
+      <sliceName value="ausstattung_notwendig" />
+      <definition value="0 = Keine Ausstattung notwendig&#xD;&#xA;1 = Ausstattung notwendig" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:ausstattung_notwendig.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="ausstattung_notwendig" />
+    </element>
+    <element id="Extension.extension:ausstattung_notwendig.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+		<rules value="closed" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:ausstattung_notwendig.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:tragestuhl">
+      <path value="Extension.extension" />
+      <sliceName value="tragestuhl" />
+      <definition value="0 = Kein Tragestuhl notwendig&#xD;&#xA;1 = Tragestuhl notwendig" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:tragestuhl.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="tragestuhl" />
+    </element>
+    <element id="Extension.extension:tragestuhl.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+		<rules value="closed" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:tragestuhl.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:nicht_umsetzbar_aus_Rollstuhl">
+      <path value="Extension.extension" />
+      <sliceName value="nicht_umsetzbar_aus_Rollstuhl" />
+      <definition value="0 = Nicht umsetzbar aus Rollstuhl&#xD;&#xA;1 = Umsetzbar aus Rollstuhl" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:nicht_umsetzbar_aus_Rollstuhl.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="nicht_umsetzbar_aus_Rollstuhl" />
+    </element>
+    <element id="Extension.extension:nicht_umsetzbar_aus_Rollstuhl.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+		<rules value="closed" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:nicht_umsetzbar_aus_Rollstuhl.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:liegend">
+      <path value="Extension.extension" />
+      <sliceName value="liegend" />
+      <definition value="0 = nicht liegend&#xD;&#xA;1 = liegend" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:liegend.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="liegend" />
+    </element>
+    <element id="Extension.extension:liegend.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+		<rules value="closed" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:liegend.value[x]:valueBoolean">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueBoolean" />
+      <min value="1" />
+      <type>
+        <code value="boolean" />
+      </type>
+    </element>
+    <element id="Extension.extension:andere">
+      <path value="Extension.extension" />
+      <sliceName value="andere" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:andere.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="andere" />
+    </element>
+    <element id="Extension.extension:andere.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+		<rules value="closed" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:andere.value[x]:valueString">
+      <path value="Extension.extension.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Krankenbefoerderung_Befoerderungsmittel_med_technische_Ausstattung" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

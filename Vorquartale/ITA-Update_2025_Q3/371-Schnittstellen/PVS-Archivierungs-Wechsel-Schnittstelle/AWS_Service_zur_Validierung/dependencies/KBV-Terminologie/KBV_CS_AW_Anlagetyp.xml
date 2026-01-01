@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Anlagetyp"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Anlagetyp"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Anlagetypen"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="Roentgenbild"/>
+<display value="Roentgenbild"/>
+</concept>
+<concept>
+<code value="CT-Bild"/>
+<display value="CT-Bild"/>
+</concept>
+<concept>
+<code value="MRT-Bild"/>
+<display value="MRT-Bild"/>
+</concept>
+<concept>
+<code value="KV-Muster_1"/>
+<display value="KV-Muster 1"/>
+</concept>
+<concept>
+<code value="KV-Muster_2"/>
+<display value="KV-Muster 2"/>
+</concept>
+<concept>
+<code value="KV-Muster_3"/>
+<display value="KV-Muster 3"/>
+</concept>
+<concept>
+<code value="KV-Muster_4"/>
+<display value="KV-Muster 4"/>
+</concept>
+<concept>
+<code value="KV-Muster_5"/>
+<display value="KV-Muster 5"/>
+</concept>
+<concept>
+<code value="KV-Muster_6"/>
+<display value="KV-Muster 6"/>
+</concept>
+<concept>
+<code value="KV-Muster_7"/>
+<display value="KV-Muster 7"/>
+</concept>
+<concept>
+<code value="KV-Muster_8"/>
+<display value="KV-Muster 8"/>
+</concept>
+<concept>
+<code value="KV-Muster_8a"/>
+<display value="KV-Muster 8a"/>
+</concept>
+<concept>
+<code value="KV-Muster_9"/>
+<display value="KV-Muster 9"/>
+</concept>
+<concept>
+<code value="KV-Muster10"/>
+<display value="KV-Muster 10"/>
+</concept>
+<concept>
+<code value="KV-Muster10A"/>
+<display value="KV-Muster 10A"/>
+</concept>
+<concept>
+<code value="KV-Muster10L"/>
+<display value="KV-Muster 10L"/>
+</concept>
+<concept>
+<code value="KV-Muster10C"/>
+<display value="KV-Muster 10C"/>
+</concept>
+<concept>
+<code value="KV-Muster_11"/>
+<display value="KV-Muster 11"/>
+</concept>
+<concept>
+<code value="KV-Muster_12"/>
+<display value="KV-Muster 12"/>
+</concept>
+<concept>
+<code value="KV-Muster_13"/>
+<display value="KV-Muster 13"/>
+</concept>
+<concept>
+<code value="KV-Muster_14"/>
+<display value="KV-Muster 14"/>
+</concept>
+<concept>
+<code value="KV-Muster_15"/>
+<display value="KV-Muster 15"/>
+</concept>
+<concept>
+<code value="KV-Muster_18"/>
+<display value="KV-Muster 18"/>
+</concept>
+<concept>
+<code value="KV-Muster_19"/>
+<display value="KV-Muster 19"/>
+</concept>
+<concept>
+<code value="KV-Muster_20"/>
+<display value="KV-Muster 20"/>
+</concept>
+<concept>
+<code value="KV-Muster_21"/>
+<display value="KV-Muster 21"/>
+</concept>
+<concept>
+<code value="KV-Muster_22"/>
+<display value="KV-Muster 22"/>
+</concept>
+<concept>
+<code value="KV-Muster_25"/>
+<display value="KV-Muster 25"/>
+</concept>
+<concept>
+<code value="KV-Muster_26"/>
+<display value="KV-Muster 26"/>
+</concept>
+<concept>
+<code value="KV-Muster_27"/>
+<display value="KV-Muster 27"/>
+</concept>
+<concept>
+<code value="KV-Muster_28"/>
+<display value="KV-Muster 28"/>
+</concept>
+<concept>
+<code value="KV-Muster_30"/>
+<display value="KV-Muster 30"/>
+</concept>
+<concept>
+<code value="KV-Muster_36"/>
+<display value="KV-Muster 36"/>
+</concept>
+<concept>
+<code value="KV-Muster_39"/>
+<display value="KV-Muster 39"/>
+</concept>
+<concept>
+<code value="KV-Muster_40"/>
+<display value="KV-Muster 40"/>
+</concept>
+<concept>
+<code value="KV-Muster_50"/>
+<display value="KV-Muster 50"/>
+</concept>
+<concept>
+<code value="KV-Muster_51"/>
+<display value="KV-Muster 51"/>
+</concept>
+<concept>
+<code value="KV-Muster_52"/>
+<display value="KV-Muster 52"/>
+</concept>
+<concept>
+<code value="KV-Muster_53"/>
+<display value="KV-Muster 53"/>
+</concept>
+<concept>
+<code value="KV-Muster_55"/>
+<display value="KV-Muster 55"/>
+</concept>
+<concept>
+<code value="KV-Muster_56"/>
+<display value="KV-Muster 56"/>
+</concept>
+<concept>
+<code value="KV-Muster_61"/>
+<display value="KV-Muster 61"/>
+</concept>
+<concept>
+<code value="KV-Muster_63"/>
+<display value="KV-Muster 63"/>
+</concept>
+<concept>
+<code value="KV-Muster_70"/>
+<display value="KV-Muster 70"/>
+</concept>
+<concept>
+<code value="KV-Muster_70A"/>
+<display value="KV-Muster 70A"/>
+</concept>
+<concept>
+<code value="KV-Muster_PTV1"/>
+<display value="KV-Muster PTV1"/>
+</concept>
+<concept>
+<code value="KV-Muster_PTV2"/>
+<display value="KV-Muster PTV2"/>
+</concept>
+<concept>
+<code value="KV-Muster_PTV11"/>
+<display value="KV-Muster PTV11"/>
+</concept>
+<concept>
+<code value="KV-Muster_PTV12"/>
+<display value="KV-Muster PTV12"/>
+</concept>
+<concept>
+<code value="EDMP_DiabetesM1"/>
+<display value="EDMP DiabetesM1"/>
+</concept>
+<concept>
+<code value="EDMP_DiabetesM2"/>
+<display value="EDMP DiabetesM2"/>
+</concept>
+<concept>
+<code value="EDMP_KHK"/>
+<display value="EDMP KHK"/>
+</concept>
+<concept>
+<code value="EDMP_AsthmaBronchiale"/>
+<display value="EDMP AsthmaBronchiale"/>
+</concept>
+<concept>
+<code value="EDMP_COPD"/>
+<display value="EDMP COPD"/>
+</concept>
+<concept>
+<code value="EDMP_Brustkrebs"/>
+<display value="EDMP Brustkrebs"/>
+</concept>
+<concept>
+<code value="EDMP_Hernzinsuffizienz"/>
+<display value="EDMP Hernzinsuffizienz"/>
+</concept>
+<concept>
+<code value="EDoku_QSHGV"/>
+<display value="EDoku Hörgeräteversorgung"/>
+</concept>
+<concept>
+<code value="EDoku_QSHGVK"/>
+<display value="EDoku Hörgeräteversorgung für Kinder"/>
+</concept>
+<concept>
+<code value="EDoku_QSKE"/>
+<display value="EDoku Kapselendoskopie"/>
+</concept>
+<concept>
+<code value="EDoku_QSHLT"/>
+<display value="EDoku Holmium-Laser-Therapie"/>
+</concept>
+<concept>
+<code value="EDoku_QSMG"/>
+<display value="EDoku Kapselendoskopie"/>
+</concept>
+<concept>
+<code value="EDoku_sQS_PCI"/>
+<display value="EDoku sektorübergreifende Qualitätssicherung"/>
+</concept>
+<concept>
+<code value="EDoku_Dialyse"/>
+<display value="EDoku Dialyse"/>
+</concept>
+<concept>
+<code value="EDoku_eHKS"/>
+<display value="EDoku Hautkrebs-Screening"/>
+</concept>
+<concept>
+<code value="EDoku_FEK"/>
+<display value="EDoku Früherkennungskoloskopie"/>
+</concept>
+<concept>
+<code value="EDoku_HKS"/>
+<display value="EDoku Hautkrebs-Screening"/>
+</concept>
+<concept>
+<code value="EDoku_QSZZ"/>
+<display value="EDoku Zervix-Zytologie"/>
+</concept>
+<concept>
+<code value="PB_oKFE "/>
+<display value="Programmbeurteilungen der organisierten Krebsfrüherkennung"/>
+</concept>
+<concept>
+<code value="KVDT"/>
+<display value="KVDT Datei"/>
+</concept>
+<concept>
+<code value="KADT"/>
+<display value="KADT Datei"/>
+</concept>
+<concept>
+<code value="SADT"/>
+<display value="SADT Datei"/>
+</concept>
+<concept>
+<code value="LDT_Datei"/>
+<display value="LDT-Datei"/>
+</concept>
+<concept>
+<code value="GDT_Datei"/>
+<display value="GDT-Datei"/>
+</concept>
+<concept>
+<code value="ADT_Datei"/>
+<display value="ADT-Datei"/>
+</concept>
+<concept>
+<code value="Arztbrief"/>
+<display value="Arztbrief"/>
+</concept>
+<concept>
+<code value="PAD"/>
+<display value="PAD"/>
+</concept>
+<concept>
+<code value="PADNext"/>
+<display value="PADNext"/>
+</concept>
+<concept>
+<code value="DALE_UV"/>
+<display value="DALE_UV"/>
+</concept>
+<concept>
+<code value="Einwilligung"/>
+<display value="Einwilligung"/>
+</concept>
+<concept>
+<code value="DPE"/>
+<display value="Ablageort der Einwilligungen Organspende, Vorsorgevollmacht, Patientenverfügung und NFD auf eGK"/>
+</concept>
+<concept>
+<code value="NFD"/>
+<display value="Notfalldaten auf eGK"/>
+</concept>
+<concept>
+<code value="NDT"/>
+<display value="Notfalldatenträger"/>
+</concept>
+<concept>
+<code value="Rechnung"/>
+<display value="Rechnung"/>
+</concept>
+<concept>
+<code value="DGUV-Formular"/>
+<display value="DGUV-Formular"/>
+</concept>
+<concept>
+<code value="Behandlungsbaustein_Textvorlage"/>
+<display value="Behandlungsbaustein_Textvorlage"/>
+</concept>
+<concept>
+<code value="MIO_Impfpass"/>
+<display value="KBV MIO Bundle zum Impfpass KBV_PR_MIO_Vaccination_Bundle_Entry"/>
+</concept>
+<concept>
+<code value="MIO_ZAEB"/>
+<display value="KBV MIO Bundle zum zahnärtlichen Bonusheft KBV_PR_MIO_ZAEB_Bundle"/>
+</concept>
+<concept>
+<code value="KBV_EAU"/>
+<display value="KBV EAU Bundle zum elektronischen Arbeitsunfähigkeitsbescheinigung KBV_PR_EAU_Bundle"/>
+</concept>
+<concept>
+<code value="MIO_ERezept"/>
+<display value="KBV ERP Bundle zur elektronischen Arzneimittelverordnung KBV_PR_ERP_Bundle"/>
+</concept>
+<concept>
+<code value="VOS_Bundle_VoS_PVS"/>
+<display value="KBV VOS Bundle zur Übertragung der Arzneimittelverordnung 74_PR_VoS_Bundle_VoS_PVS"/>
+</concept>
+<concept>
+<code value="VOS_Bundle_PVS_VoS"/>
+<display value="KBV VOS Bundle zur Übertragung der  Arzneimittelverordnung 74_PR_VoS_Bundle_PVS_VoS"/>
+</concept>
+<concept>
+<code value="EPA_Dokument"/>
+<display value="Ein Dokument der elektronischen Patientenakte(EPA)"/>
+</concept>
+<concept>
+<code value="Sonstige_Dokumente"/>
+<display value="Sonstige Dokumente"/>
+</concept>
+<concept>
+<code value="Sonstige"/>
+<display value="Sonstige"/>
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Betriebsstaette" />
+	<display value="KBV_PR_AW_Betriebsstaette" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Report_Import" />
+	<display value="KBV_PR_AW_Report_Import" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Hersteller_Software" />
+	<display value="KBV_PR_AW_Hersteller_Software" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Mitarbeiter" />
+	<display value="KBV_PR_AW_Mitarbeiter" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Patient" />
+	<display value="KBV_PR_AW_Patient" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Provenienz" />
+	<display value="KBV_PR_AW_Provenienz" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Begegnung" />
+	<display value="KBV_PR_AW_Begegnung" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Hausbesuch" />
+	<display value="KBV_PR_AW_Hausbesuch" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Patientenverfuegung" />
+	<display value="KBV_PR_AW_Patientenverfuegung" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Notfallbenachrichtigter" />
+	<display value="KBV_PR_AW_Notfallbenachrichtigter" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Vorsorgevollmacht" />
+	<display value="KBV_PR_AW_Vorsorgevollmacht" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Observation_Raucherstatus" />
+	<display value="KBV_PR_AW_Observation_Raucherstatus" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Observation_Puls" />
+	<display value="KBV_PR_AW_Observation_Puls" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Observation_Koerpertemperatur" />
+	<display value="KBV_PR_AW_Observation_Koerpertemperatur" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Observation_Hueftumfang" />
+	<display value="KBV_PR_AW_Observation_Hueftumfang" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Observation_Blutdruck" />
+	<display value="KBV_PR_AW_Observation_Blutdruck" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Observation_Bauchumfang" />
+	<display value="KBV_PR_AW_Observation_Bauchumfang" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Observation_Schwangerschaft" />
+	<display value="KBV_PR_AW_Observation_Schwangerschaft" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Untersuchung" />
+	<display value="KBV_PR_AW_Untersuchung" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Unfall_Ort" />
+	<display value="KBV_PR_AW_Unfall_Ort" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Therapie" />
+	<display value="KBV_PR_AW_Therapie" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Selektivvertrag" />
+	<display value="KBV_PR_AW_Selektivvertrag" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Ringversuchszertifikat" />
+	<display value="KBV_PR_AW_Ringversuchszertifikat" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Termin" />
+	<display value="KBV_PR_AW_Termin" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Organisation" />
+	<display value="KBV_PR_AW_Organisation" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Observation_Befund" />
+	<display value="KBV_PR_AW_Observation_Befund" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Observation_Anamnese" />
+	<display value="KBV_PR_AW_Observation_Anamnese" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Behandlungsbaustein_Diagnose" />
+	<display value="KBV_PR_AW_Behandlungsbaustein_Diagnose" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Behandlungsbaustein_Definition" />
+	<display value="KBV_PR_AW_Behandlungsbaustein_Definition" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krebsfrueherkennung_Frauen_2020" />
+	<display value="KBV_PR_AW_Krebsfrueherkennung_Frauen_2020" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_2020" />
+	<display value="KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_2020" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Empfehlung" />
+	<display value="KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Empfehlung" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Diverse_2020" />
+	<display value="KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Diverse_2020" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krebsfrueherkennung_Frauen_HPV_HR_Testergebnis_2020" />
+	<display value="KBV_PR_AW_Krebsfrueherkennung_Frauen_HPV_HR_Testergebnis_2020" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krebsfrueherkennung_Frauen_Anamnese_Hormonanwendung_2020" />
+	<display value="KBV_PR_AW_Krebsfrueherkennung_Frauen_Anamnese_Hormonanwendung_2020" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Unfall" />
+	<display value="KBV_PR_AW_Unfall" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Notfall" />
+	<display value="KBV_PR_AW_Notfall" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Leistungsgenehmigung_Psychotherapie" />
+	<display value="KBV_PR_AW_Leistungsgenehmigung_Psychotherapie" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Leistungsanfrage_Heilmittel" />
+	<display value="KBV_PR_AW_Leistungsanfrage_Heilmittel" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Kur_Kurverlaengerung" />
+	<display value="KBV_PR_AW_Kur_Kurverlaengerung" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Kur" />
+	<display value="KBV_PR_AW_Kur" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Kur_Antrag" />
+	<display value="KBV_PR_AW_Kur_Antrag" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Kur_Kurgenehmigung" />
+	<display value="KBV_PR_AW_Kur_Kurgenehmigung" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krebsfrueherkennung_Maenner_Befund_Diverse" />
+	<display value="KBV_PR_AW_Krebsfrueherkennung_Maenner_Befund_Diverse" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krebsfrueherkennung_Maenner_Auftrag" />
+	<display value="KBV_PR_AW_Krebsfrueherkennung_Maenner_Auftrag" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krebsfrueherkennung_Maenner_Anamnese_Diverse" />
+	<display value="KBV_PR_AW_Krebsfrueherkennung_Maenner_Anamnese_Diverse" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krebsfrueherkennung_Maenner" />
+	<display value="KBV_PR_AW_Krebsfrueherkennung_Maenner" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krebsfrueherkennung_Frauen" />
+	<display value="KBV_PR_AW_Krebsfrueherkennung_Frauen" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Bezugsperson" />
+	<display value="KBV_PR_AW_Bezugsperson" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Behandlung_im_Auftrag_Ueberweisung" />
+	<display value="KBV_PR_AW_Behandlung_im_Auftrag_Ueberweisung" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Allergie" />
+	<display value="KBV_PR_AW_Allergie" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Verordnung_Hilfsmittel" />
+	<display value="KBV_PR_AW_Verordnung_Hilfsmittel" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Verordnung_Heilmittel" />
+	<display value="KBV_PR_AW_Verordnung_Heilmittel" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Verordnung_Arbeitsunfaehigkeit" />
+	<display value="KBV_PR_AW_Verordnung_Arbeitsunfaehigkeit" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Leistungsgenehmigung_Heilmittel" />
+	<display value="KBV_PR_AW_Leistungsgenehmigung_Heilmittel" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krankenbefoerderung_42019" />
+	<display value="KBV_PR_AW_Krankenbefoerderung_42019" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krankenbefoerderung" />
+	<display value="KBV_PR_AW_Krankenbefoerderung" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Dauermedikation" />
+	<display value="KBV_PR_AW_Dauermedikation" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Diagnose" />
+	<display value="KBV_PR_AW_Diagnose" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Behandlungsbaustein_Verordnung" />
+	<display value="KBV_PR_AW_Behandlungsbaustein_Verordnung" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Ambulante_Operation_General" />
+	<display value="KBV_PR_AW_Ambulante_Operation_General" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Ambulante_Operation" />
+	<display value="KBV_PR_AW_Ambulante_Operation" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krebsfrueherkennung_Frauen_HPV_HR_Impfung_2020" />
+	<display value="KBV_PR_AW_Krebsfrueherkennung_Frauen_HPV_HR_Impfung_2020" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Anforderung_Sprechstundenbedarf" />
+	<display value="KBV_PR_AW_Anforderung_Sprechstundenbedarf" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Abrechnung_vertragsaerztlich" />
+	<display value="KBV_PR_AW_Abrechnung_vertragsaerztlich" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Abrechnung_HzV_BesondereVersorgung_Selektiv" />
+	<display value="KBV_PR_AW_Abrechnung_HzV_BesondereVersorgung_Selektiv" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Person" />
+	<display value="KBV_PR_AW_Person" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Weiterbehandlung_durch" />
+	<display value="KBV_PR_AW_Weiterbehandlung_durch" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Verordnung_Arzneimittel" />
+	<display value="KBV_PR_AW_Verordnung_Arzneimittel" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Medikament" />
+	<display value="KBV_PR_AW_Medikament" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Behandelnder" />
+	<display value="KBV_PR_AW_Behandelnder" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Material_Sache" />
+	<display value="KBV_PR_AW_Material_Sache" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Leistungsanfrage_Psychotherapie" />
+	<display value="KBV_PR_AW_Leistungsanfrage_Psychotherapie" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Gesundheitspass" />
+	<display value="KBV_PR_AW_Gesundheitspass" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Genetische_Untersuchung" />
+	<display value="KBV_PR_AW_Genetische_Untersuchung" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Betriebsstaette_Ort" />
+	<display value="KBV_PR_AW_Betriebsstaette_Ort" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Behandlungsbaustein_Textvorlage" />
+	<display value="KBV_PR_AW_Behandlungsbaustein_Textvorlage" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Behandlungsbaustein_Sonstige" />
+	<display value="KBV_PR_AW_Behandlungsbaustein_Sonstige" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Behandlungsbaustein_OMIMCode" />
+	<display value="KBV_PR_AW_Behandlungsbaustein_OMIMCode" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Behandlungsbaustein_Leistungsziffern" />
+	<display value="KBV_PR_AW_Behandlungsbaustein_Leistungsziffern" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Hilfsmittel" />
+	<display value="KBV_PR_AW_Hilfsmittel" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krankenbefoerderung_Befoerderungsmittel" />
+	<display value="KBV_PR_AW_Krankenbefoerderung_Befoerderungsmittel" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krebsfrueherkennung_Frauen_Auftrag_2020" />
+	<display value="KBV_PR_AW_Krebsfrueherkennung_Frauen_Auftrag_2020" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Impfung" />
+	<display value="KBV_PR_AW_Impfung" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Abrechnung_privat" />
+	<display value="KBV_PR_AW_Abrechnung_privat" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_BehandelnderFunktion" />
+	<display value="KBV_PR_AW_BehandelnderFunktion" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Abrechnung_BG" />
+	<display value="KBV_PR_AW_Abrechnung_BG" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Ueberweisung_KH_Einweisung" />
+	<display value="KBV_PR_AW_Ueberweisung_KH_Einweisung" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Krankenversicherungsverhaeltnis" />
+	<display value="KBV_PR_AW_Krankenversicherungsverhaeltnis" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Stationaere_Behandlung" />
+	<display value="KBV_PR_AW_Stationaere_Behandlung" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Hausbesuch_Ort" />
+	<display value="KBV_PR_AW_Hausbesuch_Ort" />
+</concept>
+<concept>
+	<code value="KBV_PR_AW_Abrechnung_Vorlaeufig" />
+	<display value="KBV_PR_AW_Abrechnung_Vorlaeufig" />
+</concept>
+</CodeSystem>

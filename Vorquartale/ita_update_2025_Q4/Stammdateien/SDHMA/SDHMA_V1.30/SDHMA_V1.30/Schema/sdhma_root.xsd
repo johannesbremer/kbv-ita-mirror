@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:ehd="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/001" xmlns:sdhma="urn:ehd/sdhma/001" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<!-- ======================================================================= 
+	Einbinden der ehd-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="ehd_root_V1.40.xsd"/>
+	<xs:include schemaLocation="keytabs_V1.40.xsd"/>
+	<!-- ======================================================================= 
+	Einbinden der sdhma-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="sdhma_header.xsd"/>
+	<xs:import namespace="urn:ehd/sdhma/001" schemaLocation="sdhma_body.xsd"/>
+	<!-- ======================================================================= 
+	EHD-root
+	hier ist des ehd-root-Element definiert, welches "header" und "body" sowie "keytabs"
+	Elemente enthält.
+	======================================================================= -->
+	<xs:element name="ehd" type="sdhma_root_typ">
+		<xs:annotation>
+			<xs:documentation>root element ehd "eHealthData"</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="sdhma_body_typ">
+		<xs:annotation>
+			<xs:documentation>Stammdatei für die Zuordnung der Heilmittelvereinbarung</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="ehd_body_typ">
+				<xs:sequence>
+					<xs:element ref="sdhma:sdhma_stammdaten"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="sdhma_root_typ">
+		<xs:sequence>
+			<xs:element name="header" type="sdhma_header_typ">
+				<xs:annotation>
+					<xs:documentation>alle Metainformationen zu den Daten</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="body" type="sdhma_body_typ">
+				<xs:annotation>
+					<xs:documentation>die eigentlichen Daten</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="keytabs" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="ehd_version" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1.40"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<!-- ======================================================================= 
+	vom Basistyp: ehd_root_typ
+  abgeleiteter Typ: sdhma_root_typ
+	======================================================================= -->
+	<!-- ======================================================================= 
+	vom Basistyp: ehd_body_typ
+  abgeleiteter Typ: sdhma_body_typ 
+	======================================================================= -->
+</xs:schema>

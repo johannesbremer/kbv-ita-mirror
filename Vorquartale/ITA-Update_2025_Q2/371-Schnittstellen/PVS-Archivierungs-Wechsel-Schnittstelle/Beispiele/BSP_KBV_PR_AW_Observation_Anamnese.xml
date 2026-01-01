@@ -1,0 +1,32 @@
+<Observation xmlns="http://hl7.org/fhir">
+	<id value="3246"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-21T14:09:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Observation_Anamnese|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<status value="final"/>
+	<code>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp"/>
+			<code value="Anamnese"/>
+		</coding>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="35090-0"/>
+		</coding>
+	</code>
+	<subject>
+		<reference value="Patient/3181"/>
+	</subject>
+	<encounter>
+		<reference value="Encounter/3188"/>
+	</encounter>
+	<valueString value="Neigung z. Krampfanfällen unter Alkoholeinfluss."/>
+</Observation>

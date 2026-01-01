@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!--
+Projekt: KRWStamm
+  Stammdatei für Kodierregelwerk
+  Namespace: "urn:ehd/krw/001", Präfix: krw
+
+-->
+<xs:schema xmlns:ehd="urn:ehd/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/001" xmlns:krw="urn:ehd/krw/001" targetNamespace="urn:ehd/001" elementFormDefault="qualified" attributeFormDefault="unqualified" blockDefault="substitution">
+	<!-- =======================================================================
+	Einbinden der ehd-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="ehd_root_V1.40.xsd"/>
+	<!-- =======================================================================
+	Einbinden der krw-Bibliotheken
+	======================================================================= -->
+	<xs:include schemaLocation="krw_header.xsd"/>
+	<xs:import namespace="urn:ehd/krw/001" schemaLocation="krw_body.xsd"/>
+	<!-- =======================================================================
+	EHD-root
+	hier ist des ehd-root-Element definiert, welches "header" und "body" sowie "keytabs"
+	Elemente enthält.
+	======================================================================= -->
+	<xs:element name="ehd" type="krw_root_typ">
+		<xs:annotation>
+			<xs:documentation>root element ehd "eHealthData"</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<!-- =======================================================================
+	vom Basistyp: ehd_root_typ
+  abgeleiteter Typ: krw_root_typ
+	======================================================================= -->
+	<xs:complexType name="krw_root_typ">
+		<xs:complexContent>
+			<xs:restriction base="ehd_root_typ">
+				<xs:sequence>
+					<xs:element name="header" type="ehd:krw_header_typ">
+						<xs:annotation>
+							<xs:documentation>alle Metainformationen zu den Daten</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="body" type="krw_body_typ">
+						<xs:annotation>
+							<xs:documentation>die eigentlichen Daten</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<!-- =======================================================================
+	vom Basistyp: ehd_body_typ
+  abgeleiteter Typ: krw_body_typ
+	======================================================================= -->
+	<xs:complexType name="krw_body_typ">
+		<xs:annotation>
+			<xs:documentation>
+  Stammdatei für Kodierregelwerk
+        </xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="ehd_body_typ">
+				<xs:sequence>
+					<xs:element ref="krw:kodierregel_liste"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

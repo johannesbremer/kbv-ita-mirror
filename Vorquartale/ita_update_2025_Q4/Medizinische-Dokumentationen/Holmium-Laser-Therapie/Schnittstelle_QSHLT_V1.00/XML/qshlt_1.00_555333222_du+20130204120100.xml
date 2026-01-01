@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<ehd:ehd xsi:schemaLocation="urn:ehd/001 ../Schema/qshlt_root_V1.00.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:qshlt="urn:ehd/qshlt/001" xmlns="urn:ehd/qshlt/001">
+	<ehd:header>
+		<ehd:id RT="555333222" EX="fb8277f1-fc63-4d1b-ac43-d278a1fd3f84"/>
+		<ehd:document_type_cd V="QSHLT"/>
+		<ehd:origination_dttm V="2014-08-13"/>
+		<ehd:document_relationship>
+			<ehd:document_relationship.type_cd V="RPLC"/>
+			<ehd:related_document>
+				<ehd:id EX="a66889f1-fc63-4d1b-ac43-d278a1fdabcd" RT="555333222"/>
+			</ehd:related_document>
+		</ehd:document_relationship>
+		<ehd:provider>
+			<ehd:person>
+				<ehd:id EX="555333222" RT="1.2.276.0.76.4.16"/>
+			</ehd:person>
+			<ehd:organization>
+				<ehd:id EX="123456789" RT="1.2.276.0.76.4.17"/>
+			</ehd:organization>
+		</ehd:provider>
+		<ehd:interface>
+			<ehd:id EX="QSHLT" RT="1.2.276.0.76.5.109"/>
+			<ehd:interface.nm V="QS Holmium-Laser-Therapie"/>
+			<ehd:version V="1.00"/>
+		</ehd:interface>
+		<ehd:local_header>
+			<sciphox:sciphox-ssu xmlns:sciphox="urn::sciphox-org/sciphox" country="de" version="v1">
+				<sciphox:Software>
+					<sciphox:id EX="X/59/0801/36/103" RT="KBV-Prüfnummer"/>
+				</sciphox:Software>
+			</sciphox:sciphox-ssu>
+		</ehd:local_header>
+	</ehd:header>
+	<ehd:body>
+		<qshlt:qshlt_dokumentation>
+			<anzahl_ersteingriffe V="10"/>
+			<anzahl_folgeeingriffe V="10"/>
+			<anzahl_eingriffe_mit_absoluter_op_indikation V="5"/>
+			<anzahl_eingriffe_mit_relativer_op_indikation V="15"/>
+			<anzahl_prostatavolumen_0_24 V="2"/>
+			<anzahl_prostatavolumen_25_49 V="3"/>
+			<anzahl_prostatavolumen_50_69 V="15"/>
+			<anzahl_prostatavolumen_70 V="0"/>
+			<anzahl_harnstrahlmessung_0 V="3"/>
+			<anzahl_harnstrahlmessung_0_9 V="2"/>
+			<anzahl_harnstrahlmessung_10_15 V="15"/>
+			<anzahl_harnstrahlmessung_15 V="5"/>
+			<anzahl_blasenverletzungen V="3"/>
+			<anzahl_verletzung_harnleiterostien V="2"/>
+			<anzahl_einschwemmung V="1"/>
+			<anzahl_andere_intraoperative_komplikationen V="0"/>
+			<anzahl_umstiege_turp V="3"/>
+			<anzahl_umstiege_konventionelle_op V="5"/>
+			<anzahl_interventionspflichtige_nachblutungen_ohne_transfusion V="1"/>
+			<anzahl_interventionspflichtige_nachblutungen_mit_transfusion V="2"/>
+			<anzahl_andere_interventionspflichtige_fruehkomplikationen V="0"/>
+			<anzahl_operationszeit_0_59 V="4"/>
+			<anzahl_operationszeit_60_89 V="15"/>
+			<anzahl_operationszeit_90 V="1"/>
+			<anzahl_resektionsgewicht_0 V="0"/>
+			<anzahl_resektionsgewicht_0_9 V="4"/>
+			<anzahl_resektionsgewicht_10_19 V="6"/>
+			<anzahl_resektionsgewicht_20_39 V="10"/>
+			<anzahl_resektionsgewicht_40 V="0"/>
+			<anzahl_spontanmiktion V="10"/>
+		</qshlt:qshlt_dokumentation>
+	</ehd:body>
+</ehd:ehd>

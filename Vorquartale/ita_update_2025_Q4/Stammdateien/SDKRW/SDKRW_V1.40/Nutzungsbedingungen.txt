@@ -1,0 +1,3 @@
+COPYRIGHT-HINWEIS zur Nutzung der "SDKRW". Dieser Sachverhalt wird mit der nächsten Schema-Änderung der SDKRW in die SDKRW übernommen. Bis zu diesem Zeitpunkt überschreibt dieser COPYRIGHT-HINWEIS den Hinweis in der Stammdatei im Element ../interface/description/@V, da ansonsten eine kurzfristige Schemaänderung notwendig wäre.  
+
+KRW, KBV xml-Stammdatei - COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, welche Software für den Bereich der Kodierunterstützung herstellen, sowie den Kassenärztlichen Vereinigungen von der KBV zur Nutzung zur Verfügung gestellt. Für alle sonstigen Nutzungszwecke wende man sich über den Servicedesk der KBV (EMail: KBVServiceDesk@KBV.de, Telefon: 030 / 4005-2121) an das Dezernat VuG der KBV.

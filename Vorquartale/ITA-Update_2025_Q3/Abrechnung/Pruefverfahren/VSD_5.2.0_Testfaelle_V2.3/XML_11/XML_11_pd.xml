@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<VSD:UC_PersoenlicheVersichertendatenXML CDM_VERSION="5.2.0" xmlns:VSD="http://ws.gematik.de/fa/vsdm/vsd/v5.2"> 
+	<VSD:Versicherter>
+	<VSD:Versicherten_ID>F070385888</VSD:Versicherten_ID>
+		<VSD:Person>
+			<VSD:Geburtsdatum>19850307</VSD:Geburtsdatum>
+			<VSD:Vorname>Herbert</VSD:Vorname>
+			<VSD:Nachname>Futura</VSD:Nachname>
+			<VSD:Geschlecht>M</VSD:Geschlecht>
+			<VSD:StrassenAdresse>
+				<VSD:Postleitzahl>16515</VSD:Postleitzahl>
+				<VSD:Ort>Oranienburg</VSD:Ort>
+				<VSD:Land>
+					<VSD:Wohnsitzlaendercode>D</VSD:Wohnsitzlaendercode>
+				</VSD:Land>
+				<VSD:Strasse>Poststraße</VSD:Strasse>
+				<VSD:Hausnummer>12</VSD:Hausnummer>
+			</VSD:StrassenAdresse>
+		</VSD:Person>
+	</VSD:Versicherter>
+</VSD:UC_PersoenlicheVersichertendatenXML>

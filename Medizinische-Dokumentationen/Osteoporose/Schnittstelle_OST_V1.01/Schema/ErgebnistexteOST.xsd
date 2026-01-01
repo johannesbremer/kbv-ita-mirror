@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) von Kassenärztliche Bundesvereinigung (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<xs:schema xmlns="urn::sciphox-org/sciphox" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn::sciphox-org/sciphox" elementFormDefault="qualified">
+	<!-- Schema -->
+	<xs:simpleType name="Einschreibungwegen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="KHK"/>
+			<xs:enumeration value="Diabetes mellitus Typ 1"/>
+			<xs:enumeration value="Diabetes mellitus Typ 2"/>
+			<xs:enumeration value="Asthma bronchiale"/>
+			<xs:enumeration value="COPD"/>
+			<xs:enumeration value="Chronische Herzinsuffizienz"/>
+			<xs:enumeration value="Depression"/>
+			<xs:enumeration value="chronischer Rückenschmerz"/>
+			<xs:enumeration value="Osteoporose"/>
+			<xs:enumeration value="rheumatoide Arthritis"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Begleiterkrankungen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Keine der genannten Erkrankungen"/>
+			<xs:enumeration value="Arterielle Hypertonie"/>
+			<xs:enumeration value="Fettstoffwechselstörung"/>
+			<xs:enumeration value="Diabetes mellitus"/>
+			<xs:enumeration value="KHK"/>
+			<xs:enumeration value="AVK"/>
+			<xs:enumeration value="Chronische Herzinsuffizienz"/>
+			<xs:enumeration value="Asthma bronchiale"/>
+			<xs:enumeration value="COPD"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Raucher">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OsteoporosebedingteFraktur">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NeuaufgetreteneosteoporosebedingteFraktur">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="LokalisationderosteoporosebedingtenFraktur">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Proximale Femurfraktur"/>
+			<xs:enumeration value="Singuläre Wirbelkörperfraktur"/>
+			<xs:enumeration value="Multiple Wirbelkörperfrakturen"/>
+			<xs:enumeration value="Beckenfraktur"/>
+			<xs:enumeration value="Humerusfraktur"/>
+			<xs:enumeration value="Radiusfraktur"/>
+			<xs:enumeration value="Andere"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ErhoehtesSturzrisiko">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Sturzprophylaxemassnahmeempfohlen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RegelmaeßigeskoerperlichesTraining">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="Nicht möglich"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AktuelleosteoporosespezifischeMedikation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Bisphosphonate"/>
+			<xs:enumeration value="Denosumab"/>
+			<xs:enumeration value="Raloxifen"/>
+			<xs:enumeration value="Teriparatid"/>
+			<xs:enumeration value="Keine osteoporosespezifische Medikation"/>
+			<xs:enumeration value="Patientin mit Hormonersatztherapie"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DauerderosteoporosespezifischenMedikation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Vor dem abgeschlossenen 3. Jahr abgebrochen"/>
+			<xs:enumeration value="Nach drei Jahren abgeschlossen"/>
+ 			<xs:enumeration value="Aktuell andauernd, seit weniger als drei Jahren"/>
+			<xs:enumeration value="Aktuell andauernd, Fortführung über drei Jahre hinaus"/>
+			<xs:enumeration value="Keine osteoporosespezifische Medikation durchgeführt"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SchulungbereitsvorEinschreibungindasDMPwahrgenommen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SchulungempfohlenbeiaktuellerDokumentation">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EmpfohleneSchulungwahrgenommen">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Ja"/>
+			<xs:enumeration value="Nein"/>
+			<xs:enumeration value="War aktuell nicht möglich"/>
+			<xs:enumeration value="Bei letzter Dokumentation keine Schulung empfohlen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VomPatientgewuenschteInfo">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Tabakverzicht"/>
+			<xs:enumeration value="Ernährungsberatung"/>
+			<xs:enumeration value="Körperliches Training"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Dokumentationsintervall">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Quartalsweise"/>
+			<xs:enumeration value="Jedes zweite Quartal"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

@@ -1,0 +1,81 @@
+{
+  "resourceType": "CodeSystem",
+  "status": "draft",
+  "content": "complete",
+  "name": "KBV_CS_VoS_StartUp_Context",
+  "id": "KBV-CS-VoS-StartUp-Context",
+  "description": "Aufgerufene Funktionen.",
+  "version": "2.2.0",
+  "url": "https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_StartUp_Context",
+  "concept": [
+    {
+      "code": "1",
+      "display": "Ohne Aufrufkontext"
+    },
+    {
+      "code": "2",
+      "display": "Erstverordnung"
+    },
+    {
+      "code": "3",
+      "display": "Wiederverordnung"
+    },
+    {
+      "code": "4",
+      "display": "Administration"
+    },
+    {
+      "code": "5",
+      "display": "Arzneimittelrecherche ohne Patientenkontext"
+    },
+    {
+      "code": "6",
+      "display": "Arzneimittelrecherche mit Patientenkontext"
+    },
+    {
+      "code": "7",
+      "display": "Medikationsplan für Patienten neu erstellen"
+    },
+    {
+      "code": "8",
+      "display": "Medikationsplan auf Basis des Barcodes auf dem Medikationsplan aktualisieren"
+    },
+    {
+      "code": "9",
+      "display": "Medikationsplan auf Basis eines bestehenden strukturierten Medikationsplans aktualisieren"
+    },
+    {
+      "code": "10",
+      "display": "Statistiken ausführen"
+    },
+    {
+      "code": "11",
+      "display": "Hausapotheke"
+    },
+    {
+      "code": "12",
+      "display": "Storno eRezept"
+    },
+    {
+      "code": "13",
+      "display": "Stapelverordnung"
+    }
+  ],
+  "experimental": false,
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "contact": [
+    {
+      "telecom": [
+        {
+          "system": "other",
+          "value": "http://www.kbv.de"
+        }
+      ]
+    }
+  ],
+  "copyright": "Copyright © [2021], Kassenärztliche Bundesvereinigung (KBV). All rights reserved.",
+  "caseSensitive": true,
+  "valueSet": "https://fhir.kbv.de/ValueSet/KBV_VS_VoS_StartUp_Context",
+  "count": 13
+}

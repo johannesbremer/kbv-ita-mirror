@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<VSD:UC_PersoenlicheVersichertendatenXML CDM_VERSION="5.2.0" xmlns:VSD="http://ws.gematik.de/fa/vsdm/vsd/v5.2"> 
+	<VSD:Versicherter>
+		<VSD:Versicherten_ID>K030182229</VSD:Versicherten_ID>
+		<VSD:Person>
+			<VSD:Geburtsdatum>19820103</VSD:Geburtsdatum>
+			<VSD:Vorname>Eva</VSD:Vorname>
+			<VSD:Nachname>Kluge</VSD:Nachname>
+			<VSD:Geschlecht>W</VSD:Geschlecht>
+			<VSD:Titel>Prof. Dr. Dr. med</VSD:Titel>
+			<VSD:StrassenAdresse>
+				<VSD:Postleitzahl>50999</VSD:Postleitzahl>
+				<VSD:Ort>Köln</VSD:Ort>
+				<VSD:Land>
+					<VSD:Wohnsitzlaendercode>D</VSD:Wohnsitzlaendercode>
+				</VSD:Land>
+				<VSD:Strasse>Pflasterhofweg</VSD:Strasse>
+				<VSD:Hausnummer>111B</VSD:Hausnummer>
+			</VSD:StrassenAdresse>
+		</VSD:Person>
+	</VSD:Versicherter>
+</VSD:UC_PersoenlicheVersichertendatenXML>

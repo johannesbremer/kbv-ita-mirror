@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<levelone xmlns="urn::hl7-org/cda" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn::hl7-org/cda file:///J:/ITA/Update/Softwarehaeuser/Ankuendigung/in_Arbeit/eHKS/Schnittstelle_eHKS_V.2.33/Schema/eHKS_ND.xsd">
+	<clinical_document_header>
+		<id EX="2" RT="012568799"/>
+		<document_type_cd V="EHKS_ND_EV" S="1.2.276.0.76.5.100" SN="KBV" DN="eDokumentation Hautkrebs-Screening - Nicht-Dermatologe - Ergänzende Verträge"/>
+		<service_tmr V="2025-07-01"/>
+		<origination_dttm V="2025-07-01"/>
+		<provider>
+			<provider.type_cd V="PRF"/>
+			<person>
+				<id EX="012568799" RT="BSNR"/>
+				<id EX="012222299" RT="LANR"/>
+			</person>
+		</provider>
+		<patient>
+			<patient.type_cd V="PATSBJ"/>
+			<person>
+				<id EX="14" RT="012568799"/>
+			</person>
+			<administrative_gender_cd V="F" S="2.16.840.1.113883.5.1"/>
+			<local_header ignore="all" descriptor="sciphox">
+				<sciphox:sciphox-ssu type="insurance" country="de" version="v3">
+					<sciphox:GesetzlicheKrankenversicherung>
+						<sciphox:Kostentraegerbezeichnung V="AOK Rheinland"/>
+						<sciphox:Kostentraegerkennung V="101389682"/>
+					</sciphox:GesetzlicheKrankenversicherung>
+				</sciphox:sciphox-ssu>
+			</local_header>
+		</patient>
+		<local_header ignore="all" descriptor="sciphox">
+			<sciphox:sciphox-ssu type="software" country="de" version="v1">
+				<sciphox:Software>
+					<sciphox:id EX="Y/53/0901/36/123" RT="KBV-Prüfnummer"/>
+					<sciphox:SoftwareName V="ABC Software"/>
+					<sciphox:SoftwareVersion V="1.3"/>
+					<sciphox:SoftwareTyp V="PVS"/>
+					<sciphox:Kontakt>
+						<sciphox:Kontakttyp V="SOFTV" S="1.2.276.0.76.3.1.1.5.2.3" DN="Softwareverantwortlicher"/>
+						<organization.nm V="ABC Softwarehaus"/>
+						<addr>
+							<STR V="Ottostr."/>
+							<HNR V="1"/>
+							<ZIP V="50859"/>
+							<CTY V="Köln"/>
+						</addr>
+						<telecom V="tel:(0221)4449-0" USE="WP"/>
+						<telecom V="tel:(0221)4449-1" USE="WP"/>
+					</sciphox:Kontakt>
+					<sciphox:Kontakt>
+						<sciphox:Kontakttyp V="REGS" S="1.2.276.0.76.3.1.1.5.2.3" DN="RegionalerSystembetreuer"/>
+						<organization.nm V="ABC Consulting"/>
+						<addr>
+							<STR V="Ottostr."/>
+							<HNR V="1"/>
+							<ZIP V="50859"/>
+							<CTY V="Köln"/>
+						</addr>
+						<telecom V="tel:(0221)4449-0" USE="WP"/>
+					</sciphox:Kontakt>
+					<sciphox:Software>
+						<sciphox:SoftwareName V="XSD_EHKS"/>
+						<sciphox:SoftwareVersion V="2.33"/>
+						<sciphox:SoftwareTyp V="XSD"/>
+						<sciphox:Software>
+							<sciphox:SoftwareName V="XPM_EHKS"/>
+							<sciphox:SoftwareVersion V="2.31"/>
+							<sciphox:SoftwareTyp V="XPM"/>
+						</sciphox:Software>
+					</sciphox:Software>
+				</sciphox:Software>
+			</sciphox:sciphox-ssu>
+		</local_header>
+	</clinical_document_header>
+	<!-- *********************************************** body *********************************************** -->
+	<body>
+		<section>
+			<!-- ***********************************************optionaler Abschnitt ohne Name - Altersangabe *********************************************** -->
+			<paragraph>
+				<caption>
+					<caption_cd DN="ohne Name"/>
+				</caption>
+				<content>
+					<local_markup ignore="all" descriptor="sciphox">
+						<sciphox:sciphox-ssu type="observation" country="de" version="v1">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Alter"/>
+									<sciphox:Ergebniswert V="36" U="Jahre"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+			<!-- *********************************************** Verdachtsdiagnose *********************************************** -->
+			<paragraph>
+				<caption>
+					<caption_cd DN="Verdachtsdiagnose"/>
+				</caption>
+				<content>
+					<local_markup ignore="all" descriptor="sciphox">
+						<sciphox:sciphox-ssu type="observation" country="de" version="v1">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="VerdachtsdiagnoseND"/>
+									<sciphox:Ergebnistext V="Ja"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Malignes Melanom"/>
+									<sciphox:Ergebnistext V="Ja"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Basalzellkarzinom"/>
+									<sciphox:Ergebnistext V="Ja"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Spinozelluläres Karzinom"/>
+									<sciphox:Ergebnistext V="Nein"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="anderer Hautkrebs"/>
+									<sciphox:Ergebnistext V="Ja"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="sonstiger dermatologisch abklärungsbedürftiger Befund"/>
+									<sciphox:Ergebnistext V="Ja"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Screening-Teilnehmer wird an einen Dermatologen überwiesen"/>
+									<sciphox:Ergebnistext V="Ja"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+			<!-- *********************************************** Gesundheitsuntersuchung *********************************************** -->
+			<paragraph>
+				<caption>
+					<caption_cd DN="Gesundheitsuntersuchung"/>
+				</caption>
+				<content>
+					<local_markup ignore="all" descriptor="sciphox">
+						<sciphox:sciphox-ssu type="observation" country="de" version="v1">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Gleichzeitig Gesundheitsuntersuchung durchgeführt"/>
+									<sciphox:Ergebnistext V="Ja"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+		</section>
+	</body>
+</levelone>

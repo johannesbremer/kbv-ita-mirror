@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+  
+<keytabs xmlns="urn:ehd/001">
+  <keytab SV="1.02" SN="S_GOS_KV_MS_VBEREICH" S="1.2.276.0.76.3.1.1.5.2.31">
+    <key V="011" DN="Hausarzt" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="012" DN="Facharzt" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="013" DN="Ermächtigter Arzt" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="021" DN="Hausarzt" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="022" DN="Facharzt" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="2001" DN="Hausarzt" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="2002" DN="Facharzt" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="2003" DN="Psychologe" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="2004" DN="Krankenhaus" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="2005" DN="Praxisnetz" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="511" DN="Hausarzt" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="512" DN="Facharzt" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88100" DN="RLV/QZV (ohne § 87b Abs. 2 AGR)" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="88200" DN="RLV/QZV (nur § 87b Abs. 2 AGR)" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9301" DN="Hausarzt" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9302" DN="Facharzt" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+    <key V="9303" DN="Haus-/ Facharzt" S="1.2.276.0.76.3.1.1.5.2.31" SV="1.02">
+      <fkey V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" R="KV"/></key>
+  </keytab>
+</keytabs>
+

@@ -1,0 +1,1281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_2020" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Krebsfrueherkennung_Frauen_2020" />
+  <status value="active" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV).All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="cda" />
+    <uri value="http://hl7.org/v3/cda" />
+    <name value="CDA (R2)" />
+  </mapping>
+  <mapping>
+    <identity value="fhirdocumentreference" />
+    <uri value="http://hl7.org/fhir/documentreference" />
+    <name value="FHIR DocumentReference" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Composition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Composition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Composition">
+      <path value="Composition" />
+      <short value="Krebsfrueherkennung Frauen" />
+      <definition value="Diese Ressource fasst alle Teilkomponenten einer Krebsfüherkennung für Frauen zusammen. Siehe KBV Muster/Formular 39 Gültigkeit ab 01/2020" />
+    </element>
+    <element id="Composition.id">
+      <path value="Composition.id" />
+      <min value="1" />
+    </element>
+    <element id="Composition.meta">
+      <path value="Composition.meta" />
+      <min value="1" />
+    </element>
+    <element id="Composition.meta.versionId">
+      <path value="Composition.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Composition.meta.lastUpdated">
+      <path value="Composition.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Composition.meta.profile">
+      <path value="Composition.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+        <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_2020|1.2.0" />
+    </element>
+    <element id="Composition.text">
+      <path value="Composition.text" />
+      <min value="1" />
+    </element>
+    <element id="Composition.identifier">
+      <path value="Composition.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.status">
+      <path value="Composition.status" />
+      <definition value="Der Status dieser Ressource ist immer final." />
+      <fixedCode value="final" />
+    </element>
+    <element id="Composition.type">
+      <path value="Composition.type" />
+      <short value="Klassifizierung der Ressource" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieser Ressource verwendet." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.type.coding">
+      <path value="Composition.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.type.coding.system">
+      <path value="Composition.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.type.coding.version">
+      <path value="Composition.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Composition.type.coding.code">
+      <path value="Composition.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="Krebsfrueherkennung_Frauen_2020" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.type.coding.display">
+      <path value="Composition.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.type.coding.userSelected">
+      <path value="Composition.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.type.text">
+      <path value="Composition.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.category">
+      <path value="Composition.category" />
+      <max value="0" />
+    </element>
+    <element id="Composition.subject">
+      <path value="Composition.subject" />
+      <label value="TR01" />
+      <short value="Patientenbezug" />
+      <definition value="Patientenbezug" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.subject.reference">
+      <path value="Composition.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="Composition.subject.type">
+      <path value="Composition.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.subject.identifier">
+      <path value="Composition.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.subject.display">
+      <path value="Composition.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.encounter">
+      <path value="Composition.encounter" />
+      <short value="Kontext" />
+      <definition value="Dieses Attribut referenziert das Profil KBV_PR_AW_Begegnung." />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Begegnung|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.encounter.reference">
+      <path value="Composition.encounter.reference" />
+      <min value="1" />
+    </element>
+    <element id="Composition.encounter.type">
+      <path value="Composition.encounter.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.encounter.identifier">
+      <path value="Composition.encounter.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.encounter.display">
+      <path value="Composition.encounter.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.date">
+      <path value="Composition.date" />
+      <short value="Erstellzeitpunkt" />
+      <definition value="Dies ist ein technisches Attribut und ist für diese Schnittstelle nicht notwendig. Anzugeben ist der Erstellzeitpunkt der Composition." />
+    </element>
+    <element id="Composition.author">
+      <path value="Composition.author" />
+      <short value="Referenz zum Behandelnden" />
+      <definition value="Dies ist ein technisches Attribut und ist für diese Schnittstelle nicht notwendig." />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandelnder|1.2.0" />
+      </type>
+    </element>
+    <element id="Composition.author.reference">
+      <path value="Composition.author.reference" />
+      <max value="0" />
+    </element>
+    <element id="Composition.author.type">
+      <path value="Composition.author.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.author.identifier">
+      <path value="Composition.author.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.author.display">
+      <path value="Composition.author.display" />
+      <min value="1" />
+      <fixedString value="System" />
+    </element>
+    <element id="Composition.title">
+      <path value="Composition.title" />
+      <short value="Krebsfrueherkennung Frauen 2020" />
+      <definition value="Dies ist ein technisches Attribut und ist für diese Schnittstelle nicht notwendig." />
+      <fixedString value="Krebsfrueherkennung_Frauen_2020" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.confidentiality">
+      <path value="Composition.confidentiality" />
+      <max value="0" />
+    </element>
+    <element id="Composition.attester">
+      <path value="Composition.attester" />
+      <max value="0" />
+    </element>
+    <element id="Composition.custodian">
+      <path value="Composition.custodian" />
+      <max value="0" />
+    </element>
+    <element id="Composition.relatesTo">
+      <path value="Composition.relatesTo" />
+      <max value="0" />
+    </element>
+    <element id="Composition.event">
+      <path value="Composition.event" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section">
+      <path value="Composition.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung">
+      <path value="Composition.section" />
+      <sliceName value="anamnese_Hormonanwendung" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.title">
+      <path value="Composition.section.title" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.code">
+      <path value="Composition.section.code" />
+      <short value="Klassifizierung des Slices" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Slices verwendet." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.code.coding.version">
+      <path value="Composition.section.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Anamnese_Hormonanwendung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.code.coding.userSelected">
+      <path value="Composition.section.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.code.text">
+      <path value="Composition.section.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.author">
+      <path value="Composition.section.author" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.text">
+      <path value="Composition.section.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.mode">
+      <path value="Composition.section.mode" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.orderedBy">
+      <path value="Composition.section.orderedBy" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.entry">
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_Anamnese_Hormonanwendung_2020|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.entry.type">
+      <path value="Composition.section.entry.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.entry.identifier">
+      <path value="Composition.section.entry.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.entry.display">
+      <path value="Composition.section.entry.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.emptyReason">
+      <path value="Composition.section.emptyReason" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Hormonanwendung.section">
+      <path value="Composition.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse">
+      <path value="Composition.section" />
+      <sliceName value="anamnese_Diverse" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.title">
+      <path value="Composition.section.title" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.code">
+      <path value="Composition.section.code" />
+      <short value="Klassifizierung des Slices" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Slices verwendet." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.code.coding.version">
+      <path value="Composition.section.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Anamnese_Diverse" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.code.coding.userSelected">
+      <path value="Composition.section.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.code.text">
+      <path value="Composition.section.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.author">
+      <path value="Composition.section.author" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.text">
+      <path value="Composition.section.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.mode">
+      <path value="Composition.section.mode" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.orderedBy">
+      <path value="Composition.section.orderedBy" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.entry">
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_Anamnese_Diverse|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.entry.type">
+      <path value="Composition.section.entry.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.entry.identifier">
+      <path value="Composition.section.entry.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.entry.display">
+      <path value="Composition.section.entry.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.emptyReason">
+      <path value="Composition.section.emptyReason" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:anamnese_Diverse.section">
+      <path value="Composition.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag">
+      <path value="Composition.section" />
+      <sliceName value="auftrag" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:auftrag.title">
+      <path value="Composition.section.title" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag.code">
+      <path value="Composition.section.code" />
+      <short value="Klassifizierung des Slices" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:auftrag.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:auftrag.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:auftrag.code.coding.version">
+      <path value="Composition.section.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Auftrag" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:auftrag.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag.code.coding.userSelected">
+      <path value="Composition.section.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag.code.text">
+      <path value="Composition.section.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag.author">
+      <path value="Composition.section.author" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag.text">
+      <path value="Composition.section.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag.mode">
+      <path value="Composition.section.mode" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag.orderedBy">
+      <path value="Composition.section.orderedBy" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag.entry">
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_Auftrag_2020|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:auftrag.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:auftrag.entry.type">
+      <path value="Composition.section.entry.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag.entry.identifier">
+      <path value="Composition.section.entry.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag.entry.display">
+      <path value="Composition.section.entry.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag.emptyReason">
+      <path value="Composition.section.emptyReason" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:auftrag.section">
+      <path value="Composition.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose">
+      <path value="Composition.section" />
+      <sliceName value="gynaekologische_Diagnose" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.title">
+      <path value="Composition.section.title" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.code">
+      <path value="Composition.section.code" />
+      <short value="Klassifizierung des Slices" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Slices verwendet." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.code.coding.version">
+      <path value="Composition.section.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Gynaekologische_Diagnose" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.code.coding.userSelected">
+      <path value="Composition.section.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.code.text">
+      <path value="Composition.section.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.author">
+      <path value="Composition.section.author" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.text">
+      <path value="Composition.section.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.mode">
+      <path value="Composition.section.mode" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.orderedBy">
+      <path value="Composition.section.orderedBy" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.entry">
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_Gynaekologische_Diagnose|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.entry.type">
+      <path value="Composition.section.entry.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.entry.identifier">
+      <path value="Composition.section.entry.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.entry.display">
+      <path value="Composition.section.entry.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.emptyReason">
+      <path value="Composition.section.emptyReason" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Diagnose.section">
+      <path value="Composition.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation">
+      <path value="Composition.section" />
+      <sliceName value="gynaekologische_Operation" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.title">
+      <path value="Composition.section.title" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.code">
+      <path value="Composition.section.code" />
+      <short value="Klassifizierung des Slices" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Slices verwendet." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.code.coding.version">
+      <path value="Composition.section.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Gynaekologische_Operation" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.code.coding.userSelected">
+      <path value="Composition.section.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.code.text">
+      <path value="Composition.section.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.author">
+      <path value="Composition.section.author" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.text">
+      <path value="Composition.section.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.mode">
+      <path value="Composition.section.mode" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.orderedBy">
+      <path value="Composition.section.orderedBy" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.entry">
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_Gynaekologische_Operation|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.entry.type">
+      <path value="Composition.section.entry.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.entry.identifier">
+      <path value="Composition.section.entry.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.entry.display">
+      <path value="Composition.section.entry.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.emptyReason">
+      <path value="Composition.section.emptyReason" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:gynaekologische_Operation.section">
+      <path value="Composition.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund">
+      <path value="Composition.section" />
+      <sliceName value="zytologischer_Befund" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.title">
+      <path value="Composition.section.title" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.code">
+      <path value="Composition.section.code" />
+      <short value="Klassifizierung des Slices" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Slices verwendet." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.code.coding.version">
+      <path value="Composition.section.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Zytologischer_Befund" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.code.coding.userSelected">
+      <path value="Composition.section.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.code.text">
+      <path value="Composition.section.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.author">
+      <path value="Composition.section.author" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.text">
+      <path value="Composition.section.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.mode">
+      <path value="Composition.section.mode" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.orderedBy">
+      <path value="Composition.section.orderedBy" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.entry">
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.entry.type">
+      <path value="Composition.section.entry.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.entry.identifier">
+      <path value="Composition.section.entry.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.entry.display">
+      <path value="Composition.section.entry.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.emptyReason">
+      <path value="Composition.section.emptyReason" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section">
+      <path value="Composition.section.section" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.title">
+      <path value="Composition.section.section.title" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.code">
+      <path value="Composition.section.section.code" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.code.coding">
+      <path value="Composition.section.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.code.coding.version">
+      <path value="Composition.section.section.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Zytologischer_Befund_Empfehlung" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.code.coding.display">
+      <path value="Composition.section.section.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.code.coding.userSelected">
+      <path value="Composition.section.section.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.author">
+      <path value="Composition.section.section.author" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.focus">
+      <path value="Composition.section.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.text">
+      <path value="Composition.section.section.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.mode">
+      <path value="Composition.section.section.mode" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.orderedBy">
+      <path value="Composition.section.section.orderedBy" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.entry">
+      <path value="Composition.section.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Empfehlung|1.2.0" />
+      </type>
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.entry.reference">
+      <path value="Composition.section.section.entry.reference" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.entry.type">
+      <path value="Composition.section.section.entry.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.entry.identifier">
+      <path value="Composition.section.section.entry.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.entry.display">
+      <path value="Composition.section.section.entry.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.emptyReason">
+      <path value="Composition.section.section.emptyReason" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:zytologischer_Befund.section.section">
+      <path value="Composition.section.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis">
+      <path value="Composition.section" />
+      <sliceName value="hpv_Hr_Testergebnis" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.title">
+      <path value="Composition.section.title" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.code">
+      <path value="Composition.section.code" />
+      <short value="Klassifizierung des Slices" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Slices verwendet." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.code.coding.version">
+      <path value="Composition.section.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Hpv-hr" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.code.coding.userSelected">
+      <path value="Composition.section.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.code.text">
+      <path value="Composition.section.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.author">
+      <path value="Composition.section.author" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.text">
+      <path value="Composition.section.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.mode">
+      <path value="Composition.section.mode" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.orderedBy">
+      <path value="Composition.section.orderedBy" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.entry">
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_HPV_HR_Testergebnis_2020|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.entry.type">
+      <path value="Composition.section.entry.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.entry.identifier">
+      <path value="Composition.section.entry.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.entry.display">
+      <path value="Composition.section.entry.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.emptyReason">
+      <path value="Composition.section.emptyReason" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Testergebnis.section">
+      <path value="Composition.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung">
+      <path value="Composition.section" />
+      <sliceName value="hpv_Hr_Impfung" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.title">
+      <path value="Composition.section.title" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.code">
+      <path value="Composition.section.code" />
+      <short value="Klassifizierung des Slices" />
+      <definition value="Dieses Attribut wird zur Klassifizierung dieses Slices verwendet." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.code.coding.version">
+      <path value="Composition.section.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Hpv_impfung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.code.coding.userSelected">
+      <path value="Composition.section.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.code.text">
+      <path value="Composition.section.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.author">
+      <path value="Composition.section.author" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.text">
+      <path value="Composition.section.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.mode">
+      <path value="Composition.section.mode" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.orderedBy">
+      <path value="Composition.section.orderedBy" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.entry">
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_HPV_HR_Impfung_2020|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.entry.type">
+      <path value="Composition.section.entry.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.entry.identifier">
+      <path value="Composition.section.entry.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.entry.display">
+      <path value="Composition.section.entry.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.emptyReason">
+      <path value="Composition.section.emptyReason" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:hpv_Hr_Impfung.section">
+      <path value="Composition.section.section" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse">
+      <path value="Composition.section" />
+      <sliceName value="befund_Diverse" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:befund_Diverse.title">
+      <path value="Composition.section.title" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse.code">
+      <path value="Composition.section.code" />
+      <short value="Klassifizierung des Slices" />
+      <min value="1" />
+	  <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:befund_Diverse.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+	  <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:befund_Diverse.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Teilbereiche" />
+	  <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:befund_Diverse.code.coding.version">
+      <path value="Composition.section.code.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="Befund_Diverse" />
+	  <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:befund_Diverse.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse.code.coding.userSelected">
+      <path value="Composition.section.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse.code.text">
+      <path value="Composition.section.code.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse.author">
+      <path value="Composition.section.author" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse.focus">
+      <path value="Composition.section.focus" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse.text">
+      <path value="Composition.section.text" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse.mode">
+      <path value="Composition.section.mode" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse.orderedBy">
+      <path value="Composition.section.orderedBy" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse.entry">
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krebsfrueherkennung_Frauen_Zytologischer_Befund_Diverse_2020" />
+      </type>
+	  <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:befund_Diverse.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:befund_Diverse.entry.type">
+      <path value="Composition.section.entry.type" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse.entry.identifier">
+      <path value="Composition.section.entry.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse.entry.display">
+      <path value="Composition.section.entry.display" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse.emptyReason">
+      <path value="Composition.section.emptyReason" />
+      <max value="0" />
+    </element>
+    <element id="Composition.section:befund_Diverse.section">
+      <path value="Composition.section.section" />
+      <max value="0" />
+    </element>	
+  </differential>
+</StructureDefinition>

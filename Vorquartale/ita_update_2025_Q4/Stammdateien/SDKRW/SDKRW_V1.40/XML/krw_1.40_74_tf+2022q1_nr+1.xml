@@ -1,0 +1,3122 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd:ehd ehd_version="1.40" xmlns:ehd="urn:ehd/001" xmlns:krw="urn:ehd/krw/001">
+    <ehd:header xsi:type="ehd:krw_header_typ" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <ehd:id EX="5e962eee-ebb6-47f2-9523-8b5d42da1a15" RT="1.2.276.0.76.3.1.1"/>
+        <ehd:version_nbr V="1"/>
+        <ehd:document_type_cd V="krw"/>
+        <ehd:service_tmr V="2022-01-01..2022-12-31"/>
+        <ehd:origination_dttm V="2021-10-22+02:00"/>
+        <ehd:provider>
+            <ehd:organization>
+                <ehd:id EX="74" RT="1.2.276.0.76.5.233"/>
+                <ehd:organization.nm V="Kassenärztliche Bundesvereinigung"/>
+                <ehd:addr>
+                    <ehd:STR V="Herbert-Lewin-Platz"/>
+                    <ehd:HNR V="2"/>
+                    <ehd:ZIP V="1063"/>
+                    <ehd:CTY V="Berlin"/>
+                </ehd:addr>
+                <ehd:telecom V="mailto:ita@kbv.de"/>
+            </ehd:organization>
+        </ehd:provider>
+        <ehd:interface>
+            <ehd:id EX="SDKRW" RT="1.2.276.0.76.5.109"/>
+            <ehd:interface.nm V="Kodierregelwerk-Stammdatei"/>
+            <ehd:version V="1.40"/>
+            <ehd:description V="KRW, KBV xml-Stammdatei - COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat 6 der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt. Für alle sonstigen Nutzungszwecke wende man sich an das Dezernat 6 der KBV bzw. den Bearbeiter."/>
+        </ehd:interface>
+    </ehd:header>
+    <ehd:body xsi:type="ehd:krw_body_typ" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <krw:kodierregel_liste>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-01-001"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft das Verwenden eines Kodes für einen Akuten Myokardinfarkt mit dem Kennzeichen &quot;Zustand nach&quot;, da die ICD-10 einen spezifischen Kode für den Folgezustand (Alter Myokardinfarkt) vorsieht."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Obligate Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="1"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="I21.0"/>
+                        <krw:value V="I21.1"/>
+                        <krw:value V="I21.2"/>
+                        <krw:value V="I21.3"/>
+                        <krw:value V="I21.4"/>
+                        <krw:value V="I21.9"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="Z"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Für die Abbildung eines Zustandes nach akutem Myokardinfarkt sieht die ICD-10 einen spezifischen Kode vor."/>
+                    <krw:vorschlag V="Sofern zutreffend, ersetzen Sie bitte den Kode durch einen der folgenden Kodes mit dem Zusatzkennzeichen &quot;G&quot;:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="REPLACE"/>
+                        <krw:value_liste>
+                            <krw:value V="I25.20"/>
+                            <krw:value V="I25.21"/>
+                            <krw:value V="I25.22"/>
+                            <krw:value V="I25.29"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Sachgerechte Kodierung eines Zustands nach akutem Myokardinfarkt"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-01-002"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft das Verwenden eines Kodes für einen Rezidivierenden Myokardinfarkt mit dem Kennzeichen &quot;Zustand nach&quot;, da die ICD-10 einen spezifischen Kode für den Folgezustand (Alter Myokardinfarkt) vorsieht."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Obligate Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="1"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="I22.0"/>
+                        <krw:value V="I22.1"/>
+                        <krw:value V="I22.8"/>
+                        <krw:value V="I22.9"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="Z"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Für die Abbildung eines Zustandes nach rezidivierendem Myokardinfarkt sieht die ICD-10 einen spezifischen Kode vor."/>
+                    <krw:vorschlag V="Sofern zutreffend, ersetzen Sie bitte den Kode durch einen der folgenden Kodes mit dem Zusatzkennzeichen &quot;G&quot;:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="REPLACE"/>
+                        <krw:value_liste>
+                            <krw:value V="I25.20"/>
+                            <krw:value V="I25.21"/>
+                            <krw:value V="I25.22"/>
+                            <krw:value V="I25.29"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Sachgerechte Kodierung eines Zustands nach rezidivierendem Myokardinfarkt"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-02-010"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Diabetes mellitus mit Komplikationen und weist auf fehlende Kodes für die Komplikationen hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.2-"/>
+                        <krw:value V="E10.20"/>
+                        <krw:value V="E10.21"/>
+                        <krw:value V="E11.2-"/>
+                        <krw:value V="E11.20"/>
+                        <krw:value V="E11.21"/>
+                        <krw:value V="E12.2-"/>
+                        <krw:value V="E12.20"/>
+                        <krw:value V="E12.21"/>
+                        <krw:value V="E13.2-"/>
+                        <krw:value V="E13.20"/>
+                        <krw:value V="E13.21"/>
+                        <krw:value V="E14.2-"/>
+                        <krw:value V="E14.20"/>
+                        <krw:value V="E14.21"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="N08.3"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Für die Abbildung von diabetischen Nierenkomplikationen sieht die ICD-10 einen spezifischen Kode vor."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="N08.3"/>
+                        </krw:value_liste>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung des Diabetes mellitus im Kreuz-Stern-System: Manifestationen"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-02-011"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Diabetes mellitus mit Komplikationen und weist auf fehlende Kodes für die Komplikationen hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.3-"/>
+                        <krw:value V="E10.30"/>
+                        <krw:value V="E10.31"/>
+                        <krw:value V="E11.3-"/>
+                        <krw:value V="E11.30"/>
+                        <krw:value V="E11.31"/>
+                        <krw:value V="E12.3-"/>
+                        <krw:value V="E12.30"/>
+                        <krw:value V="E12.31"/>
+                        <krw:value V="E13.3-"/>
+                        <krw:value V="E13.30"/>
+                        <krw:value V="E13.31"/>
+                        <krw:value V="E14.3-"/>
+                        <krw:value V="E14.30"/>
+                        <krw:value V="E14.31"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="H36.0"/>
+                        <krw:value V="H28.0"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Für die Abbildung von diabetischen Augenkomplikationen sieht die ICD-10 spezifische Kodes vor."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="H28.0"/>
+                            <krw:value V="H36.0"/>
+                        </krw:value_liste>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung des Diabetes mellitus im Kreuz-Stern-System: Manifestationen"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-02-012"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Diabetes mellitus mit Komplikationen und weist auf fehlende Kodes für die Komplikationen hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.4-"/>
+                        <krw:value V="E10.40"/>
+                        <krw:value V="E10.41"/>
+                        <krw:value V="E11.4-"/>
+                        <krw:value V="E11.40"/>
+                        <krw:value V="E11.41"/>
+                        <krw:value V="E12.4-"/>
+                        <krw:value V="E12.40"/>
+                        <krw:value V="E12.41"/>
+                        <krw:value V="E13.4-"/>
+                        <krw:value V="E13.40"/>
+                        <krw:value V="E13.41"/>
+                        <krw:value V="E14.4-"/>
+                        <krw:value V="E14.40"/>
+                        <krw:value V="E14.41"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="G59.0"/>
+                        <krw:value V="G63.2"/>
+                        <krw:value V="G73.0"/>
+                        <krw:value V="G99.0-"/>
+                        <krw:value V="G99.00"/>
+                        <krw:value V="G99.08"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Für die Abbildung von neurologischen Komplikationen bei Diabetes mellitus sieht die ICD-10 spezifische Kodes vor."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="G59.0"/>
+                            <krw:value V="G63.2"/>
+                            <krw:value V="G73.0"/>
+                            <krw:value V="G99.00"/>
+                            <krw:value V="G99.08"/>
+                        </krw:value_liste>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung des Diabetes mellitus im Kreuz-Stern-System: Manifestationen"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-02-013"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Diabetes mellitus mit Komplikationen und weist auf fehlende Kodes für die Komplikationen hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.5-"/>
+                        <krw:value V="E10.50"/>
+                        <krw:value V="E10.51"/>
+                        <krw:value V="E11.5-"/>
+                        <krw:value V="E11.50"/>
+                        <krw:value V="E11.51"/>
+                        <krw:value V="E12.5-"/>
+                        <krw:value V="E12.50"/>
+                        <krw:value V="E12.51"/>
+                        <krw:value V="E13.5-"/>
+                        <krw:value V="E13.50"/>
+                        <krw:value V="E13.51"/>
+                        <krw:value V="E14.5-"/>
+                        <krw:value V="E14.50"/>
+                        <krw:value V="E14.51"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="I79.2"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Für die Abbildung von diabetischen Angiopathien sieht die ICD-10 einen spezifischen Kode vor."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="I79.2"/>
+                        </krw:value_liste>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung des Diabetes mellitus im Kreuz-Stern-System: Manifestationen"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-02-014"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Diabetes mellitus mit Komplikationen und weist auf fehlende Kodes für die Komplikationen hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.6-"/>
+                        <krw:value V="E10.60"/>
+                        <krw:value V="E10.61"/>
+                        <krw:value V="E11.6-"/>
+                        <krw:value V="E11.60"/>
+                        <krw:value V="E11.61"/>
+                        <krw:value V="E12.6-"/>
+                        <krw:value V="E12.60"/>
+                        <krw:value V="E12.61"/>
+                        <krw:value V="E13.6-"/>
+                        <krw:value V="E13.60"/>
+                        <krw:value V="E13.61"/>
+                        <krw:value V="E14.6-"/>
+                        <krw:value V="E14.60"/>
+                        <krw:value V="E14.61"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="M14.2-"/>
+                        <krw:value V="M14.20"/>
+                        <krw:value V="M14.21"/>
+                        <krw:value V="M14.22"/>
+                        <krw:value V="M14.23"/>
+                        <krw:value V="M14.24"/>
+                        <krw:value V="M14.25"/>
+                        <krw:value V="M14.26"/>
+                        <krw:value V="M14.27"/>
+                        <krw:value V="M14.28"/>
+                        <krw:value V="M14.29"/>
+                        <krw:value V="M14.6-"/>
+                        <krw:value V="M14.60"/>
+                        <krw:value V="M14.61"/>
+                        <krw:value V="M14.62"/>
+                        <krw:value V="M14.63"/>
+                        <krw:value V="M14.64"/>
+                        <krw:value V="M14.65"/>
+                        <krw:value V="M14.66"/>
+                        <krw:value V="M14.67"/>
+                        <krw:value V="M14.68"/>
+                        <krw:value V="M14.69"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Für die Abbildung von sonstigen näher bezeichneten Komplikationen bei Diabetes mellitus sieht die ICD-10 spezifische Kodes vor."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="M14.20"/>
+                            <krw:value V="M14.21"/>
+                            <krw:value V="M14.22"/>
+                            <krw:value V="M14.23"/>
+                            <krw:value V="M14.24"/>
+                            <krw:value V="M14.25"/>
+                            <krw:value V="M14.26"/>
+                            <krw:value V="M14.27"/>
+                            <krw:value V="M14.28"/>
+                            <krw:value V="M14.29"/>
+                            <krw:value V="M14.60"/>
+                            <krw:value V="M14.61"/>
+                            <krw:value V="M14.62"/>
+                            <krw:value V="M14.63"/>
+                            <krw:value V="M14.64"/>
+                            <krw:value V="M14.65"/>
+                            <krw:value V="M14.66"/>
+                            <krw:value V="M14.67"/>
+                            <krw:value V="M14.68"/>
+                            <krw:value V="M14.69"/>
+                        </krw:value_liste>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung des Diabetes mellitus im Kreuz-Stern-System: Manifestationen"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-02-015"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Diabetes mellitus mit Komplikationen und weist auf fehlende Kodes für die Komplikationen hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.72"/>
+                        <krw:value V="E10.73"/>
+                        <krw:value V="E11.72"/>
+                        <krw:value V="E11.73"/>
+                        <krw:value V="E12.72"/>
+                        <krw:value V="E12.73"/>
+                        <krw:value V="E13.72"/>
+                        <krw:value V="E13.73"/>
+                        <krw:value V="E14.72"/>
+                        <krw:value V="E14.73"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="H36.0"/>
+                        <krw:value V="H28.0"/>
+                        <krw:value V="G59.0"/>
+                        <krw:value V="G99.0-"/>
+                        <krw:value V="G99.00"/>
+                        <krw:value V="G99.08"/>
+                        <krw:value V="G63.2"/>
+                        <krw:value V="M14.20"/>
+                        <krw:value V="M14.21"/>
+                        <krw:value V="M14.22"/>
+                        <krw:value V="M14.23"/>
+                        <krw:value V="M14.24"/>
+                        <krw:value V="M14.25"/>
+                        <krw:value V="M14.26"/>
+                        <krw:value V="M14.27"/>
+                        <krw:value V="M14.28"/>
+                        <krw:value V="M14.29"/>
+                        <krw:value V="M14.60"/>
+                        <krw:value V="M14.61"/>
+                        <krw:value V="M14.62"/>
+                        <krw:value V="M14.63"/>
+                        <krw:value V="M14.64"/>
+                        <krw:value V="M14.65"/>
+                        <krw:value V="M14.66"/>
+                        <krw:value V="M14.67"/>
+                        <krw:value V="M14.68"/>
+                        <krw:value V="M14.69"/>
+                        <krw:value V="G73.0"/>
+                        <krw:value V="I79.2"/>
+                        <krw:value V="N08.3"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Für die Abbildung von multiplen Komplikationen bei Diabetes mellitus sieht die ICD-10 die Angabe von mindestens zwei spezifischen Kodes vor."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte mindestens einen weiteren Kode:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="H36.0"/>
+                            <krw:value V="H28.0"/>
+                            <krw:value V="G59.0"/>
+                            <krw:value V="G99.00"/>
+                            <krw:value V="G99.08"/>
+                            <krw:value V="G63.2"/>
+                            <krw:value V="M14.20"/>
+                            <krw:value V="M14.21"/>
+                            <krw:value V="M14.22"/>
+                            <krw:value V="M14.23"/>
+                            <krw:value V="M14.24"/>
+                            <krw:value V="M14.25"/>
+                            <krw:value V="M14.26"/>
+                            <krw:value V="M14.27"/>
+                            <krw:value V="M14.28"/>
+                            <krw:value V="M14.29"/>
+                            <krw:value V="M14.60"/>
+                            <krw:value V="M14.61"/>
+                            <krw:value V="M14.62"/>
+                            <krw:value V="M14.63"/>
+                            <krw:value V="M14.64"/>
+                            <krw:value V="M14.65"/>
+                            <krw:value V="M14.66"/>
+                            <krw:value V="M14.67"/>
+                            <krw:value V="M14.68"/>
+                            <krw:value V="M14.69"/>
+                            <krw:value V="G73.0"/>
+                            <krw:value V="I79.2"/>
+                            <krw:value V="N08.3"/>
+                        </krw:value_liste>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung des Diabetes mellitus im Kreuz-Stern-System: Manifestationen"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-02-016"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Diabetes mellitus mit Komplikationen und weist auf fehlende Kodes für die Komplikationen hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.74"/>
+                        <krw:value V="E10.75"/>
+                        <krw:value V="E11.74"/>
+                        <krw:value V="E11.75"/>
+                        <krw:value V="E12.74"/>
+                        <krw:value V="E12.75"/>
+                        <krw:value V="E13.74"/>
+                        <krw:value V="E13.75"/>
+                        <krw:value V="E14.74"/>
+                        <krw:value V="E14.75"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="G59.0"/>
+                        <krw:value V="G63.2"/>
+                        <krw:value V="G99.0-"/>
+                        <krw:value V="G99.00"/>
+                        <krw:value V="G99.08"/>
+                        <krw:value V="I70.20"/>
+                        <krw:value V="I70.21"/>
+                        <krw:value V="I70.22"/>
+                        <krw:value V="I70.23"/>
+                        <krw:value V="I70.24"/>
+                        <krw:value V="I70.25"/>
+                        <krw:value V="I70.29"/>
+                        <krw:value V="I79.2"/>
+                        <krw:value V="L02.4"/>
+                        <krw:value V="L03.02"/>
+                        <krw:value V="L03.11"/>
+                        <krw:value V="L89.07"/>
+                        <krw:value V="L89.08"/>
+                        <krw:value V="L89.17"/>
+                        <krw:value V="L89.18"/>
+                        <krw:value V="L89.27"/>
+                        <krw:value V="L89.28"/>
+                        <krw:value V="L89.37"/>
+                        <krw:value V="L89.38"/>
+                        <krw:value V="L89.97"/>
+                        <krw:value V="L89.98"/>
+                        <krw:value V="L97"/>
+                        <krw:value V="M20.1"/>
+                        <krw:value V="M20.2"/>
+                        <krw:value V="M20.3"/>
+                        <krw:value V="M20.4"/>
+                        <krw:value V="M20.5"/>
+                        <krw:value V="M21.27"/>
+                        <krw:value V="M21.37"/>
+                        <krw:value V="M21.4"/>
+                        <krw:value V="M21.57"/>
+                        <krw:value V="M21.60"/>
+                        <krw:value V="M21.61"/>
+                        <krw:value V="M21.62"/>
+                        <krw:value V="M21.63"/>
+                        <krw:value V="M21.68"/>
+                        <krw:value V="Z89.4"/>
+                        <krw:value V="Z89.5"/>
+                        <krw:value V="Z89.6"/>
+                        <krw:value V="Z89.7"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Für die Abbildung von Komplikationen bei diabetischem Fußsyndrom sieht die ICD-10 spezifische Kodes vor."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="G63.2"/>
+                            <krw:value V="G99.00"/>
+                            <krw:value V="G99.08"/>
+                            <krw:value V="I70.20"/>
+                            <krw:value V="I70.21"/>
+                            <krw:value V="I70.22"/>
+                            <krw:value V="I70.23"/>
+                            <krw:value V="I70.24"/>
+                            <krw:value V="I70.25"/>
+                            <krw:value V="I70.29"/>
+                            <krw:value V="I79.2"/>
+                            <krw:value V="L02.4"/>
+                            <krw:value V="L03.02"/>
+                            <krw:value V="L03.11"/>
+                            <krw:value V="L89.07"/>
+                            <krw:value V="L89.08"/>
+                            <krw:value V="L89.17"/>
+                            <krw:value V="L89.18"/>
+                            <krw:value V="L89.27"/>
+                            <krw:value V="L89.28"/>
+                            <krw:value V="L89.37"/>
+                            <krw:value V="L89.38"/>
+                            <krw:value V="L89.97"/>
+                            <krw:value V="L89.98"/>
+                            <krw:value V="L97"/>
+                            <krw:value V="M20.1"/>
+                            <krw:value V="M20.2"/>
+                            <krw:value V="M20.3"/>
+                            <krw:value V="M20.4"/>
+                            <krw:value V="M20.5"/>
+                            <krw:value V="M21.27"/>
+                            <krw:value V="M21.37"/>
+                            <krw:value V="M21.4"/>
+                            <krw:value V="M21.57"/>
+                            <krw:value V="M21.60"/>
+                            <krw:value V="M21.61"/>
+                            <krw:value V="M21.62"/>
+                            <krw:value V="M21.63"/>
+                            <krw:value V="M21.68"/>
+                            <krw:value V="Z89.4"/>
+                            <krw:value V="Z89.5"/>
+                            <krw:value V="Z89.6"/>
+                            <krw:value V="Z89.7"/>
+                        </krw:value_liste>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung des Diabetes mellitus im Kreuz-Stern-System: Manifestationen"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-01-017"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Diabetes mellitus mit Komplikationen und weist auf fehlende Kodes für den Diabetes mellitus hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Obligate Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="1"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="N08.3"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.2-"/>
+                        <krw:value V="E10.20"/>
+                        <krw:value V="E10.21"/>
+                        <krw:value V="E11.2-"/>
+                        <krw:value V="E11.20"/>
+                        <krw:value V="E11.21"/>
+                        <krw:value V="E12.2-"/>
+                        <krw:value V="E12.20"/>
+                        <krw:value V="E12.21"/>
+                        <krw:value V="E13.2-"/>
+                        <krw:value V="E13.20"/>
+                        <krw:value V="E13.21"/>
+                        <krw:value V="E14.2-"/>
+                        <krw:value V="E14.20"/>
+                        <krw:value V="E14.21"/>
+                        <krw:value V="E10.7-"/>
+                        <krw:value V="E10.72"/>
+                        <krw:value V="E10.73"/>
+                        <krw:value V="E10.74"/>
+                        <krw:value V="E10.75"/>
+                        <krw:value V="E11.7-"/>
+                        <krw:value V="E11.72"/>
+                        <krw:value V="E11.73"/>
+                        <krw:value V="E11.74"/>
+                        <krw:value V="E11.75"/>
+                        <krw:value V="E12.7-"/>
+                        <krw:value V="E12.72"/>
+                        <krw:value V="E12.73"/>
+                        <krw:value V="E12.74"/>
+                        <krw:value V="E12.75"/>
+                        <krw:value V="E13.7-"/>
+                        <krw:value V="E13.72"/>
+                        <krw:value V="E13.73"/>
+                        <krw:value V="E13.74"/>
+                        <krw:value V="E13.75"/>
+                        <krw:value V="E14.7-"/>
+                        <krw:value V="E14.72"/>
+                        <krw:value V="E14.73"/>
+                        <krw:value V="E14.74"/>
+                        <krw:value V="E14.75"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Der Kode für diabetische Nierenkomplikationen ist laut ICD-10 nur in Verbindung mit einem Kode für den Diabetes mellitus anzugeben."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="E10.20"/>
+                            <krw:value V="E10.21"/>
+                            <krw:value V="E11.20"/>
+                            <krw:value V="E11.21"/>
+                            <krw:value V="E12.20"/>
+                            <krw:value V="E12.21"/>
+                            <krw:value V="E13.20"/>
+                            <krw:value V="E13.21"/>
+                            <krw:value V="E14.20"/>
+                            <krw:value V="E14.21"/>
+                            <krw:value V="E10.72"/>
+                            <krw:value V="E10.73"/>
+                            <krw:value V="E10.74"/>
+                            <krw:value V="E10.75"/>
+                            <krw:value V="E11.72"/>
+                            <krw:value V="E11.73"/>
+                            <krw:value V="E11.74"/>
+                            <krw:value V="E11.75"/>
+                            <krw:value V="E12.72"/>
+                            <krw:value V="E12.73"/>
+                            <krw:value V="E12.74"/>
+                            <krw:value V="E12.75"/>
+                            <krw:value V="E13.72"/>
+                            <krw:value V="E13.73"/>
+                            <krw:value V="E13.74"/>
+                            <krw:value V="E13.75"/>
+                            <krw:value V="E14.72"/>
+                            <krw:value V="E14.73"/>
+                            <krw:value V="E14.74"/>
+                            <krw:value V="E14.75"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung des Diabetes mellitus im Kreuz-Stern-System: Grundkrankheit"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-01-018"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Diabetes mellitus mit Komplikationen und weist auf fehlende Kodes für den Diabetes mellitus hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Obligate Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="1"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="H28.0"/>
+                        <krw:value V="H36.0"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.3-"/>
+                        <krw:value V="E10.30"/>
+                        <krw:value V="E10.31"/>
+                        <krw:value V="E11.3-"/>
+                        <krw:value V="E11.30"/>
+                        <krw:value V="E11.31"/>
+                        <krw:value V="E12.3-"/>
+                        <krw:value V="E12.30"/>
+                        <krw:value V="E12.31"/>
+                        <krw:value V="E13.3-"/>
+                        <krw:value V="E13.30"/>
+                        <krw:value V="E13.31"/>
+                        <krw:value V="E14.3-"/>
+                        <krw:value V="E14.30"/>
+                        <krw:value V="E14.31"/>
+                        <krw:value V="E10.7-"/>
+                        <krw:value V="E10.72"/>
+                        <krw:value V="E10.73"/>
+                        <krw:value V="E10.74"/>
+                        <krw:value V="E10.75"/>
+                        <krw:value V="E11.7-"/>
+                        <krw:value V="E11.72"/>
+                        <krw:value V="E11.73"/>
+                        <krw:value V="E11.74"/>
+                        <krw:value V="E11.75"/>
+                        <krw:value V="E12.7-"/>
+                        <krw:value V="E12.72"/>
+                        <krw:value V="E12.73"/>
+                        <krw:value V="E12.74"/>
+                        <krw:value V="E12.75"/>
+                        <krw:value V="E13.7-"/>
+                        <krw:value V="E13.72"/>
+                        <krw:value V="E13.73"/>
+                        <krw:value V="E13.74"/>
+                        <krw:value V="E13.75"/>
+                        <krw:value V="E14.7-"/>
+                        <krw:value V="E14.72"/>
+                        <krw:value V="E14.73"/>
+                        <krw:value V="E14.74"/>
+                        <krw:value V="E14.75"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Der Kode für diabetische Augenkomplikationen ist laut ICD-10 nur in Verbindung mit einem Kode für den Diabetes mellitus anzugeben."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="E10.30"/>
+                            <krw:value V="E10.31"/>
+                            <krw:value V="E11.30"/>
+                            <krw:value V="E11.31"/>
+                            <krw:value V="E12.30"/>
+                            <krw:value V="E12.31"/>
+                            <krw:value V="E13.30"/>
+                            <krw:value V="E13.31"/>
+                            <krw:value V="E14.30"/>
+                            <krw:value V="E14.31"/>
+                            <krw:value V="E10.72"/>
+                            <krw:value V="E10.73"/>
+                            <krw:value V="E10.74"/>
+                            <krw:value V="E10.75"/>
+                            <krw:value V="E11.72"/>
+                            <krw:value V="E11.73"/>
+                            <krw:value V="E11.74"/>
+                            <krw:value V="E11.75"/>
+                            <krw:value V="E12.72"/>
+                            <krw:value V="E12.73"/>
+                            <krw:value V="E12.74"/>
+                            <krw:value V="E12.75"/>
+                            <krw:value V="E13.72"/>
+                            <krw:value V="E13.73"/>
+                            <krw:value V="E13.74"/>
+                            <krw:value V="E13.75"/>
+                            <krw:value V="E14.72"/>
+                            <krw:value V="E14.73"/>
+                            <krw:value V="E14.74"/>
+                            <krw:value V="E14.75"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung des Diabetes mellitus im Kreuz-Stern-System: Grundkrankheit"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-01-019"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Diabetes mellitus mit Komplikationen und weist auf fehlende Kodes für den Diabetes mellitus hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Obligate Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="1"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="G59.0"/>
+                        <krw:value V="G63.2"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.4-"/>
+                        <krw:value V="E10.40"/>
+                        <krw:value V="E10.41"/>
+                        <krw:value V="E11.4-"/>
+                        <krw:value V="E11.40"/>
+                        <krw:value V="E11.41"/>
+                        <krw:value V="E12.4-"/>
+                        <krw:value V="E12.40"/>
+                        <krw:value V="E12.41"/>
+                        <krw:value V="E13.4-"/>
+                        <krw:value V="E13.40"/>
+                        <krw:value V="E13.41"/>
+                        <krw:value V="E14.4-"/>
+                        <krw:value V="E14.40"/>
+                        <krw:value V="E14.41"/>
+                        <krw:value V="E10.7-"/>
+                        <krw:value V="E10.72"/>
+                        <krw:value V="E10.73"/>
+                        <krw:value V="E10.74"/>
+                        <krw:value V="E10.75"/>
+                        <krw:value V="E11.7-"/>
+                        <krw:value V="E11.72"/>
+                        <krw:value V="E11.73"/>
+                        <krw:value V="E11.74"/>
+                        <krw:value V="E11.75"/>
+                        <krw:value V="E12.7-"/>
+                        <krw:value V="E12.72"/>
+                        <krw:value V="E12.73"/>
+                        <krw:value V="E12.74"/>
+                        <krw:value V="E12.75"/>
+                        <krw:value V="E13.7-"/>
+                        <krw:value V="E13.72"/>
+                        <krw:value V="E13.73"/>
+                        <krw:value V="E13.74"/>
+                        <krw:value V="E13.75"/>
+                        <krw:value V="E14.7-"/>
+                        <krw:value V="E14.72"/>
+                        <krw:value V="E14.73"/>
+                        <krw:value V="E14.74"/>
+                        <krw:value V="E14.75"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Der Kode für neurologische Komplikationen ist laut ICD-10 nur in Verbindung mit einem Kode für den Diabetes mellitus anzugeben."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="E10.40"/>
+                            <krw:value V="E10.41"/>
+                            <krw:value V="E11.40"/>
+                            <krw:value V="E11.41"/>
+                            <krw:value V="E12.40"/>
+                            <krw:value V="E12.41"/>
+                            <krw:value V="E13.40"/>
+                            <krw:value V="E13.41"/>
+                            <krw:value V="E14.40"/>
+                            <krw:value V="E14.41"/>
+                            <krw:value V="E10.72"/>
+                            <krw:value V="E10.73"/>
+                            <krw:value V="E10.74"/>
+                            <krw:value V="E10.75"/>
+                            <krw:value V="E11.72"/>
+                            <krw:value V="E11.73"/>
+                            <krw:value V="E11.74"/>
+                            <krw:value V="E11.75"/>
+                            <krw:value V="E12.72"/>
+                            <krw:value V="E12.73"/>
+                            <krw:value V="E12.74"/>
+                            <krw:value V="E12.75"/>
+                            <krw:value V="E13.72"/>
+                            <krw:value V="E13.73"/>
+                            <krw:value V="E13.74"/>
+                            <krw:value V="E13.75"/>
+                            <krw:value V="E14.72"/>
+                            <krw:value V="E14.73"/>
+                            <krw:value V="E14.74"/>
+                            <krw:value V="E14.75"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung des Diabetes mellitus im Kreuz-Stern-System: Grundkrankheit"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-01-020"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Diabetes mellitus mit Komplikationen und weist auf fehlende Kodes für den Diabetes mellitus hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Obligate Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="1"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="I79.2"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.5-"/>
+                        <krw:value V="E10.50"/>
+                        <krw:value V="E10.51"/>
+                        <krw:value V="E11.5-"/>
+                        <krw:value V="E11.50"/>
+                        <krw:value V="E11.51"/>
+                        <krw:value V="E12.5-"/>
+                        <krw:value V="E12.50"/>
+                        <krw:value V="E12.51"/>
+                        <krw:value V="E13.5-"/>
+                        <krw:value V="E13.50"/>
+                        <krw:value V="E13.51"/>
+                        <krw:value V="E14.5-"/>
+                        <krw:value V="E14.50"/>
+                        <krw:value V="E14.51"/>
+                        <krw:value V="E10.7-"/>
+                        <krw:value V="E10.72"/>
+                        <krw:value V="E10.73"/>
+                        <krw:value V="E10.74"/>
+                        <krw:value V="E10.75"/>
+                        <krw:value V="E11.7-"/>
+                        <krw:value V="E11.72"/>
+                        <krw:value V="E11.73"/>
+                        <krw:value V="E11.74"/>
+                        <krw:value V="E11.75"/>
+                        <krw:value V="E12.7-"/>
+                        <krw:value V="E12.72"/>
+                        <krw:value V="E12.73"/>
+                        <krw:value V="E12.74"/>
+                        <krw:value V="E12.75"/>
+                        <krw:value V="E13.7-"/>
+                        <krw:value V="E13.72"/>
+                        <krw:value V="E13.73"/>
+                        <krw:value V="E13.74"/>
+                        <krw:value V="E13.75"/>
+                        <krw:value V="E14.7-"/>
+                        <krw:value V="E14.72"/>
+                        <krw:value V="E14.73"/>
+                        <krw:value V="E14.74"/>
+                        <krw:value V="E14.75"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Der Kode für periphere vaskuläre Komplikationen ist laut ICD-10 unter anderem in Verbindung mit einem Kode für den Diabetes mellitus anzugeben."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="E10.50"/>
+                            <krw:value V="E10.51"/>
+                            <krw:value V="E11.50"/>
+                            <krw:value V="E11.51"/>
+                            <krw:value V="E12.50"/>
+                            <krw:value V="E12.51"/>
+                            <krw:value V="E13.50"/>
+                            <krw:value V="E13.51"/>
+                            <krw:value V="E14.50"/>
+                            <krw:value V="E14.51"/>
+                            <krw:value V="E10.72"/>
+                            <krw:value V="E10.73"/>
+                            <krw:value V="E10.74"/>
+                            <krw:value V="E10.75"/>
+                            <krw:value V="E11.72"/>
+                            <krw:value V="E11.73"/>
+                            <krw:value V="E11.74"/>
+                            <krw:value V="E11.75"/>
+                            <krw:value V="E12.72"/>
+                            <krw:value V="E12.73"/>
+                            <krw:value V="E12.74"/>
+                            <krw:value V="E12.75"/>
+                            <krw:value V="E13.72"/>
+                            <krw:value V="E13.73"/>
+                            <krw:value V="E13.74"/>
+                            <krw:value V="E13.75"/>
+                            <krw:value V="E14.72"/>
+                            <krw:value V="E14.73"/>
+                            <krw:value V="E14.74"/>
+                            <krw:value V="E14.75"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung des Diabetes mellitus im Kreuz-Stern-System: Grundkrankheit"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-01-021"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Diabetes mellitus mit Komplikationen und weist auf fehlende Kodes für den Diabetes mellitus hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Obligate Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="1"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="M14.2-"/>
+                        <krw:value V="M14.20"/>
+                        <krw:value V="M14.21"/>
+                        <krw:value V="M14.22"/>
+                        <krw:value V="M14.23"/>
+                        <krw:value V="M14.24"/>
+                        <krw:value V="M14.25"/>
+                        <krw:value V="M14.26"/>
+                        <krw:value V="M14.27"/>
+                        <krw:value V="M14.28"/>
+                        <krw:value V="M14.29"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.6-"/>
+                        <krw:value V="E10.60"/>
+                        <krw:value V="E10.61"/>
+                        <krw:value V="E11.6-"/>
+                        <krw:value V="E11.60"/>
+                        <krw:value V="E11.61"/>
+                        <krw:value V="E12.6-"/>
+                        <krw:value V="E12.60"/>
+                        <krw:value V="E12.61"/>
+                        <krw:value V="E13.6-"/>
+                        <krw:value V="E13.60"/>
+                        <krw:value V="E13.61"/>
+                        <krw:value V="E14.6-"/>
+                        <krw:value V="E14.60"/>
+                        <krw:value V="E14.61"/>
+                        <krw:value V="E10.7-"/>
+                        <krw:value V="E10.72"/>
+                        <krw:value V="E10.73"/>
+                        <krw:value V="E10.74"/>
+                        <krw:value V="E10.75"/>
+                        <krw:value V="E11.7-"/>
+                        <krw:value V="E11.72"/>
+                        <krw:value V="E11.73"/>
+                        <krw:value V="E11.74"/>
+                        <krw:value V="E11.75"/>
+                        <krw:value V="E12.7-"/>
+                        <krw:value V="E12.72"/>
+                        <krw:value V="E12.73"/>
+                        <krw:value V="E12.74"/>
+                        <krw:value V="E12.75"/>
+                        <krw:value V="E13.7-"/>
+                        <krw:value V="E13.72"/>
+                        <krw:value V="E13.73"/>
+                        <krw:value V="E13.74"/>
+                        <krw:value V="E13.75"/>
+                        <krw:value V="E14.7-"/>
+                        <krw:value V="E14.72"/>
+                        <krw:value V="E14.73"/>
+                        <krw:value V="E14.74"/>
+                        <krw:value V="E14.75"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Der Kode für diabetische Arthropathien ist laut ICD-10 nur in Verbindung mit einem Kode für den Diabetes mellitus anzugeben."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="E10.60"/>
+                            <krw:value V="E10.61"/>
+                            <krw:value V="E11.60"/>
+                            <krw:value V="E11.61"/>
+                            <krw:value V="E12.60"/>
+                            <krw:value V="E12.61"/>
+                            <krw:value V="E13.60"/>
+                            <krw:value V="E13.61"/>
+                            <krw:value V="E14.60"/>
+                            <krw:value V="E14.61"/>
+                            <krw:value V="E10.72"/>
+                            <krw:value V="E10.73"/>
+                            <krw:value V="E10.74"/>
+                            <krw:value V="E10.75"/>
+                            <krw:value V="E11.72"/>
+                            <krw:value V="E11.73"/>
+                            <krw:value V="E11.74"/>
+                            <krw:value V="E11.75"/>
+                            <krw:value V="E12.72"/>
+                            <krw:value V="E12.73"/>
+                            <krw:value V="E12.74"/>
+                            <krw:value V="E12.75"/>
+                            <krw:value V="E13.72"/>
+                            <krw:value V="E13.73"/>
+                            <krw:value V="E13.74"/>
+                            <krw:value V="E13.75"/>
+                            <krw:value V="E14.72"/>
+                            <krw:value V="E14.73"/>
+                            <krw:value V="E14.74"/>
+                            <krw:value V="E14.75"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung des Diabetes mellitus im Kreuz-Stern-System: Grundkrankheit"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-01-022"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung zerebraler Gefäßsyndrome bei zerebrovaskulären Krankheiten und weist auf fehlende Kodes für die zerebrovaskuläre Grundkrankheit hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Obligate Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="1"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="G46.0"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="I66.0"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Der Kode für das Arteria-cerebri-media-Syndrom ist laut ICD-10 nur in Verbindung mit einem Kode für Verschluss oder Stenose zerebraler Arterien anzugeben."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="I66.0"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung zerebraler Gefäßsyndrome im Kreuz-Stern-System: Grundkrankheit"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-01-023"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung zerebraler Gefäßsyndrome bei zerebrovaskulären Krankheiten und weist auf fehlende Kodes für die zerebrovaskuläre Grundkrankheit hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Obligate Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="1"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="G46.1"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="I66.1"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Der Kode für das Arteria-cerebri-anterior-Syndrom ist laut ICD-10 nur in Verbindung mit einem Kode für Verschluss oder Stenose zerebraler Arterien anzugeben."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="I66.1"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung zerebraler Gefäßsyndrome im Kreuz-Stern-System: Grundkrankheit"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-01-024"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung zerebraler Gefäßsyndrome bei zerebrovaskulären Krankheiten und weist auf fehlende Kodes für die zerebrovaskuläre Grundkrankheit hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="Kreuz-Stern-Systematik" S="1.2.276.0.76.3.1.1.5.2.55" V="11"/>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Obligate Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="1"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="G46.2"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="I66.2"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Der Kode für das Arteria-cerebri-posterior-Syndrom ist laut ICD-10 nur in Verbindung mit einem Kode für Verschluss oder Stenose zerebraler Arterien anzugeben."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="I66.2"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung zerebraler Gefäßsyndrome im Kreuz-Stern-System: Grundkrankheit"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-01-025"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft das gleichzeitige Verwenden von Kodes für unterschiedliche Typen des Diabetes mellitus."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Obligate Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="1"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.0-"/>
+                        <krw:value V="E10.01"/>
+                        <krw:value V="E10.1-"/>
+                        <krw:value V="E10.11"/>
+                        <krw:value V="E10.2-"/>
+                        <krw:value V="E10.20"/>
+                        <krw:value V="E10.21"/>
+                        <krw:value V="E10.3-"/>
+                        <krw:value V="E10.30"/>
+                        <krw:value V="E10.31"/>
+                        <krw:value V="E10.4-"/>
+                        <krw:value V="E10.40"/>
+                        <krw:value V="E10.41"/>
+                        <krw:value V="E10.5-"/>
+                        <krw:value V="E10.50"/>
+                        <krw:value V="E10.51"/>
+                        <krw:value V="E10.6-"/>
+                        <krw:value V="E10.60"/>
+                        <krw:value V="E10.61"/>
+                        <krw:value V="E10.7-"/>
+                        <krw:value V="E10.72"/>
+                        <krw:value V="E10.73"/>
+                        <krw:value V="E10.74"/>
+                        <krw:value V="E10.75"/>
+                        <krw:value V="E10.8-"/>
+                        <krw:value V="E10.80"/>
+                        <krw:value V="E10.81"/>
+                        <krw:value V="E10.9-"/>
+                        <krw:value V="E10.90"/>
+                        <krw:value V="E10.91"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E11.0-"/>
+                        <krw:value V="E11.01"/>
+                        <krw:value V="E11.1-"/>
+                        <krw:value V="E11.11"/>
+                        <krw:value V="E11.2-"/>
+                        <krw:value V="E11.20"/>
+                        <krw:value V="E11.21"/>
+                        <krw:value V="E11.3-"/>
+                        <krw:value V="E11.30"/>
+                        <krw:value V="E11.31"/>
+                        <krw:value V="E11.4-"/>
+                        <krw:value V="E11.40"/>
+                        <krw:value V="E11.41"/>
+                        <krw:value V="E11.5-"/>
+                        <krw:value V="E11.50"/>
+                        <krw:value V="E11.51"/>
+                        <krw:value V="E11.6-"/>
+                        <krw:value V="E11.60"/>
+                        <krw:value V="E11.61"/>
+                        <krw:value V="E11.7-"/>
+                        <krw:value V="E11.72"/>
+                        <krw:value V="E11.73"/>
+                        <krw:value V="E11.74"/>
+                        <krw:value V="E11.75"/>
+                        <krw:value V="E11.8-"/>
+                        <krw:value V="E11.80"/>
+                        <krw:value V="E11.81"/>
+                        <krw:value V="E11.9-"/>
+                        <krw:value V="E11.90"/>
+                        <krw:value V="E11.91"/>
+                        <krw:value V="E12.0-"/>
+                        <krw:value V="E12.01"/>
+                        <krw:value V="E12.1-"/>
+                        <krw:value V="E12.11"/>
+                        <krw:value V="E12.2-"/>
+                        <krw:value V="E12.20"/>
+                        <krw:value V="E12.21"/>
+                        <krw:value V="E12.3-"/>
+                        <krw:value V="E12.30"/>
+                        <krw:value V="E12.31"/>
+                        <krw:value V="E12.4-"/>
+                        <krw:value V="E12.40"/>
+                        <krw:value V="E12.41"/>
+                        <krw:value V="E12.5-"/>
+                        <krw:value V="E12.50"/>
+                        <krw:value V="E12.51"/>
+                        <krw:value V="E12.6-"/>
+                        <krw:value V="E12.60"/>
+                        <krw:value V="E12.61"/>
+                        <krw:value V="E12.7-"/>
+                        <krw:value V="E12.72"/>
+                        <krw:value V="E12.73"/>
+                        <krw:value V="E12.74"/>
+                        <krw:value V="E12.75"/>
+                        <krw:value V="E12.8-"/>
+                        <krw:value V="E12.80"/>
+                        <krw:value V="E12.81"/>
+                        <krw:value V="E12.9-"/>
+                        <krw:value V="E12.90"/>
+                        <krw:value V="E12.91"/>
+                        <krw:value V="E13.0-"/>
+                        <krw:value V="E13.01"/>
+                        <krw:value V="E13.1-"/>
+                        <krw:value V="E13.11"/>
+                        <krw:value V="E13.2-"/>
+                        <krw:value V="E13.20"/>
+                        <krw:value V="E13.21"/>
+                        <krw:value V="E13.3-"/>
+                        <krw:value V="E13.30"/>
+                        <krw:value V="E13.31"/>
+                        <krw:value V="E13.4-"/>
+                        <krw:value V="E13.40"/>
+                        <krw:value V="E13.41"/>
+                        <krw:value V="E13.5-"/>
+                        <krw:value V="E13.50"/>
+                        <krw:value V="E13.51"/>
+                        <krw:value V="E13.6-"/>
+                        <krw:value V="E13.60"/>
+                        <krw:value V="E13.61"/>
+                        <krw:value V="E13.7-"/>
+                        <krw:value V="E13.72"/>
+                        <krw:value V="E13.73"/>
+                        <krw:value V="E13.74"/>
+                        <krw:value V="E13.75"/>
+                        <krw:value V="E13.8-"/>
+                        <krw:value V="E13.80"/>
+                        <krw:value V="E13.81"/>
+                        <krw:value V="E13.9-"/>
+                        <krw:value V="E13.90"/>
+                        <krw:value V="E13.91"/>
+                    </krw:value_liste>
+                    <krw:subpruefung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subpruefung>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Unterschiedliche Typen des Diabetes mellitus schließen sich üblicherweise aus."/>
+                    <krw:vorschlag V="Entfernen Sie bitte nicht zutreffende Kodes."/>
+                    <krw:korrektur>
+                        <krw:parameter S="1.2.276.0.76.3.1.1.5.2.16" V=""/>
+                        <krw:regel V="DELETE"/>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Kodes für unterschiedliche Typen des Diabetes mellitus"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-01-026"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft das gleichzeitige Verwenden von Kodes für unterschiedliche Typen des Diabetes mellitus."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Obligate Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="1"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E11.0-"/>
+                        <krw:value V="E11.01"/>
+                        <krw:value V="E11.1-"/>
+                        <krw:value V="E11.11"/>
+                        <krw:value V="E11.2-"/>
+                        <krw:value V="E11.20"/>
+                        <krw:value V="E11.21"/>
+                        <krw:value V="E11.3-"/>
+                        <krw:value V="E11.30"/>
+                        <krw:value V="E11.31"/>
+                        <krw:value V="E11.4-"/>
+                        <krw:value V="E11.40"/>
+                        <krw:value V="E11.41"/>
+                        <krw:value V="E11.5-"/>
+                        <krw:value V="E11.50"/>
+                        <krw:value V="E11.51"/>
+                        <krw:value V="E11.6-"/>
+                        <krw:value V="E11.60"/>
+                        <krw:value V="E11.61"/>
+                        <krw:value V="E11.7-"/>
+                        <krw:value V="E11.72"/>
+                        <krw:value V="E11.73"/>
+                        <krw:value V="E11.74"/>
+                        <krw:value V="E11.75"/>
+                        <krw:value V="E11.8-"/>
+                        <krw:value V="E11.80"/>
+                        <krw:value V="E11.81"/>
+                        <krw:value V="E11.9-"/>
+                        <krw:value V="E11.90"/>
+                        <krw:value V="E11.91"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.0-"/>
+                        <krw:value V="E10.01"/>
+                        <krw:value V="E10.1-"/>
+                        <krw:value V="E10.11"/>
+                        <krw:value V="E10.2-"/>
+                        <krw:value V="E10.20"/>
+                        <krw:value V="E10.21"/>
+                        <krw:value V="E10.3-"/>
+                        <krw:value V="E10.30"/>
+                        <krw:value V="E10.31"/>
+                        <krw:value V="E10.4-"/>
+                        <krw:value V="E10.40"/>
+                        <krw:value V="E10.41"/>
+                        <krw:value V="E10.5-"/>
+                        <krw:value V="E10.50"/>
+                        <krw:value V="E10.51"/>
+                        <krw:value V="E10.6-"/>
+                        <krw:value V="E10.60"/>
+                        <krw:value V="E10.61"/>
+                        <krw:value V="E10.7-"/>
+                        <krw:value V="E10.72"/>
+                        <krw:value V="E10.73"/>
+                        <krw:value V="E10.74"/>
+                        <krw:value V="E10.75"/>
+                        <krw:value V="E10.8-"/>
+                        <krw:value V="E10.80"/>
+                        <krw:value V="E10.81"/>
+                        <krw:value V="E10.9-"/>
+                        <krw:value V="E10.90"/>
+                        <krw:value V="E10.91"/>
+                        <krw:value V="E12.0-"/>
+                        <krw:value V="E12.01"/>
+                        <krw:value V="E12.1-"/>
+                        <krw:value V="E12.11"/>
+                        <krw:value V="E12.2-"/>
+                        <krw:value V="E12.20"/>
+                        <krw:value V="E12.21"/>
+                        <krw:value V="E12.3-"/>
+                        <krw:value V="E12.30"/>
+                        <krw:value V="E12.31"/>
+                        <krw:value V="E12.4-"/>
+                        <krw:value V="E12.40"/>
+                        <krw:value V="E12.41"/>
+                        <krw:value V="E12.5-"/>
+                        <krw:value V="E12.50"/>
+                        <krw:value V="E12.51"/>
+                        <krw:value V="E12.6-"/>
+                        <krw:value V="E12.60"/>
+                        <krw:value V="E12.61"/>
+                        <krw:value V="E12.7-"/>
+                        <krw:value V="E12.72"/>
+                        <krw:value V="E12.73"/>
+                        <krw:value V="E12.74"/>
+                        <krw:value V="E12.75"/>
+                        <krw:value V="E12.8-"/>
+                        <krw:value V="E12.80"/>
+                        <krw:value V="E12.81"/>
+                        <krw:value V="E12.9-"/>
+                        <krw:value V="E12.90"/>
+                        <krw:value V="E12.91"/>
+                        <krw:value V="E13.0-"/>
+                        <krw:value V="E13.01"/>
+                        <krw:value V="E13.1-"/>
+                        <krw:value V="E13.11"/>
+                        <krw:value V="E13.2-"/>
+                        <krw:value V="E13.20"/>
+                        <krw:value V="E13.21"/>
+                        <krw:value V="E13.3-"/>
+                        <krw:value V="E13.30"/>
+                        <krw:value V="E13.31"/>
+                        <krw:value V="E13.4-"/>
+                        <krw:value V="E13.40"/>
+                        <krw:value V="E13.41"/>
+                        <krw:value V="E13.5-"/>
+                        <krw:value V="E13.50"/>
+                        <krw:value V="E13.51"/>
+                        <krw:value V="E13.6-"/>
+                        <krw:value V="E13.60"/>
+                        <krw:value V="E13.61"/>
+                        <krw:value V="E13.7-"/>
+                        <krw:value V="E13.72"/>
+                        <krw:value V="E13.73"/>
+                        <krw:value V="E13.74"/>
+                        <krw:value V="E13.75"/>
+                        <krw:value V="E13.8-"/>
+                        <krw:value V="E13.80"/>
+                        <krw:value V="E13.81"/>
+                        <krw:value V="E13.9-"/>
+                        <krw:value V="E13.90"/>
+                        <krw:value V="E13.91"/>
+                    </krw:value_liste>
+                    <krw:subpruefung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subpruefung>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Unterschiedliche Typen des Diabetes mellitus schließen sich üblicherweise aus."/>
+                    <krw:vorschlag V="Entfernen Sie bitte nicht zutreffende Kodes."/>
+                    <krw:korrektur>
+                        <krw:parameter S="1.2.276.0.76.3.1.1.5.2.16" V=""/>
+                        <krw:regel V="DELETE"/>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Kodes für unterschiedliche Typen des Diabetes mellitus"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-01-027"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft das gleichzeitige Verwenden von Kodes für unterschiedliche Typen des Diabetes mellitus."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Obligate Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="1"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E12.0-"/>
+                        <krw:value V="E12.01"/>
+                        <krw:value V="E12.1-"/>
+                        <krw:value V="E12.11"/>
+                        <krw:value V="E12.2-"/>
+                        <krw:value V="E12.20"/>
+                        <krw:value V="E12.21"/>
+                        <krw:value V="E12.3-"/>
+                        <krw:value V="E12.30"/>
+                        <krw:value V="E12.31"/>
+                        <krw:value V="E12.4-"/>
+                        <krw:value V="E12.40"/>
+                        <krw:value V="E12.41"/>
+                        <krw:value V="E12.5-"/>
+                        <krw:value V="E12.50"/>
+                        <krw:value V="E12.51"/>
+                        <krw:value V="E12.6-"/>
+                        <krw:value V="E12.60"/>
+                        <krw:value V="E12.61"/>
+                        <krw:value V="E12.7-"/>
+                        <krw:value V="E12.72"/>
+                        <krw:value V="E12.73"/>
+                        <krw:value V="E12.74"/>
+                        <krw:value V="E12.75"/>
+                        <krw:value V="E12.8-"/>
+                        <krw:value V="E12.80"/>
+                        <krw:value V="E12.81"/>
+                        <krw:value V="E12.9-"/>
+                        <krw:value V="E12.90"/>
+                        <krw:value V="E12.91"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.0-"/>
+                        <krw:value V="E10.01"/>
+                        <krw:value V="E10.1-"/>
+                        <krw:value V="E10.11"/>
+                        <krw:value V="E10.2-"/>
+                        <krw:value V="E10.20"/>
+                        <krw:value V="E10.21"/>
+                        <krw:value V="E10.3-"/>
+                        <krw:value V="E10.30"/>
+                        <krw:value V="E10.31"/>
+                        <krw:value V="E10.4-"/>
+                        <krw:value V="E10.40"/>
+                        <krw:value V="E10.41"/>
+                        <krw:value V="E10.5-"/>
+                        <krw:value V="E10.50"/>
+                        <krw:value V="E10.51"/>
+                        <krw:value V="E10.6-"/>
+                        <krw:value V="E10.60"/>
+                        <krw:value V="E10.61"/>
+                        <krw:value V="E10.7-"/>
+                        <krw:value V="E10.72"/>
+                        <krw:value V="E10.73"/>
+                        <krw:value V="E10.74"/>
+                        <krw:value V="E10.75"/>
+                        <krw:value V="E10.8-"/>
+                        <krw:value V="E10.80"/>
+                        <krw:value V="E10.81"/>
+                        <krw:value V="E10.9-"/>
+                        <krw:value V="E10.90"/>
+                        <krw:value V="E10.91"/>
+                        <krw:value V="E11.0-"/>
+                        <krw:value V="E11.01"/>
+                        <krw:value V="E11.1-"/>
+                        <krw:value V="E11.11"/>
+                        <krw:value V="E11.2-"/>
+                        <krw:value V="E11.20"/>
+                        <krw:value V="E11.21"/>
+                        <krw:value V="E11.3-"/>
+                        <krw:value V="E11.30"/>
+                        <krw:value V="E11.31"/>
+                        <krw:value V="E11.4-"/>
+                        <krw:value V="E11.40"/>
+                        <krw:value V="E11.41"/>
+                        <krw:value V="E11.5-"/>
+                        <krw:value V="E11.50"/>
+                        <krw:value V="E11.51"/>
+                        <krw:value V="E11.6-"/>
+                        <krw:value V="E11.60"/>
+                        <krw:value V="E11.61"/>
+                        <krw:value V="E11.7-"/>
+                        <krw:value V="E11.72"/>
+                        <krw:value V="E11.73"/>
+                        <krw:value V="E11.74"/>
+                        <krw:value V="E11.75"/>
+                        <krw:value V="E11.8-"/>
+                        <krw:value V="E11.80"/>
+                        <krw:value V="E11.81"/>
+                        <krw:value V="E11.9-"/>
+                        <krw:value V="E11.90"/>
+                        <krw:value V="E11.91"/>
+                        <krw:value V="E13.0-"/>
+                        <krw:value V="E13.01"/>
+                        <krw:value V="E13.1-"/>
+                        <krw:value V="E13.11"/>
+                        <krw:value V="E13.2-"/>
+                        <krw:value V="E13.20"/>
+                        <krw:value V="E13.21"/>
+                        <krw:value V="E13.3-"/>
+                        <krw:value V="E13.30"/>
+                        <krw:value V="E13.31"/>
+                        <krw:value V="E13.4-"/>
+                        <krw:value V="E13.40"/>
+                        <krw:value V="E13.41"/>
+                        <krw:value V="E13.5-"/>
+                        <krw:value V="E13.50"/>
+                        <krw:value V="E13.51"/>
+                        <krw:value V="E13.6-"/>
+                        <krw:value V="E13.60"/>
+                        <krw:value V="E13.61"/>
+                        <krw:value V="E13.7-"/>
+                        <krw:value V="E13.72"/>
+                        <krw:value V="E13.73"/>
+                        <krw:value V="E13.74"/>
+                        <krw:value V="E13.75"/>
+                        <krw:value V="E13.8-"/>
+                        <krw:value V="E13.80"/>
+                        <krw:value V="E13.81"/>
+                        <krw:value V="E13.9-"/>
+                        <krw:value V="E13.90"/>
+                        <krw:value V="E13.91"/>
+                    </krw:value_liste>
+                    <krw:subpruefung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subpruefung>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Unterschiedliche Typen des Diabetes mellitus schließen sich üblicherweise aus."/>
+                    <krw:vorschlag V="Entfernen Sie bitte nicht zutreffende Kodes."/>
+                    <krw:korrektur>
+                        <krw:parameter S="1.2.276.0.76.3.1.1.5.2.16" V=""/>
+                        <krw:regel V="DELETE"/>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Kodes für unterschiedliche Typen des Diabetes mellitus"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-01-028"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft das gleichzeitige Verwenden von Kodes für unterschiedliche Typen des Diabetes mellitus."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IV: Endokrine, Ernährungs- und Stoffwechselkrankheiten" S="1.2.276.0.76.3.1.1.5.2.55" V="23"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Obligate Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="1"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E13.0-"/>
+                        <krw:value V="E13.01"/>
+                        <krw:value V="E13.1-"/>
+                        <krw:value V="E13.11"/>
+                        <krw:value V="E13.2-"/>
+                        <krw:value V="E13.20"/>
+                        <krw:value V="E13.21"/>
+                        <krw:value V="E13.3-"/>
+                        <krw:value V="E13.30"/>
+                        <krw:value V="E13.31"/>
+                        <krw:value V="E13.4-"/>
+                        <krw:value V="E13.40"/>
+                        <krw:value V="E13.41"/>
+                        <krw:value V="E13.5-"/>
+                        <krw:value V="E13.50"/>
+                        <krw:value V="E13.51"/>
+                        <krw:value V="E13.6-"/>
+                        <krw:value V="E13.60"/>
+                        <krw:value V="E13.61"/>
+                        <krw:value V="E13.7-"/>
+                        <krw:value V="E13.72"/>
+                        <krw:value V="E13.73"/>
+                        <krw:value V="E13.74"/>
+                        <krw:value V="E13.75"/>
+                        <krw:value V="E13.8-"/>
+                        <krw:value V="E13.80"/>
+                        <krw:value V="E13.81"/>
+                        <krw:value V="E13.9-"/>
+                        <krw:value V="E13.90"/>
+                        <krw:value V="E13.91"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="E10.0-"/>
+                        <krw:value V="E10.01"/>
+                        <krw:value V="E10.1-"/>
+                        <krw:value V="E10.11"/>
+                        <krw:value V="E10.2-"/>
+                        <krw:value V="E10.20"/>
+                        <krw:value V="E10.21"/>
+                        <krw:value V="E10.3-"/>
+                        <krw:value V="E10.30"/>
+                        <krw:value V="E10.31"/>
+                        <krw:value V="E10.4-"/>
+                        <krw:value V="E10.40"/>
+                        <krw:value V="E10.41"/>
+                        <krw:value V="E10.5-"/>
+                        <krw:value V="E10.50"/>
+                        <krw:value V="E10.51"/>
+                        <krw:value V="E10.6-"/>
+                        <krw:value V="E10.60"/>
+                        <krw:value V="E10.61"/>
+                        <krw:value V="E10.7-"/>
+                        <krw:value V="E10.72"/>
+                        <krw:value V="E10.73"/>
+                        <krw:value V="E10.74"/>
+                        <krw:value V="E10.75"/>
+                        <krw:value V="E10.8-"/>
+                        <krw:value V="E10.80"/>
+                        <krw:value V="E10.81"/>
+                        <krw:value V="E10.9-"/>
+                        <krw:value V="E10.90"/>
+                        <krw:value V="E10.91"/>
+                        <krw:value V="E11.0-"/>
+                        <krw:value V="E11.01"/>
+                        <krw:value V="E11.1-"/>
+                        <krw:value V="E11.11"/>
+                        <krw:value V="E11.2-"/>
+                        <krw:value V="E11.20"/>
+                        <krw:value V="E11.21"/>
+                        <krw:value V="E11.3-"/>
+                        <krw:value V="E11.30"/>
+                        <krw:value V="E11.31"/>
+                        <krw:value V="E11.4-"/>
+                        <krw:value V="E11.40"/>
+                        <krw:value V="E11.41"/>
+                        <krw:value V="E11.5-"/>
+                        <krw:value V="E11.50"/>
+                        <krw:value V="E11.51"/>
+                        <krw:value V="E11.6-"/>
+                        <krw:value V="E11.60"/>
+                        <krw:value V="E11.61"/>
+                        <krw:value V="E11.7-"/>
+                        <krw:value V="E11.72"/>
+                        <krw:value V="E11.73"/>
+                        <krw:value V="E11.74"/>
+                        <krw:value V="E11.75"/>
+                        <krw:value V="E11.8-"/>
+                        <krw:value V="E11.80"/>
+                        <krw:value V="E11.81"/>
+                        <krw:value V="E11.9-"/>
+                        <krw:value V="E11.90"/>
+                        <krw:value V="E11.91"/>
+                        <krw:value V="E12.0-"/>
+                        <krw:value V="E12.01"/>
+                        <krw:value V="E12.1-"/>
+                        <krw:value V="E12.11"/>
+                        <krw:value V="E12.2-"/>
+                        <krw:value V="E12.20"/>
+                        <krw:value V="E12.21"/>
+                        <krw:value V="E12.3-"/>
+                        <krw:value V="E12.30"/>
+                        <krw:value V="E12.31"/>
+                        <krw:value V="E12.4-"/>
+                        <krw:value V="E12.40"/>
+                        <krw:value V="E12.41"/>
+                        <krw:value V="E12.5-"/>
+                        <krw:value V="E12.50"/>
+                        <krw:value V="E12.51"/>
+                        <krw:value V="E12.6-"/>
+                        <krw:value V="E12.60"/>
+                        <krw:value V="E12.61"/>
+                        <krw:value V="E12.7-"/>
+                        <krw:value V="E12.72"/>
+                        <krw:value V="E12.73"/>
+                        <krw:value V="E12.74"/>
+                        <krw:value V="E12.75"/>
+                        <krw:value V="E12.8-"/>
+                        <krw:value V="E12.80"/>
+                        <krw:value V="E12.81"/>
+                        <krw:value V="E12.9-"/>
+                        <krw:value V="E12.90"/>
+                        <krw:value V="E12.91"/>
+                    </krw:value_liste>
+                    <krw:subpruefung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subpruefung>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Unterschiedliche Typen des Diabetes mellitus schließen sich üblicherweise aus."/>
+                    <krw:vorschlag V="Entfernen Sie bitte nicht zutreffende Kodes."/>
+                    <krw:korrektur>
+                        <krw:parameter S="1.2.276.0.76.3.1.1.5.2.16" V=""/>
+                        <krw:regel V="DELETE"/>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Kodes für unterschiedliche Typen des Diabetes mellitus"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-02-029"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Hypertensiver Herzerkrankung und weist auf fehlende Kodes für die Art der Herzerkrankung hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="I11.0-"/>
+                        <krw:value V="I11.00"/>
+                        <krw:value V="I11.01"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="I50.00"/>
+                        <krw:value V="I50.01"/>
+                        <krw:value V="I50.02"/>
+                        <krw:value V="I50.03"/>
+                        <krw:value V="I50.04"/>
+                        <krw:value V="I50.05"/>
+                        <krw:value V="I50.1-"/>
+                        <krw:value V="I50.11"/>
+                        <krw:value V="I50.12"/>
+                        <krw:value V="I50.13"/>
+                        <krw:value V="I50.14"/>
+                        <krw:value V="I50.19"/>
+                        <krw:value V="I50.9"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Für die Abbildung der Art der hypertensiven Herzerkrankung sieht die ICD-10 spezifische Kodes vor."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="I50.00"/>
+                            <krw:value V="I50.01"/>
+                            <krw:value V="I50.02"/>
+                            <krw:value V="I50.03"/>
+                            <krw:value V="I50.04"/>
+                            <krw:value V="I50.05"/>
+                            <krw:value V="I50.11"/>
+                            <krw:value V="I50.12"/>
+                            <krw:value V="I50.13"/>
+                            <krw:value V="I50.14"/>
+                            <krw:value V="I50.19"/>
+                            <krw:value V="I50.9"/>
+                        </krw:value_liste>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung der Hypertensiven Herzerkrankung: Art der Herzerkrankung"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-02-030"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Hypertensiver Nierenerkrankung und weist auf fehlende Kodes für die Art der Nierenerkrankung hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="I12.0-"/>
+                        <krw:value V="I12.00"/>
+                        <krw:value V="I12.01"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="N18.1"/>
+                        <krw:value V="N18.2"/>
+                        <krw:value V="N18.3"/>
+                        <krw:value V="N18.4"/>
+                        <krw:value V="N18.5"/>
+                        <krw:value V="N18.8-"/>
+                        <krw:value V="N18.80"/>
+                        <krw:value V="N18.89"/>
+                        <krw:value V="N18.9"/>
+                        <krw:value V="N19"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Für die Abbildung der Art der hypertensiven Nierenerkrankung sieht die ICD-10 spezifische Kodes vor."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="N18.1"/>
+                            <krw:value V="N18.2"/>
+                            <krw:value V="N18.3"/>
+                            <krw:value V="N18.4"/>
+                            <krw:value V="N18.5"/>
+                            <krw:value V="N18.80"/>
+                            <krw:value V="N18.89"/>
+                            <krw:value V="N18.9"/>
+                            <krw:value V="N19"/>
+                        </krw:value_liste>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung der Hypertensiven Nierenerkrankung: Art der Nierenerkrankung"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-02-048"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Hypertensiver Herz- und Nierenerkrankung und weist auf fehlende Kodes für die Art der Herzerkrankung hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="I13.0-"/>
+                        <krw:value V="I13.00"/>
+                        <krw:value V="I13.01"/>
+                        <krw:value V="I13.2-"/>
+                        <krw:value V="I13.20"/>
+                        <krw:value V="I13.21"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="I50.0-"/>
+                        <krw:value V="I50.00"/>
+                        <krw:value V="I50.01"/>
+                        <krw:value V="I50.02"/>
+                        <krw:value V="I50.03"/>
+                        <krw:value V="I50.04"/>
+                        <krw:value V="I50.05"/>
+                        <krw:value V="I50.1-"/>
+                        <krw:value V="I50.11"/>
+                        <krw:value V="I50.12"/>
+                        <krw:value V="I50.13"/>
+                        <krw:value V="I50.14"/>
+                        <krw:value V="I50.19"/>
+                        <krw:value V="I50.9"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Für die Abbildung der Art der hypertensiven Herzerkrankung sieht die ICD-10 spezifische Kodes vor."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="I50.00"/>
+                            <krw:value V="I50.01"/>
+                            <krw:value V="I50.02"/>
+                            <krw:value V="I50.03"/>
+                            <krw:value V="I50.04"/>
+                            <krw:value V="I50.05"/>
+                            <krw:value V="I50.11"/>
+                            <krw:value V="I50.12"/>
+                            <krw:value V="I50.13"/>
+                            <krw:value V="I50.14"/>
+                            <krw:value V="I50.19"/>
+                            <krw:value V="I50.9"/>
+                        </krw:value_liste>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung der Hypertensiven Herz- und Nierenerkrankung: Art der Herzerkrankung"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="01-02-049"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft die vollständige Kodierung bei Hypertensiver Herz- und Nierenerkrankung und weist auf fehlende Kodes für die Art der Nierenerkrankung hin."/>
+                <krw:regelkategorie DN="Behandlungsfall-bezogen, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="1"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Behandlungsfall" S="1.2.276.0.76.3.1.1.5.2.18" V="7"/>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="bei Kodierung" S="1.2.276.0.76.3.1.1.5.2.54" V="1"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Einzelfall" S="1.2.276.0.76.3.1.1.5.2.53" V="1"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="I13.1-"/>
+                        <krw:value V="I13.10"/>
+                        <krw:value V="I13.11"/>
+                        <krw:value V="I13.2-"/>
+                        <krw:value V="I13.20"/>
+                        <krw:value V="I13.21"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:pruefung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:pruefung_existenz V="FALSE"/>
+                    <krw:value_liste>
+                        <krw:value V="N18.1"/>
+                        <krw:value V="N18.2"/>
+                        <krw:value V="N18.3"/>
+                        <krw:value V="N18.4"/>
+                        <krw:value V="N18.5"/>
+                        <krw:value V="N18.8-"/>
+                        <krw:value V="N18.80"/>
+                        <krw:value V="N18.89"/>
+                        <krw:value V="N18.9"/>
+                        <krw:value V="N19"/>
+                    </krw:value_liste>
+                </krw:pruefung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Für die Abbildung der Art der hypertensiven Nierenerkrankung sieht die ICD-10 spezifische Kodes vor."/>
+                    <krw:vorschlag V="Sofern zutreffend, ergänzen Sie bitte einen oder mehrere Kodes:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="ADD"/>
+                        <krw:value_liste>
+                            <krw:value V="N18.1"/>
+                            <krw:value V="N18.2"/>
+                            <krw:value V="N18.3"/>
+                            <krw:value V="N18.4"/>
+                            <krw:value V="N18.5"/>
+                            <krw:value V="N18.80"/>
+                            <krw:value V="N18.89"/>
+                            <krw:value V="N18.9"/>
+                            <krw:value V="N19"/>
+                        </krw:value_liste>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Vollständige Kodierung der Hypertensiven Herz- und Nierenerkrankung: Art der Nierenerkrankung"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="03-02-036"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft für den Patientenstamm einer Praxis das Verwenden eines Kodes für eine akute Erkrankung über mehrere Quartale hinweg."/>
+                <krw:regelkategorie DN="quartalsübergreifend, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="3"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="Kodiervorgaben nach § 295 SGB V" S="1.2.276.0.76.3.1.1.5.2.51" V="1">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="§2.2 Dauerdiagnosen" S="1.2.276.0.76.3.1.1.5.2.55" V="5"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Quartal" S="1.2.276.0.76.3.1.1.5.2.18" V="21">
+                    <krw:anzahl_quartale V="2"/>
+                </krw:bezugsraum>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="wählbar" S="1.2.276.0.76.3.1.1.5.2.54" V="3"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Patientenstamm" S="1.2.276.0.76.3.1.1.5.2.53" V="2"/>
+                    <krw:pruefgrundlage DN="Behandelte Patienten im Quartal" S="1.2.276.0.76.3.1.1.5.2.53" V="3"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="I21.0"/>
+                        <krw:value V="I21.1"/>
+                        <krw:value V="I21.2"/>
+                        <krw:value V="I21.3"/>
+                        <krw:value V="I21.4"/>
+                        <krw:value V="I21.9"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Der gesicherte akute Myokardinfarkt wurde über 2 zurückliegende Quartale kodiert. Bitte prüfen Sie, ob der Alte Myokardinfarkt kodiert werden kann."/>
+                    <krw:vorschlag V="Sofern zutreffend, ersetzen Sie bitte den Kode durch einen der folgenden Kodes mit dem Zusatzkennzeichen &quot;G&quot;:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="REPLACE"/>
+                        <krw:value_liste>
+                            <krw:value V="I25.20"/>
+                            <krw:value V="I25.21"/>
+                            <krw:value V="I25.22"/>
+                            <krw:value V="I25.29"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Akute Erkrankung als Dauerdiagnose: patientengruppenbezogene Prüfung"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="03-02-038"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft für den Patientenstamm einer Praxis das Verwenden eines Kodes für eine akute Erkrankung über mehrere Quartale hinweg."/>
+                <krw:regelkategorie DN="quartalsübergreifend, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="3"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="Kodiervorgaben nach § 295 SGB V" S="1.2.276.0.76.3.1.1.5.2.51" V="1">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="§2.2 Dauerdiagnosen" S="1.2.276.0.76.3.1.1.5.2.55" V="5"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Quartal" S="1.2.276.0.76.3.1.1.5.2.18" V="21">
+                    <krw:anzahl_quartale V="4"/>
+                </krw:bezugsraum>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="wählbar" S="1.2.276.0.76.3.1.1.5.2.54" V="3"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Patientenstamm" S="1.2.276.0.76.3.1.1.5.2.53" V="2"/>
+                    <krw:pruefgrundlage DN="Behandelte Patienten im Quartal" S="1.2.276.0.76.3.1.1.5.2.53" V="3"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="I60.0"/>
+                        <krw:value V="I60.1"/>
+                        <krw:value V="I60.2"/>
+                        <krw:value V="I60.3"/>
+                        <krw:value V="I60.4"/>
+                        <krw:value V="I60.5"/>
+                        <krw:value V="I60.6"/>
+                        <krw:value V="I60.7"/>
+                        <krw:value V="I60.8"/>
+                        <krw:value V="I60.9"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Die gesicherte akute Subarachnoidalblutung wurde über 4 Quartale kodiert. Bitte prüfen Sie, ob Folgezustände kodiert werden können."/>
+                    <krw:vorschlag V="Sofern zutreffend, ersetzen Sie bitte den Kode durch folgenden Kode mit dem Zusatzkennzeichen &quot;G&quot;:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="REPLACE"/>
+                        <krw:value_liste>
+                            <krw:value V="I69.0"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Akute Erkrankung als Dauerdiagnose: patientengruppenbezogene Prüfung"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="03-02-040"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft für den Patientenstamm einer Praxis das Verwenden eines Kodes für eine akute Erkrankung über mehrere Quartale hinweg."/>
+                <krw:regelkategorie DN="quartalsübergreifend, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="3"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="Kodiervorgaben nach § 295 SGB V" S="1.2.276.0.76.3.1.1.5.2.51" V="1">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="§2.2 Dauerdiagnosen" S="1.2.276.0.76.3.1.1.5.2.55" V="5"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Quartal" S="1.2.276.0.76.3.1.1.5.2.18" V="21">
+                    <krw:anzahl_quartale V="4"/>
+                </krw:bezugsraum>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="wählbar" S="1.2.276.0.76.3.1.1.5.2.54" V="3"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Patientenstamm" S="1.2.276.0.76.3.1.1.5.2.53" V="2"/>
+                    <krw:pruefgrundlage DN="Behandelte Patienten im Quartal" S="1.2.276.0.76.3.1.1.5.2.53" V="3"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="I61.0"/>
+                        <krw:value V="I61.1"/>
+                        <krw:value V="I61.2"/>
+                        <krw:value V="I61.3"/>
+                        <krw:value V="I61.4"/>
+                        <krw:value V="I61.5"/>
+                        <krw:value V="I61.6"/>
+                        <krw:value V="I61.8"/>
+                        <krw:value V="I61.9"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Die gesicherte akute Intrazerebrale Blutung wurde über 4 Quartale kodiert. Bitte prüfen Sie, ob Folgezustände kodiert werden können."/>
+                    <krw:vorschlag V="Sofern zutreffend, ersetzen Sie bitte den Kode durch folgenden Kode mit dem Zusatzkennzeichen &quot;G&quot;:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="REPLACE"/>
+                        <krw:value_liste>
+                            <krw:value V="I69.1"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Akute Erkrankung als Dauerdiagnose: patientengruppenbezogene Prüfung"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="03-02-042"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft für den Patientenstamm einer Praxis das Verwenden eines Kodes für eine akute Erkrankung über mehrere Quartale hinweg."/>
+                <krw:regelkategorie DN="quartalsübergreifend, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="3"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="Kodiervorgaben nach § 295 SGB V" S="1.2.276.0.76.3.1.1.5.2.51" V="1">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="§2.2 Dauerdiagnosen" S="1.2.276.0.76.3.1.1.5.2.55" V="5"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Quartal" S="1.2.276.0.76.3.1.1.5.2.18" V="21">
+                    <krw:anzahl_quartale V="4"/>
+                </krw:bezugsraum>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="wählbar" S="1.2.276.0.76.3.1.1.5.2.54" V="3"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Patientenstamm" S="1.2.276.0.76.3.1.1.5.2.53" V="2"/>
+                    <krw:pruefgrundlage DN="Behandelte Patienten im Quartal" S="1.2.276.0.76.3.1.1.5.2.53" V="3"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="I62.0-"/>
+                        <krw:value V="I62.00"/>
+                        <krw:value V="I62.01"/>
+                        <krw:value V="I62.09"/>
+                        <krw:value V="I62.1"/>
+                        <krw:value V="I62.9"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Die gesicherte akute Sonstige nichttraumatische intrakranielle Blutung wurde über 4 Quartale kodiert. Bitte prüfen Sie, ob Folgezustände kodiert werden können."/>
+                    <krw:vorschlag V="Sofern zutreffend, ersetzen Sie bitte den Kode durch folgenden Kode mit dem Zusatzkennzeichen &quot;G&quot;:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="REPLACE"/>
+                        <krw:value_liste>
+                            <krw:value V="I69.2"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Akute Erkrankung als Dauerdiagnose: patientengruppenbezogene Prüfung"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="03-02-044"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft für den Patientenstamm einer Praxis das Verwenden eines Kodes für eine akute Erkrankung über mehrere Quartale hinweg."/>
+                <krw:regelkategorie DN="quartalsübergreifend, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="3"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="Kodiervorgaben nach § 295 SGB V" S="1.2.276.0.76.3.1.1.5.2.51" V="1">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="§2.2 Dauerdiagnosen" S="1.2.276.0.76.3.1.1.5.2.55" V="5"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Quartal" S="1.2.276.0.76.3.1.1.5.2.18" V="21">
+                    <krw:anzahl_quartale V="4"/>
+                </krw:bezugsraum>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="wählbar" S="1.2.276.0.76.3.1.1.5.2.54" V="3"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Patientenstamm" S="1.2.276.0.76.3.1.1.5.2.53" V="2"/>
+                    <krw:pruefgrundlage DN="Behandelte Patienten im Quartal" S="1.2.276.0.76.3.1.1.5.2.53" V="3"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:operator V="OR"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="I63.0"/>
+                        <krw:value V="I63.1"/>
+                        <krw:value V="I63.2"/>
+                        <krw:value V="I63.3"/>
+                        <krw:value V="I63.4"/>
+                        <krw:value V="I63.5"/>
+                        <krw:value V="I63.6"/>
+                        <krw:value V="I63.8"/>
+                        <krw:value V="I63.9"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Der gesicherte akute Hirninfarkt wurde über 4 Quartale kodiert. Bitte prüfen Sie, ob Folgezustände kodiert werden können."/>
+                    <krw:vorschlag V="Sofern zutreffend, ersetzen Sie bitte den Kode durch folgenden Kode mit dem Zusatzkennzeichen &quot;G&quot;:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="REPLACE"/>
+                        <krw:value_liste>
+                            <krw:value V="I69.3"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Akute Erkrankung als Dauerdiagnose: patientengruppenbezogene Prüfung"/>
+            </krw:kodierregel>
+            <krw:kodierregel VT="2021-10-22">
+                <krw:id V="03-02-046"/>
+                <krw:service_tmr V="2022-01-01.."/>
+                <krw:beschreibung V="Die Regel prüft für den Patientenstamm einer Praxis das Verwenden eines Kodes für eine akute Erkrankung über mehrere Quartale hinweg."/>
+                <krw:regelkategorie DN="quartalsübergreifend, ICD getriggert" S="1.2.276.0.76.3.1.1.5.2.50" V="3"/>
+                <krw:regelquelle_liste>
+                    <krw:regelquelle DN="Kodiervorgaben nach § 295 SGB V" S="1.2.276.0.76.3.1.1.5.2.51" V="1">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="§2.2 Dauerdiagnosen" S="1.2.276.0.76.3.1.1.5.2.55" V="5"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                    <krw:regelquelle DN="ICD-10-GM" S="1.2.276.0.76.3.1.1.5.2.51" V="2">
+                        <krw:regelthema_liste>
+                            <krw:regelthema DN="IX: Krankheiten des Kreislaufsystems" S="1.2.276.0.76.3.1.1.5.2.55" V="28"/>
+                        </krw:regelthema_liste>
+                    </krw:regelquelle>
+                </krw:regelquelle_liste>
+                <krw:regelanwendung DN="Fakultative Regel" S="1.2.276.0.76.3.1.1.5.2.52" V="2"/>
+                <krw:bezugsraum DN="Quartal" S="1.2.276.0.76.3.1.1.5.2.18" V="21">
+                    <krw:anzahl_quartale V="4"/>
+                </krw:bezugsraum>
+                <krw:echtzeitpruefung_liste>
+                    <krw:echtzeitpruefung DN="wählbar" S="1.2.276.0.76.3.1.1.5.2.54" V="3"/>
+                </krw:echtzeitpruefung_liste>
+                <krw:pruefgrundlage_liste>
+                    <krw:pruefgrundlage DN="Patientenstamm" S="1.2.276.0.76.3.1.1.5.2.53" V="2"/>
+                    <krw:pruefgrundlage DN="Behandelte Patienten im Quartal" S="1.2.276.0.76.3.1.1.5.2.53" V="3"/>
+                </krw:pruefgrundlage_liste>
+                <krw:bedingung>
+                    <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                    <krw:existenz V="TRUE"/>
+                    <krw:value_liste>
+                        <krw:value V="I64"/>
+                    </krw:value_liste>
+                    <krw:subbedingung>
+                        <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                        <krw:existenz V="TRUE"/>
+                        <krw:value_liste>
+                            <krw:value V="G"/>
+                        </krw:value_liste>
+                    </krw:subbedingung>
+                </krw:bedingung>
+                <krw:fehlerbehandlung>
+                    <krw:hinweis V="Der gesicherte akute Schlaganfall wurde über 4 Quartale kodiert. Bitte prüfen Sie, ob Folgezustände kodiert werden können."/>
+                    <krw:vorschlag V="Sofern zutreffend, ersetzen Sie bitte den Kode durch folgenden Kode mit dem Zusatzkennzeichen &quot;G&quot;:"/>
+                    <krw:korrektur>
+                        <krw:parameter DN="ICD-Diagnose" S="1.2.276.0.76.3.1.1.5.2.16" V="ICD"/>
+                        <krw:regel V="REPLACE"/>
+                        <krw:value_liste>
+                            <krw:value V="I69.4"/>
+                        </krw:value_liste>
+                        <krw:subkorrektur>
+                            <krw:parameter DN="Diagnosesicherheit" S="1.2.276.0.76.3.1.1.5.2.16" V="DS"/>
+                            <krw:value_liste>
+                                <krw:value V="G"/>
+                            </krw:value_liste>
+                        </krw:subkorrektur>
+                    </krw:korrektur>
+                </krw:fehlerbehandlung>
+                <krw:kurz_beschreibung V="Akute Erkrankung als Dauerdiagnose: patientengruppenbezogene Prüfung"/>
+            </krw:kodierregel>
+        </krw:kodierregel_liste>
+    </ehd:body>
+</ehd:ehd>

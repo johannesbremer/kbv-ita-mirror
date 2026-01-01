@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Provenienz" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Provenienz" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w3c.prov" />
+    <uri value="http://www.w3.org/ns/prov" />
+    <name value="W3C PROV" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="fhirauditevent" />
+    <uri value="http://hl7.org/fhir/auditevent" />
+    <name value="FHIR AuditEvent Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Provenance" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Provenance" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Provenance.id">
+      <path value="Provenance.id" />
+      <min value="1" />
+    </element>
+    <element id="Provenance.meta">
+      <path value="Provenance.meta" />
+      <min value="1" />
+    </element>
+    <element id="Provenance.meta.versionId">
+      <path value="Provenance.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Provenance.meta.lastUpdated">
+      <path value="Provenance.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Provenance.meta.profile">
+      <path value="Provenance.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+        <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Provenienz|1.2.0" />
+    </element>	
+    <element id="Provenance.text">
+      <path value="Provenance.text" />
+      <min value="1" />
+    </element>
+    <element id="Provenance.target">
+      <path value="Provenance.target" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.target.reference">
+      <path value="Provenance.target.reference" />
+      <min value="1" />
+    </element>
+    <element id="Provenance.target.type">
+      <path value="Provenance.target.type" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.target.identifier">
+      <path value="Provenance.target.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.target.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Provenance.target.display" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.occurred[x]">
+      <path value="Provenance.occurred[x]" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.recorded">
+      <path value="Provenance.recorded" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.policy">
+      <path value="Provenance.policy" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.location">
+      <path value="Provenance.location" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.reason">
+      <path value="Provenance.reason" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.activity">
+      <path value="Provenance.activity" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ProvenanceActivity" />
+        </extension>
+        <strength value="required" />
+      </binding>
+    </element>
+    <element id="Provenance.activity.coding">
+      <path value="Provenance.activity.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.activity.coding.system">
+      <path value="Provenance.activity.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.activity.coding.code">
+      <path value="Provenance.activity.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.activity.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Provenance.activity.text" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent">
+      <path value="Provenance.agent" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.type">
+      <path value="Provenance.agent.type" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent.role">
+      <path value="Provenance.agent.role" />
+      <mustSupport value="true" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ProvenanceAgentRole" />
+        </extension>
+        <strength value="extensible" />
+      </binding>
+    </element>
+    <element id="Provenance.agent.role.coding">
+      <path value="Provenance.agent.role.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.role.coding.system">
+      <path value="Provenance.agent.role.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.role.coding.code">
+      <path value="Provenance.agent.role.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.role.text">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Provenance.agent.role.text" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent.who">
+      <path value="Provenance.agent.who" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Mitarbeiter|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.who.reference">
+      <path value="Provenance.agent.who.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.who.type">
+      <path value="Provenance.agent.who.type" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent.who.identifier">
+      <path value="Provenance.agent.who.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent.who.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Provenance.agent.who.display" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent.onBehalfOf">
+      <path value="Provenance.agent.onBehalfOf" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.agent.onBehalfOf.reference">
+      <path value="Provenance.agent.onBehalfOf.reference" />
+      <min value="1" />
+    </element>
+    <element id="Provenance.agent.onBehalfOf.type">
+      <path value="Provenance.agent.onBehalfOf.type" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent.onBehalfOf.identifier">
+      <path value="Provenance.agent.onBehalfOf.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.agent.onBehalfOf.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Provenance.agent.onBehalfOf.display" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.entity">
+      <path value="Provenance.entity" />
+      <max value="0" />
+    </element>
+    <element id="Provenance.signature">
+      <path value="Provenance.signature" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.signature.type">
+      <path value="Provenance.signature.type" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.signature.type.system">
+      <path value="Provenance.signature.type.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.signature.type.code">
+      <path value="Provenance.signature.type.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.signature.when">
+      <path value="Provenance.signature.when" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Provenance.signature.who">
+      <path value="Provenance.signature.who" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

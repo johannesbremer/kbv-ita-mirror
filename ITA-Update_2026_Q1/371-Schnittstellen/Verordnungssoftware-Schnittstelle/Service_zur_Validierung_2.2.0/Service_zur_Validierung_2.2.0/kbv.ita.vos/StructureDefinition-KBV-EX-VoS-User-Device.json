@@ -1,0 +1,276 @@
+{
+  "resourceType": "StructureDefinition",
+  "id": "KBV-EX-VoS-User-Device",
+  "url": "https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_User_Device",
+  "version": "2.2.0",
+  "name": "KBV_EX_VoS_User_Device",
+  "title": "KBV_EX_VoS_User_Device",
+  "status": "draft",
+  "date": "2025-10-01",
+  "publisher": "Kassenärztliche Bundesvereinigung",
+  "description": "Anwender und System im Bundle KBV_PR_VoS_Bundle_VoS_PVS",
+  "fhirVersion": "4.0.1",
+  "kind": "complex-type",
+  "abstract": false,
+  "context": [
+    {
+      "expression": "Bundle.link",
+      "type": "element"
+    }
+  ],
+  "type": "Extension",
+  "baseDefinition": "http://hl7.org/fhir/StructureDefinition/Extension",
+  "derivation": "constraint",
+  "differential": {
+    "element": [
+      {
+        "id": "Extension",
+        "path": "Extension",
+        "short": "Systemkontext der VoS",
+        "definition": "Benutzername, SystemID und Prüfnummer der VoS."
+      },
+      {
+        "id": "Extension.extension",
+        "path": "Extension.extension",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "value",
+              "path": "url"
+            }
+          ],
+          "description": "Extensions are always sliced by (at least) url",
+          "rules": "closed"
+        },
+        "max": "3"
+      },
+      {
+        "id": "Extension.extension:Anwender",
+        "path": "Extension.extension",
+        "sliceName": "Anwender",
+        "short": "Anwender",
+        "definition": "Hier ist die BenutzerID des Anwenders im jeweiligen System anzugeben",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:Anwender.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:Anwender.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "Anwender"
+      },
+      {
+        "id": "Extension.extension:Anwender.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "short": "BenutzerID",
+        "definition": "BenutzerID des Anwenders",
+        "min": 1,
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:Anwender.value[x]:valueString",
+        "path": "Extension.extension.value[x]",
+        "sliceName": "valueString",
+        "short": "BenutzerID",
+        "definition": "BenutzerID des Anwenders",
+        "min": 1,
+        "max": "1",
+        "type": [
+          {
+            "code": "string"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:KBV-Pruefnummer",
+        "path": "Extension.extension",
+        "sliceName": "KBV-Pruefnummer",
+        "short": "KBV-Prüfnummer",
+        "definition": "Die KBV-Prüfnummer aus dem Zertifizierungsverfahren gemäß §371 Absatz 1 SGB V",
+        "min": 0,
+        "max": "1",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:KBV-Pruefnummer.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:KBV-Pruefnummer.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "KBV-Pruefnummer"
+      },
+      {
+        "id": "Extension.extension:KBV-Pruefnummer.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:KBV-Pruefnummer.value[x]:valueIdentifier",
+        "path": "Extension.extension.value[x]",
+        "sliceName": "valueIdentifier",
+        "short": "KBV-Prüfnummer",
+        "definition": "Die KBV-Prüfnummer aus dem Zertifizierungsverfahren gemäß §371 Absatz 1 SGB V",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:KBV-Pruefnummer.value[x]:valueIdentifier.use",
+        "path": "Extension.extension.value[x].use",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:KBV-Pruefnummer.value[x]:valueIdentifier.type",
+        "path": "Extension.extension.value[x].type",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:KBV-Pruefnummer.value[x]:valueIdentifier.system",
+        "path": "Extension.extension.value[x].system",
+        "min": 1,
+        "fixedUri": "https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer",
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:KBV-Pruefnummer.value[x]:valueIdentifier.value",
+        "path": "Extension.extension.value[x].value",
+        "min": 1,
+        "mustSupport": true
+      },
+      {
+        "id": "Extension.extension:KBV-Pruefnummer.value[x]:valueIdentifier.period",
+        "path": "Extension.extension.value[x].period",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:KBV-Pruefnummer.value[x]:valueIdentifier.assigner",
+        "path": "Extension.extension.value[x].assigner",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:systemID",
+        "path": "Extension.extension",
+        "sliceName": "systemID",
+        "short": "SystemID",
+        "definition": "Ein Identifier, der die konkrete Instanz des Systems kennzeichnet",
+        "min": 0,
+        "max": "1"
+      },
+      {
+        "id": "Extension.extension:systemID.extension",
+        "path": "Extension.extension.extension",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:systemID.url",
+        "path": "Extension.extension.url",
+        "fixedUri": "systemID"
+      },
+      {
+        "id": "Extension.extension:systemID.value[x]",
+        "path": "Extension.extension.value[x]",
+        "slicing": {
+          "discriminator": [
+            {
+              "type": "type",
+              "path": "$this"
+            }
+          ],
+          "rules": "closed"
+        },
+        "min": 1,
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:systemID.value[x]:valueIdentifier",
+        "path": "Extension.extension.value[x]",
+        "sliceName": "valueIdentifier",
+        "short": "SystemID",
+        "definition": "Ein Identifier, der die konkrete Instanz des Systems kennzeichnet",
+        "min": 0,
+        "max": "1",
+        "type": [
+          {
+            "code": "Identifier"
+          }
+        ]
+      },
+      {
+        "id": "Extension.extension:systemID.value[x]:valueIdentifier.use",
+        "path": "Extension.extension.value[x].use",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:systemID.value[x]:valueIdentifier.type",
+        "path": "Extension.extension.value[x].type",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:systemID.value[x]:valueIdentifier.value",
+        "path": "Extension.extension.value[x].value",
+        "min": 1
+      },
+      {
+        "id": "Extension.extension:systemID.value[x]:valueIdentifier.period",
+        "path": "Extension.extension.value[x].period",
+        "max": "0"
+      },
+      {
+        "id": "Extension.extension:systemID.value[x]:valueIdentifier.assigner",
+        "path": "Extension.extension.value[x].assigner",
+        "max": "0"
+      },
+      {
+        "id": "Extension.url",
+        "path": "Extension.url",
+        "fixedUri": "https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_User_Device"
+      },
+      {
+        "id": "Extension.value[x]",
+        "path": "Extension.value[x]",
+        "max": "0"
+      }
+    ]
+  }
+}

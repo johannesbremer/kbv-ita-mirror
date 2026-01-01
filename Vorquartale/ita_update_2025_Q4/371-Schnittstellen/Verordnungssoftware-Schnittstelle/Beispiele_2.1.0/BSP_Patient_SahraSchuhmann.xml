@@ -1,0 +1,54 @@
+<Patient xmlns="http://hl7.org/fhir">
+	<id value="91000"/>
+	<meta>
+		<versionId value="1"/>
+		<lastUpdated value="2022-10-07T13:40:00Z"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Patient|2.1.0"/>
+	</meta>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+				<code value="MR"/>
+			</coding>
+		</type>
+		<system value="http://kbv-testpraxis.de/patient-identifier"/>
+		<value value="P47-03"/>
+	</identifier>
+	<identifier>
+		<use value="official"/>
+		<type>
+			<coding>
+				<system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+				<code value="GKV"/>
+			</coding>
+		</type>
+		<system value="http://fhir.de/sid/gkv/kvid-10"/>
+		<value value="K220645122"/>
+	</identifier>
+	<name>
+		<use value="official"/>
+		<family value="Schuhmann">
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+				<valueString value="Schuhmann"/>
+			</extension>
+		</family>
+		<given value="Sahra"/>
+	</name>
+	<gender value="female"/>
+	<birthDate value="1970-12-24"/>
+	<address>
+		<type value="both"/>
+		<line value="Berliner Straße 1">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="1"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Berliner Straße"/>
+			</extension>
+		</line>
+		<city value="Husum"/>
+		<postalCode value="25813"/>
+		<country value="D"/>
+	</address>
+</Patient>

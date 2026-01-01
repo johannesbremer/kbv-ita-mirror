@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<einlieferung xsi:schemaLocation="http://www.kv-telematik.de/1-Click/Meldung_Einlieferung/2.0.0 ../Schema/KVTA_Einliefung_Abrechnung_2_0_0.xsd" xmlns="http://www.kv-telematik.de/1-Click/Meldung_Einlieferung/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <version V="1"/>
+        <guid V=" 936DA01F-9ABD-4D9D-80C7-02AF85C822A8"/>
+        <bsnr V="123456789"/>
+        <testdaten V="true"/>
+        <lieferungs_zeitpunkt V="2014-12-19T11:49:59Z"/>
+        <dokumenten_typ V="ABRECHNUNG+SAMMELERKLÄRUNG"/>
+        <quartal V="2014-4"/>
+        <vollstaendig V="true"/>
+        <anhang V="Z011232456789_19.12.2014_10.15.con.xkm"/>
+        <anhang V="ese_01.21_123456789_tf+2014q4.xml"/>
+		<anhang V="ese_01.21_123456789_tf+2014q4.sig.pdf"/>
+</einlieferung>

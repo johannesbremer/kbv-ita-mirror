@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- Beispiel für eine elektronische Sammelerklärung der KV Nordrhein, Ausprägung: Arzt -->
+<ehd:ehd ehd_version="1.40" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:ehd/ese/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:ehd="urn:ehd/001" xsi:schemaLocation="urn:ehd/001 ..\Schema\ese_root.xsd">
+	<ehd:header>
+		<ehd:id EX="1" RT="123456789"/>  <!-- EX=lfd.Nr.  RT=LANR -->
+		<ehd:version_nbr V="1"/>
+		<ehd:document_type_cd DN="Elektronische Sammelerklärung" S="1.2.276.0.76.5.100" V="ese"/>
+		<ehd:service_tmr V="2015-07-01..2015-09-31"/>  <!-- IV. Quartal -->
+		<ehd:origination_dttm V="2015-09-30"/>    <!-- Erstellungsdatum der Sammelerklärung -->
+		<ehd:intended_recipient>
+			<ehd:organization>
+				<ehd:organization.nm V="Arzt"/>   <!-- Sammelerklärung mit Ausprägung: Arzt -->
+			</ehd:organization>
+		</ehd:intended_recipient>
+		<ehd:originator>
+			<ehd:organization>
+				<ehd:id EX="38" RT="1.2.276.0.76.5.233"/>
+				<ehd:organization.nm V="KV Nordrhein"/>
+			</ehd:organization>
+		</ehd:originator>
+		<ehd:provider>
+			<ehd:person>
+				<ehd:id EX="123456789" RT="1.2.276.0.76.4.16"/>
+				<ehd:person_name>
+					<ehd:nm>
+						<ehd:PFX V="Dr. med."/>
+						<ehd:GIV V="Hans"/>
+						<ehd:FAM V="Test"/>
+					</ehd:nm>
+				</ehd:person_name>
+				<ehd:local_header>
+					<ehd:fachgruppenbezeichnung V="Facharzt f. Innere Medizin -Angiologie-"/>
+				</ehd:local_header>
+			</ehd:person>
+			<ehd:person>
+				<ehd:id EX="123456789" RT="1.2.276.0.76.4.16"/>
+				<ehd:person_name>
+					<ehd:nm>
+						<ehd:PFX V="Dr. med."/>
+						<ehd:GIV V="Fritz"/>
+						<ehd:FAM V="Sauber"/>
+					</ehd:nm>
+				</ehd:person_name>
+				<ehd:local_header>
+					<ehd:fachgruppenbezeichnung V="Facharzt für Hals-Nasen-Ohrenheilkunde"/>
+					<ehd:fachgruppenbezeichnung V="Facharzt für Phoniatrie u. Pädaudiologie"/>
+				</ehd:local_header>
+			</ehd:person>
+			<ehd:organization>
+				<ehd:id EX="274412300" RT="1.2.276.0.76.4.17"/>
+				<ehd:organization.nm V="Gemeinschaftspraxis Dres. Hans Test Fritz Sauber"/>
+				<ehd:addr>
+					<ehd:POB V="51371"/>
+					<ehd:CTY V="Leverkusen"/>
+				</ehd:addr>
+				<ehd:telecom V="Tel:022159708007"/>
+			</ehd:organization>
+		</ehd:provider>
+		<ehd:interface>
+			<ehd:id EX="ese" RT="1.2.276.0.76.5.109"/>
+			<ehd:interface.nm V="Elektronische Sammelerklärung (ese)"/>
+			<ehd:version V="1.21"/>
+		</ehd:interface>
+	</ehd:header>
+	<ehd:body>
+		<ese_data>
+			<fall_statistik>
+				<anzahl_gesamt V="2754"/>
+			</fall_statistik>
+			<vertretungszeit_liste>
+				<titel V="Vertretungszeiten"/>
+				<bool_komplex>
+					<true>
+						<komplex>
+							<zeitraum_tmr V="2015-08-01..2015-08-15"/>
+							<provider>
+								<person>
+									<id EX="123456781" RT="1.2.276.0.76.4.16"/>
+									<person_name>
+										<nm>
+											<PFX V="Dr. med."/>
+											<GIV V="Eleonore"/>
+											<GIV V="Hanna"/>
+											<FAM V="Tester2"/>
+											<FAM V="Müller"/>
+										</nm>
+									</person_name>
+								</person>
+							</provider>
+						</komplex>
+						<komplex>
+							<zeitraum_tmr V="2015-08-16..2015-08-20"/>
+							<provider>
+								<person>
+									<id EX="123456782" RT="1.2.276.0.76.4.16"/>
+									<person_name>
+										<nm>
+											<PFX V="Dr. med."/>
+											<GIV V="August"/>
+											<FAM V="Vertreter"/>
+											<FAM V="Müller"/>
+										</nm>
+									</person_name>
+								</person>
+							</provider>
+						</komplex>
+						<komplex>
+							<zeitraum_tmr V="2015-08-21..2015-08-25"/>
+							<provider>
+								<person>
+									<id EX="123456783" RT="1.2.276.0.76.4.16"/>
+									<person_name>
+										<nm>
+											<PFX V="Dr. med."/>
+											<GIV V="Gabi"/>
+											<GIV V="Maria"/>
+											<FAM V="Kamphausen-Erberich"/>
+										</nm>
+									</person_name>
+								</person>
+							</provider>
+						</komplex>
+					</true>
+				</bool_komplex>
+			</vertretungszeit_liste>
+			<angestellter_arzt_liste>
+				<titel V="Angestellter Arzt"/>
+				<bool_komplex>
+					<true>
+						<komplex>
+							<zeitraum_tmr V="2015-08-01..2015-08-15"/>
+							<provider>
+								<person>
+									<id EX="123456781" RT="1.2.276.0.76.4.16"/>
+									<person_name>
+										<nm>
+											<PFX V="Dr. med."/>
+											<GIV V="Sabine"/>
+											<GIV V="Hannah"/>
+											<FAM V="Angestellte"/>
+										</nm>
+									</person_name>
+								</person>
+							</provider>
+						</komplex>
+					</true>
+				</bool_komplex>
+			</angestellter_arzt_liste>
+			<org_notdienstzeit_liste>
+				<titel V="Teilnahme am organisierten ärztlichen Notfalldienst"/>
+				<bool_komplex>
+					<true>
+						<komplex>
+							<zeitraum_tmr V="2015-07-16+16:00..2015-07-17+01:00"/>
+						</komplex>
+						<komplex>
+							<zeitraum_tmr V="2015-08-22"/>
+						</komplex>
+						<komplex>
+							<zeitraum_tmr V="2015-09-23..2015-09-24"/>
+						</komplex>
+						<komplex>
+							<zeitraum_tmr V="2015-07-19+16:00..2015-07-20+01:00"/>
+						</komplex>
+						<komplex>
+							<zeitraum_tmr V="2015-07-22"/>
+						</komplex>
+					</true>
+				</bool_komplex>
+			</org_notdienstzeit_liste>
+			<assistent_liste>
+				<titel V="Beschäftigung eines Assistenten"/>
+				<bool_komplex>
+					<true>
+						<komplex>
+							<zeitraum_tmr V="2015-09-01..2015-09-18"/>
+							<provider>
+								<person>
+									<id EX="123456783" RT="1.2.276.0.76.4.16"/>
+									<person_name>
+										<nm>
+											<PFX V="Prof."/>
+											<PFX V="Dr. med."/>
+											<GIV V="Hannah"/>
+											<GIV V="Maria"/>
+											<GIV V="Marianne"/>
+											<FAM V="Assistentin"/>
+											<FAM V="Böcker"/>
+										</nm>
+									</person_name>
+								</person>
+							</provider>
+						</komplex>
+					</true>
+				</bool_komplex>
+			</assistent_liste>
+		</ese_data>
+	</ehd:body>
+</ehd:ehd>

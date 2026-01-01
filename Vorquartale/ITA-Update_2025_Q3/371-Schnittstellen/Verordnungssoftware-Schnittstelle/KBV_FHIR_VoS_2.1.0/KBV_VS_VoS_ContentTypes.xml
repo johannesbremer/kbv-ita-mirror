@@ -1,0 +1,50 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="KBV-VS-VoS-ContentTypes" />
+  <url value="https://fhir.kbv.de/ValueSet/KBV_VS_VoS_ContentTypes" />
+  <version value="2.1.0" />
+  <name value="KBV_VS_VoS_ContentTypes" />
+  <title value="ContentTypes für die base64-Codierung" />
+  <status value="active" />
+  <experimental value="false" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <contact>
+    <telecom>
+      <system value="url" />
+      <value value="http://www.kbv.de" />
+    </telecom>
+  </contact>
+  <description value="Dieses Valueset enthält die Codes, die für die base64-Codierung in DocumentReference-Instanzen verwendet werden dürfen" />
+  <immutable value="false" />
+  <compose>
+    <include>
+      <system value="urn:ietf:bcp:13" />
+      <concept>
+        <code value="application/pdf" />
+      </concept>
+      <concept>
+        <code value="application/xml" />
+      </concept>
+      <concept>
+        <code value="application/pkcs7-mime" />
+      </concept>
+    </include>
+  </compose>
+  <expansion>
+    <timestamp value="2022-08-25T15:32:00+02:00" />
+    <total value="3" />
+    <offset value="0" />
+    <contains>
+      <system value="urn:ietf:bcp:13" />
+      <code value="application/pdf" />
+    </contains>
+    <contains>
+      <system value="urn:ietf:bcp:13" />
+      <code value="application/xml" />
+    </contains>
+    <contains>
+      <system value="urn:ietf:bcp:13" />
+      <code value="application/pkcs7-mime" />
+    </contains>
+  </expansion>
+</ValueSet>

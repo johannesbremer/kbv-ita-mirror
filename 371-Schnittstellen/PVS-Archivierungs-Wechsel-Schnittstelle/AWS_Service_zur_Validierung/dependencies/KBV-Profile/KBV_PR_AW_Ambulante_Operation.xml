@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Ambulante_Operation" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Ambulante_Operation" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <description value="Profil für einen OPS-Code" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Procedure" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Procedure" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Procedure.id">
+      <path value="Procedure.id" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.meta">
+      <path value="Procedure.meta" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.meta.versionId">
+      <path value="Procedure.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.meta.lastUpdated">
+      <path value="Procedure.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.meta.profile">
+      <path value="Procedure.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Ambulante_Operation|1.2.0" />
+    </element>
+    <element id="Procedure.text">
+      <path value="Procedure.text" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.identifier">
+      <path value="Procedure.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.instantiatesCanonical">
+      <path value="Procedure.instantiatesCanonical" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.instantiatesUri">
+      <path value="Procedure.instantiatesUri" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.basedOn">
+      <path value="Procedure.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.partOf">
+      <path value="Procedure.partOf" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Ambulante_Operation_General|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.partOf.reference">
+      <path value="Procedure.partOf.reference" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.partOf.type">
+      <path value="Procedure.partOf.type" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.partOf.identifier">
+      <path value="Procedure.partOf.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.partOf.display">
+      <path value="Procedure.partOf.display" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.status">
+      <path value="Procedure.status" />
+      <fixedCode value="completed" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.statusReason">
+      <path value="Procedure.statusReason" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.category">
+      <path value="Procedure.category" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.category.coding">
+      <path value="Procedure.category.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Procedure.category.coding.system">
+      <path value="Procedure.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ressourcentyp" />
+    </element>
+    <element id="Procedure.category.coding.version">
+      <path value="Procedure.category.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.category.coding.code">
+      <path value="Procedure.category.coding.code" />
+      <min value="1" />
+      <fixedCode value="Ambulante_Operation" />
+    </element>
+    <element id="Procedure.category.coding.display">
+      <path value="Procedure.category.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.category.coding.userSelected">
+      <path value="Procedure.category.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.category.text">
+      <path value="Procedure.category.text" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.code">
+      <path value="Procedure.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding">
+      <path value="Procedure.code.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Procedure.code.coding.extension">
+      <path value="Procedure.code.coding.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Procedure.code.coding.extension:seitenlokalisation">
+      <path value="Procedure.code.coding.extension" />
+      <sliceName value="seitenlokalisation" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/seitenlokalisation" />
+      </type>
+    </element>
+    <element id="Procedure.code.coding.system">
+      <path value="Procedure.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/CodeSystem/dimdi/ops" />
+    </element>
+    <element id="Procedure.code.coding.version">
+      <path value="Procedure.code.coding.version" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.code.coding.code">
+      <path value="Procedure.code.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.code.coding.display">
+      <path value="Procedure.code.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.code.coding.userSelected">
+      <path value="Procedure.code.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.code.text">
+      <path value="Procedure.code.text" />
+      <short value="OPS-Code" />
+      <definition value="Beschreibung des OPS-Codes" />
+    </element>
+    <element id="Procedure.subject">
+      <path value="Procedure.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.subject.reference">
+      <path value="Procedure.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.subject.type">
+      <path value="Procedure.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.subject.identifier">
+      <path value="Procedure.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.subject.display">
+      <path value="Procedure.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.encounter">
+      <path value="Procedure.encounter" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.performed[x]">
+      <path value="Procedure.performed[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <type>
+        <code value="dateTime" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.performed[x]:performedDateTime">
+      <path value="Procedure.performed[x]" />
+      <sliceName value="performedDateTime" />
+      <short value="Datum der Operation" />
+      <definition value="Datum der Operation" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.recorder">
+      <path value="Procedure.recorder" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.asserter">
+      <path value="Procedure.asserter" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.performer">
+      <path value="Procedure.performer" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.location">
+      <path value="Procedure.location" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode">
+      <path value="Procedure.reasonCode" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.extension">
+      <path value="Procedure.reasonCode.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Procedure.reasonCode.extension:sonstige_GOP">
+      <path value="Procedure.reasonCode.extension" />
+      <sliceName value="sonstige_GOP" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Abrechnung_Sonstige_GOP" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.extension:sonstige_GOP.value[x]">
+      <path value="Procedure.reasonCode.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.extension:sonstige_GOP.value[x]:valueCoding">
+      <path value="Procedure.reasonCode.extension.value[x]" />
+      <sliceName value="valueCoding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.extension:sonstige_GOP.value[x]:valueCoding.system">
+      <path value="Procedure.reasonCode.extension.value[x].system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.extension:sonstige_GOP.value[x]:valueCoding.version">
+      <path value="Procedure.reasonCode.extension.value[x].version" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.extension:sonstige_GOP.value[x]:valueCoding.code">
+      <path value="Procedure.reasonCode.extension.value[x].code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.extension:sonstige_GOP.value[x]:valueCoding.display">
+      <path value="Procedure.reasonCode.extension.value[x].display" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.coding">
+      <path value="Procedure.reasonCode.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <description value="BMAe&#xD;&#xA;E-GO&#xD;&#xA;EBM&#xD;&#xA;GOAe&#xD;&#xA;UV_GOAe&#xD;&#xA;UV_GOAe&#xD;&#xA;HzV/Selektiv" />
+        <rules value="closed" />
+      </slicing>
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.coding:bmae">
+      <path value="Procedure.reasonCode.coding" />
+      <sliceName value="bmae" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.coding:bmae.system">
+      <path value="Procedure.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/NamingSystem/KBV_NS_AW_BMAE" />
+    </element>
+    <element id="Procedure.reasonCode.coding:bmae.version">
+      <path value="Procedure.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:bmae.code">
+      <path value="Procedure.reasonCode.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.reasonCode.coding:bmae.display">
+      <path value="Procedure.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:bmae.userSelected">
+      <path value="Procedure.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:e-go">
+      <path value="Procedure.reasonCode.coding" />
+      <sliceName value="e-go" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.coding:e-go.system">
+      <path value="Procedure.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/NamingSystem/KBV_NS_AW_E-GO" />
+    </element>
+    <element id="Procedure.reasonCode.coding:e-go.version">
+      <path value="Procedure.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:e-go.code">
+      <path value="Procedure.reasonCode.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.reasonCode.coding:e-go.display">
+      <path value="Procedure.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:e-go.userSelected">
+      <path value="Procedure.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:ebm">
+      <path value="Procedure.reasonCode.coding" />
+      <sliceName value="ebm" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.coding:ebm.system">
+      <path value="Procedure.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_EBM" />
+    </element>
+    <element id="Procedure.reasonCode.coding:ebm.version">
+      <path value="Procedure.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:ebm.code">
+      <path value="Procedure.reasonCode.coding.code" />
+      <short value="Leistungsziffer" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.reasonCode.coding:ebm.display">
+      <path value="Procedure.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:ebm.userSelected">
+      <path value="Procedure.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:goae">
+      <path value="Procedure.reasonCode.coding" />
+      <sliceName value="goae" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.coding:goae.system">
+      <path value="Procedure.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/NamingSystem/KBV_NS_AW_GOAE" />
+    </element>
+    <element id="Procedure.reasonCode.coding:goae.version">
+      <path value="Procedure.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:goae.code">
+      <path value="Procedure.reasonCode.coding.code" />
+      <short value="Leistungsziffer" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.reasonCode.coding:goae.display">
+      <path value="Procedure.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:goae.userSelected">
+      <path value="Procedure.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:uv-goae">
+      <path value="Procedure.reasonCode.coding" />
+      <sliceName value="uv-goae" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.coding:uv-goae.system">
+      <path value="Procedure.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/NamingSystem/KBV_NS_AW_UV_GOAE" />
+    </element>
+    <element id="Procedure.reasonCode.coding:uv-goae.version">
+      <path value="Procedure.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:uv-goae.code">
+      <path value="Procedure.reasonCode.coding.code" />
+      <short value="Leistungsziffer" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.reasonCode.coding:uv-goae.display">
+      <path value="Procedure.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:uv-goae.userSelected">
+      <path value="Procedure.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:hzv_selektiv">
+      <path value="Procedure.reasonCode.coding" />
+      <sliceName value="hzv_selektiv" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.coding:hzv_selektiv.system">
+      <path value="Procedure.reasonCode.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/NamingSystem/KBV_NS_AW_HZV_Selektiv" />
+    </element>
+    <element id="Procedure.reasonCode.coding:hzv_selektiv.version">
+      <path value="Procedure.reasonCode.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:hzv_selektiv.code">
+      <path value="Procedure.reasonCode.coding.code" />
+      <short value="Leistungsziffer" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.reasonCode.coding:hzv_selektiv.display">
+      <path value="Procedure.reasonCode.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.coding:hzv_selektiv.userSelected">
+      <path value="Procedure.reasonCode.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonCode.text">
+      <path value="Procedure.reasonCode.text" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.reasonReference">
+      <path value="Procedure.reasonReference" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.bodySite">
+      <path value="Procedure.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.outcome">
+      <path value="Procedure.outcome" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.report">
+      <path value="Procedure.report" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.complication">
+      <path value="Procedure.complication" />
+      <short value="Komplikation" />
+      <definition value="Komplikation" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.complication.coding">
+      <path value="Procedure.complication.coding" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.complication.text">
+      <path value="Procedure.complication.text" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.complicationDetail">
+      <path value="Procedure.complicationDetail" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.followUp">
+      <path value="Procedure.followUp" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.note">
+      <path value="Procedure.note" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.focalDevice">
+      <path value="Procedure.focalDevice" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.usedReference">
+      <path value="Procedure.usedReference" />
+      <max value="0" />
+    </element>
+    <element id="Procedure.usedCode">
+      <path value="Procedure.usedCode" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

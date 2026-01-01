@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--XML-Beispieldatei von XMLSpy generiert v2009 sp1 (http://www.altova.com)-->
+<ehd:ehd xsi:schemaLocation="urn:ehd/001 qsmg_root_V1.00.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ehd="urn:ehd/001" xmlns:qsmg="urn:ehd/qsmg/001" xmlns="urn:ehd/qsmg/001">
+	<ehd:header>
+		<ehd:id RT="555333222" EX="ag111105-2d51-4016-831e-cbd9e1a318h9"/>
+		<ehd:document_type_cd V="QSMG"/>
+		<ehd:origination_dttm V="1967-08-13"/>
+		<ehd:provider>
+			<ehd:person>
+				<ehd:id EX="555333222" RT="1.2.276.0.76.4.16"/>
+			</ehd:person>
+			<ehd:organization>
+				<ehd:id EX="123456789" RT="1.2.276.0.76.4.17"/>
+			</ehd:organization>
+		</ehd:provider>
+		<ehd:interface>
+			<ehd:id EX="QSMG" RT="1.2.276.0.76.5.109"/>
+			<ehd:interface.nm V="QS Molekulargenetik"/>
+			<ehd:version V="1.00"/>
+		</ehd:interface>
+		<ehd:local_header>
+			<sciphox:sciphox-ssu xmlns:sciphox="urn::sciphox-org/sciphox" country="de" version="v1">
+				<sciphox:Software>
+					<sciphox:id EX="X/55/0801/36/103" RT="KBV-Prüfnummer"/>
+				</sciphox:Software>
+			</sciphox:sciphox-ssu>
+		</ehd:local_header>
+	</ehd:header>
+	<ehd:body>
+<qsmg:qsmg_dokumentation xmlns:qsmg="urn:ehd/qsmg/001">
+	<behandlungsfall_anzahl V="1500"/>
+	<diagnostische_fragestellung>
+		<behandlungsfall_anzahl V="700"/>
+		<pathologischer_befund_anzahl V="300"/>
+		<unauffaelliger_befund_anzahl V="300"/>
+		<nichtbeurteilbarer_befund_anzahl V="100"/>
+	</diagnostische_fragestellung>
+	<praediktive_fragestellung>
+		<behandlungsfall_anzahl V="500"/>
+		<pathologischer_befund_anzahl V="200"/>
+		<unauffaelliger_befund_anzahl V="100"/>
+		<nichtbeurteilbarer_befund_anzahl V="200"/>
+	</praediktive_fragestellung>
+	<vorgeburtliche_fragestellung>
+		<behandlungsfall_anzahl V="300"/>
+		<pathologischer_befund_anzahl V="100"/>
+		<unauffaelliger_befund_anzahl V="100"/>
+		<nichtbeurteilbarer_befund_anzahl V="100"/>
+	</vorgeburtliche_fragestellung>
+	<leistung_liste>
+	<leistung>
+		<gop V="11395"/>
+		<gop_anzahl V="1200"/>
+		<pathologischer_befund_anzahl V="600"/>
+		<unauffaelliger_befund_anzahl V="400"/>
+		<nichtbeurteilbarer_befund_anzahl V="200"/>
+		<fachgruppe_einsender_liste>
+		<fachgruppe_einsender>
+			<fachgruppe_nummer V="03"/>
+			<einsendungen_anzahl V="300"/>
+		</fachgruppe_einsender>
+		<fachgruppe_einsender>
+			<fachgruppe_nummer V="02"/>
+			<einsendungen_anzahl V="300"/>
+		</fachgruppe_einsender>
+		</fachgruppe_einsender_liste>
+	</leistung>
+	<leistung>
+		<gop V="11432"/>
+		<gop_anzahl V="500"/>
+		<pathologischer_befund_anzahl V="100"/>
+		<unauffaelliger_befund_anzahl V="100"/>
+		<nichtbeurteilbarer_befund_anzahl V="300"/>
+		<fachgruppe_einsender_liste>
+		<fachgruppe_einsender>
+			<fachgruppe_nummer V="03"/>
+			<einsendungen_anzahl V="200"/>
+		</fachgruppe_einsender>
+		<fachgruppe_einsender>
+			<fachgruppe_nummer V="05"/>
+			<einsendungen_anzahl V="300"/>
+		</fachgruppe_einsender>
+		</fachgruppe_einsender_liste>
+	</leistung>
+	</leistung_liste>
+	<quotient_pathologisch>
+		<gop_anzahl V="700"/>
+		<befund_anzahl V="600"/>
+		<quotient V="1.16"/>
+	</quotient_pathologisch>
+	<quotient_unauffaellig>
+		<gop_anzahl V="500"/>
+		<befund_anzahl V="500"/>
+		<quotient V="1"/>
+	</quotient_unauffaellig>
+	<quotient_nichtbeurteilbar>
+		<gop_anzahl V="500"/>
+		<befund_anzahl V="400"/>
+		<quotient V="1.25"/>
+	</quotient_nichtbeurteilbar>
+	<unterauftrag_anzahl V="300"/>
+	<einsender_lanr_anzahl V="120"/>
+	<einsender_bsnr_anzahl V="90"/>
+	<fachgruppe_einsender_liste>
+	<fachgruppe_einsender>
+		<fachgruppe_nummer V="02"/>
+		<einsendungen_anzahl V="300"/>
+	</fachgruppe_einsender>
+	<fachgruppe_einsender>
+		<fachgruppe_nummer V="03"/>
+		<einsendungen_anzahl V="500"/>
+	</fachgruppe_einsender>
+	<fachgruppe_einsender>
+		<fachgruppe_nummer V="05"/>
+		<einsendungen_anzahl V="300"/>
+	</fachgruppe_einsender>
+	</fachgruppe_einsender_liste>
+	<produkt1_teilnahmehaufigkeit V="3"/>
+	<produkt2_ringversuchszertifikat V="2"/>
+</qsmg:qsmg_dokumentation>
+
+	</ehd:body>
+</ehd:ehd>

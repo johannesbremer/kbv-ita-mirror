@@ -1,0 +1,56 @@
+<DocumentReference xmlns="http://hl7.org/fhir">
+	<id value="2500"/>
+	<meta>
+		<lastUpdated value="2022-09-07T15:29:00Z"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_DocumentReference|2.1.0"/>
+	</meta>
+	<status value="current"/>
+	<type>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_DocumentType"/>
+			<code value="Rezept"/>
+			<display value="Rezept"/>
+		</coding>
+		<coding>
+			<system value="http://ihe-d.de/CodeSystems/IHEXDStypeCode"/>
+			<code value="MEDI"/>
+			<display value="Medikamentöse Therapien"/>
+		</coding>
+	</type>
+	<category>
+		<coding>
+			<system value="http://ihe-d.de/CodeSystems/IHEXDSclassCode"/>
+			<code value="VER"/>
+			<display value="Verordnung"/>
+		</coding>
+	</category>
+	<subject>
+		<reference value="Patient/100"/>
+	</subject>
+	<date value="2022-09-07T15:29:00Z"/>
+	<author>
+		<reference value="Practitioner/200"/>
+		<type value="Practitioner"/>
+	</author>
+	<author>
+		<type value="Device"/>
+		<identifier>
+			<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_FOR_Pruefnummer"/>
+			<value value="Y/70/2207/36/ID"/>
+		</identifier>
+	</author>
+	<custodian>
+		<reference value="Organization/250"/>
+	</custodian>
+	<content>
+		<attachment>
+			<contentType value="application/pdf"/>
+			<data value="2jmj7l5rSw0yVb/vlWAYkK/YBwk="/>
+		</attachment>
+	</content>
+	<context>
+		<related>
+			<reference value="MedicationRequest/700"/>
+		</related>
+	</context>
+</DocumentReference>

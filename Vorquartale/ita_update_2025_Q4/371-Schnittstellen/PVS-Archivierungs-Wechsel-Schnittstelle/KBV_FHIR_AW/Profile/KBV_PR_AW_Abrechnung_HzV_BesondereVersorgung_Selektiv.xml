@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Abrechnung_HzV_BesondereVersorgung_Selektiv" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Abrechnung_HzV_BesondereVersorgung_Selektiv" />
+  <status value="active" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Claim" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Claim" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Claim.id">
+      <path value="Claim.id" />
+      <min value="1" />
+    </element>
+    <element id="Claim.meta">
+      <path value="Claim.meta" />
+      <min value="1" />
+    </element>
+    <element id="Claim.meta.versionId">
+      <path value="Claim.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Claim.meta.lastUpdated">
+      <path value="Claim.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Claim.meta.profile">
+      <path value="Claim.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Abrechnung_HzV_BesondereVersorgung_Selektiv|1.2.0" />
+    </element>
+    <element id="Claim.text">
+      <path value="Claim.text" />
+      <min value="1" />
+    </element>  
+    <element id="Claim.extension">
+      <path value="Claim.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Claim.extension:mahnung">
+      <path value="Claim.extension" />
+      <sliceName value="mahnung" />
+      <type>
+        <code value="Extension" />
+        <profile value="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Abrechnung_Mahnung" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.extension:mahnung.extension">
+      <path value="Claim.extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Claim.extension:mahnung.extension:mahndatum">
+      <path value="Claim.extension.extension" />
+      <sliceName value="mahndatum" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.extension:mahnung.extension:mahnstufe">
+      <path value="Claim.extension.extension" />
+      <sliceName value="mahnstufe" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.extension:mahnung.extension:mahngebuehr">
+      <path value="Claim.extension.extension" />
+      <sliceName value="mahngebuehr" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.extension:mahnung.extension:zahldatum">
+      <path value="Claim.extension.extension" />
+      <sliceName value="zahldatum" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.extension:mahnung.extension:zahlbetrag">
+      <path value="Claim.extension.extension" />
+      <sliceName value="zahlbetrag" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.identifier">
+      <path value="Claim.identifier" />
+	  <short value="Rechnungsnummer"/>
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.identifier.use">
+      <path value="Claim.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Claim.identifier.type">
+      <path value="Claim.identifier.type" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.identifier.type.coding">
+      <path value="Claim.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.identifier.type.coding.system">
+      <path value="Claim.identifier.type.coding.system" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Identifiertyp" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.identifier.type.coding.version">
+      <path value="Claim.identifier.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Claim.identifier.type.coding.code">
+      <path value="Claim.identifier.type.coding.code" />
+      <short value="Rechnungsnummer" />
+      <definition value="Festgelegter Wert zur Typifizierung des Identifiers: Rechnungsnummer" />
+      <min value="1" />
+      <fixedCode value="Rechnungsnummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.identifier.type.coding.display">
+      <path value="Claim.identifier.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.identifier.type.coding.userSelected">
+      <path value="Claim.identifier.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Claim.identifier.type.text">
+      <path value="Claim.identifier.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Claim.identifier.system">
+      <path value="Claim.identifier.system" />
+      <max value="0" />
+    </element>
+    <element id="Claim.identifier.value">
+      <path value="Claim.identifier.value" />
+      <short value="Rechnungsnummer" />
+      <definition value="Angabe der Rechnungsnummer" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.identifier.period">
+      <path value="Claim.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Claim.identifier.assigner">
+      <path value="Claim.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Claim.status">
+      <path value="Claim.status" />
+      <short value="active | draft" />
+      <definition value="Zur Auswahl des Status stehen folgende Möglichkeiten bereit:&#xD;&#xA;nicht abgerechnet = draft&#xD;&#xA;abgerechnet = active" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.type.coding">
+      <path value="Claim.type.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Claim.type.coding.system">
+      <path value="Claim.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/claim-type" />
+    </element>
+    <element id="Claim.type.coding.code">
+      <path value="Claim.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="professional" />
+    </element>
+    <element id="Claim.type.coding.userSelected">
+      <path value="Claim.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Claim.type.text">
+      <path value="Claim.type.text" />
+      <max value="0" />
+    </element>
+    <element id="Claim.subType">
+      <path value="Claim.subType" />
+      <short value="Klassifizierung der Ressource" />
+      <definition value="Dieses Attribut wird zur Klassifzierung dieser Ressource verwendet." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.subType.coding">
+      <path value="Claim.subType.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.subType.coding.system">
+      <path value="Claim.subType.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Art" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.subType.coding.version">
+      <path value="Claim.subType.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Claim.subType.coding.code">
+      <path value="Claim.subType.coding.code" />
+      <min value="1" />
+      <fixedCode value="HzV_BesondereVersorgung_Selektiv" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.subType.coding.display">
+      <path value="Claim.subType.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.subType.coding.userSelected">
+      <path value="Claim.subType.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Claim.subType.text">
+      <path value="Claim.subType.text" />
+      <max value="0" />
+    </element>
+    <element id="Claim.patient">
+      <path value="Claim.patient" />
+      <label value="TR01" />
+      <short value="Patientenbezug" />
+      <definition value="Patient Resource." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.patient.reference">
+      <path value="Claim.patient.reference" />
+      <min value="1" />
+    </element>
+    <element id="Claim.patient.type">
+      <path value="Claim.patient.type" />
+      <max value="0" />
+    </element>
+    <element id="Claim.patient.identifier">
+      <path value="Claim.patient.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Claim.patient.display">
+      <path value="Claim.patient.display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.billablePeriod">
+      <path value="Claim.billablePeriod" />
+      <max value="0" />
+    </element>
+    <element id="Claim.created">
+      <path value="Claim.created" />
+      <short value="Rechnungsdatum" />
+      <definition value="Rechnungsdatum" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.enterer">
+      <path value="Claim.enterer" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurer">
+      <path value="Claim.insurer" />
+      <short value="Rechnungsempfaenger" />
+      <definition value="Rechnungsempfaenger" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.insurer.type">
+      <path value="Claim.insurer.type" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurer.identifier">
+      <path value="Claim.insurer.identifier" />
+      <short value="AbrechnungsIK" />
+      <definition value="Abrechnungsinstitutskennzeichennummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.insurer.identifier.use">
+      <path value="Claim.insurer.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurer.identifier.type">
+      <path value="Claim.insurer.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurer.identifier.system">
+      <path value="Claim.insurer.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/NamingSystem/arge-ik/iknr" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.insurer.identifier.value">
+      <path value="Claim.insurer.identifier.value" />
+      <short value="IKNummer" />
+      <definition value="IKNummer" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.insurer.identifier.period">
+      <path value="Claim.insurer.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurer.identifier.assigner">
+      <path value="Claim.insurer.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurer.display">
+      <path value="Claim.insurer.display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.provider">
+      <path value="Claim.provider" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.provider.reference">
+      <path value="Claim.provider.reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.provider.type">
+      <path value="Claim.provider.type" />
+      <max value="0" />
+    </element>
+    <element id="Claim.provider.identifier">
+      <path value="Claim.provider.identifier" />
+      <short value="IKNR" />
+      <definition value="IK der Betriebsstätte mit der die Abrechnung zu kennzeichnen ist." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.provider.identifier.use">
+      <path value="Claim.provider.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Claim.provider.identifier.type">
+      <path value="Claim.provider.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="Claim.provider.identifier.system">
+      <path value="Claim.provider.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/NamingSystem/arge-ik/iknr" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.provider.identifier.value">
+      <path value="Claim.provider.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="Claim.provider.identifier.period">
+      <path value="Claim.provider.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Claim.provider.identifier.assigner">
+      <path value="Claim.provider.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Claim.provider.display">
+      <path value="Claim.provider.display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.priority.coding">
+      <path value="Claim.priority.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Claim.priority.coding.system">
+      <path value="Claim.priority.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="Claim.priority.coding.version">
+      <path value="Claim.priority.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Claim.priority.coding.code">
+      <path value="Claim.priority.coding.code" />
+      <short value="normal" />
+      <min value="1" />
+      <fixedCode value="normal" />
+    </element>
+    <element id="Claim.priority.coding.display">
+      <path value="Claim.priority.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.priority.coding.userSelected">
+      <path value="Claim.priority.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Claim.priority.text">
+      <path value="Claim.priority.text" />
+      <max value="0" />
+    </element>
+    <element id="Claim.fundsReserve">
+      <path value="Claim.fundsReserve" />
+      <max value="0" />
+    </element>
+    <element id="Claim.related">
+      <path value="Claim.related" />
+      <short value="Bezug zur vorlaeufigen Abrechnung" />
+      <definition value="Die Referenz zu der vorlaeufigen Abrechnung in der alle GOPs dokumentiert sind." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.related.claim">
+      <path value="Claim.related.claim" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Abrechnung_Vorlaeufig|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.related.claim.reference">
+      <path value="Claim.related.claim.reference" />
+      <min value="1" />
+    </element>
+    <element id="Claim.related.claim.type">
+      <path value="Claim.related.claim.type" />
+      <max value="0" />
+    </element>
+    <element id="Claim.related.claim.identifier">
+      <path value="Claim.related.claim.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Claim.related.claim.display">
+      <path value="Claim.related.claim.display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.related.relationship">
+      <path value="Claim.related.relationship" />
+      <max value="0" />
+    </element>
+    <element id="Claim.related.reference">
+      <path value="Claim.related.reference" />
+      <max value="0" />
+    </element>
+    <element id="Claim.prescription">
+      <path value="Claim.prescription" />
+      <max value="0" />
+    </element>
+    <element id="Claim.originalPrescription">
+      <path value="Claim.originalPrescription" />
+      <max value="0" />
+    </element>
+    <element id="Claim.payee">
+      <path value="Claim.payee" />
+      <max value="0" />
+    </element>
+    <element id="Claim.referral">
+      <path value="Claim.referral" />
+      <short value="Weiterbehandlung durch" />
+      <definition value="Soll der Patient eine weitere Behandlung durch einen anderen Behandelden erhalten, so kann dieser hier angegeben werden." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Weiterbehandlung_durch|1.2.0" />
+      </type>
+    </element>
+    <element id="Claim.referral.reference">
+      <path value="Claim.referral.reference" />
+      <min value="1" />
+    </element>
+    <element id="Claim.referral.type">
+      <path value="Claim.referral.type" />
+      <max value="0" />
+    </element>
+    <element id="Claim.referral.identifier">
+      <path value="Claim.referral.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Claim.referral.display">
+      <path value="Claim.referral.display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.facility">
+      <path value="Claim.facility" />
+      <max value="0" />
+    </element>
+    <element id="Claim.careTeam">
+      <path value="Claim.careTeam" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo">
+      <path value="Claim.supportingInfo" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="category.coding.code" />
+        </discriminator>
+        <description value="Korrekturzaehler&#xD;&#xA;Rechnungsinformation&#xD;&#xA;Ringversuchszertifikat&#xD;&#xA;Leistungsgenehmigung" />
+        <rules value="closed" />
+      </slicing>
+      <short value="Zusatzinformationen" />
+      <definition value="Vertragskennzeichen&#xD;&#xA;Korrekturzaehler&#xD;&#xA;Rechnungsinformation&#xD;&#xA;Ringversuchszertifikat&#xD;&#xA;Leistungsgenehmigung" />
+      <min value="1" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler">
+      <path value="Claim.supportingInfo" />
+      <sliceName value="korrekturzaehler" />
+      <short value="Korrekturzähler" />
+      <definition value="Im Bezug zu dieser Abrechnung kann eine Korrekturzähler angegeben werden (Nach GKV Datenaustausch Technische Anlage)" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.category.coding">
+      <path value="Claim.supportingInfo.category.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.category.coding.system">
+      <path value="Claim.supportingInfo.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Information_Kategorie" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.category.coding.version">
+      <path value="Claim.supportingInfo.category.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.category.coding.code">
+      <path value="Claim.supportingInfo.category.coding.code" />
+      <min value="1" />
+      <fixedCode value="Korrekturzaehler" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.category.coding.display">
+      <path value="Claim.supportingInfo.category.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.category.coding.userSelected">
+      <path value="Claim.supportingInfo.category.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.category.text">
+      <path value="Claim.supportingInfo.category.text" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.code">
+      <path value="Claim.supportingInfo.code" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.timing[x]">
+      <path value="Claim.supportingInfo.timing[x]" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.value[x]">
+      <path value="Claim.supportingInfo.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Quantity" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.value[x]:valueQuantity">
+      <path value="Claim.supportingInfo.value[x]" />
+      <sliceName value="valueQuantity" />
+      <min value="1" />
+      <type>
+        <code value="Quantity" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.value[x]:valueQuantity.value">
+      <path value="Claim.supportingInfo.value[x].value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.value[x]:valueQuantity.comparator">
+      <path value="Claim.supportingInfo.value[x].comparator" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.value[x]:valueQuantity.unit">
+      <path value="Claim.supportingInfo.value[x].unit" />
+      <fixedString value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.value[x]:valueQuantity.system">
+      <path value="Claim.supportingInfo.value[x].system" />
+      <min value="1" />
+      <fixedUri value="http://unitsofmeasure.org" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.value[x]:valueQuantity.code">
+      <path value="Claim.supportingInfo.value[x].code" />
+      <min value="1" />
+      <fixedCode value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:korrekturzaehler.reason">
+      <path value="Claim.supportingInfo.reason" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:rechnungsinformation">
+      <path value="Claim.supportingInfo" />
+      <sliceName value="rechnungsinformation" />
+      <short value="Rechnungsinformation" />
+      <definition value="Informationen zur Rechnung" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:rechnungsinformation.category.coding">
+      <path value="Claim.supportingInfo.category.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:rechnungsinformation.category.coding.system">
+      <path value="Claim.supportingInfo.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Information_Kategorie" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:rechnungsinformation.category.coding.version">
+      <path value="Claim.supportingInfo.category.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:rechnungsinformation.category.coding.code">
+      <path value="Claim.supportingInfo.category.coding.code" />
+      <short value="Rechnungsinformationen" />
+      <definition value="Rechnungsinformationen" />
+      <min value="1" />
+      <fixedCode value="Rechnungsinformationen" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:rechnungsinformation.category.coding.display">
+      <path value="Claim.supportingInfo.category.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:rechnungsinformation.category.coding.userSelected">
+      <path value="Claim.supportingInfo.category.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:rechnungsinformation.category.text">
+      <path value="Claim.supportingInfo.category.text" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:rechnungsinformation.code">
+      <path value="Claim.supportingInfo.code" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:rechnungsinformation.timing[x]">
+      <path value="Claim.supportingInfo.timing[x]" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:rechnungsinformation.value[x]">
+      <path value="Claim.supportingInfo.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:rechnungsinformation.value[x]:valueString">
+      <path value="Claim.supportingInfo.value[x]" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:rechnungsinformation.reason">
+      <path value="Claim.supportingInfo.reason" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat">
+      <path value="Claim.supportingInfo" />
+      <sliceName value="ringversuchszertifikat" />
+      <short value="Ringversuchszertifikat" />
+      <definition value="Zu dieser Abrechnung kann ein Ringversuchszertifikat als Abrechnungsbegründung hinzugefügt werden." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.category">
+      <path value="Claim.supportingInfo.category" />
+      <short value="Ringversuchszertifikat" />
+      <definition value="Ringversuchszertifikat" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.category.coding">
+      <path value="Claim.supportingInfo.category.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.category.coding.system">
+      <path value="Claim.supportingInfo.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Information_Kategorie" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.category.coding.version">
+      <path value="Claim.supportingInfo.category.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.category.coding.code">
+      <path value="Claim.supportingInfo.category.coding.code" />
+      <min value="1" />
+      <fixedCode value="Ringversuchszertifikat" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.category.coding.display">
+      <path value="Claim.supportingInfo.category.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.category.coding.userSelected">
+      <path value="Claim.supportingInfo.category.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.category.text">
+      <path value="Claim.supportingInfo.category.text" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.code">
+      <path value="Claim.supportingInfo.code" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.timing[x]">
+      <path value="Claim.supportingInfo.timing[x]" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.value[x]">
+      <path value="Claim.supportingInfo.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Ringversuchszertifikat|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.value[x]:valueReference">
+      <path value="Claim.supportingInfo.value[x]" />
+      <sliceName value="valueReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Ringversuchszertifikat|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.value[x]:valueReference.reference">
+      <path value="Claim.supportingInfo.value[x].reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.value[x]:valueReference.type">
+      <path value="Claim.supportingInfo.value[x].type" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.value[x]:valueReference.identifier">
+      <path value="Claim.supportingInfo.value[x].identifier" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.value[x]:valueReference.display">
+      <path value="Claim.supportingInfo.value[x].display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:ringversuchszertifikat.reason">
+      <path value="Claim.supportingInfo.reason" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung">
+      <path value="Claim.supportingInfo" />
+      <sliceName value="leistungsgenehmigung" />
+      <short value="Leistungsgenehmigung" />
+      <definition value="Hier können Leistungsgenehmigungen zur Abrechnungsbegruendung zugefügt werden." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.category.coding">
+      <path value="Claim.supportingInfo.category.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.category.coding.system">
+      <path value="Claim.supportingInfo.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Information_Kategorie" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.category.coding.version">
+      <path value="Claim.supportingInfo.category.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.category.coding.code">
+      <path value="Claim.supportingInfo.category.coding.code" />
+      <min value="1" />
+      <fixedCode value="Leistungsgenehmigung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.category.coding.display">
+      <path value="Claim.supportingInfo.category.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.category.coding.userSelected">
+      <path value="Claim.supportingInfo.category.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.category.text">
+      <path value="Claim.supportingInfo.category.text" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.code">
+      <path value="Claim.supportingInfo.code" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.timing[x]">
+      <path value="Claim.supportingInfo.timing[x]" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.value[x]">
+      <path value="Claim.supportingInfo.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Leistungsgenehmigung_Heilmittel|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Leistungsgenehmigung_Psychotherapie|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.value[x]:valueReference">
+      <path value="Claim.supportingInfo.value[x]" />
+      <sliceName value="valueReference" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Leistungsgenehmigung_Heilmittel|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Leistungsgenehmigung_Psychotherapie|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.value[x]:valueReference.reference">
+      <path value="Claim.supportingInfo.value[x].reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.value[x]:valueReference.type">
+      <path value="Claim.supportingInfo.value[x].type" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.value[x]:valueReference.identifier">
+      <path value="Claim.supportingInfo.value[x].identifier" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.value[x]:valueReference.display">
+      <path value="Claim.supportingInfo.value[x].display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:leistungsgenehmigung.reason">
+      <path value="Claim.supportingInfo.reason" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:vertragskennzeichen">
+      <path value="Claim.supportingInfo" />
+      <sliceName value="vertragskennzeichen" />
+    </element>
+    <element id="Claim.supportingInfo:vertragskennzeichen.category.coding">
+      <path value="Claim.supportingInfo.category.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:vertragskennzeichen.category.coding.system">
+      <path value="Claim.supportingInfo.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Information_Kategorie" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:vertragskennzeichen.category.coding.version">
+      <path value="Claim.supportingInfo.category.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:vertragskennzeichen.category.coding.code">
+      <path value="Claim.supportingInfo.category.coding.code" />
+      <min value="1" />
+      <fixedCode value="Vertragskennzeichen" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.supportingInfo:vertragskennzeichen.category.coding.display">
+      <path value="Claim.supportingInfo.category.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:vertragskennzeichen.category.coding.userSelected">
+      <path value="Claim.supportingInfo.category.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:vertragskennzeichen.category.text">
+      <path value="Claim.supportingInfo.category.text" />
+      <max value="0" />
+    </element>	
+    <element id="Claim.supportingInfo:vertragskennzeichen.code">
+      <path value="Claim.supportingInfo.code" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:vertragskennzeichen.timing[x]">
+      <path value="Claim.supportingInfo.timing[x]" />
+      <max value="0" />
+    </element>
+    <element id="Claim.supportingInfo:vertragskennzeichen.value[x]">
+      <path value="Claim.supportingInfo.value[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+    </element>
+    <element id="Claim.supportingInfo:vertragskennzeichen.value[x]:valueString">
+      <path value="Claim.supportingInfo.valueString" />
+      <sliceName value="valueString" />
+      <min value="1" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Claim.supportingInfo:vertragskennzeichen.reason">
+      <path value="Claim.supportingInfo.reason" />
+      <max value="0" />
+    </element>
+    <element id="Claim.diagnosis">
+      <path value="Claim.diagnosis" />
+      <max value="0" />
+    </element>
+    <element id="Claim.procedure">
+      <path value="Claim.procedure" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurance">
+      <path value="Claim.insurance" />
+      <short value="Krankenversicherungsverhaeltnis" />
+      <definition value="Referenz zum aktuellen Krankenversicherungsverhaeltnis" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.insurance.identifier">
+      <path value="Claim.insurance.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurance.coverage">
+      <path value="Claim.insurance.coverage" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krankenversicherungsverhaeltnis|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.insurance.coverage.reference">
+      <path value="Claim.insurance.coverage.reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.insurance.coverage.type">
+      <path value="Claim.insurance.coverage.type" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurance.coverage.identifier">
+      <path value="Claim.insurance.coverage.identifier" />
+      <short value="Vertragskennzeichen" />
+      <definition value="Vertragskennzeichen" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.insurance.coverage.identifier.use">
+      <path value="Claim.insurance.coverage.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurance.coverage.identifier.type">
+      <path value="Claim.insurance.coverage.identifier.type" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.insurance.coverage.identifier.type.coding">
+      <path value="Claim.insurance.coverage.identifier.type.coding" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurance.coverage.identifier.type.text">
+      <path value="Claim.insurance.coverage.identifier.type.text" />
+      <min value="1" />
+      <fixedString value="Vertragskennzeichen" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.insurance.coverage.identifier.system">
+      <path value="Claim.insurance.coverage.identifier.system" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurance.coverage.identifier.value">
+      <path value="Claim.insurance.coverage.identifier.value" />
+      <short value="Vertragskennzeichen" />
+      <definition value="Vertragskennzeichen" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Claim.insurance.coverage.identifier.period">
+      <path value="Claim.insurance.coverage.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurance.coverage.identifier.assigner">
+      <path value="Claim.insurance.coverage.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurance.coverage.display">
+      <path value="Claim.insurance.coverage.display" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurance.businessArrangement">
+      <path value="Claim.insurance.businessArrangement" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurance.preAuthRef">
+      <path value="Claim.insurance.preAuthRef" />
+      <max value="0" />
+    </element>
+    <element id="Claim.insurance.claimResponse">
+      <path value="Claim.insurance.claimResponse" />
+      <max value="0" />
+    </element>
+    <element id="Claim.accident">
+      <path value="Claim.accident" />
+      <max value="0" />
+    </element>
+    <element id="Claim.item">
+      <path value="Claim.item" />
+      <max value="0" />
+    </element>
+    <element id="Claim.total">
+      <path value="Claim.total" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

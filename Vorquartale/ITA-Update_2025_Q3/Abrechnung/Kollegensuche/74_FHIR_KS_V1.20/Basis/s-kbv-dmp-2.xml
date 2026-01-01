@@ -1,0 +1,79 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+  <meta>
+    <profile value="http://hl7.org/fhir/StructureDefinition/shareablevalueset" />
+  </meta>
+  <url value="http://fhir.de/ValueSet/kbv/s-kbv-dmp" />
+  <version value="0.2.3" />
+  <name value="kbv-s-kbv-dmp" />
+  <status value="draft" />
+  <experimental value="true" />
+  <date value="2018-07-01" />
+  <publisher value="HL7 Deutschland e.V. (Technisches Komitee FHIR)" />
+  <contact>
+    <telecom>
+      <system value="other" />
+      <value value="http://hl7.de/technische-komitees/fhir/" />
+    </telecom>
+  </contact>
+  <description value="DMP Status gibt an, ob ein Versicherter an einem DMP Porgramm teilnimmt. Auf der KVK ist diese Angabe Teil des Feldes VERSICHERTENSTATUS." />
+  <compose>
+    <include>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-dmp" />
+    </include>
+  </compose>
+  <expansion>
+    <identifier value="db9f5caa-6ed9-432e-b5b9-94513b2afd60" />
+    <timestamp value="2019-10-10T14:05:19+00:00" />
+    <total value="10" />
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-dmp" />
+      <code value="00" />
+      <display value="nicht gesetzt" />
+    </contains>
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-dmp" />
+      <code value="01" />
+      <display value="DM2" />
+    </contains>
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-dmp" />
+      <code value="02" />
+      <display value="BRK" />
+    </contains>
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-dmp" />
+      <code value="03" />
+      <display value="KHK" />
+    </contains>
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-dmp" />
+      <code value="04" />
+      <display value="DM1" />
+    </contains>
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-dmp" />
+      <code value="05" />
+      <display value="Asthma" />
+    </contains>
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-dmp" />
+      <code value="06" />
+      <display value="COPD" />
+    </contains>
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-dmp" />
+      <code value="07" />
+      <display value="HI" />
+    </contains>
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-dmp" />
+      <code value="08" />
+      <display value="Depression" />
+    </contains>
+    <contains>
+      <system value="http://fhir.de/CodeSystem/kbv/s-kbv-dmp" />
+      <code value="09" />
+      <display value="Rueckenschmerz" />
+    </contains>
+  </expansion>
+</ValueSet>

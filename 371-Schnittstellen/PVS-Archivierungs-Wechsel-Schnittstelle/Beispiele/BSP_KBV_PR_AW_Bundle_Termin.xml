@@ -1,0 +1,481 @@
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="8040"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-12T18:55:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Bundle_Termin|1.2.0"/>
+	</meta>
+<type value="history"/>  
+<entry>
+<fullUrl value="https://example.com/base/Appointment/3270"/>
+<resource>
+	<Appointment xmlns="http://hl7.org/fhir">
+		<id value="3270"/>
+		<meta>
+			<versionId value="1" />
+			<lastUpdated value="2020-08-11T16:03:00+00:00" />
+			<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Termin|1.2.0"/>
+		</meta>
+		<text>
+			<status value="extensions"/>
+			<div xmlns="http://www.w3.org/1999/xhtml">
+				Termin für Patient zum Gesundsheits-Checkup am 20.01.2021 um 10:30 Uhr
+			</div>
+		</text>
+		<status value="booked"/>
+		<serviceType>
+			<text value="Gesundheits-Checkup"/>
+		</serviceType>
+		<start value="2021-01-20T10:30:00+01:00"/>
+		<end value="2021-01-20T10:50:00+01:00"/>
+		<comment value="incl. großem Blutbild"/>
+		<participant>
+			<type>
+				<coding>
+					<system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+					<code value="SPRF"/>
+				</coding>
+			</type>
+			<actor>
+				<reference value="Practitioner/1000"/>
+			</actor>
+			<status value="accepted"/>
+		</participant>
+		<participant>
+			<type>
+				<coding>
+					<system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+					<code value="PPRF"/>
+				</coding>
+			</type>
+			<actor>
+				<reference value="Patient/1040"/>
+			</actor>
+			<status value="accepted"/>
+		</participant>
+		<participant>
+			<type>
+				<coding>
+					<system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+					<code value="PART"/>
+				</coding>
+			</type>
+			<actor>
+				<reference value="Location/3171"/>
+			</actor>
+			<status value="accepted"/>
+		</participant>
+	</Appointment>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Appointment/3270"/>
+</request>
+<response>
+	<status value="201"/>
+</response>
+</entry>
+
+<entry>
+<fullUrl value="https://example.com/base/Location/3171"/>
+<resource>
+<Location xmlns="http://hl7.org/fhir">
+	<id value="3171"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-12T18:55:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette_Ort|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<name value="Labor 1"/>
+	<type>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+			<code value="AMB"/>
+		</coding>
+	</type>
+	<managingOrganization>
+		<reference value="Organization/3155"/>
+	</managingOrganization>
+</Location>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Location/3171"/>
+</request>
+<response>
+	<status value="201"/>
+</response>
+</entry>
+
+<entry>
+<fullUrl value="https://example.com/base/Organization/3155"/>
+<resource>
+<Organization xmlns="http://hl7.org/fhir">
+	<id value="3155"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-24T16:50:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Praxis Dres. Müller, Meier, Schulze
+			BSNR 987654321
+			Musterweg 33, 77777 Musterstadt
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Betriebsstaette_Hierarchie">
+		<valueCode value="BSNR"/>
+	</extension>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+				<code value="BSNR"/>
+			</coding>		
+		</type>
+		<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"/>
+		<value value="987654321"/>
+	</identifier>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+				<code value="XX"/>
+			</coding>		
+		</type>
+		<system value="http://fhir.de/NamingSystem/arge-ik/iknr"/>
+		<value value="271234567"/>
+	</identifier>
+	<name value="Praxis Dres. Müller, Meier, Schulze"/>
+	<telecom>
+		<system value="phone"/>
+		<value value="09876/54321-0"/>
+	</telecom>
+	<telecom>
+		<system value="fax"/>
+		<value value="09876/54321-33"/>
+	</telecom>
+	<telecom>
+		<system value="email"/>
+		<value value="info@praxis-mms.de"/>
+	</telecom>
+	<address>
+		<type value="both"/>
+		<line value="Musterweg 33">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="33"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Musterweg"/>
+			</extension>
+		</line>
+		<city value="Musterstadt"/>
+		<postalCode value="77777"/>
+		<country value="D"/>
+	</address>
+</Organization>
+
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Organization/3155"/>
+</request>
+<response>
+	<status value="201"/>
+</response>
+</entry>
+
+
+
+<entry>
+<fullUrl value="https://example.com/base/Patient/1040"/>
+<resource>
+<Patient xmlns="http://hl7.org/fhir">
+	<id value="1040"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-11T13:23:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Patientin Martina Freifrau von Mustermann
+			geb. am 04.03.1972
+			weiblich
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_KostenuebernahmeIgeL">
+		<valueBoolean value="false"/>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_Aktuelle_Taetigkeit">
+		<extension url="aktuelle_Taetigkeit">
+			<valueString value="Softwareentwicklerin"/>
+		</extension>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_Zusatzinformationen">
+		<extension url="religionszugehoerigkeit">
+			<valueString value="ev."/>
+		</extension>
+	</extension>
+	<extension url="http://hl7.org/fhir/StructureDefinition/patient-citizenship">
+		<extension url="code">
+			<valueCodeableConcept>
+				<coding>
+					<system value="http://fhir.de/CodeSystem/deuev/anlage-8-laenderkennzeichen"/>
+					<code value="D"/>
+				</coding>
+			</valueCodeableConcept>
+		</extension>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Patient_Vsdm_Zusatzinformationen">
+		<extension url="geschlecht">
+			<valueCoding>
+				<system value="http://hl7.org/fhir/administrative-gender"/>
+				<code value="female"/>
+			</valueCoding>
+		</extension>
+		<extension url="geburtsdatum">
+			<valueDate value="1972-03-04"/>
+		</extension>
+		<extension url="adresse">
+				<valueAddress>
+					<type value="physical"/>
+					<line value="Musterweg 42">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+							<valueString value="Musterweg"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+							<valueString value="42"/>
+						</extension>
+					</line>
+					<line value="Steglitz">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+							<valueString value="Steglitz"/>
+						</extension>
+					</line>
+					<city value="Berlin"/>
+					<postalCode value="10787"/>
+					<country value="D"/>
+				</valueAddress>
+		</extension>		
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_Base_Additional_Comment">
+		<valueString value="Sehr gute Patientin"/>
+	</extension>	
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+				<code value="GKV"/>
+			</coding>
+		</type>
+		<system value="http://fhir.de/NamingSystem/gkv/kvid-10"/>
+		<value value="M040319722"/>
+	</identifier>
+	<name>
+		<use value="official"/>
+		<text value="Martina Freifrau von Mustermann"/>
+		<family value="Freifrau von Mustermann">
+			<extension url="http://fhir.de/StructureDefinition/humanname-namenszusatz">
+				<valueString value="Freifrau"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+				<valueString value="von"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+				<valueString value="Mustermann"/>
+			</extension>
+		</family>
+		<given value="Martina"/>
+	</name>
+	<name>
+		<use value="maiden" />
+		<family value="Schmitt">
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+				<valueString value="Schmitt"/>
+			</extension>
+		</family>
+	</name>
+	<telecom>
+		<system value="phone"/>
+		<value value="077553/32211"/>
+	</telecom>
+	<telecom>
+		<system value="email"/>
+		<value value="m.mustermann@mustermann.de"/>
+	</telecom>
+	<gender value="female"/>
+	<birthDate value="1972-03-04"/>
+	<address>
+		<type value="both"/>
+		<line value="Musterweg 42">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Musterweg"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="42"/>
+			</extension>
+		</line>
+		<line value="Hinterhof 3. Etage">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+				<valueString value="Hinterhof 3. Etage"/>
+			</extension>
+		</line>
+		<city value="Berlin"/>
+		<postalCode value="10787"/>
+		<country value="D"/>
+	</address>
+	<maritalStatus>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-MaritalStatus"/>
+			<code value="M"/>
+		</coding>
+	</maritalStatus>
+	<contact>
+		<relationship>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0131"/>
+				<code value="CP"/>
+			</coding>
+		</relationship>
+		<name>
+			<family value="Mustermann"/>
+			<given value="Fritz"/>
+		</name>
+		<telecom>
+			<system value="phone"/>
+			<value value="077553/32212"/>
+		</telecom>
+	</contact>
+	<communication>
+		<language>
+			<coding>
+				<system value="urn:ietf:bcp:47"/>
+				<code value="de-DE"/>
+			</coding>
+		</language>
+		<preferred value="true"/>
+	</communication>
+	<generalPractitioner>
+		<identifier>
+			<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"/>
+			<value value="123456701"/>
+		</identifier>
+	</generalPractitioner>
+</Patient>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Patient/1040"/>
+</request>
+<response>
+	<status value="201"/>
+</response>
+</entry>
+
+<entry>
+<fullUrl value="https://example.com/base/Practitioner/1000"/>
+<resource>
+<Practitioner xmlns="http://hl7.org/fhir">
+	<id value="1000"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-08-26T08:58:11+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandelnder|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			Dr. med. Max Freiherr von und zu Mustermann, Musterweg 42, 10787 Berlin
+		</div>
+	</text>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+				<code value="LANR" />
+			</coding>
+		</type>
+		<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_ANR"/>
+		<value value="123456701"/>
+	</identifier>
+	<name>
+		<use value="official" />
+		<text value="Dr. med Max Freiherr von und zu Mustermann" />
+		<family value="Freiherr von und zu Mustermann" >
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+				<valueString value="Mustermann"/>
+			</extension>
+			<extension url="http://fhir.de/StructureDefinition/humanname-namenszusatz">
+				<valueString value="Freiherr"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+				<valueString value="von und zu"/>
+			</extension>
+		</family>
+		<given value="Max"/>
+		<prefix value="Dr. med.">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
+				<valueCode value="AC"/>
+			</extension>
+		</prefix>
+	</name>
+	<address>
+		<type value="both" />
+		<line value="Musterweg 42">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+				<valueString value="Musterweg"/>
+			</extension>
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+				<valueString value="42"/>
+			</extension>
+		</line>
+		<city value="Berlin"/>
+		<postalCode value="10787"/>
+		<country value="D"/>
+	</address>
+	<gender value="other">
+		<extension url="http://fhir.de/StructureDefinition/gender-amtlich-de">
+			<valueCoding>
+				<system value="http://fhir.de/CodeSystem/gender-amtlich-de"/>
+				<code value="D"/>
+				<display value="divers"/>
+			</valueCoding>
+		</extension>
+	</gender>
+<qualification>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BAR2_ARZTNRFACHGRUPPE"/>
+				<code value="01"/>
+			</coding>
+		</code>
+	</qualification>
+	<qualification>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BAR2_ARZTNRFACHGRUPPE"/>
+				<code value="33"/>
+			</coding>
+		</code>
+	</qualification>
+</Practitioner>
+</resource>
+<request>
+	<method value="PUT"/>
+	<url value="Practitioner/1000"/>
+</request>
+<response>
+	<status value="201"/>
+</response>
+</entry>
+</Bundle>

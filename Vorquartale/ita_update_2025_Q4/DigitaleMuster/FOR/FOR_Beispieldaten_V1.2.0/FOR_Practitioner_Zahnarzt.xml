@@ -1,0 +1,47 @@
+<Practitioner xmlns="http://hl7.org/fhir">
+	<id value="for-practitioner-zahnarzt"/>
+	<meta>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_FOR_Practitioner|1.2"/>
+	</meta>
+	<identifier>
+		<type>
+			<coding>
+				<system value="http://fhir.de/CodeSystem/identifier-type-de-basis"/>
+				<code value="ZANR"/>
+			</coding>
+		</type>
+		<system value="http://fhir.de/sid/kzbv/zahnarztnummer"/>
+		<value value="911275091"/>
+	</identifier>
+	<name>
+		<use value="official"/>
+		<family value="Topp-Glücklich">
+			<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+				<valueString value="Topp-Glücklich"/>
+			</extension>
+		</family>
+		<given value="Hannelore"/>
+		<prefix value="Dr. med.">
+			<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
+				<valueCode value="AC"/>
+			</extension>
+		</prefix>
+	</name>
+	<qualification>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Qualification_Type"/>
+				<code value="01"/>
+			</coding>
+		</code>
+	</qualification>
+	<qualification>
+		<code>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_FOR_Berufsbezeichnung" />
+				<code value="Berufsbezeichnung" />
+			</coding>
+			<text value="Zahnarzt" />
+		</code>
+	</qualification>
+</Practitioner>

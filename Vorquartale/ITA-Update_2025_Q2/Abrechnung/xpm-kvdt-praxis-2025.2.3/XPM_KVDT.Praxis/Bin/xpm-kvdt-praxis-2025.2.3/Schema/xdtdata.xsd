@@ -1,0 +1,3422 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<!--
+		 Basistypen
+	-->
+	<xsd:include schemaLocation="xdttypen.xsd"/>
+	<!--
+		 KVDT-Datensatzbeschreibungen Version 5.05 vom 21.10.14.
+		 Elemente sind alphabetisch sortiert.
+	-->
+	<xsd:element name="scon0">
+		<xsd:annotation>
+			<xsd:appinfo>Container-Satz</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f9103"/>
+				<xsd:element ref="f9106"/>
+				<xsd:element ref="f9132" maxOccurs="unbounded"/>
+				<xsd:element ref="sbesa" minOccurs="0"/>
+				<xsd:element ref="srvsa" minOccurs="0"/>
+				<xsd:element ref="sadt0" minOccurs="0"/>
+				<xsd:element ref="skad0" minOccurs="0"/>
+				<xsd:element ref="ssad0" minOccurs="0"/>
+				<xsd:element ref="shdrg0" minOccurs="0"/>
+				<xsd:element ref="shdrg1" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="shdrg9" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="f0102" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Softwareverantwortlicher (SV) (Feld 0102)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0103" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Software (Feld 0103)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0104" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Grouper-Software (Feld 0104)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0105">
+		<xsd:annotation>
+			<xsd:appinfo>KBV-Prüfnummer (Feld 0105)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[VXYZ]/\d{1,3}/\d{2}(0[1-9]|1[0-2])/(0[1-9]|[1-9]\d)/[0-9A-Za-z]{3}"/>
+				<!-- Regel 052: a/n[n][n]/JJMM/nn/aaa -->
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f0111" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Email-Adresse des SV (Feld 0111)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0121" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Strasse des SV (Feld 0121)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0122" type="PLZ">
+		<xsd:annotation>
+			<xsd:appinfo>PLZ des SV (Feld 0122)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0123" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Ort des SV (Feld 0123)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0124" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Telefonnummer des SV (Feld 0124)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0125" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Telefaxnummer des SV (Feld 0125)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0126" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Regionaler Systembetreuer SB (Feld 0126)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0127" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Strasse des SB (Feld 0127)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0128" type="PLZ">
+		<xsd:annotation>
+			<xsd:appinfo>PLZ des SB (Feld 0128)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0129" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Ort des SB (Feld 0129)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0130" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Telefonnummer des SB (Feld 0130)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0131" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Telefaxnummer des SB (Feld 0131)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0132" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Release-Stand der Software (Feld 0132)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0201" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Betriebs- (BSNR) oder Nebenbetriebsstättennummer (NBSNR) (Feld 0201)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0213" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Krankenhaus-IK (im Rahmen der ASV-Abrechnung) (Feld 0213)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0214">
+		<xsd:annotation>
+			<xsd:appinfo>Empfänger (Feld 0214)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:unsignedByte">
+				<xsd:pattern value="0[1-3]|1[78-9]|2[014578]|3[179]|4[0-57-9]|5[015]|6[0-9]|7[02389]|8[0135-7]|9[3-69]"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f0203" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR-/Krankenhaus-Bezeichnung (Feld 0203)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0205" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Straße der (N)BSNR-/Krankenhaus-Adresse (Feld 0205)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0208" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Telefonnummer (Feld 0208)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0209" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Telefaxnummer (Feld 0209)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0211" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Arztname/Erläuterung (Feld 0211)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0212" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) (Feld 0212)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0215" type="PLZ">
+		<xsd:annotation>
+			<xsd:appinfo>PLZ der (N)BSNR-/Krankenhaus-Adresse (Feld 0215)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0216" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Ort der (N)BSNR-/Krankenhaus-Adresse (Feld 0216)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0218" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>E-Mail der Betriebsstätte/Praxis/Krankenhaus (Feld 0218)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0219" type="TEXT_BIS_100">
+		<xsd:annotation>
+			<xsd:appinfo>Titel des Arztes (Feld 0219)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0220" type="TEXT_BIS_45">
+		<xsd:annotation>
+			<xsd:appinfo>Arztvorname (Feld 0220)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0221" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Namenszusatz des Arztes (Feld 0221)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0222" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>ASV-Teamnummer (Feld 0222)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0223" type="E063">
+		<xsd:annotation>
+			<xsd:appinfo>Pseudo-LANR für Krankenhausärzte im Rahmen der ASV-Abrechnung (Feld 0223)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0224" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Produkttypversion des Konnektors (Feld 0224)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0225" type="NUMMER0_BIS_11">
+		<xsd:annotation>
+			<xsd:appinfo>TI-Fachanwendung / TI-Komponente (Feld 0225)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0226" type="NUMMER0_BIS_1">
+		<xsd:annotation>
+			<xsd:appinfo>Systemunterstützung / Ausstattung der Praxis (Feld 0226)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0227" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Ablaufdatum des Konnektor-Zertifikats (Feld 0227)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0228" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Produktname des Konnektors (Feld 0228)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0300" type="NUMMER0_BIS_1">
+		<xsd:annotation>
+			<xsd:appinfo>Abrechnung von (zertifikatspflichtigen) Laborleistungen (Feld 0300)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0301" type="NUMMER0_BIS_2">
+		<xsd:annotation>
+			<xsd:appinfo>pnSD/uu-Analysen (Feld 0301)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0302" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Gerätetyp (Feld 0302)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0303" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Hersteller (Feld 0303)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0304" type="NUMMER3_POSITIV">
+		<xsd:annotation>
+			<xsd:appinfo>Analyt-ID (Feld 0304)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f0305" type="NUMMER0_BIS_2">
+		<xsd:annotation>
+			<xsd:appinfo>RV-Zertifikat (Feld 0305)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3000">
+		<xsd:annotation>
+			<xsd:appinfo>Patientennummer (Feld 3000)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="20"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f3003" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Schein-ID (Feld 3003)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3005">
+		<xsd:annotation>
+			<xsd:appinfo>Kennziffer SA (Feld 3005)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="27"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f3006">
+		<xsd:annotation>
+			<xsd:appinfo>CDM Version (Feld 3006)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:minLength value="5"/>
+				<xsd:maxLength value="11"/>
+				<xsd:pattern value="\d{1,3}\.\d{1,3}.\d{1,3}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f3010" type="TIMESTAMP_ONLINEPRUEFUNG">
+		<xsd:annotation>
+			<xsd:appinfo>Datum und Uhrzeit der Onlineprüfung und -aktualisierung (Timestamp) (Feld 3010)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3011" type="ERGEBNIS_ONLINEPRUEFUNG">
+		<xsd:annotation>
+			<xsd:appinfo>Ergebnis der Onlineprüfung und -aktualisierung (Feld 3011)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3012" type="ERRORCODE_ONLINEPRUEFUNG">
+		<xsd:annotation>
+			<xsd:appinfo>Error-Code (Feld 3012)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3013" type="PRUEFZIFFER_FACHDIENST">
+		<xsd:annotation>
+			<xsd:appinfo>Prüfziffer des Fachdienstes (Feld 3013)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3100" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Namenszusatz (Feld 3100)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3101" type="TEXT_BIS_45">
+		<xsd:annotation>
+			<xsd:appinfo>Name (Feld 3101)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3102" type="TEXT_BIS_45">
+		<xsd:annotation>
+			<xsd:appinfo>Vorname (Feld 3102)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3103" type="ERSATZ_DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Geburtsdatum (Feld 3103)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3104" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Titel (Feld 3104)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3105" type="VERS_NUMMER">
+		<xsd:annotation>
+			<xsd:appinfo>Versichertennummer (Feld 3105)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3107" type="TEXT_BIS_46">
+		<xsd:annotation>
+			<xsd:appinfo>Straße (Feld 3107)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3108">
+		<xsd:annotation>
+			<xsd:appinfo>Versichertenart (Feld 3108)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="1"/>
+				<xsd:enumeration value="3"/>
+				<xsd:enumeration value="5"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f3109">
+		<xsd:annotation>
+			<xsd:appinfo>Hausnummer (Feld 3109)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="9"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f3110">
+		<xsd:annotation>
+			<xsd:appinfo>Geschlecht (Feld 3110)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="M"/>
+				<xsd:enumeration value="W"/>
+				<xsd:enumeration value="D"/>
+				<xsd:enumeration value="U"/>
+				<xsd:enumeration value="X"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f3111" type="NUMMER1_BIS_5">
+		<xsd:annotation>
+			<xsd:appinfo>Aufnahmegewicht (Feld 3111)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3112" type="TEXT_BIS_10">
+		<xsd:annotation>
+			<xsd:appinfo>PLZ (Feld 3112)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3113" type="TEXT_BIS_40">
+		<xsd:annotation>
+			<xsd:appinfo>Ort (Feld 3113)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3114" type="TEXT_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>Wohnsitzländercode (Feld 3114)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3115" type="TEXT_BIS_40">
+		<xsd:annotation>
+			<xsd:appinfo>Anschriftenzusatz (Feld 3115)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3116" type="WOP">
+		<xsd:annotation>
+			<xsd:appinfo>WOP (Feld 3116)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3119">
+		<xsd:annotation>
+			<xsd:appinfo>Versicherten-ID (Feld 3119)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[A-Z]\d{9}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f3120" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Vorsatzwort (Feld 3120)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3121" type="TEXT_BIS_10">
+		<xsd:annotation>
+			<xsd:appinfo>Postfach PLZ (Feld 3121)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3122" type="TEXT_BIS_40">
+		<xsd:annotation>
+			<xsd:appinfo>Postfach Ort (Feld 3122)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3123">
+		<xsd:annotation>
+			<xsd:appinfo>Postfach (Feld 3123)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="8"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f3124" type="TEXT_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>Postfach Wohnsitzländercode (Feld 3124)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3673" type="ICD_CODE">
+		<xsd:annotation>
+			<xsd:appinfo>Dauerdiagnose (ICD-Code) (Feld 3673)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3674" type="DIAGNOSE">
+		<xsd:annotation>
+			<xsd:appinfo>Diagnosesicherheit Dauerdiagnose (Feld 3674)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3675" type="SEITENLOKALISATION">
+		<xsd:annotation>
+			<xsd:appinfo>Seitenlokalisation Dauerdiagnose (Feld 3675)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3676" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Diagnosenerläuterung Dauerdiagnose (Feld 3676)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f3677" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Diagnosenausnahmetatbestand Dauerdiagnosen (Feld 3677)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4101" type="QUARTAL">
+		<xsd:annotation>
+			<xsd:appinfo>Quartal (Feld 4101)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4102" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Ausstellungsdatum (Feld 4102)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4103" type="NUMMER_LEN_1">
+		<xsd:annotation>
+			<xsd:appinfo>Vermittlungs-/Kontaktart (Feld 4103)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4104" type="NUMMER5">
+		<xsd:annotation>
+			<xsd:appinfo>Abrechnungs-VKNR (Feld 4104)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4105" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Ergänzende Informationen zur Vermittlungs-/Kontaktart (Feld 4105)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="f4106" type="KTAB">
+		<xsd:annotation>
+			<xsd:appinfo>Kostenträger-Abrechnungsbereich (KTAB) (Feld 4106)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4114" type="TEXT12">
+		<xsd:annotation>
+			<xsd:appinfo>Vermittlungscode (Feld 4114)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4108">
+		<xsd:annotation>
+			<xsd:appinfo>Zulassungsnummer (mobiles Lesegerät) (Feld 4108)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="40"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f4109" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Letzter Einlesetag der Versichertenkarte im Quartal (Feld 4109)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4110" type="DATUM_ISO">
+		<xsd:annotation>
+			<xsd:appinfo>Versicherungsschutz Ende (Feld 4110)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4111" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Kostentraegerkennung (Feld 4111)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4112" type="NUR_1">
+		<xsd:annotation>
+			<xsd:appinfo>eEB vorhanden (Feld 4112)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4115" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Tag der Terminvermittlung (Feld 4115)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4121" type="GO">
+		<xsd:annotation>
+			<xsd:appinfo>Gebührenordnung (Feld 4121)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4122" type="ABRGEB">
+		<xsd:annotation>
+			<xsd:appinfo>Abrechnungsgebiet (Feld 4122)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4123">
+		<xsd:annotation>
+			<xsd:appinfo>Personenkreis/Untersuchungskategorie (Feld 4123)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="01"/>
+				<xsd:enumeration value="02"/>
+				<xsd:enumeration value="03"/>
+				<xsd:enumeration value="04"/>
+				<xsd:enumeration value="05"/>
+				<xsd:enumeration value="06"/>
+				<xsd:enumeration value="07"/>
+				<xsd:enumeration value="08"/>
+				<xsd:enumeration value="09"/>
+				<xsd:enumeration value="10"/>
+				<xsd:enumeration value="11"/>
+				<xsd:enumeration value="12"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f4124" type="TEXT_5_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>SKT-Zusatzangaben (Feld 4124)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4125" type="DOPPEL_DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Gültigkeitszeitraum von bis (Feld 4125)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4126" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>SKT-Bemerkungen (Feld 4126)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="f4131" type="TEXT_BIS_2">
+		<xsd:annotation>
+			<xsd:appinfo>Besondere Personengruppe (Feld 4131)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4132" type="TEXT_BIS_2">
+		<xsd:annotation>
+			<xsd:appinfo>DMP-Kennzeichnung (Feld 4132)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4133" type="DATUM_ISO">
+		<xsd:annotation>
+			<xsd:appinfo>Versicherungsschutz Beginn (Feld 4133)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4134" type="TEXT_BIS_45">
+		<xsd:annotation>
+			<xsd:appinfo>Kostenträgername (Feld 4134)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4202" type="NUR_1">
+		<xsd:annotation>
+			<xsd:appinfo>Unfall, Unfallfolgen (Feld 4202)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4204" type="NUR_1">
+		<xsd:annotation>
+			<xsd:appinfo>Eingeschränkter Leistungsanspruch gemäß §16 Abs. 3a SGB V (Feld 4204)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4205" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Auftrag (Feld 4205)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4206" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Mutm. Tag der Entbindung (Feld 4206)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4207" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Diagnose/Verdachtsdiagnose (Feld 4207)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4208" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Befund/Medikation (Feld 4208)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4214" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Behandlungstag bei IVD-Leistungen (Feld 4214)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4209" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Befund/Medikation (Feld 4208)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4217" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Erstveranlassers des Erstveranlassers (Feld 4217)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4218" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Überweisers des Erstveranlassers (Feld 4218)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="shdrg1f4218">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Überweisers (Feld 4218)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4218"/>
+				<xsd:element ref="f4242"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="f4219" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Überweisung von anderen Ärzten (Feld 4219)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4220" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Überweisung an (Feld 4220)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4221">
+		<xsd:annotation>
+			<xsd:appinfo>Kurativ/Präventiv/ESS/bei belegärztlicher Behandlung (Feld 4221)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="1"/>
+				<xsd:enumeration value="2"/>
+				<xsd:enumeration value="3"/>
+				<xsd:enumeration value="4"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f4225" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>ASV-Teamnummer des Erstveranlassers (Feld 4225)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4226" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>ASV-Teamnummer des Überweisers (Feld 4226)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4229" type="NUMMER5">
+		<xsd:annotation>
+			<xsd:appinfo>Ausnahmeindikation (Feld 4229)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4233" type="DOPPEL_DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Stationäre Behandlung von bis (Feld 4233)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4234" type="NUR_1">
+		<xsd:annotation>
+			<xsd:appinfo>Anerkannte Psychotherapie (Feld 4234)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4235" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Datum des Anerkennungsbescheides (Feld 4235)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4236" type="NUR_1">
+		<xsd:annotation>
+			<xsd:appinfo>Abklärung somatischer Ursachen vor Aufnahme einer Psychotherapie (Feld 4236)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4239" type="SU">
+		<xsd:annotation>
+			<xsd:appinfo>Scheinuntergruppe (Feld 4239)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4241" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Erstveranlassers (Feld 4241)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4242" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Überweisers (Feld 4242)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4243" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Weiterbehandelnder Arzt (Feld 4243)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4247" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Antragsdatum (des Anerkennungsbescheides) (Feld 4247)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4248" type="E063">
+		<xsd:annotation>
+			<xsd:appinfo>Pseudo-LANR (für Krankenhausärzte im Rahmen der ASV-Abrechnung) des Erstveranlasser (Feld 4248)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4249" type="E063">
+		<xsd:annotation>
+			<xsd:appinfo>Pseudo-LANR (für Krankenhausärzte im Rahmen der ASV-Abrechnung) des Überweiser (Feld 4249)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4250" type="NUR_1">
+		<xsd:annotation>
+			<xsd:appinfo>Kombinationsbehandlung aus Einzel- und Gruppentherapie (Feld 4250)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4251" type="NUMMER1_BIS_4">
+		<xsd:annotation>
+			<xsd:appinfo>Durchführungsart der Kombinationsbehandlung (Feld 4251)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4252" type="NUMMER_LEN_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>Gesamtanzahl bewilligter Therapieeinheiten für den Versicherten (Feld 4252)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4253" type="GNR_REGEL042">
+		<xsd:annotation>
+			<xsd:appinfo>Bewilligte GOP für den Versicherten (Feld 4253)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4254" type="NUMMER_LEN_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>Anzahl der abgerechneten GOPen für den Versicherten (Feld 4254)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4255" type="NUMMER_LEN_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>Gesamtanzahl bewilligter Therapieeinheiten für die Bezugsperson (Feld 4255)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4256" type="GNR_REGEL042">
+		<xsd:annotation>
+			<xsd:appinfo>Bewilligte GOP für die Bezugsperson (Feld 4256)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4257" type="NUMMER_LEN_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>Anzahl der abgerechneten GOPen für die Bezugsperson (Feld 4257)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4261" type="NUMMER1_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>Kurart (Feld 4261)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4262" type="NUR_1">
+		<xsd:annotation>
+			<xsd:appinfo>Durchführung als Kompaktkur (Feld 4262)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4263">
+		<xsd:annotation>
+			<xsd:appinfo>Genehmigte Kurdauer in Wochen (Feld 4263)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:unsignedByte">
+				<xsd:minInclusive value="1"/>
+				<xsd:maxInclusive value="10"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f4264" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Anreisetag (Feld 4264)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4265" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Abreisetag (Feld 4265)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4266" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Kurabbruch am (Feld 4266)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4267">
+		<xsd:annotation>
+			<xsd:appinfo>Bewiligte Kurverlängerung in Wochen (Feld 4267)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:unsignedByte">
+				<xsd:minInclusive value="1"/>
+				<xsd:maxInclusive value="10"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f4268" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Bewiligungsdatum Kurverlängerung (Feld 4268)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4269" type="NUR_1">
+		<xsd:annotation>
+			<xsd:appinfo>Verhaltenspräventive Maßnahmen angeregt (Feld 4269)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4270" type="NUR_1">
+		<xsd:annotation>
+			<xsd:appinfo>Verhaltenspräventive Maßnahmen durchgeführt (Feld 4270)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4271" type="NUR_1">
+		<xsd:annotation>
+			<xsd:appinfo>Kompaktkur nicht möglich (Feld 4271)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4272" type="NUR_1">
+		<xsd:annotation>
+			<xsd:appinfo>Durchführung als Kompaktkur mit Refresher (Feld 4272)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4273" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Kurärztlicher Leistungsort (Feld 4273)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4274" type="PLZ">
+		<xsd:annotation>
+			<xsd:appinfo>Postleitzahl des kurärztlichen Leistungsortes (Feld 4274)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4275" type="NUR_1">
+		<xsd:annotation>
+			<xsd:appinfo>Kontakt zur Vorbereitung des Kuraufenthaltes (Feld 4275)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4276" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Anreisetag als Teil 2 bei Refresher (Feld 4276)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4277" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Abreisetag als Teil 2 bei Refresher (Feld 4277)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4278" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Kurabbruch am als Teil 2 bei Refresher (Feld 4278)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5000" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Leistungstag (Feld 5000)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5001">
+		<xsd:annotation>
+			<xsd:appinfo>Gebührennummer (GNR) (Feld 5001)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="9"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f5002" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Art der Untersuchung (Feld 5002)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5003" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Arztnummer (Feld 5003)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5005">
+		<xsd:annotation>
+			<xsd:appinfo>Multiplikator (Feld 5005)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="00[2-9]|0[1-9][0-9]|[1-9][0-9][0-9]"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f5006" type="ZEIT">
+		<xsd:annotation>
+			<xsd:appinfo>Um-Uhrzeit (Feld 5006)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5008" type="NUMMER_LEN_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>DKM (Feld 5008)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5009" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Freier Begründungstext (Feld 5009)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5010" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Chargennummer (Feld 5010)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5011" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Sachkosten-Bezeichnung (Feld 5011)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5012">
+		<xsd:annotation>
+			<xsd:appinfo>Sachkosten/Materialkosten in Cent (Feld 5012)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="\d{1,10}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f5013" type="NUMMER3">
+		<xsd:annotation>
+			<xsd:appinfo>Prozent der Leistung (Feld 5013)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5015" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Organ (Feld 5015)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5016" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Name des Arztes (Feld 5016)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5017" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Besuchort bei Hausbesuchen (Feld 5017)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5018" type="ZONE">
+		<xsd:annotation>
+			<xsd:appinfo>Zone bei Besuchen (Feld 5018)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5019" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Erbringungsort/Standort des Gerätes (Feld 5019)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5020" type="xsd:boolean">
+		<xsd:annotation>
+			<xsd:appinfo>Wiederholungsuntersuchung (Feld 5020)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5021" type="NUMMER4">
+		<xsd:annotation>
+			<xsd:appinfo>Jahr der letzten Krebsfrüherkennungsuntersuchung (Feld 5021)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5023" type="TEXT1">
+		<xsd:annotation>
+			<xsd:appinfo>GO-Nummern-Zusatz (Feld 5023)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5024" type="TEXT1">
+		<xsd:annotation>
+			<xsd:appinfo>GNR-Zusatzkennzeichen poststationär erbrachte Leistungen (Feld 5024)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5025" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Aufnahmedatum (Feld 5025)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5026" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Entlassungsdatum (Feld 5026)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5027" type="HDRG_LEISTUNG">
+		<xsd:annotation>
+			<xsd:appinfo>Hybrid-DRG Leistung (Feld 5027)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5028" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Datum Beginn der Leistung (Feld 5028)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5029" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Datum Ende der Leistung (Feld 5029)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5030" type="NUMMER_LEN_1_BIS_4">
+		<xsd:annotation>
+			<xsd:appinfo>Beatmungsstunden (Feld 5030)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5050" type="TEXT_10">
+		<xsd:annotation>
+			<xsd:appinfo>Melde-ID Implantateregister (Feld 5050)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5051" type="TEXT_BIS_512">
+		<xsd:annotation>
+			<xsd:appinfo>Hash-String Implantateregister (Feld 5051)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5052" type="TEXT_64">
+		<xsd:annotation>
+			<xsd:appinfo>Hash-Wert Implantateregister (Feld 5052)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6009" type="ICD_CODE">
+		<xsd:annotation>
+			<xsd:appinfo>Hauptdiagnose (ICD-10-GM-Kode) (Feld 6009)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6010" type="SEITENLOKALISATION">
+		<xsd:annotation>
+			<xsd:appinfo>Seitenlokalisation Hauptdiagnose (Feld 6010)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6012" type="SEITENLOKALISATION">
+		<xsd:annotation>
+			<xsd:appinfo>Seitenlokalisation Nebendiagnose (Feld 6012)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6011" type="ICD_CODE">
+		<xsd:annotation>
+			<xsd:appinfo>Nebendiagnose (ICD-10-GM-Kode) (Feld 6011)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="shdrg1f5009">
+		<xsd:annotation>
+			<xsd:appinfo>freier Begründungstext (Feld 5009)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5009" minOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="f5034" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>OP-Datum (Feld 5034)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5035">
+		<xsd:annotation>
+			<xsd:appinfo>OP-Schlüssel (Feld 5035)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[0-9]-[0-9]{2}[a-zA-Z0-9](\.){0,1}[a-zA-Z0-9]{0,2}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="shdrg1f6009">
+		<xsd:annotation>
+			<xsd:appinfo>Hauptdiagnose (ICD-10-GM-Kode) (Feld 6009)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f6009"/>
+				<xsd:element ref="f6010" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="shdrg1f6011">
+		<xsd:annotation>
+			<xsd:appinfo>Nebendiagnose (ICD-10-GM-Kode) (Feld 6011)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f6011"/>
+				<xsd:element ref="f6012" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="shdrg1f5027">
+		<xsd:annotation>
+			<xsd:appinfo>Hybrid-DRG Leistung (Feld 5027)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5027"/>
+				<xsd:element ref="f5028"/>
+				<xsd:element ref="f5029"/>
+				<xsd:element ref="f5030" minOccurs="0"/>
+				<xsd:element ref="shdrg1f5009" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5034" minOccurs="0"/>
+				<xsd:element ref="shdrg1f5035" minOccurs="1" maxOccurs="unbounded"/>
+				<xsd:element ref="f5098"/>
+				<xsd:element ref="f5099"/>
+				<xsd:element ref="shdrg1f6009"/>
+				<xsd:element ref="shdrg1f6011" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="shdrg1f5035">
+		<xsd:annotation>
+			<xsd:appinfo>OP-Schlüssel (Feld 5035)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5035"/>
+				<xsd:element ref="f5041" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="f5036" type="GNR">
+		<xsd:annotation>
+			<xsd:appinfo>GNR als Begründung (Feld 5036)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5037">
+		<xsd:annotation>
+			<xsd:appinfo>Gesamt-Schnitt-Naht-Zeit (Minuten) (Feld 5037)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="\d{1,3}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f5038" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Komplikation (Feld 5038)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5040">
+		<xsd:annotation>
+			<xsd:appinfo>Patientennummer der eDokumentation Hautkrebs-Screening (Feld 5040)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="8"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f5041" type="SEITENLOKALISATION">
+		<xsd:annotation>
+			<xsd:appinfo>Seitenlokalisation OPS (Feld 5041)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5042">
+		<xsd:annotation>
+			<xsd:appinfo>Mengenangabe KM / AM (Feld 5042)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="\d{1,5}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f5043" type="NUMMER1_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>Einheit KM / AM (Feld 5043)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5070">
+		<xsd:annotation>
+			<xsd:appinfo>OMIM-G-Kode des untersuchten Gens (Feld 5070)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="\d{6}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f5071">
+		<xsd:annotation>
+			<xsd:appinfo>OMIM-P-Kode (Art der Erkrankung) (Feld 5071)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="\d{6}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f5072" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Gen-Name (Feld 5072)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5073" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Art der Erkrankung (Feld 5073)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5074" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Name Hersteller/ Lieferant (Feld 5074)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5075" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Artikel-/ Modellnummer (Feld 5075)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5076" type="TEXT_BIS_20">
+		<xsd:annotation>
+			<xsd:appinfo>Rechnungsnummer (Feld 5076)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5098" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Ortes der Leistungserbringung (Feld 5098)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5102" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Krankenhaus-IK (im Rahmen der ASV-Abrechnung) (Feld 5102)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5099" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Vertragsarztes/Vertragspsychotherapeuten (Feld 5099)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f4299" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) des Vertragspsychotherapeuten (Feld 4299)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5100" type="NUMMER9">
+		<xsd:annotation>
+			<xsd:appinfo>ASV-Teamnummer des Vertragsarztes (Feld 5100)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f5101" type="E063">
+		<xsd:annotation>
+			<xsd:appinfo>Pseudo-LANR (für Krankenhausärzte im Rahmen der ASV-Abrechnung) des LE (Feld 5101)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6001" type="ICD_CODE">
+		<xsd:annotation>
+			<xsd:appinfo>ICD-Code (Feld 6001)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6003" type="DIAGNOSE">
+		<xsd:annotation>
+			<xsd:appinfo>Diagnosesicherheit (Feld 6003)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6004" type="SEITENLOKALISATION">
+		<xsd:annotation>
+			<xsd:appinfo>Seitenlokalisation (Feld 6004)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6006" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Diagnosenerläuterung (Feld 6006)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f6008" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Diagnosenausnahmetatbestand (Feld 6008)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9102">
+		<xsd:annotation>
+			<xsd:appinfo>Empfänger (Feld 9102)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:unsignedByte">
+				<xsd:pattern value="0[1-3]|1[78-9]|2[014578]|3[179]|4[0-57-9]|5[015]|6[0-9]|7[02389]|8[0135-7]|9[3-69]"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f9103" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Erstellungsdatum (Feld 9103)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9106">
+		<xsd:annotation>
+			<xsd:appinfo>Verwendeter Zeichensatz (Feld 9106)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="4"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f9115" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Erstellungsdatum ADT-Datenpaket (Feld 9115)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9116" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Erstellungsdatum KADT-Datenpaket (Feld 9116)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9122" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Erstellungsdatum SADT-Datenpaket (Feld 9122)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9132">
+		<xsd:annotation>
+			<xsd:appinfo>Enthaltene Datenpakete dieser Datei (Feld 9132)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:byte">
+				<xsd:enumeration value="1"/>
+				<xsd:enumeration value="3"/>
+				<xsd:enumeration value="6"/>
+				<xsd:enumeration value="7"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f9204" type="QUARTAL">
+		<xsd:annotation>
+			<xsd:appinfo>Abrechnungsquartal (Feld 9204)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9212">
+		<xsd:annotation>
+			<xsd:appinfo>Version der Satzbeschreibung (Feld 9212)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:maxLength value="11"/>
+				<xsd:pattern value="[A-Zh]{3,4}[0-1][0-9][0-9][0-9]\.\d{2}"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f9213" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Version verwendeter Stammdatei (Feld 9213)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9230" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Prüfmodul-Version (Feld 9230)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9231" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Steuerdatei-Version (Feld 9231)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9232" type="NUMMER0_BIS_3">
+		<xsd:annotation>
+			<xsd:appinfo>Prüfergebnis (Feld 9232)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9234" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Prüfdatum (Feld 9234)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9235" type="ZEIT">
+		<xsd:annotation>
+			<xsd:appinfo>Prüfzeit (Feld 9235)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9236" type="xsd:string">
+		<xsd:annotation>
+			<xsd:appinfo>Name der geprüften Datei (Feld 9236)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9237">
+		<xsd:annotation>
+			<xsd:appinfo>Enthaltene Datenpakete der Datei (Feld 9237)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="0"/>
+				<xsd:enumeration value="1"/>
+				<xsd:enumeration value="3"/>
+				<xsd:enumeration value="5"/>
+				<xsd:enumeration value="6"/>
+				<xsd:enumeration value="9"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f9250">
+		<xsd:annotation>
+			<xsd:appinfo>AVWG-Prüfnummer der AVS (Feld 9250)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[VXYZ]/\d{1,3}/\d{2}(0[1-9]|1[0-2])/(0[1-9]|[1-9]\d)/[0-9A-Za-z]{3}"/>
+				<!-- Regel 052: a/n[n][n]/JJMM/nn/aaa -->
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f9251">
+		<xsd:annotation>
+			<xsd:appinfo>HMV-Prüfnummer (Feld 9251)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:pattern value="[VXYZ]/\d{1,3}/\d{2}(0[1-9]|1[0-2])/(0[1-9]|[1-9]\d)/[0-9A-Za-z]{3}"/>
+				<!-- Regel 052: a/n[n][n]/JJMM/nn/aaa -->
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="f9260" type="NUMMER2_POSITIV_AB_2">
+		<xsd:annotation>
+			<xsd:appinfo>Anzahl Teilabrechnungen (Feld 9260)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9261" type="NUMMER2_POSITIV">
+		<xsd:annotation>
+			<xsd:appinfo>Abrechnungsteil x von y  (Feld 9261)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9901" type="TEXT_BIS_60">
+		<xsd:annotation>
+			<xsd:appinfo>Systeminterner Parameter (Feld 9901)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="f9117" type="DATUM_NEU">
+		<xsd:annotation>
+			<xsd:appinfo>Erstellungsdatum Hybrid-DRG-Datenpaket (Feld 9117)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+	<xsd:element name="sadt0">
+		<xsd:annotation>
+			<xsd:appinfo>ADT Datenpaket</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="1">
+				<xsd:element ref="f0105"/>
+				<xsd:element ref="f9102"/>
+				<xsd:element ref="f9212"/>
+				<xsd:element ref="f0102"/>
+				<xsd:element ref="f0121"/>
+				<xsd:element ref="f0122"/>
+				<xsd:element ref="f0123"/>
+				<xsd:element ref="f0124"/>
+				<xsd:element ref="f0125" minOccurs="0"/>
+				<xsd:element ref="f0111" minOccurs="0"/>
+				<xsd:element ref="f0126"/>
+				<xsd:element ref="f0127"/>
+				<xsd:element ref="f0128"/>
+				<xsd:element ref="f0129"/>
+				<xsd:element ref="f0130"/>
+				<xsd:element ref="f0131" minOccurs="0"/>
+				<xsd:element ref="f0103"/>
+				<xsd:element ref="f0132" minOccurs="0"/>
+				<xsd:element ref="f9115" minOccurs="0"/>
+				<xsd:element ref="sadt0f9260" minOccurs="0"/>
+				<xsd:element ref="f9204"/>
+				<xsd:element ref="f9250" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f9251" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element ref="s0101" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="s0102" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="s0103" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="s0104" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="sadt0f9260">
+		<xsd:annotation>
+			<xsd:appinfo>Anzahl Teilabrechnungen (Feld 9260)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f9260"/>
+				<xsd:element ref="f9261"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="shdrg1f3010">
+		<xsd:annotation>
+			<xsd:appinfo>Datum und Uhrzeit der Onlineprüfung und -aktualisierung (Timestamp) (Feld 3010)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f3010"/>
+				<xsd:element ref="f3011"/>
+				<xsd:element ref="f3012" minOccurs="0"/>
+				<xsd:element ref="f3013" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="skad0">
+		<xsd:annotation>
+			<xsd:appinfo>KADT Datenpaket</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="1">
+				<xsd:element ref="f0105"/>
+				<xsd:element name="f9102" type="t9102kadt"/>
+				<xsd:element ref="f9212"/>
+				<xsd:element ref="f0102"/>
+				<xsd:element ref="f0121"/>
+				<xsd:element ref="f0122"/>
+				<xsd:element ref="f0123"/>
+				<xsd:element ref="f0124"/>
+				<xsd:element ref="f0125" minOccurs="0"/>
+				<xsd:element ref="f0111" minOccurs="0"/>
+				<xsd:element ref="f0126"/>
+				<xsd:element ref="f0127"/>
+				<xsd:element ref="f0128"/>
+				<xsd:element ref="f0129"/>
+				<xsd:element ref="f0130"/>
+				<xsd:element ref="f0131" minOccurs="0"/>
+				<xsd:element ref="f0103"/>
+				<xsd:element ref="f0132" minOccurs="0"/>
+				<xsd:element ref="f9116" minOccurs="0"/>
+				<xsd:element ref="f9204"/>
+				<xsd:element ref="f9250" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f9251" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="s0109" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ssad0">
+		<xsd:annotation>
+			<xsd:appinfo>SADT Datenpaket</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="1">
+				<xsd:element ref="f0105"/>
+				<xsd:element name="f9102" type="t9102sadt"/>
+				<xsd:element ref="f9212"/>
+				<xsd:element ref="f0102"/>
+				<xsd:element ref="f0121"/>
+				<xsd:element ref="f0122"/>
+				<xsd:element ref="f0123"/>
+				<xsd:element ref="f0124"/>
+				<xsd:element ref="f0125" minOccurs="0"/>
+				<xsd:element ref="f0111" minOccurs="0"/>
+				<xsd:element ref="f0126"/>
+				<xsd:element ref="f0127"/>
+				<xsd:element ref="f0128"/>
+				<xsd:element ref="f0129"/>
+				<xsd:element ref="f0130"/>
+				<xsd:element ref="f0131" minOccurs="0"/>
+				<xsd:element ref="f0103"/>
+				<xsd:element ref="f0132" minOccurs="0"/>
+				<xsd:element ref="f9122" minOccurs="0"/>
+				<xsd:element ref="f9204"/>
+				<xsd:element ref="f9250" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f9251" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element ref="ssad1" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="ssad2" minOccurs="0" maxOccurs="unbounded"/>
+					<xsd:element ref="ssad3" minOccurs="0" maxOccurs="unbounded"/>
+				</xsd:choice>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="shdrg0">
+		<xsd:annotation>
+			<xsd:appinfo>Hybrid-DRG Datenpaket-Header</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="1">
+				<xsd:element ref="f0105" minOccurs="0"/>
+				<xsd:element ref="f9212"/>
+				<xsd:element ref="f0103"/>
+				<xsd:element ref="f0132" minOccurs="0"/>
+				<xsd:element ref="f0104" minOccurs="0"/>
+				<xsd:element ref="f9117" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="shdrg9">
+		<xsd:annotation>
+			<xsd:appinfo>Hybrid-DRG Datenpaket-Abschluss</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="shdrg1">
+		<xsd:annotation>
+			<xsd:appinfo>Hybrid-DRG Datenpaket</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f3000" minOccurs="0"/>
+				<xsd:element ref="f3006" minOccurs="0"/>
+				<xsd:element ref="shdrg1f3010" minOccurs="0"/>
+				<xsd:element ref="f3100" minOccurs="0"/>
+				<xsd:element ref="f3120" minOccurs="0"/>
+				<xsd:element ref="f3101"/>
+				<xsd:element ref="f3102"/>
+				<xsd:element ref="f3103"/>
+				<xsd:element ref="f3104" minOccurs="0"/>
+				<xsd:element ref="f3105" minOccurs="0"/>
+				<xsd:element ref="f3119" minOccurs="0"/>
+				<xsd:element ref="f3107" minOccurs="0"/>
+				<xsd:element ref="f3109" minOccurs="0"/>
+				<xsd:element ref="f3115" minOccurs="0"/>
+				<xsd:element ref="f3112" minOccurs="0"/>
+				<xsd:element ref="f3114" minOccurs="0"/>
+				<xsd:element ref="f3113" minOccurs="0"/>
+				<xsd:element ref="f3121" minOccurs="0"/>
+				<xsd:element ref="f3122" minOccurs="0"/>
+				<xsd:element ref="f3123" minOccurs="0"/>
+				<xsd:element ref="f3124" minOccurs="0"/>
+				<xsd:element ref="f3116" minOccurs="0"/>
+				<xsd:element ref="f3108"/>
+				<xsd:element name="f3110">
+					<xsd:annotation>
+						<xsd:appinfo>Geschlecht (Feld 3110)</xsd:appinfo>
+					</xsd:annotation>
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="M"/>
+							<xsd:enumeration value="W"/>
+							<xsd:enumeration value="D"/>
+							<xsd:enumeration value="X"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element ref="f3111" minOccurs="0"/>
+				<xsd:element ref="f4104"/>
+				<xsd:element ref="f4106"/>
+				<xsd:element ref="f4109" minOccurs="0"/>
+				<xsd:element ref="f4112" minOccurs="0"/>
+				<xsd:element ref="f4133" minOccurs="0"/>
+				<xsd:element ref="f4110" minOccurs="0"/>
+				<xsd:element ref="f4111"/>
+				<xsd:element ref="f4131"/>
+				<xsd:element ref="f4132"/>
+				<xsd:element ref="f4124" minOccurs="0"/>
+				<xsd:element ref="f4125" minOccurs="0"/>
+				<xsd:element ref="f4126" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="shdrg1f4218" minOccurs="0"/>
+				<xsd:element ref="shdrg1f5027"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: Ambulante Behandlung '0101'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="1">
+				<xsd:element ref="f3000" minOccurs="0"/>
+				<xsd:element ref="f3003" minOccurs="0"/>
+				<xsd:element ref="f3006" minOccurs="0"/>
+				<xsd:element ref="s0101f3010" minOccurs="0"/>
+				<xsd:element ref="f3100" minOccurs="0"/>
+				<xsd:element ref="f3120" minOccurs="0"/>
+				<xsd:element ref="f3101"/>
+				<xsd:element ref="f3102"/>
+				<xsd:element ref="f3103"/>
+				<xsd:element ref="f3104" minOccurs="0"/>
+				<xsd:element ref="f3105" minOccurs="0"/>
+				<xsd:element ref="f3119" minOccurs="0"/>
+				<xsd:element ref="f3107" minOccurs="0"/>
+				<xsd:element ref="f3109" minOccurs="0"/>
+				<xsd:element ref="f3115" minOccurs="0"/>
+				<xsd:element ref="f3112" minOccurs="0"/>
+				<xsd:element ref="f3114" minOccurs="0"/>
+				<xsd:element ref="f3113" minOccurs="0"/>
+				<xsd:element ref="f3121" minOccurs="0"/>
+				<xsd:element ref="f3122" minOccurs="0"/>
+				<xsd:element ref="f3123" minOccurs="0"/>
+				<xsd:element ref="f3124" minOccurs="0"/>
+				<xsd:element ref="f3116" minOccurs="0"/>
+				<xsd:element ref="f3108"/>
+				<xsd:element ref="f3110"/>
+				<xsd:element ref="f4101"/>
+				<xsd:element ref="f4102" minOccurs="0"/>
+				<xsd:element ref="f4104"/>
+				<xsd:element ref="f4106"/>
+				<xsd:element ref="f4108" minOccurs="0"/>
+				<xsd:element ref="f4109" minOccurs="0"/>
+				<xsd:element ref="f4112" minOccurs="0"/>
+				<xsd:element ref="f4133" minOccurs="0"/>
+				<xsd:element ref="f4110" minOccurs="0"/>
+				<xsd:element ref="f4111"/>
+				<xsd:element ref="f4134" minOccurs="0"/>
+				<xsd:element ref="f4131"/>
+				<xsd:element ref="f4132"/>
+				<xsd:element ref="f4121"/>
+				<xsd:element ref="f4122"/>
+				<xsd:element ref="f4123" minOccurs="0"/>
+				<xsd:element ref="f4124" minOccurs="0"/>
+				<xsd:element ref="f4125" minOccurs="0"/>
+				<xsd:element ref="f4126" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f4202" minOccurs="0"/>
+				<xsd:element ref="f4204" minOccurs="0"/>
+				<xsd:element ref="f4206" minOccurs="0"/>
+				<xsd:element ref="s0101f4234" minOccurs="0"/>
+				<xsd:element ref="f4236" minOccurs="0"/>
+				<xsd:element ref="f4239"/>
+				<xsd:element ref="s0101f4103" minOccurs="0"/>
+				<xsd:element ref="s0101f5000" maxOccurs="unbounded"/>
+				<xsd:element ref="s0101f6001" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="s0101f3673" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f4103">
+		<xsd:annotation>
+			<xsd:appinfo>Vermittlungs-/Kontaktart (Feld 4103)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4103"/>
+				<xsd:element ref="f4114" minOccurs="0"/>
+				<xsd:element ref="f4115" minOccurs="0"/>
+				<xsd:element ref="f4105" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f3010">
+		<xsd:annotation>
+			<xsd:appinfo>Datum und Uhrzeit der Onlineprüfung und -aktualisierung (Timestamp) (Feld 3010)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f3010"/>
+				<xsd:element ref="f3011"/>
+				<xsd:element ref="f3012" minOccurs="0"/>
+				<xsd:element ref="f3013" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f3673">
+		<xsd:annotation>
+			<xsd:appinfo>Dauerdiagnose (Feld 3673)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f3673"/>
+				<xsd:element ref="f3674"/>
+				<xsd:element ref="f3675" minOccurs="0"/>
+				<xsd:element ref="f3676" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f3677" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f4234">
+		<xsd:annotation>
+			<xsd:appinfo>Anerkannte Psychotherapie (Feld 4234)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4234"/>
+				<xsd:element ref="s0101f4235" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f4235">
+		<xsd:annotation>
+			<xsd:appinfo>Datum des Anerkennungsbescheides (Feld 4235)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4235"/>
+				<xsd:element ref="f4299" minOccurs="0"/>
+				<xsd:element ref="f4247" minOccurs="0"/>
+				<xsd:element ref="s0101f4250" minOccurs="0"/>
+				<xsd:element ref="f4252" minOccurs="0"/>
+				<xsd:element ref="s0101f4253" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f4255" minOccurs="0"/>
+				<xsd:element ref="s0101f4256" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f4256">
+		<xsd:annotation>
+			<xsd:appinfo>Bewilligte GOP für die Bezugsperson (Feld 4256)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4256"/>
+				<xsd:element ref="f4257"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f4253">
+		<xsd:annotation>
+			<xsd:appinfo>Bewilligte GOP für den Versicherten (Feld 4253)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4253"/>
+				<xsd:element ref="f4254"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f4250">
+		<xsd:annotation>
+			<xsd:appinfo>Kombinationsbehandlung aus Einzel- und Gruppentherapie (Feld 4250)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4250"/>
+				<xsd:element ref="f4251"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f5000">
+		<xsd:annotation>
+			<xsd:appinfo>Leistungstag (Feld 5000) </xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5000"/>
+				<xsd:element ref="s0101f5001" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f5001">
+		<xsd:annotation>
+			<xsd:appinfo>Gebührennummer (GNR) (Feld 5001)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice maxOccurs="unbounded">
+				<xsd:element ref="f5001"/>
+				<xsd:element ref="f5002" minOccurs="0"/>
+				<xsd:element ref="f5003" minOccurs="0"/>
+				<xsd:element ref="f5005" minOccurs="0"/>
+				<xsd:element ref="f5006" minOccurs="0"/>
+				<xsd:element ref="f5008" minOccurs="0"/>
+				<xsd:element ref="f5009" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5010" minOccurs="0" />
+				<xsd:element ref="s0101f5012" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5013" minOccurs="0"/>
+				<xsd:element ref="f5015" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5016" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5017" minOccurs="0"/>
+				<xsd:element ref="f5018" minOccurs="0"/>
+				<xsd:element ref="f5019" minOccurs="0"/>
+				<xsd:element ref="s0101f5020" minOccurs="0"/>
+				<xsd:element ref="f5023" minOccurs="0"/>
+				<xsd:element ref="f5024" minOccurs="0"/>
+				<xsd:element ref="f5025" minOccurs="0"/>
+				<xsd:element ref="f5026" minOccurs="0"/>
+				<xsd:element ref="f5034" minOccurs="0"/>
+				<xsd:element ref="s0101f5035" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5036" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5037" minOccurs="0"/>
+				<xsd:element ref="f5038" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5040" minOccurs="0"/>
+				<xsd:element ref="s0101f5050" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="s0101f5042" minOccurs="0"/>
+				<xsd:element ref="s0101f5070" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="s0101f5071" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5098" minOccurs="0"/>
+				<xsd:element ref="f5102" minOccurs="0"/>
+				<xsd:element ref="f5099" minOccurs="0"/>
+				<xsd:element ref="f5101" minOccurs="0"/>
+				<xsd:element ref="f5100" minOccurs="0"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f5012">
+		<xsd:annotation>
+			<xsd:appinfo>Sachkosten/Materialkosten in Cent (Feld 5012)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5012"/>
+				<xsd:element ref="f5011" minOccurs="1" maxOccurs="unbounded"/>
+				<xsd:element ref="f5074" minOccurs="0"/>
+				<xsd:element ref="f5075" minOccurs="0"/>
+				<xsd:element ref="f5076" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f5020">
+		<xsd:annotation>
+			<xsd:appinfo>Wiederholungsuntersuchung (Feld 5020)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5020"/>
+				<xsd:element ref="f5021" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f5035">
+		<xsd:annotation>
+			<xsd:appinfo>OP-Schlüssel (Feld 5035)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5035"/>
+				<xsd:element ref="f5041" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f5042">
+		<xsd:annotation>
+			<xsd:appinfo>Mengenangabe KM / AM (Feld 5042)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5042"/>
+				<xsd:element ref="f5043"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f5050">
+		<xsd:annotation>
+			<xsd:appinfo>Melde-ID Implantateregister (Feld 5050)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5050" minOccurs="0"/>
+				<xsd:element ref="f5051" minOccurs="0"/>
+				<xsd:element ref="f5052" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f5071">
+		<xsd:annotation>
+			<xsd:appinfo>OMIM-P-Kode (Art der Erkrankung) (Feld 5071)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5071"/>
+				<xsd:element ref="f5073" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f5070">
+		<xsd:annotation>
+			<xsd:appinfo>OMIM-G-Kode des untersuchten Gens (Feld 5070)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5070"/>
+				<xsd:element ref="f5072" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0101f6001">
+		<xsd:annotation>
+			<xsd:appinfo>ICD-Code (Feld 6001)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f6001"/>
+				<xsd:element ref="f6003"/>
+				<xsd:element ref="f6004" minOccurs="0"/>
+				<xsd:element ref="f6006" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f6008" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: Überweisung '0102'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="1">
+				<xsd:element ref="f3000" minOccurs="0"/>
+				<xsd:element ref="f3003" minOccurs="0"/>
+				<xsd:element ref="f3006" minOccurs="0"/>
+				<xsd:element ref="s0102f3010" minOccurs="0"/>
+				<xsd:element ref="f3100" minOccurs="0"/>
+				<xsd:element ref="f3120" minOccurs="0"/>
+				<xsd:element ref="f3101"/>
+				<xsd:element ref="f3102"/>
+				<xsd:element ref="f3103"/>
+				<xsd:element ref="f3104" minOccurs="0"/>
+				<xsd:element ref="f3105" minOccurs="0"/>
+				<xsd:element ref="f3119" minOccurs="0"/>
+				<xsd:element ref="f3107" minOccurs="0"/>
+				<xsd:element ref="f3109" minOccurs="0"/>
+				<xsd:element ref="f3115" minOccurs="0"/>
+				<xsd:element ref="f3112" minOccurs="0"/>
+				<xsd:element ref="f3114" minOccurs="0"/>
+				<xsd:element ref="f3113" minOccurs="0"/>
+				<xsd:element ref="f3121" minOccurs="0"/>
+				<xsd:element ref="f3122" minOccurs="0"/>
+				<xsd:element ref="f3123" minOccurs="0"/>
+				<xsd:element ref="f3124" minOccurs="0"/>
+				<xsd:element ref="f3116" minOccurs="0"/>
+				<xsd:element ref="f3108"/>
+				<xsd:element ref="f3110"/>
+				<xsd:element ref="f4101"/>
+				<xsd:element ref="f4102" minOccurs="0"/>
+				<xsd:element ref="f4104"/>
+				<xsd:element ref="f4106"/>
+				<xsd:element ref="f4108" minOccurs="0"/>
+				<xsd:element ref="f4109" minOccurs="0"/>
+				<xsd:element ref="f4112" minOccurs="0"/>
+				<xsd:element ref="f4133" minOccurs="0"/>
+				<xsd:element ref="f4110" minOccurs="0"/>
+				<xsd:element ref="f4111"/>
+				<xsd:element ref="f4134" minOccurs="0"/>
+				<xsd:element ref="f4131"/>
+				<xsd:element ref="f4132"/>
+				<xsd:element ref="f4121"/>
+				<xsd:element ref="f4122"/>
+				<xsd:element ref="f4123" minOccurs="0"/>
+				<xsd:element ref="f4124" minOccurs="0"/>
+				<xsd:element ref="f4125" minOccurs="0"/>
+				<xsd:element ref="f4126" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f4202" minOccurs="0"/>
+				<xsd:element ref="f4204" minOccurs="0"/>
+				<xsd:element ref="f4205" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f4206" minOccurs="0"/>
+				<xsd:element ref="f4207" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f4208" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f4209" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f4214" minOccurs="0"/>
+				<xsd:element ref="s0102f4217" minOccurs="0"/>
+				<xsd:element ref="s0102f4225" minOccurs="0"/>
+				<xsd:element ref="s0102f4218" minOccurs="0"/>
+				<xsd:element ref="s0102f4226" minOccurs="0"/>
+				<xsd:element ref="f4219" minOccurs="0"/>
+				<xsd:element ref="f4220" minOccurs="0"/>
+				<xsd:element ref="f4221" minOccurs="0"/>
+				<xsd:element ref="f4229" minOccurs="0"/>
+				<xsd:element ref="s0102f4234" minOccurs="0"/>
+				<xsd:element ref="f4239"/>
+				<xsd:element ref="s0102f4103" minOccurs="0"/>
+				<xsd:element ref="s0102f5000" maxOccurs="unbounded"/>
+				<xsd:element ref="s0102f6001" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="s0102f3673" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f4103">
+		<xsd:annotation>
+			<xsd:appinfo>Vermittlungs-/Kontaktart (Feld 4103)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4103"/>
+				<xsd:element ref="f4114" minOccurs="0"/>
+				<xsd:element ref="f4115" minOccurs="0"/>
+				<xsd:element ref="f4105" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f3010">
+		<xsd:annotation>
+			<xsd:appinfo>Datum und Uhrzeit der Onlineprüfung und -aktualisierung (Timestamp) (Feld 3010)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f3010"/>
+				<xsd:element ref="f3011"/>
+				<xsd:element ref="f3012" minOccurs="0"/>
+				<xsd:element ref="f3013" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f3673">
+		<xsd:annotation>
+			<xsd:appinfo>Dauerdiagnose (Feld 3673)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f3673"/>
+				<xsd:element ref="f3674"/>
+				<xsd:element ref="f3675" minOccurs="0"/>
+				<xsd:element ref="f3676" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f3677" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f4217">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Erstveranlassers des Erstveranlassers (Feld 4217)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4217"/>
+				<xsd:element ref="f4241"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f4218">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Überweisers (Feld 4218)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4218"/>
+				<xsd:element ref="f4242"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f4225">
+		<xsd:annotation>
+			<xsd:appinfo>ASV-Teamnummer des Erstveranlassers (Feld 4225)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4225"/>
+				<xsd:element ref="f4241" minOccurs="0"/>
+				<xsd:element ref="f4248" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f4226">
+		<xsd:annotation>
+			<xsd:appinfo>ASV-Teamnummer des Überweisers (Feld 4226)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4226"/>
+				<xsd:element ref="f4242" minOccurs="0"/>
+				<xsd:element ref="f4249" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f4234">
+		<xsd:annotation>
+			<xsd:appinfo>Anerkannte Psychotherapie (Feld 4234)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4234"/>
+				<xsd:element ref="s0102f4235" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f4235">
+		<xsd:annotation>
+			<xsd:appinfo>Datum des Anerkennungsbescheides (Feld 4235)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4235"/>
+				<xsd:element ref="f4299" minOccurs="0"/>
+				<xsd:element ref="f4247" minOccurs="0"/>
+				<xsd:element ref="s0102f4250" minOccurs="0"/>
+				<xsd:element ref="f4252" minOccurs="0"/>
+				<xsd:element ref="s0102f4253" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f4255" minOccurs="0"/>
+				<xsd:element ref="s0102f4256" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f4256">
+		<xsd:annotation>
+			<xsd:appinfo>Bewilligte GOP für die Bezugsperson (Feld 4256)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4256"/>
+				<xsd:element ref="f4257"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f4253">
+		<xsd:annotation>
+			<xsd:appinfo>Bewilligte GOP für den Versicherten (Feld 4253)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4253"/>
+				<xsd:element ref="f4254"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f4250">
+		<xsd:annotation>
+			<xsd:appinfo>Kombinationsbehandlung aus Einzel- und Gruppentherapie (Feld 4250)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4250"/>
+				<xsd:element ref="f4251"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f5000">
+		<xsd:annotation>
+			<xsd:appinfo>Leistungstag (Feld 5000) </xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5000"/>
+				<xsd:element ref="s0102f5001" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f5001">
+		<xsd:annotation>
+			<xsd:appinfo>Gebührennummer (GNR) (Feld 5001)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice maxOccurs="unbounded">
+				<xsd:element ref="f5001"/>
+				<xsd:element ref="f5002" minOccurs="0"/>
+				<xsd:element ref="f5003" minOccurs="0"/>
+				<xsd:element ref="f5005" minOccurs="0"/>
+				<xsd:element ref="f5006" minOccurs="0"/>
+				<xsd:element ref="f5008" minOccurs="0"/>
+				<xsd:element ref="f5009" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5010" minOccurs="0" />
+				<xsd:element ref="s0102f5012" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5013" minOccurs="0"/>
+				<xsd:element ref="f5015" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5016" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5017" minOccurs="0"/>
+				<xsd:element ref="f5018" minOccurs="0"/>
+				<xsd:element ref="f5019" minOccurs="0"/>
+				<xsd:element ref="s0102f5020" minOccurs="0"/>
+				<xsd:element ref="f5023" minOccurs="0"/>
+				<xsd:element ref="f5024" minOccurs="0"/>
+				<xsd:element ref="f5025" minOccurs="0"/>
+				<xsd:element ref="f5026" minOccurs="0"/>
+				<xsd:element ref="f5034" minOccurs="0"/>
+				<xsd:element ref="s0102f5035" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5036" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5037" minOccurs="0"/>
+				<xsd:element ref="f5038" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5040" minOccurs="0"/>
+				<xsd:element ref="s0102f5050" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="s0102f5042" minOccurs="0"/>
+				<xsd:element ref="s0102f5070" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="s0102f5071" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5098"/>
+				<xsd:element ref="f5102" minOccurs="0"/>
+				<xsd:element ref="f5099" minOccurs="0"/>
+				<xsd:element ref="f5101" minOccurs="0"/>
+				<xsd:element ref="f5100" minOccurs="0"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f5012">
+		<xsd:annotation>
+			<xsd:appinfo>Sachkosten/Materialkosten in Cent (Feld 5012)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5012"/>
+				<xsd:element ref="f5011" maxOccurs="unbounded"/>
+				<xsd:element ref="f5074" minOccurs="0"/>
+				<xsd:element ref="f5075" minOccurs="0"/>
+				<xsd:element ref="f5076" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f5020">
+		<xsd:annotation>
+			<xsd:appinfo>Wiederholungsuntersuchung (Feld 5020)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5020"/>
+				<xsd:element ref="f5021" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f5035">
+		<xsd:annotation>
+			<xsd:appinfo>OP-Schlüssel (Feld 5035)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5035"/>
+				<xsd:element ref="f5041" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f5042">
+		<xsd:annotation>
+			<xsd:appinfo>Mengenangabe KM / AM (Feld 5042)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5042"/>
+				<xsd:element ref="f5043"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f5050">
+		<xsd:annotation>
+			<xsd:appinfo>Melde-ID Implantateregister (Feld 5050)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5050" minOccurs="0"/>
+				<xsd:element ref="f5051" minOccurs="0"/>
+				<xsd:element ref="f5052" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f5071">
+		<xsd:annotation>
+			<xsd:appinfo>OMIM-P-Kode (Art der Erkrankung) (Feld 5071)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5071"/>
+				<xsd:element ref="f5073" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f5070">
+		<xsd:annotation>
+			<xsd:appinfo>OMIM-G-Kode des untersuchten Gens (Feld 5070)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5070"/>
+				<xsd:element ref="f5072" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0102f6001">
+		<xsd:annotation>
+			<xsd:appinfo>ICD-Code (Feld 6001)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f6001"/>
+				<xsd:element ref="f6003"/>
+				<xsd:element ref="f6004" minOccurs="0"/>
+				<xsd:element ref="f6006" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f6008" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: Belegärztliche Behandlung '0103'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="1">
+				<xsd:element ref="f3000" minOccurs="0"/>
+				<xsd:element ref="f3003" minOccurs="0"/>
+				<xsd:element ref="f3006" minOccurs="0"/>
+				<xsd:element ref="s0103f3010" minOccurs="0"/>
+				<xsd:element ref="f3100" minOccurs="0"/>
+				<xsd:element ref="f3120" minOccurs="0"/>
+				<xsd:element ref="f3101"/>
+				<xsd:element ref="f3102"/>
+				<xsd:element ref="f3103"/>
+				<xsd:element ref="f3104" minOccurs="0"/>
+				<xsd:element ref="f3105" minOccurs="0"/>
+				<xsd:element ref="f3119" minOccurs="0"/>
+				<xsd:element ref="f3107" minOccurs="0"/>
+				<xsd:element ref="f3109" minOccurs="0"/>
+				<xsd:element ref="f3115" minOccurs="0"/>
+				<xsd:element ref="f3112" minOccurs="0"/>
+				<xsd:element ref="f3114" minOccurs="0"/>
+				<xsd:element ref="f3113" minOccurs="0"/>
+				<xsd:element ref="f3121" minOccurs="0"/>
+				<xsd:element ref="f3122" minOccurs="0"/>
+				<xsd:element ref="f3123" minOccurs="0"/>
+				<xsd:element ref="f3124" minOccurs="0"/>
+				<xsd:element ref="f3116" minOccurs="0"/>
+				<xsd:element ref="f3108"/>
+				<xsd:element ref="f3110"/>
+				<xsd:element ref="f4101"/>
+				<xsd:element ref="f4102" minOccurs="0"/>
+				<xsd:element ref="f4104"/>
+				<xsd:element ref="f4106"/>
+				<xsd:element ref="f4108" minOccurs="0"/>
+				<xsd:element ref="f4109" minOccurs="0"/>
+				<xsd:element ref="f4112" minOccurs="0"/>
+				<xsd:element ref="f4133" minOccurs="0"/>
+				<xsd:element ref="f4110" minOccurs="0"/>
+				<xsd:element ref="f4111"/>
+				<xsd:element ref="f4134" minOccurs="0"/>
+				<xsd:element ref="f4131"/>
+				<xsd:element ref="f4132"/>
+				<xsd:element ref="f4121"/>
+				<xsd:element ref="f4122"/>
+				<xsd:element ref="f4123" minOccurs="0"/>
+				<xsd:element ref="f4124" minOccurs="0"/>
+				<xsd:element ref="f4126" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f4202" minOccurs="0"/>
+				<xsd:element ref="f4204" minOccurs="0"/>
+				<xsd:element ref="f4205" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f4206" minOccurs="0"/>
+				<xsd:element ref="f4207" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f4208" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="s0103f4218" minOccurs="0"/>
+				<xsd:element ref="f4233" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f4239"/>
+				<xsd:element ref="s0103f4103" minOccurs="0"/>
+				<xsd:element ref="s0103f5000" maxOccurs="unbounded"/>
+				<xsd:element ref="s0103f6001" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="s0103f3673" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103f4103">
+		<xsd:annotation>
+			<xsd:appinfo>Vermittlungs-/Kontaktart (Feld 4103)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4103"/>
+				<xsd:element ref="f4114" minOccurs="0"/>
+				<xsd:element ref="f4115" minOccurs="0"/>
+				<xsd:element ref="f4105" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103f3010">
+		<xsd:annotation>
+			<xsd:appinfo>Datum und Uhrzeit der Onlineprüfung und -aktualisierung (Timestamp) (Feld 3010)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f3010"/>
+				<xsd:element ref="f3011"/>
+				<xsd:element ref="f3012" minOccurs="0"/>
+				<xsd:element ref="f3013" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103f3673">
+		<xsd:annotation>
+			<xsd:appinfo>Dauerdiagnose (Feld 3673)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f3673"/>
+				<xsd:element ref="f3674"/>
+				<xsd:element ref="f3675" minOccurs="0"/>
+				<xsd:element ref="f3676" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f3677" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103f4218">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Überweisers (Feld 4218)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4218"/>
+				<xsd:element ref="f4242"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103f5000">
+		<xsd:annotation>
+			<xsd:appinfo>Leistungstag (Feld 5000) </xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5000"/>
+				<xsd:element ref="s0103f5001" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103f5001">
+		<xsd:annotation>
+			<xsd:appinfo>Gebührennummer (GNR) (Feld 5001)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice maxOccurs="unbounded">
+				<xsd:element ref="f5001"/>
+				<xsd:element ref="f5002" minOccurs="0"/>
+				<xsd:element ref="f5003" minOccurs="0"/>
+				<xsd:element ref="f5005" minOccurs="0"/>
+				<xsd:element ref="f5006" minOccurs="0"/>
+				<xsd:element ref="f5008" minOccurs="0"/>
+				<xsd:element ref="f5009" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5010" minOccurs="0" />
+				<xsd:element ref="s0103f5012" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5013" minOccurs="0"/>
+				<xsd:element ref="f5015" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5016" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5018" minOccurs="0"/>
+				<xsd:element ref="f5019" minOccurs="0"/>
+				<xsd:element ref="s0103f5020" minOccurs="0"/>
+				<xsd:element ref="f5023" minOccurs="0"/>
+				<xsd:element ref="f5024" minOccurs="0"/>
+				<xsd:element ref="f5025" minOccurs="0"/>
+				<xsd:element ref="f5026" minOccurs="0"/>
+				<xsd:element ref="f5034" minOccurs="0"/>
+				<xsd:element ref="s0103f5035" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5036" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5037" minOccurs="0"/>
+				<xsd:element ref="f5038" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5040" minOccurs="0"/>
+				<xsd:element ref="s0103f5050" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="s0103f5042" minOccurs="0"/>
+				<xsd:element ref="s0103f5070" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="s0103f5071" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5098"/>
+				<xsd:element ref="f5099"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103f5012">
+		<xsd:annotation>
+			<xsd:appinfo>Sachkosten/Materialkosten in Cent (Feld 5012)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5012"/>
+				<xsd:element ref="f5011" maxOccurs="unbounded"/>
+				<xsd:element ref="f5074" minOccurs="0"/>
+				<xsd:element ref="f5075" minOccurs="0"/>
+				<xsd:element ref="f5076" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103f5020">
+		<xsd:annotation>
+			<xsd:appinfo>Wiederholungsuntersuchung (Feld 5020)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5020"/>
+				<xsd:element ref="f5021" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103f5035">
+		<xsd:annotation>
+			<xsd:appinfo>OP-Schlüssel (Feld 5035)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5035"/>
+				<xsd:element ref="f5041" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103f5042">
+		<xsd:annotation>
+			<xsd:appinfo>Mengenangabe KM / AM (Feld 5042)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5042"/>
+				<xsd:element ref="f5043"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103f5050">
+		<xsd:annotation>
+			<xsd:appinfo>Melde-ID Implantateregister (Feld 5050)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5050" minOccurs="0"/>
+				<xsd:element ref="f5051" minOccurs="0"/>
+				<xsd:element ref="f5052" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103f5071">
+		<xsd:annotation>
+			<xsd:appinfo>OMIM-P-Kode (Art der Erkrankung) (Feld 5071)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5071"/>
+				<xsd:element ref="f5073" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103f5070">
+		<xsd:annotation>
+			<xsd:appinfo>OMIM-G-Kode des untersuchten Gens (Feld 5070)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5070"/>
+				<xsd:element ref="f5072" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0103f6001">
+		<xsd:annotation>
+			<xsd:appinfo>ICD-Code (Feld 6001)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f6001"/>
+				<xsd:element ref="f6003"/>
+				<xsd:element ref="f6004" minOccurs="0"/>
+				<xsd:element ref="f6006" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f6008" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0104">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: Notfalldienst/Vertretung '0104'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="1">
+				<xsd:element ref="f3000" minOccurs="0"/>
+				<xsd:element ref="f3003" minOccurs="0"/>
+				<xsd:element ref="f3006" minOccurs="0"/>
+				<xsd:element ref="s0104f3010" minOccurs="0"/>
+				<xsd:element ref="f3100" minOccurs="0"/>
+				<xsd:element ref="f3120" minOccurs="0"/>
+				<xsd:element ref="f3101"/>
+				<xsd:element ref="f3102"/>
+				<xsd:element ref="f3103"/>
+				<xsd:element ref="f3104" minOccurs="0"/>
+				<xsd:element ref="f3105" minOccurs="0"/>
+				<xsd:element ref="f3119" minOccurs="0"/>
+				<xsd:element ref="f3107" minOccurs="0"/>
+				<xsd:element ref="f3109" minOccurs="0"/>
+				<xsd:element ref="f3115" minOccurs="0"/>
+				<xsd:element ref="f3112" minOccurs="0"/>
+				<xsd:element ref="f3114" minOccurs="0"/>
+				<xsd:element ref="f3113" minOccurs="0"/>
+				<xsd:element ref="f3121" minOccurs="0"/>
+				<xsd:element ref="f3122" minOccurs="0"/>
+				<xsd:element ref="f3123" minOccurs="0"/>
+				<xsd:element ref="f3124" minOccurs="0"/>
+				<xsd:element ref="f3116" minOccurs="0"/>
+				<xsd:element ref="f3108"/>
+				<xsd:element ref="f3110"/>
+				<xsd:element ref="f4101"/>
+				<xsd:element ref="f4104"/>
+				<xsd:element ref="f4106"/>
+				<xsd:element ref="f4108" minOccurs="0"/>
+				<xsd:element ref="f4109" minOccurs="0"/>
+				<xsd:element ref="f4112" minOccurs="0"/>
+				<xsd:element ref="f4133" minOccurs="0"/>
+				<xsd:element ref="f4110" minOccurs="0"/>
+				<xsd:element ref="f4111"/>
+				<xsd:element ref="f4134" minOccurs="0"/>
+				<xsd:element ref="f4131"/>
+				<xsd:element ref="f4132"/>
+				<xsd:element ref="f4121"/>
+				<xsd:element ref="f4122"/>
+				<xsd:element ref="f4123" minOccurs="0"/>
+				<xsd:element ref="f4124" minOccurs="0"/>
+				<xsd:element ref="f4125" minOccurs="0"/>
+				<xsd:element ref="f4126" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f4202" minOccurs="0"/>
+				<xsd:element ref="f4239"/>
+				<xsd:element ref="s0104f4103" minOccurs="0"/>
+				<xsd:element ref="f4243"/>
+				<xsd:element ref="s0104f5000" maxOccurs="unbounded"/>
+				<xsd:element ref="s0104f6001" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="s0104f3673" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0104f4103">
+		<xsd:annotation>
+			<xsd:appinfo>Vermittlungs-/Kontaktart (Feld 4103)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4103"/>
+				<xsd:element ref="f4114" minOccurs="0"/>
+				<xsd:element ref="f4115" minOccurs="0"/>
+				<xsd:element ref="f4105" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0104f3010">
+		<xsd:annotation>
+			<xsd:appinfo>Datum und Uhrzeit der Onlineprüfung und -aktualisierung (Timestamp) (Feld 3010)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f3010"/>
+				<xsd:element ref="f3011"/>
+				<xsd:element ref="f3012" minOccurs="0"/>
+				<xsd:element ref="f3013" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0104f3673">
+		<xsd:annotation>
+			<xsd:appinfo>Dauerdiagnose (Feld 3673)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f3673"/>
+				<xsd:element ref="f3674"/>
+				<xsd:element ref="f3675" minOccurs="0"/>
+				<xsd:element ref="f3676" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f3677" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0104f5000">
+		<xsd:annotation>
+			<xsd:appinfo>Leistungstag (Feld 5000) </xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5000"/>
+				<xsd:element ref="s0104f5001" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0104f5001">
+		<xsd:annotation>
+			<xsd:appinfo>Gebührennummer (GNR) (Feld 5001)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:choice maxOccurs="unbounded">
+				<xsd:element ref="f5001"/>
+				<xsd:element ref="f5002" minOccurs="0"/>
+				<xsd:element ref="f5003" minOccurs="0"/>
+				<xsd:element ref="f5005" minOccurs="0"/>
+				<xsd:element ref="f5006" minOccurs="0"/>
+				<xsd:element ref="f5008" minOccurs="0"/>
+				<xsd:element ref="f5009" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5010" minOccurs="0" />
+				<xsd:element ref="s0104f5012" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5013" minOccurs="0"/>
+				<xsd:element ref="f5015" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5016" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5017" minOccurs="0"/>
+				<xsd:element ref="f5018" minOccurs="0"/>
+				<xsd:element ref="f5019" minOccurs="0"/>
+				<xsd:element ref="s0104f5020" minOccurs="0"/>
+				<xsd:element ref="f5023" minOccurs="0"/>
+				<xsd:element ref="f5024" minOccurs="0"/>
+				<xsd:element ref="f5025" minOccurs="0"/>
+				<xsd:element ref="f5026" minOccurs="0"/>
+				<xsd:element ref="f5034" minOccurs="0"/>
+				<xsd:element ref="s0104f5035" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5036" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5037" minOccurs="0"/>
+				<xsd:element ref="f5038" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5040" minOccurs="0"/>
+				<xsd:element ref="s0104f5050" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="s0104f5042" minOccurs="0"/>
+				<xsd:element ref="s0104f5070" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="s0104f5071" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5098"/>
+				<xsd:element ref="f5102" minOccurs="0"/>
+				<xsd:element ref="f5099" minOccurs="0"/>
+				<xsd:element ref="f5101" minOccurs="0"/>
+				<xsd:element ref="f5100" minOccurs="0"/>
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0104f5012">
+		<xsd:annotation>
+			<xsd:appinfo>Sachkosten/Materialkosten in Cent (Feld 5012)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5012"/>
+				<xsd:element ref="f5011" maxOccurs="unbounded"/>
+				<xsd:element ref="f5074" minOccurs="0"/>
+				<xsd:element ref="f5075" minOccurs="0"/>
+				<xsd:element ref="f5076" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0104f5020">
+		<xsd:annotation>
+			<xsd:appinfo>Wiederholungsuntersuchung (Feld 5020)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5020"/>
+				<xsd:element ref="f5021" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0104f5035">
+		<xsd:annotation>
+			<xsd:appinfo>OP-Schlüssel (Feld 5035)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5035"/>
+				<xsd:element ref="f5041" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0104f5042">
+		<xsd:annotation>
+			<xsd:appinfo>Mengenangabe KM / AM (Feld 5042)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5042"/>
+				<xsd:element ref="f5043"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0104f5050">
+		<xsd:annotation>
+			<xsd:appinfo>Melde-ID Implantateregister (Feld 5050)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5050" minOccurs="0"/>
+				<xsd:element ref="f5051" minOccurs="0"/>
+				<xsd:element ref="f5052" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0104f5071">
+		<xsd:annotation>
+			<xsd:appinfo>OMIM-P-Kode (Art der Erkrankung) (Feld 5071)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5071"/>
+				<xsd:element ref="f5073" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0104f5070">
+		<xsd:annotation>
+			<xsd:appinfo>OMIM-G-Kode des untersuchten Gens (Feld 5070)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5070"/>
+				<xsd:element ref="f5072" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5073" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0104f6001">
+		<xsd:annotation>
+			<xsd:appinfo>ICD-Code (Feld 6001)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f6001"/>
+				<xsd:element ref="f6003"/>
+				<xsd:element ref="f6004" minOccurs="0"/>
+				<xsd:element ref="f6006" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f6008" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0109">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: Kurärztliche Behandlung '0109'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="1">
+				<xsd:element ref="f3000" minOccurs="0"/>
+				<xsd:element ref="f3003" minOccurs="0"/>
+				<xsd:element ref="f3006" minOccurs="0"/>
+				<xsd:element ref="s0109f3010" minOccurs="0"/>
+				<xsd:element ref="f3100" minOccurs="0"/>
+				<xsd:element ref="f3120" minOccurs="0"/>
+				<xsd:element ref="f3101"/>
+				<xsd:element ref="f3102"/>
+				<xsd:element ref="f3103"/>
+				<xsd:element ref="f3104" minOccurs="0"/>
+				<xsd:element ref="f3119" minOccurs="0"/>
+				<xsd:element ref="f3107" minOccurs="0"/>
+				<xsd:element ref="f3109" minOccurs="0"/>
+				<xsd:element ref="f3115" minOccurs="0"/>
+				<xsd:element ref="f3112" minOccurs="0"/>
+				<xsd:element ref="f3114" minOccurs="0"/>
+				<xsd:element ref="f3113" minOccurs="0"/>
+				<xsd:element ref="f3121" minOccurs="0"/>
+				<xsd:element ref="f3122" minOccurs="0"/>
+				<xsd:element ref="f3123" minOccurs="0"/>
+				<xsd:element ref="f3124" minOccurs="0"/>
+				<xsd:element ref="f3108"/>
+				<xsd:element ref="f3110"/>
+				<xsd:element ref="f4102" minOccurs="0"/>
+				<xsd:element ref="f4104"/>
+				<xsd:element ref="f4108" minOccurs="0"/>
+				<xsd:element ref="f4109" minOccurs="0"/>
+				<xsd:element ref="f4112" minOccurs="0"/>
+				<xsd:element ref="f4133" minOccurs="0"/>
+				<xsd:element ref="f4110" minOccurs="0"/>
+				<xsd:element ref="f4111"/>
+				<xsd:element ref="f4134" minOccurs="0"/>
+				<xsd:element ref="f4131"/>
+				<xsd:element ref="f4132"/>
+				<xsd:element ref="f4261"/>
+				<xsd:element ref="f4262" minOccurs="0"/>
+				<xsd:element ref="f4272" minOccurs="0"/>
+				<xsd:element ref="f4263"/>
+				<xsd:element ref="f4264"/>
+				<xsd:element ref="f4265"/>
+				<xsd:element ref="f4266" minOccurs="0"/>
+				<xsd:element ref="f4275" minOccurs="0"/>
+				<xsd:element ref="f4276" minOccurs="0"/>
+				<xsd:element ref="f4277" minOccurs="0"/>
+				<xsd:element ref="f4278" minOccurs="0"/>
+				<xsd:element ref="s0109f4267" minOccurs="0"/>
+				<xsd:element ref="f4269" minOccurs="0"/>
+				<xsd:element ref="f4270" minOccurs="0"/>
+				<xsd:element ref="f4271" minOccurs="0"/>
+				<xsd:element ref="s0109f5000" maxOccurs="unbounded"/>
+				<xsd:element ref="s0109f6001" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0109f3010">
+		<xsd:annotation>
+			<xsd:appinfo>Datum und Uhrzeit der Onlineprüfung und -aktualisierung (Timestamp) (Feld 3010)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f3010"/>
+				<xsd:element ref="f3011"/>
+				<xsd:element ref="f3012" minOccurs="0"/>
+				<xsd:element ref="f3013" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0109f4267">
+		<xsd:annotation>
+			<xsd:appinfo>Bewiligte Kurverlängerung in Wochen (Feld 4267)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4267"/>
+				<xsd:element ref="f4268"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0109f5000">
+		<xsd:annotation>
+			<xsd:appinfo>Leistungstag (Feld 5000) </xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5000"/>
+				<xsd:element ref="s0109f5001" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0109f5001">
+		<xsd:annotation>
+			<xsd:appinfo>Gebührennummer (GNR) (Feld 5001)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="unbounded">
+				<xsd:element ref="f5001"/>
+				<xsd:element ref="f5098"/>
+				<xsd:element ref="f5099"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="s0109f6001">
+		<xsd:annotation>
+			<xsd:appinfo>ICD-Code (Feld 6001)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f6001"/>
+				<xsd:element ref="f6003"/>
+				<xsd:element ref="f6004" minOccurs="0"/>
+				<xsd:element ref="f6006" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f6008" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="sbesa">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: Betriebsstättendaten 'besa'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="sbesaf0201" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="sbesaf0213" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="sbesaf0201">
+		<xsd:annotation>
+			<xsd:appinfo>Betriebs- (BSNR) oder Nebenbetriebsstättennummer (NBSNR) (Feld 0201)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f0201"/>
+				<xsd:element ref="f0203"/>
+				<xsd:element ref="sbesaf0212" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="sbesaf0223" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f0205"/>
+				<xsd:element ref="f0215"/>
+				<xsd:element ref="f0216"/>
+				<xsd:element ref="f0208"/>
+				<xsd:element ref="f0209" minOccurs="0"/>
+				<xsd:element ref="f0218" minOccurs="0"/>
+				<xsd:element ref="sbesaf0224" minOccurs="0"/>
+				<xsd:element ref="sbesaf0225" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="sbesaf0213">
+		<xsd:annotation>
+			<xsd:appinfo>Krankenhaus-IK (im Rahmen der ASV-Abrechnung) (Feld 0213)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f0213"/>
+				<xsd:element ref="f0214"/>
+				<xsd:element ref="f0203"/>
+				<xsd:element ref="sbesaf0212" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="sbesaf0223" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f0205"/>
+				<xsd:element ref="f0215"/>
+				<xsd:element ref="f0216"/>
+				<xsd:element ref="f0208"/>
+				<xsd:element ref="f0209" minOccurs="0"/>
+				<xsd:element ref="f0218" minOccurs="0"/>
+				<xsd:element ref="sbesaf0224" minOccurs="0"/>
+				<xsd:element ref="sbesaf0225" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="sbesaf0212">
+		<xsd:annotation>
+			<xsd:appinfo>Lebenslange Arztnummer (LANR) (Feld 0212)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f0212"/>
+				<xsd:element ref="f0219" minOccurs="0"/>
+				<xsd:element ref="f0220" minOccurs="0"/>
+				<xsd:element ref="f0221" minOccurs="0"/>
+				<xsd:element ref="f0211"/>
+				<xsd:element ref="f0222" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="sbesaf0223">
+		<xsd:annotation>
+			<xsd:appinfo>Pseudo-LANR für Krankenhausärzte im Rahmen der ASV-Abrechnung (Feld 0223)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f0223"/>
+				<xsd:element ref="f0219" minOccurs="0"/>
+				<xsd:element ref="f0220" minOccurs="0"/>
+				<xsd:element ref="f0221" minOccurs="0"/>
+				<xsd:element ref="f0211"/>
+				<xsd:element ref="f0222" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="sbesaf0224">
+		<xsd:annotation>
+			<xsd:appinfo>Produkttypversion des Konnektors (Feld 0224)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f0224"/>
+				<xsd:element ref="f0227"/>
+				<xsd:element ref="f0228" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="sbesaf0225">
+		<xsd:annotation>
+			<xsd:appinfo>TI-Fachanwendung (Feld 0225)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f0225"/>
+				<xsd:element ref="f0226"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<!-- DUMMY-ELEMENT Korrekte Fehlermeldung (XPMKVDT-629) -->
+	<xsd:element name="sbesaf0226">
+		<xsd:annotation>
+			<xsd:appinfo>Systemunterstützung / Ausstattung der Praxis (Feld 0226)</xsd:appinfo>
+		</xsd:annotation>
+	</xsd:element>
+
+	<xsd:element name="srvsa">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: Ringversuchszertifikate 'rvsa'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="unbounded">
+				<xsd:element ref="f0201"/>
+				<xsd:element ref="srvsaf0300"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="srvsaf0300">
+		<xsd:annotation>
+			<xsd:appinfo>Abrechnung von (zertifikatspflichtigen) Laborleistungen (Feld 0300)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f0300"/>
+				<xsd:element ref="srvsaf0301" minOccurs="0"/>
+				<xsd:element ref="srvsaf0304" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="srvsaf0301">
+		<xsd:annotation>
+			<xsd:appinfo>pnSD/uu-Analysen (Feld 0301)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f0301"/>
+				<xsd:element ref="srvsaf0302" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="srvsaf0302">
+		<xsd:annotation>
+			<xsd:appinfo>Gerätetyp (Feld 0302)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f0302"/>
+				<xsd:element ref="f0303"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="srvsaf0304">
+		<xsd:annotation>
+			<xsd:appinfo>Analyt-ID (Feld 0304)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f0304"/>
+				<xsd:element ref="f0305"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ssad1">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: SADT-ambulante Behandlung 'sad1'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="1">
+				<xsd:element ref="f3005"/>
+				<xsd:element ref="f4101"/>
+				<xsd:element ref="f4104"/>
+				<xsd:element ref="f4111"/>
+				<xsd:element ref="ssad1f5000" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ssad1f5000">
+		<xsd:annotation>
+			<xsd:appinfo>Leistungstag (Feld 5000)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5000"/>
+				<xsd:element ref="ssad1f5001" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ssad1f5001">
+		<xsd:annotation>
+			<xsd:appinfo>Gebührennummer (GNR) (Feld 5001)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="unbounded">
+				<xsd:element ref="f5001"/>
+				<xsd:element ref="f5009" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="ssad1f5012" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5098"/>
+				<xsd:element ref="f5099"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ssad1f5012">
+		<xsd:annotation>
+			<xsd:appinfo>Sachkosten/Materialkosten in Cent (Feld 5012)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5012"/>
+				<xsd:element ref="f5011" maxOccurs="unbounded"/>
+				<xsd:element ref="f5076" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ssad2">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: SADT-Überweisung 'sad2'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="1">
+				<xsd:element ref="f3005"/>
+				<xsd:element ref="f4101"/>
+				<xsd:element ref="f4104"/>
+				<xsd:element ref="f4111"/>
+				<xsd:element ref="f4205" maxOccurs="unbounded"/>
+				<xsd:element ref="ssad2f4218"/>
+				<xsd:element ref="f4220"/>
+				<xsd:element ref="ssad2f5000" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ssad2f4218">
+		<xsd:annotation>
+			<xsd:appinfo>(N)BSNR des Überweisers (Feld 4218)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f4218"/>
+				<xsd:element ref="f4242"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ssad2f5000">
+		<xsd:annotation>
+			<xsd:appinfo>Leistungstag (Feld 5000)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5000"/>
+				<xsd:element ref="ssad2f5001" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ssad2f5001">
+		<xsd:annotation>
+			<xsd:appinfo>Gebührennummer (GNR) (Feld 5001)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="unbounded">
+				<xsd:element ref="f5001"/>
+				<xsd:element ref="f5009" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="ssad2f5012" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5098"/>
+				<xsd:element ref="f5099"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ssad2f5012">
+		<xsd:annotation>
+			<xsd:appinfo>Sachkosten/Materialkosten in Cent (Feld 5012)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5012"/>
+				<xsd:element ref="f5011" maxOccurs="unbounded"/>
+				<xsd:element ref="f5076" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ssad3">
+		<xsd:annotation>
+			<xsd:appinfo>Satzart: SADT-belegärztliche Behandlung 'sad3'</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="1">
+				<xsd:element ref="f3005"/>
+				<xsd:element ref="f4101"/>
+				<xsd:element ref="f4104"/>
+				<xsd:element ref="f4111"/>
+				<xsd:element ref="ssad3f5000" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ssad3f5000">
+		<xsd:annotation>
+			<xsd:appinfo>Leistungstag (Feld 5000)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5000"/>
+				<xsd:element ref="ssad3f5001" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ssad3f5001">
+		<xsd:annotation>
+			<xsd:appinfo>Gebührennummer (GNR) (Feld 5001)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence maxOccurs="unbounded">
+				<xsd:element ref="f5001"/>
+				<xsd:element ref="f5009" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="ssad3f5012" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f5098"/>
+				<xsd:element ref="f5099"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ssad3f5012">
+		<xsd:annotation>
+			<xsd:appinfo>Sachkosten/Materialkosten in Cent (Feld 5012)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="f5012"/>
+				<xsd:element ref="f5011" maxOccurs="unbounded"/>
+				<xsd:element ref="f5076" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- Empfängertyp für KADT -->
+	<xsd:simpleType name="t9102kadt">
+		<xsd:annotation>
+			<xsd:appinfo>Empfänger (Feld 9102)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="20"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- Empfängertyp für SADT -->
+	<xsd:simpleType name="t9102sadt">
+		<xsd:annotation>
+			<xsd:appinfo>Empfänger (Feld 9102)</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="18"/>
+			<xsd:enumeration value="19"/>
+			<xsd:enumeration value="20"/>
+			<xsd:enumeration value="21"/>
+			<xsd:enumeration value="24"/>
+			<xsd:enumeration value="25"/>
+			<xsd:enumeration value="27"/>
+			<xsd:enumeration value="28"/>
+			<xsd:enumeration value="31"/>
+			<xsd:enumeration value="37"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="version">
+		<xsd:annotation>
+			<xsd:appinfo>Versionsnummer der Datensatzbeschreibung</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:simpleType>
+			<xsd:restriction base="xsd:string">
+				<xsd:enumeration value="KVDT05.01/1.00"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:element>
+	<xsd:element name="xdtdata">
+		<xsd:annotation>
+			<xsd:appinfo>KVDT</xsd:appinfo>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="version"/>
+				<xsd:element ref="scon0"/>
+				<xsd:element ref="f9230" minOccurs="0"/>
+				<xsd:element ref="f9231" minOccurs="0"/>
+				<xsd:element ref="f9213" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f9237" minOccurs="0" maxOccurs="unbounded"/>
+				<xsd:element ref="f9232" minOccurs="0"/>
+				<xsd:element ref="f9234" minOccurs="0"/>
+				<xsd:element ref="f9235" minOccurs="0"/>
+				<xsd:element ref="f9236" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

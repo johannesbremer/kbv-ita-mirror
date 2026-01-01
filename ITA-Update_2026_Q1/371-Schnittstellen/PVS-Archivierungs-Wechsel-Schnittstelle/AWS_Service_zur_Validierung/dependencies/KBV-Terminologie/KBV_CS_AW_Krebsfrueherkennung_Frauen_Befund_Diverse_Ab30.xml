@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Krebsfrueherkennung_Frauen_Befund_Diverse_Ab30"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Krebsfrueherkennung_Frauen_Befund_Diverse_Ab30"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Krebsfrueherkennung Frauen Beobachtungen Befund ab 30"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="Haut_auffaellig"/>
+<display value="Haut auffaellig"/>
+</concept>
+<concept>
+<code value="Mamma_auffaellig"/>
+<display value="Mamma auffaellig"/>
+</concept>
+<concept>
+<code value="Axillaere_Lymphknoten_auffaellig"/>
+<display value="Axillaere Lymphknoten auffaellig"/>
+</concept>
+</CodeSystem>

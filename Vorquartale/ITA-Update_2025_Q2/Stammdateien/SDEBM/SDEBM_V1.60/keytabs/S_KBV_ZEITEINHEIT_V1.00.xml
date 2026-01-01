@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<keytabs xmlns="urn:ehd/001">
+  <keytab S="1.2.276.0.76.5.238" SN="S_KBV_ZEITEINHEIT" SV="1.00">
+    <key V="1" DN="Sekunde" S="1.2.276.0.76.5.238" SV="1.00"/>
+    <key V="2" DN="Minute" S="1.2.276.0.76.5.238" SV="1.00"/>
+    <key V="3" DN="Stunde" S="1.2.276.0.76.5.238" SV="1.00"/>
+    <key V="4" DN="Tag" S="1.2.276.0.76.5.238" SV="1.00"/>
+    <key V="5" DN="Woche" S="1.2.276.0.76.5.238" SV="1.00"/>
+    <key V="6" DN="Monat" S="1.2.276.0.76.5.238" SV="1.00"/>
+    <key V="7" DN="Quartal" S="1.2.276.0.76.5.238" SV="1.00"/>
+    <key V="8" DN="Jahr" S="1.2.276.0.76.5.238" SV="1.00"/>
+  </keytab>
+</keytabs>

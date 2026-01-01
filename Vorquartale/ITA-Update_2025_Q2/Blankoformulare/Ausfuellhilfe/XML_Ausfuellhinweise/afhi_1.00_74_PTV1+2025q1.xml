@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd ehd_version="1.40" xmlns="urn:ehd/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:ehd/001 ..\Schema\afhi_root_V1.00.xsd">
+	<header>
+		<id EX="9d4dc396-f112-402d-828c-ceaa9b303362" RT="1.2.276.0.76.3.1.1"/>
+		<document_type_cd V="AFHI" S="1.2.276.0.76.5.100"/>
+		<service_tmr V="2025-01-01.."/>
+		<origination_dttm V="2025-02-04"/>
+		<provider>
+			<organization>
+				<id EX="74" RT="1.2.276.0.76.5.233"/>
+				<organization.nm V="KBV"/>
+				<addr>
+					<ADL V="Kassenärztliche Bundesvereinigung, Dezernat 4"/>
+					<STR V="Herbert-Lewin-Platz"/>
+					<HNR V="2"/>
+					<ZIP V="10623"/>
+					<CTY V="Berlin"/>
+				</addr>
+				<telecom V="tel:++49 30 4005 2077"/>
+				<telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<telecom V="http://update.kbv.de/ita-update"/>
+			</organization>
+		</provider>
+		<interface>
+			<id EX="AFHI" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="ausfuellhilfen"/>
+			<version V="1.00"/>
+			<description V="Ausfüllhilfen der KBV im XML-Format für Muster in der vertragsärztlichen Versorgung, Version 2025, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, die Arztpraxissoftware herstellen, sowie den Kassenärztlichen Vereinigungen vom Dezernat Digitalisierung und IT der KBV ausschließlich zur Nutzung in der vertragsärztlichen Versorgung zur Verfügung gestellt." URL="http://update.kbv.de/ita-update"/>
+		</interface>
+	</header>
+	<body>
+		<ausfuellhilfen xmlns="urn:ehd/afhi/001" V="PTV1" DN="Antrag auf Psychotherapie">
+			<feld_liste>
+				<feld>
+					<nummer V="1"/>
+					<name V="Angabe zu ggf. anderem Kostenträger"/>
+					<hinweistext V="Ist zum Zeitpunkt der Antragstellung bereits bekannt, dass ein anderer Kostenträger (Unfallversicherung bei Folgen eines Unfalls, Entschädigungen nach SGB XIV etc.) die Kosten für die Psychotherapie übernimmt oder ggf. übernimmt, gibt dies die oder der Versicherte hier an. Die Krankenkasse kann dann eine Zuordnung des Antrags vornehmen und mit der oder dem Versicherten diesbezüglich Kontakt aufnehmen. Die Angabe zum Kostenträger ist nicht zwingend erforderlich und kann auch nach dem Erstantrag noch erfolgen, z. B. mit einem Folgeantrag während laufender Psychotherapie."/>
+				</feld>
+				<feld>
+					<nummer V="2"/>
+					<name V="Ich beantrage die Feststellung der Leistungspflicht für/ als"/>
+					<hinweistext V="Die oder der Versicherte beantragt hier die Feststellung der Leistungspflicht für ein bestimmtes Psychotherapieverfahren und eine bestimmte Anwendungsform. Nach Absprache mit der Psychotherapeutin oder dem Psychotherapeuten gibt sie oder er an, ob eine Analytische Psychotherapie, Systemische Therapie, Tiefenpsychologisch fundierte Psychotherapie oder eine Verhaltenstherapie beantragt wird. Darüber hinaus gibt sie oder er an, ob die Psychotherapie als Einzeltherapie, Gruppentherapie oder als eine Kombination aus Einzel- und Gruppentherapie beantragt wird."/>
+				</feld>
+				<feld>
+					<nummer V="3"/>
+					<name V="Ich beantrage die Psychotherapie als"/>
+					<hinweistext V="Die oder der Versicherte gibt an, ob es sich um einen Erstantrag handelt oder um einen Folgeantrag. Ein Erstantrag ist ein erstmaliger Antrag auf Kurzzeittherapie (z. B. bei Kurzeittherapie 1) oder ein Erstantrag auf Langzeittherapie. Auch ein erstmaliger Antrag nach bereits erfolgter Akutbehandlung ist ein Erstantrag. Folgeantrag ist dann anzugeben, wenn es sich um die Umwandlung oder Fortführung einer laufenden Psychotherapie handelt, auch nach einem Kassenwechsel. Als Folgeantrag gelten Anträge auf Kurzzeittherapie 2, auf Umwandlung in Langzeittherapie oder auf Fortführung der Langzeittherapie. Wird ein Änderungsantrag gestellt - z. B. von Einzeltherapie in Gruppentherapie - ist ebenfalls Folgeantrag anzugeben."/>
+				</feld>
+				<feld>
+					<nummer V="4"/>
+					<name V="Bei Erstanträgen bitte angeben"/>
+					<hinweistext V="Handelt es sich um einen Erstantrag, sind zusätzliche Angaben zu machen. Zunächst ist anzugeben, ob eine Psychotherapeutische Sprechstunde durchgeführt wurde. Wenn ja, muss das Datum der letzten Sprechstunde (50 Minuten am Stück) oder die Daten der letzten beiden Sprechstunden (zweimal 25 Minuten) angegeben werden. Die Durchführung einer Psychotherapeutischen Sprechstunde ist vor probatorischen Sitzungen, Akutbehandlung oder Psychotherapie in einem Richtlinienverfahren grundsätzlich verpflichtend. Wird hier 'nein' angekreuzt, ist anzugeben, ob eine Psychotherapeutische Sprechstunde im Ausnahmefall nicht erforderlich ist; dies kann dann der Fall sein, wenn die oder der Versicherte mit einer Diagnose gemäß Paragraf 27 der Psychotherapie-Richtlinie aus stationärer oder rehabilitativer Behandlung entlassen wurde. Darüber hinaus gibt die oder der Versicherte an, ob vor dem jetzigen Antrag in den letzten zwei Jahren bereits eine ambulante psychotherapeutische Behandlung (Akutbehandlung, KZT1, KZT2 und/oder Langzeittherapie) durchgeführt wurde."/>
+				</feld>
+			</feld_liste>
+		</ausfuellhilfen>
+	</body>
+</ehd>

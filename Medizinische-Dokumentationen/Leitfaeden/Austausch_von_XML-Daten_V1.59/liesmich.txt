@@ -1,0 +1,28 @@
+1. Beschreibung "Austausch von XML-Daten"
+   (Version V1.59, 15.08.2025)
+*****************************************************************
+
+Dieses Gesamtpaket beschreibt die Datenstruktur zum
+"Austausch von XML-Daten".
+
+Alle Komponenten des Pakets sind separat versioniert. Es können keine 
+Schlussfolgerungen aus den Versionsnummern des Pakets und der Komponenten 
+untereinander gezogen werden. Die Versionsnummer der Schnittstelle muss 
+auch nicht identisch mit der Versionsnummer der Schnittstellenbeschreibung sein.
+
+
+2. Dokumente und Software
+*************************
+
+- Schnittstellenbeschreibung "Austausch von XML-Daten in der vertragsärztlichen Versorgung" (Version 1.59, Stand: 15.08.2025)
+- Begleitdatei-Schema XSD (Version 1.20, Stand: 15.08.2025)
+- Beispiel-Dateien (Stand: 15.08.2025) - eHKS ergänzt
+
+
+3. Änderungen zur Gesamtpaket-Vorversion
+****************************************
+- KBV_ITA_VGEX_XML-Schnittstellen: 
+   - Anpassung des Elementes Verschluesselungssoftware
+- Begleitdatei-Schema XSD
+   - verschluesselungssoftware wird ein optionales Element 
+   - Ergänzung der aktuellen Versionsnummer 1.20

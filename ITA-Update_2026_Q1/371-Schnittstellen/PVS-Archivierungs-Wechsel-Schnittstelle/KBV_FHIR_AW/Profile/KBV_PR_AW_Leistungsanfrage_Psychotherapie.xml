@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Leistungsanfrage_Psychotherapie" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Leistungsanfrage_Psychotherapie" />
+  <status value="active" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="CoverageEligibilityRequest" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/CoverageEligibilityRequest" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="CoverageEligibilityRequest.id">
+      <path value="CoverageEligibilityRequest.id" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityRequest.meta">
+      <path value="CoverageEligibilityRequest.meta" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityRequest.meta.versionId">
+      <path value="CoverageEligibilityRequest.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityRequest.meta.lastUpdated">
+      <path value="CoverageEligibilityRequest.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityRequest.meta.profile">
+      <path value="CoverageEligibilityRequest.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Leistungsanfrage_Psychotherapie|1.2.0" />
+    </element>
+    <element id="CoverageEligibilityRequest.text">
+      <path value="CoverageEligibilityRequest.text" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityRequest.identifier">
+      <path value="CoverageEligibilityRequest.identifier" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.priority">
+      <path value="CoverageEligibilityRequest.priority" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.purpose">
+      <path value="CoverageEligibilityRequest.purpose" />
+      <short value="auth-requirements" />
+      <max value="1" />
+      <fixedCode value="auth-requirements" />
+    </element>
+    <element id="CoverageEligibilityRequest.patient">
+      <path value="CoverageEligibilityRequest.patient" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityRequest.patient.reference">
+      <path value="CoverageEligibilityRequest.patient.reference" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityRequest.patient.type">
+      <path value="CoverageEligibilityRequest.patient.type" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.patient.identifier">
+      <path value="CoverageEligibilityRequest.patient.identifier" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.patient.display">
+      <path value="CoverageEligibilityRequest.patient.display" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.serviced[x]">
+      <path value="CoverageEligibilityRequest.serviced[x]" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.created">
+      <path value="CoverageEligibilityRequest.created" />
+      <short value="Antragsdatum des Anerkennungsbescheides" />
+      <definition value="In diesem Element soll das Antragsdatum zur beantragten Leistung eingetragen werden" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityRequest.enterer">
+      <path value="CoverageEligibilityRequest.enterer" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.provider">
+      <path value="CoverageEligibilityRequest.provider" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.insurer">
+      <path value="CoverageEligibilityRequest.insurer" />
+      <short value="Versicherer" />
+      <definition value="Versicherer, der die Police ausgegeben hat oder Persopn/Organisation, die die Kosten übernimmt." />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityRequest.insurer.reference">
+      <path value="CoverageEligibilityRequest.insurer.reference" />
+      <mustSupport value="false" />
+    </element>
+    <element id="CoverageEligibilityRequest.insurer.type">
+      <path value="CoverageEligibilityRequest.insurer.type" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.insurer.identifier">
+      <path value="CoverageEligibilityRequest.insurer.identifier" />
+      <short value="IK-Nummer des Versicherers" />
+      <definition value="Die Angabe der IK-Nummer des Kostentraegers ist verpflichtend." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityRequest.insurer.identifier.use">
+      <path value="CoverageEligibilityRequest.insurer.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.insurer.identifier.type">
+      <path value="CoverageEligibilityRequest.insurer.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.insurer.identifier.system">
+      <path value="CoverageEligibilityRequest.insurer.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/NamingSystem/arge-ik/iknr" />
+    </element>
+    <element id="CoverageEligibilityRequest.insurer.identifier.value">
+      <path value="CoverageEligibilityRequest.insurer.identifier.value" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityRequest.insurer.identifier.period">
+      <path value="CoverageEligibilityRequest.insurer.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.insurer.identifier.assigner">
+      <path value="CoverageEligibilityRequest.insurer.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.insurer.display">
+      <path value="CoverageEligibilityRequest.insurer.display" />
+      <short value="Name des Versicherers" />
+      <definition value="Die Angabe des Namens des Versicherers dient der geeigenten Darstellung fuer den Benutzer. Technisch ist ausschliesslich die IK-Nummer relevant" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityRequest.facility">
+      <path value="CoverageEligibilityRequest.facility" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.supportingInfo">
+      <path value="CoverageEligibilityRequest.supportingInfo" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.insurance">
+      <path value="CoverageEligibilityRequest.insurance" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.item">
+      <path value="CoverageEligibilityRequest.item" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.supportingInfoSequence">
+      <path value="CoverageEligibilityRequest.item.supportingInfoSequence" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.category">
+      <path value="CoverageEligibilityRequest.item.category" />
+      <short value="Art der Behandlung" />
+      <definition value="Angabe der Behandlungsart der Psychotherapie. Zur Auswahl stehen: ausschliesslich_Einzeltherapie, ausschliesslich_Gruppentherapie, Kombinationsbehandlung_ohne_weitere_Angaben, Kombinationsbehandlung_mit_ueberwiegend_Einzeltherapie_und_einem_Therapeuten, Kombinationsbehandlung_mit_ueberwiegend_Einzeltherapie_und_zwei_Therapeuten, Kombinationsbehandlung_mit_ueberwiegend_Gruppenltherapie_und_einem_Therapeuten,&#xD;&#xA;Kombinationsbehandlung_mit_ueberwiegend_Gruppenltherapie_und_zwei_Therapeuten" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <description value="Behandlungsart" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_AW_Psychotherapie_Behandlungsart" />
+      </binding>
+    </element>
+    <element id="CoverageEligibilityRequest.item.category.coding">
+      <path value="CoverageEligibilityRequest.item.category.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.category.coding.system">
+      <path value="CoverageEligibilityRequest.item.category.coding.system" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.category.coding.version">
+      <path value="CoverageEligibilityRequest.item.category.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.category.coding.code">
+      <path value="CoverageEligibilityRequest.item.category.coding.code" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.category.coding.display">
+      <path value="CoverageEligibilityRequest.item.category.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.category.coding.userSelected">
+      <path value="CoverageEligibilityRequest.item.category.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.category.text">
+      <path value="CoverageEligibilityRequest.item.category.text" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.productOrService">
+      <path value="CoverageEligibilityRequest.item.productOrService" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.modifier">
+      <path value="CoverageEligibilityRequest.item.modifier" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.provider">
+      <path value="CoverageEligibilityRequest.item.provider" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.quantity">
+      <path value="CoverageEligibilityRequest.item.quantity" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.unitPrice">
+      <path value="CoverageEligibilityRequest.item.unitPrice" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.facility">
+      <path value="CoverageEligibilityRequest.item.facility" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.diagnosis">
+      <path value="CoverageEligibilityRequest.item.diagnosis" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityRequest.item.detail">
+      <path value="CoverageEligibilityRequest.item.detail" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

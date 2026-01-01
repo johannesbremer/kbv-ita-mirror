@@ -1,0 +1,19 @@
+<NamingSystem xmlns="http://hl7.org/fhir">
+	<name value="BMAE"/> 
+	<status value="active"/> 
+	<kind value="codesystem"/> 
+	<date value="2018-10-06"/>
+	<publisher value="Kassenaerztliche Bundesvereinigung"/>
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="http://www.kbv.de"/>
+		</telecom>
+	</contact>
+	<description value="GOP (Gebührenordnungsposition) im BMAE Namensraum"/> 
+	<uniqueId> 
+		<type value="uri"/> 
+		<value value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_BMAE"/> 
+		<preferred value="true"/> 
+	</uniqueId> 
+</NamingSystem>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" strict="true"
+	xmlns="http://logging.apache.org/log4j/2.0/config"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://logging.apache.org/log4j/2.0/config
+          https://raw.githubusercontent.com/apache/logging-log4j2/log4j-2.11.1/log4j-core/src/main/resources/Log4j-config.xsd">
+	<Properties>
+		<Property name="loggerFile">xkm.log</Property>
+	</Properties>
+
+
+	<Appenders>
+		<Appender type="Console" name="STDOUT">
+			<Layout type="PatternLayout" pattern="%d{dd.MM.yyyy HH:mm:ss,SSS} | %-5p | %m%n" />
+		</Appender>
+		<!--Appender type="File" name="FileLogger" fileName="${sys:loggerFile}">
+			<Layout type="PatternLayout">
+				<Pattern>%d{dd.MM.yyyy HH:mm:ss,SSS} | %-5p | %m%n</Pattern>
+			</Layout>
+		</Appender-->
+	</Appenders>
+
+	<Loggers>
+		<Logger name="xkm" level="info"
+			additivity="false">
+			<AppenderRef ref="STDOUT" />
+			<!-- kann bei Bedarf einkommentiert werden  -->
+			<!-- AppenderRef ref="FileLogger"></AppenderRef -->
+		</Logger>
+		<Root level="INFO">
+			<AppenderRef ref="STDOUT" />
+			<!-- kann bei Bedarf einkommentiert werden  -->
+			<!-- AppenderRef ref="FileLogger"></AppenderRef -->
+		</Root>
+	</Loggers>
+
+</Configuration>

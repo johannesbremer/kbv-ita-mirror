@@ -1,0 +1,80 @@
+<ServiceRequest xmlns="http://hl7.org/fhir">
+	<id value="3187"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-11T17:38:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandlung_im_Auftrag_Ueberweisung|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_istAbrechnungsrelevant">
+		<valueBoolean value="true"/>
+	</extension>
+	<status value="completed"/>
+	<intent value="proposal"/>
+	<code>
+		<text value="Regelmäßige Kontrolluntersuchung Trisomie 21"/>
+	</code>
+	<orderDetail>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Leistungsart"/>
+			<code value="1"/>
+		</coding>
+	</orderDetail>	
+	<subject>
+		<reference value="Patient/3181"/>
+	</subject>
+	<encounter>
+		<reference value="Encounter/3188"/>
+	</encounter>
+	<authoredOn value="2020-08-05"/>
+	<requester>
+		<reference value="PractitionerRole/1010"/>
+		<display value="Dr. med. Max Freiherr von und zu Mustermann"/>
+	</requester>
+	<performer>
+		<display value="Dr. Schmidt"/>
+	</performer>
+	<reasonCode>
+		<text value="Grunderkrankung Trisomie 21"/>
+	</reasonCode>		
+	<supportingInfo>
+		<reference value="Observation/3248"/>
+		<identifier>
+			<type>
+				<coding>
+					<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ueberweisung_KH-Einweisung_Kategorien"/>
+					<code value="Befund_Medikation"/>
+				</coding>
+			</type>
+		</identifier>
+		<display value="leichter Husten"/>
+	</supportingInfo>
+	<supportingInfo>
+		<reference value="Medication/3167"/>
+		<identifier>
+			<type>
+				<coding>
+					<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ueberweisung_KH-Einweisung_Kategorien"/>
+					<code value="Befund_Medikation"/>
+				</coding>
+			</type>
+		</identifier>
+		<display value="Paracetamol"/>
+	</supportingInfo>
+	<supportingInfo>
+		<identifier>
+			<type>
+				<coding>
+					<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ueberweisung_KH-Einweisung_Kategorien"/>
+					<code value="Ausnahmeindikation"/>
+				</coding>
+			</type>
+		</identifier>
+		<display value="A123B"/>
+	</supportingInfo>
+</ServiceRequest>

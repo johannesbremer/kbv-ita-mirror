@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Die Prüfstammdatei ist ausschließlich zur Nutzung für die Zertifizierung bei der KBV oder für das Audit bei der kv.digital GmbH vorgesehen und keinesfalls zum Rollout bei den Ärzten!-->
+<ehd:ehd xsi:schemaLocation="urn:ehd/001 ../schema/kvca_root.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:kvca="urn:ehd/kvca/001" xmlns:ehd="urn:ehd/001" ehd_version="1.40">
+	<ehd:header>
+		<ehd:id EX="9fc12b70-356c-4505-8192-22a143fd8825" RT="kvca"/>
+		<ehd:version_nbr V="1"/>
+		<ehd:document_type_cd V="kvca"/>
+		<ehd:service_tmr V="2023-11-15.."/>
+		<ehd:origination_dttm V="2023-11-08"/>
+		<ehd:originator>
+			<ehd:organization>
+				<ehd:organization.nm V="kv.digital GmbH"/>
+				<ehd:addr>
+					<ehd:STR V="Herbert-Lewin-Platz"/>
+					<ehd:HNR V="2"/>
+					<ehd:ZIP V="10623"/>
+					<ehd:CTY V="Berlin"/>
+				</ehd:addr>
+				<ehd:telecom V="tel:030 4005 - 2700"/>
+				<ehd:telecom V="mail:support@kv.digital"/>
+			</ehd:organization>
+		</ehd:originator>
+		<ehd:provider>
+			<ehd:organization>
+				<ehd:organization.nm V="kv.digital GmbH"/>
+				<ehd:addr>
+					<ehd:STR V="Herbert-Lewin-Platz"/>
+					<ehd:HNR V="2"/>
+					<ehd:ZIP V="10623"/>
+					<ehd:CTY V="Berlin"/>
+				</ehd:addr>
+				<ehd:telecom V="tel:030 4005 - 2700"/>
+				<ehd:telecom V="mail:support@kv.digital"/>
+			</ehd:organization>
+		</ehd:provider>
+		<ehd:state S=" 1.2.276.0.76.5.108" V="TEST" DN="Testdaten nur für Testverfahren" SN="S_KBV_BEARBEITUNGSZUSTAND"/>
+		<ehd:interface>
+			<ehd:id EX="KVCA" RT="1.2.276.0.76.5.109"/>
+			<ehd:interface.nm V="kvca"/>
+			<ehd:version V="1.20"/>
+		</ehd:interface>
+	</ehd:header>
+	<ehd:body>
+			<kvca:institution_liste>
+			<kvca:kv>
+				<kvca:id EX="01" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+					</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="02" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHLT" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de" />
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+										<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="03" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHLT" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+										<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="17" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHLT" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+										<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="20" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHLT" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+										<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="38" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 3" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 4" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 5" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 6" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>						
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="46" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="51" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHLT" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="52" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>					
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="71" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>					
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHLT" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="72" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHLT" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="73" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="78" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHLT" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>		
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="83" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="88" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="93" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="HKS" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="abd.test@kv-safenet.de"/>
+						<kvca:test_email V="abd.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+			<kvca:kv>
+				<kvca:id EX="98" RT="1.2.276.0.76.5.233"/>
+				<kvca:anwendungsliste>
+					<kvca:anwendung>
+						<kvca:id EX="1CLICK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:test_email V="abrechnung.test@kv-safenet.de"/>
+						<kvca:kim_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:kim_test_email V="kv.digital-1ClickAbrechnung-V2.1@kv.digital.kim.telematik-test"/>
+						<kvca:anwendungsspezifika>
+							<kvca:anwendungsfunktion V="Fkt 1" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 2" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 7" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 8" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 9" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+							<kvca:anwendungsfunktion V="Fkt 10" RT="1.2.276.0.76.3.1.1.5.2.34"/>
+						</kvca:anwendungsspezifika>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSMG" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGV" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHGVK" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSKE" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSHLT" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="1"/>
+						<kvca:email V="edokumentation.test@kv-safenet.de"/>
+					</kvca:anwendung>
+					<kvca:anwendung>
+						<kvca:id EX="QSPB" RT="1.2.276.0.76.3.1.64.5.1"/>
+						<kvca:version V="2"/>
+						<kvca:kim_email V="kv.digital-QSPB-V2.0@kv.digital.kim.telematik-test"/>
+					</kvca:anwendung>
+				</kvca:anwendungsliste>
+			</kvca:kv>
+		</kvca:institution_liste>
+
+	</ehd:body>
+	<keytabs xmlns="urn:ehd/001">
+		<keytab S="1.2.276.0.76.5.233" SN="S_KBV_KV" SV="1.06">
+			<key V="01" DN="Schleswig-Holstein" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.41"/>
+			<key V="02" DN="Hamburg" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.32"/>
+			<key V="03" DN="Bremen" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.31"/>
+			<key V="17" DN="Niedersachsen" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.35"/>
+			<key V="20" DN="Westfalen-Lippe" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.43"/>
+			<key V="38" DN="Nordrhein" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.36"/>
+			<key V="46" DN="Hessen" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.33"/>
+			<key V="51" DN="Rheinland-Pfalz" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.37"/>
+			<key V="52" DN="Baden-Württemberg" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.27"/>
+			<key V="71" DN="Bayerns" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.28"/>
+			<key V="72" DN="Berlin" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.29"/>
+			<key V="73" DN="Saarland" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.38"/>
+			<key V="74" DN="KBV" S="1.2.276.0.76.5.233" SV="1.06" guid=""/>
+			<key V="78" DN="Mecklenburg-Vorpommern" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.34"/>
+			<key V="83" DN="Brandenburg" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.30"/>
+			<key V="88" DN="Sachsen-Anhalt" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.40"/>
+			<key V="93" DN="Thüringen" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.42"/>
+			<key V="98" DN="Sachsen" S="1.2.276.0.76.5.233" SV="1.06" guid="1.2.276.0.76.3.1.39"/>
+		</keytab>
+		<keytab SV="1.08" SN="S_KBV_DIENST" S="1.2.276.0.76.3.1.64.5.1">
+			<key V="1CLICK" DN="1Click Abrechnung" S="1.2.276.0.76.3.1.64.5.1" SV="1.08"/>
+			<key V="HKS" DN="Hautkrebsscreening" S="1.2.276.0.76.3.1.64.5.1" SV="1.08"/>
+			<key V="QSHGV" DN="QS Hörgerätevereinbarung" S="1.2.276.0.76.3.1.64.5.1" SV="1.08"/>
+			<key V="QSHGVK" DN="QS Hörgerätevereinbarung-Kinder" S="1.2.276.0.76.3.1.64.5.1" SV="1.08"/>
+			<key V="QSHLT" DN="QS Holmiumlaser-Therapie" S="1.2.276.0.76.3.1.64.5.1" SV="1.08"/>
+			<key V="QSKE" DN="QS Kapselendoskopie" S="1.2.276.0.76.3.1.64.5.1" SV="1.08"/>
+			<key V="QSMG" DN="QS Molekulargenetik" S="1.2.276.0.76.3.1.64.5.1" SV="1.08"/>
+			<key V="QSPB" DN="Übertragung von Dokumenten zur Qualitätssicherung und Programmbeurteilung, die nach den Spezifikationen des IQTIG erstellt wurden" S="1.2.276.0.76.3.1.64.5.1" SV="1.08"/>
+		</keytab>
+		<keytab SV="1.01" SN="S_1CLK_FUNKTION" S="1.2.276.0.76.3.1.1.5.2.34">
+			<key V="Fkt 1" DN="1-Click Abrechnung als Testabrechnung" S="1.2.276.0.76.3.1.1.5.2.34" SV="1.01"/>
+			<key V="Fkt 2" DN="1-Click Abrechnung als Echtabrechnung" S="1.2.276.0.76.3.1.1.5.2.34" SV="1.01"/>
+			<key V="Fkt 3" DN="Sammelerklärung als Testpaket" S="1.2.276.0.76.3.1.1.5.2.34" SV="1.01"/>
+			<key V="Fkt 4" DN="Sammelerklärung als Echtpaket" S="1.2.276.0.76.3.1.1.5.2.34" SV="1.01"/>
+			<key V="Fkt 5" DN="1-Click Abrechnung inkl. Sammelerklärung als Testabrechnung" S="1.2.276.0.76.3.1.1.5.2.34" SV="1.01"/>
+			<key V="Fkt 6" DN="1-Click Abrechnung inkl. Sammelerklärung als Echtabrechnung" S="1.2.276.0.76.3.1.1.5.2.34" SV="1.01"/>
+			<key V="Fkt 7" DN="technische Rückmeldung (MDN) zu einem Testpaket" S="1.2.276.0.76.3.1.1.5.2.34" SV="1.01"/>
+			<key V="Fkt 8" DN="technische Rückmeldung (MDN) zu einem Echtpaket" S="1.2.276.0.76.3.1.1.5.2.34" SV="1.01"/>
+			<key V="Fkt 9" DN="fachliche Rückmeldung zu einem Testpaket" S="1.2.276.0.76.3.1.1.5.2.34" SV="1.01"/>
+			<key V="Fkt 10" DN="fachliche Rückmeldung zu einem Echtpaket" S="1.2.276.0.76.3.1.1.5.2.34" SV="1.01"/>
+		</keytab>
+	</keytabs>
+</ehd:ehd>

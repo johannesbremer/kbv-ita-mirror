@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ringversuchszertifikat_pnSD_UU"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Ringversuchszertifikat_pnSD_UU"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Ringversuchszertifikat pnSD/UU"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="kein_pnSD_UU"/>
+<display value="kein pnSD/UU"/>
+</concept>
+<concept>
+<code value="teilweise_pnSD_UU"/>
+<display value="teilweise pnSD/UU"/>
+</concept>
+<concept>
+<code value="ausschließlich_pnSD_UU"/>
+<display value="ausschließlich pnSD/UU"/>
+</concept>
+</CodeSystem>

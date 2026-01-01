@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2019 rel. 3 sp1 (x64) (http://www.altova.com) von Kassenärztliche Bundesvereinigung (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/sdhma/001" xmlns:ehd="urn:ehd/001" targetNamespace="urn:ehd/sdhma/001" elementFormDefault="qualified">
+	<xs:element name="sdhma_stammdaten">
+		<xs:annotation>
+			<xs:documentation>Enthält die Liste der Verordnungsbedarfe </xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="verordnungsbedarf_liste">
+					<xs:annotation>
+						<xs:documentation>Enthält die Verordnungsbedarfe </xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="verordnungsbedarf" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Enthält die Heilmittelverordnungen</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="icd_code" minOccurs="0"/>
+										<xs:element name="geltungsbereich_kv" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Geltungsbreich der Heilmittelverordnung</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:string" use="required"/>
+												<xs:attribute name="DN" type="xs:string" use="optional"/>
+												<xs:attribute name="S" type="xs:string" use="optional" fixed="1.2.276.0.76.5.233"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element ref="heilmittel_liste">
+											<xs:annotation>
+												<xs:documentation>Liste mit Heilmittelangaben </xs:documentation>
+											</xs:annotation>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="anlage_heilmittelvereinbarung">
+		<xs:annotation>
+			<xs:documentation>Art der Anlage zum Heilmittelkatalog der Heilmittel-Einträge</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+			<xs:attribute name="DN" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="kapitel_liste">
+		<xs:annotation>
+			<xs:documentation>Heilmittel-Indikationsliste zum aktuellen ICD-10-Code</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="5">
+				<xs:element ref="kapitel">
+					<xs:annotation>
+						<xs:documentation>Kapitel der Diagnosegruppen</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="kapitel">
+		<xs:annotation>
+			<xs:documentation>Diagnosegruppe zur Heilmittel-Indikationsliste zum aktuellen ICD-10-Code</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="diagnosegruppe_liste">
+					<xs:annotation>
+						<xs:documentation>Liste der Diagnosen</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+			<xs:attribute name="DN" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="hinweistext">
+		<xs:annotation>
+			<xs:documentation>Hinweistext zu den Heilmittelangaben des aktuellen ICD-10-Codes</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="heilmittel">
+		<xs:annotation>
+			<xs:documentation>Heilmittelangaben zum aktuellen ICD-10-Code</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="anlage_heilmittelvereinbarung">
+					<xs:annotation>
+						<xs:documentation>Art der Anlage zur Heilmittelvereinbarung</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:group ref="optionale_elemente_liste"/>
+				<xs:element ref="kapitel_liste">
+					<xs:annotation>
+						<xs:documentation>Liste der Kapitel mit Diagnosegruppen</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="heilmittel_liste">
+		<xs:annotation>
+			<xs:documentation>Liste mit Heilmittelangaben zum aktuellen ICD-Code</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="heilmittel">
+					<xs:annotation>
+						<xs:documentation>Heilmittelangaben</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="optionale_elemente_liste">
+		<xs:annotation>
+			<xs:documentation>optionale Eigenschaften der Verordnungsbedarfe</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="sekundaercode" minOccurs="0">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="icd_code_typ"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="untere_altersgrenze" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+untere Altersgrenze;
+Wert @V="..." Anzahl Tage oder Jahre;
+Zeiteinheit @U="...";
+@U="Tag" bei Angaben unter 1 Jahr;
+@U="Jahr" bei Angaben über 1 Jahr
+          </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="(\d{1,3})"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="U" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="Tag"/>
+								<xs:enumeration value="Jahr"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="obere_altersgrenze" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>
+obere Altersgrenze;
+Wert @V="..." Zeiteinheit @U="..." analog untere_altersgrenze
+          </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="V" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:pattern value="(\d{1,3})"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="U" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="Tag"/>
+								<xs:enumeration value="Jahr"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element ref="hinweistext" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Hinweistext zu den Heilmittelangaben</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="zeitraum_akutereignis" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="V" type="xs:string" use="required"/>
+					<xs:attribute name="U" default="Monat">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="Jahr"/>
+								<xs:enumeration value="Monat"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:element name="icd_code">
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="icd_code_typ"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="icd_code_typ">
+		<xs:annotation>
+			<xs:documentation>ICD-10-GM-Code (Muster: 1 Zeichen A-Z + zweistellige Nummer + '.' + einstellige Nummer oder * oder + oder -)</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="V" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:pattern value="([A-Z](\d{1,2})?(\.)?(\d)?(\d|[\*\+\-])?)|UUU"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:element name="diagnosegruppe">
+		<xs:annotation>
+			<xs:documentation>Einzelindikation (Heilmittelangaben zum aktuellen ICD-10-Code)</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:attribute name="V" type="xs:string" use="required"/>
+			<xs:attribute name="DN" type="xs:string" use="optional"/>
+			<xs:attribute name="S" type="xs:string" use="optional" fixed="1.2.276.0.76.3.1.1.5.2.30"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="diagnosegruppe_liste">
+		<xs:annotation>
+			<xs:documentation>Heilmittel-Indikationsliste zum aktuellen ICD-10-Code</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="diagnosegruppe" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Diagnosegruppe</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

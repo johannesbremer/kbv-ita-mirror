@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!-- Beispiel für eine elektronische Sammelerklärung der KV Nordrhein, Ausprägung: Arzt -->
+<ehd:ehd ehd_version="1.40" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:ehd/ese/001" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:ehd="urn:ehd/001" xsi:schemaLocation="urn:ehd/001 ..\Schema\ese_root.xsd">
+	<ehd:header>
+		<ehd:id EX="1" RT="3456789"/>  <!-- EX=lfd. Nummer;  RT=LANR des Praxisinhabers -->
+		<ehd:version_nbr V="1"/>
+		<ehd:document_type_cd DN="Elektronische Sammelerklärung" S="1.2.276.0.76.5.100" V="ese"/>
+		<ehd:service_tmr V="2015-07-01..2015-09-30"/>  <!-- Quartalsbezug -->
+		<ehd:origination_dttm V="2015-09-15"/> <!-- Erstellungsdatum dieser XML-Datei -->
+		<ehd:intended_recipient>
+			<ehd:organization>
+				<ehd:organization.nm V="Arzt"/> <!-- eSammelerklärung der KVNO mit Ausprägung 'Arzt' -->
+			</ehd:organization>
+		</ehd:intended_recipient>
+		<ehd:originator>
+			<ehd:organization>
+				<ehd:id EX="38" RT="1.2.276.0.76.5.233"/>
+				<ehd:organization.nm V="KV Nordrhein"/>
+			</ehd:organization>
+		</ehd:originator>
+		<ehd:provider>
+			<ehd:person>
+				<ehd:id EX="123456789" RT="1.2.276.0.76.4.16"/> <!-- LANR des Arztes -->
+				<ehd:person_name>
+					<ehd:nm>
+						<ehd:PFX V="Dr. med."/>
+						<ehd:GIV V="Hans"/>
+						<ehd:FAM V="Test"/>
+					</ehd:nm>
+				</ehd:person_name>
+				<ehd:local_header>
+					<ehd:fachgruppenbezeichnung V="Facharzt f. Innere Medizin -Angiologie-"/>
+				</ehd:local_header>
+			</ehd:person>
+			<ehd:person>
+				<ehd:id EX="234567891" RT="1.2.276.0.76.4.16"/> <!-- LANR des Arztes -->
+				<ehd:person_name>
+					<ehd:nm>
+						<ehd:PFX V="Dr. med."/>
+						<ehd:GIV V="Fritz"/>
+						<ehd:FAM V="Sauber"/>
+					</ehd:nm>
+				</ehd:person_name>
+				<ehd:local_header>
+					<ehd:fachgruppenbezeichnung V="Facharzt für Hals-Nasen-Ohrenheilkunde"/>
+					<ehd:fachgruppenbezeichnung V="Facharzt für Phoniatrie u. Pädaudiologie"/>
+				</ehd:local_header>
+			</ehd:person>
+			<ehd:organization>
+				<ehd:id EX="274412400" RT="1.2.276.0.76.4.17"/> <!-- EX=BSNR -->
+				<ehd:organization.nm V="Gemeinschaftspraxis Dres. Hans Test Fritz Sauber"/> <!-- Bezeichnung der Einrichtung -->
+				<ehd:addr>
+					<ehd:STR V="Hahnenweg"/>
+					<ehd:HNR V="4"/>
+					<ehd:ZIP V="51371"/>
+					<ehd:CTY V="Leverkusen"/>
+				</ehd:addr>
+				<ehd:telecom V="Tel:022159708007"/>
+			</ehd:organization>
+		</ehd:provider>
+		<ehd:interface>
+			<ehd:id EX="ese" RT="1.2.276.0.76.5.109"/>
+			<ehd:interface.nm V="Elektronische Sammelerklärung (ese)"/>
+			<ehd:version V="1.21"/>
+		</ehd:interface>
+	</ehd:header>
+	<ehd:body>
+		<ese_data>
+			<fall_statistik>
+				<anzahl_gesamt V="2453"/>
+			</fall_statistik>
+			<angestellter_arzt_liste>
+				<titel V="Angestellter Arzt"/>
+				<bool_komplex>
+					<true>
+						<komplex>
+							<zeitraum_tmr V="2015-07-01..2015-07-15"/>
+							<provider>
+								<person>
+									<id EX="123456781" RT="1.2.276.0.76.4.16"/>
+									<person_name>
+										<nm>
+											<PFX V="Dr. med."/>
+											<GIV V="Sabine"/>
+											<GIV V="Hannah"/>
+											<FAM V="Angestellte"/>
+										</nm>
+									</person_name>
+								</person>
+							</provider>
+						</komplex>
+						<komplex>
+							<zeitraum_tmr V="2015-07-16..2015-07-20"/>
+							<provider>
+								<person>
+									<id EX="123456782" RT="1.2.276.0.76.4.16"/>
+									<person_name>
+										<nm>
+											<PFX V="Dr. med."/>
+											<GIV V="Oskar"/>
+											<FAM V="Angestellter"/>
+										</nm>
+									</person_name>
+								</person>
+							</provider>
+						</komplex>
+					</true>
+				</bool_komplex>
+			</angestellter_arzt_liste>
+			<org_notdienstzeit_liste>
+				<titel V="Teilnahme am organisierten ärztlichen Notfalldienst"/>
+				<bool_komplex>
+					<true>
+						<komplex>
+							<zeitraum_tmr V="2015-08-31"/>
+						</komplex>
+					</true>
+				</bool_komplex>
+			</org_notdienstzeit_liste>
+		</ese_data>
+	</ehd:body>
+</ehd:ehd>

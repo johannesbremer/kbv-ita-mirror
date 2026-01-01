@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<!--XML-Beispieldatei von XMLSpy generiert v2006 sp2 U (http://www.altova.com)-->
+<ehd xmlns="urn:ehd/001" xmlns:zz="urn:ehd/qszervixzyto/001" xmlns:cda="urn::hl7-org/cda"  xmlns:sciphox="urn::sciphox-org/sciphox" xsi:schemaLocation="urn:ehd/001 ../Schema_2.00/qszervixzyto_root.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ehd_version="01.40">
+	<header>
+		<id RT="123456789" EX="10"/>
+		<document_type_cd V="QSZERVIXZYTO"/>
+		<service_tmr V="2007-01-01"/>
+		<origination_dttm V="2007-08-13"/>
+		<provider>
+			<provider.type_cd V="PRF"/>
+			<person>
+				<id EX="278012389" RT="BSNR"/>
+				<person_name>
+					<nm>
+						<GIV V="Anette"/>
+						<FAM V="Müller"/>
+						<PFX V="Dr. med." QUAL="AC"/>
+					</nm>
+				</person_name>
+				<addr>
+					<STR V="Ottostr."/>
+					<HNR V="1"/>
+					<ZIP V="50859"/>
+					<CTY V="Köln"/>
+				</addr>
+				<telecom V="tel:(0221)4449-0"/>
+			</person>
+		</provider>
+		<interface>
+			<id EX="QSZERVIXZYTO" RT="1.2.276.0.76.5.109"/>
+			<interface.nm V="QSZervixZyto Bericht an KV"/>
+			<version V="2.00"/>
+		</interface>
+		<local_header ignore="all" descriptor="sciphox">
+			<sciphox:sciphox-ssu type="software" country="de" version="v1">
+				<sciphox:Software>
+					<sciphox:id EX="X/52/0212/22/223" RT="KBV-Prüfnummer"/>
+					<sciphox:SoftwareName V="ABC Software"/>
+					<sciphox:SoftwareVersion V="1.3"/>
+					<sciphox:SoftwareTyp V="PVS"/>
+					<sciphox:Kontakt>
+						<sciphox:Kontakttyp V="SOFTV" S="1.2.276.0.76.3.1.1.5.2.3" DN="Softwareverantwortlicher"/>
+						<cda:organization.nm V="ABC Softwarehaus"/>
+						<cda:addr>
+							<cda:STR V="Ottostr."/>
+							<cda:HNR V="1"/>
+							<cda:ZIP V="50859"/>
+							<cda:CTY V="Köln"/>
+						</cda:addr>
+						<cda:telecom V="tel:(0221)4449-0" USE="WP"/>
+						<cda:telecom V="tel:(0221)4449-1" USE="WP"/>
+					</sciphox:Kontakt>
+					<sciphox:Kontakt>
+						<sciphox:Kontakttyp V="REGS" S="1.2.276.0.76.3.1.1.5.2.3" DN="RegionalerSystembetreuer"/>
+						<cda:organization.nm V="ABC Consulting"/>
+						<cda:addr>
+							<cda:STR V="Ottostr."/>
+							<cda:HNR V="1"/>
+							<cda:ZIP V="50859"/>
+							<cda:CTY V="Köln"/>
+						</cda:addr>
+						<cda:telecom V="tel:(0221)4449-0" USE="WP"/>
+					</sciphox:Kontakt>
+				</sciphox:Software>
+			</sciphox:sciphox-ssu>
+		</local_header>
+	</header>
+	<body>
+		<zz:qszervixzyto_bericht>
+			<zz:anzahl_praeparate V="306"/>
+			<zz:anzahl_nv_praeparate V="2"/>
+			<zz:anzahl_frauen V="304"/>
+			<zz:gr1>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr1>
+			<zz:gr2a>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr2a>
+			<zz:gr2p>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr2p>
+			<zz:gr2g>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr2g>
+			<zz:gr2e>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr2e>
+			<zz:gr3p>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr3p>
+			<zz:gr3g>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr3g>
+			<zz:gr3e>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr3e>
+			<zz:gr3x>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr3x>
+			<zz:gr3D1>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr3D1>
+			<zz:gr3D2>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr3D2>
+			<zz:gr4ap>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr4ap>
+			<zz:gr4ag>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr4ag>
+			<zz:gr4bp>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr4bp>
+			<zz:gr4bg>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr4bg>
+			<zz:gr5p>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr5p>
+			<zz:gr5g>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr5g>
+			<zz:gr5e>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr5e>
+			<zz:gr5x>
+				<zz:anzahl_frauen V="16"/>
+				<zz:anzahl_khca V="2"/>
+				<zz:anzahl_cin1 V="2"/>
+				<zz:anzahl_cin2 V="2"/>
+				<zz:anzahl_cin3ca V="2"/>
+				<zz:anzahl_adenocais V="2"/>
+				<zz:anzahl_plattenepithelca V="2"/>
+				<zz:anzahl_adenocaceut V="2"/>
+				<zz:anzahl_endometriumca V="2"/>
+			</zz:gr5x>
+		</zz:qszervixzyto_bericht>
+	</body>
+</ehd>

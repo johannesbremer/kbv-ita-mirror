@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<VSD:UC_GeschuetzteVersichertendatenXML CDM_VERSION="5.2.0" xmlns:VSD="http://ws.gematik.de/fa/vsdm/vsd/v5.2">
+	<VSD:Zuzahlungsstatus>
+		<VSD:Status>0</VSD:Status>
+	</VSD:Zuzahlungsstatus>
+	<VSD:Selektivvertraege>
+		<VSD:Aerztlich>1</VSD:Aerztlich>
+		<VSD:Zahnaerztlich>1</VSD:Zahnaerztlich>
+		<VSD:Art>1000</VSD:Art>
+	</VSD:Selektivvertraege>
+	<VSD:RuhenderLeistungsanspruch>
+		<VSD:Beginn>20160101</VSD:Beginn>
+		<VSD:Ende>20160201</VSD:Ende>
+		<VSD:ArtDesRuhens>2</VSD:ArtDesRuhens>
+	</VSD:RuhenderLeistungsanspruch>
+</VSD:UC_GeschuetzteVersichertendatenXML>

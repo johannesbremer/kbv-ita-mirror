@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<keytabs xmlns="urn:ehd/001">
+<keytab SV="1.12" SN="S_EBM_ZUSATZANGABE" S="1.2.276.0.76.5.229">
+    <key V="5002" DN="Art der Untersuchung" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5003" DN="(N)BSNR der Praxis, an die der Patient vermittelt wurde" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5005" DN="Multiplikator" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5006" DN="Um-Uhrzeit" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5008" DN="Doppelkilometer" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5009" DN="Begründung" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5010" DN="Chargennummer" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5011" DN="Sachkostenbezeichnung" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5012" DN="Sach-/Materialkosten" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5013" DN="Prozent der Leistung" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5015" DN="Organangabe" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5016" DN="Name des Arztes" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5017" DN="Besuchsort bei Hausbesuch" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5018" DN="Zone bei Besuchen" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5019" DN="Erbringungsort /Standort des Gerätes" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5020" DN="Wiederholungsuntersuchung (Krebsfrüherkennung)" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5021" DN="Jahr der letzten Krebsfrüherkennungsuntersuchung" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5023" DN="GO-Nummern-Zusatz" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5024" DN="Kennzeichen für poststationär erbrachte Leistungen" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5025" DN="Aufnahmedatum" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5026" DN="Entlassungsdatum" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5034" DN="Operationsdatum" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5035" DN="OP-Schlüssel" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5036" DN="Begründungs-GNR" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5037" DN="Gesamt-Schnitt-Naht-Zeit" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5038" DN="Komplikation" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5040" DN="Patientennummer des FEK-Bogens" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5041" DN="Seitenlokalisation OPS" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5042" DN="Mengenangabe KM /AM" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5043" DN="Maßeinheit KM /AM" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5050" DN="Melde-ID Implantateregister" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5051" DN="Hash-String Implantateregister" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5052" DN="Hash-Wert Implantateregister" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5074" DN="Name Hersteller/Lieferant (für ASV)" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5075" DN="Artikel-/Modellnummer (für ASV)" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5076" DN="Rechnungsnummer" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5077" DN="HGNC-Gensymbol" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5079" DN="Art der Erkrankung" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5098" DN="(N)BSNR des Ortes der Leistungserbringung" S="1.2.276.0.76.5.229" SV="1.12"/>
+    <key V="5099" DN="Lebenslange Arztnummer (LANR) des Leistungserbringers" S="1.2.276.0.76.5.229" SV="1.12"/>
+</keytab>
+</keytabs>

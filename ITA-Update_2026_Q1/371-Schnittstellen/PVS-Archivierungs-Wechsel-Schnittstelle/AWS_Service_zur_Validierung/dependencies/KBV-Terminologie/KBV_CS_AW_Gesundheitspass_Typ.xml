@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Gesundheitspass_Typ"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Gesundheitspass_Typ"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Typ des Gesundheitspasses"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="Allergiepass"/>
+<display value="Allergiepass"/>
+</concept>
+<concept>
+<code value="Bluspendeausweis"/>
+<display value="Bluspendeausweis"/>
+</concept>
+<concept>
+<code value="Diabetespass"/>
+<display value="Diabetespass"/>
+</concept>
+<concept>
+<code value="Epilepsie_Notfallausweis"/>
+<display value="Epilepsie Notfallausweis"/>
+</concept>
+<concept>
+<code value="Implantatpass"/>
+<display value="Implantatpass"/>
+</concept>
+<concept>
+<code value="Mutterpass"/>
+<display value="Mutterpass"/>
+</concept>
+<concept>
+<code value="Organspendeausweis"/>
+<display value="Organspendeausweis"/>
+</concept>
+<concept>
+<code value="Gewebespendeausweis"/>
+<display value="Gewebespendeausweis"/>
+</concept>
+<concept>
+<code value="Roentgenpass"/>
+<display value="Roentgenpass"/>
+</concept>
+<concept>
+<code value="Impfpass"/>
+<display value="Impfpass"/>
+</concept>
+<concept>
+<code value="EGK_Notfalldatensatz"/>
+<display value="EGK Notfalldatensatz"/>
+</concept>
+</CodeSystem>

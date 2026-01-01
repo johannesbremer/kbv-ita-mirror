@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<arbeitsmodi>
+
+   <arbeitsmodus>
+      <index>3</index>
+      <partnerindex>4</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>DMP_Verschluesselung</name>
+      <schluessel>Oeffentlich_DA_V09.pub</schluessel>
+      <suffix>zip</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>4</index>
+      <partnerindex>3</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>DMP_Entschluesselung</name>
+      <schluessel>Privat_DA_V09.pfx</schluessel>
+      <suffix>zip.XKM</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>7</index>
+      <partnerindex>8</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>Abrechnungs_Verschluesselung</name>
+      <schluessel>Oeffentlich_KV_V09.pub</schluessel>
+      <suffix>con</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>8</index>
+      <partnerindex>7</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>Abrechnungs_Entschluesselung</name>
+      <schluessel>Privat_KV_V09.pfx</schluessel>
+      <suffix>con.XKM</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>11</index>
+      <partnerindex>12</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>ADMP_Verschluesselung</name>
+      <schluessel>Oeffentlich_ADMP_V09.pub</schluessel>
+      <suffix>null</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>12</index>
+      <partnerindex>11</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>ADMP_Entschluesselung</name>
+      <schluessel>Privat_ADMP_V09.pfx</schluessel>
+      <suffix>XKM</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>13</index>
+      <partnerindex>14</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>ZervixZyto_Verschluesselung</name>
+      <schluessel>Oeffentlich_ZervixZyto_V09.pub</schluessel>
+      <suffix>zip</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>14</index>
+      <partnerindex>13</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>ZervixZyto_Entschluesselung</name>
+      <schluessel>Privat_ZervixZyto_V09.pfx</schluessel>
+      <suffix>zip.XKM</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>15</index>
+      <partnerindex>16</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>TEST_Verschluesselung</name>
+      <schluessel>Oeffentlich_Testschluessel_V01.pub</schluessel>
+      <suffix>null</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>16</index>
+      <partnerindex>15</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>TEST_Entschluesselung</name>
+      <schluessel>Privat_Testschluessel_V01.pfx</schluessel>
+      <suffix>null</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>17</index>
+      <partnerindex>18</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>EHKS_Verschluesselung</name>
+      <schluessel>Oeffentlich_EHKS_V09.pub</schluessel>
+      <suffix>zip</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>18</index>
+      <partnerindex>17</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>EHKS_Entschluesselung</name>
+      <schluessel>Privat_EHKS_V09.pfx</schluessel>
+      <suffix>zip.XKM</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>19</index>
+      <partnerindex>20</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>ApothekenRZ_Verschluesselung</name>
+      <schluessel>ApothekenRZ_oeffentlicher_Schluessel.pub</schluessel>
+      <suffix>null</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>20</index>
+      <partnerindex>19</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>ApothekenRZ_Entschluesselung</name>
+      <schluessel>ApothekenRZ_privater_Schluessel.NICHT_weitergeben.pfx</schluessel>
+      <suffix>XKM</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>21</index>
+      <partnerindex>22</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>WTK_Verschluesselung</name>
+      <schluessel>Oeffentlich_KV_V09.pub</schluessel>
+      <suffix>wtk</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>22</index>
+      <partnerindex>21</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>WTK_Entschluesselung</name>
+      <schluessel>Privat_KV_V09.pfx</schluessel>
+      <suffix>wtk.XKM</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>23</index>
+      <partnerindex>24</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>VIK_Verschluesselung</name>
+      <schluessel>Oeffentlich_KV_V09.pub</schluessel>
+      <suffix>vik</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>24</index>
+      <partnerindex>23</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>VIK_Entschluesselung</name>
+      <schluessel>Privat_KV_V09.pfx</schluessel>
+      <suffix>vik.XKM</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>25</index>
+      <partnerindex>26</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>QSHGV_Verschluesselung</name>
+      <schluessel>Oeffentlich_QSHGV_V06.pub</schluessel>
+      <suffix>null</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>26</index>
+      <partnerindex>25</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>QSHGV_Entschluesselung</name>
+      <schluessel>Privat_QSHGV_V06.pfx</schluessel>
+      <suffix>XKM</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>27</index>
+      <partnerindex>28</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>QSMG_Verschluesselung</name>
+      <schluessel>Oeffentlich_QSMG_V06.pub</schluessel>
+      <suffix>null</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>28</index>
+      <partnerindex>27</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>QSMG_Entschluesselung</name>
+      <schluessel>Privat_QSMG_V06.pfx</schluessel>
+      <suffix>XKM</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>29</index>
+      <partnerindex>30</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>QSHGVK_Verschluesselung</name>
+      <schluessel>Oeffentlich_QSHGVK_V06.pub</schluessel>
+      <suffix>zip</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>30</index>
+      <partnerindex>29</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>QSHGVK_Entschluesselung</name>
+      <schluessel>Privat_QSHGVK_V06.pfx</schluessel>
+      <suffix>zip.XKM</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>31</index>
+      <partnerindex>32</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>QSKE_Verschluesselung</name>
+      <schluessel>Oeffentlich_QSKE_V06.pub</schluessel>
+      <suffix>zip</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>32</index>
+      <partnerindex>31</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>QSKE_Entschluesselung</name>
+      <schluessel>Privat_QSKE_V06.pfx</schluessel>
+      <suffix>zip.XKM</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>33</index>
+      <partnerindex>34</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>QSHLT_Verschluesselung</name>
+      <schluessel>Oeffentlich_QSHLT_V05.pub</schluessel>
+      <suffix>zip</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>34</index>
+      <partnerindex>33</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>QSHLT_Entschluesselung</name>
+      <schluessel>Privat_QSHLT_V05.pfx</schluessel>
+      <suffix>zip.XKM</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>35</index>
+      <partnerindex>36</partnerindex>
+      <typ>verschluesselung</typ>
+      <name>HDRG_Verschluesselung</name>
+      <schluessel>Oeffentlich_HDRG_V01.pub</schluessel>
+      <suffix>.con</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+   <arbeitsmodus>
+      <index>36</index>
+      <partnerindex>35</partnerindex>
+      <typ>entschluesselung</typ>
+      <name>HDRG_Entschluesselung</name>
+      <schluessel>Privat_HDRG_V01.pfx</schluessel>
+      <suffix>con.XKM</suffix>
+      <systempfad>true</systempfad>
+      <benutzermodus>false</benutzermodus>
+   </arbeitsmodus>
+
+</arbeitsmodi>

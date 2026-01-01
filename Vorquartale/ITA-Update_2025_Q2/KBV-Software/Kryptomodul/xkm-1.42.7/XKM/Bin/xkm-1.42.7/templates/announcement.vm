@@ -1,0 +1,106 @@
+Das Team Entwicklung gibt die Veröffentlichung von ${project.name} Version ${project.version} bekannt!
+
+GroupId: 	${groupId}
+ArtifactId: ${artifactId}
+Version:	${project.version}
+
+Sämtliche Dokumentation ist unter http://kbv064/mavensites/jglobal zu finden.
+
+SVN-Tag:    svn://kbv064/java2/KBVBaseLibs/tags/jglobal-2.13.0 
+  
+
+#if ($release.getActions().size() == 0)
+keine Änderungen.
+#else
+Änderungen in dieser Version:
+
+#if ($release.getActions('add').size() !=0)
+Neue Features:
+#foreach($actionItem in $release.getActions('add'))
+#set($action=$actionItem.getAction())
+#if ($actionItem.getIssue())
+#set($issue=$actionItem.getIssue())
+#else
+#set($issue="")
+#end
+#if ($actionItem.getDueTo())
+#set($dueto=$actionItem.getDueTo())
+#else
+#set($dueto="")
+#end
+o ${action} #if($!issue != "") Issue: $issue. #end#if($!dueto != "")Danke an $dueto. #end
+
+#set($issue="")
+#set($dueto="")
+#end 
+#end
+
+#if ($release.getActions('fix').size() !=0)
+gefixte Fehler:
+#foreach($actionItem in $release.getActions('fix'))
+#set($action=$actionItem.getAction())
+#if ($actionItem.getIssue())
+#set($issue=$actionItem.getIssue())
+#else
+#set($issue="")
+#end
+#if ($actionItem.getDueTo())
+#set($dueto=$actionItem.getDueTo())
+#else
+#set($dueto="")
+#end
+o ${action} #if($!issue != "") Issue: $issue. #end#if($!dueto != "")Danke an $dueto. #end
+
+#set($issue="")
+#set($dueto="")
+#end
+#end
+
+#if ($release.getActions('update').size() !=0)
+Änderungen:
+#foreach($actionItem in $release.getActions('update'))
+#set($action=$actionItem.getAction())
+#if ($actionItem.getIssue())
+#set($issue=$actionItem.getIssue())
+#else
+#set($issue="")
+#end
+#if ($actionItem.getDueTo())
+#set($dueto=$actionItem.getDueTo())
+#else
+#set($dueto="")
+#end
+o ${action} #if($!issue != "") Issue: $issue. #end#if($!dueto != "")Danke an $dueto. #end
+
+#set($issue="")
+#set($dueto="")
+#end
+#end
+
+#if ($release.getActions('remove').size() !=0)
+entfernt:
+#foreach($actionItem in $release.getActions('remove'))
+#set($action=$actionItem.getAction())
+#if ($actionItem.getIssue())
+#set($issue=$actionItem.getIssue())
+#else
+#set($issue="")
+#end
+#if ($actionItem.getDueTo())
+#set($dueto=$actionItem.getDueTo())
+#else
+#set($dueto="")
+#end
+o ${action} #if($!issue != "") Issue: $issue. #end#if($!dueto != "")Thanks to $dueto. #end
+
+#set($issue="")
+#set($dueto="")
+#end
+#end
+## End of main loop
+#end
+
+
+Have fun!
+Team Entwicklung.
+

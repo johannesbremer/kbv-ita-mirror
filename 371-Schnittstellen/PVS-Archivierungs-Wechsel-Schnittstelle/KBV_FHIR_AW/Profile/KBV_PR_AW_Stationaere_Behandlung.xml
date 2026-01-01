@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Stationaere_Behandlung" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Stationaere_Behandlung" />
+  <status value="active" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Encounter" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Encounter" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Encounter">
+      <path value="Encounter" />
+      <short value="Stationäre Behandlung" />
+      <definition value="Diese Ressource beschreibt eine stationäre Behandlung" />
+    </element>
+    <element id="Encounter.id">
+      <path value="Encounter.id" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.meta">
+      <path value="Encounter.meta" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.meta.versionId">
+      <path value="Encounter.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.meta.lastUpdated">
+      <path value="Encounter.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.meta.profile">
+      <path value="Encounter.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Stationaere_Behandlung|1.2.0" />
+    </element>
+    <element id="Encounter.text">
+      <path value="Encounter.text" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.identifier">
+      <path value="Encounter.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.status">
+      <path value="Encounter.status" />
+      <short value="finished" />
+      <definition value="Der Status dieses Profils ist immer finished." />
+      <fixedCode value="finished" />
+    </element>
+    <element id="Encounter.statusHistory">
+      <path value="Encounter.statusHistory" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.class">
+      <path value="Encounter.class" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.class.system">
+      <path value="Encounter.class.system" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.class.version">
+      <path value="Encounter.class.version" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.class.code">
+      <path value="Encounter.class.code" />
+      <min value="1" />
+      <fixedCode value="IMP" />
+    </element>
+    <element id="Encounter.class.display">
+      <path value="Encounter.class.display" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.class.userSelected">
+      <path value="Encounter.class.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.classHistory">
+      <path value="Encounter.classHistory" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.type">
+      <path value="Encounter.type" />
+      <short value="Vermittlungsart" />
+      <definition value="In diesem Element kann die Vermittlungsart dokumentiert werden. Die Vermittlungsart kategorisiert die Vermittlung des Termins über die TSS(Terminservicestelle)." />
+      <max value="1" />
+    </element>
+    <element id="Encounter.type.coding">
+      <path value="Encounter.type.coding" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.type.text">
+      <path value="Encounter.type.text" />
+      <short value="Beschreibung des stationaeren Aufenthaltes" />
+      <definition value="Beschreibung des stationaeren Aufenthaltes" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.serviceType">
+      <path value="Encounter.serviceType" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.priority">
+      <path value="Encounter.priority" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.subject">
+      <path value="Encounter.subject" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.subject.reference">
+      <path value="Encounter.subject.reference" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.subject.type">
+      <path value="Encounter.subject.type" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.subject.identifier">
+      <path value="Encounter.subject.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.subject.display">
+      <path value="Encounter.subject.display" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.episodeOfCare">
+      <path value="Encounter.episodeOfCare" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.basedOn">
+      <path value="Encounter.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.participant">
+      <path value="Encounter.participant" />
+      <max value="1" />
+    </element>
+    <element id="Encounter.participant.type">
+      <path value="Encounter.participant.type" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.participant.period">
+      <path value="Encounter.participant.period" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.participant.individual">
+      <path value="Encounter.participant.individual" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0" />
+      </type>
+    </element>
+    <element id="Encounter.participant.individual.reference">
+      <path value="Encounter.participant.individual.reference" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.participant.individual.type">
+      <path value="Encounter.participant.individual.type" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.participant.individual.identifier">
+      <path value="Encounter.participant.individual.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.participant.individual.display">
+      <path value="Encounter.participant.individual.display" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.appointment">
+      <path value="Encounter.appointment" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.period">
+      <path value="Encounter.period" />
+      <short value="Datum" />
+      <definition value="Zeitraum der Behandlung" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.period.start">
+      <path value="Encounter.period.start" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.length">
+      <path value="Encounter.length" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.reasonCode">
+      <path value="Encounter.reasonCode" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.reasonReference">
+      <path value="Encounter.reasonReference" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.diagnosis">
+      <path value="Encounter.diagnosis" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.account">
+      <path value="Encounter.account" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.location">
+      <path value="Encounter.location" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.serviceProvider">
+      <path value="Encounter.serviceProvider" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.serviceProvider.reference">
+      <path value="Encounter.serviceProvider.reference" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.serviceProvider.type">
+      <path value="Encounter.serviceProvider.type" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.serviceProvider.identifier">
+      <path value="Encounter.serviceProvider.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.serviceProvider.display">
+      <path value="Encounter.serviceProvider.display" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.partOf">
+      <path value="Encounter.partOf" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Begegnung|1.2.0" />
+      </type>
+    </element>
+    <element id="Encounter.partOf.reference">
+      <path value="Encounter.partOf.reference" />
+      <min value="1" />
+    </element>
+    <element id="Encounter.partOf.type">
+      <path value="Encounter.partOf.type" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.partOf.identifier">
+      <path value="Encounter.partOf.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Encounter.partOf.display">
+      <path value="Encounter.partOf.display" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

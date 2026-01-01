@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:ehd/sdda/001" xmlns:ehd="urn:ehd/001" targetNamespace="urn:ehd/sdda/001" elementFormDefault="qualified">
+	<!--
+	======================================================================= 
+	Schnittstelle (sdda_data)
+	=======================================================================
+	-->
+	<xs:include schemaLocation="datentypen.xsd"/>
+	<xs:element name="datenannahmestellen_liste">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="intended_recipient" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="person" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="person_name" minOccurs="0"/>
+										<xs:element ref="addr" minOccurs="0"/>
+										<xs:element ref="telecom" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="organization">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element ref="id" minOccurs="0"/>
+										<xs:element name="organization.nm" minOccurs="0">
+											<xs:complexType>
+												<xs:attribute name="V" type="xs:string" use="required"/>
+											</xs:complexType>
+										</xs:element>
+										<xs:element ref="addr"/>
+										<xs:element ref="telecom" minOccurs="0" maxOccurs="unbounded"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="local_header">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="kv_bereich_liste">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="kv_bereich" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="dmp_liste" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="dmp" maxOccurs="unbounded">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="kostentraeger_gruppe_liste" minOccurs="0">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="kostentraeger_gruppe" maxOccurs="unbounded">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="service_tmr" type="service_tmr_typ" minOccurs="0"/>
+																											</xs:sequence>
+																											<xs:attribute name="V" type="xs:string" use="required"/>
+																											<xs:attribute name="S" type="xs:string" use="required" fixed="1.2.276.0.76.5.240"/>
+																										</xs:complexType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																					<xs:attribute name="V" type="xs:string" use="required"/>
+																					<xs:attribute name="S" type="xs:string" use="required" fixed="1.2.276.0.76.5.223"/>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="kv_connect" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="service_tmr" type="service_tmr_typ" minOccurs="0"/>
+																		</xs:sequence>
+																		<xs:attribute name="V" use="required">
+																			<xs:simpleType>
+																				<xs:restriction base="xs:string">
+																					<xs:pattern value="[^@]+@[^\.@]+\..+"/>
+																				</xs:restriction>
+																			</xs:simpleType>
+																		</xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+																<xs:element name="kim_email" minOccurs="0">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="service_tmr" type="service_tmr_typ" minOccurs="0"/>
+																		</xs:sequence>
+																		<xs:attribute name="V" use="required">
+																			<xs:simpleType>
+																				<xs:restriction base="xs:string">
+																					<xs:pattern value="[^@]+@[^\.@]+\..+"/>
+																				</xs:restriction>
+																			</xs:simpleType>
+																		</xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="V" type="xs:string" use="required"/>
+															<xs:attribute name="S" type="xs:string" use="required" fixed="1.2.276.0.76.5.233"/>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

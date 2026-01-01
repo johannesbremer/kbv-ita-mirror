@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:ns2="http://www.w3.org/1999/xhtml">
+    <url value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_HM_DIAGNOSEGRUPPE"/>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:1.2.276.0.76.3.1.1.5.2.38"/>
+    </identifier>
+    <version value="1.07"/>
+    <name value="KBV_CS_SFHIR_HM_DIAGNOSEGRUPPE"/>
+    <status value="active"/>
+    <date value="2020-10-01"/>
+    <publisher value="Kassenärztliche Bundesvereinigung"/>
+    <contact>
+        <telecom>
+            <system value="url"/>
+            <value value="http://www.kbv.de"/>
+        </telecom>
+    </contact>
+    <description value="Heilmittel-Diagnosegruppe"/>
+    <copyright value="Kassenärztliche Bundesvereinigung"/>
+    <caseSensitive value="true"/>
+    <content value="complete"/>
+    <concept>
+        <code value="AT"/>
+        <display value="Störungen der Atmung"/>
+    </concept>
+    <concept>
+        <code value="CF"/>
+        <display value="Mukoviszidose (Cystische Fibrose)"/>
+    </concept>
+    <concept>
+        <code value="CS"/>
+        <display value="Chronifiziertes Schmerzsyndrom"/>
+    </concept>
+    <concept>
+        <code value="DF"/>
+        <display value="Diabetisches Fußsyndrom"/>
+    </concept>
+    <concept>
+        <code value="EN1"/>
+        <display value="ZNS-Erkrankungen (Gehirn) / Entwicklungsstörungen"/>
+    </concept>
+    <concept>
+        <code value="EN2"/>
+        <display value="ZNS-Erkrankungen (Rückenmark) / Neuromuskuläre Erkrankungen"/>
+    </concept>
+    <concept>
+        <code value="EN3"/>
+        <display value="Periphere Nervenläsionen / Muskelerkrankungen"/>
+    </concept>
+    <concept>
+        <code value="EX"/>
+        <display value="Erkrankungen der Extremitäten und des Beckens"/>
+    </concept>
+    <concept>
+        <code value="GE"/>
+        <display value="Arterielle Gefäßerkrankungen (bei konservativer Behandlung, nach interventioneller / operativer Behandlung)"/>
+    </concept>
+    <concept>
+        <code value="LY"/>
+        <display value="Lymphabflussstörungen"/>
+    </concept>
+    <concept>
+        <code value="NF"/>
+        <display value="Krankhafte Schädigung am Fuß als Folge einer sensiblen oder sensomotorischen Neuropathie (primär oder sekundär)"/>
+    </concept>
+    <concept>
+        <code value="PN"/>
+        <display value="Periphere Nervenläsionen / Muskelerkrankungen"/>
+    </concept>
+    <concept>
+        <code value="PS1"/>
+        <display value="Entwicklungs-, Verhaltens- und emotionale Störungen mit Beginn in Kindheit und Jugend"/>
+    </concept>
+    <concept>
+        <code value="PS2"/>
+        <display value="Neurotische, Belastungs-, somatoforme und Persönlichkeitsstörungen"/>
+    </concept>
+    <concept>
+        <code value="PS3"/>
+        <display value="Wahnhafte und affektive Störungen / Abhängigkeitserkrankungen"/>
+    </concept>
+    <concept>
+        <code value="PS4"/>
+        <display value="Dementielle Syndrome"/>
+    </concept>
+    <concept>
+        <code value="QF"/>
+        <display value="Krankhafte Schädigung am Fuß als Folge eines Querschnittsyndroms (komplett oder inkomplett)"/>
+    </concept>
+    <concept>
+        <code value="RE1"/>
+        <display value="Störungen des Redeflusses"/>
+    </concept>
+    <concept>
+        <code value="RE2"/>
+        <display value="Störungen des Redeflusses"/>
+    </concept>
+    <concept>
+        <code value="SAS"/>
+        <display value="Seltene angeborene Stoffwechselerkrankungen"/>
+    </concept>
+    <concept>
+        <code value="SB1"/>
+        <display value="Erkrankungen der Wirbelsäule, Gelenke und Extremitäten (mit motorisch-funktionellen Schädigungen)"/>
+    </concept>
+    <concept>
+        <code value="SB2"/>
+        <display value="Erkrankungen der Wirbelsäule, Gelenke und Extremitäten (mit motorisch-funktionellen und sensomotorisch-perzeptiven Schädigungen)"/>
+    </concept>
+    <concept>
+        <code value="SB3"/>
+        <display value="System- und Autoimmunerkrankungen mit Bindegewebe-, Muskel- und Gefäßbeteiligung (mit motorisch-funktionellen / sensomotorisch-perzeptiven Schädigungen)"/>
+    </concept>
+    <concept>
+        <code value="SC"/>
+        <display value="Krankhafte Störungen des Schluckaktes"/>
+    </concept>
+    <concept>
+        <code value="SF"/>
+        <display value="Störungen der Stimm- und Sprechfunktion"/>
+    </concept>
+    <concept>
+        <code value="SO1"/>
+        <display value="Störung der Dickdarmfunktion"/>
+    </concept>
+    <concept>
+        <code value="SO2"/>
+        <display value="Störungen der Ausscheidung (Stuhlinkontinenz, Harninkontinenz)"/>
+    </concept>
+    <concept>
+        <code value="SO3"/>
+        <display value="Schwindel unterschiedlicher Genese und Ätiologie"/>
+    </concept>
+    <concept>
+        <code value="SO4"/>
+        <display value="Sekundäre periphere trophische Störungen bei Erkrankungen"/>
+    </concept>
+    <concept>
+        <code value="SO5"/>
+        <display value="Prostatitis, Adnexitis"/>
+    </concept>
+    <concept>
+        <code value="SP1"/>
+        <display value="Störungen der Sprache vor Abschluss der Sprachentwicklung"/>
+    </concept>
+    <concept>
+        <code value="SP2"/>
+        <display value="Störungen der auditiven Wahrnehmung"/>
+    </concept>
+    <concept>
+        <code value="SP3"/>
+        <display value="Störungen der Artikulation"/>
+    </concept>
+    <concept>
+        <code value="SP4"/>
+        <display value="Störungen des Sprechens / der Sprache bei hochgradiger Schwerhörigkeit oder Taubheit"/>
+    </concept>
+    <concept>
+        <code value="SP5"/>
+        <display value="Störungen der Sprache nach Abschluss der Sprachentwicklung"/>
+    </concept>
+    <concept>
+        <code value="SP6"/>
+        <display value="Störungen der Sprechmotorik"/>
+    </concept>
+    <concept>
+        <code value="ST1"/>
+        <display value="Organisch bedingte Erkrankungen der Stimme"/>
+    </concept>
+    <concept>
+        <code value="ST2"/>
+        <display value="Funktionell bedingte Erkrankungen der Stimme"/>
+    </concept>
+    <concept>
+        <code value="ST3"/>
+        <display value="Psychogene Aphonie"/>
+    </concept>
+    <concept>
+        <code value="ST4"/>
+        <display value="Psychogene Dysphonie"/>
+    </concept>
+    <concept>
+        <code value="WS"/>
+        <display value="Wirbelsäulenerkrankungen"/>
+    </concept>
+    <concept>
+        <code value="ZN"/>
+        <display value="ZNS-Erkrankungen einschließlich des Rückenmarks / Neuromuskuläre Erkrankungen"/>
+    </concept>
+</CodeSystem>

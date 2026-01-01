@@ -1,0 +1,23 @@
+Beschreibung "Schema-QS Holmium-Laser-Therapie" 
+Version 1.00, 01.04.2014
+**************************************************************************
+
+Alle Komponenten des Pakets sind separat versioniert. Es können keine 
+Schlussfolgerungen aus den Versionsnummern des Pakets und der Komponenten 
+untereinander gezogen werden. Die Versionsnummer der Schnittstelle muss 
+auch nicht identisch mit der Versionsnummer der Schnittstellenbeschreibung 
+sein.
+
+
+2. Dokumente und Software
+*************************
+
+- Schnittstellenbeschreibung QS Holmium-Laser-Therapie (Version 1.00, Stand: 01.04.2014)
+- Schnittstellenbeschreibung eHeader (Version 2.10, Stand: 10.08.2012)
+- Schemata (Version 1.00 02.04.2014)
+- BSP-Datei
+
+Änderungen zur Vorversion
+*********************************************
+- keine
+

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/ValueSet/KBV_VS_AW_Vermittlungsart"/>
+<version value="1.2.0" />
+<name value="KBV_VS_AW_Vermittlungsart"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Codes für die Vermittlung via TSS"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<compose>
+<include>
+<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_TSVG_Vermittlungsart"/>
+<concept>
+<code value="1"/>
+<display value="TSS-Terminfall"/>
+</concept>
+<concept>
+<code value="2"/>
+<display value="TSS-Akutfall"/>
+</concept>
+<concept>
+<code value="3"/>
+<display value="HA-Vermittlungsfall"/>
+</concept>
+</include>
+</compose>
+</ValueSet>

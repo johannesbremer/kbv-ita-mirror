@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Mit XMLSpy v2014 rel. 2 (http://www.altova.com) von Kassenärztliche Bundesvereinigung (Kassenärztliche Bundesvereinigung) bearbeitet -->
+<xs:schema xmlns:ehd="urn:ehd/001" xmlns="urn:ehd/qszervixzyto/001" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:ehd/qszervixzyto/001" elementFormDefault="qualified">
+	<xs:import namespace="urn:ehd/001" schemaLocation="datentypen_V1.40.xsd"/>
+	<!-- Schema -->
+	<!-- ======================================================================= 
+	qszervixzyto-Schnittstelle
+	======================================================================= -->
+	<xs:element name="qszervixzyto_bericht">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="anzahl_praeparate" type="v_int_typ"/>
+				<xs:element name="anzahl_nv_praeparate" type="v_int_typ"/>
+				<xs:element name="anzahl_frauen" type="v_int_typ"/>
+				<xs:element name="gr1" type="gruppe_typ"/>
+				<xs:element name="gr2a" type="gruppe_typ"/>
+				<xs:element name="gr2p" type="gruppe_typ"/>
+				<xs:element name="gr2g" type="gruppe_typ"/>
+				<xs:element name="gr2e" type="gruppe_typ"/>
+				<xs:element name="gr3p" type="gruppe_typ"/>
+				<xs:element name="gr3g" type="gruppe_typ"/>
+				<xs:element name="gr3e" type="gruppe_typ"/>
+				<xs:element name="gr3x" type="gruppe_typ"/>
+				<xs:element name="gr3D1" type="gruppe_typ"/>
+				<xs:element name="gr3D2" type="gruppe_typ"/>
+				<xs:element name="gr4ap" type="gruppe_typ"/>
+				<xs:element name="gr4ag" type="gruppe_typ"/>
+				<xs:element name="gr4bp" type="gruppe_typ"/>
+				<xs:element name="gr4bg" type="gruppe_typ"/>
+				<xs:element name="gr5p" type="gruppe_typ"/>
+				<xs:element name="gr5g" type="gruppe_typ"/>
+				<xs:element name="gr5e" type="gruppe_typ"/>
+				<xs:element name="gr5x" type="gruppe_typ"/>
+				<xs:element name="praxisbesonderheit" type="ehd:v_string_typ" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="gruppe_typ">
+		<xs:sequence>
+			<xs:element name="anzahl_frauen" type="v_int_typ"/>
+			<xs:element name="anzahl_khca" type="v_int_typ"/>
+			<xs:element name="anzahl_cin1" type="v_int_typ"/>
+			<xs:element name="anzahl_cin2" type="v_int_typ"/>
+			<xs:element name="anzahl_cin3ca" type="v_int_typ"/>
+			<xs:element name="anzahl_adenocais" type="v_int_typ"/>
+			<xs:element name="anzahl_plattenepithelca" type="v_int_typ"/>
+			<xs:element name="anzahl_adenocaceut" type="v_int_typ"/>
+			<xs:element name="anzahl_endometriumca" type="v_int_typ"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="v_int_typ">
+		<xs:attribute name="V" type="xs:integer" use="required"/>
+	</xs:complexType>
+</xs:schema>

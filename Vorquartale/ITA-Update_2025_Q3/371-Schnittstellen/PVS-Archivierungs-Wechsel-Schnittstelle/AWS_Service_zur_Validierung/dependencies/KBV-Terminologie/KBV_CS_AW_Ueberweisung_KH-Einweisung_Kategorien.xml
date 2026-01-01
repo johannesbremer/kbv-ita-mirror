@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+<url value= "https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Ueberweisung_KH-Einweisung_Kategorien"/>
+<version value="1.2.0" />
+<name value="KBV_CS_AW_Ueberweisung_KH-Einweisung_Kategorien"/>
+<status value="active"/>
+<experimental value="false"/>
+<date value="2018-10-06"/>
+<publisher value="Kassenaerztliche Bundesvereinigung"/>
+<contact>
+<telecom>
+<system value="url"/>
+<value value="http://www.kbv.de"/>
+</telecom>
+</contact>
+<description value="Diskriminatoren in der Ueberweisung/KH-Einweisung"/>
+<copyright value="Kassenaerztliche Bundesvereinigung"/>
+<caseSensitive value="true"/>
+<content value="complete"/>
+<concept>
+<code value="Diagnose_Verdachtsdiagnose"/>
+<display value="Diagnose Verdachtsdiagnose"/>
+</concept>
+<concept>
+<code value="Befund_Medikation"/>
+<display value="Befund Medikation"/>
+</concept>
+<concept>
+<code value="Untersuchungsergebnisse"/>
+<display value="Untersuchungsergebnisse"/>
+</concept>
+<concept>
+<code value="Ausnahmeindikation"/>
+<display value="Ausnahmeindikation"/>
+</concept>
+<concept>
+<code value="Bisherige_Massnahmen"/>
+<display value="Bisherige Massnahmen"/>
+</concept>
+<concept>
+<code value="OP-Datum"/>
+<display value="OP-Datum"/>
+</concept>
+<concept>
+<code value="Auftrag_Fragestellung"/>
+<display value="Auftrag Fragestellung"/>
+</concept>
+</CodeSystem>

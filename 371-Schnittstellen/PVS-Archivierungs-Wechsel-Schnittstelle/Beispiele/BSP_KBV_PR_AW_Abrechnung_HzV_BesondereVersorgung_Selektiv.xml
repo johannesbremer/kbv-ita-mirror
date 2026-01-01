@@ -1,0 +1,207 @@
+<Claim xmlns="http://hl7.org/fhir">
+	<id value="3194"/>
+	<meta>
+		<versionId value="1" />
+		<lastUpdated value="2020-09-23T15:50:00+00:00" />
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Abrechnung_HzV_BesondereVersorgung_Selektiv|1.2.0"/>
+	</meta>
+	<text>
+		<status value="extensions"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">
+			TBD
+		</div>
+	</text>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Abrechnung_Mahnung">
+		<extension url="mahndatum">
+			<valueDateTime value="2018-05-15"/>
+		</extension>
+		<extension url="mahnstufe">
+			<valueCodeableConcept>
+				<coding>
+					<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Mahnung"/>
+					<code value="1"/>
+				</coding>
+			</valueCodeableConcept>
+		</extension>
+		<extension url="mahngebuehr">
+			<valueMoney>
+				<value value="0.00"/>
+				<currency value="EUR"/>
+			</valueMoney>
+		</extension>
+		<extension url="zahldatum">
+			<valueDateTime value="2018-05-25"/>
+		</extension>
+		<extension url="zahlbetrag">
+			<valueMoney>
+				<value value="0.45"/>
+				<currency value="EUR"/>
+			</valueMoney>
+		</extension>
+	</extension>
+	<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_AW_Abrechnung_Mahnung">
+		<extension url="mahndatum">
+			<valueDateTime value="2018-07-29"/>
+		</extension>
+		<extension url="mahnstufe">
+			<valueCodeableConcept>
+				<coding>
+					<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Mahnung"/>
+					<code value="2"/>
+				</coding>
+			</valueCodeableConcept>
+		</extension>
+		<extension url="mahngebuehr">
+			<valueMoney>
+				<value value="2.00"/>
+				<currency value="EUR"/>
+			</valueMoney>
+		</extension>
+		<extension url="zahldatum">
+			<valueDateTime value="2018-08-05"/>
+		</extension>
+		<extension url="zahlbetrag">
+			<valueMoney>
+				<value value="4.45"/>
+				<currency value="EUR"/>
+			</valueMoney>
+		</extension>
+	</extension>
+	<identifier>
+		<type>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Identifiertyp"/>
+				<code value="Rechnungsnummer"/>
+			</coding>
+		</type>
+		<value value="003569898"/>
+	</identifier>
+	<status value="active"/>
+	<type>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/claim-type"/>
+			<code value="professional"/>
+		</coding>
+	</type>
+	<subType>
+		<coding>
+			<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Art"/>
+			<code value="HzV_BesondereVersorgung_Selektiv"/>
+		</coding>
+	</subType>
+	<use value="claim"/>
+	<patient>
+		<reference value="Patient/3181"/>
+	</patient>
+	<created value="2018-03-31"/>
+	<insurer>
+		<reference value="Organization/3157"/>
+	</insurer>
+	<provider>
+		<reference value="Organization/3155"/>
+	</provider>
+	<priority>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/processpriority"/>
+			<code value="normal"/> 
+		</coding>
+	</priority>
+	<related>
+		<claim>
+			<reference value="Claim/3197"/>
+		</claim>
+	</related>
+	<referral>
+		<reference value="ServiceRequest/3218"/>
+	</referral>
+	<supportingInfo>
+		<sequence value="1"/>
+		<category>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Information_Kategorie"/>
+				<code value="Korrekturzaehler"/>
+			</coding>
+		</category>
+		<valueQuantity>
+			<value value="1"/>
+			<unit value="1"/>
+			<system value="http://unitsofmeasure.org"/>
+			<code value="1"/>
+		</valueQuantity>
+	</supportingInfo>
+	<supportingInfo>
+		<sequence value="2"/>
+		<category>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Information_Kategorie"/>
+				<code value="Rechnungsinformationen"/>
+			</coding>
+		</category>
+		<valueString value="Weitere Informationen zur Rechnung wurden Ihnen am 31.03.2018 telefonisch mitgeteilt."/>
+	</supportingInfo>
+	<supportingInfo>
+		<sequence value="3"/>
+		<category>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Information_Kategorie"/>
+				<code value="Ringversuchszertifikat"/>
+			</coding>
+		</category>
+		<valueReference>
+			<reference value="Device/3178"/>
+		</valueReference>
+	</supportingInfo>
+	<supportingInfo>
+		<sequence value="4"/>
+		<category>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Information_Kategorie"/>
+				<code value="Ringversuchszertifikat"/>
+			</coding>
+		</category>
+		<valueReference>
+			<reference value="Device/3179"/>
+		</valueReference>
+	</supportingInfo>
+	<supportingInfo>
+		<sequence value="5"/>
+		<category>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Information_Kategorie"/>
+				<code value="Leistungsgenehmigung"/>
+			</coding>
+		</category>
+		<valueReference>
+			<reference value="CoverageEligibilityResponse/3214"/>
+		</valueReference>
+	</supportingInfo>
+	<supportingInfo>
+		<sequence value="6"/>
+		<category>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Information_Kategorie"/>
+				<code value="Leistungsgenehmigung"/>
+			</coding>
+		</category>
+		<valueReference>
+			<reference value="CoverageEligibilityResponse/3215"/>
+		</valueReference>
+	</supportingInfo>
+	<supportingInfo>
+		<sequence value="7"/>
+		<category>
+			<coding>
+				<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Abrechnung_Information_Kategorie"/>
+				<code value="Vertragskennzeichen"/>
+			</coding>
+		</category>
+		<valueString value="AB1" />
+	</supportingInfo>	
+	<insurance>
+		<sequence value="1"/>
+		<focal value="true"/>
+		<coverage>
+			<reference value="Coverage/3225"/>
+		</coverage>
+	</insurance>
+</Claim>

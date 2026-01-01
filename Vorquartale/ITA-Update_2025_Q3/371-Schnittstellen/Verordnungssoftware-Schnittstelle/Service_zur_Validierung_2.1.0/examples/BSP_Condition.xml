@@ -1,0 +1,52 @@
+<Condition xmlns="http://hl7.org/fhir">
+	<id value="50"/>
+	<meta>
+		<versionId value="1"/>
+		<lastUpdated value="2022-09-08T09:20:00Z"/>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Condition|2.1.0"/>
+	</meta>
+<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_VoS_isPermanent">
+	<valueBoolean value="true"/>
+</extension>
+	<clinicalStatus>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+			<version value="0.5.0"/>
+			<code value="active"/>
+			<display value="Active"/>
+		</coding>
+	</clinicalStatus>
+	<verificationStatus>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+			<version value="0.5.0"/>
+			<code value="confirmed"/>
+			<display value="Confirmed"/>
+		</coding>
+	</verificationStatus>
+	<code>
+		<coding>
+			<extension url="http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit">
+				<valueCoding>
+					<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT"/>
+					<code value="G"/>
+					<display value="gesicherte Diagnose"/>
+				</valueCoding>
+			</extension>
+			<extension url="http://fhir.de/StructureDefinition/seitenlokalisation">
+				<valueCoding>
+					<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION"/>
+					<code value="L"/>
+					<display value="links"/>
+				</valueCoding>
+			</extension>
+			<system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm"/>
+			<version value="2022"/>
+			<code value="N18.80"/>
+			<display value="Einseitige chronische Nierenfunktionsstörung"/>
+		</coding>
+	</code>
+	<subject>
+		<reference value="Patient/100"/>
+	</subject>
+</Condition> 

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<CodeSystem xmlns="http://hl7.org/fhir" xmlns:ns2="http://www.w3.org/1999/xhtml">
+    <url value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KTS_WOP"/>
+    <identifier>
+        <system value="urn:ietf:rfc:3986"/>
+        <value value="urn:oid:1.2.276.0.76.5.326"/>
+    </identifier>
+    <version value="1.00"/>
+    <name value="KBV_CS_SFHIR_KTS_WOP"/>
+    <status value="active"/>
+    <date value="2002-01-01"/>
+    <publisher value="Kassenärztliche Bundesvereinigung"/>
+    <contact>
+        <telecom>
+            <system value="url"/>
+            <value value="http://www.kbv.de"/>
+        </telecom>
+    </contact>
+    <description value="Prinzipien hinsichtlich der Zuständigkeit von Kostenträgern für die Vergütung ärztlicher Leistungen gegenüber ihren Patienten."/>
+    <copyright value="Kassenärztliche Bundesvereinigung"/>
+    <caseSensitive value="true"/>
+    <content value="complete"/>
+    <concept>
+        <code value="0"/>
+        <display value="nicht zutreffend"/>
+    </concept>
+    <concept>
+        <code value="1"/>
+        <display value="Kassensitzprinzip"/>
+    </concept>
+    <concept>
+        <code value="2"/>
+        <display value="WOP - alte Regelung"/>
+    </concept>
+    <concept>
+        <code value="3"/>
+        <display value="Wohnortprinzip (1/2002)"/>
+    </concept>
+</CodeSystem>

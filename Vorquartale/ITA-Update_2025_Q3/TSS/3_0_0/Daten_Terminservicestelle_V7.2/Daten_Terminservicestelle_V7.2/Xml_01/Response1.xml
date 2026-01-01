@@ -1,0 +1,172 @@
+<Bundle xmlns="http://hl7.org/fhir">	
+	<meta>
+		<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_116117_TERMINSERVICE_TVS_TERMINSYNCHRONISATION_Bundle_Searchset|1.0.0"/>
+	</meta>
+	<type value="searchset"/>
+	<timestamp value="2025-09-06T05:51:32+02:00"/>
+	<!--der Zeitstempel, an dem das Bundle erzeugt wurde -->
+	<total value="1"/>
+	<link>
+		<relation value="self"/>
+		<url value="https://fhir.kbv.de/Appointment?based-on:identifier=https://fhir.kbv.de/NamingSystem/KBV_NS_116117_TERMINSERVICE_Vermittlungscode|XN6PF4HPZ5KX&amp;_count=10"/>
+	</link>
+	<entry>
+		<fullUrl value="urn:uuid:0286855c-b49c-48b4-9775-58b6cb031aed"/>
+		<resource>
+			<Appointment>
+				<id value="0286855c-b49c-48b4-9775-58b6cb031aed"/>
+				<meta>
+					<versionId value="1"/>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_116117_TERMINSERVICE_TVS_TERMINSYNCHRONISATION_Appointment|1.0.0"/>
+				</meta>
+				<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_116117_TERMINSERVICE_TVS_TERMINSYNCHRONISATION_Appointment_Booked_By">
+					<valueCodeableConcept>
+						<coding>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_116117_TERMINSERVICE_TVS_TERMINSYNCHRONISATION_Roles"/>
+							<version value="0.3.0"/>
+							<code value="TSS"/>
+							<display value="Terminservicestellen"/>
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+				<status value="booked"/>
+				<serviceType>
+					<coding>
+						<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_BAS_FACHGEBIET_GROB"/>
+						<code value="09"/>
+						<display value="Kinderarzt / Kinderärztin"/>
+					</coding>
+				</serviceType>
+				<priority>
+					<extension url="https://fhir.kbv.de/StructureDefinition/KBV_EX_116117_TERMINSERVICE_TVS_TERMINSYNCHRONISATION_Urgency">
+						<valueCoding>
+							<system value="http://snomed.info/sct"/>
+							<code value="103391001"/>
+							<display value="Urgent"/>
+						</valueCoding>
+					</extension>
+				</priority>
+				<start value="2025-09-10T10:00:00+02:00"/>
+				<end value="2025-09-10T10:20:00+02:00"/>
+				<created value="2025-09-06T10:30:00+02:00"/>
+				<basedOn>
+					<identifier>
+						<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_116117_TERMINSERVICE_Vermittlungscode"/>
+						<value value="XN6P-F4HP-Z5KX"/>
+					</identifier>
+				</basedOn>
+				<participant>
+					<actor>
+						<reference value="urn:uuid:55ddacce-3257-44d4-a9dd-a04fb7247723"/>
+						<type value="PractitionerRole"/>
+					</actor>
+					<status value="accepted"/>
+				</participant>
+				<participant>
+					<actor>
+						<reference value="urn:uuid:529c2a3a-7f3c-4d17-9f15-595b29b4cf9c"/>
+						<type value="Patient"/>
+					</actor>
+					<status value="accepted"/>
+				</participant>
+			</Appointment>
+		</resource>
+		<search>
+			<mode value="match"/>
+		</search>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:55ddacce-3257-44d4-a9dd-a04fb7247723"/>
+		<resource>
+			<PractitionerRole>
+				<id value="55ddacce-3257-44d4-a9dd-a04fb7247723" />
+				<meta>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_116117_TERMINSERVICE_TVS_TERMINSYNCHRONISATION_PractitionerRole|1.0.0"/>
+				</meta>
+				<organization>
+					<identifier>
+						<system value="https://fhir.kbv.de/NamingSystem/KBV_NS_Base_BSNR"/>
+						<value value="241234601"/>
+					</identifier>
+				</organization>
+			</PractitionerRole>
+		</resource>
+		<search>
+			<mode value="include"/>
+		</search>
+	</entry>
+	<entry>
+		<fullUrl value="urn:uuid:529c2a3a-7f3c-4d17-9f15-595b29b4cf9c"/>
+		<resource>
+			<Patient>
+				<id value="529c2a3a-7f3c-4d17-9f15-595b29b4cf9c" />
+				<meta>
+					<profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_116117_TERMINSERVICE_TVS_TERMINSYNCHRONISATION_Patient|1.0.0"/>
+				</meta>
+				<identifier>
+					<type>
+						<coding>
+							<system value="https://fhir.kbv.de/CodeSystem/KBV_CS_Base_identifier_type"/>
+							<version value="1.5.0"/>
+							<code value="kvk"/>
+							<display value="Krankenversichertenkarte"/>
+						</coding>
+					</type>
+					<system value="http://fhir.de/sid/gkv/kvk-versichertennummer"/>
+					<value value="5040464113"/>
+				</identifier>
+				<name>
+					<use value="official"/>
+					<family value="Schaumberg">
+						<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+							<valueString value="von"/>
+						</extension>
+					</family>
+					<given value="Karl-Frieder"/>
+					<prefix value="Prof. Dr.">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
+							<valueCode value="AC"/>
+						</extension>
+					</prefix>
+				</name>
+				<telecom>
+					<system value="phone"/>
+					<value value="03040052077"/>
+				</telecom>
+				<telecom>
+					<system value="email"/>
+					<value value="KF.Schaumberg@gmail.com"/>
+				</telecom>
+				<gender value="male"/>
+				<birthDate value="1964-04-04"/>
+				<address>
+					<type value="both"/>
+					<line value="Siegburger Str. 155">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+							<valueString value="Siegburger Str."/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+							<valueString value="155"/>
+						</extension>
+					</line>
+					<city value="Köln"/>
+					<postalCode value="51105"/>
+					<country value="D"/>
+				</address>
+				<address>
+					<type value="postal"/>
+					<line value="51105">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox">
+							<valueString value="51105"/>
+						</extension>
+					</line>
+					<city value="Köln"/>
+					<country value="D"/>
+				</address>
+			</Patient>
+		</resource>
+		<search>
+			<mode value="include"/>
+		</search>
+	</entry>
+</Bundle>

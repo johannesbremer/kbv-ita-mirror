@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Bundle_Adressbuch" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Bundle_Adressbuch" />
+  <status value="active" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="cda" />
+    <uri value="http://hl7.org/v3/cda" />
+    <name value="CDA (R2)" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Bundle" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Bundle">
+      <path value="Bundle" />
+      <short value="Bundle_Patientenakte" />
+      <definition value="Das Bundle fasst alle Inhalte des Adressbuches zusammen. In dem Element entry wurde nur die erste Ebene der Ressourcen angegeben, d.h. es wurden nur die Ressourcen explizit aufgeführt, die auf andere Ressourcen verweisen und auf die, im Sinne dieses Bundles, selbst nicht referenziert werden. Alle Ressourcen, die von Diesen und ihren Kindern referenziert werden, müssen ebenfalls integriert werden. Folgende Ressourcen sollen enthalten sein:
+	  https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Person|1.2.0
+https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Behandelnder|1.2.0
+https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0
+https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation|1.2.0
+https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette|1.2.0
+https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Provenienz|1.2.0
+https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Mitarbeiter|1.2.0" />
+      <constraint>
+        <key value="Allowed2" />
+        <severity value="error" />
+        <human value="Folgende Ressourcen dürfen vorhanden sein" />
+        <expression value="entry.where(resource.meta.profile.startsWith('https://fhir.kbv.de/StructureDefinition/KBV_PR_AW').not()).count()=0" />
+        <source value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Bundle_Adressbuch" />
+      </constraint>	  
+    </element>
+    <element id="Bundle.id">
+      <path value="Bundle.id" />
+      <min value="1" />
+    </element>
+    <element id="Bundle.meta">
+      <path value="Bundle.meta" />
+      <min value="1" />
+    </element>
+    <element id="Bundle.meta.versionId">
+      <path value="Bundle.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="Bundle.meta.lastUpdated">
+      <path value="Bundle.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="Bundle.meta.profile">
+      <path value="Bundle.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Bundle_Adressbuch|1.2.0" />
+    </element>
+    <element id="Bundle.type">
+      <path value="Bundle.type" />
+      <short value="history" />
+      <definition value="Der Typ der Ressource wird als history-Bundle definiert." />
+      <fixedCode value="history" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.total">
+      <path value="Bundle.total" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.link">
+      <path value="Bundle.link" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.entry">
+      <path value="Bundle.entry" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry.fullUrl">
+      <path value="Bundle.entry.fullUrl" />
+      <min value="1" />
+    </element>
+    <element id="Bundle.entry.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+    </element>
+    <element id="Bundle.entry.request">
+      <path value="Bundle.entry.request" />
+      <min value="1" />
+    </element>
+    <element id="Bundle.entry.request.method">
+      <path value="Bundle.entry.request.method" />
+      <fixedCode value="PUT" />
+    </element>
+	<element id="Bundle.signature.who">
+      <path value="Bundle.signature.who" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Mitarbeiter|1.2.0" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_BehandelnderFunktion|1.2.0" />
+      </type>
+    </element>
+    <element id="Bundle.signature.who.reference">
+      <path value="Bundle.signature.who.reference" />
+      <min value="1" />
+    </element>
+    <element id="Bundle.signature.who.type">
+      <path value="Bundle.signature.who.type" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.signature.who.identifier">
+      <path value="Bundle.signature.who.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.signature.who.display">
+      <path value="Bundle.signature.who.display" />
+      <max value="0" />
+    </element>
+    <element id="Bundle.signature.onBehalfOf">
+      <path value="Bundle.signature.onBehalfOf" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Betriebsstaette|1.2.0" />
+      </type>
+    </element>
+    <element id="Bundle.signature.sigFormat">
+      <path value="Bundle.signature.sigFormat" />
+      <min value="1" />
+    </element>
+    <element id="Bundle.signature.data">
+      <path value="Bundle.signature.data" />
+      <min value="1" />
+    </element>
+  </differential>
+</StructureDefinition>

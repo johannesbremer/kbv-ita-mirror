@@ -1,0 +1,396 @@
+SDEBM-Schnittstellen-Paket 01.60
+Stand: 15.08.2025, Schnittstellenreferenz 01.60
+
+================================================
+
+1.  Inhaltsverzeichnis
+2.  Inhaltliche Änderungen
+3.  Schnittstellen-Version
+4.  Mängel
+5.  Hinweise
+6.  Sonstiges
+7.  Kontakt
+
+1.  Inhaltsverzeichnis
+=================================================
+
+    Liesmich.txt
+
+-------------------------------
+Dokumentation:
+    KBV_ITA_VGEX_Datensatz_SDEBM.pdf
+    S_BAR2_WBO_V1.18.pdf
+    S_EBM_ABR_ARZTPRAXIS_V1.00.pdf
+    S_EBM_ARZTGRUPPE_V1.03.pdf
+    S_EBM_BEZUGSRAUM_V1.11.pdf
+    S_EBM_GOP_ART_V1.01.pdf
+    S_EBM_LEISTUNGSGRUPPE_V1.01.pdf
+    S_EBM_OW_VERSORGUNGSGEBIET_V1.00.pdf
+    S_EBM_PROFILZEITART_V1.01.pdf
+    S_EBM_SCHNITTNAHTZEIT_V1.02.pdf
+    S_EBM_ZUSATZANGABE_V1.12.pdf
+    S_GOS_KV_MS_ARZTGRUPPE_V1.02.pdf
+    S_GOS_KV_MS_LUGRUPPE_V1.01.pdf
+    S_GOS_KV_MS_VBEREICH_V1.02.pdf
+    S_KBV_BEZIRKSSTELLE_V1.10.pdf
+    S_KBV_GEBUEHRENORDNUNG_V1.02.pdf
+    S_KBV_GESCHLECHT_V1.02.pdf
+    S_KBV_KV_V1.06.pdf
+    S_KBV_LEISTUNGSERBRINGART_V1.04.pdf
+    S_KBV_SCHEINART_V1.02.pdf
+    S_KBV_VALUTAEINHEIT_V1.00.pdf
+    S_KBV_VERSORGUNGSBEREICH_V1.01.pdf
+    S_KBV_ZEITEINHEIT_V1.00.pdf
+    S_KTS_KTABRECHNUNGSBEREICH_V1.00.pdf
+    S_KTS_KTGRUPPE_V1.02.pdf
+    S_VDX_KONTENART_V1.21.pdf
+    S_VDX_SCHEINUNTERGRUPPE_V1.01.pdf
+    S_VDX_VERTRAGSART_V1.22.pdf
+
+-------------------------------
+keytabs:                    Version  Erläuterung
+    S_BAR2_WBO                 1.18  Arztgruppen nach Bundesarztregister
+    S_EBM_ABR_ARZTPRAXIS       1.00  Definiert die Verwendung von GOP hinsichtlich ihrer Abrechnungsfähigkeit in der Arztpraxis.
+    S_EBM_ARZTGRUPPE           1.03  Arztgruppen mit interner EBM-Codierung
+    S_EBM_BEZUGSRAUM           1.11  Bezugs(zeit-)räume im Sinne des EBM
+    S_EBM_GOP_ART              1.01  Kategorisierung in GOP-Arten für die KBV-interne Verarbeitung
+    S_EBM_LEISTUNGSGRUPPE      1.01  Leistungsgruppen zur Wirtschaftlichkeitsprüfung
+    S_EBM_OW_VERSORGUNGSGEBIET 1.00  Bewertungsabhängige Versorgungsgebiete
+    S_EBM_PROFILZEITART        1.01  Zeitprofilarten für die Prüfzeiten
+    S_EBM_SCHNITTNAHTZEIT      1.02  Codierung der Schnitt-Naht-Zeiten
+    S_EBM_ZUSATZANGABE         1.12  Zusatzangaben als Abrechnungsbegründungen von Ziffern
+    S_GOS_KV_MS_ARZTGRUPPE     1.02  KV-spezifische Schlüsseltabelle zu Arztgruppen zur Mengensteuerung (Verwendung in der kv-spezifischen GOStamm)
+    S_GOS_KV_MS_LUGRUPPE       1.01  KV-spezifische Schlüsseltabelle zu Leistungsuntergruppen zur Mengensteuerung (Verwendung in der kv-spezifischen GOStamm)
+    S_GOS_KV_MS_VBEREICH       1.02  KV-spezifische Schlüsseltabelle zu Versorgungsbereichen zur Mengensteuerung (Verwendung in kv-spezifischer GOStamm)
+    S_KBV_BEZIRKSSTELLE        1.10  Bezirksstellen der kassenärztl. Vereinigungen
+    S_KBV_GEBUEHRENORDNUNG     1.02  Gebührenordnungen des EBM
+    S_KBV_GESCHLECHT           1.02  Geschlecht
+    S_KBV_KV                   1.06  Landesgeschäftsstellen der kassenärztl. Vereinigungen
+    S_KBV_LEISTUNGSERBRINGART  1.04  Art der Leistungserbringung
+    S_KBV_SCHEINART            1.02  Scheinarten und ihre Scheinuntergruppen
+    S_KBV_VALUTAEINHEIT        1.00  Valutaeinheit zur Bewertung von Leistungen
+    S_KBV_VERSORGUNGSBEREICH   1.01  Codierung der ärztl. Versorgungsbereiche
+    S_KBV_ZEITEINHEIT          1.00  Codierung für die Einheiten der Zeit
+    S_KTS_KTABRECHNUNGSBEREICH 1.00  Codierung der Kostenträgerabrechnungsbereiche
+    S_KTS_KTGRUPPE             1.02  Codierung der Kostenträgergruppen
+    S_VDX_KONTENART            1.21  Codierung der Kontenarten (kv-intern)
+    S_VDX_SCHEINUNTERGRUPPE    1.01  Schlüsseltabelle für die Scheinuntergruppen
+    S_VDX_VERTRAGSART          1.22  Codierung der Vertragsarten (kv-intern)
+
+-------------------------------
+Schema:
+    datentypen_V1.40.xsd Datentypenbibliothek (Version 1.40 ehd)
+    ehd_header_V1.40.xsd Schema (Version 1.40 ehd)
+    ehd_root_V1.40.xsd  Schema (Version 1.40 ehd)
+    go_datentypen_V1.60.xsd Schema (Version 1.60 SDEBM, Referenz Version 1.40 ehd)
+    go_body_V1.60.xsd  Schema (Version 1.60 SDEBM, Referenz Version 1.40 ehd)
+    go_header_V1.60.xsd  Schema (Version 1.60 SDEBM,  Referenz Version 1.40 ehd)
+    go_root_V1.60.xsd  Root-Schema
+    keytabs_V1.40.xsd  Schema für die Schlüsseltabellen (Version 1.40 ehd)
+    
+-------------------------------
+Umsetzungskonzepte:
+    Auszug zur Umsetzung der Regelung des Vertrages nach §115b SGB V.pdf - Konzept zur Umsetzung des AOP-Vertrages  
+    Hausarzt_EBM_V1.40.pdf   Abbildung der Besonderheiten des Hausarzt-EBM über die EBM-Schnittstelle (08.08.2013)
+
+2.  Inhaltliche Änderungen
+================================================
+15.08.2025
+   - Aktualisierung der Schlüsseltabelle S_EBM_LEISTUNGSGRUPPE in der Version V1.01
+
+15.05.2025
+   - Aktualisierung der Schlüsseltabelle S_EBM_ZUSATZANGABE in der Version V1.12
+   
+16.01.2025
+   - Aktualisierung der Schlüsseltabelle S_EBM_ZUSATZANGABE in der Version V1.11
+
+15.11.2024
+   - Aktualisierung der Schlüsseltabelle S_EBM_ZUSATZANGABE in der Version V1.10
+   - Aktualisierung der Schlüsseltabelle S_VDX_KONTENART in der Version V1.21
+   - Aktualisierung der Schlüsseltabelle S_VDX_VERTRAGSART in der Version V1.22
+
+20.02.2024
+   - Aktualisierung der Schlüsseltabelle S_KBV_BEZIRKSSTELLE in der Version V1.10
+   - Aktualisierung der Schlüsseltabelle S_BAR2_WBO in der Version V1.18
+   - Aktualisierung der Schlüsseltabelle S_EBM_BEZUGSRAUM in der Version V1.11
+   - Aktualisierung der Schlüsseltabelle S_VDX_KONTENART in der Version V1.18
+   - Aktualisierung der Schlüsseltabelle S_VDX_VERTRAGSART in der Version V1.21
+   - Entfernung der Schlüsseltabelle S_EBM_ARZTGRUPPE
+
+15.02.2023
+   - Aktualisierung der Schlüsseltabelle S_KBV_BEZIRKSSTELLE in der Version V1.09
+   
+14.11.2022
+   - Aktualisierung der Schlüsseltabelle S_BAR2_WBO in der Version V1.17
+   - Aktualisierung der Schlüsseltabelle S_VDX_VERTRAGSART in der Version V1.20
+   - Anpassung an der KBV_ITA_VGEX_Datensatz_SDEBM
+   
+22.11.2021
+   - Aufnahme der Schlüsseltabelle S_EBM_ARZTGRUPPE in der Version 1.03 
+
+15.11.2021
+   - Aktualisierung der Schlüsseltabelle S_BAR2_WBO in der Version 1.16 
+
+27.07.2021
+   - Redaktionelle Anpassung an der Schnittstellenbeschreibung
+
+18.02.2021
+   - Fehlerkorrektur der Schlüsseltabelle S_EBM_ABR_ARZTPRAXIS  in der Version 1.00 (keine inhaltliche Änderung)
+
+15.02.2021
+   - Aktualisierung der Schlüsseltabelle S_VDX_VERTRAGSART in der Version 1.19
+   - Aktualisierung der Schlüsseltabelle S_EBM_ZUSATZANGABE in der Version 1.09
+   
+14.08.2020
+   - Aktualisierung der Schlüsseltabelle S_EBM_BEZUGSRAUM in der Version 1.10
+
+11.02.2020
+   - Streichung der Schlüsseltabelle S_FAO_ICPM, dafür Überführung in die SDOPS.
+
+14.08.2019
+   - Aktualisierung der Schlüsseltabelle S_EBM_ZUSATZANGABE in der Version 1.07
+   - Aktualisierung der Schlüsseltabelle S_KBV_GESCHLECHT in der Version 1.02
+
+01.08.2019
+   - Aktualisierung der Schlüsseltabelle S_EBM_BEZUGSRAUM in der Version 1.08
+
+13.05.2019
+   - Aktualisierung der Schlüsseltabelle S_FAO_ICPM  in der Version 1.44
+   - Aktualisierung der Schlüsseltabelle S_BAR2_WBO  in der Version 1.15
+   - Aktualisierung der Schlüsseltabelle S_VDX_VERTRAGSART in der Version 1.16
+
+05.11.2018
+   - Aktualisierung der Schlüsseltabelle S_FAO_ICPM  in der Version 1.42
+
+05.11.2018
+   - Aktualisierung der Schlüsseltabelle S_VDX_VERTRAGSART in der Version 1.15
+
+14.05.2018
+   - Aktualisierung der Schlüsseltabelle S_EBM_BEZUGSRAUM in der Version 1.07
+   - Aktualisierung der Schlüsseltabelle S_FAO_ICPM  in der Version 1.40
+   - Aktualisierung der Schlüsseltabelle S_EBM_PROFILZEITART in der Version 1.01
+
+08.02.2018
+   - Aktualisierung der Schlüsseltabelle S_BAR2_WBO in der Version 1.13
+   - Aktualisierung der Schlüsseltabelle S_EBM_BEZUGSRAUM in der Version 1.06
+   - Aktualisierung der Schlüsseltabelle S_EBM_ZUSATZANGABE in der Version 1.06
+   - Aktualisierung der Schlüsseltabelle S_FAO_ICPM  in der Version 1.38
+   - Aktualisierung der Schlüsseltabelle S_KBV_BEZIRKSSTELLE  in der Version 1.08
+
+10.11.2017
+   - Aktualisierung der Schlüsseltabelle S_BAR2_WBO in der Version 1.12
+   - Aktualisierung der Schlüsseltabelle S_VDX_VERTRAGSART in der Version 1.14
+   - Aktualisierung der Schlüsseltabelle S_VDX_KONTENART in der Version 1.16
+
+07.08.2017
+   - Aktualisierung der Beispieldatei
+   - Aktualisierung der Schlüsseltabelle S_BAR2_WBO in der Version 1.11
+
+15.05.2017
+   - Aktualisierung der Schlüsseltabelle S_FAO_ICPM in der Version 1.37
+   - Aktualisierung der Schlüsseltabelle S_VDX_KONTENART in der Version 1.14
+   - Aktualisierung der Schlüsseltabelle S_KBV_LEISTUNGSERBRINGART in der Version 1.04
+
+14.02.2017
+   - Aktualisierung der Schlüsseltabelle S_FAO_ICPM in der Version 1.33
+
+13.02.2017
+   - Aktualisierung der Beispieldatei
+
+14.11.2016
+    - Aktualisierung der Schnittstellenbeschreibung auf die geänderte Struktur (Version 1.60)
+	- Nicht mehr verwendete Elemente gelöscht
+	- Formate für die Texte der GNR angepasst
+	- Attribut SV entfernt
+
+04.08.2016
+   - Redaktionelle Anpassung an der Schnittstellenbeschreibung
+   - Aktualisierung der Schlüsseltabelle S_VDX_KONTENART in der Version 1.12
+
+25.04.2016
+   - Aktualisierung der Schlüsseltabelle S_FAO_ICPM in der Version 1.32
+
+01.02.2016
+   - Aktualisierung der Schlüsseltabelle S_FAO_ICPM in der Version 1.31
+   - Aktualisierung der Schlüsseltabelle S_GOS_KV_MS_ARZTGRUPPE in der Version 1.02
+   - Aktualisierung der Schlüsseltabelle S_GOS_KV_MS_LUGRUPPE in der Version 1.01
+   - Aktualisierung der Schlüsseltabelle S_GOS_KV_MS_VBEREICH in der Version 1.02
+   - Aktualisierung der Schlüsseltabelle S_KTS_KTGRUPPE in der Version 1.02
+   
+05.11.2015
+   - Aktualisierung der Schlüsseltabelle S_EBM_BEZUGSRAUM in der Version 1.05
+   - Aktualisierung der Schlüsseltabelle S_KBV_Geschlecht in der Version 1.01
+
+05.08.2015
+   - Aktualisierung der Schlüsseltabelle S_BAR2_WBO in der Version 1.10
+   - Aktualisierung der Schlüsseltabelle S_GOS_KV_MS_ARZTGRUPPE in der Version 1.01
+   - Aktualisierung der Schlüsseltabelle S_GOS_KV_MS_VBEREICH in der Version 1.01 
+   - Aufnahme der Schlüsseltabelle S_VDX_SCHEINUNTERGRUPPE in der Version 1.01 in das Verzeichnis /keytabs
+
+04.05.2015
+   - Integration der aktuellen  Schlüsseltabellen S_GOS_KV_MS_ARZTGRUPPE, S_GOS_KV_MS_LUGRUPPE und S_GOS_KV_MS_VBEREICH
+   - einfügen einer aktuellen Beispieldatei in das Verzeichnis XML
+   - Änderung des Zeichensatz von ISO-8859-1 auf ISO-8859-15
+
+12.02.2015
+   - Aktualisierung der Schlüsseltabelle S_BAR2_WBO in der Version 1.09 
+   - Aktualisierung der Schlüsseltabelle S_FAO_ICPM in der Version 1.30 
+
+06.01.2015
+   - Die Datei ehd_root_V1.40.xml wurde am 19.12.2014 fehlerhaft ausgeliefert, mit dieser Auslieferung  wurde die korrekte Datei bereitgestellt.
+
+19.12.2014
+   - Entfernung des XML-Elementes RLV
+   - Ergänzung des neuen XML-Elementes mengensteuerung_liste (Schnittstellenversion 1.50)
+   - Aktualisierung der Schnittstellenbeschreibung auf die geänderte Struktur (Version 1.50)
+
+12.11.2014
+   - Aktualisierung der Schlüsseltabelle S_BAR2_WBO in der Version 1.08 
+   - Aktualisierung der Schlüsseltabelle S_EBM_SCHNITTNAHTZEIT in der Version 1.02 
+
+12.05.2014
+   - Aktualisierung der Schlüsseltabelle S_EBM_Zusatzangabe in der Version 1.05 (Aufnahme 5070 und 5071)
+
+18.02.2014
+   - Aktualisierung der Schlüsseltabelle S_EBM_BEZUGSRAUM in der Version 1.04
+   - Aktualisierung der Schlüsseltabelle S_FAO_ICPM in der Version 1.29
+
+13.08.2013
+   - Aktualisierung Umsetzungskonzept zum Hausarzt-EBM (Version 1.40)
+   - Aktualisierung der Schlüsseltabelle S_VDX_VERTRAGSART in version 1.13
+
+29.07.2013
+   - Aktualisierung der Schnittstellen-Dokumentation (Version 1.42)
+   - Aktualisierung Umsetzungskonzept zum Hausarzt-EBM (Version 1.30)
+   - Umbenennung der Schlüsseltabelle S_EBM_ABRECHNUNGSFAEHIGKEIT in S_EBM_ABR_ARZTPRAXIS
+   - Aktualisierung der Testinstanzen
+
+08.07.2013
+   - Paket-Version 1.40
+   - Neue Schlüsseltabelle S_EBM_GOP_ART eingeführt
+   - Neue Schlüsseltabelle S_EBM_ABRECHNUNGSFAEHIGKEIT eingeführt
+   - Schnittstellenversion 1.40 siehe Punkt 3)
+
+3.  Schnittstellen-Version
+================================================
+
+
+3.7 Version 1.60
+============================
+
+    Anpassung der Struktur
+    -----------------
+    - Streichung des SV Attributes
+    - Entfernung nicht mehr verwendeter XML-Element
+    - Aufnahme Formatierungselementen
+
+
+
+3.6 Version 1.50
+============================
+
+    Anpassung der Mengensteuer
+    -----------------
+    - das XML-Element rlv für die Kennzeichnung der Mengensteuerung wurde aus dem Allgemeinen Teil entfernt
+    - das XML-Element mengensteuerung_liste wurde für die Kennzeichnung der Mengensteuerung in den KV Teil aufgenommen
+
+
+
+3.5 Version 1.40
+============================
+
+    Hausarzt-EBM 2013
+    -----------------
+    - Einführung der neuen Regel "sup_gop_liste" als Verweis auf differenzierte Leistungen mit Kopplung an Altersbedingungen
+    - Element "pfg_ausschluss" für untypische Leistungen der fachärztlichen Grundversorgung im Hinblick auf die Berechnungsfähigkeit
+      der Grundpauschale (Filterkriterium)
+    - für Element "gnr_type_cd" wurde die Enumeration entfernt und stattdessen auf eine Schlüsseltabelle referenziert (S_EBM_GOP_ART)
+    - Umstellung Element "arztpraxis" von Typ Bool auf Typ String, Referenzierung auf Schlüsseltabelle S_EBM_ABRECHNUNGSFAEHIGKEIT
+
+
+3.4 Version 1.30
+============================
+    EBM 2009
+    --------
+    - Bewertungs-Elemente erhalten jeweils neues [optionales] Kindelement 'versorgungsgebiet'. Dieses kennzeichnet die Bewertung
+      für unter- oder überversorgte Gebiete bzw. den Regelfall (Referenz auf neue Schlüsseltabelle mit OID
+      1.2.276.0.76.5.236). -> Eine regelhafte Verwendung dieses Elementes ist für 2009 noch nicht vorgesehen!
+    - Einführung der Schlüsseltabelle S_EBM_OW_VERSORGUNGSGBIET
+    - Einführung der Satzart 853 für interne Zwecke
+      
+
+3.3 Version 1.20 RC2
+============================
+
+    Umsetzung des Vertrages nach §115b SGB V, Fachkonzept, Version 1.00, Stand 01.06.2007 
+    -------------------------------------------------------------------------------------
+    - aop_115b - neues Element, Trigger für 115b-Leistungen (ohne OPS gemäß Abschnitt 3)
+    - kategorie - Attribut V optional, da bei OPS außerhalb von Anhang 2 keine
+      Kategorien/Schnitt-Naht-Zeiten definiert sind
+    - ops mit zusätzlichem Attribut R (enthält 115b-Information der Leistungen gemäß der Abschnitte 1/2)
+    - begleit_115b - neues Element, kennzeichnet zulässige 115b-Begleitleistungen (kv-spezifisch)
+    - op_typ - neues Element, kategorisiert 115b-Begleitleistung als prä-, intra-, postoperativ
+
+
+3.2 Version 1.20 RC1
+============================
+    Kern der Schnittstellenänderung ist die Migration der nach §115b definierten Eingriffe und Leistungen.
+    Im Zuge der Schnittstellenanpassung wurde gleichfalls auf die aktuelle ehd-Version 1.40 umgestellt, als
+    auch anstehende Korrekturen realisiert.
+
+    ehd Version 1.40
+    ----------------
+    - ehd_version - aktualisiert
+    - ehd:id RT="1.2.276.0.76.3.1.1" - OID aktualisiert
+    - ehd:provider.type_cd V="KV" S="1.2.276.0.76.5.104" - korrekte Verwendung und OID akualisiert
+    - ehd:id EX="74" RT="1.2.276.0.76.5.233" - korrekte Verwendung und OID akualisiert
+    - ehd:id EX="SDEBM" RT="1.2.276.0.76.5.109" - korrekte Verwendung und OID akualisiert
+    - ehd:version V="01.20" - Version der GOS-Schnittstelle aktualisiert
+
+    Korrekturen
+    ----------------
+    - Umbenennung in 'bewertung_liste' bei der Abstaffelung analog der anderen Bewertungen
+    - Attribut V bei bewertung, zeitbedarf, pruefzeit, kv_bewertung jewils mit Patterneinschränkung
+      genauer spezifiziert
+
+    Schlüsseltabellen
+    -----------------
+    - S_FAO_ICPM_V1.10 - aktualisiert mit OPS außerhalb von Anhang 2 (§115b), Aufnahme von kz115b, kz115b_info
+
+3.1 Version 1.13
+============================
+    - Neues Attribut 'VT' (ValidTime) bei Element 'gnr'; Bearbeitungsdatum des Datensatzes
+    - die Gültigkeit um 'effective_tmr' (techn. Gültigkeit) erweitert
+    - neues Element 'seite'; Seitenlokalisation des OPS, falls nur teilweise im Rahmen des EBM zulässig
+      bzw. mit unterschiedlicher Verknüpfung zur Kategorie/Leistung
+
+
+4.  Mängel
+===============================================
+--
+
+
+5.  Hinweise
+===============================================
+--
+
+
+6.  Sonstiges
+===============================================
+--
+    
+
+7.  Kontakt
+===============================================
+
+    Supportanfragen oder Anregungen richten Sie bitte schiftlich an
+
+    ita@kbv.de
+
+    oder telefonisch an
+
+    030-4005-2077
+
+    KBV - Dezernat Digitalisierung und IT
+    IT in der Arztpraxis
+    Berlin, den 15.08.2025

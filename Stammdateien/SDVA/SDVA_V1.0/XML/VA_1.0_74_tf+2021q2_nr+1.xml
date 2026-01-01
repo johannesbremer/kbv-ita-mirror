@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="ISO-8859-15" standalone="yes"?>
+<ehd:ehd ehd_version="1.40" xsi:schemaLocation="Schema/va_root.xsd" xmlns:ehd="urn:ehd/001" xmlns:va="urn:ehd/va/001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<ehd:header>
+		<ehd:id EX="6ff37462-579c-4346-9b0e-e90213db99b9" RT="1.2.276.0.76.3.1.1"/>
+		<ehd:document_type_cd V="VA" DN="VA-Stammdatei" S="1.2.276.0.76.5.100"/>
+		<ehd:service_tmr V="2021-01-01..2021-12-31"/>
+		<ehd:origination_dttm V="2021-04-20+02:00"/>
+		<ehd:provider>
+			<ehd:organization>
+				<ehd:id EX="74" RT="1.2.276.0.76.5.233"/>
+				<ehd:organization.nm V="Kassenärztliche Bundesvereinigung"/>
+				<ehd:addr>
+					<ehd:ADL V="Kassenärztliche Bundesvereinigung, Dezernat Vergütung und Gebührenordnung"/>
+					<ehd:STR V="Herbert-Lewin-Platz"/>
+					<ehd:HNR V="2"/>
+					<ehd:ZIP V="1063"/>
+					<ehd:CTY V="Berlin"/>
+				</ehd:addr>
+				<ehd:telecom V="tel:++49 30 4005 2121"/>
+				<ehd:telecom V="mailto:KBVServiceDesk@KBV.de"/>
+				<ehd:telecom V="http://www.KBV.de/ita/register_C.html"/>
+			</ehd:organization>
+		</ehd:provider>
+		<ehd:interface>
+			<ehd:id EX="SDVA" RT="1.2.276.0.76.5.109"/>
+			<ehd:interface.nm V="Verschluesselungsanleitung Stammdatei"/>
+			<ehd:version V="1.0"/>
+			<ehd:description V="Verschlüsselungsanleitung Stammdatei der KBV im XML-Format, Version 2022, COPYRIGHT-HINWEIS: Diese Datei wird den Softwarehäusern, welche Software für den Bereich der Kodierunterstützung herstellen, sowie den Kassenärztlichen Vereinigungen von der KBV zur Nutzung zur Verfügung gestellt. Für alle sonstigen Nutzungszwecke wende man sich über den Servicedesk der KBV (EMail: KBVServiceDesk@KBV.de, Telefon: 030 / 4005-2121) an das Dezernat VuG der KBV." URL="http://www.kbv.de/ita/register_C.html"/>
+		</ehd:interface>
+	</ehd:header>
+	<ehd:body>
+		<va:va_stammdaten>
+			<va:haupt_zweig_liste>
+				<va:haupt_zweig V="1" DN="Anleitung zur Verschlüsselung">
+					<va:titel V="Anleitung zur Verschlüsselung"/>
+					<va:nr V="1.0.0"/>
+					<va:beschreibung>
+						<va:div/>
+					</va:beschreibung>
+					<va:hauptkapitel_liste>
+						<va:hauptkapitel V="46671478">
+							<va:titel V="1. Was ist zu verschlüsseln?"/>
+							<va:nr V="1.1.0"/>
+							<va:beschreibung>
+								<va:div/>
+							</va:beschreibung>
+							<va:kapitel_liste>
+								<va:kapitel V="46671479">
+									<va:titel V="Gesetzliche Bestimmungen"/>
+									<va:nr V="1.1.1"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Das   Gesetz   verlangt   die  Verschlüsselung   von   Diagnosen  auf  Abrechnungsunterlagen und Arbeitsunfähigkeitsbescheinigungen (Paragraph       295       SGB V)       sowie       bei       der Krankenhausbehandlung (Paragraph   301   SGB V),   keinesfalls   jedoch   die   Verschlüsselung   auf Überweisungen,   Krankenhauseinweisungen,   Arztbriefen   oder   gar   in   der   eigenen   Patientendokumentation.</va:p>
+											<va:p>Da bei der Verschlüsselung immer Informationen verdichtet werden und Einzelheiten  verloren gehen, muss bei solchen Unterlagen stets der Klartext verwendet werden; aus Kollegialität  kann natürlich zusätzlich zur Klartextangabe die ICD-Schlüsselnummer angegeben werden.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46671480">
+									<va:titel V="Diagnosen im Rahmen der Abrechnung"/>
+									<va:nr V="1.1.2"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Auf den Abrechnungsunterlagen nach § 295 SGB V müssen Sie sich auf die Diagnosen beschränken, derentwegen der Patient im entsprechenden Quartal behandelt wurde und für die Sie Leistungen abrechnen.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46671481">
+									<va:titel V="Dauerdiagnosen und chronische Zustände"/>
+									<va:nr V="1.1.3"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Dauerdiagnosen und chronische Zustände, die keine Leistungen nach sich gezogen haben, dürfen Sie aus Gründen des Datenschutzes nicht übermitteln: bei einemPatienten mit grippalem Infekt, der vor 10 Jahren auch einen Myokardinfarkt erlitten hatte, dürfen Sie z. B. nicht zusätzlich "Zustand nach Myokardinfarkt" kodieren, wenn Sie nur Leistungen für den grippalen Infekt abrechnen.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46671482">
+									<va:titel V="Kodierung in der stationären Versorgung"/>
+									<va:nr V="1.1.4"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Ärzte und Dokumentare in Krankenhäusern sind verpflichtet, bei der Kodierung die Deutschen Kodierrichtlinien (DKR) in der jeweils gültigen Fassung zu berücksichtigen; in psychiatrischen und psychosomatischen Einrichtungen sind die Deutschen Kodierrichtlinien für die Psychiatrie/ Psychosomatik (DKR-Psych) heranzuziehen.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+							</va:kapitel_liste>
+						</va:hauptkapitel>
+						<va:hauptkapitel V="46672439">
+							<va:titel V="2. Wie wird verschlüsselt?"/>
+							<va:nr V="1.2.0"/>
+							<va:beschreibung>
+								<va:div/>
+							</va:beschreibung>
+							<va:kapitel_liste>
+								<va:kapitel V="46672440">
+									<va:titel V="Spezifische Verschlüsselung"/>
+									<va:nr V="1.2.1"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Es ist so spezifisch wie möglich zu verschlüsseln, also derjenige Kode zu wählen, der für die dokumentierte Diagnose als der spezifischste Kode angesehen wird. Die Resteklassen "Sonstige..." oder "Sonstige näher bezeichnete ..." sollen nur dann verwendet werden, wenn eine spezifische Diagnose dokumentiert ist, aber keiner der spezifischen Kodes der übergeordneten Kategorie passt. Die Resteklasse "..., nicht näher bezeichnet" soll nur dann verwendet werden, wenn die dokumentierte Diagnose keine hinreichende Spezifität für eine Zuordnung zu einer der spezifischeren Schlüsselnummern der übergeordneten Kategorie aufweist.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46672441">
+									<va:titel V="Endständige Verschlüsselung mit Ausnahmen"/>
+									<va:nr V="1.2.2"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Grundsätzlich gilt: Zur Verschlüsselung sind die endständigen (terminalen) Schlüsselnummern der ICD-10-GM zu verwenden, also Kodes, die keine Subkodes mehr enthalten. Endständige Schlüsselnummern können dreistellig, vierstellig oder fünfstellig sein. Von dieser Grundregel der endständigen Verschlüsselung gibt es die folgenden Ausnahmen:</va:p>
+											<va:p>In der ambulanten Versorgung (§ 295 SGB V) kann auf die fünfte Stelle verzichtet werden</va:p>
+											<va:ul>
+												<va:li>in der hausärztlichen Versorgung,</va:li>
+												<va:li>im organisierten Notfalldienst und</va:li>
+												<va:li>in der fachärztlichen Versorgung für Diagnosen außerhalb des Fachgebietes.</va:li>
+											</va:ul>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46672442">
+									<va:titel V="Befreiung von der Verschlüsselungspflicht"/>
+									<va:nr V="1.2.3"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Für bestimmte Berufsgruppen kann eine Befreiung von der Verschlüsselungspflicht vereinbart werden, z. B. für Laborärzte, Pathologen und Zytologen.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46672443">
+									<va:titel V="Hinweis zur spezifischen und endständigen Verschlüsselung"/>
+									<va:nr V="1.2.4"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Natürlich steht es allen Vertragsärzten frei, spezifischer zu verschlüsseln, d. h. auch dann die fünfstelligen Schlüsselnummern zu verwenden, wenn eine der o. g. Ausnahmen von der fünfstelligen Verschlüsselung besteht. Sicherlich werden dies viele Ärzte tun, sei es, um ihre Leistung so gut wie möglich zu dokumentieren, um Praxisbesonderheiten darzustellen oder um intern die Vorteile einer guten Dokumentation zu nutzen. Außerdem kann eine fünfstellige Dokumentation zweckmäßig sein, wenn der Patient etwa die differenzierte Diagnose eines konsultierten Facharztes oder aus einer stationären Behandlung mitbringt.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46672444">
+									<va:titel V="Verschlüsselung mit dem Alphabetischen Verzeichnis"/>
+									<va:nr V="1.2.5"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Am einfachsten ist die Verschlüsselung mit dem Alphabetischen Verzeichnis zur ICD-10-GM (Diagnosenthesaurus). Es enthält mehr als 82.500 verschlüsselte Diagnosen und bietet damit einen guten Einstieg in die Verschlüsselung. Schlagen Sie z. B. die Koronararteriensklerose nach unter "Koronararterie, Sklerose". Sie finden die Schlüsselnummer I25.19. Wenn Sie unter dieser Schlüsselnummer in der Systematik nachschlagen, sehen Sie, dass I25.19 die Resteklasse "Nicht näher bezeichnet" ist. Sie finden unter I25.1- auf fünfter Stelle aber eine Differenzierung nach Ein-, Zwei- oder Drei-Gefäß-Erkrankung etc. und dort möglicherweise einen Kode, der für Ihre dokumentierte Diagnose spezifischer ist. Handelt es sich beispielsweise um eine Drei-Gefäß-Erkrankung, ist grundsätzlich mit der fünfstelligen Schlüsselnummer I25.13 zu kodieren, da diese endständige Schlüsselnummer die koronare Drei-Gefäß-Erkrankung so spezifisch wie möglich abbildet.</va:p>
+											<va:p>In der ambulanten hausärztlichen Versorgung ist die Angabe von I25.1 ausreichend, da hier (wie oben angeführt) eine Ausnahme von der fünfstelligen Verschlüsselung vorliegt. Die Angabe von I25.13 (Drei-Gefäß-Erkrankung) ist jedoch erlaubt. Die alleinige Angabe von I25 (d. h. nur des dreistelligen Kodes) ist hier nicht zulässig.</va:p>
+											<va:p>In der stationären Versorgung ist grundsätzlich die endständige Schlüsselnummer anzugeben, im Beispiel also I25.13.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+							</va:kapitel_liste>
+						</va:hauptkapitel>
+						<va:hauptkapitel V="46673400">
+							<va:titel V="3. Wie werden die Zusatzkennzeichen verwendet?"/>
+							<va:nr V="1.3.0"/>
+							<va:beschreibung>
+								<va:div/>
+							</va:beschreibung>
+							<va:kapitel_liste>
+								<va:kapitel V="46673401">
+									<va:titel V="Zusatzkennzeichen für die Diagnosensicherheit"/>
+									<va:nr V="1.3.1"/>
+									<va:beschreibung>
+										<va:div>
+											<va:div>Die Zuarbeit der ärztlichen Berufsverbände und der Spitzenverbände der Gesetzlichen Krankenversicherung (GKV) sowie die Erfahrungen aus der Pilotphase mit der ICD-10-SGB V zeigen, dass Zusatzangaben zur Aussagefähigkeit einer Diagnose für die Zwecke des Fünften Buches Sozialgesetzbuch (SGB V) vor allem dann erforderlich sind, wenn die Diagnosenangabe nicht eine erfolgte oder geplante Behandlung begründen soll, sondern Leistungen vor Stellung einer gesicherten Diagnose, zum Ausschluss einer Erkrankung oder zur Verhütung eines Rezidivs. Zur Qualifizierung einer Diagnose im beschriebenen Sinne dient jeweils eines der folgenden Zusatzkennzeichen für die Diagnosensicherheit:</va:div>
+											<va:table>
+												<va:tr>
+													<va:td>V</va:td>
+													<va:td>Verdachtsdiagnose bzw. auszuschließene Diagnose</va:td>
+												</va:tr>
+												<va:tr>
+													<va:td>Z</va:td>
+													<va:td>(symptomloser) Zustand nach der betreffenden Diagnose</va:td>
+												</va:tr>
+												<va:tr>
+													<va:td>A</va:td>
+													<va:td>ausgeschlossene Diagnose</va:td>
+												</va:tr>
+												<va:tr>
+													<va:td>G</va:td>
+													<va:td>gesicherte Diagnose (auch anzugeben, wenn A, V oder Z nicht zutreffen)</va:td>
+												</va:tr>
+											</va:table>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46673402">
+									<va:titel V="Anwendung der Zusatzkennzeichen für die Diagnosesicherheit"/>
+									<va:nr V="1.3.2"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>In der ambulanten Versorgung (§ 295 SGB V) sind die Zusatzkennzeichen für die Diagnosensicherheit obligatorisch.</va:p>
+											<va:p>In der stationären Versorgung (§ 301 SGB V) sind die Zusatzkennzeichen für die Diagnosensicherheit verboten, d. h. sie dürfen nicht verwendet werden. In der stationären Versorgung sind stattdessen die hierfür vorgesehenen Schlüsselnummern im Kap. XXI zu verwenden. Außerdem sei auf die Kodierrichtlinien DKR und DKR-Psych verwiesen.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46673403">
+									<va:titel V="Zusatzkennzeichen für die Seitenlokalisation"/>
+									<va:nr V="1.3.3"/>
+									<va:beschreibung>
+										<va:div>
+											<va:div>Zur Feststellung der Leistungspflicht benötigen die Krankenkassen die Qualifizierung einer Diagnose hinsichtlich der Seitenlokalisation, um z. B. zu prüfen, ob eine erneute Arbeitsunfähigkeit, die mit der gleichen, für paarige Organe (z. B. Augen) vorgesehenen ICD-10-GM-Schlüsselnummer begründet ist, auf einer bereits bestehenden Erkrankung oder auf einer neuen, davon unabhängigen Erkrankung beruht. Dafür gibt es die folgenden Zusatzkennzeichen für die Seitenlokalisation:</va:div>
+											<va:table>
+												<va:tr>
+													<va:td>R</va:td>
+													<va:td>rechts</va:td>
+												</va:tr>
+												<va:tr>
+													<va:td>L</va:td>
+													<va:td>links</va:td>
+												</va:tr>
+												<va:tr>
+													<va:td>B</va:td>
+													<va:td>beidseitig</va:td>
+												</va:tr>
+											</va:table>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46673404">
+									<va:titel V="Anwendung der Zusatzkennzeichen für die Seitenlokalisation"/>
+									<va:nr V="1.3.4"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Die Zusatzkennzeichen für die Seitenlokalisation dürfen sowohl in der ambulanten als auch in der stationären Versorgung verwendet werden.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46673405">
+									<va:titel V="Besonderer Hinweis zu Zusatzkennzeichen"/>
+									<va:nr V="1.3.5"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Seitenlokalisation und ggf. Diagnosensicherheit sollen angegeben werden, wenn sie zur Erfüllung des Zweckes der Datenübermittlung erforderlich sind. Sie sind bewusst so gewählt, dass sie sich leicht einprägen.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46673406">
+									<va:titel V="Verschlüsselungsbeispiele"/>
+									<va:nr V="1.3.6"/>
+									<va:beschreibung>
+										<va:div>
+											<va:div>Im Folgenden finden Sie einige Verschlüsselungsbeispiele:</va:div>
+											<va:table>
+												<va:tr>
+													<va:th>Diagnose</va:th>
+													<va:th>§ 295 SGB V (ambulante Versorgung)</va:th>
+													<va:th>§ 301 SGB V (stationäre Versorgung)</va:th>
+												</va:tr>
+												<va:tr>
+													<va:td>Schnittwunde am linken Unterarm</va:td>
+													<va:td>S51.9 GL</va:td>
+													<va:td>S51.9 L</va:td>
+												</va:tr>
+												<va:tr>
+													<va:td>Beidseitige Schrumpfnieren</va:td>
+													<va:td>N26 GB</va:td>
+													<va:td>N26 B</va:td>
+												</va:tr>
+												<va:tr>
+													<va:td>Symptomloser Zustand nach Apoplex</va:td>
+													<va:td>I64 Z</va:td>
+													<va:td>Z86.7</va:td>
+												</va:tr>
+												<va:tr>
+													<va:td>Zustand nach Apoplex mit linksseitiger schlaffer Hemiparese</va:td>
+													<va:td>
+														<va:p>I69.4 G</va:p>
+														<va:p>G81.0 GL  </va:p>
+													</va:td>
+													<va:td>
+														<va:p>I69.4</va:p>
+														<va:p>G81.0 L</va:p>
+													</va:td>
+												</va:tr>
+												<va:tr>
+													<va:td>Ausgeschlossener Herzinfarkt</va:td>
+													<va:td>I21.9 A</va:td>
+													<va:td>Z03.4</va:td>
+												</va:tr>
+												<va:tr>
+													<va:td>Verdacht auf Herzinfarkt</va:td>
+													<va:td>I21.9 V</va:td>
+													<va:td>Z03.4</va:td>
+												</va:tr>
+											</va:table>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46673407">
+									<va:titel V="Kodierung in der stationären Versorgung"/>
+									<va:nr V="1.3.7"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>In der stationären Versorgung sind die Regelungen in den Deutschen Kodierrichtlinien (DKR) für den Umgang mit Symptomen, Verdachtsdiagnosen und ausgeschlossenen Diagnosen zu beachten. In psychiatrischen und psychosomatischen Einrichtungen sind entsprechend die DKR-Psych anzuwenden.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+							</va:kapitel_liste>
+						</va:hauptkapitel>
+						<va:hauptkapitel V="46674361">
+							<va:titel V="4. Welche Besonderheiten sind bei den Kapiteln XVIII, XX und XXI zu beachten?"/>
+							<va:nr V="1.4.0"/>
+							<va:beschreibung>
+								<va:div/>
+							</va:beschreibung>
+							<va:kapitel_liste>
+								<va:kapitel V="46674362">
+									<va:titel V="Kapitel XVIII (Symptome und abnorme klinische und Laborbefunde, die andernorts nicht klassifiziert sind)"/>
+									<va:nr V="1.4.1"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Das Kapitel XVIII (Symptome und abnorme klinische und Laborbefunde, die anderenorts nicht klassifiziert sind) enthält Symptome und Befunde. Diese Schlüsselnummern dürfen in der Regel nur verwendet werden, wenn auch nach entsprechender Diagnostik oder in Verbindung mit einem Zusatzkennzeichen keine spezifischere Diagnose gestellt werden kann; außerdem dürfen diese Schlüsselnummern verwendet werden, wenn am Quartalsende, z. B. beim Erstkontakt, die Diagnostik noch nicht abgeschlossen ist. In der stationären Versorgung sind hierzu auch die Deutschen Kodierrichtlinien (DKR) zu beachten, in psychiatrischen und psychosomatischen Einrichtungen entsprechend die DKR-Psych.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46674363">
+									<va:titel V="Kapitel XX (Äußere Ursachen von Morbidität und Mortalität)"/>
+									<va:nr V="1.4.2"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Das Kapitel XX (Äußere Ursachen von Morbidität und Mortalität) enthält die äußeren Ursachen von Verletzungen und Vergiftungen. Diese Angaben sind nur erlaubt als Zusatz zu einer die Art des Zustandes bezeichnenden Schlüsselnummer aus einem anderen Kapitel der Klassifikation. In der ambulanten und stationären Versorgung werden nur wenige Schlüsselnummern dieses Kapitels benötigt, um ursächlich die Leistungspflicht der gesetzlichen Krankenkassen gegen die Leistungspflicht Dritter abzugrenzen.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46674364">
+									<va:titel V="Kapitel XXI (Faktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahme des Gesundheitswesen führen)"/>
+									<va:nr V="1.4.3"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Das Kapitel XXI (Faktoren, die den Gesundheitszustand beeinflussen und zur Inanspruchnahme des Gesundheitswesens führen) darf zur alleinigen Verschlüsselung des Behandlungsanlasses nur verwendet werden, wenn Leistungen abgerechnet werden, die nicht in einer Erkrankung begründet sind. Dies betrifft beispielsweise Leistungen zur Vorsorge (z. B. Impfungen), zur Herstellung der Zeugungs- und Empfängnisfähigkeit, zur Empfängnisverhütung und zu Schwangerschaftsabbruch und Sterilisation.</va:p>
+											<va:p>Für die Kodierung im Krankenhaus sei auf die Deutschen Kodierrichtlinien (DKR) verwiesen, für die Kodierung in psychiatrischen und psychosomatischen Einrichtungen gelten entsprechend die DKR-Psych.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+							</va:kapitel_liste>
+						</va:hauptkapitel>
+						<va:hauptkapitel V="46675322">
+							<va:titel V="5. Was sind sekundäre (&quot;optionale&quot;) Schlüsselnummern?"/>
+							<va:nr V="1.5.0"/>
+							<va:beschreibung>
+								<va:div/>
+							</va:beschreibung>
+							<va:kapitel_liste>
+								<va:kapitel V="46675323">
+									<va:titel V="Sekundäre Schlüsselnummern"/>
+									<va:nr V="1.5.1"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Sekundäre Schlüsselnummern sind Kodes, die nicht allein, sondern nur in Kombination mit einem anderen - primären - Kode benutzt werden können. In der ICD-10-GM gibt es zwei Arten von sekundären Kodes: Ausrufezeichen- und Sternschlüsselnummern.</va:p>
+											<va:p>Ausrufezeichenschlüsselnummern sind mit einem Ausrufezeichen (S41.87!), Sternschlüsselnummern mit einem Stern (H36.0*) gekennzeichnet.</va:p>
+											<va:p>Zur Anwendung sekundärer Schlüsselnummern hier zwei Beispiele; bitte beachten Sie bei der Kodierung im stationären Bereich in jedem Fall auch die Deutschen Kodierrichtlinien (DKR, DKR-Psych):</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46675324">
+									<va:titel V="Verschlüsselungsbeispiel mit Ausrufezeichenkode"/>
+									<va:nr V="1.5.2"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Die Schlüsselnummer S41.87! "Weichteilschaden I. Grades bei offener Fraktur oder Luxation des Oberarmes" ist mit einem Ausrufezeichen gekennzeichnet. Sie dürfen diese Schlüsselnummer nicht allein benutzen; Sie können sie jedoch zusätzlich zu einem Primärkode (Kode ohne Ausrufezeichen oder Stern) verwenden, um eine Diagnose zu spezifizieren. Sie können z. B. bei "Humerusschaftfraktur" durch die zusätzliche Angabe "Weichteilschaden I. Grades bei offener Fraktur oder Luxation des Oberarmes" die Frakturverletzung näher spezifizieren: S42.3 S41.87!.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46675325">
+									<va:titel V="Verschlüsselungsbeispiel im Kreuz-Stern-System"/>
+									<va:nr V="1.5.3"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>In diesem Zusammenhang sei auch das Kreuz-Stern-System der ICD-10 erwähnt. Die Kennzeichnung von Schlüsselnummern durch Kreuz und Stern ist aus der WHO-Ausgabe der ICD-10 übernommen worden. Die ICD-10 klassifiziert Diagnosen primär nach der Ätiologie. Eine Retinopathie bei Typ-1-Diabetes ist primär als Typ-1-Diabetes zu verschlüsseln, also mit E10.30 "Diabetes mellitus, Typ 1, mit Augenkomplikationen, nicht als entgleist bezeichnet". Dabei geht die Manifestation der Krankheit als Retinopathie verloren. Das Kreuz-Stern-System erlaubt es nun, mit einer zweiten zusätzlichen Schlüsselnummer diese Manifestation anzugeben: H36.0* "Diabetische Retinopathie". Diese Schlüsselnummer gibt aber nicht den Diabetes-Typ und die Stoffwechsellage wieder. Nur beide Schlüsselnummern zusammen übermitteln die vollständige Information.</va:p>
+											<va:p>Sternschlüsselnummern dürfen nicht als alleinige Schlüsselnummern verwendet werden, sondern immer nur zusammen mit einer anderen primären Schlüsselnummer; die primäre Schlüsselnummer wird in diesem Fall durch ein angehängtes Kreuz gekennzeichnet. Die diabetische Retinopathie wird nach dem Kreuz-Stern-System mit E10.30+ H36.0* verschlüsselt. Die Angabe E10.30 genügt den gesetzlichen Anforderungen, die alleinige Angabe von H36.0 oder auch H36.0* ist unzulässig. Als Kreuzschlüsselnummer kann in der ICD-10 jede primäre Schlüsselnummer verwendet werden, wenn die Kombination medizinisch sinnvoll ist; Sie sind also nicht an die mit einem Kreuz markierten Schlüsselnummern gebunden.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+								<va:kapitel V="46675326">
+									<va:titel V="Besonderer Hinweis zu Sekundärschlüsseln"/>
+									<va:nr V="1.5.4"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Auf den Abrechnungsunterlagen und Arbeitsunfähigkeitsbescheinigungen nach § 295 SGB V können Sie außerdem das Kreuz und den Stern weglassen, da diese Eigenschaften für alle Schlüsselnummern eindeutig vorgegeben sind: E10.30 H36.0.</va:p>
+											<va:p>Mit der Einführung der neuen Entgeltsysteme im stationären Bereich hat die Kreuz-Stern-Verschlüsselung im Krankenhaus an Bedeutung gewonnen, da ein Behandlungsfall unter Umständen durch die Angabe einer Sternschlüsselnummer einer höheren Komplexitätsstufe zugeordnet wird.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+							</va:kapitel_liste>
+						</va:hauptkapitel>
+					</va:hauptkapitel_liste>
+				</va:haupt_zweig>
+				<va:haupt_zweig V="2" DN="wesentliche jährliche Änderungen der ICD-10-GM-Daten">
+					<va:titel V="Kommentar zur ICD-10-GM Version 2021"/>
+					<va:nr V="2.0.0"/>
+					<va:beschreibung>
+						<va:div/>
+					</va:beschreibung>
+					<va:hauptkapitel_liste>
+						<va:hauptkapitel V="47594999">
+							<va:titel V="Vorbemerkungen und Danksagungen"/>
+							<va:nr V="2.1.0"/>
+							<va:beschreibung>
+								<va:div>
+									<va:p>Die ICD-10-GM wird gemäß der Verfahrensordnung für die Festlegung der Internationalen Statistischen Klassifikation der Krankheiten, German Modification (ICD-10-GM) und des Operationen- und Prozedurenschlüssels (OPS) auf der Grundlage des § 295 Absatz 1 Satz 9 und § 301 Absatz 2 Satz 7 des Fünften Buches Sozialgesetzbuch (SGB V) jährlich überarbeitet.</va:p>
+									<va:p>Die vorliegende Version der Systematik der ICD-10-GM 2021 erscheit zusammen mit einem Alphabetischen Verzeichnis. Wie immer wurde das Alphabetische Verzeichnis an die neue Version der ICD-10-GM angepasst.</va:p>
+									<va:p>Wie in den Vorjahren wurden auch in diesem Jahr zahlreiche Vorschläge der Anwender zur Weiterentwicklung der Klassifikation berücksichtigt und integriert.</va:p>
+									<va:p>Seit Version 2019 gibt die WHO keine regelmäßigen Aktualisierungen mehr für die ICD-10 heraus. Jedoch werden von der WHO nicht belegte Schlüsselnummern bei Bedarf mit Inhalt belegt und in ggf. modifizierter Form in die ICD-10-GM übernommen. Zudem werden bei Bedarf neue nicht belegte Schlüsselnummern als Platzhalter für zukünftige Anforderungen eingeführt. Für die ICD-10-GM 2021 kommt beides zum Tragen.</va:p>
+									<va:p>Das BfArM wurde bei der Erarbeitung dieser Version beratend unterstützt durch die Arbeitsgruppe ICD des Kuratoriums für Fragen der Klassifikation im Gesundheitswesen (KKG) beim Bundesministerium für Gesundheit. Allen Mitgliedern dieser Arbeitsgruppe sei für ihren Einsatz herzlich gedankt. Zahlreiche Vorschläge für diese neue Version kommen von den Mitgliedsgesellschaften der Arbeitsgemeinschaft der Wissenschaftlichen Medizinischen Fachgesellschaften (AWMF). Den Fachberatern dieser Gesellschaften gilt unser Dank für ihre Zuarbeit.</va:p>
+								</va:div>
+							</va:beschreibung>
+						</va:hauptkapitel>
+						<va:hauptkapitel V="47595960">
+							<va:titel V="Grundsätzliches"/>
+							<va:nr V="2.2.0"/>
+							<va:beschreibung>
+								<va:div/>
+							</va:beschreibung>
+							<va:kapitel_liste>
+								<va:kapitel V="47595961">
+									<va:titel V="Zusatzkennzeichen"/>
+									<va:nr V="2.2.1"/>
+									<va:beschreibung>
+										<va:div>
+											<va:p>Die Regelung der Zusatzkennzeichen stellt sich, analog der Vorversion, wie folgt dar:</va:p>
+											<va:table>
+												<va:tr>
+													<va:td>V</va:td>
+													<va:td>Verdachtsdiagnose bzw. auszuschließende Diagnose</va:td>
+												</va:tr>
+												<va:tr>
+													<va:td>Z</va:td>
+													<va:td>(symptomloser) Zustand nach der betreffenden Diagnose</va:td>
+												</va:tr>
+												<va:tr>
+													<va:td>A</va:td>
+													<va:td>ausgeschlossene Diagnose</va:td>
+												</va:tr>
+												<va:tr>
+													<va:td>G</va:td>
+													<va:td>gesicherte Diagnose (auch anzugeben, wenn A, V oder Z nicht zutreffen)</va:td>
+												</va:tr>
+											</va:table>
+											<va:p>Im stationären Bereich bleiben diese Zusatzkennzeichen weiterhin außer Kraft. Die Zusatzkennzeichen für die Seitenlokalisation R (rechts), L (links) und B (beidseitig) können nach wie vor in der ambulanten und in der stationären Versorgung verwendet werden.</va:p>
+										</va:div>
+									</va:beschreibung>
+								</va:kapitel>
+							</va:kapitel_liste>
+						</va:hauptkapitel>
+						<va:hauptkapitel V="47596921">
+							<va:titel V="Einzelne wichtige Änderungen"/>
+							<va:nr V="2.3.0"/>
+							<va:beschreibung>
+								<va:div/>
+							</va:beschreibung>
+							<va:kapitel_liste>
+								<va:kapitel V="1475504605">
+									<va:titel V="Kapitel VI - Krankheiten des Nervensystems (G00-G99)"/>
+									<va:nr V="2.3.06"/>
+									<va:beschreibung>
+										<va:div/>
+									</va:beschreibung>
+									<va:unterkapitel_liste>
+										<va:unterkapitel V="620719200">
+											<va:titel V="Toxische Enzephalopathie"/>
+											<va:nr V="2.3.06.1"/>
+											<va:beschreibung>
+												<va:div>
+													<va:p>Bei der Schlüsselnummer G92 Toxische Enzephalopathie wurden neue 4-Steller eingeführt, um die Toxische Enzephalopathie unter Immuntherapie spezifisch kodieren zu können.</va:p>
+												</va:div>
+											</va:beschreibung>
+										</va:unterkapitel>
+									</va:unterkapitel_liste>
+								</va:kapitel>
+								<va:kapitel V="1475504608">
+									<va:titel V="Kapitel IX - Krankheiten des Kreislaufsystems (I00-I99)"/>
+									<va:nr V="2.3.09"/>
+									<va:beschreibung>
+										<va:div/>
+									</va:beschreibung>
+									<va:unterkapitel_liste>
+										<va:unterkapitel V="620722083">
+											<va:titel V="Penetrierendes Aortenulkus [PAU]"/>
+											<va:nr V="2.3.09.1"/>
+											<va:beschreibung>
+												<va:div>
+													<va:p>Bei der Schlüsselnummer I77.8 Sonstige näher bezeichnete Krankheiten der Arterien und Arteriolen wurden neue 5-Steller eingeführt, um ein penetrierendes Aortenulkus spezifisch kodieren zu können.</va:p>
+												</va:div>
+											</va:beschreibung>
+										</va:unterkapitel>
+									</va:unterkapitel_liste>
+								</va:kapitel>
+								<va:kapitel V="1475504631">
+									<va:titel V="Kapitel XI - Krankheiten des Verdauungssystems (K00-K93)"/>
+									<va:nr V="2.3.11"/>
+									<va:beschreibung>
+										<va:div/>
+									</va:beschreibung>
+									<va:unterkapitel_liste>
+										<va:unterkapitel V="620744186">
+											<va:titel V="Divertikelkrankheit des Darmes"/>
+											<va:nr V="2.3.11.1"/>
+											<va:beschreibung>
+												<va:div>
+													<va:p>Mit der ICD-10-GM 2021 wurden die Schlüsselnummern unter K57.- Divertikulose des Darmes an die ursprüngliche Terminologie der WHO-Fassung angeglichen und die Kodes, bei denen eine Divertikelkrankheit mit Perforation/Abszedierung der Kategorie Divertikulose zugeordnet war, gestrichen und auf die entsprechenden Kodes der Kategorie Divertikulitis übergeleitet.</va:p>
+												</va:div>
+											</va:beschreibung>
+										</va:unterkapitel>
+										<va:unterkapitel V="620744187">
+											<va:titel V="Spontane bakterielle Peritonitis [SBP]"/>
+											<va:nr V="2.3.11.2"/>
+											<va:beschreibung>
+												<va:div>
+													<va:p>Bei der Schlüsselnummer K65.0 Akute Peritonitis wurden neue 5-Steller eingeführt, um eine spontane bakterielle Peritonitis [SBP] spezifisch kodieren zu können.</va:p>
+												</va:div>
+											</va:beschreibung>
+										</va:unterkapitel>
+									</va:unterkapitel_liste>
+								</va:kapitel>
+								<va:kapitel V="1475504632">
+									<va:titel V="Kapitel XII - Krankheiten der Haut und der Unterhaut (L00-L99)"/>
+									<va:nr V="2.3.12"/>
+									<va:beschreibung>
+										<va:div/>
+									</va:beschreibung>
+									<va:unterkapitel_liste>
+										<va:unterkapitel V="620745147">
+											<va:titel V="Dekubitus"/>
+											<va:nr V="2.3.12.1"/>
+											<va:beschreibung>
+												<va:div>
+													<va:p>Mit der ICD-10-GM 2021 wurden die Schlüsselnummern unter L89.- Dekubitalgeschwür und Druckzone an die Terminologie der international und national maßgeblichen Leitlinie des European Pressure Ulcer Advisory Panel (EPUAP) angepasst. Entsprechend der o.g. Leitlinie wurden bei der Schlüsselnummer L89.1- Dekubitus 2. Grades auch die Inklusiva angepasst.</va:p>
+												</va:div>
+											</va:beschreibung>
+										</va:unterkapitel>
+									</va:unterkapitel_liste>
+								</va:kapitel>
+								<va:kapitel V="1475504639">
+									<va:titel V="Kapitel XIX - Verletzungen, Vergiftungen und bestimmte andere Folgen äußerer Ursachen (S00-T98)"/>
+									<va:nr V="2.3.19"/>
+									<va:beschreibung>
+										<va:div/>
+									</va:beschreibung>
+									<va:unterkapitel_liste>
+										<va:unterkapitel V="620751874">
+											<va:titel V="Subkutanes (geschlossenes) Décollement"/>
+											<va:nr V="2.3.19.1"/>
+											<va:beschreibung>
+												<va:div>
+													<va:p>Im Kodebereich S10.- bis S90.- wurden bei den Schlüsselnummern zur Kodierung von sonstigen oberflächlichen Verletzungen neue 5-Steller eingeführt, um ein subkutanes (geschlossenes) Décollement spezifisch kodieren zu können.</va:p>
+												</va:div>
+											</va:beschreibung>
+										</va:unterkapitel>
+									</va:unterkapitel_liste>
+								</va:kapitel>
+								<va:kapitel V="1475504661">
+									<va:titel V="Kapitel XXII - Schlüsselnummern für besondere Zwecke (U00-U99)"/>
+									<va:nr V="2.3.20"/>
+									<va:beschreibung>
+										<va:div/>
+									</va:beschreibung>
+									<va:unterkapitel_liste>
+										<va:unterkapitel V="620773016">
+											<va:titel V="COVID-19"/>
+											<va:nr V="2.3.20.1"/>
+											<va:beschreibung>
+												<va:div>
+													<va:p>Im Zusammenhang mit der COVID-19-Pandemie sind von der WHO die nicht belegten Schlüsselnummern U07.1 und U07.2 der internationalen Ausgabe der ICD-10 mit Inhalt belegt worden. Dies wurde unterjährig in modifizierter Form für die ICD-10-GM 2020 übernommen (Umsetzung als Sekundärschlüssel U07.1! und U07.2!). Zusätzlich wurde ad hoc eine weitere nicht belegte Schlüsselnummer in die Klassifikation aufgenommen für die Testung auf eine Infektion mit SARS-CoV-2 als Versorgungsanlass (U99.0!). Die Belegung der vorgenannten Schlüsselnummern wurde in die ICD-10-GM 2021 übernommen. Zusätzlich wurden weitere unbelegte Schlüsselnummern aufgenommen (U08.- bis U10.-, U98.-!), um ein schnelles Reagieren auf aktuelle Anforderungen zu ermöglichen.</va:p>
+												</va:div>
+											</va:beschreibung>
+										</va:unterkapitel>
+									</va:unterkapitel_liste>
+								</va:kapitel>
+							</va:kapitel_liste>
+						</va:hauptkapitel>
+					</va:hauptkapitel_liste>
+				</va:haupt_zweig>
+			</va:haupt_zweig_liste>
+		</va:va_stammdaten>
+	</ehd:body>
+</ehd:ehd>

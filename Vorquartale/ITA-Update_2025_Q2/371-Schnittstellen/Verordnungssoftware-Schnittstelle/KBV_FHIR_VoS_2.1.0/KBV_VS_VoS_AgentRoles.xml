@@ -1,0 +1,32 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="KBV-VS-VoS-AgentRoles" />
+  <url value="https://fhir.kbv.de/ValueSet/KBV_VS_VoS_AgentRoles" />
+  <version value="2.1.0" />
+  <name value="KBV_VS_VoS_AgentRoles" />
+  <title value="verwendete Rollen in Provenance-Ressourcen" />
+  <status value="active" />
+  <experimental value="false" />
+  <date value="2023-02-01" />
+  <publisher value="Kassenärztliche Bundesvereinigung (KBV)" />
+  <contact>
+    <telecom>
+      <system value="url" />
+      <value value="http://www.kbv.de" />
+    </telecom>
+  </contact>
+  <description value="Dieses Valueset enthält die Codes, die bei Provenance-Ressourcen als Rollenangaben verwendet werden." />
+  <immutable value="false" />
+  <compose>
+    <include>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-RoleClass" />
+      <concept>
+        <code value="PAT" />
+		<display value="patient"/>
+      </concept>
+      <concept>
+        <code value="PROV" />
+		<display value="healthcare provider"/>
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

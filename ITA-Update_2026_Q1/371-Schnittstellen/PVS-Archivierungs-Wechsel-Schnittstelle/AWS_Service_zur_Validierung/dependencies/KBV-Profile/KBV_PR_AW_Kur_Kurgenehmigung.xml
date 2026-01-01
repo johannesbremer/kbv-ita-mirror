@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Kur_Kurgenehmigung" />
+  <version value="1.2.0" />
+  <name value="KBV_PR_AW_Kur_Kurgenehmigung" />
+  <status value="active" />
+  <copyright value="Copyright © [2020], Kassenärztliche Bundesvereinigung (KBV). All rights reserved." />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="cdanetv4" />
+    <uri value="http://www.cda-adc.ca/en/services/cdanet/" />
+    <name value="Canadian Dental Association eclaims standard" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="CoverageEligibilityResponse" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/CoverageEligibilityResponse" />
+  <derivation value="constraint" />
+  <differential>
+	<element id="CoverageEligibilityResponse">
+      <path value="CoverageEligibilityResponse" />
+      <short value="Kurgenehmigung" />
+      <definition value="Diese Ressource beschreibt eine Genehmigung für eine Kur." />
+    </element>
+    <element id="CoverageEligibilityResponse.id">
+      <path value="CoverageEligibilityResponse.id" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityResponse.meta">
+      <path value="CoverageEligibilityResponse.meta" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityResponse.meta.versionId">
+      <path value="CoverageEligibilityResponse.meta.versionId" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityResponse.meta.lastUpdated">
+      <path value="CoverageEligibilityResponse.meta.lastUpdated" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityResponse.meta.profile">
+      <path value="CoverageEligibilityResponse.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+        <fixedCanonical value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Kur_Kurgenehmigung|1.2.0" />
+    </element>
+    <element id="CoverageEligibilityResponse.text">
+      <path value="CoverageEligibilityResponse.text" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityResponse.identifier">
+      <path value="CoverageEligibilityResponse.identifier" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.status">
+      <path value="CoverageEligibilityResponse.status" />
+      <definition value="Der Status einer Kurgenehmigung ist active oder cancelled." />
+    </element>
+    <element id="CoverageEligibilityResponse.purpose">
+      <path value="CoverageEligibilityResponse.purpose" />
+      <max value="1" />
+      <fixedCode value="auth-requirements" />
+    </element>
+    <element id="CoverageEligibilityResponse.patient">
+      <path value="CoverageEligibilityResponse.patient" />
+      <label value="TR01" />
+      <short value="Patientenbezug" />
+      <definition value="Siehe reason for inclusion and constrainment." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Patient|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.patient.reference">
+      <path value="CoverageEligibilityResponse.patient.reference" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityResponse.patient.type">
+      <path value="CoverageEligibilityResponse.patient.type" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.patient.identifier">
+      <path value="CoverageEligibilityResponse.patient.identifier" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.patient.display">
+      <path value="CoverageEligibilityResponse.patient.display" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.serviced[x]">
+      <path value="CoverageEligibilityResponse.serviced[x]" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.created">
+      <path value="CoverageEligibilityResponse.created" />
+      <short value="Bewilligungsdatum" />
+      <definition value="Bewilligungsdatum der Kurgenehmigung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.requestor">
+      <path value="CoverageEligibilityResponse.requestor" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.request">
+      <path value="CoverageEligibilityResponse.request" />
+      <short value="Kurantrag" />
+      <definition value="Referenz zum Kurantrag" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Kur_Antrag|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+	
+    <element id="CoverageEligibilityResponse.request.reference">
+      <path value="CoverageEligibilityResponse.request.reference" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityResponse.request.type">
+      <path value="CoverageEligibilityResponse.request.type" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.request.identifier">
+      <path value="CoverageEligibilityResponse.request.identifier" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.request.display">
+      <path value="CoverageEligibilityResponse.request.display" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.outcome">
+      <path value="CoverageEligibilityResponse.outcome" />
+      <definition value="Der Status ist complete." />
+      <fixedCode value="complete" />
+    </element>
+    <element id="CoverageEligibilityResponse.disposition">
+      <path value="CoverageEligibilityResponse.disposition" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurer">
+      <path value="CoverageEligibilityResponse.insurer" />
+      <short value="Versicherer" />
+      <definition value="Gibt den Kostentraeger des Versicherten an. Die Angabe der IK-Nummer als logische Referenz sowie des Namend als Display ist zwingend erforderlich. Die Referenz auf eine Resource vom Typ Organization, die weitere Details zur Versicherung enthalten kann (z.B. Adresse, Kontaktdaten) ist optional." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Organisation|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurer.type">
+      <path value="CoverageEligibilityResponse.insurer.type" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurer.identifier">
+      <path value="CoverageEligibilityResponse.insurer.identifier" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurer.identifier.use">
+      <path value="CoverageEligibilityResponse.insurer.identifier.use" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurer.identifier.type">
+      <path value="CoverageEligibilityResponse.insurer.identifier.type" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurer.identifier.system">
+      <path value="CoverageEligibilityResponse.insurer.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/NamingSystem/arge-ik/iknr" />
+	  <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurer.identifier.value">
+      <path value="CoverageEligibilityResponse.insurer.identifier.value" />
+      <min value="1" />
+	  <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurer.identifier.period">
+      <path value="CoverageEligibilityResponse.insurer.identifier.period" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurer.identifier.assigner">
+      <path value="CoverageEligibilityResponse.insurer.identifier.assigner" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurer.display">
+      <path value="CoverageEligibilityResponse.insurer.display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance">
+      <path value="CoverageEligibilityResponse.insurance" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.coverage">
+      <path value="CoverageEligibilityResponse.insurance.coverage" />
+      <short value="Krankenversicherung" />
+      <definition value="In diesem Element ist eine Referenz zu einer Krankenversicherung oder aber ein Identifier einer Krankenversicherung, von der die Genehmigung erteilt wurde, anzugeben." />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_AW_Krankenversicherungsverhaeltnis|1.2.0" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.coverage.reference">
+      <path value="CoverageEligibilityResponse.insurance.coverage.reference" />
+      <min value="1" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.coverage.type">
+      <path value="CoverageEligibilityResponse.insurance.coverage.type" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.coverage.identifier">
+      <path value="CoverageEligibilityResponse.insurance.coverage.identifier" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.coverage.display">
+      <path value="CoverageEligibilityResponse.insurance.coverage.display" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.inforce">
+      <path value="CoverageEligibilityResponse.insurance.inforce" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.benefitPeriod">
+      <path value="CoverageEligibilityResponse.insurance.benefitPeriod" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item">
+      <path value="CoverageEligibilityResponse.insurance.item" />
+      <min value="1" />
+      <max value="1" />
+	  <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.category">
+      <path value="CoverageEligibilityResponse.insurance.item.category" />
+      <min value="1" />
+	  <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.category.coding">
+      <path value="CoverageEligibilityResponse.insurance.item.category.coding" />
+      <min value="1" />
+      <max value="1" />
+	  <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.category.coding.system">
+      <path value="CoverageEligibilityResponse.insurance.item.category.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Eligibility_Kategorie" />
+	  <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.category.coding.version">
+      <path value="CoverageEligibilityResponse.insurance.item.category.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.category.coding.code">
+      <path value="CoverageEligibilityResponse.insurance.item.category.coding.code" />
+      <min value="1" />
+      <fixedCode value="Genehmigte_Kurdauer_in_Wochen" />
+	  <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.category.coding.display">
+      <path value="CoverageEligibilityResponse.insurance.item.category.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.category.coding.userSelected">
+      <path value="CoverageEligibilityResponse.insurance.item.category.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.category.text">
+      <path value="CoverageEligibilityResponse.insurance.item.category.text" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.productOrService">
+      <path value="CoverageEligibilityResponse.insurance.item.productOrService" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.modifier">
+      <path value="CoverageEligibilityResponse.insurance.item.modifier" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.provider">
+      <path value="CoverageEligibilityResponse.insurance.item.provider" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.excluded">
+      <path value="CoverageEligibilityResponse.insurance.item.excluded" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.name">
+      <path value="CoverageEligibilityResponse.insurance.item.name" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.description">
+      <path value="CoverageEligibilityResponse.insurance.item.description" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.network">
+      <path value="CoverageEligibilityResponse.insurance.item.network" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.unit">
+      <path value="CoverageEligibilityResponse.insurance.item.unit" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.term">
+      <path value="CoverageEligibilityResponse.insurance.item.term" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.benefit">
+      <path value="CoverageEligibilityResponse.insurance.item.benefit" />
+      <short value="Genehmigte Kurdauer in Wochen" />
+      <definition value="In diesem Element wird die genehmigte Kurdauer in Wochen angegeben" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.benefit.type">
+      <path value="CoverageEligibilityResponse.insurance.item.benefit.type" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.benefit.type.coding">
+      <path value="CoverageEligibilityResponse.insurance.item.benefit.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.benefit.type.coding.system">
+      <path value="CoverageEligibilityResponse.insurance.item.benefit.type.coding.system" />
+      <min value="1" />
+      <fixedUri value="https://fhir.kbv.de/CodeSystem/KBV_CS_AW_Eligibility_Kategorie" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.benefit.type.coding.version">
+      <path value="CoverageEligibilityResponse.insurance.item.benefit.type.coding.version" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.benefit.type.coding.code">
+      <path value="CoverageEligibilityResponse.insurance.item.benefit.type.coding.code" />
+      <min value="1" />
+      <fixedCode value="Genehmigte_Kurdauer_in_Wochen" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.benefit.type.coding.display">
+      <path value="CoverageEligibilityResponse.insurance.item.benefit.type.coding.display" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.benefit.type.coding.userSelected">
+      <path value="CoverageEligibilityResponse.insurance.item.benefit.type.coding.userSelected" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.benefit.type.text">
+      <path value="CoverageEligibilityResponse.insurance.item.benefit.type.text" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.benefit.allowed[x]">
+      <path value="CoverageEligibilityResponse.insurance.item.benefit.allowed[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <short value="Genehmigte Kurdauer in WOCHEN" />
+      <definition value="Genehmigte Kurdauer in WOCHEN" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.benefit.allowed[x]:allowedUnsignedInt">
+      <path value="CoverageEligibilityResponse.insurance.item.benefit.allowed[x]" />
+      <sliceName value="allowedUnsignedInt" />
+      <min value="1" />
+      <type>
+        <code value="unsignedInt" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.benefit.used[x]">
+      <path value="CoverageEligibilityResponse.insurance.item.benefit.used[x]" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.authorizationRequired">
+      <path value="CoverageEligibilityResponse.insurance.item.authorizationRequired" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.authorizationSupporting">
+      <path value="CoverageEligibilityResponse.insurance.item.authorizationSupporting" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.insurance.item.authorizationUrl">
+      <path value="CoverageEligibilityResponse.insurance.item.authorizationUrl" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.preAuthRef">
+      <path value="CoverageEligibilityResponse.preAuthRef" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.form">
+      <path value="CoverageEligibilityResponse.form" />
+      <max value="0" />
+    </element>
+    <element id="CoverageEligibilityResponse.error">
+      <path value="CoverageEligibilityResponse.error" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<vsd:UC_PersoenlicheVersichertendatenXML xmlns:vsd="http://ws.gematik.de/fa/vsdm/vsd/v5.2" CDM_VERSION="5.2.0">
+	<vsd:Versicherter>
+		<vsd:Versicherten_ID>M310119802</vsd:Versicherten_ID>
+		<vsd:Person>
+			<vsd:Geburtsdatum>19510712</vsd:Geburtsdatum>
+			<vsd:Vorname>Friëdrich-Wilhelm-Karl-Gustav-Justus-Gotfried</vsd:Vorname>
+			<vsd:Nachname>Schaumbërg-von-und-zu-Schaumburg-und-Radëberg</vsd:Nachname>
+			<vsd:Geschlecht>M</vsd:Geschlecht>
+			<vsd:Vorsatzwort>von und zu der</vsd:Vorsatzwort>
+			<vsd:Namenszusatz>Grossherzog</vsd:Namenszusatz>
+			<vsd:Titel>Prof. habil. Dr. med</vsd:Titel>
+			<vsd:PostfachAdresse>
+				<vsd:Postleitzahl>5110551133</vsd:Postleitzahl>
+				<vsd:Ort>Pfaffenschlag bei Waidhofen an der Thaya</vsd:Ort>
+				<vsd:Postfach>99999933</vsd:Postfach>
+				<vsd:Land>
+					<vsd:Wohnsitzlaendercode>A</vsd:Wohnsitzlaendercode>
+				</vsd:Land>
+			</vsd:PostfachAdresse>
+			<vsd:StrassenAdresse>
+				<vsd:Postleitzahl>5110551133</vsd:Postleitzahl>
+				<vsd:Ort>Pfaffenschlag bei Waidhofen an der Thaya</vsd:Ort>
+				<vsd:Land>
+					<vsd:Wohnsitzlaendercode>A</vsd:Wohnsitzlaendercode>
+				</vsd:Land>
+				<vsd:Strasse>Pfaffenschlag bei Waidhofen an der Thaya Allee</vsd:Strasse>
+				<vsd:Hausnummer>155155133</vsd:Hausnummer>
+				<vsd:Anschriftenzusatz>33. Obergeschoss - Hinterhof, halbrechts</vsd:Anschriftenzusatz>
+			</vsd:StrassenAdresse>
+		</vsd:Person>
+	</vsd:Versicherter>
+</vsd:UC_PersoenlicheVersichertendatenXML>

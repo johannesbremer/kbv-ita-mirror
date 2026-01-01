@@ -1,0 +1,31 @@
+<Observation xmlns="http://hl7.org/fhir">
+  <id value="520" />
+  <meta>
+	<versionId value="1"/>
+	<lastUpdated value="2022-09-05T18:53:00Z"/>
+    <profile value="https://fhir.kbv.de/StructureDefinition/KBV_PR_VoS_Observation_Creatinine_Level|2.1.0" />
+  </meta>
+  <status value="final" />
+  <code>
+    <coding>
+      <system value="http://loinc.org" />
+      <code value="2160-0" />
+	  <display value="Creatinine [Mass/volume] in Serum or Plasma"/>
+    </coding>
+    <coding>
+      <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_VoS_VitalSigns" />
+      <code value="Kreatinin" />
+	  <display value="Kreatinin"/>
+    </coding>
+  </code>
+  <subject>
+    <reference value="Patient/100" />
+  </subject>
+  <effectiveDateTime value="2021-10-01"/>
+  <valueQuantity>
+    <value value="1.1" />
+    <unit value="mg/dL" />
+    <system value="http://unitsofmeasure.org" />
+    <code value="mg/dL" />
+  </valueQuantity>
+</Observation>

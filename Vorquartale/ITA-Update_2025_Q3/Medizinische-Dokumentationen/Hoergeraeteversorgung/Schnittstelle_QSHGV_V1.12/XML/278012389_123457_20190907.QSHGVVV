@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="ISO-8859-15"?>
+<levelone xmlns="urn::hl7-org/cda" xmlns:sciphox="urn::sciphox-org/sciphox" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<clinical_document_header>
+		<id EX="123" RT="278012389"/>
+		<set_id EX="123" RT="278012389"/>
+		<version_nbr V="1"/>
+		<document_type_cd V="QSHGV_VV" S="1.2.276.0.76.5.100" SN="KBV" DN="QS Hörgeräteversorgung Vorverordnung mit Verordnung"/>
+		<!-- Untersuchungsdatum -->
+		<service_tmr V="2019-10-07"/>
+		<!-- Erstellungsdatum -->
+		<origination_dttm V="2019-10-07"/>
+		<provider>
+			<person>
+				<id EX="278012389" RT="BSNR"/>
+				<id EX="274343489" RT="LANR"/>
+			</person>
+		</provider>
+		<patient>
+			<person>
+				<id EX="123456" RT="278012389"/>
+			</person>
+			<birth_dttm V="1990"/>
+			<administrative_gender_cd V="X"/>
+		</patient>
+		<local_header ignore="all" descriptor="sciphox">
+			<sciphox:sciphox-ssu type="software" country="de" version="v1">
+				<sciphox:Software>
+					<sciphox:id EX="X/56/1812/36/100" RT="KBV-Prüfnummer"/>
+					<sciphox:SoftwareName V="ABC Software"/>
+					<sciphox:SoftwareVersion V="1.3"/>
+					<sciphox:SoftwareTyp V="PVS"/>
+					<sciphox:Kontakt>
+						<sciphox:Kontakttyp V="SOFTV" S="1.2.276.0.76.3.1.1.5.2.3" DN="Softwareverantwortlicher"/>
+						<organization.nm V="ABC Softwarehaus"/>
+						<addr>
+							<STR V="Ottostr."/>
+							<HNR V="1"/>
+							<ZIP V="50859"/>
+							<CTY V="Köln"/>
+						</addr>
+						<telecom V="tel:(0221)4449-0" USE="WP"/>
+						<telecom V="tel:(0221)4449-1" USE="WP"/>
+					</sciphox:Kontakt>
+					<sciphox:Kontakt>
+						<sciphox:Kontakttyp V="REGS" S="1.2.276.0.76.3.1.1.5.2.3" DN="RegionalerSystembetreuer"/>
+						<organization.nm V="ABC Consulting"/>
+						<addr>
+							<STR V="Ottostr."/>
+							<HNR V="1"/>
+							<ZIP V="50859"/>
+							<CTY V="Köln"/>
+						</addr>
+						<telecom V="tel:(0221)4449-0" USE="WP"/>
+					</sciphox:Kontakt>
+					<sciphox:Software>
+						<sciphox:SoftwareName V="XSD_QSHGV_VV"/>
+						<sciphox:SoftwareVersion V="1.12"/>
+						<sciphox:SoftwareTyp V="XSD"/>
+					</sciphox:Software>
+				</sciphox:Software>
+			</sciphox:sciphox-ssu>
+		</local_header>
+	</clinical_document_header>
+	<!-- *********************************************** body *********************************************** -->
+	<body>
+		<section>
+			<paragraph>
+				<caption>
+					<caption_cd DN="Vorverordnung"/>
+				</caption>
+				<content>
+					<local_markup ignore="all" descriptor="sciphox">
+						<sciphox:sciphox-ssu type="observation" country="de" version="v1">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Hörgeräteerstversorgung"/>
+									<sciphox:Ergebniswert V="Nein"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Wenn Vorversorgung, wann"/>
+									<sciphox:Zeitpunkt_dttm V="2011"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Bauform"/>
+									<sciphox:Ergebniswert V="IO"/>
+									<sciphox:Ergebniswert V="HdO"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Zentrale Hörstörung ausgeschlossen"/>
+									<sciphox:Ergebniswert V="Nein"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Sprachverstehen: mit Kopfhörer am dBopt"/>
+									<sciphox:Ergebniswert V="10" U="dB"/>
+									<sciphox:Ergebniswert V="10" U="% (E/Z)"/>
+									<sciphox:Ergebniswert V="10" U="dB (SVS)"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Sprachtest möglich"/>
+									<sciphox:Ergebniswert V="Ja"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Sprachtestmaterial"/>
+									<sciphox:Ergebniswert V="Freiburger Einsilber"/>
+									<sciphox:Ergebniswert V="Freiburger Zahlen"/>
+									<sciphox:Ergebniswert V="OLSA"/>
+									<sciphox:Ergebniswert V="GÖSA"/>
+									<sciphox:Ergebniswert V="anderes"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Sprachtestmaterial anderes"/>
+									<sciphox:Ergebnistext V="Freitext String"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+			<!-- *********************************************** Verordnung *********************************************** -->
+			<paragraph>
+				<caption>
+					<caption_cd DN="Verordnung"/>
+				</caption>
+				<content>
+					<local_markup ignore="all" descriptor="sciphox">
+						<sciphox:sciphox-ssu type="observation" country="de" version="v1">
+							<sciphox:Beobachtungen>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Schallempfindungsschwerhörigkeit"/>
+									<sciphox:Ergebniswert V="links"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Kombinierte Schwerhörigkeit"/>
+									<sciphox:Ergebniswert V="rechts"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Schweregrad der Hörstörung(WHO 2001): rechts"/>
+									<sciphox:Ergebniswert V="geringgradig schwerhörig"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Schweregrad der Hörstörung(WHO 2001): links"/>
+									<sciphox:Ergebniswert V="geringgradig schwerhörig"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Hörstörung > 80dB nach WHO 2001 tonaudiometrischer Mittelwert bei 0,5 / 1 / 2 / 4 kHz"/>
+									<sciphox:Ergebniswert V="links"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Sonstige versorgungsrelevante Diagnosen"/>
+									<sciphox:Ergebniswert V="Tinnitus"/>
+									<sciphox:Ergebniswert V="Otitis externa"/>
+									<sciphox:Ergebniswert V="Radikalhöhle"/>
+									<sciphox:Ergebniswert V="andere"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="Sonstige versorgungsrelevante Diagnosen andere"/>
+									<sciphox:Ergebnistext V="Freitext String"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="HNO-ärztlicher Vorschlag zur Gerätetechnik: Luftleitung"/>
+									<sciphox:Ergebniswert V="HdO"/>
+									<sciphox:Ergebniswert V="IO"/>
+									<sciphox:Ergebniswert V="offene Versorgung"/>
+									<sciphox:Ergebniswert V="geschlossene Versorgung"/>
+									<sciphox:Ergebniswert V="Ex Hörer"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="HNO-ärztlicher Vorschlag zur Gerätetechnik: Knochenleitung"/>
+									<sciphox:Ergebniswert V="Knochenleitungsbügel"/>
+									<sciphox:Ergebniswert V="teilimplantiertes Knochenleitungsgerät"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="HNO-ärztlicher Vorschlag zur Gerätetechnik: Sonderversorgung"/>
+									<sciphox:Ergebniswert V="CROS / BiCROS"/>
+									<sciphox:Ergebniswert V="andere"/>
+								</sciphox:Beobachtung>
+								<sciphox:Beobachtung>
+									<sciphox:Parameter DN="HNO-ärztlicher Vorschlag zur Gerätetechnik: Sonderversorgung andere"/>
+									<sciphox:Ergebnistext V="Freitext String"/>
+								</sciphox:Beobachtung>
+							</sciphox:Beobachtungen>
+						</sciphox:sciphox-ssu>
+					</local_markup>
+				</content>
+			</paragraph>
+		</section>
+	</body>
+</levelone>
