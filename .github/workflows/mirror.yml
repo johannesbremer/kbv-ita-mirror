@@ -122,6 +122,7 @@ jobs:
             grep -iE "fatal|error" git_stage.log || tail -n 60 git_stage.log
             exit 1
           }
+          rm git_stage.log
 
           if git diff --staged --quiet; then
             echo "No changes to commit."
