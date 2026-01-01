@@ -43,7 +43,7 @@ jobs:
       - name: Wipe Workspace
         run: |
           # 1. Reset the index to be empty
-          git rm -r --cached . > /dev/null 2>&1 || true
+          git rm --sparse -r --cached . > /dev/null 2>&1 || true
 
           # 2. Add back the config files we want to keep
           git add .github .gitignore
