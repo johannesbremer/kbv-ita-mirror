@@ -117,12 +117,7 @@ jobs:
           git config --global core.protectNTFS false
           git config --global core.quotePath false
 
-          git add --sparse -A > git_stage.log 2>&1 || {
-            echo "Git add failed. Filtering log for fatal errors:"
-            grep -iE "fatal|error" git_stage.log || tail -n 60 git_stage.log
-            exit 1
-          }
-          rm git_stage.log
+          git add --sparse -A
 
           if git diff --staged --quiet; then
             echo "No changes to commit."
