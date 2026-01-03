@@ -42,7 +42,8 @@ jobs:
       # 3. WIPE WORKSPACE
       - name: Wipe Workspace
         run: |
-          git read-tree --empty
+          git config core.sparseCheckout false
+          git rm -r --sparse --cached .
           git add .github .gitignore
 
       # 4. DOWNLOAD
@@ -114,7 +115,7 @@ jobs:
           git config --global core.protectNTFS false
           git config --global core.quotePath false
 
-          git add --sparse -A
+          git add -A
 
           if git diff --staged --quiet; then
             echo "No changes to commit."
