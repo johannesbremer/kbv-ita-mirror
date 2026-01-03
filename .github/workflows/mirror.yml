@@ -42,10 +42,7 @@ jobs:
       # 3. WIPE WORKSPACE
       - name: Wipe Workspace
         run: |
-          # 1. Reset the index to be empty
-          git rm --sparse -r --cached . > /dev/null 2>&1 || true
-
-          # 2. Add back the config files we want to keep
+          git read-tree --empty
           git add .github .gitignore
 
       # 4. DOWNLOAD
